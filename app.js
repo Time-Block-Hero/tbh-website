@@ -701,7 +701,6 @@ async function renderCardGrid() {
           ${collectBadge}
           ${c.race ? `<span class="gc-badge gc-rarity-common">${c.race}</span>` : ""}
           ${c._isCustom ? `<span class="gc-badge gc-custom-badge">自定义</span>` : ""}
-          ${c._isEdited ? `<span class="gc-badge gc-edited-badge">已编辑</span>` : ""}
         </div>
         ${statsHtml}
         ${c.effect ? `<div class="game-card-effect">${c.effect}</div>` : ""}
