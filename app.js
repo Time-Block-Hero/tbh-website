@@ -542,7 +542,14 @@ const GITHUB_CONFIG = {
   owner: "JesusmiCaH",
   repo:  "Time-Block-Hero",
   path:  "data/cards.json",
-  token: "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",   // ← 用 VS Code 把这里换成你的 token
+  get token() {
+    let t = localStorage.getItem("tbh-gh-token");
+    if (!t) {
+      t = prompt("请输入 GitHub Token（仅保存在本地浏览器）：");
+      if (t) localStorage.setItem("tbh-gh-token", t.trim());
+    }
+    return t || "";
+  }
 };
 
 let _ghSha     = null;
