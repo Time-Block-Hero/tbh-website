@@ -526,8 +526,18 @@ const gameCards = [
   { zh:"诺亚", en:"Noa", type:"Minion", rarity:"Legendary", faction:"solar", cost:"hero", collect:"InitHero", race:null, atk:1, hp:20, spd:2, arrows:"NW", effect:"At the start of every turn: Gain 1 Charge.", desc:"" },
 ];
 
-const builtinRaces = ["Pirate", "Mech", "Hollow-Null"];
-function loadCustomRaces() { try { return JSON.parse(localStorage.getItem("tbh-custom-races") || "[]"); } catch { return []; } }
+const builtinRaces = [];
+function loadCustomRaces() {
+  try {
+    const saved = localStorage.getItem("tbh-custom-races");
+    if (saved === null) {
+      const defaults = ["Pirate", "Mech", "Hollow-Null"];
+      localStorage.setItem("tbh-custom-races", JSON.stringify(defaults));
+      return defaults;
+    }
+    return JSON.parse(saved);
+  } catch { return []; }
+}
 function saveCustomRaces(arr) { localStorage.setItem("tbh-custom-races", JSON.stringify(arr)); }
 
 const cardFilters = { faction:"all", type:"all", rarity:"all" };
@@ -871,11 +881,25 @@ function renderRaceManager() {
         ${!r.builtin ? `<button class="race-tag-delete" data-race="${r.name}" title="删除" type="button">✕</button>` : ""}
       </span>`).join("") || `<span style="color:var(--muted);font-size:12px">暂无种族标签</span>`;
   }
-  row.addEventListener("click", (e) => {
+  row.addEventListener("click", async (e) => {
     const btn = e.target.closest("[data-race]");
     if (!btn) return;
-    custom = custom.filter((r) => r !== btn.dataset.race);
+    const raceName = btn.dataset.race;
+    if (!confirm(`确认删除种族「${raceName}」？已绑定该种族的卡牌种族将变为空。`)) return;
+    // 清空自定义卡牌中绑定该种族的
+    const customs = await getCustomCards();
+    const updated = customs.map(c => c.race === raceName ? { ...c, race: null } : c);
+    if (JSON.stringify(updated) !== JSON.stringify(customs)) await saveCustomCards(updated);
+    // 清空 overrides 中绑定该种族的
+    const overrides = await getCardOverrides();
+    let changed = false;
+    for (const key in overrides) {
+      if (overrides[key].race === raceName) { overrides[key] = { ...overrides[key], race: null }; changed = true; }
+    }
+    if (changed) await saveCardOverrides(overrides);
+    custom = custom.filter((r) => r !== raceName);
     saveCustomRaces(custom); renderTags();
+    renderCardGrid();
   });
   function addRace() {
     const val = input.value.trim();
