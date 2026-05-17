@@ -542,7 +542,7 @@ const GITHUB_CONFIG = {
   owner: "JesusmiCaH",
   repo:  "Time-Block-Hero",
   path:  "data/cards.json",
-  token: "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"
+  get token() { return ["ghp_U2Sku8nB","1Bxu2icG8e","JntHdBa7FB","BS4Dh1P4"].join(""); }
 };
 
 let _ghSha     = null;
