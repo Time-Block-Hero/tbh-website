@@ -345,7 +345,19 @@ const modeButtons  = document.querySelectorAll(".mode-btn");
 const archiveLinks = document.querySelector(".nav-archive-links");
 const devhubLinks  = document.querySelector(".nav-devhub-links");
 
+const DEV_PASSWORD = "timeblock";
+let devUnlocked = false;
+
 function switchMode(mode) {
+  if (mode === "devhub" && !devUnlocked) {
+    const input = prompt("请输入开发中心密码：");
+    if (input !== DEV_PASSWORD) {
+      alert("密码错误，访问被拒绝。");
+      return;
+    }
+    devUnlocked = true;
+  }
+
   const isDevhub = mode === "devhub";
   archiveMain.style.display  = isDevhub ? "none" : "";
   devhubMain.style.display   = isDevhub ? ""     : "none";
