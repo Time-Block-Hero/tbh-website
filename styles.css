@@ -2140,14 +2140,8 @@ details[open] .race-summary::before { content: "▼ "; }
   box-shadow: 0 8px 36px rgba(255,199,102,0.35);
 }
 
-/* Custom card indicator */
-.game-card.is-custom {
-  border-color: color-mix(in srgb, var(--gold) 35%, transparent);
-}
-
-.game-card.is-edited {
-  border-style: dashed;
-}
+/* Custom card indicator — border handled by rarity */
+.game-card.is-custom {}
 
 /* ═══════════════════════════════════════════════════════════
    CARD EDITOR MODAL
