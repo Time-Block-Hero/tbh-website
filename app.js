@@ -664,13 +664,15 @@ async function renderCardGrid() {
     const typeLabel  = isSpell ? "法术·Spell" : "随从·Minion";
     const rarityClass = `gc-rarity-${c.rarity.toLowerCase()}`;
     const collectBadge = c.collect === "Uncollectable" ? `<span class="gc-badge gc-uncollect">Token</span>` : "";
+    const arrowMap = { N:"↑", NE:"↗", E:"→", SE:"↘", S:"↓", SW:"↙", W:"←", NW:"↖" };
+    const arrowDisplay = c.arrows ? c.arrows.split(",").map(a => arrowMap[a.trim()]||a.trim()).join(" ") : "";
     const statsHtml = !isSpell ? `
       <div class="game-card-stats">
         <span class="gc-stat"><span class="gc-stat-icon">⚔</span>${c.atk??'—'}</span>
         <span class="gc-stat"><span class="gc-stat-icon">❤</span>${c.hp??'—'}</span>
         <span class="gc-stat"><span class="gc-stat-icon">⚡</span>${c.spd??'—'}</span>
-        ${c.arrows ? `<span class="gc-arrows">↗ ${c.arrows}</span>` : ""}
-      </div>` : (c.arrows ? `<div class="game-card-stats"><span class="gc-arrows">↗ ${c.arrows}</span></div>` : "");
+        ${arrowDisplay ? `<span class="gc-arrows">${arrowDisplay}</span>` : ""}
+      </div>` : (arrowDisplay ? `<div class="game-card-stats"><span class="gc-arrows">${arrowDisplay}</span></div>` : "");
     return `
       <div class="game-card ${c._isCustom?"is-custom":""} ${c._isEdited?"is-edited":""}"
            style="--card-accent:${meta.accent}" data-card-id="${c._id}">
