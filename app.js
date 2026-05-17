@@ -580,7 +580,7 @@ async function ghFetch() {
     if (!res.ok) throw new Error(`GitHub API ${res.status}`);
     const json = await res.json();
     _ghSha = json.sha;
-    const data = JSON.parse(atob(json.content.replace(/\n/g, "")));
+    const data = JSON.parse(decodeURIComponent(atob(json.content.replace(/\n/g, "")).split("").map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0")).join("")));
     _cardCache = { customCards: data.customCards || [], overrides: data.overrides || {} };
     setSyncStatus("✓ 数据已同步", "success");
     return _cardCache;
@@ -601,7 +601,7 @@ async function ghSave(newData) {
   localStorage.setItem("tbh-card-overrides", JSON.stringify(newData.overrides));
   try {
     if (!_ghSha) await ghFetch();
-    const content = btoa(unescape(encodeURIComponent(JSON.stringify(newData, null, 2))));
+    const content = btoa(encodeURIComponent(JSON.stringify(newData, null, 2)).replace(/%([0-9A-F]{2})/g, (_, p1) => String.fromCharCode(parseInt(p1, 16))));
     const body    = { message: "Update cards", content, ...(_ghSha ? { sha: _ghSha } : {}) };
     const res = await fetch(
       `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${GITHUB_CONFIG.path}`,
