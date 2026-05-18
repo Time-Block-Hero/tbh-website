@@ -345,7 +345,7 @@ const modeButtons  = document.querySelectorAll(".mode-btn");
 const archiveLinks = document.querySelector(".nav-archive-links");
 const devhubLinks  = document.querySelector(".nav-devhub-links");
 
-const DEV_PASSWORD = "timeblock";
+const DEV_PASSWORD = "20000603";
 let devUnlocked = false;
 
 function switchMode(mode) {
