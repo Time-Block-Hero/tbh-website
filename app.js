@@ -673,9 +673,68 @@ async function getFilteredCards() {
   });
 }
 
-// 卡牌图片存储
-function getCardImage(id) { return localStorage.getItem(`tbh-card-img-${id}`) || null; }
-function saveCardImage(id, dataUrl) { localStorage.setItem(`tbh-card-img-${id}`, dataUrl); }
+// 卡牌图片存储——上传到 GitHub
+function getCardImage(id) {
+  // 先查 GitHub 同步的图片 URL，再 fallback 到 localStorage
+  const ghUrl = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/main/data/images/card-${id}.jpg`;
+  const cached = localStorage.getItem(`tbh-card-img-${id}`);
+  // 如果 localStorage 里有，证明本地已上传，直接用
+  return cached || null;
+}
+
+function getCardImageUrl(id) {
+  // 返回 GitHub raw URL，用于展示
+  const cached = localStorage.getItem(`tbh-card-img-${id}`);
+  if (cached) return cached; // 本地缓存（尚未同步或刚上传）
+  const synced = localStorage.getItem(`tbh-card-img-synced-${id}`);
+  if (synced === "1") {
+    return `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/main/data/images/card-${id}.jpg?t=${Date.now()}`;
+  }
+  return null;
+}
+
+async function saveCardImage(id, dataUrl) {
+  // 先存本地快速显示
+  localStorage.setItem(`tbh-card-img-${id}`, dataUrl);
+
+  // 异步上传到 GitHub
+  setSyncStatus("⟳ 正在上传图片…", "saving");
+  try {
+    // base64 转为纯 binary
+    const base64 = dataUrl.split(",")[1];
+    const path   = `data/images/card-${id}.jpg`;
+
+    // 检查是否已存在（获取 sha）
+    let sha = null;
+    try {
+      const check = await fetch(
+        `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${path}`,
+        { headers: { Authorization: `token ${GITHUB_CONFIG.token}` } }
+      );
+      if (check.ok) { const j = await check.json(); sha = j.sha; }
+    } catch {}
+
+    const body = { message: `Update card image ${id}`, content: base64 };
+    if (sha) body.sha = sha;
+
+    const res = await fetch(
+      `https://api.github.com/repos/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/contents/${path}`,
+      {
+        method: "PUT",
+        headers: { Authorization: `token ${GITHUB_CONFIG.token}`, "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      }
+    );
+    if (!res.ok) throw new Error(`GitHub API ${res.status}`);
+
+    // 标记已同步，清除本地 base64（节省空间）
+    localStorage.setItem(`tbh-card-img-synced-${id}`, "1");
+    localStorage.removeItem(`tbh-card-img-${id}`);
+    setSyncStatus("✓ 图片已同步", "success");
+  } catch (e) {
+    setSyncStatus(`✗ 图片上传失败，已存在本地 (${e.message})`, "error");
+  }
+}
 
 /* 图片裁剪编辑器 */
 let _cropCardId  = null;
@@ -693,7 +752,8 @@ const CARD_H = 400;  // 裁剪区高度
 
 function openCropEditor(cardId, file, cardData) {
   _cropCardId = cardId;
-  const url = URL.createObjectURL(file);
+  // 当前卡牌已有图片则先显示
+  const existingImg = getCardImageUrl(cardId);
   const overlay  = document.querySelector("#imgCropOverlay");
   const img      = document.querySelector("#cropImg");
   const viewport = document.querySelector("#cropViewport");
@@ -732,7 +792,7 @@ function openCropEditor(cardId, file, cardData) {
     slider.value = Math.round(_cropScale * 100);
     updateCropTransform();
   };
-  img.src = url;
+  img.src = URL.createObjectURL(file);
 
   overlay.style.display = "flex";
   document.body.style.overflow = "hidden";
@@ -922,7 +982,7 @@ async function renderCardGrid() {
     const isSpell = c.type === "Spell";
     const costStr = isHero ? "H" : (c.cost == null ? "—" : String(c.cost));
     const arrowDisplay = c.arrows ? c.arrows.split(",").map(a => arrowMap[a.trim()]||a.trim()).join(" ") : "";
-    const cardImg = getCardImage(c._id);
+    const cardImg = getCardImageUrl(c._id);
     const tags = [
       isSpell ? "法术" : "随从",
       c.rarity,
