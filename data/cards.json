@@ -1,1 +1,22 @@
-{"customCards":[],"overrides":{}}
+{
+  "customCards": [
+    {
+      "zh": "蒋",
+      "en": "tommy",
+      "type": "Minion",
+      "rarity": "Legendary",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 10,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "N,NE",
+      "effect": null,
+      "desc": null,
+      "_id": "c_1779129180006"
+    }
+  ],
+  "overrides": {}
+}
