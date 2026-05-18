@@ -673,6 +673,10 @@ async function getFilteredCards() {
   });
 }
 
+// 卡牌图片存储
+function getCardImage(id) { return localStorage.getItem(`tbh-card-img-${id}`) || null; }
+function saveCardImage(id, dataUrl) { localStorage.setItem(`tbh-card-img-${id}`, dataUrl); }
+
 async function renderCardGrid() {
   const grid  = document.querySelector("#cardCenterGrid");
   const label = document.querySelector("#cardCountLabel");
@@ -680,48 +684,87 @@ async function renderCardGrid() {
   const [all, list] = await Promise.all([getMergedCards(), getFilteredCards()]);
   label.textContent = `${list.length} / ${all.length} 张`;
   if (!list.length) { grid.innerHTML = `<div class="game-card-empty">没有符合筛选条件的卡牌</div>`; return; }
+
+  const arrowMap = { N:"↑", NE:"↗", E:"→", SE:"↘", S:"↓", SW:"↙", W:"←", NW:"↖" };
+
   grid.innerHTML = list.map((c) => {
-    const meta    = cardFactionMeta[c.faction] || { zh:"未知", en:"Unknown", accent:"#72e5ff" };
+    const meta    = cardFactionMeta[c.faction] || { zh:"未知", accent:"#72e5ff" };
     const isHero  = c.cost === "hero" || c.collect === "InitHero";
     const isSpell = c.type === "Spell";
-    const costStr = isHero ? "英雄" : (c.cost == null ? "—" : String(c.cost));
-    const typeClass  = isSpell ? "gc-type-spell" : "gc-type-minion";
-    const typeLabel  = isSpell ? "法术·Spell" : "随从·Minion";
-    const rarityClass = `gc-rarity-${c.rarity.toLowerCase()}`;
-    const collectBadge = c.collect === "Uncollectable" ? `<span class="gc-badge gc-uncollect">Token</span>` : "";
-    const arrowMap = { N:"↑", NE:"↗", E:"→", SE:"↘", S:"↓", SW:"↙", W:"←", NW:"↖" };
+    const costStr = isHero ? "H" : (c.cost == null ? "—" : String(c.cost));
     const arrowDisplay = c.arrows ? c.arrows.split(",").map(a => arrowMap[a.trim()]||a.trim()).join(" ") : "";
-    const statsHtml = !isSpell ? `
-      <div class="game-card-stats">
-        <span class="gc-stat"><span class="gc-stat-icon">⚔</span>${c.atk??'—'}</span>
-        <span class="gc-stat"><span class="gc-stat-icon">❤</span>${c.hp??'—'}</span>
-        <span class="gc-stat"><span class="gc-stat-icon">⚡</span>${c.spd??'—'}</span>
-        ${arrowDisplay ? `<span class="gc-arrows">${arrowDisplay}</span>` : ""}
-      </div>` : (arrowDisplay ? `<div class="game-card-stats"><span class="gc-arrows">${arrowDisplay}</span></div>` : "");
+    const cardImg = getCardImage(c._id);
+    const tags = [
+      isSpell ? "法术" : "随从",
+      c.rarity,
+      meta.zh,
+      ...(c.race ? [c.race] : []),
+      ...(c.collect === "Uncollectable" ? ["Token"] : []),
+      ...(c._isCustom ? ["自定义"] : []),
+    ].join(" · ");
+
     return `
-      <div class="game-card ${c._isCustom?"is-custom":""} ${c._isEdited?"is-edited":""}"
-           style="--card-accent:${meta.accent}" data-card-id="${c._id}" data-rarity="${c.rarity}">
+      <div class="${isSpell ? 'spell-card' : 'lor-card'}" style="--card-accent:${meta.accent}" data-rarity="${c.rarity}" data-card-id="${c._id}">
+
+        ${isSpell ? `
+        <!-- 法术牌 -->
+        <div class="spell-bg" data-upload-id="${c._id}">
+          ${cardImg ? `<img src="${cardImg}" alt="${c.zh}" />` : ""}
+          <div class="spell-bg-rune"></div>
+          <div class="lor-bg-upload-hint">📷 上传图片</div>
+        </div>
+        <div class="spell-shade"></div>
+        <div class="spell-cost ${isHero?'lor-cost-hero':''}" style="border-color:${meta.accent};color:${meta.accent}">${costStr}</div>
+        ${arrowDisplay ? `<div class="spell-arrows">${arrowDisplay}</div>` : ""}
         <button class="game-card-edit-btn" data-edit-id="${c._id}" type="button" title="编辑">✏</button>
-        <div class="game-card-header">
-          <div class="game-card-names">
-            <span class="game-card-zh">${c.zh}</span>
-            ${c.en ? `<span class="game-card-en">${c.en}</span>` : ""}
+        <div class="spell-content">
+          <div class="spell-name-row">
+            <span class="spell-glyph" style="color:${meta.accent}">✶</span>
+            <span class="spell-name">${c.zh}</span>
+            <span class="spell-glyph" style="color:${meta.accent}">✶</span>
           </div>
-          <div class="game-card-cost ${isHero?"cost-hero":""}">${costStr}</div>
+          <div class="spell-tags">${tags}</div>
+          ${c.effect ? `<div class="spell-effect">${c.effect}</div>` : ''}
+        </div>` : `
+
+        <!-- 随从牌 -->
+        <div class="lor-bg" data-upload-id="${c._id}">
+          ${cardImg ? `<img src="${cardImg}" alt="${c.zh}" />` : ""}
+          <div class="lor-bg-upload-hint">📷 点击上传图片</div>
         </div>
-        <div class="game-card-badges">
-          <span class="gc-badge ${typeClass}">${typeLabel}</span>
-          <span class="gc-badge ${rarityClass}">${c.rarity}</span>
-          <span class="gc-badge" style="background:color-mix(in srgb,${meta.accent} 18%,transparent);color:${meta.accent};border:1px solid color-mix(in srgb,${meta.accent} 35%,transparent)">${meta.zh}</span>
-          ${collectBadge}
-          ${c.race ? `<span class="gc-badge gc-rarity-common">${c.race}</span>` : ""}
-          ${c._isCustom ? `<span class="gc-badge gc-custom-badge">自定义</span>` : ""}
-        </div>
-        ${statsHtml}
-        ${c.effect ? `<div class="game-card-effect">${c.effect}</div>` : ""}
-        ${c.desc   ? `<div class="game-card-desc">${c.desc}</div>`     : ""}
+        <div class="lor-shade"></div>
+        <div class="lor-cost ${isHero?'lor-cost-hero':''}" style="border-color:${meta.accent};color:${meta.accent}">${costStr}</div>
+        ${arrowDisplay ? `<div class="lor-arrows">${arrowDisplay}</div>` : ""}
+        <button class="game-card-edit-btn" data-edit-id="${c._id}" type="button" title="编辑">✏</button>
+        <div class="lor-content">
+          <div class="lor-name-bar"><span class="lor-name">${c.zh}</span></div>
+          <div class="lor-tags-bar"><span class="lor-tags">${tags}</span></div>
+          ${c.effect ? `<div class="lor-effect-bar"><p class="lor-effect">${c.effect}</p></div>` : ""}
+          <div class="lor-stats-bar">
+            <span class="lor-stat lor-atk">${c.atk??'—'}</span>
+            <span class="lor-stat lor-spd">${c.spd??'—'}</span>
+            <span class="lor-stat lor-hp">${c.hp??'—'}</span>
+          </div>
+        </div>`}
       </div>`;
   }).join("");
+
+  // 图片上传
+  grid.querySelectorAll("[data-upload-id]").forEach(el => {
+    el.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const id = el.dataset.uploadId;
+      const input = document.createElement("input");
+      input.type = "file"; input.accept = "image/*";
+      input.onchange = (ev) => {
+        const file = ev.target.files[0]; if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (r) => { saveCardImage(id, r.target.result); renderCardGrid(); };
+        reader.readAsDataURL(file);
+      };
+      input.click();
+    });
+  });
 }
 
 async function renderCustomCardsList() {

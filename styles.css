@@ -2480,3 +2480,443 @@ details[open] .race-summary::before { content: "▼ "; }
   .form-row-3 { grid-template-columns: 1fr 1fr; }
   .card-editor-modal { max-height: 95vh; }
 }
+
+/* 卡牌内嵌图片上传 */
+.gc-img-upload {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 160ms;
+}
+
+.gc-img-upload:hover {
+  border-color: rgba(114,229,255,0.45);
+}
+
+.gc-img-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gc-img-placeholder {
+  font-size: 16px;
+  opacity: 0.4;
+}
+
+.gc-img-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 180ms;
+}
+
+.gc-img-upload:hover .gc-img-hint {
+  opacity: 1;
+}
+
+/* LoR 风格卡牌 */
+.lor-card {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--card-accent) 50%, rgba(255,255,255,0.15));
+  background: #0d1022;
+  transition: transform 180ms, box-shadow 180ms;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+.lor-card[data-rarity="Common"]    { border-color: rgba(155,168,199,0.4); }
+.lor-card[data-rarity="Rare"]      { border-color: rgba(102,166,255,0.75); box-shadow: 0 0 14px rgba(102,166,255,0.18); }
+.lor-card[data-rarity="Epic"]      { border-color: rgba(185,131,255,0.8); box-shadow: 0 0 16px rgba(185,131,255,0.22); }
+.lor-card[data-rarity="Legendary"] { border-color: rgba(255,199,102,0.9); box-shadow: 0 0 20px rgba(255,199,102,0.26); }
+
+.lor-card:hover { transform: translateY(-4px); }
+
+/* 满卡背景图 */
+.lor-bg {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 0;
+  background: linear-gradient(160deg,
+    color-mix(in srgb, var(--card-accent) 20%, #0d1022),
+    #0d1022);
+}
+
+.lor-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 300ms;
+}
+
+.lor-card:hover .lor-bg img { transform: scale(1.04); }
+
+.lor-bg-upload-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 200ms;
+  backdrop-filter: blur(3px);
+  z-index: 2;
+}
+
+.lor-bg:hover .lor-bg-upload-hint { opacity: 1; }
+
+/* 渐变遗层 */
+.lor-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 35%,
+    rgba(6,8,18,0.55) 55%,
+    rgba(6,8,18,0.82) 70%,
+    rgba(6,8,18,0.96) 100%
+  );
+}
+
+/* 左上角费用 */
+.lor-cost {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 4;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid;
+  background: rgba(6,8,18,0.82);
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 900;
+  backdrop-filter: blur(6px);
+}
+
+.lor-cost-hero { font-size: 11px; }
+
+/* 右上角箭头 */
+.lor-arrows {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+  letter-spacing: 0.04em;
+}
+
+/* 内容层 */
+.lor-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 名字 */
+.lor-name-bar {
+  padding: 6px 10px 3px;
+}
+
+.lor-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+/* 词条 */
+.lor-tags-bar {
+  padding: 2px 8px 4px;
+  background: color-mix(in srgb, var(--card-accent) 22%, rgba(6,8,18,0.75));
+  border-top: 1px solid color-mix(in srgb, var(--card-accent) 30%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 30%, transparent);
+}
+
+.lor-tags {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--card-accent);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+}
+
+/* 效果 */
+.lor-effect-bar {
+  padding: 5px 9px;
+  background: rgba(6,8,18,0.72);
+}
+
+.lor-effect {
+  margin: 0;
+  font-size: 10px;
+  color: #d4ddf5;
+  line-height: 1.5;
+  text-align: center;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 三围底栏 */
+.lor-stats-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: rgba(4,5,14,0.88);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.lor-stat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  padding: 5px 2px;
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.lor-stat small { font-size: 8px; color: var(--muted); margin-right: 1px; }
+.lor-atk { color: #ff8a8a; border-right: 1px solid rgba(255,255,255,0.08); }
+.lor-spd { color: var(--cyan); }
+.lor-hp  { color: #7ddf8a; border-left:  1px solid rgba(255,255,255,0.08); }
+
+/* 网格 */
+.card-center-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 200px);
+  gap: 16px;
+  justify-content: start;
+}
+
+/* 法术牌 */
+.spell-card {
+  position: relative;
+  width: 200px;
+  aspect-ratio: 3/4;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--card-accent) 60%, transparent);
+  background: #080c18;
+  transition: transform 180ms, box-shadow 180ms;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+}
+
+.spell-card[data-rarity="Common"]    { border-color: rgba(155,168,199,0.5); }
+.spell-card[data-rarity="Rare"]      { border-color: rgba(102,166,255,0.8); box-shadow: 0 0 16px rgba(102,166,255,0.2); }
+.spell-card[data-rarity="Epic"]      { border-color: rgba(185,131,255,0.85); box-shadow: 0 0 18px rgba(185,131,255,0.25); }
+.spell-card[data-rarity="Legendary"] { border-color: rgba(255,199,102,0.9); box-shadow: 0 0 22px rgba(255,199,102,0.28); }
+
+.spell-card:hover { transform: translateY(-4px); }
+
+/* 法术牌背景 */
+.spell-bg {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 0;
+  background: radial-gradient(ellipse at 50% 40%,
+    color-mix(in srgb, var(--card-accent) 18%, #080c18) 0%,
+    #080c18 70%);
+}
+
+.spell-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  opacity: 0.55;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.spell-card:hover .spell-bg img { opacity: 0.7; transform: scale(1.03); }
+
+/* 符文装饰 */
+.spell-bg-rune {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%,
+      color-mix(in srgb, var(--card-accent) 8%, transparent) 0%,
+      transparent 65%),
+    repeating-linear-gradient(
+      45deg,
+      color-mix(in srgb, var(--card-accent) 3%, transparent) 0px,
+      transparent 1px,
+      transparent 28px,
+      color-mix(in srgb, var(--card-accent) 3%, transparent) 29px
+    );
+  pointer-events: none;
+}
+
+/* 法术牌渐变 */
+.spell-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(8,12,24,0.3) 0%,
+    transparent 30%,
+    transparent 45%,
+    rgba(8,12,24,0.65) 65%,
+    rgba(8,12,24,0.95) 100%
+  );
+}
+
+/* 法术牌费用 */
+.spell-cost {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  border: 2px solid;
+  background: rgba(6,8,18,0.85);
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: 900;
+  backdrop-filter: blur(6px);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 34px;
+  height: 34px;
+}
+
+/* 法术牌箭头 */
+.spell-arrows {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 4;
+  font-size: 13px;
+  color: var(--card-accent);
+  font-weight: 700;
+  text-shadow: 0 0 8px var(--card-accent), 0 1px 4px rgba(0,0,0,0.9);
+  letter-spacing: 0.04em;
+}
+
+/* 法术牌内容 */
+.spell-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 4px;
+}
+
+/* 法术牌名字行 */
+.spell-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 3px;
+  width: 100%;
+  justify-content: center;
+}
+
+.spell-glyph {
+  font-size: 10px;
+  opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.spell-name {
+  font-size: 14px;
+  font-weight: 900;
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 0 12px var(--card-accent), 0 1px 6px rgba(0,0,0,0.9);
+  letter-spacing: 0.03em;
+  line-height: 1.2;
+}
+
+/* 法术牌词条 */
+.spell-tags {
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--card-accent);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 10px 4px;
+  width: 100%;
+  background: color-mix(in srgb, var(--card-accent) 15%, rgba(6,8,18,0.7));
+  border-top: 1px solid color-mix(in srgb, var(--card-accent) 35%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 35%, transparent);
+  box-sizing: border-box;
+}
+
+/* 法术牌效果 */
+.spell-effect {
+  font-size: 10px;
+  color: #d4ddf5;
+  line-height: 1.5;
+  text-align: center;
+  padding: 6px 10px;
+  background: rgba(6,8,18,0.65);
+  width: 100%;
+  box-sizing: border-box;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
