@@ -18,5 +18,8 @@
       "_id": "c_1779129180006"
     }
   ],
-  "overrides": {}
+  "overrides": {},
+  "cardImages": {
+    "b0": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-b0.jpg"
+  }
 }
