@@ -732,9 +732,10 @@ async function saveCardImage(id, dataUrl) {
     localStorage.setItem(`tbh-card-img-synced-${id}`, "1");
     localStorage.removeItem(`tbh-card-img-${id}`);
 
-    // 把图片 URL 存进 cards.json，这样所有人都能看到
+    // 把图片 URL 存进 cards.json
     const imageUrl = `https://raw.githubusercontent.com/${GITHUB_CONFIG.owner}/${GITHUB_CONFIG.repo}/main/data/images/card-${id}.jpg`;
-    _cardCache = null; // 清空缓存，强制重新拉取
+    _cardCache = null;
+    _isSyncing = false; // 确保不被锁住
     const data = await ghFetch();
     data.cardImages = data.cardImages || {};
     data.cardImages[id] = imageUrl;
