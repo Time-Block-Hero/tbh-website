@@ -421,7 +421,7 @@
       "rarity": "Common",
       "faction": "astra",
       "collect": "Collectable",
-      "cost": 0,
+      "cost": 1,
       "race": null,
       "atk": null,
       "hp": 2,
