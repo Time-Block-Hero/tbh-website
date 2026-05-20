@@ -369,7 +369,7 @@
       "collect": "InitHero",
       "cost": "hero",
       "race": null,
-      "atk": null,
+      "atk": 0,
       "hp": 20,
       "spd": 0,
       "arrows": "N",
