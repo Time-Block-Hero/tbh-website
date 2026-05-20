@@ -1224,19 +1224,45 @@ function renderCardFilters() {
    KEYWORD MANAGER — 词条编辑器
 ═══════════════════════════════════════════════════════════ */
 
-// 内置词条（不可删除）
-const builtinKeywords = [
-  { name: "Remove 移除",      desc: "Remove the card from your deck, it'll never occur in your following game." },
-  { name: "Durability",          desc: "This card will be auto removed when it's discarded from the field at its x-th time." },
-  { name: "Pickup 拾取",         desc: "This card is automatically removed when a player's minion steps onto the grid it locates, and that player resolve the effects." },
-  { name: "Motion 动作",         desc: "A keyword for effects. This effect can only be resolved during Time Move phase." },
-  { name: "Upgradable 可升级",   desc: "This card has an upgraded form, and can be upgraded with some card effects." },
-  { name: "Equip 装备",          desc: "Cards can be overlapped onto other cards to trigger some effects." },
-  { name: "Arrow Request 笭头需求", desc: "This card can only be placed onto a friendly grid within at least x friendly arrows pointing to." },
-  { name: "Monsters 野思",       desc: "Natural monsters wandering on the field. Players can kill them to gain some rewards." },
-  { name: "OnPlace 入场",        desc: "Effect that are triggered once the card is placed." },
-  { name: "Expend 限定",         desc: "Effect of a minion which can only be used once per life." },
+// 预设词条——首次加载时写入 localStorage，之后全部可编辑/删除
+const PRESET_KEYWORDS = [
+  { name:"移除",   icon:"✕", color:"#ff6b6b", bg:"rgba(255,107,107,0.13)", border:"rgba(255,107,107,0.45)", shape:"rect",    desc:"将这张牌从牌组中彻底移除，之后的对局不会再出现。" },
+  { name:"耐久度", icon:"♥", color:"#ff8a3d", bg:"rgba(255,138,61,0.13)",  border:"rgba(255,138,61,0.45)",  shape:"oct",     desc:"该随从在第 x 次被撤出场地时自动移除。" },
+  { name:"拾取",   icon:"◆", color:"#ffc766", bg:"rgba(255,199,102,0.13)", border:"rgba(255,199,102,0.45)", shape:"diamond", desc:"我方随从踩上该格时，该牌自动移除并触发效果。" },
+  { name:"动作",   icon:"⚡", color:"#72e5ff", bg:"rgba(114,229,255,0.13)", border:"rgba(114,229,255,0.45)", shape:"pill",    desc:"效果关键词：仅能在行动阶段结算；若于时停阶段触发则进入行动队列。" },
+  { name:"可升级", icon:"↑", color:"#36f0a4", bg:"rgba(54,240,164,0.13)",  border:"rgba(54,240,164,0.45)",  shape:"arrow",   desc:"该牌有升级形态，可通过指定效果触发升级替换。" },
+  { name:"装备",   icon:"⚔", color:"#66a6ff", bg:"rgba(102,166,255,0.13)", border:"rgba(102,166,255,0.45)", shape:"shield",  desc:"将该牌叠放到其他牌上，触发对应效果。" },
+  { name:"箭头需求",icon:"→", color:"#b983ff", bg:"rgba(185,131,255,0.13)", border:"rgba(185,131,255,0.45)", shape:"hex",     desc:"该牌只能放置在至少有 x 条友方箭头指向的格子上。" },
+  { name:"野怪",   icon:"▲", color:"#ff7070", bg:"rgba(210,67,67,0.13)",   border:"rgba(210,67,67,0.45)",   shape:"tri",     desc:"在场地上游荡的野生怪物；击杀可获得奖励。" },
+  { name:"入场",   icon:"►", color:"#36f0a4", bg:"rgba(54,240,164,0.10)",  border:"rgba(54,240,164,0.35)",  shape:"play",    desc:"该牌被放置时触发的效果。" },
+  { name:"限定",   icon:"◉", color:"#ffc766", bg:"rgba(255,199,102,0.10)", border:"rgba(255,199,102,0.35)", shape:"star",    desc:"随从每次存活期间只能使用一次的效果。" },
 ];
+
+// 形状 clip-path（全部统一为 rect，不使用 clip-path）
+const KW_SHAPES = {
+  rect:    "",  pill: "",
+  oct:     "",
+  diamond: "",
+  hex:     "",
+  shield:  "",
+  tri:     "",
+  arrow:   "",
+  play:    "",
+  star:    "",
+};
+
+function initPresetKeywords() {
+  if (localStorage.getItem("tbh-kw-initialized")) return;
+  localStorage.setItem("tbh-custom-keywords", JSON.stringify(
+    PRESET_KEYWORDS.map(k => ({ name: k.name, desc: k.desc }))
+  ));
+  localStorage.setItem("tbh-kw-initialized", "1");
+}
+
+function getKwStyle(name) {
+  return PRESET_KEYWORDS.find(p => p.name === name)
+    || { icon:"⬡", color:"#72e5ff", bg:"rgba(114,229,255,0.1)", border:"rgba(114,229,255,0.3)", shape:"rect" };
+}
 
 function loadCustomKeywords() {
   try {
@@ -1245,23 +1271,23 @@ function loadCustomKeywords() {
   } catch { return []; }
 }
 function saveCustomKeywords(arr) { localStorage.setItem("tbh-custom-keywords", JSON.stringify(arr)); }
+function getAllKeywords() { return loadCustomKeywords(); }
 
-function getAllKeywords() {
-  return [...builtinKeywords.map(k => ({ ...k, builtin: true })), ...loadCustomKeywords().map(k => ({ ...k, builtin: false }))];
-}
+let _kwEditId = null;
 
-let _kwEditId = null; // 当前正在编辑的词条 index（自定义列表索引）
-
-function openKeywordModal(customIdx) {
-  const customs = loadCustomKeywords();
-  const kw = customIdx != null ? customs[customIdx] : null;
-  _kwEditId = customIdx ?? null;
-
+function openKeywordModal(idx) {
+  initPresetKeywords();
+  const all = loadCustomKeywords();
+  const kw = idx != null ? all[idx] : null;
+  _kwEditId = idx ?? null;
   const overlay = document.querySelector("#keywordModalOverlay");
   if (!overlay) return;
   overlay.querySelector("#kwModalTitle").textContent = kw ? `编辑词条：${kw.name}` : "新建词条";
   overlay.querySelector("#kwNameInput").value = kw ? kw.name : "";
   overlay.querySelector("#kwDescInput").value = kw ? kw.desc : "";
+  const badge = overlay.querySelector("#kwPreviewBadge");
+  badge.textContent = kw ? kw.name : "词条名";
+  _applyPreviewStyle(badge, kw ? kw.name : "");
   overlay.style.display = "flex";
 }
 
@@ -1275,61 +1301,68 @@ function saveKeyword() {
   const name = document.querySelector("#kwNameInput").value.trim();
   const desc = document.querySelector("#kwDescInput").value.trim();
   if (!name) { alert("请输入词条名称！"); return; }
-  const customs = loadCustomKeywords();
-  if (_kwEditId != null) {
-    customs[_kwEditId] = { name, desc };
-  } else {
-    customs.push({ name, desc });
-  }
-  saveCustomKeywords(customs);
+  const all = loadCustomKeywords();
+  if (_kwEditId != null) { all[_kwEditId] = { name, desc }; }
+  else { all.push({ name, desc }); }
+  saveCustomKeywords(all);
   closeKeywordModal();
   renderKeywordManager();
 }
 
-function deleteKeyword(customIdx) {
-  const customs = loadCustomKeywords();
-  const kw = customs[customIdx];
+function deleteKeyword(idx) {
+  const all = loadCustomKeywords();
+  const kw = all[idx];
   if (!kw || !confirm(`确认删除词条「${kw.name}」？`)) return;
-  customs.splice(customIdx, 1);
-  saveCustomKeywords(customs);
+  all.splice(idx, 1);
+  saveCustomKeywords(all);
   renderKeywordManager();
 }
 
+// 给 badge DOM 元素应用样式
+function _applyBadgeStyle(el, s) {
+  el.style.cssText = `display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:800;
+    letter-spacing:.04em;padding:4px 10px;color:${s.color};background:${s.bg};
+    border:1px solid ${s.border};border-radius:6px;`;
+}
+function _applyPreviewStyle(el, name) { _applyBadgeStyle(el, getKwStyle(name)); }
+
+// 生成词条 HTML（用于卡牌效果文本渲染）
+function renderKwBadgeHtml(name) {
+  const s = getKwStyle(name);
+  return `<span class="kw-inline" style="color:${s.color};background:${s.bg};border-color:${s.border};border-radius:6px;">${s.icon} ${escapeHtml(name)}</span>`;
+}
+
 function renderKeywordManager() {
+  initPresetKeywords();
   const listEl = document.querySelector("#keywordList");
   const addBtn = document.querySelector("#keywordAddBtn");
   if (!listEl || !addBtn) return;
 
-  const all = getAllKeywords();
-  const customs = loadCustomKeywords();
-
-  listEl.innerHTML = all.map((kw, i) => {
-    const customIdx = kw.builtin ? null : i - builtinKeywords.length;
+  const all = loadCustomKeywords();
+  listEl.innerHTML = all.length ? all.map((kw, i) => {
+    const s = getKwStyle(kw.name);
     return `
-      <div class="keyword-row ${kw.builtin ? "builtin" : ""} glass-panel">
+      <div class="keyword-row glass-panel">
         <div class="keyword-row-top">
-          <span class="keyword-badge ${kw.builtin ? "keyword-badge-builtin" : "keyword-badge-custom"}">⬡ ${kw.name}</span>
+          <span class="keyword-badge" style="color:${s.color};background:${s.bg};border:1px solid ${s.border};border-radius:6px;display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:800;padding:4px 10px;">
+            ${s.icon} ${escapeHtml(kw.name)}
+          </span>
           <div class="keyword-row-actions">
-            ${!kw.builtin ? `
-              <button class="kw-edit-btn" data-kw-idx="${customIdx}" type="button">编辑</button>
-              <button class="kw-del-btn" data-kw-del="${customIdx}" type="button">删除</button>
-            ` : `<span class="keyword-builtin-label">内置</span>`}
+            <button class="kw-edit-btn" data-kw-idx="${i}" type="button">编辑</button>
+            <button class="kw-del-btn" data-kw-del="${i}" type="button">删除</button>
           </div>
         </div>
         <p class="keyword-desc">${escapeHtml(kw.desc || "")}</p>
       </div>`;
-  }).join("") || `<span style="color:var(--muted);font-size:12px">暂无词条</span>`;
+  }).join("") : `<span style="color:var(--muted);font-size:12px">暂无词条，点击「＋ 新建词条」添加</span>`;
 
-  listEl.addEventListener("click", (e) => {
+  listEl.onclick = (e) => {
     const editBtn = e.target.closest("[data-kw-idx]");
     const delBtn  = e.target.closest("[data-kw-del]");
     if (editBtn) openKeywordModal(Number(editBtn.dataset.kwIdx));
     if (delBtn)  deleteKeyword(Number(delBtn.dataset.kwDel));
-  }, { once: true });
-
+  };
   addBtn.onclick = () => openKeywordModal(null);
-
-  // 建立 / 更新 Modal DOM
   ensureKeywordModal();
 }
 
@@ -1338,10 +1371,16 @@ function renderKwInsertBar() {
   const bar = document.querySelector("#kwInsertBar");
   const textarea = document.querySelector("#cardEditorForm [name='effect']");
   if (!bar || !textarea) return;
+  initPresetKeywords();
   const all = getAllKeywords();
-  bar.innerHTML = `
-    <span class="kw-insert-label">插入词条：</span>
-    ${all.map(kw => `<button class="kw-insert-chip" data-kw="${kw.name}" type="button" title="${kw.desc || kw.name}">${kw.name}</button>`).join("")}`;
+  bar.innerHTML = `<span class="kw-insert-label">插入词条：</span>` +
+    all.map(kw => {
+      const s = getKwStyle(kw.name);
+      return `<button class="kw-insert-chip" data-kw="${escapeHtml(kw.name)}" type="button" title="${escapeHtml(kw.desc || kw.name)}"
+        style="color:${s.color};background:${s.bg};border:1px solid ${s.border};border-radius:6px;">
+        ${s.icon} ${escapeHtml(kw.name)}
+      </button>`;
+    }).join("");
   bar.onclick = (e) => {
     const btn = e.target.closest("[data-kw]");
     if (!btn) return;
@@ -1355,14 +1394,14 @@ function renderKwInsertBar() {
   };
 }
 
-/* 渲染卡牌效果文本：[xxx] 替换为带框标签 */
+/* 渲染卡牌效果文本：[xxx] 替换为带颜色/形状的词条标签 */
 function renderCardEffect(text) {
   if (!text) return "";
+  initPresetKeywords();
   const kwNames = getAllKeywords().map(k => k.name);
-  // 转义 HTML——再替换 [xxx]
   return escapeHtml(text).replace(/\[([^\]]+)\]/g, (_, name) => {
     const matched = kwNames.find(k => k.toLowerCase() === name.toLowerCase()) || name;
-    return `<span class="kw-inline">⬡ ${escapeHtml(matched)}</span>`;
+    return renderKwBadgeHtml(matched);
   });
 }
 
@@ -1406,10 +1445,12 @@ function ensureKeywordModal() {
   el.querySelector("#kwModalCancel").addEventListener("click", closeKeywordModal);
   el.querySelector("#kwModalSave").addEventListener("click", saveKeyword);
 
-  // 实时预览词条名
+  // 实时预览词条名 + 样式
   el.querySelector("#kwNameInput").addEventListener("input", (e) => {
     const badge = el.querySelector("#kwPreviewBadge");
-    badge.textContent = e.target.value.trim() || "词条名";
+    const v = e.target.value.trim();
+    badge.textContent = v || "词条名";
+    _applyPreviewStyle(badge, v);
   });
 }
 
