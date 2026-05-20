@@ -493,6 +493,22 @@
       "arrows": "E",
       "effect": "[入场] Gain 4 Charge. You may spend charges to conduct extra moves of your Mech minions.",
       "desc": null
+    },
+    "b25": {
+      "zh": "射击模式",
+      "en": "Shooting Mode",
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "E",
+      "effect": "[入场] Gain 4 Charge. OnCast: Assign your charges to enemies arbitrarily to deal damage.",
+      "desc": null
     }
   },
   "cardImages": {
