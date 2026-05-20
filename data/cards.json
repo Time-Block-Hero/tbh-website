@@ -48,7 +48,7 @@
       "hp": 20,
       "spd": 2,
       "arrows": null,
-      "effect": "Expend: Destroy a monster in his 5x5 adjacent area. (Refresh at the start of 4/7/11-th turn.)[Arrow Request 笭头需求]",
+      "effect": "Expend: Destroy a monster in his 5x5 adjacent area. (Refresh at the start of 4/7/11-th turn.)",
       "desc": null
     }
   },
