@@ -3151,3 +3151,210 @@ details[open] .race-summary::before { content: "▼ "; }
   overflow: hidden;
   margin: 0;
 }
+
+/* ═══════════════════════════════════════════════════════════
+   WORLD BIBLE — 世界观文档弹窗
+═══════════════════════════════════════════════════════════ */
+.world-bible-content {
+  font-family: inherit;
+  color: var(--text);
+  line-height: 1.85;
+  font-size: 15.5px;
+  letter-spacing: 0.01em;
+  padding-top: 8px;
+}
+
+.world-bible-content .wb-loading,
+.world-bible-content .wb-error {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.world-bible-content .wb-error h2 {
+  color: var(--red);
+  margin-bottom: 12px;
+  border: none;
+  padding: 0;
+}
+.world-bible-content .wb-error code {
+  background: rgba(255,255,255,0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* 标题层级 */
+.world-bible-content h1 {
+  font-size: 32px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  margin: 0 0 8px;
+  background: linear-gradient(135deg, var(--cyan), #fff 60%, var(--cyan));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.world-bible-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 56px 0 18px;
+  padding: 0 0 10px 14px;
+  border-left: 3px solid var(--cyan);
+  border-bottom: 1px solid var(--line);
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.world-bible-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 36px 0 14px;
+  color: var(--cyan);
+  letter-spacing: 0.02em;
+}
+.world-bible-content h3::before {
+  content: "◆ ";
+  color: var(--gold);
+  margin-right: 4px;
+}
+.world-bible-content h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 28px 0 10px;
+  color: var(--gold);
+}
+
+/* 段落 & 文本 */
+.world-bible-content p {
+  margin: 0 0 14px;
+  color: #d8e0f5;
+}
+.world-bible-content strong {
+  color: var(--cyan);
+  font-weight: 700;
+}
+.world-bible-content em {
+  color: var(--gold);
+  font-style: italic;
+}
+.world-bible-content a {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(114,229,255,0.45);
+  transition: color .15s;
+}
+.world-bible-content a:hover {
+  color: var(--gold);
+  text-decoration-color: var(--gold);
+}
+.world-bible-content code {
+  background: rgba(114,229,255,0.1);
+  border: 1px solid rgba(114,229,255,0.2);
+  padding: 1px 7px;
+  border-radius: 4px;
+  font-family: "SF Mono", Menlo, Consolas, monospace;
+  font-size: 13px;
+  color: #c9efff;
+}
+
+/* 列表 */
+.world-bible-content ul {
+  margin: 0 0 18px;
+  padding-left: 0;
+  list-style: none;
+}
+/* 相邻的 ul 收紧间距（处理列表中间有空行被拆成两段的情况） */
+.world-bible-content ul + ul {
+  margin-top: -10px;
+}
+.world-bible-content li {
+  position: relative;
+  padding: 4px 0 4px 22px;
+  color: #d8e0f5;
+}
+.world-bible-content li::before {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 14px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 8px rgba(114,229,255,0.6);
+}
+.world-bible-content li strong {
+  color: var(--gold);
+}
+
+/* 表格 */
+.world-bible-content .wb-table-wrap {
+  margin: 0 0 24px;
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(13,18,35,0.5);
+}
+.world-bible-content .wb-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  min-width: 520px;
+}
+.world-bible-content .wb-table th,
+.world-bible-content .wb-table td {
+  padding: 11px 16px;
+  text-align: left;
+  border-bottom: 1px solid rgba(169,203,255,0.08);
+  vertical-align: top;
+}
+.world-bible-content .wb-table th {
+  background: rgba(114,229,255,0.06);
+  color: var(--cyan);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(114,229,255,0.25);
+}
+.world-bible-content .wb-table tbody tr:hover {
+  background: rgba(114,229,255,0.04);
+}
+.world-bible-content .wb-table td:first-child {
+  color: var(--gold);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.world-bible-content .wb-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* 关闭按钮 hover */
+#worldBibleClose:hover {
+  background: rgba(210,67,67,0.18) !important;
+  border-color: rgba(210,67,67,0.45) !important;
+  color: #ffb4b4;
+}
+
+/* 移动端适配 */
+@media (max-width: 720px) {
+  .world-bible-content {
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+  .world-bible-content h1 { font-size: 26px; }
+  .world-bible-content h2 { font-size: 19px; margin-top: 40px; }
+  .world-bible-content h3 { font-size: 16.5px; margin-top: 28px; }
+  .world-bible-content h4 { font-size: 15px; }
+  #worldBibleOverlay > div {
+    padding: 32px 18px 80px !important;
+  }
+  #worldBibleClose {
+    top: 12px !important;
+    right: 12px !important;
+    padding: 6px 12px !important;
+    font-size: 13px !important;
+  }
+}
+

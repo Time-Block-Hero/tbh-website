@@ -426,6 +426,167 @@ renderFactions();
 renderFilters();
 renderCharacters();
 
+/* ═══════════════════════════════════════════════════════════
+   WORLD BIBLE — modal
+═══════════════════════════════════════════════════════════ */
+const WORLD_BIBLE_MD_PATH = "../Docs/TimeBlock_World_Bible_EN.md";
+let _worldBibleHtmlCache = null;
+let _worldBibleLoading = false;
+
+function escapeHtml(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+function renderInlineMd(text) {
+  const codeStash = [];
+  text = text.replace(/`([^`]+)`/g, (_, code) => {
+    codeStash.push(`<code>${escapeHtml(code)}</code>`);
+    return `\u0000CODE${codeStash.length - 1}\u0000`;
+  });
+  text = escapeHtml(text);
+  text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, label, url) =>
+    `<a href="${url}" target="_blank" rel="noopener">${label}</a>`);
+  text = text.replace(/\*\*([^*\n]+)\*\*/g, "<strong>$1</strong>");
+  text = text.replace(/(^|[^*])\*([^*\n]+)\*(?!\*)/g, "$1<em>$2</em>");
+  text = text.replace(/  +\n/g, "<br>\n");
+  text = text.replace(/\u0000CODE(\d+)\u0000/g, (_, i) => codeStash[Number(i)]);
+  return text;
+}
+
+function parseMarkdown(md) {
+  const lines = md.replace(/\r\n?/g, "\n").split("\n");
+  const out = [];
+  let i = 0;
+  const paraBuf = [];
+  const flushParagraph = (buf) => {
+    if (!buf.length) return;
+    const joined = buf.join("\n").trim();
+    if (joined) out.push(`<p>${renderInlineMd(joined)}</p>`);
+    buf.length = 0;
+  };
+  const isBlockStart = (l) =>
+    !l.trim() ||
+    /^(#{1,6})\s+/.test(l) ||
+    /^\s*[-*]\s+/.test(l) ||
+    /^\s*\|.*\|\s*$/.test(l);
+
+  while (i < lines.length) {
+    const line = lines[i];
+    if (!line.trim()) { flushParagraph(paraBuf); i++; continue; }
+
+    const h = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+    if (h) {
+      flushParagraph(paraBuf);
+      const level = h[1].length;
+      out.push(`<h${level}>${renderInlineMd(h[2])}</h${level}>`);
+      i++; continue;
+    }
+
+    if (/^\s*\|.*\|\s*$/.test(line) && i + 1 < lines.length && /^\s*\|?\s*:?-{3,}.*\|/.test(lines[i + 1])) {
+      flushParagraph(paraBuf);
+      const splitRow = (row) => row.trim().replace(/^\||\|$/g, "").split("|").map((c) => c.trim());
+      const headers = splitRow(line);
+      i += 2;
+      const bodyRows = [];
+      while (i < lines.length && /^\s*\|/.test(lines[i])) {
+        let raw = lines[i];
+        i++;
+        while (
+          i < lines.length &&
+          !/\|\s*$/.test(raw) &&
+          lines[i].trim() !== "" &&
+          !isBlockStart(lines[i]) &&
+          !/^\s*\|/.test(lines[i])
+        ) {
+          raw += " " + lines[i].trim();
+          i++;
+        }
+        bodyRows.push(splitRow(raw));
+      }
+      const ths = headers.map((c) => `<th>${renderInlineMd(c)}</th>`).join("");
+      const trs = bodyRows.map((cells) =>
+        `<tr>${cells.map((c) => `<td>${renderInlineMd(c)}</td>`).join("")}</tr>`).join("");
+      out.push(`<div class="wb-table-wrap"><table class="wb-table"><thead><tr>${ths}</tr></thead><tbody>${trs}</tbody></table></div>`);
+      continue;
+    }
+
+    if (/^\s*[-*]\s+/.test(line)) {
+      flushParagraph(paraBuf);
+      const items = [];
+      while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) {
+        let it = lines[i].replace(/^\s*[-*]\s+/, "");
+        i++;
+        while (
+          i < lines.length &&
+          lines[i].trim() !== "" &&
+          !isBlockStart(lines[i])
+        ) {
+          it += " " + lines[i].trim();
+          i++;
+        }
+        items.push(it);
+      }
+      out.push(`<ul>${items.map((it) => `<li>${renderInlineMd(it)}</li>`).join("")}</ul>`);
+      continue;
+    }
+
+    paraBuf.push(line);
+    i++;
+  }
+  flushParagraph(paraBuf);
+  return out.join("\n");
+}
+
+async function loadWorldBible() {
+  if (_worldBibleHtmlCache) return _worldBibleHtmlCache;
+  if (_worldBibleLoading) return null;
+  _worldBibleLoading = true;
+  try {
+    const res = await fetch(WORLD_BIBLE_MD_PATH, { cache: "no-cache" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const md = await res.text();
+    _worldBibleHtmlCache = parseMarkdown(md);
+    return _worldBibleHtmlCache;
+  } catch (err) {
+    return `<div class="wb-error"><h2>Failed to load World Bible</h2><p>${escapeHtml(err.message)}</p><p>Please make sure the file exists: <code>${escapeHtml(WORLD_BIBLE_MD_PATH)}</code></p></div>`;
+  } finally {
+    _worldBibleLoading = false;
+  }
+}
+
+async function openWorldBible() {
+  const overlay = document.querySelector("#worldBibleOverlay");
+  const content = document.querySelector("#worldBibleContent");
+  if (!overlay || !content) return;
+  overlay.style.display = "block";
+  document.body.style.overflow = "hidden";
+  if (!_worldBibleHtmlCache) {
+    content.innerHTML = `<div class="wb-loading">⟳ Loading World Bible…</div>`;
+  }
+  const html = await loadWorldBible();
+  if (html) content.innerHTML = html;
+  overlay.scrollTop = 0;
+}
+
+function closeWorldBible() {
+  const overlay = document.querySelector("#worldBibleOverlay");
+  if (!overlay) return;
+  overlay.style.display = "none";
+  document.body.style.overflow = "";
+}
+
+(function initWorldBible() {
+  const btn   = document.querySelector("#worldBibleBtn");
+  const close = document.querySelector("#worldBibleClose");
+  const overlay = document.querySelector("#worldBibleOverlay");
+  if (btn) btn.addEventListener("click", (e) => { e.preventDefault(); openWorldBible(); });
+  if (close) close.addEventListener("click", closeWorldBible);
+  if (overlay) overlay.addEventListener("click", (e) => { if (e.target === overlay) closeWorldBible(); });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay && overlay.style.display !== "none") closeWorldBible();
+  });
+})();
+
 window.addEventListener("load", () => {
   const target = window.location.hash && document.querySelector(window.location.hash);
   if (target) {

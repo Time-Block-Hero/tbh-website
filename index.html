@@ -29,7 +29,7 @@
           <a href="#timeline">剧情</a>
           <a href="#factions">派系</a>
           <a href="#characters">角色</a>
-          <a href="../Docs/TimeBlock_World_Bible.md">设定文档</a>
+          <a href="#" id="worldBibleBtn">设定文档</a>
         </div>
         <div class="nav-links nav-devhub-links" style="display:none">
           <a href="#dev-intro">游戏介绍</a>
@@ -606,6 +606,14 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- 世界观文档弹窗 -->
+    <div id="worldBibleOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(5,7,15,0.96);backdrop-filter:blur(12px);overflow-y:auto">
+      <div style="max-width:860px;margin:0 auto;padding:40px 24px 80px">
+        <button id="worldBibleClose" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:14px;padding:8px 16px;cursor:pointer;z-index:10">✕ 关闭</button>
+        <div id="worldBibleContent" class="world-bible-content"></div>
       </div>
     </div>
 
