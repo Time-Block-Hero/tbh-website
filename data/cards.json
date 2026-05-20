@@ -31,7 +31,7 @@
       "atk": 6,
       "hp": 7,
       "spd": 5,
-      "arrows": "N",
+      "arrows": null,
       "effect": null,
       "desc": null
     }
