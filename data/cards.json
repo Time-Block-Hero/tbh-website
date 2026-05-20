@@ -581,6 +581,22 @@
       "arrows": "E",
       "effect": "[入场] Gain 4 Charge. OnCast: Assign your charges to enemies arbitrarily to deal damage.",
       "desc": null
+    },
+    "b12": {
+      "zh": "普通的子弹",
+      "en": "Regular Bullet",
+      "type": "Spell",
+      "rarity": "Common",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "N",
+      "effect": "Once per turn OnCast: Deal 2 damage to an enemy in a straight line.",
+      "desc": "A flying bullet."
     }
   },
   "cardImages": {
