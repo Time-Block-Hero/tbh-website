@@ -423,7 +423,7 @@
       "collect": "Collectable",
       "cost": 1,
       "race": null,
-      "atk": null,
+      "atk": 0,
       "hp": 2,
       "spd": 1,
       "arrows": "NW,N",
