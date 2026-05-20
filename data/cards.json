@@ -66,6 +66,22 @@
       "arrows": null,
       "effect": "[可升级] 星际老兵",
       "desc": "The most commonly seen space soldiers."
+    },
+    "b2": {
+      "zh": "太空临时工",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": null,
+      "atk": 2,
+      "hp": 1,
+      "spd": 2,
+      "arrows": null,
+      "effect": "[耐久度]Durability (2)",
+      "desc": "A noob soldier who's gonna die after 3 fights."
     }
   },
   "cardImages": {
