@@ -527,18 +527,27 @@ const gameCards = [
 ];
 
 const builtinRaces = [];
-function loadCustomRaces() {
+const DEFAULT_RACES = ["Pirate", "Mech", "Hollow-Null"];
+
+async function loadCustomRaces() {
   try {
+    const data = await ghFetch();
+    if (data.customRaces) return data.customRaces;
+    // 首次没有则写入默认种族
+    await saveCustomRaces(DEFAULT_RACES);
+    return DEFAULT_RACES;
+  } catch {
     const saved = localStorage.getItem("tbh-custom-races");
-    if (saved === null) {
-      const defaults = ["Pirate", "Mech", "Hollow-Null"];
-      localStorage.setItem("tbh-custom-races", JSON.stringify(defaults));
-      return defaults;
-    }
-    return JSON.parse(saved);
-  } catch { return []; }
+    return saved ? JSON.parse(saved) : DEFAULT_RACES;
+  }
 }
-function saveCustomRaces(arr) { localStorage.setItem("tbh-custom-races", JSON.stringify(arr)); }
+
+async function saveCustomRaces(arr) {
+  localStorage.setItem("tbh-custom-races", JSON.stringify(arr));
+  const data = await ghFetch();
+  data.customRaces = arr;
+  await ghSave(data);
+}
 
 const cardFilters = { faction:"all", type:"all", rarity:"all" };
 let cardSearchQuery   = "";
@@ -593,7 +602,7 @@ async function ghFetch() {
     const json = await res.json();
     _ghSha = json.sha;
     const data = JSON.parse(decodeURIComponent(atob(json.content.replace(/\n/g, "")).split("").map(c => "%" + c.charCodeAt(0).toString(16).padStart(2, "0")).join("")));
-    _cardCache = { customCards: data.customCards || [], overrides: data.overrides || {}, cardImages: data.cardImages || {} };
+    _cardCache = { customCards: data.customCards || [], overrides: data.overrides || {}, cardImages: data.cardImages || {}, customRaces: data.customRaces || null };
     setSyncStatus("✓ 数据已同步", "success");
     return _cardCache;
   } catch (e) {
@@ -1083,13 +1092,13 @@ async function renderCustomCardsList() {
 let editorCardId = null;
 let arrowsSet    = new Set();
 
-function getAllRaces() { return [...builtinRaces, ...loadCustomRaces()]; }
+async function getAllRaces() { return [...builtinRaces, ...(await loadCustomRaces())]; }
 
-function populateEditorSelects() {
+async function populateEditorSelects() {
   document.querySelector("#formFaction").innerHTML = Object.entries(cardFactionMeta).map(([k,v]) =>
     `<option value="${k}">${v.zh} · ${v.en}</option>`).join("");
   document.querySelector("#formRace").innerHTML = `<option value="">无 / None</option>` +
-    getAllRaces().map((r) => `<option value="${r}">${r}</option>`).join("");
+    (await getAllRaces()).map((r) => `<option value="${r}">${r}</option>`).join("");
 }
 
 function setFormValues(card) {
@@ -1267,6 +1276,7 @@ const PRESET_KEYWORDS = [
   { name:"限定",   icon:"◉", color:"#ffc766", bg:"rgba(255,199,102,0.10)", border:"rgba(255,199,102,0.35)", shape:"star",    desc:"随从每次存活期间只能使用一次的效果。" },
   { name:"⭐星能",  icon:"", color:"#ffd700", bg:"rgba(255,215,0,0.15)",    border:"rgba(255,215,0,0.55)",   shape:"rect",    desc:"每回合开始阶段获得星能的数量。" },
   { name:"可建造", icon:"🔨", color:"#a8d8ff", bg:"rgba(168,216,255,0.13)", border:"rgba(168,216,255,0.45)", shape:"rect",    desc:"该单位可在箭头不足时预先放置，视作仅有生命值的白板单位。每回合结束积攒 X 点建造点数，满足需求后立即转化为对应单位。" },
+  { name:"飞跃",   icon:"🦅", color:"#c4aaff", bg:"rgba(196,170,255,0.13)", border:"rgba(196,170,255,0.45)", shape:"rect",    desc:"该单位移动时无视路径上的卡牌阻挡，始终采取最短直线距离到达目标位置。" },
 ];
 
 // 形状 clip-path（全部统一为 rect，不使用 clip-path）
@@ -1502,8 +1512,9 @@ function renderRaceManager() {
   const row = document.querySelector("#raceTagsRow");
   const input = document.querySelector("#raceInput");
   const addBtn = document.querySelector("#raceAddBtn");
-  let custom = loadCustomRaces();
-  function renderTags() {
+  
+  async function renderTags() {
+    const custom = await loadCustomRaces();
     const all = [...builtinRaces.map((r) => ({ name:r, builtin:true })), ...custom.map((r) => ({ name:r, builtin:false }))];
     row.innerHTML = all.map((r) => `
       <span class="race-tag ${r.builtin?"builtin":""}">
@@ -1511,33 +1522,39 @@ function renderRaceManager() {
         ${!r.builtin ? `<button class="race-tag-delete" data-race="${r.name}" title="删除" type="button">✕</button>` : ""}
       </span>`).join("") || `<span style="color:var(--muted);font-size:12px">暂无种族标签</span>`;
   }
+
   row.addEventListener("click", async (e) => {
     const btn = e.target.closest("[data-race]");
     if (!btn) return;
     const raceName = btn.dataset.race;
     if (!confirm(`确认删除种族「${raceName}」？已绑定该种族的卡牌种族将变为空。`)) return;
-    // 清空自定义卡牌中绑定该种族的
     const customs = await getCustomCards();
     const updated = customs.map(c => c.race === raceName ? { ...c, race: null } : c);
     if (JSON.stringify(updated) !== JSON.stringify(customs)) await saveCustomCards(updated);
-    // 清空 overrides 中绑定该种族的
     const overrides = await getCardOverrides();
     let changed = false;
     for (const key in overrides) {
       if (overrides[key].race === raceName) { overrides[key] = { ...overrides[key], race: null }; changed = true; }
     }
     if (changed) await saveCardOverrides(overrides);
-    custom = custom.filter((r) => r !== raceName);
-    saveCustomRaces(custom); renderTags();
+    const current = await loadCustomRaces();
+    await saveCustomRaces(current.filter((r) => r !== raceName));
+    renderTags();
     renderCardGrid();
   });
-  function addRace() {
+
+  async function addRace() {
     const val = input.value.trim();
-    if (!val || builtinRaces.includes(val) || custom.includes(val)) { input.value=""; return; }
-    custom.push(val); saveCustomRaces(custom); input.value=""; renderTags();
+    if (!val) { input.value = ""; return; }
+    const current = await loadCustomRaces();
+    if (builtinRaces.includes(val) || current.includes(val)) { input.value = ""; return; }
+    await saveCustomRaces([...current, val]);
+    input.value = "";
+    renderTags();
   }
+
   addBtn.addEventListener("click", addRace);
-  input.addEventListener("keydown", (e) => { if (e.key==="Enter") addRace(); });
+  input.addEventListener("keydown", (e) => { if (e.key === "Enter") addRace(); });
   renderTags();
 }
 
