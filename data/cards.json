@@ -74,7 +74,7 @@
     },
     {
       "zh": "军团登陆艇",
-      "en": "",
+      "en": null,
       "type": "Minion",
       "rarity": "Epic",
       "faction": "skyraider",
@@ -84,7 +84,7 @@
       "atk": 0,
       "hp": 4,
       "spd": 3,
-      "arrows": "NW|NE",
+      "arrows": "NW|NE,N,NE",
       "effect": "You can put your pirates on the grids it points to even if it's not friendly area.",
       "desc": "即使它指向的格子不是友方区域，你也可以将海盗放置在那里。",
       "uid": 40,
