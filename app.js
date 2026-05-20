@@ -1290,7 +1290,9 @@ function initPresetKeywords() {
 }
 
 function getKwStyle(name) {
+  // 精确匹配优先，再尝试包含匹配（处理 emoji 前缀等变体）
   return PRESET_KEYWORDS.find(p => p.name === name)
+    || PRESET_KEYWORDS.find(p => name.includes(p.name) || p.name.includes(name))
     || { icon:"⬡", color:"#72e5ff", bg:"rgba(114,229,255,0.1)", border:"rgba(114,229,255,0.3)", shape:"rect" };
 }
 
