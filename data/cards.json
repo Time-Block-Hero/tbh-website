@@ -377,6 +377,24 @@
       "desc": null,
       "uid": 56,
       "_id": "c_1779253783625"
+    },
+    {
+      "zh": "发电站",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Common",
+      "faction": "astra",
+      "collect": "Collectable",
+      "cost": 2,
+      "race": null,
+      "atk": null,
+      "hp": 0,
+      "spd": null,
+      "arrows": null,
+      "effect": "为相邻单位提供1电能。",
+      "desc": null,
+      "uid": 57,
+      "_id": "c_1779254443840"
     }
   ],
   "overrides": {
