@@ -1277,6 +1277,8 @@ const PRESET_KEYWORDS = [
   { name:"⭐星能",  icon:"", color:"#ffd700", bg:"rgba(255,215,0,0.15)",    border:"rgba(255,215,0,0.55)",   shape:"rect",    desc:"每回合开始阶段获得星能的数量。" },
   { name:"可建造", icon:"🔨", color:"#a8d8ff", bg:"rgba(168,216,255,0.13)", border:"rgba(168,216,255,0.45)", shape:"rect",    desc:"该单位可在箭头不足时预先放置，视作仅有生命值的白板单位。每回合结束积攒 X 点建造点数，满足需求后立即转化为对应单位。" },
   { name:"飞跃",   icon:"🦅", color:"#c4aaff", bg:"rgba(196,170,255,0.13)", border:"rgba(196,170,255,0.45)", shape:"rect",    desc:"该单位移动时无视路径上的卡牌阻挡，始终采取最短直线距离到达目标位置。" },
+  { name:"指令",   icon:"📡", color:"#66a6ff", bg:"rgba(102,166,255,0.13)", border:"rgba(102,166,255,0.45)", shape:"rect",    desc:"械心天庭专属。带有此词条的魔法卡无法自行触发对应效果，仅能通过其他卡牌的效果来结算指令。" },
+  { name:"超新星", icon:"🌟", color:"#ff8a3d", bg:"rgba(255,138,61,0.13)",  border:"rgba(255,138,61,0.50)",  shape:"rect",    desc:"烈阳教会专属。随从可燃烧 X 点充能点进行一回合变身，变身后拥有额外卡面与效果。" },
 ];
 
 // 形状 clip-path（全部统一为 rect，不使用 clip-path）
