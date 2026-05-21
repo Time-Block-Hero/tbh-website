@@ -467,24 +467,6 @@
       "desc": null,
       "uid": 62,
       "_id": "c_1779294970807"
-    },
-    {
-      "zh": "1111",
-      "en": null,
-      "type": "Spell",
-      "rarity": "Common",
-      "faction": "neutral",
-      "collect": "Collectable",
-      "cost": null,
-      "race": null,
-      "atk": null,
-      "hp": null,
-      "spd": null,
-      "arrows": null,
-      "effect": null,
-      "desc": null,
-      "uid": 36,
-      "_id": "c_1779322386982"
     }
   ],
   "overrides": {
