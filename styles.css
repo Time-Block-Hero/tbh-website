@@ -2527,7 +2527,7 @@ details[open] .race-summary::before { content: "▼ "; }
 /* LoR 风格卡牌 */
 .lor-card {
   position: relative;
-  width: 172px;
+  width: 100%;
   aspect-ratio: 3/4;
   border-radius: 10px;
   overflow: hidden;
@@ -2881,7 +2881,7 @@ details[open] .race-summary::before { content: "▼ "; }
 /* 网格 */
 .card-center-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 172px);
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 14px;
   justify-content: start;
 }
@@ -2889,7 +2889,7 @@ details[open] .race-summary::before { content: "▼ "; }
 /* 法术牌 */
 .spell-card {
   position: relative;
-  width: 172px;
+  width: 100%;
   aspect-ratio: 3/4;
   border-radius: 10px;
   overflow: hidden;
