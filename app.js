@@ -1026,7 +1026,7 @@ async function renderCardGrid() {
           </div>
           <div class="card-edit-zone" data-edit-id="${c._id}">✏ 编辑</div>
           <div class="lor-shade"></div>
-          <div class="spell-cost ${isHero?'lor-cost-hero':''}" style="color:${meta.accent}"><span>${costStr}</span></div>
+          <div class="lor-cost ${isHero?'lor-cost-hero':''}" style="border-color:${meta.accent};color:${meta.accent}">${costStr}</div>
           ${arrowDisplay ? `<div class="lor-arrows">${arrowDisplay}</div>` : ""}
           <div class="lor-content">
             <div class="lor-name-bar"><span class="lor-name">${c.zh}</span></div>
@@ -1035,7 +1035,7 @@ async function renderCardGrid() {
               <span class="lor-tags-right">法术</span>
             </div>
             ${c.effect ? `<div class="lor-effect-bar"><p class="lor-effect">${renderCardEffect(c.effect)}</p></div>` : ''}
-          </div>` :
+          </div>` : `
 
           <div class="lor-bg" data-upload-id="${c._id}">
             ${cardImg ? `<img src="${cardImg}" alt="${c.zh}" />` : ""}
