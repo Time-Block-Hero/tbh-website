@@ -467,6 +467,24 @@
       "desc": null,
       "uid": 62,
       "_id": "c_1779294970807"
+    },
+    {
+      "zh": "信息挖掘",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 1,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "W",
+      "effect": "[指令] 获得3[⭐星能]",
+      "desc": null,
+      "uid": 36,
+      "_id": "c_1779508005747"
     }
   ],
   "overrides": {
