@@ -683,6 +683,24 @@
       "desc": null,
       "uid": 73,
       "_id": "c_1779510301368"
+    },
+    {
+      "zh": "合体机器人",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 6,
+      "race": null,
+      "atk": 3,
+      "hp": 6,
+      "spd": 3,
+      "arrows": "W",
+      "effect": "该单位视作3个小机器人。",
+      "desc": null,
+      "uid": 74,
+      "_id": "c_1779510400417"
     }
   ],
   "overrides": {
