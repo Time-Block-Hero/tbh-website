@@ -921,6 +921,22 @@
       "arrows": "N",
       "effect": "Once per turn OnCast: Deal 2 damage to an enemy in a straight line.",
       "desc": "A flying bullet."
+    },
+    "b3": {
+      "zh": "星际老兵",
+      "en": "Space Senior",
+      "type": "Minion",
+      "rarity": "Common",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": 4,
+      "hp": 4,
+      "spd": 4,
+      "arrows": null,
+      "effect": "[可升级] 星际上将",
+      "desc": "An elder space officer."
     }
   },
   "cardImages": {
