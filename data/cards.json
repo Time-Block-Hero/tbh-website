@@ -629,6 +629,24 @@
       "desc": null,
       "uid": 70,
       "_id": "c_1779509607935"
+    },
+    {
+      "zh": "小机器人-统御型",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Epic",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": "Mech",
+      "atk": 1,
+      "hp": 2,
+      "spd": 1,
+      "arrows": "W",
+      "effect": "光环：该单位3x3区域内的己方小机器人获得 +1/+1/+1。",
+      "desc": null,
+      "uid": 71,
+      "_id": "c_1779509808218"
     }
   ],
   "overrides": {
