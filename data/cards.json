@@ -557,6 +557,24 @@
       "desc": null,
       "uid": 66,
       "_id": "c_1779508750103"
+    },
+    {
+      "zh": "轴心运转",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "NW",
+      "effect": "[入场] 抽1张牌。\n[指令] 下回合你额外抽2张牌。",
+      "desc": null,
+      "uid": 67,
+      "_id": "c_1779508816502"
     }
   ],
   "overrides": {
