@@ -611,6 +611,24 @@
       "desc": null,
       "uid": 69,
       "_id": "c_1779509396382"
+    },
+    {
+      "zh": "无休的派发员Tomias",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Legendary",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 6,
+      "race": "Mech",
+      "atk": 1,
+      "hp": 6,
+      "spd": 3,
+      "arrows": "SE",
+      "effect": "发动：消耗自身2生命值，从牌堆将一个[指令]魔法放置于其↘️侧格子。",
+      "desc": null,
+      "uid": 70,
+      "_id": "c_1779509607935"
     }
   ],
   "overrides": {
