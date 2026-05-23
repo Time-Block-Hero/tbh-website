@@ -665,6 +665,24 @@
       "desc": null,
       "uid": 72,
       "_id": "c_1779509979484"
+    },
+    {
+      "zh": "小机器人-坚壁型",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": 1,
+      "hp": 3,
+      "spd": 1,
+      "arrows": null,
+      "effect": "时停阶段结束时：你获得等同于你场上小机器人数量的能量护盾。",
+      "desc": null,
+      "uid": 73,
+      "_id": "c_1779510301368"
     }
   ],
   "overrides": {
