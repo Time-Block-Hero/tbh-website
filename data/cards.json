@@ -593,6 +593,24 @@
       "desc": null,
       "uid": 68,
       "_id": "c_1779509266516"
+    },
+    {
+      "zh": "牛马-X3",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 2,
+      "race": "Mech",
+      "atk": 1,
+      "hp": 3,
+      "spd": 2,
+      "arrows": "E",
+      "effect": "每回合一次，执行该卡牌➡️侧的[指令]。",
+      "desc": null,
+      "uid": 69,
+      "_id": "c_1779509396382"
     }
   ],
   "overrides": {
