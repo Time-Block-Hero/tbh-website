@@ -1163,6 +1163,22 @@
       "arrows": null,
       "effect": "[箭头需求] 2。此卡被购买时放入对方的弃牌堆。回合结束时，若此卡在你手牌中，你的英雄受到4点伤害。",
       "desc": null
+    },
+    "b26": {
+      "zh": "授勋仪式",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 5,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "NE",
+      "effect": "发动：令你场上一只非首次召唤的[可升级]随从升级，该效果可被发动两次。",
+      "desc": null
     }
   },
   "cardImages": {
