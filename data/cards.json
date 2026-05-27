@@ -1043,6 +1043,24 @@
       "desc": null,
       "uid": 94,
       "_id": "c_1779900093009"
+    },
+    {
+      "zh": "启明之火",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "solar",
+      "collect": "Collectable",
+      "cost": 1,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "N",
+      "effect": "发动：消耗任意点充能，对一个距离4以内的单位造成等量伤害，你购买下一张牌的[⭐星能]消耗减少等量数值。",
+      "desc": null,
+      "uid": 91,
+      "_id": "c_1779900857912"
     }
   ],
   "overrides": {
