@@ -1035,6 +1035,22 @@
       "arrows": "W",
       "effect": "[入场] 获得4[⭐星能]。[可升级] 宝藏星能石。",
       "desc": "A rare ore that provides the star energy."
+    },
+    "b15": {
+      "zh": "宝藏星能石",
+      "en": "Treasure Star Ore",
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 8,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "W",
+      "effect": "[入场] 获得7[⭐星能]。",
+      "desc": "A treasure ore that provides the star energy."
     }
   },
   "cardImages": {
