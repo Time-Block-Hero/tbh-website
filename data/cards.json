@@ -889,7 +889,7 @@
       "hp": null,
       "spd": null,
       "arrows": "E",
-      "effect": "[入场] 获得2充能。[可升级] 火箭动力 / 射击模式",
+      "effect": "[入场] 获得1充能。[可升级] 火箭动力 / 射击模式",
       "desc": "Gather the energy from the sun."
     },
     "b24": {
