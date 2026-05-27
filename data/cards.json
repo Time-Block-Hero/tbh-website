@@ -881,6 +881,24 @@
       "desc": null,
       "uid": 84,
       "_id": "c_1779865575691"
+    },
+    {
+      "zh": "飞升之剑-烬白",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Legendary",
+      "faction": "machine",
+      "collect": "Uncollectable",
+      "cost": 7,
+      "race": "Mech",
+      "atk": 8,
+      "hp": 8,
+      "spd": 5,
+      "arrows": null,
+      "effect": "[入场] 从双方星能池中将至多4点星能转化为对应数量的遗失的智慧，散落于各自场上。\n该单位移动至其距离4以内的可拾取牌仅消耗1点移动力。",
+      "desc": null,
+      "uid": 85,
+      "_id": "c_1779866040439"
     }
   ],
   "overrides": {
