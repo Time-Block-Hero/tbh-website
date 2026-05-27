@@ -1003,6 +1003,22 @@
       "arrows": null,
       "effect": "发动：每回合限两次，消耗1充能，对线性范围内的一名敌人造成1伤害。",
       "desc": "A ranged unit that consumes energy charge to fire at enemies."
+    },
+    "b13": {
+      "zh": "星能石",
+      "en": "Star Energy Ore",
+      "type": "Spell",
+      "rarity": "Common",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "W",
+      "effect": "[入场] 获得1[⭐星能]。[可升级] 稀有星能石。",
+      "desc": "An ore that provides the star energy."
     }
   },
   "cardImages": {
