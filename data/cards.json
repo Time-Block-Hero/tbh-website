@@ -1079,6 +1079,24 @@
       "desc": null,
       "uid": 95,
       "_id": "c_1779900931831"
+    },
+    {
+      "zh": "火焰雨",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "solar",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "S",
+      "effect": "发动：对全场单位造成1点伤害。",
+      "desc": null,
+      "uid": 96,
+      "_id": "c_1779901059465"
     }
   ],
   "overrides": {
