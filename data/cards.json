@@ -809,6 +809,24 @@
       "desc": null,
       "uid": 80,
       "_id": "c_1779597972182"
+    },
+    {
+      "zh": "歼灭激光",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Legendary",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 9,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "N,E",
+      "effect": "[指令] [动作] 对距离最近的非友方单位造成8点伤害。",
+      "desc": null,
+      "uid": 81,
+      "_id": "c_1779865126325"
     }
   ],
   "overrides": {
