@@ -899,6 +899,24 @@
       "desc": null,
       "uid": 85,
       "_id": "c_1779866040439"
+    },
+    {
+      "zh": "烈阳秘典",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Legendary",
+      "faction": "solar",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "E",
+      "effect": "保留。\n该卡牌被强化累计5次后，升级为烈阳圣经。",
+      "desc": null,
+      "uid": 86,
+      "_id": "c_1779866272139"
     }
   ],
   "overrides": {
