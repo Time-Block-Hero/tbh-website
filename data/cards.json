@@ -989,6 +989,24 @@
       "desc": null,
       "uid": 90,
       "_id": "c_1779867129808"
+    },
+    {
+      "zh": "环日研讨会",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "solar",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "NE,SE",
+      "effect": "[入场] 消耗3充能，以获得等同于你手牌数量的星能。",
+      "desc": null,
+      "uid": 91,
+      "_id": "c_1779867370991"
     }
   ],
   "overrides": {
