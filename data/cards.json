@@ -1015,7 +1015,7 @@
       "rarity": "Legendary",
       "faction": "solar",
       "collect": "Uncollectable",
-      "cost": null,
+      "cost": 9,
       "race": null,
       "atk": 3,
       "hp": 9,
