@@ -1211,6 +1211,22 @@
       "arrows": null,
       "effect": "击杀奖励：2[⭐星能]。",
       "desc": null
+    },
+    "b29": {
+      "zh": "飞翔型空亡体",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "neutral",
+      "collect": "Uncollectable",
+      "cost": 4,
+      "race": "Hollow-Null",
+      "atk": 4,
+      "hp": 4,
+      "spd": 4,
+      "arrows": null,
+      "effect": "击杀奖励：4星能；2充能。",
+      "desc": null
     }
   },
   "cardImages": {
