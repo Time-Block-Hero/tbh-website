@@ -1195,6 +1195,22 @@
       "arrows": "SE",
       "effect": "[入场] 升级手牌中任意数量的[可升级]卡牌，每张升级需要消耗2充能。",
       "desc": null
+    },
+    "b28": {
+      "zh": "迷离的空亡体",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Common",
+      "faction": "neutral",
+      "collect": "Uncollectable",
+      "cost": 0,
+      "race": "Hollow-Null",
+      "atk": 2,
+      "hp": 2,
+      "spd": 2,
+      "arrows": null,
+      "effect": "击杀奖励：2[⭐星能]。",
+      "desc": null
     }
   },
   "cardImages": {
