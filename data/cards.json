@@ -1179,6 +1179,22 @@
       "arrows": "NE",
       "effect": "发动：令你场上一只非首次召唤的[可升级]随从升级，该效果可被发动两次。",
       "desc": null
+    },
+    "b27": {
+      "zh": "熔铸升级",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 4,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "SE",
+      "effect": "[入场] 升级手牌中任意数量的[可升级]卡牌，每张升级需要消耗2充能。",
+      "desc": null
     }
   },
   "cardImages": {
