@@ -1051,7 +1051,7 @@
       "rarity": "Common",
       "faction": "solar",
       "collect": "Uncollectable",
-      "cost": 0,
+      "cost": 1,
       "race": null,
       "atk": 3,
       "hp": 3,
