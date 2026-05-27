@@ -1099,6 +1099,22 @@
       "arrows": "SE,SW",
       "effect": "[入场] 获得6能量护盾。",
       "desc": null
+    },
+    "b20": {
+      "zh": "行星防护罩",
+      "en": "Planet Shield",
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 8,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "SW,S,SE",
+      "effect": "[入场] 获得10能量护盾。",
+      "desc": null
     }
   },
   "cardImages": {
