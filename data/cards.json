@@ -955,6 +955,22 @@
       "arrows": null,
       "effect": "[可升级] 星际上将",
       "desc": "An elder space officer."
+    },
+    "b5": {
+      "zh": "星际司令麦哲伦",
+      "en": null,
+      "type": "Minion",
+      "rarity": "Legendary",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 10,
+      "race": null,
+      "atk": 6,
+      "hp": 10,
+      "spd": 6,
+      "arrows": "N",
+      "effect": "发动：每回合限一次，从弃牌堆召唤两个星际佣兵，放置于其↖️↗️方向。",
+      "desc": null
     }
   },
   "cardImages": {
