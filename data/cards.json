@@ -827,6 +827,24 @@
       "desc": null,
       "uid": 81,
       "_id": "c_1779865126325"
+    },
+    {
+      "zh": "双重触发",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Epic",
+      "faction": "machine",
+      "collect": "Collectable",
+      "cost": 5,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "N",
+      "effect": "发动：触发该卡⬆️方的[指令]两次。",
+      "desc": null,
+      "uid": 82,
+      "_id": "c_1779865260157"
     }
   ],
   "overrides": {
