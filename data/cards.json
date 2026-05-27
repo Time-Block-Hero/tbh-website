@@ -1147,6 +1147,22 @@
       "arrows": "W",
       "effect": "[入场] 移除一张手牌以抽一张牌。",
       "desc": null
+    },
+    "b23": {
+      "zh": "飞船失火！",
+      "en": "On Fire!!",
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "neutral",
+      "collect": "Collectable",
+      "cost": 5,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": null,
+      "effect": "[箭头需求] 2。此卡被购买时放入对方的弃牌堆。回合结束时，若此卡在你手牌中，你的英雄受到4点伤害。",
+      "desc": null
     }
   },
   "cardImages": {
