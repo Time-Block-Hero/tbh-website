@@ -937,7 +937,7 @@
       "hp": null,
       "spd": null,
       "arrows": "N",
-      "effect": "发动：对一个线性范围内的敌人造成2点伤害。",
+      "effect": "发动：对一个线性范围内的敌人造成2点伤害，消耗1充能改为3点伤害。",
       "desc": "A flying bullet."
     },
     "b3": {
