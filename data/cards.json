@@ -935,6 +935,24 @@
       "desc": null,
       "uid": 87,
       "_id": "c_1779866420005"
+    },
+    {
+      "zh": "日曜洗礼",
+      "en": null,
+      "type": "Spell",
+      "rarity": "Rare",
+      "faction": "solar",
+      "collect": "Collectable",
+      "cost": 2,
+      "race": null,
+      "atk": null,
+      "hp": null,
+      "spd": null,
+      "arrows": "SE",
+      "effect": "发动：对一个友方教会随从造成3点伤害，令其获得[保留]。",
+      "desc": null,
+      "uid": 88,
+      "_id": "c_1779866712301"
     }
   ],
   "overrides": {
