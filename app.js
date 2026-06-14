@@ -569,6 +569,8 @@ const GITHUB_CONFIG = {
 let _ghSha     = null;
 let _cardCache = null;
 let _isSyncing = false;
+let _csvExportUrl = null;
+let _csvExportPreparing = false;
 
 function setSyncStatus(msg, type = "info") {
   let el = document.querySelector("#syncStatus");
@@ -587,6 +589,7 @@ function setSyncStatus(msg, type = "info") {
   el.style.cssText += colors[type] || colors.info;
   el.textContent = msg;
   el.style.opacity = "1";
+  el.style.pointerEvents = "none";
   if (type === "success") setTimeout(() => { el.style.opacity = "0"; }, 2500);
 }
 
@@ -1220,6 +1223,7 @@ async function saveCard() {
   }
   closeCardEditor();
   await Promise.all([renderCustomCardsList(), renderCardGrid()]);
+  prepareCardsCsvDownload();
 }
 
 async function deleteCard(cardId) {
@@ -1234,6 +1238,7 @@ async function deleteCard(cardId) {
   }
   closeCardEditor();
   await Promise.all([renderCustomCardsList(), renderCardGrid()]);
+  prepareCardsCsvDownload();
 }
 
 function csvCell(value) {
@@ -1267,56 +1272,95 @@ function formatCsvCost(card) {
   return card.cost == null ? "" : card.cost;
 }
 
-async function exportCardsCsv() {
+function sortCardsForCsv(cards) {
+  return [...cards].sort((a, b) => {
+    const au = a.uid == null ? Number.MAX_SAFE_INTEGER : Number(a.uid);
+    const bu = b.uid == null ? Number.MAX_SAFE_INTEGER : Number(b.uid);
+    return au - bu || String(a._id || "").localeCompare(String(b._id || ""));
+  });
+}
+
+function buildCardsCsv(cards) {
+  const rows = [
+    ["UID", "中文名", "英文名", "类型", "稀有度", "势力", "可收集性", "种族", "", "攻击", "生命", "移速", "", "费用", "", "箭头方向", "效果说明", "卡牌描述"],
+    ...cards.map((card) => {
+      const faction = cardFactionMeta[card.faction];
+      return [
+        card.uid,
+        card.zh,
+        card.en,
+        card.type,
+        card.rarity,
+        faction ? faction.zh : card.faction,
+        card.collect,
+        card.race,
+        "",
+        card.atk,
+        card.hp,
+        card.spd,
+        "",
+        formatCsvCost(card),
+        "",
+        formatCsvArrows(card.arrows),
+        card.effect,
+        card.desc,
+      ];
+    }),
+  ];
+  return "\ufeff" + rows.map((row) => row.map(csvCell).join(",")).join("\r\n");
+}
+
+function setCsvExportPending() {
+  const link = document.querySelector("#cardExportCsvBtn");
+  if (!link) return;
+  link.href = "#";
+  link.removeAttribute("download");
+  link.setAttribute("aria-disabled", "true");
+  link.textContent = "准备 CSV…";
+}
+
+function setCsvExportReady(url, filename, count) {
+  const link = document.querySelector("#cardExportCsvBtn");
+  if (!link) return;
+  link.href = url;
+  link.download = filename;
+  link.removeAttribute("aria-disabled");
+  link.dataset.cardCount = String(count);
+  link.textContent = "导出 CSV";
+}
+
+async function prepareCardsCsvDownload(showStatus = false) {
+  if (_csvExportPreparing) return;
+  _csvExportPreparing = true;
+  setCsvExportPending();
   try {
-    setSyncStatus("⟳ 正在生成 CSV…", "info");
-    const cards = await getMergedCards();
-    const sortedCards = [...cards].sort((a, b) => {
-      const au = a.uid == null ? Number.MAX_SAFE_INTEGER : Number(a.uid);
-      const bu = b.uid == null ? Number.MAX_SAFE_INTEGER : Number(b.uid);
-      return au - bu || String(a._id || "").localeCompare(String(b._id || ""));
-    });
-    const rows = [
-      ["UID", "中文名", "英文名", "类型", "稀有度", "势力", "可收集性", "种族", "", "攻击", "生命", "移速", "", "费用", "", "箭头方向", "效果说明", "卡牌描述"],
-      ...sortedCards.map((card) => {
-        const faction = cardFactionMeta[card.faction];
-        return [
-          card.uid,
-          card.zh,
-          card.en,
-          card.type,
-          card.rarity,
-          faction ? faction.zh : card.faction,
-          card.collect,
-          card.race,
-          "",
-          card.atk,
-          card.hp,
-          card.spd,
-          "",
-          formatCsvCost(card),
-          "",
-          formatCsvArrows(card.arrows),
-          card.effect,
-          card.desc,
-        ];
-      }),
-    ];
-    const csv = "\ufeff" + rows.map((row) => row.map(csvCell).join(",")).join("\r\n");
+    if (showStatus) setSyncStatus("⟳ 正在准备 CSV…", "info");
+    const sortedCards = sortCardsForCsv(await getMergedCards());
+    const csv = buildCardsCsv(sortedCards);
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = `tbh-cards-${new Date().toISOString().slice(0, 10)}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 0);
-    setSyncStatus(`✓ 已导出 ${sortedCards.length} 张卡牌`, "success");
+    const filename = `tbh-cards-${new Date().toISOString().slice(0, 10)}.csv`;
+    if (_csvExportUrl) URL.revokeObjectURL(_csvExportUrl);
+    _csvExportUrl = url;
+    setCsvExportReady(url, filename, sortedCards.length);
+    if (showStatus) setSyncStatus(`✓ CSV 已准备好，共 ${sortedCards.length} 张卡牌`, "success");
   } catch (e) {
+    setCsvExportPending();
     setSyncStatus(`✗ CSV 导出失败 (${e.message})`, "error");
-    alert(`CSV 导出失败：${e.message}`);
+  } finally {
+    _csvExportPreparing = false;
   }
+}
+
+function handleCardsCsvDownload(e) {
+  const link = e.currentTarget;
+  if (link.getAttribute("aria-disabled") === "true" || !_csvExportUrl) {
+    e.preventDefault();
+    setSyncStatus("⟳ CSV 还在准备，请稍等一下再点", "info");
+    prepareCardsCsvDownload(true);
+    return;
+  }
+  setSyncStatus(`✓ 正在下载 ${link.dataset.cardCount || ""} 张卡牌 CSV`, "success");
 }
 
 function renderCardFilters() {
@@ -1666,7 +1710,8 @@ function initCardCenter() {
     renderCardGrid();
   });
   document.querySelector("#cardCreateBtn").addEventListener("click", () => openCardEditor(null));
-  document.querySelector("#cardExportCsvBtn").addEventListener("click", exportCardsCsv);
+  document.querySelector("#cardExportCsvBtn").addEventListener("click", handleCardsCsvDownload);
+  prepareCardsCsvDownload();
   document.querySelector("#customCardsList").addEventListener("click", (e) => {
     const editBtn = e.target.closest("[data-edit-id]");
     const delBtn  = e.target.closest("[data-del-id]");

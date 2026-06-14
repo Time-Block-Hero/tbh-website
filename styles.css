@@ -1985,6 +1985,9 @@ h3 {
 
 .card-create-btn,
 .card-export-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   padding: 0 20px;
   border-radius: var(--radius);
@@ -1993,6 +1996,7 @@ h3 {
   font-weight: 800;
   cursor: pointer;
   white-space: nowrap;
+  text-decoration: none;
   transition: opacity 160ms;
 }
 
@@ -2008,8 +2012,13 @@ h3 {
   color: var(--cyan);
 }
 
+.card-export-btn[aria-disabled="true"] {
+  cursor: wait;
+  opacity: 0.55;
+}
+
 .card-create-btn:hover,
-.card-export-btn:hover { opacity: 0.88; }
+.card-export-btn:not([aria-disabled="true"]):hover { opacity: 0.88; }
 
 /* Custom cards compact list */
 .custom-cards-list {
