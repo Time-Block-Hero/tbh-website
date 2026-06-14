@@ -1236,6 +1236,89 @@ async function deleteCard(cardId) {
   await Promise.all([renderCustomCardsList(), renderCardGrid()]);
 }
 
+function csvCell(value) {
+  if (value == null) return "";
+  const str = String(value).replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+  return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
+}
+
+function formatCsvArrows(arrows) {
+  if (!arrows) return "";
+  const arrowNames = {
+    N: "north",
+    S: "south",
+    W: "west",
+    E: "east",
+    NW: "northwest",
+    NE: "northeast",
+    SW: "southwest",
+    SE: "southeast",
+  };
+  return String(arrows)
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((dir) => arrowNames[dir] || dir)
+    .join(",");
+}
+
+function formatCsvCost(card) {
+  if (card.cost === "hero" || card.collect === "InitHero") return "H";
+  return card.cost == null ? "" : card.cost;
+}
+
+async function exportCardsCsv() {
+  try {
+    setSyncStatus("⟳ 正在生成 CSV…", "info");
+    const cards = await getMergedCards();
+    const sortedCards = [...cards].sort((a, b) => {
+      const au = a.uid == null ? Number.MAX_SAFE_INTEGER : Number(a.uid);
+      const bu = b.uid == null ? Number.MAX_SAFE_INTEGER : Number(b.uid);
+      return au - bu || String(a._id || "").localeCompare(String(b._id || ""));
+    });
+    const rows = [
+      ["UID", "中文名", "英文名", "类型", "稀有度", "势力", "可收集性", "种族", "", "攻击", "生命", "移速", "", "费用", "", "箭头方向", "效果说明", "卡牌描述"],
+      ...sortedCards.map((card) => {
+        const faction = cardFactionMeta[card.faction];
+        return [
+          card.uid,
+          card.zh,
+          card.en,
+          card.type,
+          card.rarity,
+          faction ? faction.zh : card.faction,
+          card.collect,
+          card.race,
+          "",
+          card.atk,
+          card.hp,
+          card.spd,
+          "",
+          formatCsvCost(card),
+          "",
+          formatCsvArrows(card.arrows),
+          card.effect,
+          card.desc,
+        ];
+      }),
+    ];
+    const csv = "\ufeff" + rows.map((row) => row.map(csvCell).join(",")).join("\r\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `tbh-cards-${new Date().toISOString().slice(0, 10)}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+    setSyncStatus(`✓ 已导出 ${sortedCards.length} 张卡牌`, "success");
+  } catch (e) {
+    setSyncStatus(`✗ CSV 导出失败 (${e.message})`, "error");
+    alert(`CSV 导出失败：${e.message}`);
+  }
+}
+
 function renderCardFilters() {
   const panel = document.querySelector("#cardFilterPanel");
   const factionRows = [{ key:"all", zh:"全部势力", en:"All" }, ...Object.entries(cardFactionMeta).map(([k,v]) => ({ key:k, zh:v.zh, en:v.en }))];
@@ -1583,6 +1666,7 @@ function initCardCenter() {
     renderCardGrid();
   });
   document.querySelector("#cardCreateBtn").addEventListener("click", () => openCardEditor(null));
+  document.querySelector("#cardExportCsvBtn").addEventListener("click", exportCardsCsv);
   document.querySelector("#customCardsList").addEventListener("click", (e) => {
     const editBtn = e.target.closest("[data-edit-id]");
     const delBtn  = e.target.closest("[data-del-id]");

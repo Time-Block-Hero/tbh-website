@@ -1976,13 +1976,18 @@ h3 {
   display: block;
 }
 
-.card-create-btn {
+.card-mgmt-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card-create-btn,
+.card-export-btn {
   height: 40px;
   padding: 0 20px;
-  border: none;
   border-radius: var(--radius);
-  background: linear-gradient(90deg, var(--cyan), var(--gold));
-  color: #071018;
   font: inherit;
   font-size: 13px;
   font-weight: 800;
@@ -1991,7 +1996,20 @@ h3 {
   transition: opacity 160ms;
 }
 
-.card-create-btn:hover { opacity: 0.88; }
+.card-create-btn {
+  border: none;
+  background: linear-gradient(90deg, var(--cyan), var(--gold));
+  color: #071018;
+}
+
+.card-export-btn {
+  border: 1px solid rgba(114,229,255,0.35);
+  background: rgba(114,229,255,0.08);
+  color: var(--cyan);
+}
+
+.card-create-btn:hover,
+.card-export-btn:hover { opacity: 0.88; }
 
 /* Custom cards compact list */
 .custom-cards-list {
@@ -3584,4 +3602,3 @@ details[open] .race-summary::before { content: "▼ "; }
   background: rgba(114,229,255,0.18);
   border-color: rgba(114,229,255,0.5);
 }
-
