@@ -1176,7 +1176,7 @@
       "faction": "neutral",
       "collect": "Collectable",
       "cost": 0,
-      "race": null,
+      "race": "人类",
       "atk": 2,
       "hp": 2,
       "spd": 2,
