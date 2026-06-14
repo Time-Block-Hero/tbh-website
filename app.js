@@ -557,10 +557,10 @@ let cardCenterRendered = false;
 
 /* ═══════════════════════════════════════════════════════════
    GITHUB SYNC
-   仓库：JesusmiCaH/Time-Block-Hero  文件：data/cards.json
+   仓库：Time-Block-Hero/tbh-website  文件：data/cards.json
 ═══════════════════════════════════════════════════════════ */
 const GITHUB_CONFIG = {
-  owner: "Lavitee",
+  owner: "Time-Block-Hero",
   repo:  "tbh-website",
   path:  "data/cards.json",
   get token() { return ["ghp_pirAng","jwQSexJEy","N5H9aUEC7","mR7Ia02yADeB"].join(""); }

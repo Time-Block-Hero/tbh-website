@@ -1554,12 +1554,12 @@
     }
   },
   "cardImages": {
-    "b0": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-b0.jpg",
-    "b1": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-b1.jpg",
-    "b2": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-b2.jpg",
-    "b3": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-b3.jpg",
-    "c_1779597972182": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-c_1779597972182.jpg",
-    "c_1779510400417": "https://raw.githubusercontent.com/Lavitee/tbh-website/main/data/images/card-c_1779510400417.jpg"
+    "b0": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-b0.jpg",
+    "b1": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-b1.jpg",
+    "b2": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-b2.jpg",
+    "b3": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-b3.jpg",
+    "c_1779597972182": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-c_1779597972182.jpg",
+    "c_1779510400417": "https://raw.githubusercontent.com/Time-Block-Hero/tbh-website/main/data/images/card-c_1779510400417.jpg"
   },
   "customRaces": [
     "Pirate",
