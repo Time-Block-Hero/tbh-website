@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Time-Block Hero | 效果字典</title>
+    <meta
+      name="description"
+      content="Time-Block Hero 卡牌效果字典，展示 Trigger、Scope、Effects 与 Aura 的设计语法。"
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260614-effect-dict" />
+  </head>
+  <body class="effect-page">
+    <header class="site-header">
+      <a class="brand" href="./index.html" aria-label="Time-Block Hero 首页">
+        <span class="brand-mark">TBH</span>
+        <span>
+          <strong>TIME-BLOCK HERO</strong>
+          <small>Effect Dictionary</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="效果字典导航">
+        <div class="nav-links nav-archive-links">
+          <a href="./index.html">世界档案</a>
+          <a href="./index.html">开发中心</a>
+          <a href="#dictionary">词条浏览</a>
+          <a href="#implementation">实装备注</a>
+        </div>
+        <a href="./index-en.html" class="nav-lang">EN</a>
+      </nav>
+    </header>
+
+    <main class="effect-main">
+      <section class="effect-hero section">
+        <div class="effect-hero-copy">
+          <span class="section-kicker">EFFECT DICTIONARY · DESIGN SYNTAX</span>
+          <h1>效果字典</h1>
+          <p>
+            把卡牌效果拆成可读、可组合、可实装的设计语法：
+            <strong>Trigger</strong> 决定何时触发，
+            <strong>Scope</strong> 决定看见谁，
+            <strong>Effect</strong> 决定真正发生什么。
+          </p>
+          <div class="effect-hero-actions">
+            <a class="primary-link" href="#dictionary">浏览词条</a>
+            <a class="secondary-link" href="#implementation">查看实装备注</a>
+          </div>
+        </div>
+        <aside class="effect-hero-panel" aria-label="效果字典数据概览">
+          <span class="effect-panel-label">SOURCE</span>
+          <strong>Effect Dict.xlsx</strong>
+          <p>原始表格保留在 ReferenceDocs，这里展示的是网页结构化版本。</p>
+          <div class="effect-stat-grid" id="effectStats">
+            <span>Trigger <b>--</b></span>
+            <span>Scope <b>--</b></span>
+            <span>Effects <b>--</b></span>
+            <span>Aura <b>--</b></span>
+          </div>
+        </aside>
+      </section>
+
+      <section class="effect-pipeline section" aria-label="效果结构">
+        <div class="section-heading">
+          <span class="section-kicker">EFFECT PIPELINE</span>
+          <h2>一条效果的分层结构</h2>
+          <p>每个卡牌效果都可以被理解为从事件到目标，再到实际指令的结算链。</p>
+        </div>
+        <div class="effect-flow-overview">
+          <div class="effect-flow-node">
+            <span>Trigger</span>
+            <strong>什么时候触发</strong>
+            <small>OnPlace / OnCast / OnTurnStart</small>
+          </div>
+          <div class="effect-flow-arrow">→</div>
+          <div class="effect-flow-node">
+            <span>Scope</span>
+            <strong>哪些目标可见</strong>
+            <small>Global / Distance / HandCards</small>
+          </div>
+          <div class="effect-flow-arrow">→</div>
+          <div class="effect-flow-node">
+            <span>Selector</span>
+            <strong>如何选中目标</strong>
+            <small>ALL / RandomSelect / PlayerSelect</small>
+          </div>
+          <div class="effect-flow-arrow">→</div>
+          <div class="effect-flow-node">
+            <span>Effect</span>
+            <strong>执行游戏指令</strong>
+            <small>Damage / Buff / DrawCard</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="dictionary" class="effect-browser section">
+        <div class="section-heading">
+          <span class="section-kicker">DICT BROWSER</span>
+          <h2>词条浏览</h2>
+          <p>每个词条都保留中文解释、英文 code name、参数、目标、案例与实装提示。</p>
+        </div>
+
+        <div class="effect-browser-shell">
+          <aside class="effect-category-rail">
+            <div class="effect-category-tabs" id="effectCategoryTabs"></div>
+            <div class="effect-rail-note">
+              <span>DESIGN NOTE</span>
+              <p>当前版本适合做展示与规则对齐；进入程序前还需要统一命名、参数格式、事件 payload 与持续时间。</p>
+            </div>
+          </aside>
+
+          <section class="effect-entry-list-panel">
+            <div class="effect-search-row">
+              <label for="effectSearch">词条搜索</label>
+              <input id="effectSearch" type="search" placeholder="OnPlace / 入场 / Damage" autocomplete="off" />
+            </div>
+            <div class="effect-entry-list" id="effectEntryList"></div>
+          </section>
+
+          <article class="effect-detail-panel" id="effectDetail">
+            <div class="effect-empty-state">
+              <strong>正在加载效果字典…</strong>
+              <span>Trigger · Scope · Effects · Aura</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="implementation" class="effect-implementation section">
+        <div class="section-heading">
+          <span class="section-kicker">IMPLEMENTATION NOTES</span>
+          <h2>从设计表到游戏系统</h2>
+          <p>这套字典最适合转成事件总线 + 目标解析器 + 指令执行器的结构。</p>
+        </div>
+        <div class="effect-notes-grid">
+          <div class="effect-note-block">
+            <strong>合理的部分</strong>
+            <p>Trigger、Scope、Effect、Aura 分层清晰，适合拆成可组合的系统模块；Nested Effect 能承载复杂卡牌，不需要每张卡单独写代码。</p>
+          </div>
+          <div class="effect-note-block">
+            <strong>需要规范的部分</strong>
+            <p>需要统一 code name、参数括号、区域流转、Buff 持续时间、Aura 叠加规则，以及每类事件携带的 payload 字段。</p>
+          </div>
+          <div class="effect-note-block">
+            <strong>推荐实装方式</strong>
+            <p>Unity 中用 JSON 或 ScriptableObject 存效果定义，由 Event Bus 发布事件，Scope Resolver 找目标，Effect Executor 通过 Command Log 执行并记录结果。</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./effect-dictionary.js?v=20260614-effect-dict" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1286 @@
+{
+  "source": {
+    "file": "ReferenceDocs/Effect Dict.xlsx",
+    "note": "Structured for website display; original workbook remains the design source."
+  },
+  "categories": [
+    {
+      "id": "trigger",
+      "zh": "触发时机",
+      "en": "Trigger",
+      "summary": "定义效果什么时候进入结算队列，例如入场、发动、回合开始或监听其他卡牌行为。",
+      "sections": [
+        {
+          "title": "触发时机",
+          "entries": [
+            {
+              "id": "trigger-onplace",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "入场",
+              "code": "OnPlace",
+              "description": "当该卡牌被放置于场上时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "来源",
+              "examples": [
+                "复活：OnPlace{discard_deck}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-oncast",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "发动",
+              "code": "OnCast",
+              "description": "时动阶段，玩家点击卡牌的效果按钮时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "发动次数",
+              "examples": [
+                "一回合一次：发动{1}",
+                "一回合N次：发动{N}",
+                "不限次数：发动{-1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ondeplace",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "离场",
+              "code": "OnDePlace",
+              "description": "当该卡牌离开场上，且不是被移除时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "去向",
+              "examples": [
+                "亡语：离场{弃牌堆}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onattack",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "攻击时",
+              "code": "OnAttack",
+              "description": "随从特供-当场上的该随从发动攻击时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "目标的各种属性（种族、PlayerID、状态、稀有度、etc）",
+              "examples": [
+                "攻击时{机械种族}",
+                "攻击时{中立生物}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onattacked",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "受到攻击时",
+              "code": "OnAttacked",
+              "description": "随从特供-当场上的该随从受到攻击时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "攻击者各种属性（种族、PlayerID、状态、稀有度、etc）",
+              "examples": [
+                "受到攻击{机械种族}",
+                "受到攻击{敌方生物}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ondamage",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "造成伤害时",
+              "code": "OnDamage",
+              "description": "当场上的该牌通过效果或攻击对其他随从造成伤害时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "造成伤害的类型（攻击、效果）",
+              "examples": [
+                "攻击伤害：造成伤害{攻击}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ondamaged",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "受伤时🤕",
+              "code": "OnDamaged",
+              "description": "随从特供-当场上的该随从受到伤害时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "来源及其各种属性｜伤害类型",
+              "examples": [
+                "受伤时{机械随从, 攻击}",
+                "受伤时{费用高于5的法术}",
+                "受伤时{己方随从, 效果伤害}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onmove",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "移动时",
+              "code": "OnMove",
+              "description": "随从特供-当场上的该随从移动时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "最小触发距离",
+              "examples": [
+                "一次移动3步：移动时{3}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ontargeted",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "选作目标时",
+              "code": "OnTargeted",
+              "description": "场上的该卡牌被选作效果目标时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "来源及其各种属性",
+              "examples": [
+                "OnTargeted{enemy Spell}",
+                "OnTargeted{己方随从}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onbuffed",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "获得属性时",
+              "code": "OnBuffed",
+              "description": "随从特供-场上的该随从获得攻击/移动/生命值时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "属性种类｜maybe buff来源及各种属性",
+              "examples": [
+                "OnBuffed(ATK)"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onhealed",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "被治疗时",
+              "code": "OnHealed",
+              "description": "随从特供-场上的该随从在受伤状态被回血时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "最小触发治疗量｜maybe 治疗来源及各种属性",
+              "examples": [
+                "OnHealed{-1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ondrawn",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "被加入手牌时",
+              "code": "OnDrawn",
+              "description": "当该卡牌被从牌堆抽到时",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "来源",
+              "examples": [
+                "被抽到时：OnDrawn{Deck}",
+                "被回手时：OnDrawn{battlefield}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ondiscarded",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "被弃掉时",
+              "code": "OnDiscarded",
+              "description": "当该卡牌从手牌区进入弃牌堆时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "trigger-onremoved",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "被移除时",
+              "code": "OnRemoved",
+              "description": "当该卡牌被移除，送入己方虚空时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "移除来源",
+              "examples": [
+                "OnRemoved(battlefield)",
+                "OnRemoved(Hand)"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onpurchaed",
+              "category": "trigger",
+              "section": "触发时机",
+              "zh": "被购买时",
+              "code": "OnPurchaed",
+              "description": "当该卡牌被从商店购买时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            }
+          ]
+        },
+        {
+          "title": "回合流程触发",
+          "entries": [
+            {
+              "id": "trigger-onturnstart",
+              "category": "trigger",
+              "section": "回合流程触发",
+              "zh": "回合开始时",
+              "code": "OnTurnStart",
+              "description": "每个回合的回合开始结算（抽牌+刷新状态）后。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "trigger-ontsend",
+              "category": "trigger",
+              "section": "回合流程触发",
+              "zh": "时停阶段结束时",
+              "code": "OnTSEnd",
+              "description": "双方都完成时停阶段时。FIFO",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "trigger-ontmstart",
+              "category": "trigger",
+              "section": "回合流程触发",
+              "zh": "时动阶段开始时",
+              "code": "OnTMStart",
+              "description": "所选玩家的时动阶段开始时。FIFO",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "哪一位玩家的时动开始，也可选择全局层面的时动开始。\nGlobal_start --> Player1 TM --> Player2 TM --> Global_end",
+              "examples": [
+                "OnTMStart{my}",
+                "OnTMStart{global}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ontmend",
+              "category": "trigger",
+              "section": "回合流程触发",
+              "zh": "时动阶段结束时",
+              "code": "OnTMEnd",
+              "description": "所选玩家的时动阶段结束时。FIFO",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "哪一位玩家的时动结束，也可选择全局层面的时动结束。\nGlobal_start --> Player1 TM --> Player2 TM --> Global_end",
+              "examples": [
+                "OnTMEnd{my}",
+                "OnTMEnd{global}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onturnend",
+              "category": "trigger",
+              "section": "回合流程触发",
+              "zh": "回合结束时",
+              "code": "OnTurnEnd",
+              "description": "每个回合的回合结束结算（弃牌+清空护甲）前。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            }
+          ]
+        },
+        {
+          "title": "监听式触发",
+          "entries": [
+            {
+              "id": "trigger-onplayerdraw",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "玩家抽卡时",
+              "code": "OnPlayerDraw",
+              "description": "一方玩家抽卡时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "玩家id｜抽卡量（若为-1就是论次计算）",
+              "examples": [
+                "OnPlayerDraw{Me, 3}",
+                "敌方抽卡时：OnPlayerDraw{Enemy, -1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-ongetresource",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "玩家获得资源时",
+              "code": "OnGetResource",
+              "description": "一方玩家获得资源时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "玩家id｜资源种类 + 量",
+              "examples": [
+                "OnGetResource{Me, star(3)}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-onplayerdiscard",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "玩家弃牌时",
+              "code": "OnPlayerDiscard",
+              "description": "一方玩家弃牌时。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "玩家id｜弃牌量（若为-1就是论次计算）",
+              "examples": [
+                "每弃一张牌：OnPlayerDiscard{Me, 1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "trigger-其他卡牌入场",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌入场",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌发动",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌发动",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌离场",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌离场",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌攻击",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌攻击",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌受到攻击",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌受到攻击",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌造成伤害",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌造成伤害",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌受伤",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌受伤🤕",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌移动",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌移动",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌选作目标",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌选作目标",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌获得属性",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌获得属性",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌被治疗",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌被治疗",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌被加入手牌",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌被加入手牌",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌被弃掉",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌被弃掉",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌被移除",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌被移除",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            },
+            {
+              "id": "trigger-其他卡牌被购买",
+              "category": "trigger",
+              "section": "监听式触发",
+              "zh": "其他卡牌被购买",
+              "code": "",
+              "description": "在self版基础上额外加上监听目标filter。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "监听目标 filter",
+              "examples": [],
+              "status": "待命名"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scope",
+      "zh": "目标范围",
+      "en": "Scope & Selector",
+      "summary": "定义效果能看见哪些目标，以及如何从候选目标中全选、随机选、玩家选或排序选。",
+      "sections": [
+        {
+          "title": "PreScope 预选范围",
+          "entries": [
+            {
+              "id": "scope-global",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "全场目标",
+              "code": "Global",
+              "description": "全battlefield符合要求的目标",
+              "target": "",
+              "input": "",
+              "output": "[CardID] | [GridID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [
+                "狭义全场：Global{PlayerID:0,1,2} (0代表中立)",
+                "己方所有海盗：Global{PlayerID:1, Species: Pirate}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-rectangular",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "矩形内目标",
+              "code": "Rectangular",
+              "description": "某个矩形范围内所有符合要求的目标",
+              "target": "",
+              "input": "",
+              "output": "[CardID] | [GridID]",
+              "params": "On top of ALL: range bounding box (absolute or rel)",
+              "examples": [
+                "该单位3x3范围内：Rectangular{relative, centre:self, h:3, w:3}",
+                "己方全境：Rectangular{absolute, x_min: 1, x_max:7, y_min:1, y_max:7}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-distance",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "圆形内目标",
+              "code": "Distance",
+              "description": "与某个各自距离小于x以内的所有目标 (Manhattan Distance)",
+              "target": "",
+              "input": "",
+              "output": "[CardID] | [GridID]",
+              "params": "On top of ALL: centre, radius",
+              "examples": [
+                "该单位距离2以内的目标：Distance{self, 2}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-inline",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "线列内目标",
+              "code": "InLine",
+              "description": "同一个行列内所有符合要求的目标",
+              "target": "",
+              "input": "",
+              "output": "[CardID] | [GridID]",
+              "params": "On top of ALL: row/col/both, distance",
+              "examples": [
+                "狭义同行列：InLine{both, distance:-1}",
+                "前方单位：InLine{Col, distance:1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-player",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "玩家",
+              "code": "Player",
+              "description": "对玩家释放的效果，比如提供星能",
+              "target": "",
+              "input": "",
+              "output": "[PlayerID]",
+              "params": "PlayerIDs，选择策略",
+              "examples": [
+                "同时给双方上buff：Player{1,2}",
+                "全局buff, e.g.本局对战中亡灵攻击力+2：Player{0,1,2}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-handcards",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "手牌区",
+              "code": "HandCards",
+              "description": "玩家的手牌区域。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-pile",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "牌堆",
+              "code": "Pile",
+              "description": "玩家的当前牌堆。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-discardpile",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "弃牌堆",
+              "code": "DiscardPile",
+              "description": "玩家的当前弃牌堆。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-deckbuild",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "套牌",
+              "code": "DeckBuild",
+              "description": "玩家当前的套牌，理论上包含所有已经进入过玩家牌堆或弃牌堆且未被移除的卡，\n生成在场上且归属于自己但是未进入过弃牌堆的不应被算入。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-shop",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "商店页面",
+              "code": "Shop",
+              "description": "当前商店中刷出来的牌。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-extradeck",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "额外卡组",
+              "code": "ExtraDeck",
+              "description": "整个额外卡组的牌。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-void",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "虚空",
+              "code": "Void",
+              "description": "被remove掉的牌。",
+              "target": "",
+              "input": "",
+              "output": "[CardID]",
+              "params": "PlayerID，filter，选择策略",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-combined",
+              "category": "scope",
+              "section": "PreScope 预选范围",
+              "zh": "复合scope",
+              "code": "Combined",
+              "description": "有些效果的选择范围也许是多个scope的结合，比如手牌+场上。",
+              "target": "",
+              "input": "",
+              "output": "Combined Output",
+              "params": "每一个 subscope",
+              "examples": [
+                "待购买区域：Combine{[Shop, ExtraDeck]}"
+              ],
+              "status": "可实装"
+            }
+          ]
+        },
+        {
+          "title": "Selector 选择策略",
+          "entries": [
+            {
+              "id": "scope-all",
+              "category": "scope",
+              "section": "Selector 选择策略",
+              "zh": "全选",
+              "code": "ALL",
+              "description": "选择prescope给出的所有目标。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-randomselect",
+              "category": "scope",
+              "section": "Selector 选择策略",
+              "zh": "随机选取",
+              "code": "RandomSelect",
+              "description": "从范围中随机选取目标。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "选取数量",
+              "examples": [
+                "buff 4个友方随从-RandomSelect{4}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-playerselect",
+              "category": "scope",
+              "section": "Selector 选择策略",
+              "zh": "玩家选取",
+              "code": "PlayerSelect",
+              "description": "结算到该效果时，开启一个ui交互，玩家从prescope中选取目标。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "选取数量，是否反选",
+              "examples": [
+                "令一个友方海盗+3atk - PlayerSelect{1,reversed=false}",
+                "对3个随从外的所有随从打2 - PlayerSelect{3, reversed=1}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "scope-sortselect",
+              "category": "scope",
+              "section": "Selector 选择策略",
+              "zh": "排序选取",
+              "code": "SortSelect",
+              "description": "对prescope的目标按照某个指标排序，选取前n个目标。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "排序指标，排序顺序，选择数量",
+              "examples": [
+                "生命最低的3个敌人 - Sort{Life, descending, 3}",
+                "最近的中立单位 - Sort{Distance, ascending, 1}"
+              ],
+              "status": "可实装"
+            }
+          ]
+        },
+        {
+          "title": "Post Scope 后处理",
+          "entries": [
+            {
+              "id": "scope-rectangular-2",
+              "category": "scope",
+              "section": "Post Scope 后处理",
+              "zh": "矩形内目标",
+              "code": "Rectangular",
+              "description": "某个矩形范围内所有符合要求的目标",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-distance-2",
+              "category": "scope",
+              "section": "Post Scope 后处理",
+              "zh": "圆形内目标",
+              "code": "Distance",
+              "description": "与某个各自距离小于x以内的所有目标 (Manhattan Distance)",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "scope-inline-2",
+              "category": "scope",
+              "section": "Post Scope 后处理",
+              "zh": "线列内目标",
+              "code": "InLine",
+              "description": "同一个行列内所有符合要求的目标",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "effects",
+      "zh": "基础效果",
+      "en": "Effects",
+      "summary": "真正改变游戏状态的原子指令，例如造成伤害、治疗、抽牌、生成、变形或注册延迟效果。",
+      "sections": [
+        {
+          "title": "基础效果",
+          "entries": [
+            {
+              "id": "effects-damage",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "造成伤害",
+              "code": "Damage",
+              "description": "对一个场上单位造成伤害。",
+              "target": "场上随从",
+              "input": "[CardID]",
+              "output": "",
+              "params": "伤害量",
+              "examples": [
+                "Damage{2}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-buff",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "更改属性",
+              "code": "Buff",
+              "description": "增加/降低一个场上的单位的属性，该改动在发生卡牌逆向流动时消除。\nP.S. 卡牌流动顺序：虚空-->商店/额外卡组 --> 弃牌堆 --> 牌堆 --> 手牌 --> 战场",
+              "target": "场上随从",
+              "input": "[CardID]",
+              "output": "",
+              "params": "属性种类&量",
+              "examples": [
+                "Buff{ATK:+2, SPD:+2}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-heal",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "治疗",
+              "code": "Heal",
+              "description": "治疗一个受伤的单位，无法超过其生命上限。",
+              "target": "场上随从",
+              "input": "[CardID]",
+              "output": "",
+              "params": "治疗量",
+              "examples": [
+                "Heal{3}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-destroy",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "消灭",
+              "code": "Destroy",
+              "description": "将对应目标丢入弃牌堆。",
+              "target": "场上卡牌",
+              "input": "[CardID]",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "effects-addeffect",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "赋予效果",
+              "code": "AddEffect",
+              "description": "为卡牌赋予新的效果，该效果在发生卡牌逆向流动时消除。",
+              "target": "任意卡牌",
+              "input": "[CardID]",
+              "output": "",
+              "params": "完整的效果dict",
+              "examples": [
+                "AddEffect{嘲讽}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-cleareffect",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "清除效果",
+              "code": "ClearEffect",
+              "description": "清除该卡牌的 原始被动效果｜原始主动效果｜被更改的属性｜额外获得的效果。",
+              "target": "任意卡牌",
+              "input": "[CardID]",
+              "output": "",
+              "params": "效果filter",
+              "examples": [
+                "属性复原-ClearEffect{Buff}",
+                "彻底沉默-ClearEffect{All}",
+                "三国杀马超-ClearEffect{All_except_for_Passive}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-place",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "放置",
+              "code": "Place",
+              "description": "在目标位置放置一张游戏内的卡牌。",
+              "target": "格子",
+              "input": "[GridID]",
+              "output": "",
+              "params": "放置的CardID",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "effects-summon",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "生成",
+              "code": "Summon",
+              "description": "在目标位置生成一张全新的卡牌。",
+              "target": "格子",
+              "input": "[GridID]",
+              "output": "",
+              "params": "生成的卡牌序号",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "effects-remove",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "移除",
+              "code": "Remove",
+              "description": "将目标卡牌送入虚空，它永远不会出现在你的卡组循环中。",
+              "target": "任意卡牌",
+              "input": "[CardID]",
+              "output": "",
+              "params": "",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "effects-transform",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "变形",
+              "code": "Transform",
+              "description": "将卡牌变形成目标卡牌。",
+              "target": "任意卡牌",
+              "input": "[CardID]",
+              "output": "",
+              "params": "目标卡牌序号",
+              "examples": [
+                "变成青蛙-Transform{ID_frog}",
+                "卡牌升级-Transform{Recorded_Upgrade_id}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-getresource",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "获得资源",
+              "code": "GetResource",
+              "description": "玩家获得星能/充能点/能量护盾等基础资源。",
+              "target": "玩家",
+              "input": "[PlayerID]",
+              "output": "",
+              "params": "资源种类&量",
+              "examples": [
+                "GetResource{Star_Energy:3}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-drawcard",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "抽牌",
+              "code": "DrawCard",
+              "description": "对应玩家抽牌。",
+              "target": "玩家",
+              "input": "[PlayerID]",
+              "output": "",
+              "params": "抽牌规则｜抽牌量",
+              "examples": [
+                "DrawCard{Upto=10}",
+                "DrawCard{3}"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-discard",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "弃牌",
+              "code": "Discard",
+              "description": "对应玩家弃牌。",
+              "target": "玩家",
+              "input": "[PlayerID]",
+              "output": "",
+              "params": "弃牌规则｜弃牌量",
+              "examples": [],
+              "status": "基础可用"
+            },
+            {
+              "id": "effects-addpermanentaura",
+              "category": "effects",
+              "section": "基础效果",
+              "zh": "添加全局光环",
+              "code": "AddPermanentAura",
+              "description": "令某一方势力获得一个贯穿本局游戏的buff。",
+              "target": "玩家",
+              "input": "[PlayerID]",
+              "output": "",
+              "params": "完整的被动效果dict",
+              "examples": [
+                "本局对战中你的亡灵+2攻击 -\nAddPermanentAura{me, {Undead+2ATK}}"
+              ],
+              "status": "可实装"
+            }
+          ]
+        },
+        {
+          "title": "Nested Effect 嵌套效果",
+          "entries": [
+            {
+              "id": "effects-register",
+              "category": "effects",
+              "section": "Nested Effect 嵌套效果",
+              "zh": "注册",
+              "code": "Register",
+              "description": "将一个效果放进注册表，它将在未来的某时刻触发",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [
+                "入场：本回合时动阶段开始时，\n消灭一个敌方单位。",
+                "亡语：回合结束时，\n沉默所有随从。"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-compound",
+              "category": "effects",
+              "section": "Nested Effect 嵌套效果",
+              "zh": "复合效果",
+              "code": "Compound",
+              "description": "将多个atom效果按顺序逐一触发，但该效果被算作一次效果结算。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [
+                "发动：造成3点伤害，获得3点护甲。"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-causal",
+              "category": "effects",
+              "section": "Nested Effect 嵌套效果",
+              "zh": "因果触发",
+              "code": "Causal",
+              "description": "同样是多个效果，但完成某些条件之后才能触发下一个效果。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [
+                "入场：弃一张牌以抽一张牌。",
+                "发动：对全体随从造成2伤害，\n每死亡一个单位，抽一张牌。"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "effects-repeat",
+              "category": "effects",
+              "section": "Nested Effect 嵌套效果",
+              "zh": "循环触发",
+              "code": "Repeat",
+              "description": "将一个atom效果触发N次。",
+              "target": "",
+              "input": "",
+              "output": "",
+              "params": "",
+              "examples": [
+                "入场：对全体🐗人使用一个鲜血宝石，\n重复2次。",
+                "亵渎- 对全体随从打1，\n如果有随从死亡，重复。"
+              ],
+              "status": "可实装"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aura",
+      "zh": "光环效果",
+      "en": "Aura",
+      "summary": "持续生效或按范围动态重算的效果类型，适合表达全局增益、免疫和条件性被动。",
+      "sections": [
+        {
+          "title": "光环效果",
+          "entries": [
+            {
+              "id": "aura-buffaura",
+              "category": "aura",
+              "section": "光环效果",
+              "zh": "强化/弱化",
+              "code": "BuffAura",
+              "description": "令所有scope内的目标获得一个属性上的增益/减益",
+              "target": "任意随从",
+              "input": "[CardID]",
+              "output": "",
+              "params": "具体buff内容",
+              "examples": [
+                "己方海盗获得+1攻击力"
+              ],
+              "status": "可实装"
+            },
+            {
+              "id": "aura-elusive",
+              "category": "aura",
+              "section": "光环效果",
+              "zh": "魔免",
+              "code": "Elusive",
+              "description": "不会被选为效果的目标",
+              "target": "自身",
+              "input": "Self",
+              "output": "",
+              "params": "免疫效果来源",
+              "examples": [
+                "该随从不会成为敌方法术的目标。"
+              ],
+              "status": "可实装"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

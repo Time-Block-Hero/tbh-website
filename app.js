@@ -348,7 +348,16 @@ const devhubLinks  = document.querySelector(".nav-devhub-links");
 const DEV_PASSWORD = "20000603";
 let devUnlocked = false;
 
-function switchMode(mode) {
+function isDevhubHash(hash = window.location.hash) {
+  return hash.startsWith("#dev-");
+}
+
+function scrollToCurrentHash() {
+  const target = document.querySelector(window.location.hash);
+  if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
+}
+
+function switchMode(mode, options = {}) {
   if (mode === "devhub" && !devUnlocked) {
     const input = prompt("请输入开发中心密码：");
     if (input !== DEV_PASSWORD) {
@@ -365,9 +374,19 @@ function switchMode(mode) {
   devhubLinks.style.display  = isDevhub ? ""     : "none";
   modeButtons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.mode === mode));
   if (isDevhub) { renderProgressBoard(); initCardCenter(); renderAssetLibrary(); }
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  if (options.keepHash && window.location.hash) {
+    requestAnimationFrame(scrollToCurrentHash);
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
 }
 modeButtons.forEach((btn) => btn.addEventListener("click", () => switchMode(btn.dataset.mode)));
+
+window.addEventListener("hashchange", () => {
+  if (isDevhubHash() && devhubMain.style.display === "none") {
+    switchMode("devhub", { keepHash: true });
+  }
+});
 
 /* ═══════════════════════════════════════════════════════════
    DEV HUB — DESIGN PROGRESS BOARD
@@ -1951,6 +1970,10 @@ function closeWorldBible() {
 })();
 
 window.addEventListener("load", () => {
+  if (isDevhubHash()) {
+    switchMode("devhub", { keepHash: true });
+    return;
+  }
   const target = window.location.hash && document.querySelector(window.location.hash);
   if (target) target.scrollIntoView({ block:"start" });
 });
