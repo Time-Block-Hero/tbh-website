@@ -164,6 +164,14 @@
           </span>
           <em>打开独立页面</em>
         </a>
+        <a class="effect-dict-entry effect-runtime-entry" href="./effect-runtime.html">
+          <span class="effect-dict-entry-mark">FLOW</span>
+          <span>
+            <strong>效果执行图谱 · Effect Runtime Map</strong>
+            <small>把卡牌效果从触发、选目标、支付代价、结算、持续光环到最终结果画成流程线图</small>
+          </span>
+          <em>打开独立页面</em>
+        </a>
       </section>
 
       <!-- 游戏介绍 -->
@@ -584,6 +592,10 @@
                 <label>卡牌描述（风味文字）</label>
                 <textarea name="desc" rows="2" placeholder="Flavor text..."></textarea>
               </div>
+              <div class="form-field form-field-full form-field-ai-text">
+                <label>AI生成文字</label>
+                <textarea name="aiText" rows="4" placeholder="用于生成卡牌插画的 AI prompt / 美术描述..."></textarea>
+              </div>
             </div>
 
           </form>
@@ -654,6 +666,6 @@
       </div>
     </div>
 
-    <script src="./app.js?v=20260614-effect-dict"></script>
+    <script src="./app.js?v=20260617-ai-prompts-w-column"></script>
   </body>
 </html>

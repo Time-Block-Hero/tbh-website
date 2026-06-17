@@ -548,6 +548,123 @@ const gameCards = [
 const builtinRaces = [];
 const DEFAULT_RACES = ["Pirate", "Mech", "Hollow-Null"];
 
+const CARD_AI_STYLE_PROMPT =
+  "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements.";
+
+const CARD_AI_NEGATIVE_PROMPT =
+  "No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark.";
+
+const cardAiTextScenesByUid = {
+  1: "A calm time-stopper hero standing inside a transparent time bubble, one hand disassembling a hostile void beast into frozen Planck-scale gear fragments, cold blue chronal ripples bending the battlefield around him.",
+  2: "A rookie human space mercenary in practical vacuum armor holding a battered rifle, standing in a smoky orbital skirmish zone, small cyan time-field sparks reflecting on scratched metal plates.",
+  3: "A disposable space laborer in cheap industrial exosuit armor, welding torch and emergency oxygen pack, caught between collapsing ship panels and drifting cargo in low gravity.",
+  4: "A veteran space officer with heavier armor and worn medals, commanding a small squad through a breached starship corridor, disciplined posture, blue tactical holograms around the visor.",
+  5: "A powerful space general in reinforced command armor overlooking a fleet battle from a shattered orbital platform, cloak and armor lit by cyan chronal displays and distant explosions.",
+  6: "An elderly legendary space commander summoning two spectral mercenaries from a glowing discard archive, tactical arrows projected behind him, vast star fleet wreckage in the background.",
+  7: "A cute compact mechanical dog with oversized luminous eyes and polished support modules, bounding across a hangar floor, playful but high-tech, cyan diagnostic lights and tiny thrusters.",
+  8: "A reckless frontline soldier sprinting before his energy shield fully deploys, blue hexagonal shield panels flickering around him while enemy fire tears across a space battlefield.",
+  9: "A sunfire cannoneer operating a shoulder-mounted solar cannon, one glowing charge cell inserted, firing a precise orange-blue beam down a straight line through smoke and sparks.",
+  10: "A tiny support satellite hovering above a battlefield grid, unfolding antenna petals and projecting blue scan beams, Earthlike planet and debris field behind it.",
+  11: "Titan X-003 versatile mecha in balanced heavy armor, one arm equipped for defense and the other for utility tools, standing in a storm of metal debris and blue tactical lights.",
+  12: "Titan X-003 assault mecha lunging forward with massive weapon arms, angular armor, aggressive red-orange impact glow mixed with cyan time-field trails, space battle chaos behind it.",
+  13: "A single ordinary bullet stretched by localized time acceleration, spinning through a blue chronal tunnel toward a distant target, microscopic gear-like particles frozen around its path.",
+  14: "A small star-energy ore crystal on a dark mining tray, glowing cyan from within, surrounded by measurement instruments and faint Planck lattice patterns in the vacuum.",
+  15: "A rare star-energy ore cluster floating in zero gravity, brighter and more faceted, industrial mining drones scanning it with blue beams in a deep-space asteroid lab.",
+  16: "A treasure-grade star-energy ore like a radiant crystalline heart, secured in a transparent containment field, cyan light flooding a dark vault with golden sparks.",
+  17: "A sunfire energy condenser gathering solar plasma into a compact charge core, orange-white light spiraling into blue time-field rings, clean sci-fi machinery in a vacuum chamber.",
+  18: "An instant rocket cutting across a battlefield before impact, its route bent by blue time-field acceleration, exploding over a 3x3 enemy cluster with cinematic smoke and orange fire.",
+  19: "A compact personal energy shield generator projecting two translucent blue hexagonal layers, calm glow against a dark ship corridor under attack.",
+  20: "A frontline shield array expanding across soldiers and machinery, six thick cyan barrier plates locking into place while sparks and missiles crash against the surface.",
+  21: "A planet-scale shield dome viewed from orbit, huge blue energy arcs wrapping a damaged world, fragments and enemy fire dissolving against the luminous barrier.",
+  22: "A mysterious space merchant opening a holographic ledger of cards and routes, golden trade symbols and cyan data streams floating over a shadowed starport table.",
+  23: "A card-like object being exiled into open space, torn from a hand of holographic cards and pulled into a cold void aperture, blue time-field edges and silent starlight.",
+  24: "A starship corridor consumed by sudden fire, alarms flashing, a cursed card glowing in a pilot's hand while flames and smoke crawl through zero gravity.",
+  25: "A rocket propulsion module feeding charge energy into mechanical legs and thrusters, a mecha preparing an extra burst movement with blue-orange exhaust trails.",
+  26: "A tactical shooting-mode console producing two fragile bullet drones, cyan targeting grids and ammunition holograms hovering in a dark weapons bay.",
+  27: "A formal medal ceremony inside a military orbital hall, a soldier's armor upgrading mid-ritual as blue time-field engravings flare across the chest plate.",
+  28: "A molten upgrade forge reshaping cards and machines in midair, robotic arms and orange plasma surrounding objects while cyan time bubbles accelerate the process.",
+  29: "A drifting hollow-null entity made of pale translucent void matter, faceless and unstable, carrying faint star-energy rewards inside its cracked chest.",
+  30: "A flying hollow-null variant with torn wing-like membranes of broken spacetime, gliding through a debris field, blue-white emptiness glowing through its body.",
+  31: "A red-haired punk pirate captain commanding a raider crew from a modified starship deck, cybernetic eye glowing green, black-green-red paint, fearless smile under starlight.",
+  32: "A pirate marauder looting enemy territory, one boot on a hostile deck panel, scooping cyan star-energy crystals into a hacked container while alarms flash red.",
+  33: "A cheap expendable pirate line-filler charging into a grid opening, improvised armor, grappling hooks and taped thrusters, reckless punk energy in a chaotic boarding scene.",
+  34: "A pirate shooter with cybernetic arms aiming a heavy hand cannon at close range, green charge cells clipped to the weapon, neon smoke and raider graffiti behind him.",
+  35: "A young solar vessel hero holding a miniature sun-core in both hands, gentle childlike silhouette surrounded by white-orange corona light and calm blue time-field halos.",
+  36: "A machine-heaven data mining spell visualized as robotic probes drilling into a luminous information crystal, blue code streams extracting star-energy from darkness.",
+  37: "Treasure-hunting pirates sneaking across an enemy deck with scanner lanterns, opening a hidden cargo vault full of star-energy, black-green-red punk suits and sly expressions.",
+  38: "A flag-bearing pirate planting a luminous raider banner on enemy ground, a smaller pirate being summoned behind him through a green-blue boarding portal.",
+  39: "An impetuous first mate hurling an allied monster forward with a magnetic launch harness, discarded cards burning as fuel, wild momentum and comedic danger.",
+  40: "A legion landing craft tearing open the side of a starship, pirate troops leaping from glowing deployment rails even beyond safe territory, heavy punk machinery.",
+  41: "Old Wooden Leg, a legendary pirate relic figure with a cybernetic peg leg, vanishing into a hidden extra deck portal while leaving star-energy coins and cards behind.",
+  42: "A useless pile of military supplies rigged as a prank trap, crates and broken weapons shoved onto enemy ground, raider stickers and suspicious glowing wires everywhere.",
+  43: "Legendary Captain Drake standing between friendly and enemy territory, old pirate coat over cybernetic armor, his presence making nearby raiders faster and more violent.",
+  44: "A pirate recruitment spell shown as a smoky tavern hologram aboard a raider ship, wanted posters becoming living crew silhouettes and moving to the top of a deck.",
+  45: "A fence deal in a dark starport alley, a pirate removing a stolen card into a black-market device in exchange for cyan star-energy and green charge sparks.",
+  46: "A raider charge spell, an allied monster launched straight forward like a cannonball through boarding smoke, pirate crew shouting behind it under neon warning lights.",
+  47: "The golden ape's curse, a cursed golden idol grinning in a cargo hold, sending a revealed card into an enemy deck while a trapped friendly monster bursts free.",
+  48: "A legendary war banner unfurling over a battlefield grid, ghostly pirates randomly summoned from a discard vortex onto arrow-marked spaces, grand raider fleet behind it.",
+  49: "A small lost wisdom fragment floating like a blue memory shard in vacuum, waiting to be picked up, subtle ancient data runes and cold starlight.",
+  50: "A sunlight shard, a tiny orange-white solar fragment hovering above a dark floor plate, radiating charge energy through delicate blue time-field rings.",
+  51: "A strange delicious wild berry growing inside a cracked hydroponic pod on a spaceship, healing green light and motion trails suggesting sudden extra movement.",
+  52: "A manic fruit pulsing with unstable red-green energy, sharp teeth-like cracks and wild acceleration trails, tempting but dangerous on a laboratory tray.",
+  53: "A broken armor fragment glowing faintly with protective blue energy, lying among battlefield debris, one small shield aura forming around it.",
+  54: "A roaring hollow-null beast with a torn mouth of black time static, towering in a ruined orbital city, its body filled with bright star-energy reward cores.",
+  55: "The hollow-null time lord, a colossal void monarch made of fractured clocks and dark matter robes, granting extra time while stealing future action, terrifying cosmic presence.",
+  56: "Vera, Astra Imperium strategic officer, cold young commander in dark red military armor, standing before orbital artillery and time-quota screens, one armor plate generating protective force.",
+  57: "An Astra power station unit on a battlefield grid, industrial red-black machinery feeding electricity into adjacent soldiers, blue sparks and heavy cables under military lighting.",
+  58: "An imperial military factory unfolding construction arms and arrow-like conveyor rails, red industrial walls, electric energy multiplying deployment directions for non-building troops.",
+  59: "An imperial infrastructure squad with compact exosuits building a structure on a grid tile, red safety lights, welding sparks, disciplined Astra engineering mood.",
+  60: "An imperial conscript kneeling beside an unfinished machine frame, body and armor dissolving into construction progress light, tragic but disciplined under red command beams.",
+  61: "An Astra special forces unit being built from modular armor plates, two arrow beacons locking into place around him, dark red stealth suit and severe military posture.",
+  62: "MIRA-10K, machine-heaven avatar, serene girl-shaped AI interface before a deep-space server city, blue-white data halo creating one star-energy point each turn.",
+  63: "Machine ascension spell, a human consciousness rising from a body into a cloud server cathedral, blue data wings and silicon halos promising endless star-energy.",
+  64: "Hello World command card, a first glowing line of code awakening a machine grid above it, playful but sacred computer-ritual mood in blue-white light.",
+  65: "A rapid debugging spell, robotic hands executing the command beneath a card slot, blue diagnostic windows and error sparks resolving instantly.",
+  66: "A reinforced firewall spell visualized as four stacked blue energy walls around a digital fortress, machine-heaven geometry and clean luminous defense.",
+  67: "Axis operation, a central mechanical spindle turning inside a server cathedral, drawing and preserving cards as blue data sheets orbit the machine core.",
+  68: "A tiny worker robot with a single directional placement arrow glowing on its chassis, assembling more small robots in a clean blue-white machine bay.",
+  69: "Niuma-X3, a squat hardworking robot executing a command from its right side, overworked servos, bright blue command panel, slightly comic industrial charm.",
+  70: "Tomias the tireless task dispatcher, legendary machine officer robot damaging its own chassis to deploy a command spell onto a diagonal grid slot.",
+  71: "A command-type small robot standing above a 3x3 formation, broadcasting a blue aura that upgrades every nearby small robot with synchronized light.",
+  72: "An assault small robot made of many tiny robot shadows behind it, its attack power growing from the crowd, sharp blue weapon arms and compact aggression.",
+  73: "A wall-type small robot anchoring a defensive line, generating energy shields equal to the number of allied small robots, blue barrier plates stacking around it.",
+  74: "A combined robot formed from three small robots docking together, modular limbs snapping into place, playful yet powerful machine-heaven assembly scene.",
+  75: "A second lost wisdom pickup, a blue memory tablet half-buried in battlefield dust, delicate code particles waiting to be collected for star-energy.",
+  76: "A solar crack shard, an orange fragment of miniature sun-core light on a grid tile, warm charge energy leaking through cold blue time-field cracks.",
+  77: "An energy membrane pickup, a thin translucent protective film floating like a folded shield, cyan edges and microscopic Planck lattice texture.",
+  78: "A healing wild berry in a sealed survival greenhouse, green bioluminescent pulp and motion-blur footprints implying restored life and sudden movement.",
+  79: "An Astra engineering robot with heavy red construction limbs, using arrows only to assemble unfinished units, electric power making each direction stronger.",
+  80: "Jinbai, the lost sword, a beautiful unstable uploaded swordsman standing among four scattered wisdom shards, blue-white blade and emotional machine eyes.",
+  81: "An annihilation laser command firing from an orbital machine array, a single precise blue-white beam striking the nearest non-friendly target through dark space.",
+  82: "Double trigger spell, two identical command pulses echoing upward from a card slot, mirrored blue circuitry and synchronized machine halos.",
+  83: "An autoplay movement, a machine-heaven music box and command chain executing in sequence, cards linked like glowing notes across a blue grid.",
+  84: "Cybernetic summon command, two small robots deploying beside a hero from diagonal and upward light gates, clean blue server-city machinery.",
+  85: "Ascended Sword Jinbai, fully mechanized sword form, converting star-energy from both sides into scattered wisdom shards, moving through pickups with impossible speed.",
+  86: "Saint Aletheia of the Solar Church, young holy woman on a Dyson ring altar, a supernova decision card hidden in radiant white-orange light, solemn and powerful.",
+  87: "A prayer of light spell, every friendly follower raising a hand to contribute charge energy, thin orange beams converging into one calm solar halo.",
+  88: "Solar baptism ritual, a church follower accepting painful holy sunlight damage to become retained, warm corona flame, solemn Dyson-ring chapel.",
+  89: "A sunflame believer carrying a small sun-core lantern, providing extra charge, humble robes mixed with sci-fi reactor harness, early supernova marks on skin.",
+  90: "A magical crucible doll, solar church mechanical puppet absorbing magic damage and turning it into charge, copper-orange furnace body and blue containment rings.",
+  91: "The morning star fire, a focused flame spending charge to wound a nearby unit, then reducing the next star-energy cost with orange light turning into blue economy glyphs.",
+  92: "Aletheia in supernova form, radiant white-orange saint floating above the battlefield, repeated solar lances striking a chosen target for each allied supernova presence.",
+  93: "Supernova resolution, a solemn solar decree tablet surrounded by many pointing arrows, reducing transformation charge costs as white-orange light repeats in layers.",
+  94: "A sunflame believer in supernova form, blazing inside a 3x3 aura circle, empowering every nearby ally's charge output with intense corona ribbons.",
+  95: "A magical practice doll in a solar training chamber, canceling incoming magic damage and releasing blue star-energy into storage crystals, harmless but uncanny.",
+  96: "Solar rain spell, countless thin orange-white rays falling across the entire battlefield, every unit touched by one point of holy fire under a Dyson ring sky.",
+  97: "A soul-burning apprentice dividing pain among allied units, three red-orange damage sparks in his hands, preparing for supernova transformation with conflicted expression.",
+  98: "A soul-burning apprentice in supernova form, calm and terrifying, distributing three burning damage sparks to any units on the battlefield, white-orange fire halo behind him."
+};
+
+function getDefaultCardAiText(card) {
+  const scene = cardAiTextScenesByUid[Number(card.uid)];
+  if (!scene) return null;
+  return `${CARD_AI_STYLE_PROMPT} ${scene} ${CARD_AI_NEGATIVE_PROMPT}`;
+}
+
+function applyCardAiText(card) {
+  return { ...card, aiText: card.aiText || getDefaultCardAiText(card) };
+}
+
 async function loadCustomRaces() {
   try {
     const data = await ghFetch();
@@ -589,6 +706,7 @@ let _ghSha     = null;
 let _cardCache = null;
 let _isSyncing = false;
 let _csvExportUrl = null;
+let _csvExportFilename = null;
 let _csvExportPreparing = false;
 
 function setSyncStatus(msg, type = "info") {
@@ -673,9 +791,9 @@ async function getMergedCards() {
   const builtins = gameCards.map((c, i) => {
     const id = "b" + i;
     const ovr = overrides[id] || {};
-    return { ...c, ...ovr, _id: id, _isCustom: false, _isEdited: !!overrides[id], uid: i + 1 };
+    return applyCardAiText({ ...c, ...ovr, _id: id, _isCustom: false, _isEdited: !!overrides[id], uid: i + 1 });
   });
-  return [...builtins, ...customs.map((c) => ({ ...c, _isCustom: true, _isEdited: false }))];
+  return [...builtins, ...customs.map((c) => applyCardAiText({ ...c, _isCustom: true, _isEdited: false }))];
 }
 
 async function getFilteredCards() {
@@ -1016,6 +1134,15 @@ function openCardImagePicker(cardId) {
   input.click();
 }
 
+function renderCardAiPrompt(card) {
+  if (!card.aiText) return "";
+  return `
+    <details class="card-ai-prompt">
+      <summary>AI生成文字</summary>
+      <p>${escapeHtml(card.aiText)}</p>
+    </details>`;
+}
+
 async function renderCardGrid() {
   const grid  = document.querySelector("#cardCenterGrid");
   const label = document.querySelector("#cardCountLabel");
@@ -1043,7 +1170,8 @@ async function renderCardGrid() {
     ].join(" · ");
 
     return `
-      <div class="${isSpell ? 'spell-card' : 'lor-card'}" style="--card-accent:${meta.accent}" data-rarity="${c.rarity}" data-card-id="${c._id}">
+      <article class="card-gallery-item" data-card-id="${c._id}">
+        <div class="${isSpell ? 'spell-card' : 'lor-card'}" style="--card-accent:${meta.accent}" data-rarity="${c.rarity}" data-card-id="${c._id}">
 
           ${isSpell ? `
           <div class="lor-bg" data-upload-id="${c._id}">
@@ -1084,7 +1212,9 @@ async function renderCardGrid() {
               <span class="lor-stat lor-hp">${c.hp??'—'}</span>
             </div>
           </div>`}
-        </div>`;
+        </div>
+        ${renderCardAiPrompt(c)}
+      </article>`;
   }).join("");
 
   // 图片上传
@@ -1134,6 +1264,7 @@ function setFormValues(card) {
   set("cost", card.collect==="InitHero"?"": (card.cost==="hero"?"": (card.cost??"")));
   set("race", card.race??""); set("atk", card.atk??""); set("hp", card.hp??"");
   set("spd", card.spd??""); set("effect", card.effect??""); set("desc", card.desc??"");
+  set("aiText", card.aiText??"");
   // uid — 内置卡只读，自定义可编辑
   const uidEl = f.elements["uid"];
   if (uidEl) { uidEl.value = card.uid != null ? String(card.uid) : ""; }
@@ -1157,6 +1288,7 @@ function getFormValues() {
     spd: type==="Spell"?null:(g("spd")===""?null:Number(g("spd"))),
     arrows: [...arrowsSet].join(",") || null,
     effect: g("effect").trim() || null, desc: g("desc").trim() || null,
+    aiText: g("aiText").trim() || null,
     uid: uidRaw !== "" && !isNaN(Number(uidRaw)) ? Number(uidRaw) : null,
   };
 }
@@ -1301,9 +1433,10 @@ function sortCardsForCsv(cards) {
 
 function buildCardsCsv(cards) {
   const rows = [
-    ["UID", "中文名", "英文名", "类型", "稀有度", "势力", "可收集性", "种族", "", "攻击", "生命", "移速", "", "费用", "", "箭头方向", "效果说明", "卡牌描述"],
+    ["UID", "中文名", "英文名", "类型", "稀有度", "势力", "可收集性", "种族", "", "攻击", "生命", "移速", "", "费用", "", "箭头方向", "效果说明", "卡牌描述", "", "", "", "", "AI生成文字"],
     ...cards.map((card) => {
       const faction = cardFactionMeta[card.faction];
+      const aiText = card.aiText || getDefaultCardAiText(card);
       return [
         card.uid,
         card.zh,
@@ -1323,6 +1456,11 @@ function buildCardsCsv(cards) {
         formatCsvArrows(card.arrows),
         card.effect,
         card.desc,
+        "",
+        "",
+        "",
+        "",
+        aiText,
       ];
     }),
   ];
@@ -1341,11 +1479,13 @@ function setCsvExportPending() {
 function setCsvExportReady(url, filename, count) {
   const link = document.querySelector("#cardExportCsvBtn");
   if (!link) return;
-  link.href = url;
-  link.download = filename;
+  _csvExportUrl = url;
+  _csvExportFilename = filename;
+  link.href = "#";
+  link.removeAttribute("download");
   link.removeAttribute("aria-disabled");
   link.dataset.cardCount = String(count);
-  link.textContent = "导出 CSV";
+  link.textContent = "导出 CSV（含 AI Prompt）";
 }
 
 async function prepareCardsCsvDownload(showStatus = false) {
@@ -1360,26 +1500,35 @@ async function prepareCardsCsvDownload(showStatus = false) {
     const url = URL.createObjectURL(blob);
     const filename = `tbh-cards-${new Date().toISOString().slice(0, 10)}.csv`;
     if (_csvExportUrl) URL.revokeObjectURL(_csvExportUrl);
-    _csvExportUrl = url;
     setCsvExportReady(url, filename, sortedCards.length);
-    if (showStatus) setSyncStatus(`✓ CSV 已准备好，共 ${sortedCards.length} 张卡牌`, "success");
+    if (showStatus) setSyncStatus(`✓ CSV 已生成：AI Prompt 位于 W 列，共 ${sortedCards.length} 张卡牌`, "success");
+    return true;
   } catch (e) {
     setCsvExportPending();
     setSyncStatus(`✗ CSV 导出失败 (${e.message})`, "error");
+    return false;
   } finally {
     _csvExportPreparing = false;
   }
 }
 
-function handleCardsCsvDownload(e) {
+async function handleCardsCsvDownload(e) {
+  e.preventDefault();
   const link = e.currentTarget;
-  if (link.getAttribute("aria-disabled") === "true" || !_csvExportUrl) {
-    e.preventDefault();
+  if (_csvExportPreparing) {
     setSyncStatus("⟳ CSV 还在准备，请稍等一下再点", "info");
-    prepareCardsCsvDownload(true);
     return;
   }
-  setSyncStatus(`✓ 正在下载 ${link.dataset.cardCount || ""} 张卡牌 CSV`, "success");
+  const ready = await prepareCardsCsvDownload(true);
+  if (!ready || link.getAttribute("aria-disabled") === "true" || !_csvExportUrl) return;
+
+  const downloadLink = document.createElement("a");
+  downloadLink.href = _csvExportUrl;
+  downloadLink.download = _csvExportFilename || `tbh-cards-${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(downloadLink);
+  downloadLink.click();
+  downloadLink.remove();
+  setSyncStatus(`✓ 正在下载 ${link.dataset.cardCount || ""} 张卡牌 CSV，AI Prompt 在 W 列`, "success");
 }
 
 function renderCardFilters() {
