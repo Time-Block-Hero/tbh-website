@@ -1551,6 +1551,23 @@
       "arrows": null,
       "effect": "击杀奖励：4星能；2充能。",
       "desc": null
+    },
+    "b30": {
+      "zh": "洛岚",
+      "en": "Luolan",
+      "type": "Minion",
+      "rarity": "Legendary",
+      "faction": "skyraider",
+      "collect": "InitHero",
+      "cost": "hero",
+      "race": "Pirate",
+      "atk": 2,
+      "hp": 20,
+      "spd": 2,
+      "arrows": "NE",
+      "effect": "发动：每回合限一次，将你的一个海盗移动一格。",
+      "desc": null,
+      "aiText": "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements. A red-haired punk pirate captain commanding a raider crew from a modified starship deck, cybernetic eye glowing green, black-green-red paint, fearless smile under starlight. No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark."
     }
   },
   "cardImages": {
