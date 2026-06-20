@@ -1585,6 +1585,23 @@
       "effect": "发动：每回合一次，若该单位位于敌方领土，获得3星能。",
       "desc": null,
       "aiText": "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements. A pirate marauder looting enemy territory, one boot on a hostile deck panel, scooping cyan star-energy crystals into a hacked container while alarms flash red. No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark."
+    },
+    "b32": {
+      "zh": "填线海盗",
+      "en": "Pirate Suicide Squad",
+      "type": "Minion",
+      "rarity": "Common",
+      "faction": "skyraider",
+      "collect": "Collectable",
+      "cost": 0,
+      "race": "Pirate",
+      "atk": 2,
+      "hp": 2,
+      "spd": 2,
+      "arrows": null,
+      "effect": "该卡可被放置于被己方箭头指向的任意格子上。",
+      "desc": null,
+      "aiText": "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements. A cheap expendable pirate line-filler charging into a grid opening, improvised armor, grappling hooks and taped thrusters, reckless punk energy in a chaotic boarding scene. No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark."
     }
   },
   "cardImages": {
