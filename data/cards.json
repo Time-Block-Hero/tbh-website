@@ -1602,6 +1602,23 @@
       "effect": "该卡可被放置于被己方箭头指向的任意格子上。",
       "desc": null,
       "aiText": "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements. A cheap expendable pirate line-filler charging into a grid opening, improvised armor, grappling hooks and taped thrusters, reckless punk energy in a chaotic boarding scene. No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark."
+    },
+    "b33": {
+      "zh": "持枪海盗",
+      "en": "Pirate Shooter",
+      "type": "Minion",
+      "rarity": "Rare",
+      "faction": "skyraider",
+      "collect": "Collectable",
+      "cost": 3,
+      "race": "Pirate",
+      "atk": 0,
+      "hp": 2,
+      "spd": 3,
+      "arrows": null,
+      "effect": "发动：对一个距离3以内的敌人造成3点伤害， 你可以消耗充能点来增加等量的伤害。",
+      "desc": null,
+      "aiText": "Standalone vertical game artwork image for Time-Block Hero, portrait aspect ratio between 1:1.5 and 1:1.6, suitable for a 1000x1500 to 1000x1600 image, dark cinematic sci-fi anime concept art, sharp mechanical detail, luminous cyan time-field energy, high contrast lighting, deep space atmosphere, strong central subject composed for a tall card-art space, no layout elements. A pirate shooter with cybernetic arms aiming a heavy hand cannon at close range, green charge cells clipped to the weapon, neon smoke and raider graffiti behind him. No text, no UI labels, no card layout, no card frame, no decorative border, no arrow overlay, no cost icon, no stat icons, no bottom-center blue star icon, no watermark."
     }
   },
   "cardImages": {
