@@ -1,0 +1,5 @@
+interface:
+  display_name: "Artwork Generation"
+  short_description: "用工业科幻动漫模板批量生成并登记卡牌插画"
+  brand_color: "#FFC86A"
+  default_prompt: "Use $artwork-generation to fulfill the current card art requests in the project's Industrial Sci-Fi Anime style."

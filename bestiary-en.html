@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cosmic Bestiary | Time-Block Hero World Archive</title>
+    <meta
+      name="description"
+      content="The Time-Block Hero Cosmic Bestiary records known alien wildlife, Crystal Spirits, Avatars, Nebula Manifestations, and Hollow-Null anomalies."
+    />
+    <link rel="stylesheet" href="./styles.css?v=20260816-bestiary" />
+    <link rel="stylesheet" href="./bestiary.css?v=20260816-bestiary" />
+    <script src="./bestiary.js?v=20260816-bestiary" defer></script>
+  </head>
+  <body class="bestiary-page">
+    <header class="site-header bestiary-header">
+      <a class="brand" href="./index-en.html" aria-label="Return to the Time-Block Hero World Archive">
+        <span class="brand-mark">TBH</span>
+        <span>
+          <strong>TIME-BLOCK HERO</strong>
+          <small>World Archive</small>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Page navigation">
+        <a href="./index-en.html">World Archive</a>
+        <a href="./index-en.html#timeline">Story</a>
+        <a href="./index-en.html#factions">Factions</a>
+        <a href="./index-en.html#characters">Characters</a>
+        <a class="is-current" href="#catalogue">Cosmic Bestiary</a>
+        <a href="./bestiary.html" class="nav-lang">中文</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="bestiary-hero" aria-labelledby="bestiary-title">
+        <img
+          class="bestiary-hero-art"
+          src="./assets/creature-concepts/duskbell-matriarch/illustration.png"
+          alt="A Duskbell Matriarch shelters calves and warns its herd before a time-rift disaster"
+        />
+        <div class="bestiary-hero-shade"></div>
+        <div class="bestiary-hero-copy">
+          <p class="section-kicker">XENOBIOLOGY ARCHIVE · 2460</p>
+          <h1 id="bestiary-title">Cosmic Bestiary</h1>
+          <p class="bestiary-hero-lead">
+            They migrate on stellar winds, live whole lifetimes beside abandoned stasis fields, and build ecosystems among freight ports, Dyson structures, and time-rift frontiers.
+          </p>
+          <a class="primary-link" href="#catalogue">Open the archive</a>
+        </div>
+        <div class="bestiary-hero-index" aria-label="Archive statistics">
+          <span><strong id="confirmedCount">09</strong> confirmed species</span>
+          <span><strong>02</strong> sapient umbrellas</span>
+          <span><strong>02</strong> non-biological entities</span>
+        </div>
+      </section>
+
+      <section class="section bestiary-principles" aria-labelledby="principles-title">
+        <div>
+          <span class="section-kicker">ARCHIVE PROTOCOL</span>
+          <h2 id="principles-title">Record differences before naming categories.</h2>
+        </div>
+        <article class="bestiary-principle-card">
+          <span class="bestiary-principle-code">BIO</span>
+          <h3>Natural life</h3>
+          <p>Shaped by star-energy and temporal environments, yet sustained by feeding, reproduction, migration, and social behavior.</p>
+        </article>
+        <article class="bestiary-principle-card">
+          <span class="bestiary-principle-code">SAPIENT</span>
+          <h3>Sapient umbrellas</h3>
+          <p>Crystal Spirits and Avatars contain many subtypes. Their shared principles are recorded without forcing one image onto the whole lineage.</p>
+        </article>
+        <article class="bestiary-principle-card">
+          <span class="bestiary-principle-code">ANOMALY</span>
+          <h3>Boundary entities</h3>
+          <p>Nebula Manifestations and Hollow-Nulls are not ordinary organisms, but their stable forms and behaviors still affect living worlds.</p>
+        </article>
+      </section>
+
+      <section id="catalogue" class="section bestiary-catalogue" aria-labelledby="catalogue-title">
+        <div class="section-heading bestiary-heading">
+          <div>
+            <span class="section-kicker">FIELD RECORDS</span>
+            <h2 id="catalogue-title">Known life and boundary entities</h2>
+            <p>Select a record to inspect identifying traits, behavior, habitat, and its relationship with civilization.</p>
+          </div>
+          <p class="bestiary-revision">Archive revision: 2460-RIFT / Records remain open</p>
+        </div>
+
+        <div class="bestiary-controls">
+          <div id="bestiaryFilters" class="bestiary-filters" role="group" aria-label="Filter bestiary records"></div>
+          <label class="bestiary-search">
+            <span>Search records</span>
+            <input id="bestiarySearch" type="search" placeholder="Name, habitat, or trait" autocomplete="off" />
+          </label>
+        </div>
+
+        <div class="bestiary-layout">
+          <aside>
+            <p id="bestiaryResultCount" class="bestiary-result-count" aria-live="polite"></p>
+            <div id="bestiaryList" class="bestiary-list" aria-label="Bestiary record list"></div>
+          </aside>
+          <article id="bestiaryDetail" class="bestiary-detail" aria-live="polite"></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bestiary-footer">
+      <span>TIME-BLOCK HERO · WORLD ARCHIVE</span>
+      <p>All imagery is retained as worldbuilding and future card-art reference. Deferred umbrella taxa receive concept sheets after their subtypes are defined.</p>
+    </footer>
+
+    <div id="bestiaryLightbox" class="bestiary-lightbox" hidden>
+      <button class="bestiary-lightbox-close" type="button" aria-label="Close image preview">✕</button>
+      <img src="" alt="" />
+      <p></p>
+    </div>
+  </body>
+</html>

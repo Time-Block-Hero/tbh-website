@@ -1,0 +1,7 @@
+interface:
+  display_name: "Polish Artwork Description"
+  short_description: "结合世界观、派系、拓展包与卡牌机制精修画面描述提示词"
+  brand_color: "#72E5FF"
+  default_prompt: "Use $polish-artwork-description to polish the flagged card artwork descriptions."
+policy:
+  allow_implicit_invocation: true

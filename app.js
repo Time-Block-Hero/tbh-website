@@ -341,15 +341,24 @@ renderCharacters();
 ═══════════════════════════════════════════════════════════ */
 const archiveMain  = document.querySelector("#top");
 const devhubMain   = document.querySelector("#devhub-main");
+const cardEditorMain = document.querySelector("#card-editor-main");
 const modeButtons  = document.querySelectorAll(".mode-btn");
 const archiveLinks = document.querySelector(".nav-archive-links");
 const devhubLinks  = document.querySelector(".nav-devhub-links");
+const cardEditorLinks = document.querySelector(".nav-cardeditor-links");
 
 const DEV_PASSWORD = "20000603";
 let devUnlocked = false;
+let cardEditorUnlocked = false;
+let pendingProtectedMode = null;
+let pendingProtectedOptions = {};
 
 function isDevhubHash(hash = window.location.hash) {
   return hash.startsWith("#dev-");
+}
+
+function isCardEditorHash(hash = window.location.hash) {
+  return hash === "#card-editor";
 }
 
 function scrollToCurrentHash() {
@@ -357,34 +366,81 @@ function scrollToCurrentHash() {
   if (target) target.scrollIntoView({ behavior: "auto", block: "start" });
 }
 
-function switchMode(mode, options = {}) {
-  if (mode === "devhub" && !devUnlocked) {
-    const input = prompt("请输入开发中心密码：");
-    if (input !== DEV_PASSWORD) {
-      alert("密码错误，访问被拒绝。");
-      return;
-    }
-    devUnlocked = true;
-  }
-
+function activateMode(mode, options = {}) {
   const isDevhub = mode === "devhub";
-  archiveMain.style.display  = isDevhub ? "none" : "";
+  const isCardEditor = mode === "cardeditor";
+  const isArchive = mode === "archive";
+  archiveMain.style.display  = isArchive ? "" : "none";
   devhubMain.style.display   = isDevhub ? ""     : "none";
-  archiveLinks.style.display = isDevhub ? "none" : "";
+  cardEditorMain.style.display = isCardEditor ? "" : "none";
+  archiveLinks.style.display = isArchive ? "" : "none";
   devhubLinks.style.display  = isDevhub ? ""     : "none";
+  cardEditorLinks.style.display = isCardEditor ? "" : "none";
   modeButtons.forEach((btn) => btn.classList.toggle("is-active", btn.dataset.mode === mode));
-  if (isDevhub) { renderProgressBoard(); initCardCenter(); renderAssetLibrary(); }
+  if (isDevhub) { renderProgressBoard(); renderAssetLibrary(); }
+  if (isCardEditor) window.initFormalCardEditor?.();
   if (options.keepHash && window.location.hash) {
     requestAnimationFrame(scrollToCurrentHash);
   } else {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
+
+function openAccessGate(mode, options = {}) {
+  const pageName = mode === "cardeditor" ? "卡牌编辑器" : "开发中心";
+  pendingProtectedMode = mode;
+  pendingProtectedOptions = options;
+  document.querySelector("#accessGateTitle").textContent = `进入${pageName}`;
+  document.querySelector("#accessGateDescription").textContent = `${pageName}为受保护页面，请输入密码以继续。`;
+  document.querySelector("#accessGateError").textContent = "";
+  const passwordInput = document.querySelector("#accessGatePassword");
+  passwordInput.value = "";
+  document.querySelector("#accessGateOverlay").style.display = "flex";
+  document.body.style.overflow = "hidden";
+  requestAnimationFrame(() => passwordInput.focus());
+}
+
+function closeAccessGate() {
+  document.querySelector("#accessGateOverlay").style.display = "none";
+  document.body.style.overflow = "";
+  pendingProtectedMode = null;
+  pendingProtectedOptions = {};
+}
+
+function switchMode(mode, options = {}) {
+  const needsDevPassword = mode === "devhub" && !devUnlocked;
+  const needsCardEditorPassword = mode === "cardeditor" && !cardEditorUnlocked;
+  if (needsDevPassword || needsCardEditorPassword) {
+    openAccessGate(mode, options);
+    return;
+  }
+  activateMode(mode, options);
+}
+
+document.querySelector("#accessGateForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const passwordInput = document.querySelector("#accessGatePassword");
+  if (passwordInput.value !== DEV_PASSWORD) {
+    document.querySelector("#accessGateError").textContent = "密码错误，请重新输入。";
+    passwordInput.select();
+    return;
+  }
+  const mode = pendingProtectedMode;
+  const options = pendingProtectedOptions;
+  if (mode === "devhub") devUnlocked = true;
+  if (mode === "cardeditor") cardEditorUnlocked = true;
+  closeAccessGate();
+  if (mode) activateMode(mode, options);
+});
+
+document.querySelector("#accessGateCancel").addEventListener("click", closeAccessGate);
 modeButtons.forEach((btn) => btn.addEventListener("click", () => switchMode(btn.dataset.mode)));
 
 window.addEventListener("hashchange", () => {
   if (isDevhubHash() && devhubMain.style.display === "none") {
     switchMode("devhub", { keepHash: true });
+  } else if (isCardEditorHash() && cardEditorMain.style.display === "none") {
+    switchMode("cardeditor", { keepHash: true });
   }
 });
 
@@ -702,6 +758,8 @@ const GITHUB_CONFIG = {
   get token() { return ["ghp_pirAng","jwQSexJEy","N5H9aUEC7","mR7Ia02yADeB"].join(""); }
 };
 
+const IS_LOCAL_PREVIEW = location.protocol === "file:" || ["localhost", "127.0.0.1", "::1"].includes(location.hostname);
+
 let _ghSha     = null;
 let _cardCache = null;
 let _isSyncing = false;
@@ -732,6 +790,21 @@ function setSyncStatus(msg, type = "info") {
 
 async function ghFetch() {
   if (_cardCache) return _cardCache;
+  if (IS_LOCAL_PREVIEW) {
+    const res = await fetch("./data/cards.json", { cache: "no-store" });
+    if (!res.ok) throw new Error(`Local cards data ${res.status}`);
+    const data = await res.json();
+    const localCustomCards = localStorage.getItem("tbh-custom-cards");
+    const localOverrides = localStorage.getItem("tbh-card-overrides");
+    _cardCache = {
+      customCards: localCustomCards ? JSON.parse(localCustomCards) : (data.customCards || []),
+      overrides: localOverrides ? JSON.parse(localOverrides) : (data.overrides || {}),
+      cardImages: data.cardImages || {},
+      customRaces: data.customRaces || null,
+    };
+    setSyncStatus("本地预览模式 · 数据不会上传", "success");
+    return _cardCache;
+  }
   setSyncStatus("⟳ 正在同步卡牌数据…", "info");
   try {
     const res = await fetch(
@@ -755,6 +828,13 @@ async function ghFetch() {
 }
 
 async function ghSave(newData) {
+  if (IS_LOCAL_PREVIEW) {
+    localStorage.setItem("tbh-custom-cards", JSON.stringify(newData.customCards || []));
+    localStorage.setItem("tbh-card-overrides", JSON.stringify(newData.overrides || {}));
+    _cardCache = newData;
+    setSyncStatus("✓ 已保存到本地预览", "success");
+    return;
+  }
   if (_isSyncing) return;
   _isSyncing = true;
   setSyncStatus("⟳ 正在保存到 GitHub…", "saving");
@@ -852,6 +932,12 @@ function getCardImageUrl(id) {
 async function saveCardImage(id, dataUrl) {
   // 先存本地快速显示
   localStorage.setItem(`tbh-card-img-${id}`, dataUrl);
+
+  if (IS_LOCAL_PREVIEW) {
+    setSyncStatus("✓ 图片已保存到本地预览", "success");
+    renderCardGrid();
+    return;
+  }
 
   // 异步上传到 GitHub
   setSyncStatus("⟳ 正在上传图片…", "saving");
@@ -2121,6 +2207,10 @@ function closeWorldBible() {
 window.addEventListener("load", () => {
   if (isDevhubHash()) {
     switchMode("devhub", { keepHash: true });
+    return;
+  }
+  if (isCardEditorHash()) {
+    switchMode("cardeditor", { keepHash: true });
     return;
   }
   const target = window.location.hash && document.querySelector(window.location.hash);
