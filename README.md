@@ -92,6 +92,93 @@ node tools/build-card-editor-fallback.mjs
 - `.agents/skills/polish-artwork-description/`：根据世界观与派系设定精修画面描述。
 - `.agents/skills/artwork-generation/`：按照 `artRequest` 批量生成、保存并登记卡图。
 
+### 如何让 Codex 调用 skills
+
+打开本仓库作为工作区后，Codex 会读取可用 skill 的名称和用途。Skill 有两种触发方式：
+
+1. **显式调用（团队协作推荐）**：在提示词中直接写 `$polish-artwork-description` 或 `$artwork-generation`。
+2. **自然语言调用**：直接描述符合 skill 用途的任务，由 Codex 根据 skill 的 `description` 自动选择。
+
+在支持 Skills picker 的 ChatGPT 界面中，也可以输入 `@` 后选择对应 skill。下方示例统一使用 `$skill-name`，这样 PR、issue 和团队聊天里的意图最明确。普通、不支持 Agent Skills 的独立 LLM 不会因为看到这段文字就自动加载本仓库的 skills；必须先让 agent 打开本仓库并发现 `.agents/skills/`。
+
+#### Demo 1：精修一张卡的画面描述
+
+```text
+$polish-artwork-description
+
+请精修 FNG-017「横行噗噜兽」的画面描述。
+保留我已经写下的主体和动作，结合卡牌稀有度、奇兽设定与效果补全环境、构图、光线和色彩。
+只更新 artDescription 和 artDescriptionNeedsPolish，不要生成图片，也不要修改任何玩法数据。
+完成后告诉我修改前后的主要差异。
+```
+
+#### Demo 2：批量精修所有待处理描述
+
+```text
+请使用 $polish-artwork-description，处理 data/cards.json 中所有
+artDescriptionNeedsPolish=true 的卡牌。
+
+按卡牌 ID 顺序执行；传奇卡如果缺少明确的角色身份、事件或构图，先停下来和我 brainstorm，
+不要自行补完。不要生成卡图，不要修改费用、数值、效果、ID 或父子关系。
+```
+
+不写 skill 名也可以触发同一工作流，例如：
+
+```text
+请根据 Time-Block Hero 的世界观和派系设定，把 FNG-024 的简单画面描述
+精修成可用于卡图生成的完整 prompt，但先不要生成图片。
+```
+
+#### Demo 3：为一张卡生成多个候选插画
+
+先在卡牌编辑器中填写英文名、保存完整画面描述，并把 `artRequest` 设置为需要的数量。例如需要 3 张候选图，就设置为 `3`。
+
+```text
+$artwork-generation
+
+FNG-024 的画面描述已经确认，artRequest=3。
+请只为这张卡生成 3 个独立插画方案，使用项目默认 Industrial Sci-Fi Anime 风格。
+生成后按英文名规则保存并逐张登记到编辑器，但不要替换已有的正式插画选择。
+最后汇报每个 variant ID、文件路径和剩余 artRequest。
+```
+
+#### Demo 4：处理完整的卡图请求队列
+
+```text
+请使用 $artwork-generation 处理 data/cards.json 中所有 artRequest>0 的卡牌。
+
+生成前检查英文名、画面描述和精修 flag；需要精修的卡先调用
+$polish-artwork-description。传奇卡若不满足清晰度要求，列为 blocked 并等待我确认。
+成功的图片立即保存和登记，失败的任务保留 request 数量，最后给出成功、阻塞和剩余队列汇总。
+```
+
+#### Demo 5：明确要求并行批量生成
+
+```text
+$artwork-generation
+
+请批量处理当前 art requests。可以把不同卡牌分给并行 worker，最多使用 3 个 worker；
+同一张卡的所有 variant 交给同一个 worker。worker 只生成并保存各自目录的图片，
+由主任务在全部返回后串行登记 JSON，避免数据竞争。不要覆盖任何现有文件或正式插画选择。
+```
+
+#### Demo 6：先规划，不立即生成
+
+```text
+请使用 $artwork-generation 读取当前 request queue，但先不要调用图像生成。
+请列出卡牌 ID、英文名、稀有度、请求数量、描述是否已精修，以及预计生成的文件名。
+等我确认清单后再开始。
+```
+
+### 两个 skills 的职责边界
+
+- `$polish-artwork-description` 只负责文字 prompt；它不会生成图片，也不会修改玩法数据。
+- `$artwork-generation` 以 `artRequest` 为准确数量来源，并要求非空英文名和已完成的画面描述。
+- 如果生成队列里仍有待精修卡牌，Artwork Generation 会先调用 Polish Artwork Description。
+- 传奇卡描述不够明确时，工作流会暂停该卡并请求设计师确认，而不是静默编造设定。
+- 新图片会追加为候选 variant；已有正式插画不会被自动覆盖。
+- 并行模式最多使用 3 个生成 worker；JSON 与备用数据仍由主任务串行登记。
+
 ## 本地验证
 
 提交改动前至少运行：
