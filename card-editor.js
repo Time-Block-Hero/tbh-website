@@ -3,7 +3,7 @@
 
   const STORAGE_KEY = "tbh-formal-card-editor-v4";
   const DIRECTIONS = ["NW", "N", "NE", "W", "E", "SW", "S", "SE"];
-  const TRIBES = ["机械", "人类", "反抗军", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵"];
+  const TRIBES = ["机械", "人类", "反抗军", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵", "建筑"];
   const TRIBE_ALIASES = {
     Mech: "机械",
     Human: "人类",
@@ -11,6 +11,7 @@
     HollowNull: "空亡体",
     "Hollow-Null": "空亡体",
     Avatar: "兽裔(Avatar)",
+    Building: "建筑",
   };
   const FACTIONS = {
     Neutral: { label: "中立（银河航商会）", slug: "base", color: "#74d7f7", prefix: "FNG" },
