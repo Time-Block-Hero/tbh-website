@@ -24,13 +24,14 @@ If a queued card has `artDescriptionNeedsPolish: true`, use `$polish-artwork-des
 4. Validate that each queued card has a non-empty polished `artDescription`. Do not generate from blank or still-flagged descriptions.
 5. Apply the Legendary clarity gate to every queued Legendary card regardless of `artDescriptionNeedsPolish`. If the description leaves a defining identity, story beat, situation, or composition decision ambiguous, do not generate that card. Use `$polish-artwork-description` to present a brainstorm checkpoint and wait for user confirmation.
 6. Generate exactly `artRequest` independent images for each unblocked card through `$artifact-template-industrial-sci-fi-anime`, which invokes `$imagegen` with its retained PNG as the style reference. Use one image-generation call per requested variant. Preserve the card's `artDescription`; add the template's style language, production constraints, and rarity direction from the references. Do not inherit the retained reference's characters, branded details, composition, or aspect ratio.
-7. Require a unique, non-empty English card name. Convert it to a lowercase kebab-case artwork key, for example `Power Plant` → `power-plant`. Save each finished raster as `assets/card-art/ARTWORK_KEY/ARTWORK_KEY-xx.png`, such as `assets/card-art/power-plant/power-plant-01.png`. Choose the next unused two-digit sequence and never overwrite an existing variant. Card ordering IDs must not appear in artwork filenames.
-8. Immediately after each successful file, register it:
+7. Visually inspect every output against the style acceptance gate in `references/artwork-pipeline.md`. Treat style fidelity as a hard requirement: an image that reads as photoreal photography, a PBR product render, generic fantasy, generic cartoon, or cute chibi art has failed even if its subject is correct. Regenerate failed outputs instead of saving, registering, or selecting them.
+8. Require a unique, non-empty English card name. Convert it to a lowercase kebab-case artwork key, for example `Power Plant` → `power-plant`. Save each finished raster as `assets/card-art/ARTWORK_KEY/ARTWORK_KEY-xx.png`, such as `assets/card-art/power-plant/power-plant-01.png`. Choose the next unused two-digit sequence and never overwrite an existing variant. Card ordering IDs must not appear in artwork filenames.
+9. Immediately after each successful file, register it:
 
    `node tools/artwork-workflow.mjs register CARD_ID IMAGE_PATH`
 
    Registration appends the variant, selects it only when the card has no prior official artwork, decrements `artRequest` by one, and rebuilds the direct-file fallback. This makes partial batches resumable.
-9. Verify that `data/cards.json`, `card-editor-data.js`, and every registered image path agree. Report successes, blocked Legendary cards, and remaining request counts. Do not assemble frames, labels, stats, or UI into the generated image.
+10. Verify that `data/cards.json`, `card-editor-data.js`, and every registered image path agree. Report successes, blocked Legendary cards, and remaining request counts. Do not assemble frames, labels, stats, or UI into the generated image.
 
 ## Parallel generation
 
