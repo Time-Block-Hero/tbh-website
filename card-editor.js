@@ -34,6 +34,8 @@
   let suppressCardClick = false;
   let projectSyncAvailable = false;
   let projectSyncQueue = Promise.resolve();
+  let browserDraftOverwriteWarningPending = false;
+  let baseDatasetLabel = "仓库 JSON";
   const textMeasureContext = document.createElement("canvas").getContext("2d");
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -157,6 +159,21 @@
 
   function loadLocalState(base) {
     return readLocalState(base) || base;
+  }
+
+  function confirmBrowserDraftOverwrite() {
+    if (!browserDraftOverwriteWarningPending) return true;
+    const confirmed = window.confirm(
+      `你当前正在基于${baseDatasetLabel}进行编辑，但浏览器里已有一份不同的本地草稿。\n\n`
+      + "继续保存会用当前编辑内容覆盖原有本地草稿。建议先导出需要保留的草稿。\n\n"
+      + "点击“确定”继续并允许覆盖；点击“取消”返回且不保存本次修改。",
+    );
+    if (!confirmed) {
+      setStatus("未保存；原有本地草稿未被覆盖", "error");
+      return false;
+    }
+    browserDraftOverwriteWarningPending = false;
+    return true;
   }
 
   function normalizeDatasetForCurrentRules(baseDataset) {
@@ -433,6 +450,7 @@
   }
 
   function addMainCard() {
+    if (!confirmBrowserDraftOverwrite()) return;
     const selectedFaction = $("#cardFactionFilter").value;
     const classId = selectedFaction === "all" ? "Neutral" : selectedFaction;
     const temporaryId = `NEW-${Date.now()}`;
@@ -481,6 +499,7 @@
     const targetIndex = ordered.indexOf(target);
     ordered.splice(targetIndex + (insertSide === "after" ? 1 : 0), 0, dragged);
     if (before === ordered.map((card) => card.id).join("|")) return false;
+    if (!confirmBrowserDraftOverwrite()) return false;
     renumberRootOrder(ordered);
     persist();
     renderGallery();
@@ -718,6 +737,7 @@
       updated.classId = parent?.classId || original.classId;
       updated.collectable = false;
     }
+    if (!confirmBrowserDraftOverwrite()) return;
     dataset.cards[dataset.cards.findIndex((card) => card.id === currentId)] = updated;
     dataset.artworkVariants ||= {};
     dataset.selectedArtworkIds ||= {};
@@ -757,6 +777,7 @@
   }
 
   function addDerivative() {
+    if (!confirmBrowserDraftOverwrite()) return;
     const rootId = parentId(currentId);
     const root = cardById(rootId);
     if (!root) return;
@@ -790,6 +811,7 @@
       ? `确定删除衍生卡「${card.nameKey}」(${card.id})？`
       : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张衍生卡。` : ""}`;
     if (!window.confirm(detail)) return;
+    if (!confirmBrowserDraftOverwrite()) return;
     dataset.cards = dataset.cards.filter((entry) => !deletedIds.includes(entry.id));
     for (const id of deletedIds) {
       delete dataset.artworkVariants[id];
@@ -1025,18 +1047,21 @@
     }
     layout = loadedLayout;
     projectSyncAvailable = await detectProjectSync();
+    baseDatasetLabel = projectSyncAvailable ? "项目 JSON" : "仓库 JSON";
     const localDataset = readLocalState(baseDataset);
+    const browserDraftDiffers = localDataset && JSON.stringify(localDataset) !== JSON.stringify(baseDataset);
     let importBrowserDraft = false;
-    if (projectSyncAvailable) {
-      const browserDraftDiffers = localDataset && JSON.stringify(localDataset) !== JSON.stringify(baseDataset);
+    if (!isDirectFile) {
       if (browserDraftDiffers) {
         importBrowserDraft = window.confirm(
-          "检测到浏览器里有一份与项目 JSON 不同的卡牌草稿。\n\n"
-          + "点击“确定”会把浏览器草稿导入项目；点击“取消”则以项目 JSON 为准。",
+          `检测到浏览器本地草稿与${baseDatasetLabel}的内容不同。请选择本次要加载的数据：\n\n`
+          + "点击“确定”：加载本地草稿并继续自动保存。\n"
+          + `点击“取消”：加载${baseDatasetLabel}；第一次保存前会再次提醒覆盖风险。`,
         );
       }
       dataset = structuredClone(importBrowserDraft ? localDataset : baseDataset);
-    } else {
+      browserDraftOverwriteWarningPending = Boolean(browserDraftDiffers && !importBrowserDraft);
+    } else if (isDirectFile) {
       dataset = loadLocalState(baseDataset);
     }
     const normalized = normalizeDatasetForCurrentRules(baseDataset);
@@ -1044,8 +1069,13 @@
     populateTribeInputs();
     bindEvents();
     renderGallery();
-    if (normalized || importBrowserDraft) await persist();
-    else setStatus(projectSyncAvailable ? "已连接本地项目" : "浏览器本地模式", "saved");
+    const shouldPersistInitialization = importBrowserDraft
+      || (normalized && (isDirectFile || (projectSyncAvailable && !browserDraftOverwriteWarningPending)));
+    if (shouldPersistInitialization) await persist();
+    else if (browserDraftOverwriteWarningPending) setStatus(`已加载${baseDatasetLabel}；保存前将提醒覆盖本地草稿`, "saved");
+    else if (projectSyncAvailable) setStatus("已连接本地项目", "saved");
+    else if (isDirectFile) setStatus("浏览器本地模式", "saved");
+    else setStatus("已加载仓库 JSON", "saved");
   }
 
   window.initFormalCardEditor = () => initialize().catch((error) => {
