@@ -27,7 +27,7 @@ node tools/card-editor-server.mjs --port 4317
 
 - 主列表使用 Board View，详情编辑使用 Hand View。
 - 可收集与不可收集卡牌分开展示；衍生卡位于父卡详情页。
-- 添加、删除主卡和衍生卡。
+- 添加、删除主卡和衍生卡；通过本地服务删除时同步删除对应实体卡图包。
 - 按编号模式拖拽卡牌并插入目标位置；保存后自动重新编号。
 - 按费用升序或降序浏览；视图排序不会修改卡牌 ID。
 - 随从与法术使用不同字段和布局；随从种族支持多选，“建筑”用于有生命值的非生物随从。
@@ -39,12 +39,23 @@ node tools/card-editor-server.mjs --port 4317
 
 | 路径 | 用途 |
 | --- | --- |
-| `data/cards.json` | 卡牌设计的项目数据源 |
-| `card-editor-data.js` | 自动生成的离线备用数据；不要手工编辑 |
+| `data/cards.json` | 唯一权威卡牌数据源；卡牌内容只在此处维护 |
+| `card-editor-data.js` | 由权威数据自动生成的离线备用数据；不要手工编辑 |
 | `card_layout_ref/layout.json` | Board View 与 Hand View 布局参数 |
 | `assets/card-template/` | 卡框、属性图标、箭头等模板资产 |
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
-| `formal_card_ref.json` | 游戏侧卡牌表参考 |
+| `formal_card_ref.json` | 由权威数据生成的游戏侧卡牌表参考；不要反向覆盖 `data/cards.json` |
+| `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
+| `bestiary.js` | 生物与边界存在的权威生态、形态和处置档案 |
+| `references/species-art-direction.md` | 从生物图鉴派生的卡牌美术识别与提示词规则 |
+
+卡牌数据变更后运行以下命令，同步游戏侧参考、文档镜像、猎空同盟静态展示和离线备用数据：
+
+```bash
+node tools/sync-cards-from-data.mjs
+```
+
+更新空亡体图鉴后运行 `node tools/sync-hollow-lore.mjs`，将其起源与形态原则同步到中英文时间线和嵌入式世界档案。
 
 插画使用英文卡名生成的 slug 作为稳定索引：
 
@@ -197,7 +208,7 @@ git diff --check
 1. 从最新主分支创建描述清晰的功能分支，并遵循团队约定的分支命名方式。
 2. 一次提交只处理一个清晰主题；不要把无关资产和格式化混入同一提交。
 3. 先在本地服务中完成测试，再提交 Pull Request。
-4. 修改 `data/cards.json` 时，同时提交重新生成的 `card-editor-data.js`。
+4. 修改 `data/cards.json` 后运行 `node tools/sync-cards-from-data.mjs`，并同时提交所有生成文件。
 5. 插画、卡牌英文名和插画索引应在同一提交中更新，避免出现断开的路径。
 6. 在 `CHANGELOG.md` 的 `Unreleased` 区域记录面向设计师或玩家的行为变化。
 7. 不要提交密码、令牌、个人配置或系统生成文件。

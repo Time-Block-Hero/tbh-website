@@ -33,6 +33,7 @@
   let draggingInsertSide = "before";
   let suppressCardClick = false;
   let projectSyncAvailable = false;
+  let artworkDeleteAvailable = false;
   let projectSyncQueue = Promise.resolve();
   let browserDraftOverwriteWarningPending = false;
   let baseDatasetLabel = "仓库 JSON";
@@ -197,15 +198,38 @@
       } else {
         card.tribes = [...new Set((card.tribes || []).map((tribe) => TRIBE_ALIASES[tribe] || tribe).filter((tribe) => TRIBES.includes(tribe)))];
       }
+      const baseCard = baseDataset.cards.find((entry) => entry.id === card.id)
+        || baseDataset.cards.find((entry) => entry.nameKey === card.nameKey
+          && entry.classId === card.classId
+          && entry.cardType === card.cardType)
+        || baseDataset.cards.find((entry) => card.artPath && entry.artPath === card.artPath);
+      if (!card.englishName && baseCard?.englishName) card.englishName = baseCard.englishName;
+      if (!card.artworkKey && baseCard?.artworkKey) card.artworkKey = baseCard.artworkKey;
+
+      const baseVariants = baseDataset.artworkVariants?.[baseCard?.id] || [];
       const variants = dataset.artworkVariants[card.id] || [];
+      for (const baseVariant of baseVariants) {
+        const localVariant = variants.find((variant) => variant.id === baseVariant.id);
+        if (localVariant) {
+          if (!localVariant.src.startsWith("data:")) localVariant.src = baseVariant.src;
+        } else {
+          variants.push(structuredClone(baseVariant));
+        }
+      }
       if (variants.length) {
-        const baseCard = baseDataset.cards.find((entry) => (card.artPath && entry.artPath === card.artPath)
-          || (entry.nameKey === card.nameKey && entry.classId === card.classId && entry.cardType === card.cardType));
+        dataset.artworkVariants[card.id] = variants;
+        const selectedId = dataset.selectedArtworkIds[card.id];
+        if (!variants.some((variant) => variant.id === selectedId)) {
+          const baseSelectedId = baseDataset.selectedArtworkIds?.[baseCard?.id];
+          dataset.selectedArtworkIds[card.id] = variants.some((variant) => variant.id === baseSelectedId)
+            ? baseSelectedId
+            : variants[0].id;
+        }
+      }
+      if (variants.length) {
         const artworkKey = card.artworkKey || baseCard?.artworkKey || artworkKeyFromEnglishName(card.englishName || baseCard?.englishName);
         if (artworkKey) {
           card.artworkKey = artworkKey;
-          if (!card.englishName && baseCard?.englishName) card.englishName = baseCard.englishName;
-          const baseVariants = baseDataset.artworkVariants?.[baseCard?.id] || [];
           const selectedId = dataset.selectedArtworkIds[card.id];
           variants.forEach((variant, index) => {
             const order = variant.id.match(/(?:-A|-)(\d{2})$/)?.[1] || String(index + 1).padStart(2, "0");
@@ -230,13 +254,14 @@
     try {
       const response = await fetch("./api/editor-capabilities", { cache: "no-store" });
       const capabilities = response.ok ? await response.json() : null;
+      artworkDeleteAvailable = Boolean(capabilities?.artworkDelete);
       return Boolean(capabilities?.projectWrite && capabilities?.artworkRename);
     } catch {
       return false;
     }
   }
 
-  async function persist({ artworkRename = null } = {}) {
+  async function persist({ artworkRename = null, artworkDeletes = [] } = {}) {
     const snapshot = structuredClone(dataset);
     if (!projectSyncAvailable) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -248,7 +273,7 @@
       const response = await fetch("./api/cards/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ dataset: snapshot, artworkRename }),
+        body: JSON.stringify({ dataset: snapshot, artworkRename, artworkDeletes }),
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.ok) throw new Error(result.error || `项目保存失败 (${response.status})`);
@@ -801,24 +826,46 @@
     showCard(id);
   }
 
-  function deleteCurrentCard() {
+  async function deleteCurrentCard() {
     const card = cardById(currentId);
     if (!card || isHero(card)) return;
     const derivative = isDerivative(card.id);
     const rootId = parentId(card.id);
     const deletedIds = derivative ? [card.id] : [card.id, ...derivativesOf(card.id).map((entry) => entry.id)];
+    const deletedCards = dataset.cards.filter((entry) => deletedIds.includes(entry.id));
+    const artworkDeletes = [...new Set([
+      ...deletedCards.map((entry) => entry.artworkKey),
+      ...deletedIds.flatMap((id) => (dataset.artworkVariants?.[id] || [])
+        .map((variant) => variant.src.match(/^\.\/assets\/card-art\/([^/]+)\//)?.[1])),
+    ].filter(Boolean))];
+    if (projectSyncAvailable && artworkDeletes.length && !artworkDeleteAvailable) {
+      setStatus("本地服务版本过旧，请重启服务后再删除带卡图的卡牌", "error");
+      return;
+    }
+    const artworkDetail = artworkDeletes.length
+      ? projectSyncAvailable
+        ? `\n同时会永久删除 ${artworkDeletes.length} 个卡图包：\n${artworkDeletes.join("\n")}`
+        : "\n当前为浏览器草稿模式，不会删除仓库中的实体卡图包。"
+      : "";
     const detail = derivative
-      ? `确定删除衍生卡「${card.nameKey}」(${card.id})？`
-      : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张衍生卡。` : ""}`;
+      ? `确定删除衍生卡「${card.nameKey}」(${card.id})？${artworkDetail}`
+      : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张衍生卡。` : ""}${artworkDetail}`;
     if (!window.confirm(detail)) return;
     if (!confirmBrowserDraftOverwrite()) return;
+    const datasetBefore = structuredClone(dataset);
     dataset.cards = dataset.cards.filter((entry) => !deletedIds.includes(entry.id));
     for (const id of deletedIds) {
       delete dataset.artworkVariants[id];
       delete dataset.selectedArtworkIds[id];
     }
     if (!derivative) renumberRootOrder(rootsInGroup(card.classId, card.collectable));
-    persist();
+    const saved = await persist({ artworkDeletes: projectSyncAvailable ? artworkDeletes : [] });
+    if (!saved) {
+      dataset = datasetBefore;
+      renderGallery();
+      showCard(card.id);
+      return;
+    }
     renderGallery();
     if (derivative) showCard(rootId);
     else closeEditor();

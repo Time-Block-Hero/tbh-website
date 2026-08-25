@@ -274,6 +274,106 @@ const bestiaryRecords = [
     concept: "./assets/creature-concepts/duskbell-matriarch/concept-sheet.png"
   },
   {
+    id: "celestial-angel",
+    group: "synthetic",
+    status: "standardized",
+    accent: "#78cfff",
+    zhName: "天使机体",
+    enName: "Angel Chassis",
+    zhSubtitle: "承载飞升意识、以光环与光翼稳定人格的神性机体",
+    enSubtitle: "A divine vessel stabilizing ascended consciousness through halos and light-wings",
+    zhSummary: "械心天庭的天使是人类意识完成飞升后主动选择的神性载体，而不是以杀戮为第一印象的战斗机器人。其标准家族以平静的仿生面容、机械陶瓷上身、紧凑星能核心、无腿悬浮载体与意识光环为共同骨架；盾翼、星帆、远程圣器、环塔和星座御座都是同一机体语言下的职能配置。",
+    enSummary: "Machine Celestial Court Angels are divine vessels voluntarily adopted by ascended human minds, not combat robots defined by killing. Their standardized family combines a serene biomimetic face, mechanical-ceramic upper body, compact star-energy core, legless hover vessel, and consciousness halo. Aegis wings, solar sails, remote reliquaries, orbital cathedrals, and constellation thrones are role configurations within the same visual language.",
+    zhClass: "人工生命 · 标准化高阶机体",
+    enClass: "Synthetic life · Standardized high-order chassis",
+    zhHabitat: "天庭服务器城、轨道圣堂、舰队数据航道",
+    enHabitat: "Celestial server-cities, orbital sanctums, fleet data lanes",
+    zhDiet: "星能、电力与高带宽人格同步",
+    enDiet: "Star-energy, electricity, and high-bandwidth mind synchronization",
+    zhActivity: "常态悬浮 · 人格同步 · 任务换装",
+    enActivity: "Permanent hover · Mind synchronization · Modular refit",
+    zhEcology: "天使以约七成温润仿生陶瓷和三成克制的可见机械构成人形或近人形上身，保留可被原人格认同的年龄、性别、发式与神情；腰部以下由圆盘、星仪、彗核、共鸣钟或环形御座等反重力容器承载。紧凑的宝石化意识核心使用青蓝至蓝紫星辉。光环、盾翼、星帆、光翼、远程圣器或环塔既是神性象征，也是散热、姿态控制、通信和人格相干结构。",
+    enEcology: "Angels form a human or near-human upper body from roughly seventy percent warm biomimetic ceramic and thirty percent restrained visible machinery, preserving the age, gender, hair, and expression recognized by the original mind. Below the waist, antigravity discs, astrolabes, comet cores, resonance bells, or ring-thrones carry the body. A compact jewel-like mind core shines in cyan through violet. Halos, aegis wings, solar sails, light-wings, remote reliquaries, and orbital cathedrals are both numinous symbols and functional systems for cooling, attitude control, communication, and mind coherence.",
+    zhRelations: "天使外壳可以在任务后回收、修复并交由另一人格使用，因此机体型号不等同于个人身份。飞升者可以保留年龄、性别与容貌特征，但机体必须呈现他们主动选择的新存在方式，而不是把人格囚禁在无表情兵器中。上位天使只是载荷等级，不是灵魂或人格的高低。",
+    enRelations: "Angel shells can be recovered, repaired, and assigned to another mind after a mission, so chassis model is not personal identity. Ascendants may retain age, gender, and facial identity, but the body must read as a chosen mode of existence—not a person imprisoned inside an expressionless weapon. An Upper Angel denotes payload grade, never the worth of a soul or person.",
+    zhTraits: ["平静、可亲且能保留原人格特征的仿生面容", "约七成机械陶瓷与三成精密科技结构的材质平衡", "宝石化紧凑星能核心，不使用敞开式机械胸腔", "以反重力意识容器取代双腿和脚部", "光环及可配置翼系同时承担神性表达与人格稳定功能"],
+    enTraits: ["Serene approachable biomimetic face preserving personal identity", "A balance of roughly seventy percent mechanical ceramic and thirty percent precise technology", "Compact jewel-like star core with no open mechanical chest cavity", "Antigravity mind vessel instead of legs or feet", "Halo and configurable wing systems serve both numinous expression and mind coherence"],
+    zhKnownFormsNote: "以下形象均已纳入天使家族标准。它们共享仿生面容、机械陶瓷上身、紧凑核心、无腿悬浮载体与意识光环，是职能换装而非独立物种、成长阶段或人格等级。",
+    enKnownFormsNote: "The following expressions are approved within the Angel family standard. They share a biomimetic face, mechanical-ceramic torso, compact core, legless hover vessel, and consciousness halo; they are role refits rather than separate species, growth stages, or ranks of personhood.",
+    knownForms: [
+      {
+        zhName: "天使—星光开悟者",
+        enName: "Angel—Starlight Enlightener",
+        zhType: "人格承载型 · 星能演算",
+        enType: "Mind-bearing role · Star-energy computation",
+        zhDescription: "强化胸部意识核心、星图光环与演算翼，使飞升人格在移动中解析星能并获得启示。仿生面容与悬浮结构必须保持候选骨架的共同神性。",
+        enDescription: "Strengthens the consciousness core, star-map halo, and computation wings so the ascended mind interprets star-energy while moving. The biomimetic face and floating structure must preserve the selected frame's divine identity."
+      },
+      {
+        zhName: "天使—阵线统御官",
+        enName: "Angel—Frontline Commander",
+        zhType: "指挥型 · 阵亡节点回收",
+        enType: "Command role · Lost-node recovery",
+        zhDescription: "扩展人格光环与翼状中继结构，用于收集阵亡节点、保存记忆并调度后备机体。指挥感应结构应像庄严冠冕，而不是战术头盔。",
+        enDescription: "Expands the mind halo and winglike relay structures to gather fallen nodes, preserve memory, and route reserve bodies. Command sensors should read as a dignified crown rather than a tactical helmet."
+      },
+      {
+        zhName: "上位天使—炮台巡游者",
+        enName: "Upper Angel—Turret Roamer",
+        zhType: "重载型 · 移动炮台",
+        enType: "Heavy role · Mobile turret",
+        zhDescription: "以强化环翼或翼幕承载可收纳的远程防卫模块；非战斗状态下武装必须完全服从飞升载体的神圣主轮廓，不能让炮台成为第一视觉印象。",
+        enDescription: "Carries retractable ranged defense modules within reinforced ring-wings or a wing canopy. Outside combat, armament must remain subordinate to the sacred ascension-vessel silhouette and never become the first visual impression."
+      }
+    ],
+    tagsZh: ["械心天庭", "人工生命", "标准机体", "上传人格", "机械陶瓷", "悬浮载体", "意识光环"],
+    tagsEn: ["Machine Celestial Court", "Synthetic life", "Standard chassis", "Uploaded mind", "Mechanical ceramic", "Hover vessel", "Mind halo"],
+    illustration: "./assets/creature-concepts/celestial-angel/explorations-round-2/03-solar-sail-oracle.png",
+    concept: "./assets/creature-concepts/celestial-angel/explorations-round-2/01-aegis-prayer-guardian.png",
+    zhConceptNote: "八套获准形象共同定义天使机体，而非要求所有个体采用同一种翅膀或底座。卡牌职能可以从盾翼、星帆、远程圣器、环塔、彗核与星座御座中派生，但必须保持共同家族骨架。",
+    enConceptNote: "Eight approved expressions jointly define the Angel chassis; individual bodies need not share one wing or base. Card roles may derive from aegis wings, solar sails, remote reliquaries, orbital cathedrals, comet cores, and constellation thrones while preserving the shared family invariants.",
+    specimens: [
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/01-aegis-prayer-guardian.png", zh: "标准形象 A1 · 盾翼祷卫", en: "Approved A1 · Aegis Prayer Guardian" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/02-star-reliquary-choir.png", zh: "标准形象 A2 · 星铳圣咏", en: "Approved A2 · Star-Reliquary Choir" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/03-solar-sail-oracle.png", zh: "标准形象 A3 · 日帆神谕", en: "Approved A3 · Solar-Sail Oracle" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/04-orbital-cathedral-ascendant.png", zh: "标准形象 A4 · 环塔飞升者", en: "Approved A4 · Orbital-Cathedral Ascendant" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/05-aegis-ring-archon.png", zh: "标准形象 A5 · 盾环执政者", en: "Approved A5 · Aegis-Ring Archon" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/06-orbital-star-ordinance.png", zh: "标准形象 A6 · 星轨圣械", en: "Approved A6 · Orbital Star Ordinance" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/07-comet-core-pilgrim.png", zh: "标准形象 A7 · 彗核巡礼者", en: "Approved A7 · Comet-Core Pilgrim" },
+      { src: "./assets/creature-concepts/celestial-angel/explorations-round-2/08-constellation-throne.png", zh: "标准形象 A8 · 星座御座", en: "Approved A8 · Constellation Throne" }
+    ]
+  },
+  {
+    id: "celestial-sprite",
+    group: "synthetic",
+    status: "standardized",
+    accent: "#61e6ff",
+    zhName: "天庭机灵",
+    enName: "Celestial Sprite",
+    zhSubtitle: "把路线经验写入悬浮系统的可爱小型伴随机",
+    enSubtitle: "An adorable small companion that writes route experience into its hover system",
+    zhSummary: "机灵是械心天庭最常见的小型悬浮伴随机谱系。它们以低成本标准机体执行跑腿、侦察、维护和节点接力，并会把累计移动经验实时固化为更高效的飘行、巡航与高速穿梭模式。",
+    enSummary: "Celestial Sprites are the Machine Celestial Court's most common small hovering companion lineage. Their low-cost standard bodies run errands, scout, maintain systems, and relay nodes, continuously compiling traveled routes into more efficient drift, cruise, and high-speed traversal modes.",
+    zhClass: "人工生命 · 学习型伴随机",
+    enClass: "Synthetic life · Learning companion machine",
+    zhHabitat: "服务器花园、维护夹层、舰内通道与数据驿站",
+    enHabitat: "Server gardens, maintenance interspaces, ship corridors, data relays",
+    zhDiet: "微型星能电池、感应充电与路线数据",
+    enDiet: "Micro star-cells, inductive charging, and route data",
+    zhActivity: "常态悬浮 · 路线学习 · 群体接力",
+    enActivity: "Permanent hover · Route learning · Group relay",
+    zhEcology: "标准机灵主体直径约45厘米，拥有圆润的珍珠白泪滴形机身、单片青色表情目镜、两枚后掠感知耳鳍、腹部椭圆学习核心、两只小型三指工具手与底部反重力孔。它们从不长出腿、脚或轮子，也不会接触地面；可爱感来自圆润比例、好奇的倾斜姿态和会变化的目镜表情。",
+    enEcology: "A standard Sprite has a body about 45 centimeters across, with a rounded pearl-white teardrop shell, one cyan expressive visor, two swept-back sensor ear-fins, an oval belly learning-core, two tiny three-finger tool hands, and a ventral antigravity aperture. It never has legs, feet, or wheels and never touches the ground; its charm comes from round proportions, curious tilts, and responsive visor expressions.",
+    zhRelations: "机灵每完成一段累计路程，就会逐级展开机身下方的同心悬浮环与两枚矢量鳍：由安静飘行切换至灵活巡航，最终进入高速路线穿梭。这是同一悬浮机体的软件与硬件展开，不是成长、进化或更换物种。不同职能只能在背部硬点、工具手和小型货舱上换装。",
+    enRelations: "After accumulating route distance, a Sprite progressively deploys concentric hover rings and two vector fins beneath its body, moving from quiet drift to agile cruise and finally high-speed route traversal. This is deployment of software and hardware in the same hovering body—not growth, evolution, or species replacement. Role changes are confined to the back hardpoint, tool hands, and small cargo pods.",
+    zhTraits: ["圆润泪滴形悬浮机身与单片青色表情目镜", "两枚后掠的长形感知耳鳍", "腹部中央可见的椭圆学习核心", "两只小型三指工具手且绝不具有腿、脚或轮子", "同心悬浮环与矢量鳍依次展开但身体比例不变"],
+    enTraits: ["Rounded teardrop hover body with one expressive cyan visor", "Two long swept-back sensor ear-fins", "Visible oval learning-core centered on the belly", "Two tiny three-finger tool hands and absolutely no legs, feet, or wheels", "Concentric hover rings and vector fins deploy without changing body proportions"],
+    tagsZh: ["械心天庭", "人工生命", "悬浮伴随机", "路线学习", "可爱", "高速穿梭"],
+    tagsEn: ["Machine Celestial Court", "Synthetic life", "Hover companion", "Route learning", "Adorable", "Fast traversal"],
+    illustration: "./assets/creature-concepts/celestial-sprite/illustration-v2.png",
+    concept: "./assets/creature-concepts/celestial-sprite/concept-sheet-v2.png"
+  },
+  {
     id: "crystal-spirit",
     group: "sapient",
     status: "umbrella",
@@ -365,6 +465,26 @@ const bestiaryRecords = [
     enRelations: "Mortals infer a manifestation's principle from outcomes and cannot assume friendship or hostility. The Starfaring Omen—Great Ray is one known individual, not a universal body plan for the entire class.",
     zhTraits: ["紧凑明亮的意志核心", "由星云、尘埃与星体组成的半透明形体", "引力弧与空间透镜效应", "以舰船、空间站或世界作为尺度参照", "轮廓可从巨鳐、环体到抽象星群完全不同"],
     enTraits: ["Compact brilliant will-core", "Translucent body of nebulae, dust, and stars", "Gravitational arcs and spatial lensing", "Ships, stations, or worlds as scale cues", "Silhouettes range from rays and ring-beings to abstract clusters"],
+    knownForms: [
+      {
+        zhName: "星航恶兆—巨鳐",
+        enName: "Starfaring Omen—Great Ray",
+        zhType: "已确认显化 · 深空巨构级",
+        enType: "Confirmed manifestation · Deep-space megastructure",
+        zhDescription: "已知投影呈无面巨鳐轮廓：宽阔的中央体、两翼般展开的星云结构与紧凑的青白意志核心。它执行“阵列密度矫正”法则：当舰船、巨构或其他大型质量在局部空间过度聚集时，巨鳐会折叠距离并释放引力秩序波，强制重新分配阵列间距。",
+        enDescription: "Its known projection resembles a faceless great ray: a broad central body, two winglike nebular structures, and a compact cyan-white will-core. It executes the law of formation-density correction: when ships, megastructures, or other great masses become excessively concentrated in local space, the Great Ray folds distance and releases gravitational order waves that forcibly redistribute their spacing."
+      }
+    ],
+    protocolZh: [
+      "先记录被改变的物理结果，再推断其执行原则；绝不能只凭外形命名或分类。",
+      "不要默认星云体友善或敌对。应优先疏散高密度舰群、停止扩大异常，并保留远距观测窗口。",
+      "持续测量意志核心、空间透镜、引力弧和受影响常数；在无法理解其局部法则与后果时，不应贸然接近或攻击。"
+    ],
+    protocolEn: [
+      "Record the altered physical outcomes before inferring the executed principle; never classify a manifestation by silhouette alone.",
+      "Do not assume friendship or hostility. Disperse dense fleet formations, stop escalating the anomaly, and preserve a long-range observation window.",
+      "Track the will-core, spatial lensing, gravity arcs, and affected constants. Do not approach or attack until the local law and likely consequences are understood."
+    ],
     zhConceptNote: "星云体同样是原则驱动的总类。本页保留已确认个体插画；后续概念图应按具体法则执行者分别制作，而不是建立统一物种解剖。",
     enConceptNote: "Manifestations are also principle-driven umbrellas. This page retains a confirmed individual illustration; future sheets should be made per executed law rather than as universal species anatomy.",
     tagsZh: ["宇宙法则", "投影", "意志核心", "巨型存在", "非生物"],
@@ -396,12 +516,60 @@ const bestiaryRecords = [
     enActivity: "Discontinuous movement · Entropic spread",
     zhEcology: "所有空亡体都围绕不反射任何光线的因果空洞组织形体。肢体可能同时占据矛盾位置，组织同时生长与侵蚀，附近直线、光照和行动顺序都会断裂。力量越高，代表失稳程度越强，而非肉体更结实。",
     enEcology: "Every Hollow-Null organizes around a causal void that reflects no light. Limbs occupy contradictory positions, tissue grows and erodes at once, and nearby lines, lighting, and action order break. Greater power means greater instability, not tougher flesh.",
-    zhRelations: "击杀普通空亡体只能清除局部残骸。每场大型“时亡灾变”都有一名空亡时主作为稳定吸引子；摧毁时主会让因果空洞坍缩、从属个体消散并恢复局部时间。",
-    enRelations: "Destroying ordinary Hollow-Nulls clears only local debris. Every major Time-Death catastrophe is anchored by a Hollow Time Lord; killing that attractor collapses the causal void, disperses lesser forms, and allows local time to resume.",
+    zhRelations: "击杀普通空亡体只能清除局部残骸。迷离型、飞翔型与咆哮型是灾难的不同表现，不构成进化关系；每场大型“时亡灾变”都有一名空亡时主作为唯一核心与稳定吸引子。摧毁时主会让因果空洞坍缩、其他表现形态消散并恢复局部时间。",
+    enRelations: "Destroying an ordinary Hollow-Null clears only local debris. Lost, flying, and roaring forms are parallel expressions of a disaster rather than evolutionary stages; every major Time-Death catastrophe has one Hollow Time Lord as its singular core and stabilizing attractor. Destroying it collapses the causal void, disperses the other expressions, and allows local time to resume.",
     zhTraits: ["完全不反光的中央因果空洞", "互不对齐的解剖或材质碎片", "同一肢体的矛盾时间位置", "同时生长和侵蚀的表面", "断帧式移动与破碎环境线条"],
     enTraits: ["Perfectly lightless central causal void", "Misaligned anatomical and material fragments", "Contradictory temporal positions of the same limb", "Simultaneous growth and erosion", "Frame-skipping movement and broken environmental lines"],
-    zhConceptNote: "空亡体没有稳定物种谱系。图鉴保留事件记录和视觉识别原则，但每个形体都应从其具体因果矛盾与灾变环境推导。",
-    enConceptNote: "Hollow-Nulls have no stable species lineage. The archive preserves event records and recognition rules, while each form must derive from its particular contradiction and disaster environment.",
+    knownForms: [
+      {
+        zhName: "迷离的空亡体",
+        enName: "Lost Hollow-Null",
+        zhType: "灾难表现 · 迷离型",
+        enType: "Disaster expression · Lost form",
+        zhDescription: "由少量互不相容的生物、陶瓷与机械残片围绕小型因果空洞拼接而成。它们像迷路般爬行或追逐残存秩序，是最常见的局部因果残骸；形体简陋不代表它仍是可理解的自然生命。",
+        enDescription: "A few incompatible biological, ceramic, and mechanical fragments assemble around a small causal void. These forms crawl as if lost and pursue pockets of remaining order. Their crude bodies make them common local debris, not understandable natural animals.",
+        concept: "./assets/creature-concepts/hollow-null/lost-hollow-null-concept-sheet.png"
+      },
+      {
+        zhName: "飞翔型空亡体",
+        enName: "Flying Hollow-Null",
+        zhType: "灾难表现 · 多轨迹型",
+        enType: "Disaster expression · Multi-trajectory form",
+        zhDescription: "没有用于飞行的普通翅膀；同一形体会同时占据数条互不相容的空中轨迹，再跳过中间过程突然抵达其中一个位置。漂浮残片围绕因果空洞不断改写前后关系。",
+        enDescription: "It has no ordinary wings. The same body occupies several incompatible aerial trajectories, then skips the intervening motion and arrives at one of them. Floating fragments continually rewrite their before-and-after relationship around the causal void.",
+        concept: "./assets/creature-concepts/hollow-null/flying-hollow-null-concept-sheet.png"
+      },
+      {
+        zhName: "咆哮型空亡体",
+        enName: "Roaring Hollow-Null",
+        zhType: "灾难表现 · 失序波型",
+        enType: "Disaster expression · Disorder-wave form",
+        zhDescription: "所谓“咆哮”不是单纯声波，而是先于声音抵达的因果失序前沿。连接件会脱落、结构会锈蚀、记忆与行动顺序会被打乱，随后观察者才听见无法对应发声器官的回响。",
+        enDescription: "Its 'roar' is not merely sound but a causal disorder front that arrives first. Fasteners separate, structures corrode, and memory and action order scramble before observers hear an echo with no matching vocal organ.",
+        concept: "./assets/creature-concepts/hollow-null/roaring-hollow-null-concept-sheet.png"
+      },
+      {
+        zhName: "空亡时主",
+        enName: "Hollow Time Lord",
+        zhType: "灾变核心 · 稳定吸引子",
+        enType: "Catastrophe core · Stabilizing attractor",
+        zhDescription: "每次大型时亡灾变只会围绕一名时主形成。它不是其他空亡体的进化终点或普通首领，而是维持整场灾变的因果核心与稳定吸引子：各种表现形态、时间断层和失序现象都被其空洞组织。摧毁时主可令灾变失去核心并开始平息。",
+        enDescription: "Each major Time-Death catastrophe forms around one Time Lord. It is neither the evolutionary endpoint nor an ordinary leader of other Hollow-Nulls, but the causal core and stabilizing attractor of the entire event: every expression, temporal fracture, and disorder phenomenon is organized by its void. Destroying it removes the catastrophe's core and allows the event to subside.",
+        concept: "./assets/creature-concepts/hollow-null/hollow-time-lord-concept-sheet.png"
+      }
+    ],
+    protocolZh: [
+      "不要以体型、外甲或物理创伤判断威胁与死亡；先确认中央因果空洞是否仍在组织周围碎片。",
+      "建立不受影响的参照线与同步时标，隔离断裂区域，并按不连续移动预留多条可能路径。",
+      "大型时亡灾变中应优先定位空亡时主。核心仍存在时，反复清除其他表现形态只能短暂减缓熵增。"
+    ],
+    protocolEn: [
+      "Do not judge threat or death by size, armor, or physical injury. First confirm whether the central causal void still organizes nearby fragments.",
+      "Establish unaffected reference lines and synchronized clocks, isolate broken zones, and reserve multiple possible paths for discontinuous movement.",
+      "In a major Time-Death event, prioritize locating the Hollow Time Lord. While the anchor persists, clearing other expressions only slows entropy temporarily."
+    ],
+    zhConceptNote: "空亡体没有统一物种解剖，因此不建立覆盖全族的概念图。各灾难表现与空亡时主的独立设定板已收录在“已知形态与显化”中。",
+    enConceptNote: "Hollow-Nulls have no universal species anatomy, so the archive does not impose one class-wide concept sheet. Separate setting sheets for each disaster expression and the Hollow Time Lord appear under Known Forms.",
     tagsZh: ["因果残骸", "空洞", "熵增", "时间灾变", "非生物"],
     tagsEn: ["Causal debris", "Void", "Entropy", "Temporal disaster", "Non-biological"],
     illustration: "./assets/card-art/lost-hollow-null/lost-hollow-null-01.png",
@@ -416,10 +584,13 @@ const isEnglish = document.documentElement.lang.toLowerCase().startsWith("en");
 const copy = {
   all: isEnglish ? "All records" : "全部档案",
   wildlife: isEnglish ? "Natural wildlife" : "自然奇兽",
+  synthetic: isEnglish ? "Synthetic lineages" : "人工机体谱系",
   sapient: isEnglish ? "Sapient umbrellas" : "智慧总类",
   cosmic: isEnglish ? "Cosmic projections" : "宇宙投影",
   anomaly: isEnglish ? "Causal anomalies" : "因果异常",
   confirmed: isEnglish ? "Confirmed species" : "已确认物种",
+  standardized: isEnglish ? "Standardized chassis lineage" : "标准机体谱系",
+  provisional: isEnglish ? "Candidate selection pending" : "候选方案待选",
   umbrella: isEnglish ? "Umbrella taxonomy" : "总类待拆分",
   boundary: isEnglish ? "Boundary record" : "边界档案",
   recordCount: (count) => isEnglish ? `${count} records found` : `检索到 ${count} 份档案`,
@@ -431,6 +602,14 @@ const copy = {
   ecology: isEnglish ? "Ecology and behavior" : "生态与生活习性",
   relations: isEnglish ? "Relationship with civilization" : "与文明的关系",
   traits: isEnglish ? "Recognition traits" : "识别特征",
+  knownForms: isEnglish ? "Known manifestations and forms" : "已知形态与显化",
+  knownFormsNote: isEnglish
+    ? "These are operational records, not a claim that the umbrella class shares one anatomy or evolutionary lineage."
+    : "以下为可操作的观测档案，不代表该总类共享统一解剖或自然演化谱系。",
+  fieldProtocol: isEnglish ? "Encounter protocol" : "现场处置协议",
+  fieldProtocolNote: isEnglish
+    ? "Provisional guidance for surviving observation teams; event-specific orders take precedence."
+    : "供观测与处置人员使用的暂行原则；具体事件命令具有更高优先级。",
   artArchive: isEnglish ? "Visual archive" : "视觉档案",
   artArchiveNote: isEnglish
     ? "Illustrations record behavior in context; concept sheets lock anatomy, material, scale, and life-stage continuity."
@@ -447,7 +626,7 @@ const copy = {
   viewImage: isEnglish ? "Open full image" : "查看原图"
 };
 
-const filters = ["all", "wildlife", "sapient", "cosmic", "anomaly"];
+const filters = ["all", "wildlife", "synthetic", "sapient", "cosmic", "anomaly"];
 const listEl = document.querySelector("#bestiaryList");
 const detailEl = document.querySelector("#bestiaryDetail");
 const filterEl = document.querySelector("#bestiaryFilters");
@@ -472,11 +651,17 @@ function escapeHtml(value) {
 }
 
 function searchableText(record) {
+  const formText = (record.knownForms || []).flatMap((form) => [
+    form.zhName, form.enName, form.zhType, form.enType, form.zhDescription, form.enDescription
+  ]);
   return [
     record.zhName, record.enName, record.zhSubtitle, record.enSubtitle,
     record.zhSummary, record.enSummary, record.zhClass, record.enClass,
     record.zhHabitat, record.enHabitat, record.zhDiet, record.enDiet,
-    record.zhActivity, record.enActivity, ...(record.tagsZh || []), ...(record.tagsEn || [])
+    record.zhActivity, record.enActivity, record.zhEcology, record.enEcology,
+    record.zhRelations, record.enRelations, ...(record.zhTraits || []), ...(record.enTraits || []),
+    ...(record.protocolZh || []), ...(record.protocolEn || []), ...formText,
+    ...(record.tagsZh || []), ...(record.tagsEn || [])
   ].join(" ").toLowerCase();
 }
 
@@ -541,6 +726,9 @@ function renderDetail() {
   const traits = isEnglish ? record.enTraits : record.zhTraits;
   const tags = isEnglish ? record.tagsEn : record.tagsZh;
   const specimens = record.specimens || [];
+  const knownForms = record.knownForms || [];
+  const knownFormsNote = text(record, "zhKnownFormsNote", "enKnownFormsNote") || copy.knownFormsNote;
+  const protocol = isEnglish ? (record.protocolEn || []) : (record.protocolZh || []);
   const conceptNote = text(record, "zhConceptNote", "enConceptNote") || copy.pendingDefault;
   detailEl.style.setProperty("--record-accent", record.accent);
   detailEl.innerHTML = `
@@ -582,6 +770,38 @@ function renderDetail() {
         <h4>${escapeHtml(copy.traits)}</h4>
         <ul class="bestiary-traits">${traits.map((trait) => `<li>${escapeHtml(trait)}</li>`).join("")}</ul>
       </section>
+      ${knownForms.length ? `
+        <section class="bestiary-form-section">
+          <div class="bestiary-art-header">
+            <div><span>KNOWN FORMS</span><h4>${escapeHtml(copy.knownForms)}</h4></div>
+            <p>${escapeHtml(knownFormsNote)}</p>
+          </div>
+          <div class="bestiary-form-grid">
+            ${knownForms.map((form, index) => `
+              <article class="bestiary-form-card">
+                ${form.concept ? `
+                  <button class="bestiary-form-concept" data-lightbox-src="${form.concept}" data-lightbox-label="${escapeHtml(`${text(form, "zhName", "enName")} · ${copy.concept}`)}" type="button" aria-label="${escapeHtml(`${copy.viewImage}: ${text(form, "zhName", "enName")} · ${copy.concept}`)}">
+                    <img src="${form.concept}" alt="${escapeHtml(`${text(form, "zhName", "enName")} · ${copy.concept}`)}" loading="lazy" />
+                    <span>${escapeHtml(copy.concept)}</span>
+                  </button>` : ""}
+                <div class="bestiary-form-copy">
+                  <div class="bestiary-form-index">${String(index + 1).padStart(2, "0")}</div>
+                  <small>${escapeHtml(text(form, "zhType", "enType"))}</small>
+                  <h5>${escapeHtml(text(form, "zhName", "enName"))}</h5>
+                  <p>${escapeHtml(text(form, "zhDescription", "enDescription"))}</p>
+                </div>
+              </article>`).join("")}
+          </div>
+        </section>` : ""}
+      ${protocol.length ? `
+        <section class="bestiary-protocol">
+          <div class="bestiary-protocol-heading">
+            <span>FIELD PROTOCOL</span>
+            <h4>${escapeHtml(copy.fieldProtocol)}</h4>
+            <p>${escapeHtml(copy.fieldProtocolNote)}</p>
+          </div>
+          <ol>${protocol.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+        </section>` : ""}
       <section class="bestiary-art-section">
         <div class="bestiary-art-header">
           <div><span>VISUAL RECORD</span><h4>${escapeHtml(copy.artArchive)}</h4></div>

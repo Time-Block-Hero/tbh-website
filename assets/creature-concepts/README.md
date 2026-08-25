@@ -1,6 +1,6 @@
-# Time-Block Hero — 奇兽概念图集
+# Time-Block Hero — 生物与人工生命概念图集
 
-本图集收录九种奇兽。每种生物包含两张独立资产：
+本图集收录九种自然奇兽与两种械心天庭人工机体谱系。每份档案包含两张独立资产：
 
 - `illustration.png`：竖幅叙事插画，通过栖息地与行为体现生活习性。
 - `concept-sheet.png`：横幅无文字概念图，统一物种解剖、尺度、材质与行为设计。
@@ -18,3 +18,5 @@
 | 回声归巢兽 | Echo Homing Beast | `echo-homing-beast/` | 引力回声、群体导航、失落故乡 |
 | 裂潮潜兽 | Riftsurf Diver | `riftsurf-diver/` | 裂隙边缘、受控相位、偷渡共生 |
 | 暮钟牧母 | Duskbell Matriarch | `duskbell-matriarch/` | 灾变预警、保护幼兽、迁徙牧群 |
+| 天使机体 | Angel Chassis | `celestial-angel/` | 标准骨架、四翼轨、计算冠环、任务换装 |
+| 天庭机灵 | Celestial Sprite | `celestial-sprite/` | 可爱悬浮伴随机、飘行、巡航、高速穿梭 |

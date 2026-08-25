@@ -58,7 +58,7 @@ const timelineEvents = [
       "assets/generated/timeline-2350-alt3.png"
     ],
     body:
-      "Noon never arrived. Stasis-dense regions around the world collapsed at once; cities aged a century in a second, Hollow Nulls poured from the Timeless Sea, and humanity lost eighty percent of its population."
+      "Noon never arrived. Stasis-dense regions around the world collapsed at once; cities aged a century in a second, while contradictory timelines compressed inside the rifts into Hollow-Nulls and major Time-Death catastrophes. Humanity lost eighty percent of its population."
   },
   {
     year: "2356",
@@ -90,7 +90,7 @@ const timelineEvents = [
     image: "assets/generated/timeline-2410.png",
     gallery: ["assets/generated/timeline-2410.png", "assets/generated/timeline-2410-alt1.png"],
     body:
-      "The Skyraider Alliance raided imperial routes across the outer rings, while the Free Navigator Guild kept interstellar circulation alive through its route-right keys. Banners fall; routes endure."
+      "The Skyborne Alliance rose in rebellion along the galactic frontier, turning expedition routes into a network of free settlements: adventure finds resources, pioneering builds footholds, and conquest defends new territory."
   },
   {
     year: "2460",
@@ -138,14 +138,14 @@ const factions = [
   },
   {
     id: "skyraider",
-    name: "Skyraider Alliance / 猎空同盟",
-    code: "RAID · CYBERNETICS · FREE CREW",
+    name: "Skyborne Alliance / 猎空同盟",
+    code: "REBELLION · FRONTIER · EXPANSION",
     accent: "#36f0a4",
     image: "assets/generated/faction-skyraider.png",
-    slogan: "No quotas. No thrones. Only the next route.",
+    slogan: "The frontier belongs to those brave enough to reach it.",
     body:
-      "A punk fleet formed by frontier colonists, illegal Stasis engineers, cybernetic doctors, and runaway crews. Black-green-red paint, modified hulls, and dangerous body mods are their everyday language.",
-    tags: ["Black-green-red punk", "Space pirates", "Illegal cybernetics", "Crew contracts"]
+      "A resistance civilization rooted in the galactic frontier, formed by colonists, explorers, pioneer engineers, cybernetic doctors, and soldiers who escaped Imperial rule. Mobile fleet-cities, forward bases, and new colonies connect its territory. Adventure discovers routes and resources, pioneering builds the means to survive, and conquest drives back the Empire and frontier threats. Deep forest green, dark oxblood red, rebuilt hulls, dangerous cybernetics, and reclaimed weapons define its industrial-punk visual language.",
+    tags: ["Galactic frontier", "Resistance civilization", "Adventure and pioneering", "Industrial punk"]
   },
   {
     id: "guild",
@@ -165,7 +165,7 @@ const filters = [
   { id: "astra", label: "Astra Imperium" },
   { id: "machine", label: "Machine Court" },
   { id: "solar", label: "Solar Church" },
-  { id: "skyraider", label: "Skyraiders" },
+  { id: "skyraider", label: "Skyborne Alliance" },
   { id: "guild", label: "Navigator Guild" },
   { id: "neutral", label: "Key Neutrals" }
 ];
@@ -181,10 +181,10 @@ const characters = [
   ["aletheia", "Aletheia", "solar", "Solar Saintess", "Gentleness is not the absence of fire. It is fire not yet fallen.", "A young saintess on the Dyson Ring who can stabilize miniature solar flares. Quiet and devout, she understands the Church's shadows better than many knights.", "#ff8a3d"],
   ["helios", "Helios", "solar", "Captain of the Solar Knights", "The body feels pain, so the soul learns reverence.", "A young knight who survived extreme Corona Baptism, with a body approaching a small reactor. He rejects uploading and the cold order of the Imperium alike.", "#ff8a3d"],
   ["sancheres", "Sancheres", "solar", "Saint of the Origin Light", "Every holy flame rises from the first crack.", "A theological core figure believed to have found the path of solar salvation in the ruins of Black Noon. Some suspect he is no longer fully human.", "#ff8a3d"],
-  ["luolan", "Luolan", "skyraider", "Skyraider Fleet Captain", "Who said survival means kneeling?", "A red-haired punk captain of the flagship Broken Bell. Her illegal chrono-eye can preview trajectories seconds ahead; she laughs lightly and fights brutally.", "#36f0a4"],
+  ["luolan", "Luolan", "skyraider", "Skyborne Frontline Commander", "Who said survival means kneeling?", "The red-haired punk commander of the mobile fleet-city Broken Bell. Her illegal chrono-eye previews trajectories seconds ahead as she leads expeditions, establishes frontier footholds, and clears Imperial threats.", "#36f0a4"],
   ["nyx", "Nyx", "skyraider", "Cybernetic Doctor and Engineer", "Hold still. I only replaced your lung with something more expensive.", "A lazy hacker-doctor whose body is mostly assembled cybernetics. He can temporarily breach time quotas, and may be punished by his own modified neural ports at any moment.", "#36f0a4"],
-  ["drake", "Drake", "skyraider", "Legendary Old-Era Captain", "Legends are not tombstones. They are drinks people still owe me.", "An old shadow of the Skyraider Alliance, said to have led a broken fleet through the time currents after Black Noon. Luolan refuses to admit she inherited his route.", "#36f0a4"],
-  ["ald", "Ald", "skyraider", "Star-Blade Duelist", "A fleet needs no nobles, but it does need someone to cut the door open.", "A plasma-blade boarding duelist responsible for tearing open the first breach in ship-to-ship assaults. Crude, loyal, and allergic to complicated plans.", "#36f0a4"],
+  ["drake", "Drake", "skyraider", "Old-Generation Resistance Commander", "Legends are not tombstones. They are drinks people still owe me.", "A legendary frontier resistance leader who guided a battered fleet through the time currents after Black Noon and founded some of the first free settlements. Luolan refuses to admit she inherited his route.", "#36f0a4"],
+  ["ald", "Ald", "skyraider", "Star-Blade Breacher", "The Alliance needs no nobles, but it does need someone to cut the door open.", "A plasma-blade frontline fighter who opens the first breach during stronghold assaults and frontier conquests. Crude, loyal, and allergic to complicated plans.", "#36f0a4"],
   ["evelyn", "Evelyn", "guild", "Young Director of the Free Navigator Guild", "A contract lasts longer than artillery fire.", "Director of one of the Twelve Golden Routes. She appears elegant and kind, but her true weapons are debt, insurance, blockade orders, and a credit system no one dares violate.", "#ffc766"],
   ["saifa", "Saifa", "guild", "Genius Navigator", "I do not predict fate. I calculate which path is not dead yet.", "A navigator with almost instinctive spatial perception, able to find safe routes along the edge of rifts. She serves no nation, only her ship and star maps.", "#ffc766"],
   ["grant", "Grant", "guild", "Contract Enforcer", "Rest assured, our collection procedure is entirely legal.", "Behind his polite lawyer-like appearance is the commander of the Guild's armed collection fleet. He does exactly one thing: make debtors pay.", "#ffc766"],
@@ -207,7 +207,7 @@ const characters = [
       : faction === "machine"
         ? "Design sheet includes frame structure and sync/combat forms."
         : faction === "skyraider"
-          ? "Design sheet includes illegal cybernetics, boarding gear, and crew marks."
+          ? "Design sheet includes illegal cybernetics, frontier equipment, and resistance insignia."
           : faction === "astra"
             ? "Design sheet includes uniform, tribunal/military gear, and time-quota devices."
             : faction === "guild"
