@@ -1,110 +1,13 @@
 <!doctype html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>宇宙生物图鉴 | Time-Block Hero 世界档案</title>
-    <meta
-      name="description"
-      content="Time-Block Hero 宇宙生物图鉴：记录奇兽、天使与机灵等人工生命、晶灵、兽裔、星云体与空亡体的形态、生态及文明关系。"
-    />
-    <link rel="stylesheet" href="./styles.css?v=20260816-bestiary" />
-    <link rel="stylesheet" href="./bestiary.css?v=20260824-machine" />
-    <script src="./bestiary.js?v=20260824-machine-v3" defer></script>
-  <link rel="stylesheet" href="./site.css">
-  </head>
-  <body class="bestiary-page">
-    <a class="portal-skip" href="#main">跳转至正文</a>
-<header class="portal-header"><a class="portal-brand" href="./index.html" aria-label="Time-Block Hero"><span class="portal-brand-symbol" aria-hidden="true">T<span>H</span></span><span>TIME-BLOCK<br><strong>HERO</strong></span></a><nav class="portal-nav" aria-label="主导航"><a href="./index.html" aria-current="page"><span>01</span>游戏设定集</a><a href="./wiki.html"><span>02</span>规则 Wiki</a><a href="./card-editor.html"><span>03</span>卡牌编辑器</a></nav><a class="portal-language" href="./bestiary-en.html" lang="en">EN</a></header>
-
-    <main id="main">
-      <section class="bestiary-hero" aria-labelledby="bestiary-title">
-        <img
-          class="bestiary-hero-art"
-          src="./assets/creature-concepts/duskbell-matriarch/illustration.png"
-          alt="暮钟牧母在裂隙来临前保护幼兽并向牧群示警"
-        />
-        <div class="bestiary-hero-shade"></div>
-        <div class="bestiary-hero-copy">
-          <p class="section-kicker">XENOBIOLOGY ARCHIVE · 2460</p>
-          <h1 id="bestiary-title">宇宙生物图鉴</h1>
-          <p class="bestiary-hero-lead">
-            它们沿恒星风迁徙，在废弃静域中完成一生，也可能由文明制造、学习路线并更换身体；这里记录自然、人工与边界存在各自的秩序。
-          </p>
-          <a class="primary-link" href="#catalogue">开始查阅</a>
-        </div>
-        <div class="bestiary-hero-index" aria-label="图鉴统计">
-          <span><strong id="confirmedCount">09</strong> 已确认物种</span>
-          <span><strong>02</strong> 人工机体谱系</span>
-          <span><strong>02</strong> 智慧生命总类</span>
-          <span><strong>02</strong> 非生物存在</span>
-        </div>
-      </section>
-
-      <section class="section bestiary-principles" aria-labelledby="principles-title">
-        <div>
-          <span class="section-kicker">ARCHIVE PROTOCOL</span>
-          <h2 id="principles-title">先记录差异，再决定归类。</h2>
-        </div>
-        <article class="bestiary-principle-card">
-          <span class="bestiary-principle-code">BIO</span>
-          <h3>自然生命</h3>
-          <p>受星能与时间环境影响，但仍以摄食、繁殖、迁徙和群体行为维持生态。</p>
-        </article>
-        <article class="bestiary-principle-card">
-          <span class="bestiary-principle-code">SYNTH</span>
-          <h3>人工生命</h3>
-          <p>以标准骨架、可换载荷和持续学习维持谱系；机体型号、任务职能与人格身份分别记录。</p>
-        </article>
-        <article class="bestiary-principle-card">
-          <span class="bestiary-principle-code">SAPIENT</span>
-          <h3>智慧生命总类</h3>
-          <p>晶灵与兽裔包含大量子型。本页只记录共同原则，不以单一形象覆盖整个族群。</p>
-        </article>
-        <article class="bestiary-principle-card">
-          <span class="bestiary-principle-code">ANOMALY</span>
-          <h3>边界存在</h3>
-          <p>星云体与空亡体并非普通生物，但会以稳定形态和行为介入现实，故纳入边界档案。</p>
-        </article>
-      </section>
-
-      <section id="catalogue" class="section bestiary-catalogue" aria-labelledby="catalogue-title">
-        <div class="section-heading bestiary-heading">
-          <div>
-            <span class="section-kicker">FIELD RECORDS</span>
-            <h2 id="catalogue-title">已知生命与边界存在</h2>
-            <p>选择记录，查看识别特征、生活习性、栖息环境及与文明的关系。</p>
-          </div>
-          <p class="bestiary-revision">档案修订：2460-RIFT / 生物记录仍在扩充</p>
-        </div>
-
-        <div class="bestiary-controls">
-          <div id="bestiaryFilters" class="bestiary-filters" role="group" aria-label="图鉴分类筛选"></div>
-          <label class="bestiary-search">
-            <span>搜索档案</span>
-            <input id="bestiarySearch" type="search" placeholder="名称、栖息地或特征" autocomplete="off" />
-          </label>
-        </div>
-
-        <div class="bestiary-layout">
-          <aside>
-            <p id="bestiaryResultCount" class="bestiary-result-count" aria-live="polite"></p>
-            <div id="bestiaryList" class="bestiary-list" aria-label="生物档案列表"></div>
-          </aside>
-          <article id="bestiaryDetail" class="bestiary-detail" aria-live="polite"></article>
-        </div>
-      </section>
-    </main>
-
-    <footer class="bestiary-footer">
-      <span>TIME-BLOCK HERO · WORLD ARCHIVE</span>
-      <p>所有图像均为世界观与未来卡牌美术参考；未定型总类会在完成子类拆分后补充概念图。</p>
-    </footer>
-
-    <div id="bestiaryLightbox" class="bestiary-lightbox" hidden>
-      <button class="bestiary-lightbox-close" type="button" aria-label="关闭图片预览">✕</button>
-      <img src="" alt="" />
-      <p></p>
-    </div>
-  </body>
-</html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>宇宙生物图鉴已移至设定集 · Time-Block Hero</title><link rel="stylesheet" href="./site.css"><script src="./bestiary-data.js"></script></head>
+<body class="setting-site"><main style="padding:10vh 8vw"><h1>宇宙生物图鉴已移至设定集</h1><p><a href="./index.html#bestiary">查看宇宙生物图鉴 →</a></p></main>
+<script>
+(() => {
+  const url = new URL('./index.html', location.href);
+  let id = new URLSearchParams(location.search).get('creature');
+  if (!id) { try { id = decodeURIComponent(location.hash.slice(1)); } catch { id = ''; } }
+  if (window.TBH_BESTIARY_RECORDS?.some(record => record.id === id)) url.searchParams.set('creature', id);
+  url.hash = 'bestiary';
+  location.replace(url.href);
+})();
+</script></body></html>
