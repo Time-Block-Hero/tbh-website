@@ -2,117 +2,182 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Time-Block Hero | World Concept Archive</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Game Setting · Time-Block Hero</title>
     <meta
       name="description"
-      content="A sci-fi anime world archive for Time-Block Hero, including story timeline, faction concepts, and character dossiers."
+      content="Explore the factions, characters and cosmic life of Time-Block Hero. Read the Rules Wiki or open the card editor."
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./site.css" />
+    <script src="./setting-data.js" defer></script>
+    <script src="./site.js" defer></script>
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Time-Block Hero home">
-        <span class="brand-mark">TBH</span>
-        <span>
-          <strong>TIME-BLOCK HERO</strong>
-          <small>World Archive</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="Page navigation">
-        <a href="#timeline">Story</a>
-        <a href="#factions">Factions</a>
-        <a href="#characters">Characters</a>
-        <a href="./bestiary-en.html">Cosmic Bestiary</a>
-        <a href="#" id="worldBibleBtn">World Bible</a>
-        <a href="./index.html">中文</a>
+  <body class="setting-site" data-language="en">
+    <a class="portal-skip" href="#main">Skip to content</a>
+    <header class="portal-header">
+      <a
+        class="portal-brand"
+        href="./index-en.html"
+        aria-label="Time-Block Hero"
+        ><span class="portal-brand-symbol" aria-hidden="true"
+          >T<span>H</span></span
+        ><span>TIME-BLOCK<br /><strong>HERO</strong></span></a
+      >
+      <nav class="portal-nav" aria-label="Main navigation">
+        <a href="./index-en.html" aria-current="page"
+          ><span>01</span>Game setting</a
+        ><a href="./wiki.html"><span>02</span>Rules Wiki</a
+        ><a href="./card-editor.html"><span>03</span>Card editor</a>
       </nav>
+      <a class="portal-language" href="./index.html" lang="zh-CN">中</a>
     </header>
-
-    <main id="top">
-      <section class="hero-section" aria-labelledby="hero-title">
-        <img class="hero-art" src="./assets/generated/hero-main.png" alt="" />
-        <div class="hero-vignette"></div>
-        <div class="hero-copy">
-          <p class="eyebrow">Future Sci-Fi Anime Card Game</p>
-          <h1 id="hero-title">TIME-BLOCK HERO</h1>
-          <p class="hero-line">After stealing time from a god, humanity finally heard the universe ask to be repaid.</p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#timeline">Read Timeline</a>
-            <a class="secondary-link" href="#characters">View Dossiers</a>
+    <main id="main">
+      <section class="archive-hero" aria-labelledby="hero-title">
+        <img
+          class="archive-hero-art"
+          src="./assets/generated/faction-astra.png"
+          alt="Astra Imperium concept landscape"
+          fetchpriority="high"
+        />
+        <div class="archive-hero-shade"></div>
+        <div class="archive-hero-content">
+          <p class="eyebrow">
+            <span class="accent-line"></span>THE WORLD OF TIME-BLOCK HERO
+          </p>
+          <h1 id="hero-title">
+            TIME-BLOCK<br /><span>HERO</span><i aria-hidden="true">/</i>
+          </h1>
+          <div class="hero-description">
+            <h2>World archive</h2>
+            <p>Factions. Characters. Life beyond the known.</p>
+          </div>
+          <a class="portal-button" href="#characters"
+            >Explore characters <span aria-hidden="true">↗</span></a
+          >
+        </div>
+        <div class="hero-edge">
+          <span>ASTRA IMPERIUM / CONCEPT ART</span
+          ><a href="#background">SCROLL TO EXPLORE ↓</a>
+        </div>
+      </section>
+      <nav class="archive-index" aria-label="Setting sections">
+        <a href="#background"><span>01</span>Background</a
+        ><a href="#factions"><span>02</span>Factions</a
+        ><a href="#characters"><span>03</span>Characters</a
+        ><a href="#bestiary"><span>04</span>Cosmic bestiary</a>
+      </nav>
+      <section id="background" class="archive-section background-section">
+        <div class="section-label">
+          <span>01 / BACKGROUND</span><span class="unfinished">UNFINISHED</span>
+        </div>
+        <div class="background-columns">
+          <h2>A world<br />still being written.</h2>
+          <div>
+            <p>
+              The background story and timeline are being reorganized. Confirmed
+              chapters will appear here.
+            </p>
+            <p class="quiet-copy">No story chapters have been published yet.</p>
           </div>
         </div>
-        <aside class="hero-status" aria-label="World status">
-          <span>Main Era 2460</span>
-          <strong>The Rift Reopens</strong>
-          <p>The time-quota system has held for a century, but new distortions are spreading in silence.</p>
-        </aside>
       </section>
-
-      <section class="section intro-grid" aria-label="Core setting">
-        <article>
-          <span class="section-kicker">CORE</span>
-          <h2>A Stasis Field does not stop time. It borrows against the fourth dimension.</h2>
-        </article>
-        <article class="glass-panel">
-          <h3>The Crowned Chronarch</h3>
-          <p>A higher god beyond four-dimensional space. It grants local time acceleration, while every field leaves a scar behind reality.</p>
-        </article>
-        <article class="glass-panel">
-          <h3>Black Noon Fission</h3>
-          <p>In 2350, accumulated time-debt tore open the Timeless Sea. Cities aged a century in one second, and humanity lost 80% of its population.</p>
-        </article>
+      <section id="factions" class="archive-section">
+        <div class="section-label">
+          <span>02 / FACTIONS</span><span>CONCEPT COLLECTION</span>
+        </div>
+        <div class="section-title-row">
+          <h2>Four identities.</h2>
+          <p>Visual concepts. Background chapters to follow.</p>
+        </div>
+        <div id="factionGrid" class="faction-grid">
+          <p class="loading-copy">Loading concepts…</p>
+        </div>
       </section>
-
-      <section id="timeline" class="section timeline-section" aria-labelledby="timeline-title">
-        <div class="section-heading">
-          <span class="section-kicker">STORYLINE</span>
-          <h2 id="timeline-title">Three Centuries After Zero Second</h2>
-          <p>Click each timeline preview to read the key story of that era.</p>
+      <section id="characters" class="archive-section character-section">
+        <div class="section-label">
+          <span>03 / CHARACTERS</span
+          ><span id="characterCount">CHARACTER ARCHIVE</span>
         </div>
-        <div class="timeline-shell">
-          <div class="timeline-track" id="timelineTrack" aria-label="Story timeline"></div>
+        <div class="section-title-row">
+          <h2>Faces of this world.</h2>
+          <p>Character designs from the current card collection.</p>
         </div>
-        <article class="detail-panel" id="timelineDetail" aria-live="polite"></article>
+        <div class="character-controls">
+          <label
+            ><span>Find a character</span
+            ><input
+              id="characterSearch"
+              type="search"
+              placeholder="Name or title"
+              autocomplete="off" /></label
+          ><label
+            ><span>Faction</span
+            ><select id="characterFaction">
+              <option value="all">All characters</option>
+            </select></label
+          >
+        </div>
+        <div
+          id="characterFeature"
+          class="character-feature"
+          aria-live="polite"
+        ></div>
+        <div
+          id="characterRoster"
+          class="character-roster"
+          role="group"
+          aria-label="Choose a character"
+        ></div>
+        <p id="characterEmpty" class="empty-state" hidden>
+          No matching characters.
+        </p>
       </section>
-
-      <section id="factions" class="section factions-section" aria-labelledby="factions-title">
-        <div class="section-heading">
-          <span class="section-kicker">FACTIONS</span>
-          <h2 id="factions-title">Civilizations After the Cataclysm</h2>
-          <p>Order, evolution, faith, freedom, and circulation became humanity's five roads forward.</p>
+      <section id="bestiary" class="bestiary-entry">
+        <img
+          src="./assets/creature-concepts/duskbell-matriarch/illustration.png"
+          loading="lazy"
+          alt="Duskbell Matriarch concept illustration"
+        />
+        <div class="bestiary-entry-copy">
+          <p class="eyebrow">04 / COSMIC BESTIARY</p>
+          <h2>Life beyond<br />the familiar.</h2>
+          <p>
+            Wildlife, synthetic life and boundary entities. Explore their forms,
+            habitats and relationships.
+          </p>
+          <a class="portal-button" href="./bestiary-en.html"
+            >Open the bestiary <span>↗</span></a
+          >
         </div>
-        <div class="faction-tabs" id="factionTabs" aria-label="Faction switcher"></div>
-        <div class="faction-feature" id="factionFeature"></div>
       </section>
-
-      <section id="characters" class="section characters-section" aria-labelledby="characters-title">
-        <div class="section-heading">
-          <span class="section-kicker">DOSSIERS</span>
-          <h2 id="characters-title">Character Dossiers</h2>
-          <p>Twenty characters anchor the factions, hidden storylines, and future card designs.</p>
+      <section class="archive-section reading-entry">
+        <div>
+          <p class="eyebrow">RULES & DESIGN</p>
+          <h2>Know the rules.<br />Shape the cards.</h2>
         </div>
-        <div class="character-filters" id="characterFilters" aria-label="Character filters"></div>
-        <div class="character-layout">
-          <div class="character-list" id="characterList" aria-label="Character list"></div>
-          <article class="character-detail" id="characterDetail" aria-live="polite"></article>
+        <div class="entry-links">
+          <a href="./wiki.html"
+            ><span>01 / DOCUMENTATION</span>
+            <h3>Rules Wiki ↗</h3>
+            <p>A structured library. Rule pages await curation.</p></a
+          ><a href="./card-editor.html"
+            ><span>02 / CARD DESIGN</span>
+            <h3>Card editor ↗</h3>
+            <p>Browse the latest card designs and artwork.</p></a
+          >
         </div>
       </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Time-Block Hero Concept Archive</span>
-      <a href="../Docs/TimeBlock_World_Bible_EN.md">Open World Bible</a>
+    <footer class="portal-footer">
+      <a href="./index-en.html">TIME-BLOCK HERO</a
+      ><span>Setting archive / Rules Wiki / Card editor</span
+      ><a href="#main">Back to top ↑</a>
     </footer>
-
-    <!-- World Bible Overlay -->
-    <div id="worldBibleOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(5,7,15,0.96);backdrop-filter:blur(12px);overflow-y:auto">
-      <div style="max-width:860px;margin:0 auto;padding:40px 24px 80px">
-        <button id="worldBibleClose" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:14px;padding:8px 16px;cursor:pointer;z-index:10">✕ Close</button>
-        <div id="worldBibleContent" class="world-bible-content"></div>
-      </div>
-    </div>
-
-    <script src="./app-en.js"></script>
+    <noscript
+      ><p class="noscript-note">
+        Enable JavaScript to view the character collection. The card editor and
+        Wiki also require JavaScript.
+      </p></noscript
+    >
   </body>
 </html>

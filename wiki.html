@@ -1,45 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#171917">
-  <title>规则 Wiki — Time Block Hero</title>
-  <link rel="stylesheet" href="wiki.css">
-  <script src="wiki-data.js" defer></script>
-  <script src="wiki.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#wiki-article">跳到正文</a>
-  <header class="wiki-header">
-    <a class="wiki-brand" href="./index.html" aria-label="Time Block Hero 主页"><span class="brand-mark" aria-hidden="true">T/B</span><span>TIME BLOCK HERO<small>世界与规则档案</small></span></a>
-    <nav class="primary-nav" aria-label="主导航">
-      <a href="./index.html">游戏设定集</a>
-      <a href="./wiki.html" aria-current="page">规则 Wiki</a>
-      <a href="./card-editor.html">卡牌编辑器 <span aria-hidden="true">↗</span></a>
-    </nav>
-  </header>
-  <div class="wiki-mobile-bar"><button id="wiki-menu-toggle" aria-expanded="false" aria-controls="wiki-sidebar">☰ 章节目录</button><span>规则档案 / RULES WIKI</span></div>
-  <div class="wiki-layout">
-    <aside class="wiki-sidebar" id="wiki-sidebar" aria-label="规则目录">
-      <div class="sidebar-title"><span class="eyebrow">RULES ARCHIVE</span><h1>规则 Wiki<span class="edition">VOL. 01</span></h1></div>
-      <label class="search-label" for="wiki-search">查找文档</label>
-      <div class="search-wrap"><span aria-hidden="true">⌕</span><input id="wiki-search" type="search" placeholder="按标题查找…" autocomplete="off"><kbd>/</kbd></div>
-      <div id="wiki-search-results" class="search-results" hidden></div>
-      <nav id="wiki-navigation" aria-label="章节"></nav>
-      <div class="sidebar-note"><span class="status-dot" aria-hidden="true"></span><span>结构已建立 · 内容待整理</span></div>
-    </aside>
-    <main id="wiki-main">
-      <nav id="wiki-breadcrumbs" class="breadcrumbs" aria-label="面包屑"></nav>
-      <div class="document-heading"><span id="wiki-section-number" class="eyebrow"></span><span id="wiki-status" class="status-tag"></span></div>
-      <h1 id="wiki-title"></h1>
-      <div class="draft-banner" id="wiki-draft-banner"><span class="banner-symbol" aria-hidden="true">↗</span><div><strong>规则正文尚未整理</strong><p>目前仅展示文档结构。具体玩法将逐页讨论、确认后补充。</p></div></div>
-      <article id="wiki-article" class="wiki-prose" tabindex="-1"></article>
-      <nav id="wiki-pagination" class="pagination" aria-label="相邻文档"></nav>
-      <footer class="document-footer"><span>TIME BLOCK HERO / RULES</span><span id="wiki-page-id"></span></footer>
-    </main>
-    <aside class="wiki-toc" aria-label="本页目录"><span class="eyebrow">ON THIS PAGE</span><h2>本页内容</h2><nav id="wiki-toc-links"></nav><a href="#wiki-main" class="back-top" id="wiki-back-top">返回顶部 ↑</a></aside>
-  </div>
-  <noscript><p class="noscript-note">请启用 JavaScript 以浏览 Wiki；Markdown 源文件位于 <a href="./docs/rules/README.md">docs/rules</a>。</p></noscript>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#171917" />
+    <title>规则 Wiki — Time Block Hero</title>
+    <link rel="stylesheet" href="wiki.css" />
+    <link rel="stylesheet" href="site.css" />
+    <script src="wiki-data.js" defer></script>
+    <script src="wiki.js" defer></script>
+  </head>
+  <body>
+    <a class="portal-skip" href="#wiki-article">跳转至正文</a>
+    <header class="portal-header">
+      <a class="portal-brand" href="./index.html" aria-label="Time-Block Hero"
+        ><span class="portal-brand-symbol" aria-hidden="true"
+          >T<span>H</span></span
+        ><span>TIME-BLOCK<br /><strong>HERO</strong></span></a
+      >
+      <nav class="portal-nav" aria-label="主导航">
+        <a href="./index.html"><span>01</span>游戏设定集</a
+        ><a href="./wiki.html" aria-current="page"><span>02</span>规则 Wiki</a
+        ><a href="./card-editor.html"><span>03</span>卡牌编辑器</a>
+      </nav>
+    </header>
+    <div class="wiki-mobile-bar">
+      <button
+        id="wiki-menu-toggle"
+        aria-expanded="false"
+        aria-controls="wiki-sidebar"
+      >
+        ☰ 章节目录</button
+      ><span>规则档案 / RULES WIKI</span>
+    </div>
+    <div class="wiki-layout">
+      <aside class="wiki-sidebar" id="wiki-sidebar" aria-label="规则目录">
+        <div class="sidebar-title">
+          <span class="eyebrow">RULES ARCHIVE</span>
+          <h1>规则 Wiki<span class="edition">VOL. 01</span></h1>
+        </div>
+        <label class="search-label" for="wiki-search">查找文档</label>
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span
+          ><input
+            id="wiki-search"
+            type="search"
+            placeholder="按标题查找…"
+            autocomplete="off"
+          /><kbd>/</kbd>
+        </div>
+        <div id="wiki-search-results" class="search-results" hidden></div>
+        <nav id="wiki-navigation" aria-label="章节"></nav>
+        <div class="sidebar-note">
+          <span class="status-dot" aria-hidden="true"></span
+          ><span>结构已建立 · 内容待整理</span>
+        </div>
+      </aside>
+      <main id="wiki-main">
+        <nav
+          id="wiki-breadcrumbs"
+          class="breadcrumbs"
+          aria-label="面包屑"
+        ></nav>
+        <div class="document-heading">
+          <span id="wiki-section-number" class="eyebrow"></span
+          ><span id="wiki-status" class="status-tag"></span>
+        </div>
+        <h1 id="wiki-title"></h1>
+        <div class="draft-banner" id="wiki-draft-banner">
+          <span class="banner-symbol" aria-hidden="true">↗</span>
+          <div>
+            <strong>规则正文尚未整理</strong>
+            <p>目前仅展示文档结构。具体玩法将逐页讨论、确认后补充。</p>
+          </div>
+        </div>
+        <article id="wiki-article" class="wiki-prose" tabindex="-1"></article>
+        <nav
+          id="wiki-pagination"
+          class="pagination"
+          aria-label="相邻文档"
+        ></nav>
+        <footer class="document-footer">
+          <span>TIME BLOCK HERO / RULES</span><span id="wiki-page-id"></span>
+        </footer>
+      </main>
+      <aside class="wiki-toc" aria-label="本页目录">
+        <span class="eyebrow">ON THIS PAGE</span>
+        <h2>本页内容</h2>
+        <nav id="wiki-toc-links"></nav>
+        <a href="#wiki-main" class="back-top" id="wiki-back-top">返回顶部 ↑</a>
+      </aside>
+    </div>
+    <noscript
+      ><p class="noscript-note">
+        请启用 JavaScript 以浏览 Wiki；Markdown 源文件位于
+        <a href="./docs/rules/README.md">docs/rules</a>。
+      </p></noscript
+    >
+  </body>
 </html>

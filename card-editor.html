@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>卡牌编辑器 · Time-Block Hero</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./site.css" />
+    <script src="./card-editor-data.js" defer></script>
+    <script src="./card-editor.js" defer></script>
+    <script src="./editor-page.js" defer></script>
+  </head>
+  <body class="editor-page">
+    <a class="portal-skip" href="#main">跳转至正文</a>
+    <header class="portal-header">
+      <a class="portal-brand" href="./index.html" aria-label="Time-Block Hero"
+        ><span class="portal-brand-symbol" aria-hidden="true"
+          >T<span>H</span></span
+        ><span>TIME-BLOCK<br /><strong>HERO</strong></span></a
+      >
+      <nav class="portal-nav" aria-label="主导航">
+        <a href="./index.html"><span>01</span>游戏设定集</a
+        ><a href="./wiki.html"><span>02</span>规则 Wiki</a
+        ><a href="./card-editor.html" aria-current="page"
+          ><span>03</span>卡牌编辑器</a
+        >
+      </nav>
+    </header>
+    <div id="main">
+      <main id="card-editor-main">
+        <section id="card-editor" class="section card-editor-page">
+          <div class="section-heading">
+            <span class="section-kicker">CARD EDITOR</span>
+            <h2>卡牌编辑器 · Card Editor</h2>
+            <p>
+              主列表使用 Board
+              View；按编号查看时，拖拽同势力、同收集状态的卡牌可插入新位置并重新编号。
+            </p>
+          </div>
+
+          <div class="formal-card-toolbar glass-panel">
+            <div
+              class="collectability-toggle"
+              id="collectabilityToggle"
+              aria-label="切换卡牌收集状态"
+            >
+              <button class="active" type="button" data-collectable="true">
+                可收集
+              </button>
+              <button type="button" data-collectable="false">不可收集</button>
+            </div>
+            <input
+              type="search"
+              id="cardSearch"
+              placeholder="搜索名称或编号…"
+              class="card-search-input"
+            />
+            <select
+              id="cardFactionFilter"
+              class="card-sort-select"
+              aria-label="势力筛选"
+            >
+              <option value="all">全部势力</option>
+            </select>
+            <select
+              id="cardTypeFilter"
+              class="card-sort-select"
+              aria-label="类型筛选"
+            >
+              <option value="all">全部类型</option>
+              <option value="Minion">随从</option>
+              <option value="Spell">法术</option>
+            </select>
+            <select
+              id="cardViewSort"
+              class="card-sort-select"
+              aria-label="视图排序"
+            >
+              <option value="id">按编号排序</option>
+              <option value="cost-asc">费用：从低到高</option>
+              <option value="cost-desc">费用：从高到低</option>
+            </select>
+            <span class="card-count-label" id="cardCountLabel"></span>
+            <button
+              class="card-create-btn"
+              id="cardCreateBtn"
+              type="button"
+              title="在当前收集分类与所选势力末尾添加；未选择势力时默认中立（银河航商会）"
+            >
+              ＋ 添加卡牌
+            </button>
+            <button
+              class="card-export-btn"
+              id="cardExportJsonBtn"
+              type="button"
+            >
+              导出 JSON
+            </button>
+          </div>
+
+          <!-- 卡牌网格 -->
+          <div class="card-center-grid" id="cardCenterGrid"></div>
+        </section>
+      </main>
+    </div>
+    <div
+      id="cardEditorOverlay"
+      class="card-editor-overlay"
+      style="display: none"
+      aria-modal="true"
+      role="dialog"
+    >
+      <div class="formal-card-editor-shell">
+        <div class="formal-card-editor-head">
+          <div>
+            <span class="section-kicker">HAND VIEW</span>
+            <h3 id="cardEditorTitle">卡牌详情</h3>
+          </div>
+          <span id="cardSaveStatus" class="card-save-status">本地编辑</span>
+          <button
+            class="card-editor-close"
+            id="cardEditorClose"
+            type="button"
+            aria-label="关闭"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="formal-card-editor-body">
+          <aside class="derivative-panel">
+            <div class="derivative-panel-title">
+              <strong>衍生卡</strong
+              ><button id="derivativeAddBtn" type="button">＋</button>
+            </div>
+            <div id="derivativeRail" class="derivative-rail"></div>
+          </aside>
+          <section class="hand-preview-stage">
+            <div id="cardHandPreview" class="hand-preview-host"></div>
+          </section>
+          <aside class="formal-card-form-panel">
+            <form id="cardEditorForm" class="formal-card-form" novalidate>
+              <label>编号<input name="id" readonly /></label>
+              <div class="formal-form-row">
+                <label>中文名<input name="nameKey" required /></label
+                ><label>英文名<input name="englishName" /></label>
+              </div>
+              <div class="formal-form-row">
+                <label
+                  >类型<select name="cardType">
+                    <option value="Minion">随从</option>
+                    <option value="Spell">法术</option>
+                  </select></label
+                ><label
+                  >稀有度<select name="rarity">
+                    <option>Common</option>
+                    <option>Rare</option>
+                    <option>Epic</option>
+                    <option>Legendary</option>
+                  </select></label
+                >
+              </div>
+              <div class="formal-form-row">
+                <label
+                  >势力<select name="classId" id="formFaction"></select></label
+                ><label
+                  >收集状态<select name="collectable">
+                    <option value="true">可收集</option>
+                    <option value="false">不可收集</option>
+                  </select></label
+                >
+              </div>
+              <div class="formal-form-row formal-form-row-4 formal-card-stats">
+                <label
+                  >费用<input type="number" name="costAmount" min="0" /></label
+                ><label class="card-unit-only"
+                  >攻击<input type="number" name="attack" min="0" /></label
+                ><label class="card-unit-only"
+                  >生命<input type="number" name="health" min="0" /></label
+                ><label class="card-unit-only"
+                  >移动<input type="number" name="movement" min="0"
+                /></label>
+              </div>
+              <fieldset class="card-unit-only tribe-fieldset">
+                <legend>种族（可多选）</legend>
+                <div class="tribe-selector" id="tribeSelector"></div>
+              </fieldset>
+              <fieldset>
+                <legend>箭头方向</legend>
+                <div class="formal-arrow-grid" id="arrowsCompass">
+                  <button type="button" data-dir="NW">↖</button
+                  ><button type="button" data-dir="N">↑</button
+                  ><button type="button" data-dir="NE">↗</button
+                  ><button type="button" data-dir="W">←</button><span>◎</span
+                  ><button type="button" data-dir="E">→</button
+                  ><button type="button" data-dir="SW">↙</button
+                  ><button type="button" data-dir="S">↓</button
+                  ><button type="button" data-dir="SE">↘</button>
+                </div>
+              </fieldset>
+              <label
+                >效果说明<textarea name="rulesText" rows="5"></textarea>
+              </label>
+              <label
+                >画面描述<textarea
+                  name="artDescription"
+                  rows="5"
+                  placeholder="描述主体、动作、环境、构图、光线和氛围；不要包含卡框、文字或 UI。"
+                ></textarea>
+              </label>
+              <div class="art-description-controls">
+                <label class="art-polish-toggle"
+                  ><input type="checkbox" name="artDescriptionNeedsPolish" />
+                  <span>需要 Codex 精修补全这段画面描述</span></label
+                >
+                <label
+                  >Art request<input
+                    type="number"
+                    name="artRequest"
+                    min="0"
+                    step="1"
+                /></label>
+              </div>
+              <section
+                class="artwork-manager"
+                aria-labelledby="artworkManagerTitle"
+              >
+                <div class="artwork-manager-head">
+                  <div>
+                    <strong id="artworkManagerTitle">插画方案</strong
+                    ><span id="artworkVariantSummary">暂无插画</span>
+                  </div>
+                  <label class="art-upload-button"
+                    >＋ 添加插画<input
+                      id="cardArtUpload"
+                      type="file"
+                      accept="image/*"
+                      multiple
+                  /></label>
+                </div>
+                <p class="artwork-manager-help">
+                  点击缩略图选择正式卡图；删除操作会在“保存并渲染”后生效。
+                </p>
+                <div id="artworkVariantList" class="artwork-variant-list"></div>
+              </section>
+            </form>
+            <div class="formal-card-actions">
+              <button
+                class="card-editor-del-btn"
+                id="cardEditorDelete"
+                type="button"
+                style="display: none"
+              >
+                删除衍生卡
+              </button>
+              <button
+                class="card-editor-cancel-btn"
+                id="cardEditorCancel"
+                type="button"
+              >
+                返回
+              </button>
+              <button
+                class="card-editor-save-btn"
+                id="cardEditorSave"
+                type="button"
+              >
+                保存并渲染
+              </button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer class="portal-footer">
+      <a href="./index.html">TIME-BLOCK HERO</a
+      ><span>游戏设定集 / 规则 Wiki / 卡牌编辑器</span
+      ><a href="#main">返回顶部 ↑</a>
+    </footer>
+    <noscript
+      ><p class="noscript-note">卡牌编辑器需要 JavaScript。</p></noscript
+    >
+  </body>
+</html>

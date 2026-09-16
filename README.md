@@ -1,6 +1,6 @@
 # Time-Block Hero Website
 
-Time-Block Hero 的世界观展示站与本地设计工具仓库。项目目前包含世界档案、开发中心、奇兽图鉴，以及受密码保护的卡牌编辑器。
+Time-Block Hero 的世界观展示站与本地设计工具仓库。网站由游戏设定集、规则 Wiki 和卡牌编辑器组成，所有入口均无需密码。规则正文尚未整理，当前只展示目录与占位页。
 
 ## 本地启动
 
@@ -15,11 +15,13 @@ node tools/card-editor-server.mjs --port 4317
 
 然后打开：
 
-- 中文主页与卡牌编辑器：<http://127.0.0.1:4317/>
+- 中文游戏设定集：<http://127.0.0.1:4317/>
+- 卡牌编辑器：<http://127.0.0.1:4317/card-editor.html>
+- 规则 Wiki：<http://127.0.0.1:4317/wiki.html>
 - 英文主页：<http://127.0.0.1:4317/index-en.html>
 - 奇兽图鉴：<http://127.0.0.1:4317/bestiary.html>
 
-直接双击 `index.html` 仍可用于只读预览和浏览器本地草稿，但不能可靠地写回项目文件或重命名实体插画。正式设计请始终使用本地端口。
+直接双击 `card-editor.html` 仍可用于只读预览和浏览器本地草稿，但不能可靠地写回项目文件或重命名实体插画。正式设计请始终使用本地端口。
 
 ## 卡牌编辑器
 
@@ -49,13 +51,13 @@ node tools/card-editor-server.mjs --port 4317
 | `bestiary.js` | 生物与边界存在的权威生态、形态和处置档案 |
 | `references/species-art-direction.md` | 从生物图鉴派生的卡牌美术识别与提示词规则 |
 
-卡牌数据变更后运行以下命令，同步游戏侧参考、文档镜像、猎空同盟静态展示和离线备用数据：
+卡牌数据变更后运行以下命令，同步游戏侧参考、文档镜像、人物设计快照和离线备用数据：
 
 ```bash
 node tools/sync-cards-from-data.mjs
 ```
 
-更新空亡体图鉴后运行 `node tools/sync-hollow-lore.mjs`，将其起源与形态原则同步到中英文时间线和嵌入式世界档案。
+人物身份映射维护在 `data/setting.json`，通过 `artworkKey` 和姓名校验引用卡牌；不要按会重排的卡牌 ID 绑定人物。英文名导致 artworkKey 变化时，需要同步核对映射。失效引用会在生成时阻止构建，在线页面会标记待核对。
 
 插画使用英文卡名生成的 slug 作为稳定索引：
 
@@ -190,6 +192,24 @@ $artwork-generation
 - 新图片会追加为候选 variant；已有正式插画不会被自动覆盖。
 - 并行模式最多使用 3 个生成 worker；JSON 与备用数据仍由主任务串行登记。
 
+## 设定集与规则 Wiki
+
+- `data/setting.json`：明确的人物身份映射和四个职业概念；背景与人物传记标记未完成。
+- `setting-data.js`：生成的离线展示快照；HTTP 预览会读取当前卡牌设计。
+- `docs/rules/`：分层 Markdown、导航顺序、稳定页面 ID 与写作说明。目前的 18 页均为占位，不代表生效规则。
+- `content-templates/`：人物、生物词条格式与 AI 协作指南，包含设定板、插画和小人资产位置。
+- `bestiary.js`：保留原有 15 个生物条目。
+
+修改 Markdown 或人物映射后运行：
+
+```bash
+npm ci
+npm run build
+npm test
+```
+
+开发中心、旧人物占位档案与旧时间线已退出展示。旧效果词典链接转到 Wiki；原首页的 `#card-editor` 链接转到独立编辑器。历史参考资料留在 `ReferenceDocs/`，不自动作为新设定的依据。
+
 ## 本地验证
 
 提交改动前至少运行：
@@ -201,7 +221,7 @@ node tools/build-card-editor-fallback.mjs
 git diff --check
 ```
 
-随后通过 <http://127.0.0.1:4317/> 手动检查卡牌列表、详情渲染、保存、拖拽重排和视图排序。
+随后通过 <http://127.0.0.1:4317/card-editor.html> 手动检查卡牌列表、详情渲染、保存、拖拽重排和视图排序。
 
 ## GitHub 协作约定
 

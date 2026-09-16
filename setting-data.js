@@ -238,6 +238,10 @@ window.__SETTING_DATA__ = {
       "faction": "astra",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "阿斯特拉帝国的年轻皇子与第四集团军指挥官。深红黑色指挥外套覆于分段式重甲之上，臂甲配备护盾投射器，披风勾勒出鲜明的军官轮廓。",
+        "en": "Astra Imperium’s young crown prince and commander of the Fourth Army Group. A dark-red and black command coat covers segmented field armor, with a shield projector built into his gauntlet."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Crown Prince Alesta, the young heir to the Astra Imperium and commander of its Fourth Army Group, stands on an exposed frontline command terrace as enemy bombardment begins. He wears a severe dark-red and black imperial command coat over segmented heavy field armor, with a compact time-quota shield projector built into one gauntlet and a restrained imperial mantle forming his defining silhouette. Instead of retreating, he plants himself before the formation while successive translucent armor layers lock around him and the soldiers behind him, turning his body into the visual anchor of the defense. His young face, resolute expression, shield-bearing gesture, and noble military silhouette must remain unmistakable inside the upper square crop; use the lower portrait extension for ranked troops, armored columns, monumental city defenses, and distant orbital fire. Singular story-defining moment, bold low angle, intentional asymmetry, deep atmospheric scale, dark red, blackened steel, and disciplined pale energy light, premium industrial sci-fi anime rendering and exceptional material finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "每个回合开始时：获得1点护甲。",
       "cover": "./assets/card-art/crown-prince-alesta/crown-prince-alesta-01.png",
@@ -282,6 +286,10 @@ window.__SETTING_DATA__ = {
       "faction": "astra",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "阿斯特拉帝国的年轻铁驭，驾驶人形泰坦「革命日」。黑色长发、军帽与佩剑构成她的标志，合身黑军服以深红饰边和战术披风收束轮廓。",
+        "en": "A young Astra Imperium titan pilot paired with the humanoid titan Revolution Day. Long black hair, a formal cap and an officer’s sword define her silhouette, framed by a fitted black uniform with dark-red trim."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Vera, the young Astra Imperium titan pilot and strategic executor, stands in the exposed center of a collapsing frontline with long black hair, a cold composed face, a fitted black military uniform with dark-red command trim, formal cap, gloves, tactical mantle, and a sheathed officer's sword at her waist. She raises one hand and fixes a precise time-quota coordinate around herself; behind her, her enormous humanoid titan Revolution Day materializes through a disciplined red spatial lattice, displaced dust and enemy fire freezing at the edge of the arrival field. Vera remains the dominant identity while the machine answers her like a second body, embodying her ability to turn quota, artillery, and mechanical forces into one unwavering system. Keep her face, cap, raised command hand, sword, and the titan's arriving head and shoulders readable inside the upper square crop; use the lower portrait extension for the teleport lattice, shattered battlefield, and deep imperial formations. Singular iconic command moment, bold low angle, intentional asymmetry, cinematic crimson-white light, dark-red and black material richness, exceptional premium industrial sci-fi anime finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
       "cover": "./assets/card-art/titan-maiden-vera/titan-maiden-vera-01.png",
@@ -326,6 +334,10 @@ window.__SETTING_DATA__ = {
       "faction": "astra",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "阿斯特拉帝国的城市规划师，身穿深红与炭黑色建筑指挥制服。配备时额度控制装具和关节式绘图手甲，在立体城市模型前调度建筑位置。",
+        "en": "An Astra Imperium city planner in dark-red and charcoal architectural command dress. A time-quota harness and articulated drafting gauntlets accompany her work repositioning structures across a city model."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Wei, a young adult Astra Imperium city planner, stands before a vast military-city model wearing a precise dark-red and charcoal architectural command uniform, fitted technical coat, compact time-quota control harness, and articulated drafting gauntlets. She selects a complete allied tower with one hand and relocates it with the other: the building separates into disciplined geometric light blocks inside a red spatial grid, vanishes from its foundation, and reappears several blocks away between existing structures. Keep Wei's focused face, two-handed planning gesture, and both departure and arrival silhouettes readable inside the upper square crop; use the lower portrait extension for layered transit channels, physical planning tools, and the immense city below. Ambitious architectural perspective, strong depth, controlled motion, distinctive imperial planning motifs, dark red and black steel with precise pale projection light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其传送到其距离3以内的一个空格子上。",
       "cover": "./assets/card-art/city-planner-wei/city-planner-wei-01.png",
@@ -370,6 +382,10 @@ window.__SETTING_DATA__ = {
       "faction": "astra",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "年轻的金发铁驭，护目镜推至额前，坐在专属泰坦的装甲座舱内操纵战斗。深红黑色机体与清晰可见的驾驶员共同构成人与机械的作战形象。",
+        "en": "A young blond titan ace with flight goggles pushed above his brow. Brandt remains visibly seated at the controls of his dark-red and black titan, making pilot and machine a single combat presence."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. The card depicts Brandt actively piloting his personal Astra Imperium titan, making both halves of the Human-and-Machine unit unmistakable: the complete dark-red and black titan is the dominant combat body on the battlefield, while Brandt is physically seated at its controls and clearly visible through a close, illuminated armored canopy built into the upper torso. He is a proud young blond ace with flight goggles pushed up on his head, leaning into the controls with an exhilarated, almost arrogant expression. At the instant his titan destroys one enemy with a close-range weapon, its torso and second weapon are already pivoting toward another target, turning the first explosion into backlight for a chained attack. Keep Brandt's blond hair, goggles, hands on the controls, cockpit connection, titan head and shoulders, and rapid two-target action readable together inside the upper square crop; use the lower portrait extension for the titan's sweeping limbs, wreckage, motion trails, and staggered enemies. Brandt must not appear dismounted, fused into the machine, or as a separate floating portrait. Dramatic low angle, layered battlefield depth, aggressive diagonal motion, dense high-end mechanical finish, hot amber explosions against dark crimson armor, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "[箭头需求: 7, 可建造] 该单位消灭一个随从后，本回合可额外进行一次攻击。",
       "cover": "./assets/card-art/proud-titan-pilot-brandt/proud-titan-pilot-brandt-01.png",
@@ -414,6 +430,10 @@ window.__SETTING_DATA__ = {
       "faction": "machine",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "米拉-10K是一座深空服务器城市的少女型代理人格。珍珠白与钴蓝仿生机体、青色意识核心和数据光冠，映照出作为她本体的城市结构。",
+        "en": "Mira-10K is the youthful feminine proxy of a deep-space server city. Her pearl-white and cobalt synthetic body carries a cyan consciousness core and a data-light crown echoing the skyline of her true body."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary Machine Celestial Court initial hero. Mira-10K is the serene youthful feminine proxy personality of an entire deep-space server city: a clearly anime, humanlike face with gentle intelligence; a graceful pearl-white and cobalt biomimetic synthetic body; restrained graphite mechanisms at the joints; a luminous cyan consciousness core; and an elegant data-light crown that echoes the skyline of the city that is her true body. Depict her at the opening of a new system cycle, creating and distributing the civilization's first point of star-energy. Preserve one unmistakable identity across both requested variants while allowing the supplied variant brief to determine the scene. Keep Mira's face, consciousness core, and the star-energy event legible inside the upper square crop; use the lower extension for hovering body structure, city depth, or replacement shells. Monumental Legendary scale, singular civilization-defining moment, intentional perspective, deep visual hierarchy, authored anime contour edges and cel-shaped facial values, premium painterly industrial sci-fi finish, white-blue ceramic, translucent data glass, graphite mechanisms, restrained warm gold, deep-space atmosphere. She must feel compassionate and posthuman rather than a generic fantasy goddess. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "每回合开始时，你获得1星能。",
       "cover": "./assets/card-art/mira-10k/mira-10k-02.png",
@@ -458,6 +478,10 @@ window.__SETTING_DATA__ = {
       "faction": "machine",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "埃米莉丝的本体是巨型计算枢纽，白色机械陶瓷、石墨支架与钴蓝冷却通道围绕青色数据核心展开。建筑上方的少女影像是无实体的全息界面。",
+        "en": "Emilys is a colossal computation nexus built from white mechanical ceramic, graphite structures and cobalt cooling channels around a cyan data core. The girl above it is a nonphysical holographic interface."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary Machine Celestial Court mechanical-building minion. Swarm Overmind Emilys is first and foremost a colossal non-humanoid computation nexus: a monumental server-city building of pearl-white mechanical ceramic, graphite structural ribs, cobalt cooling channels, dense processor vaults, transit apertures, antenna arrays, and a luminous cyan central data core. Its human creators gave this immense calculating infrastructure the romantic personal name “Emilys.” The only feminine presence is a clearly nonphysical holographic virtual avatar projected above the architecture: a graceful ordinary human anime girl shown as a head-and-shoulders portrait made from translucent cyan-white scanlines, soft particles, and incomplete light contours. Her projection may face the viewer directly, appear from a dramatic low-angle view, or turn in a three-quarter oblique view according to the supplied variant brief. She has no solid body, no mechanical skull, and no physical connection resembling a neck; the vast architectural processor below remains the dominant subject and her hovering image is merely its virtual face. Capture the charged instant when streams of machine-fleet movement data converge through the building and the girl's calm expression awakens, showing that a distributed civilization has become one awareness. Keep the building's central core, readable architectural silhouette, and the holographic girl's face inside the upper square crop; use the lower portrait extension for enormous scale, server depth, moving drones, cooling structures, and converging data routes. Singular Legendary infrastructure, bold perspective, intentional asymmetry, authored anime contour design, cel-shaped light groups, painterly industrial atmosphere, exceptional engineered material finish, cool white-blue palette with restrained warm gold. Do not depict a giant mechanical head, a face-shaped building, a humanoid robot, a robotic woman, a mechanical bust, a physical brain, animal ears, pointed ears, horns, antennae, wings, or a goddess body. Do not emphasize three separate triggers, three icons, or a three-part chain. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "每当你的友方机械随从累计移动30步：随机触发你场上的3个触发效果。",
       "cover": "./assets/card-art/swarm-overmind-emilys/swarm-overmind-emilys-05.png",
@@ -502,6 +526,10 @@ window.__SETTING_DATA__ = {
       "faction": "machine",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "灰白发色、灰蓝眼睛与修长身形贯穿烬白的两种形态。他携带单分子长剑；飞升形态显露白色机械陶瓷、石墨关节和青色胸部核心。",
+        "en": "Ash-white hair, gray-blue eyes and slender proportions connect both of Jinbai’s forms. He carries a monomolecular sword; his ascended form reveals white mechanical ceramic, graphite joints and a cyan chest core."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary Machine Celestial Court human minion. Lost Sword Jinbai is an iconic youthful male swordsman and one of the last voluntarily uploaded humans: a slender ash-white-haired anime boy with a beautiful but unmistakably masculine face, warm gray-blue eyes carrying restrained grief, and a mostly human silhouette. His layered white, graphite, and muted cobalt technical coat subtly fuses a short martial jacket with practical industrial sci-fi tailoring; only restrained synthetic seams at the neck and hands hint that his consciousness now inhabits an engineered body. He carries one elegant long monomolecular sword with a dark mechanical sheath. Depict a tense quiet instant before a duel on a wind-swept bridge inside the drifting server city: Jinbai stands in three-quarter profile with the blade only partly drawn, coat and pale hair lifting in artificial wind, his gaze fixed beyond frame. Keep his face, sword hand, and the first luminous edge of the blade readable inside the upper square crop; use the lower extension for his grounded stance, coat tails, and receding server architecture. Legendary character portrait with a singular readable silhouette, emotional clarity, authored anime linework, cel-shaped facial values, premium painterly industrial sci-fi finish, cool white-blue palette with one restrained warm human light. Show only the defining image of the young swordsman: no four wisdom objects, no counted set of memory fragments, no transformation diagram, no duplicate bodies, and no literal card mechanics. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "入场：在友方区域生成4张遗失的智慧。当你累计拾取4张遗失的智慧时触发：变身为飞升之剑-烬白。",
       "cover": "./assets/card-art/lost-sword-jinbai/lost-sword-jinbai-01.png",
@@ -559,6 +587,10 @@ window.__SETTING_DATA__ = {
       "faction": "solar",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "烈阳教会的少年教皇，胸前显露白橙色反应核心。白色礼服叠覆轻型装甲，橙红技术饰边与精密太阳环围绕他平静的面容展开。",
+        "en": "The Solar Church’s youthful boy pope bears a white-orange reactor core at his chest. White ceremonial layers cover restrained armor, while orange-red details and precise solar rings frame his calm face."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero. Noa, the Solar Church's eternally young boy pope and perfected solar vessel, stands within a Dyson-ring chapel that is equal parts sacred sanctuary and stellar engineering facility. He wears delicate white and warm off-white futuristic ceremonial layers over restrained modular armor, with orange-red technical accents and a luminous white-orange reactor core visible at his chest. A precise halo of small solar rings and contained supernova light frames his calm childlike face, conveying that he is both revered and imprisoned by his role. Waist-up portrait with face, halo, shoulders, and chest core concentrated entirely in the upper square of a 5:8 portrait canvas; flowing mantle and chapel steps descend into the lower area. Premium cinematic sci-fi anime concept art, crisp expressive face, hybrid cel-and-painterly rendering, radiant rim light, volumetric shafts, engineered ceramic and technical fabric textures. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "首个回合开始时：抽2张牌并令其获得[保留]。",
       "cover": "./assets/card-art/noa/noa-01.png",
@@ -603,6 +635,10 @@ window.__SETTING_DATA__ = {
       "faction": "solar",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "烈阳教会的年轻圣女，身披白色与暖象牙色礼仪装甲，配以橙红技术饰边和发光日核。她双手举起高耸火杖，杖冠如凝聚的白橙色太阳。",
+        "en": "A young saint of the Solar Church in flowing white and warm-ivory ceremonial armor, with orange-red trim and a luminous solar core. She raises a tall flame staff crowned by a contained white-orange sun."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
       "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png",
@@ -647,6 +683,10 @@ window.__SETTING_DATA__ = {
       "faction": "solar",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "橙发、明亮笑容与白橙色飞行服构成索拉的鲜明形象。胸前日核连接背部与腿部推进器，短披风随飞行扬起，双手配备日冕充能拳甲。",
+        "en": "Sola is defined by vivid orange hair, a bright smile and a white-and-orange flight suit. His chest core powers back and leg thrusters, with a short mantle and oversized corona-charged gauntlets completing his airborne silhouette."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Sola, the Solar Church's lively young hero known as the Sunwheel Flying Star, launches from a broken Dyson-ring platform with the joyful force of a small sun. He has vivid orange hair, bright expressive eyes, and a wide irresistible smile, wearing a white-and-orange athletic flight suit with fitted technical layers, a short Solar Church mantle streaming behind him, a radiant sun-source core at the chest, and oversized corona-charged combat gauntlets. His core drives compact thrusters along his back and legs as he rockets toward an enemy many times his size, one fist drawing back while the other begins to ignite the signature explosive punch he brings into battle. Keep Sola's smiling face, orange hair, chest core, short mantle, both gauntlets, and airborne forward motion unmistakable inside the upper square crop; extend the curved flight trail, broken ring structure, tiny allies, and enormous enemy silhouette downward for depth. Singular character-defining entrance, bold foreshortening, playful courage, intentional asymmetry, cinematic white-orange light, exceptional premium industrial sci-fi anime finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "购买此卡时，获得一张阳炎爆裂拳。入场：将阳炎爆裂拳置入你的手牌。",
       "cover": "./assets/card-art/sunwheel-flying-star-sola/sunwheel-flying-star-sola-01.png",
@@ -691,6 +731,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "猎空同盟的红发前线指挥官，佩戴发出绿光的时序义眼。深森林绿指挥外套叠覆炭黑模块装甲，暗血红标识与改装舰桥呼应她的前线形象。",
+        "en": "The Skyborne Alliance’s red-haired frontline commander wears a glowing green chrono-cybernetic eye. A forest-green command coat, charcoal modular armor and oxblood insignia define her presence aboard a rebuilt command bridge."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary hero. Luolan, the red-haired frontline commander of the Skyborne Alliance, stands on the rebuilt command bridge of a mobile frontier fleet-city during an Imperial pursuit, wearing a deep forest-green industrial command coat over modular charcoal armor, dark oxblood-red resistance insignia, and an illegal green chrono-cybernetic eye. At the decisive moment she drives one gloved hand across a scarred mechanical navigation table, redirecting a nearby resistance squad through a newly opened breach while the fleet pivots around her order. Use a bold three-quarter low angle with Luolan's face, luminous eye, commanding gesture, and the moving squad readable inside the upper square crop; extend the lower portrait into welded deck plates, exposed cables, colony lights, and asymmetrical silhouettes of patched expedition ships. Premium industrial sci-fi anime rendering, confident defiance, cinematic green-red rim light, dense matte metal and worn technical fabric, exceptional authored material finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "发动：每回合限一次，将你的一个反抗军移动一格。",
       "cover": "./assets/card-art/luolan/luolan-01.png",
@@ -735,6 +779,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "白须老将德雷克身着反复修补的绿红指挥外套。裂隙惘生形态呈少年外貌，保留探险服轮廓，身体出现因果空缺与彼此错位的生物、陶瓷和机械碎片。",
+        "en": "The elderly, white-bearded Drake wears a heavily repaired green-and-oxblood command coat. His Rift-Reborn form appears adolescent, with expedition clothing interrupted by causal voids and misaligned biological, ceramic and mechanical fragments."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. The elderly Drake, forgotten founding commander of the Skyborne Alliance and once a legendary frontier adventurer, sits alone in his stripped command chair on an abandoned mobile fleet-city bridge after surrendering leadership. He has a weathered white beard, deep-set unwavering eyes, and a cold severe face; his once-proud deep forest-green and dark oxblood-red command coat still carries old resistance insignia but is frayed, scorched, and heavy with years of field repairs. Use a restrained low three-quarter portrait with Drake's seated silhouette, face, one hand gripping the worn armrest, and ruined coat readable inside the upper square crop. Keep the bridge almost entirely dark: dead consoles, hanging cables, empty crew stations, and a narrow distant rift behind him. A single hard high light crosses his brow, cheekbones, and eyes, carving his stern expression out of the darkness while the rest falls into charcoal shadow. Singular charged stillness, quiet pride, and the sense that he is calmly awaiting one final fatal expedition; premium industrial sci-fi anime rendering, exceptional worn fabric and metal finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "当这张牌被移除时：将一张「裂隙惘生德雷克」加入你的额外卡组。",
       "cover": "./assets/card-art/drake-the-forgotten-commander/drake-the-forgotten-commander-01.png",
@@ -792,6 +840,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "猎空同盟的年轻星刃破阵者，黑发间带深红挑染，拥有鲜红双眼。他身披破损绿披风与炭黑装甲，手持红色等离子星刃和同盟战旗。",
+        "en": "A young Skyborne Alliance star-blade breacher with tousled black hair, a dark-red streak and red eyes. Ald wears charcoal armor and a torn green mantle, carrying a red plasma blade and a resistance banner."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Reimagine the iconic pyramidal uprising composition associated with Eugène Delacroix's public-domain Liberty Leading the People as an original industrial science-fiction rebellion led by Ald, without reproducing the original people, clothing, weapons, French flag, or painted surface. Ald, the Skyborne Alliance's young star-blade breacher, strides over the summit of a shattered Imperial barricade as the apex of a rising triangular mass of resistance fighters. He has tousled black hair with a dark red streak, fierce red eyes, layered charcoal industrial armor, a torn deep forest-green mantle, dark oxblood-red straps and resistance insignia, and a blazing red plasma star-blade.\n\nUse a dramatic low frontal angle. Ald occupies the upper central apex with one boot planted on broken Imperial plating, torso turning toward the advancing crowd. In his high left hand he raises a huge torn Skyborne resistance banner—deep forest green crossed by dark oxblood-red geometric bands, with no readable emblem—so the fabric becomes the highest sweeping diagonal and catches the smoke-lit backlight. In his right hand he carries the red plasma star-blade forward and upward, its glow marking the direction of attack. His face must remain clearly visible beneath the banner, resolute and fiercely encouraging rather than triumphant or regal.\n\nBehind and beside him, a dense but readable cross-section of the rebellion surges through the breached fortress gate in a pyramidal arrangement: armored frontier pioneers, a youthful rifle fighter, a wounded mechanic still advancing, rebuilt combat machines, workers with improvised weapons, and torn green-red standards. Their gestures and gazes converge on Ald and the breach, showing that he accelerates allies in friendly territory and hardens their attack in enemy territory. In the immediate foreground, defeated empty Imperial armor shells, broken drones, shattered weapons, cables, and barricade debris form a dark base to the pyramid without graphic bodies or gore. Smoke, sparks, and distant mobile fleet silhouettes open behind the crowd, while severe Imperial architecture frames the uprising.\n\nKeep Ald's face, raised banner, star-blade, leading leg, and nearest followers readable inside the upper square crop; extend the lower portrait into the barricade slope, fallen machinery, reaching rebel hands, and boots climbing after him. Exceptional Legendary finish, bold asymmetry, strong depth and forward momentum, emotionally charged collective liberation, deep forest green and dark oxblood red against charcoal Imperial steel, cinematic red blade light and cold smoke shafts, premium industrial sci-fi anime rendering with crisp authored contours and tactile worn materials. Do not copy Delacroix's exact figures, poses, French tricolor, Phrygian cap, exposed classical clothing, nineteenth-century firearms, city skyline, or oil-paint texture. No readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "其位于友方领土内时，全体友方反抗军单位获得+1移动力；其位于敌方领土内时，全体友方反抗军单位获得+1攻击力。",
       "cover": "./assets/card-art/ald-light-of-the-front/ald-light-of-the-front-03.png",
@@ -836,6 +888,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "猎空同盟的年轻义体医师、工程师与黑客，黑发凌乱，一只义眼泛着红光。修补过的绿外套下是技术服装，多条模块机械臂携带手术与维修工具。",
+        "en": "A young Skyborne Alliance cybernetic doctor, engineer and hacker with messy black hair and one red cybernetic eye. His patched green coat accompanies modular auxiliary arms equipped with surgical and engineering tools."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Nyx, the Skyborne Alliance's young cybernetic doctor, engineer, and hacker, performs an illegal battlefield augmentation inside a cramped frontier surgery workshop. Match his established identity: messy black hair, a sharp mischievous expression, one red cybernetic eye, a long patched deep forest-green coat with dark oxblood-red markings over charcoal technical clothing, and multiple modular mechanical arms carrying surgical drivers, injectors, cable spools, and bone saws. With one precise hand he locks an overclocked spinal-and-leg actuator onto a conscious resistance fighter while two auxiliary arms tension exposed braces and the new limbs flare with dangerous red-green power, visibly promising explosive strength and speed at the cost of imminent mechanical failure. Use an intimate tilted three-quarter composition with Nyx's face, primary surgical gesture, patient silhouette, and unstable augmentation readable inside the upper square crop; layer hanging lamps, salvaged medical machinery, cables, prosthetic racks, and frontier warning lights through the lower portrait for Epic environmental density. Dark industrial atmosphere, hard green surgical light, oxblood-red emergency glow, sparks, steam, tactile metal and worn fabric, premium industrial sci-fi anime rendering. Keep the procedure intense but non-gory. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "每回合限一次，发动：令一个友方反抗军获得+3攻击力/+3移动力以及[耐久度：1]。",
       "cover": "./assets/card-art/nyx-cybernetic-doctor/nyx-cybernetic-doctor-01.png",
@@ -880,6 +936,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "塞特是十六至十七岁的同盟新兵旗帜手，身形清瘦，短棕发凌乱。略显宽大的二手装甲与短款绿外套衬出少年轮廓，双手撑住沉重的折叠旗标。",
+        "en": "Seth is a sixteen-to-seventeen-year-old rookie standard-bearer with a slim build and messy short brown hair. Slightly oversized secondhand armor and a cropped green coat frame him as he braces a heavy folding banner-beacon."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Seth is a sixteen-to-seventeen-year-old Skyborne Alliance rookie standard-bearer experiencing his first real assault: slim adolescent build, open youthful face, messy short dark-brown hair, clear bright eyes, no beard and no scar. His layered charcoal armor is visibly secondhand and slightly oversized, under a shortened deep forest-green recruit's coat with dark oxblood-red straps. With the fearless confidence of a calf unafraid of the tiger, he plants a heavy collapsible resistance banner-beacon into an Imperial occupation yard while enemy fire showers sparks around him; his mouth holds a nervous, stubborn half-smile rather than a veteran's grim calm. The banner pole is almost too large for him, making his two-handed braced gesture feel courageous and slightly reckless. A hidden breach hatch opens below and behind him with only a few compact rebel silhouettes emerging as secondary story detail. Use a dramatic low three-quarter angle with Seth's unmistakably adolescent face, determined eyes, oversized banner, and planting action readable inside the upper square crop; extend the lower portrait into the opened hatch, trailing cables, and hostile industrial walls. Premium industrial sci-fi anime rendering, ambitious Epic depth and lighting, matte repaired equipment, deep forest green and dark oxblood red against severe Imperial black. Do not depict a muscular adult veteran, facial scar, beard, or seasoned commander. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "存活时限一次，在敌方领土内可发动：从牌堆召唤一个费用低于5的反抗军到该单位⬇️方格子内。",
       "cover": "./assets/card-art/seth-legion-standard-bearer/seth-legion-standard-bearer-02.png",
@@ -924,6 +984,10 @@ window.__SETTING_DATA__ = {
       "faction": "skyraider",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "猎空同盟的资深「黑手」供货商，留银黑短发，佩戴黄铜光学放大镜。深绿色军需外套、暗红手套和多层工具腰带构成宽厚实用的轮廓。",
+        "en": "A veteran Blackhand supplier of the Skyborne Alliance with cropped silver-black hair and a brass optical loupe. A forest-green quartermaster coat, oxblood gloves and layered tool belts create a broad, practical silhouette."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Qimo, the veteran Blackhand supplier of the Skyborne Alliance, presides over a hidden frontier armory built into the underside of a mobile fleet-city. Give Qimo a broad practical silhouette, cropped silver-black hair, one brass optical loupe, a deep forest-green quartermaster coat, dark oxblood-red gloves, layered tool belts, and the relaxed appraisal of someone who can source anything. With one hand Qimo opens an extra armored supply aperture cut into apparently empty space; half-restored weapons, expedition modules, and contraband machinery emerge from the dim void-stock channel while a rebel customer receives a valuable component for a fraction of its worth. Use a confident three-quarter portrait with Qimo's face, measuring gesture, secret aperture, and flowing goods readable inside the upper square crop; extend the lower portrait into crowded racks, chain lifts, repair benches, and shadowed customers. Premium industrial sci-fi anime rendering, dense Epic environmental story, exceptional worn material finish, green work light and oxblood-red practical lamps. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "你的商店额外带有一个从你的虚空进货的格子，其中商品费用减半。",
       "cover": "./assets/card-art/qimo-blackhand-supplier/qimo-blackhand-supplier-01.png",
@@ -968,6 +1032,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "麦哲伦是一位高大壮硕的白发舰队司令，面容严峻。标志性的白色指挥大衣覆盖深蓝制服与陶瓷肩甲，金色导航饰边和不对称披风强调军官轮廓。",
+        "en": "A tall, powerfully built fleet commander with swept-back white hair and a stern face. Magellan’s white command greatcoat covers a navy uniform and ceramic shoulder armor, accented by gold navigation trim and an asymmetric mantle."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Interstellar Commander Magellan is a tall, powerfully built adult man with swept-back white hair and a stern weathered face, wearing an iconic white fleet-command greatcoat over layered navy technical uniform, matte ceramic shoulder armor, gloves, gold navigation trim, and a long asymmetric command mantle. At the decisive moment aboard his flagship's panoramic command prow, he points one gloved hand toward the enemy formation while two fallen Space Soldiers reconstitute from cyan archive particles at his upper-left and upper-right flanks, answering his order from the discard. Use a dramatic tilted low-angle composition: Magellan's face, pointing gesture, white silhouette, and both returning soldiers dominate the upper square crop; the lower portrait extension reveals his vast neutral merchant-fleet turning beneath him across a star-filled battlefield, with converging ship trails reinforcing his command line. Singular Legendary storytelling, intentional asymmetry, exceptional material finish, premium industrial sci-fi anime rendering, crisp original facial design, white and navy against deep space, disciplined cyan resurrection light and warm gold rim light. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "发动：每回合限一次，从弃牌堆召唤两个星际佣兵，放置于其↖️↗️方格子。",
       "cover": "./assets/card-art/interstellar-commander-magellan/interstellar-commander-magellan-01.png",
@@ -1012,6 +1080,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "身形精瘦的成年刺客，佩戴深色镜面墨镜与不对称炭黑战术长衣。贴身技术护甲、消音短枪和青色坐标信标，构成刺客-J的装备特征。",
+        "en": "A lean adult assassin in dark mirrored sunglasses and an asymmetric charcoal tactical coat. Fitted technical armor, a compact suppressed sidearm and a cyan coordinate beacon define Assassin J’s equipment."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Assassin J, a lean adult killer in dark mirrored sunglasses, stands as the single dominant subject on a rain-slick industrial station roof, wearing a long asymmetric charcoal tactical coat, fitted technical armor, gloves, harnesses, and a compact suppressed sidearm. He has already placed a small cyan coordinate beacon on a distant armored target; a delayed vertical targeting line is beginning to converge around that figure while J turns away with cold certainty. Keep J's face, sunglasses, weapon, beacon gesture, and the doomed target relationship readable inside the upper square crop; use bold perspective, rain, receding gantries and restrained red warning light for layered environmental storytelling. Premium industrial sci-fi anime rendering with crisp facial design, tactile matte materials and cinematic finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
       "cover": "./assets/card-art/delayed-coordinate-cannon/delayed-coordinate-cannon-01.png",
@@ -1056,6 +1128,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "贾格是一位神态张扬的传送工程师，乱发向后扬起，佩戴防护镜。补丁长衣、拼装陶瓷护甲与挂满自制相位线圈的腰带，构成他的技术装束。",
+        "en": "An eccentric teleportation engineer with swept-back unruly hair and protective goggles. Jagg wears a patched technical coat, mismatched ceramic armor and a belt crowded with homemade phase coils."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Jagg, a brilliant but visibly unhinged adult teleportation engineer, appears as the single dominant subject in an industrial transit chamber, wearing a patched long technical coat, mismatched ceramic armor, wild swept-back hair, protective goggles, and a belt crowded with homemade phase coils. He steps out of one angular spatial aperture while the last fragments of his previous position still collapse behind him, grinning as he chooses an impossible new destination; his body remains anatomically coherent, with duplication limited to controlled phase afterimages. Keep Jagg's face, eccentric silhouette, leading step, and both connected apertures readable inside the upper square crop. Premium industrial sci-fi anime rendering, ambitious warped perspective, layered gantries and cables, cyan-white portals with restrained magenta phase fringes, dramatic rim light, sparks and cinematic haze. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "发动：传送到场上任意一个空格子上。",
       "cover": "./assets/card-art/jagg-mad-teleporter/jagg-mad-teleporter-01.png",
@@ -1100,6 +1176,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "蒂芙尼是活泼的粉色兔族兽裔，拥有完整兔形头部、长耳、青绿眼睛与玫粉色毛发。短款快递夹克、工具短裤和信使包配合轻快灵活的身形。",
+        "en": "Tiffany is an energetic pink rabbit Avatar with a fully rabbit-shaped head, long ears, teal eyes and rose-pink fur. A cropped courier jacket, utility shorts and a messenger pouch suit her agile silhouette."
+      },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. “Know-It-All” Tiffany is a petite, energetic young adult pink rabbit Avatar and the unmistakable central subject, joyfully leaping between suspended walkways in the bustling Galactic Merchant Guild. She has a complete anthropomorphic furry rabbit form rather than a human face with animal ears: a clearly nonhuman rabbit cranial silhouette and small muzzle, soft pink nose, enormous expressive ears, bright teal anime-furry eyes, coherent full-body rose-pink fur with cream markings, paw-like hands and feet, powerful digitigrade legs, and a round tail. Her bold subcultural streetwear includes a practical midriff-baring cropped courier jacket and athletic top, high-waisted utility shorts, colorful straps, small information canisters, anatomy-tailored footwear, and a compact messenger pouch. She twists lightly through the air while tossing a useful data prism toward a bewildered newcomer; merchants of several species wave to her from layered stalls and bridges, showing that she knows everyone without stealing focus. Use an ambitious diagonal upward composition with her face, ears, airborne gesture, data prism, and readable rabbit silhouette secured inside the upper square crop; use the lower portrait extension for receding bridges, market lights, banners without writing, and friends below. Epic motion, airy depth, joyful personality, lively cyan-magenta accents against warm industrial metal, cinematic sunlight shafts and premium industrial sci-fi anime rendering. Keep the presentation playful and fashionable rather than sexualized. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "rulesText": "",
       "cover": "./assets/card-art/know-it-all-tiffany/know-it-all-tiffany-01.png",
@@ -1144,6 +1224,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "伊莱恩的人物档案保留中。身份细节、外形设定与人物介绍尚未完成，原画、设定板及小人资产将依据后续确认的资料补全。",
+        "en": "Elaine’s dossier is reserved. Identity details, appearance and character introduction remain unfinished; key art, a concept sheet and a chibi asset await confirmed material."
+      },
       "artDescription": "",
       "rulesText": "",
       "cover": null,
@@ -1173,6 +1257,10 @@ window.__SETTING_DATA__ = {
       "faction": "neutral",
       "status": "incomplete",
       "description": null,
+      "appearanceSummary": {
+        "zh": "未央的人物档案保留中。身份细节、外形设定与人物介绍尚未完成，原画、设定板及小人资产将依据后续确认的资料补全。",
+        "en": "Weiyang’s dossier is reserved. Identity details, appearance and character introduction remain unfinished; key art, a concept sheet and a chibi asset await confirmed material."
+      },
       "artDescription": "",
       "rulesText": "",
       "cover": null,

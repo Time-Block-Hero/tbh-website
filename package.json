@@ -3,7 +3,13 @@
   "private": true,
   "scripts": {
     "build:wiki": "node tools/build-wiki.mjs",
-    "test:wiki": "node --test tools/tests/wiki*.test.mjs"
+    "test:wiki": "node --test tools/tests/wiki*.test.mjs",
+    "build:setting": "node tools/build-setting-data.mjs",
+    "build": "npm run build:wiki && npm run build:setting",
+    "test": "node --test tools/tests/*.test.mjs",
+    "start": "node tools/card-editor-server.mjs --port 4317"
   },
-  "devDependencies": { "marked": "15.0.12" }
+  "devDependencies": {
+    "marked": "15.0.12"
+  }
 }
