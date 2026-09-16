@@ -19,7 +19,7 @@ node tools/card-editor-server.mjs --port 4317
 - 卡牌编辑器：<http://127.0.0.1:4317/card-editor.html>
 - 规则 Wiki：<http://127.0.0.1:4317/wiki.html>
 - 英文主页：<http://127.0.0.1:4317/index-en.html>
-- 奇兽图鉴：<http://127.0.0.1:4317/bestiary.html>
+- 奇兽图鉴：<http://127.0.0.1:4317/#bestiary>
 
 直接双击 `card-editor.html` 仍可用于只读预览和浏览器本地草稿，但不能可靠地写回项目文件或重命名实体插画。正式设计请始终使用本地端口。
 
@@ -48,7 +48,7 @@ node tools/card-editor-server.mjs --port 4317
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
 | `formal_card_ref.json` | 由权威数据生成的游戏侧卡牌表参考；不要反向覆盖 `data/cards.json` |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
-| `bestiary.js` | 生物与边界存在的权威生态、形态和处置档案 |
+| `bestiary-data.js` | 生物与边界存在的权威生态、形态和处置档案 |
 | `references/species-art-direction.md` | 从生物图鉴派生的卡牌美术识别与提示词规则 |
 
 卡牌数据变更后运行以下命令，同步游戏侧参考、文档镜像、人物设计快照和离线备用数据：
@@ -194,11 +194,15 @@ $artwork-generation
 
 ## 设定集与规则 Wiki
 
+设定集的背景、四大文明、人物、宇宙生物是同一页面中的四个独立折叠区域。点击目录会展开并定位，点击区域标题可收起；搜索与选择状态保留。文明卡片在原页面展开档案，生物图鉴也在本页浏览，原独立图鉴地址自动跳转到对应词条。
+
+编辑器通过独立 `editor-theme.css` 统一工作区和控件风格，卡面渲染、布局和保存逻辑保持原样。卡牌本体模板的建议见 [卡牌模板制作流程](docs/design/card-template-workflow.zh-CN.md)。
+
 - `data/setting.json`：明确的人物身份映射和四个职业概念；背景与人物传记标记未完成。
 - `setting-data.js`：生成的离线展示快照；HTTP 预览会读取当前卡牌设计。
 - `docs/rules/`：分层 Markdown、导航顺序、稳定页面 ID 与写作说明。目前的 18 页均为占位，不代表生效规则。
 - `content-templates/`：人物、生物词条格式与 AI 协作指南，包含设定板、插画和小人资产位置。
-- `bestiary.js`：保留原有 15 个生物条目。
+- `bestiary-data.js`：保留原有 15 个生物条目。
 
 修改 Markdown 或人物映射后运行：
 

@@ -1,4 +1,6 @@
-# Website organization validation
+# Initial website organization validation
+
+This receipt describes commit `557fb76`. For the subsequent same-page archive and editor-theme revision, see [the current validation record](website-visual-revision.md).
 
 Date: 2026-09-16. Baseline: `cd4346f29023d288eb00490d19f31cdd42ba0fb3`.
 Tracking: https://github.com/Time-Block-Hero/time-block-hero-unified/issues/41

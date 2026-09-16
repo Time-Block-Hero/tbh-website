@@ -108,12 +108,76 @@
     skyraider:
       "Forest green, oxblood red, rebuilt machinery and practical frontier equipment.",
   };
-  document.querySelector("#factionGrid").innerHTML = data.factions
-    .map(
-      (faction) =>
-        `<article class="faction-card"><div class="faction-image"><img src="${escape(imagePath(faction.image))}" alt="${escape(t(faction.name, faction.englishName))}" loading="lazy"><div class="faction-heading"><span>${escape(faction.englishName.toUpperCase())}</span><h3>${escape(t(faction.name, faction.englishName))}</h3></div></div><div class="faction-body"><p>${escape(en ? englishDirections[faction.id] : faction.description)}</p><small>${t("视觉概念草案 · 职业设定未完成", "VISUAL CONCEPT · LORE INCOMPLETE")}</small></div></article>`,
-    )
-    .join("");
+  let activeCivilization = null;
+  const factionGrid = document.querySelector("#factionGrid");
+  const factionDetail = document.querySelector("#factionDetail");
+  function renderCivilizations() {
+    factionGrid.innerHTML = data.factions
+      .map(
+        (faction) =>
+          `<button type="button" class="faction-card" data-civilization="${escape(faction.id)}" aria-controls="factionDetail" aria-expanded="${activeCivilization === faction.id}" aria-label="${escape(t(faction.name + "：职业与文明档案", faction.englishName + ": civilization dossier"))}"><span class="faction-image"><img src="${escape(imagePath(faction.image))}" alt="" loading="lazy"><span class="faction-heading"><span>${escape(faction.englishName.toUpperCase())}</span><strong class="faction-name">${escape(t(faction.name, faction.englishName))}</strong></span></span><span class="faction-body"><span class="faction-description">${escape(en ? englishDirections[faction.id] : faction.description)}</span><span class="faction-open-label">${activeCivilization === faction.id ? t("收起文明档案", "Close dossier") : t("展开文明档案", "Explore dossier")}<span aria-hidden="true">${activeCivilization === faction.id ? "−" : "+"}</span></span></span></button>`,
+      )
+      .join("");
+    factionGrid.querySelectorAll("[data-civilization]").forEach((button) =>
+      button.addEventListener("click", () => {
+        const id = button.dataset.civilization;
+        activeCivilization = activeCivilization === id ? null : id;
+        renderCivilizations();
+        renderCivilizationDetail();
+        const url = new URL(location.href);
+        if (activeCivilization)
+          url.searchParams.set("civilization", activeCivilization);
+        else url.searchParams.delete("civilization");
+        url.hash = "factions";
+        history.replaceState(null, "", url);
+        if (activeCivilization) {
+          factionDetail.querySelector("h3").focus({ preventScroll: true });
+          factionDetail.scrollIntoView({ block: "nearest" });
+        } else
+          factionGrid
+            .querySelector(`[data-civilization="${id}"]`)
+            .focus({ preventScroll: true });
+      }),
+    );
+  }
+  function renderCivilizationDetail() {
+    const faction = data.factions.find(
+      (item) => item.id === activeCivilization,
+    );
+    factionDetail.hidden = !faction;
+    if (!faction) {
+      factionDetail.innerHTML = "";
+      return;
+    }
+    const people = data.characters.filter(
+      (entry) => entry.faction === faction.id,
+    );
+    factionDetail.innerHTML = `<div class="civilization-detail-head"><div><p>CIVILIZATION / ${escape(faction.englishName.toUpperCase())}</p><h3 tabindex="-1">${escape(t(faction.name, faction.englishName))}</h3></div><button class="civilization-close" type="button">${t("收起", "Close")} −</button></div><div class="civilization-content"><div><h4>${t("职业概念与视觉方向", "Class concept & visual direction")}</h4><p>${escape(en ? englishDirections[faction.id] : faction.description)}</p><p>${t("现有概念图用于展示文明的视觉气质。文明背景与职业规则尚待整理。", "The concept image establishes a visual direction. Civilization lore and class rules remain unfinished.")}</p><dl class="civilization-pending">${[t("文明背景", "Civilization history"), t("社会与组织", "Society & institutions"), t("职业定位", "Class role"), t("专属机制", "Class mechanics")].map((label) => `<div><dt>${label}</dt><dd>${t("未完成", "Incomplete")}</dd></div>`).join("")}</dl></div><div><h4>${t("相关人物", "People of this civilization")}</h4><div class="civilization-people">${people.map((entry) => `<button type="button" class="civilization-person" data-person="${escape(entry.id)}">${imagePath(entry.cover) ? `<img src="${escape(imagePath(entry.cover))}" alt="" loading="lazy">` : ""}<span>${escape(displayName(entry))} ↗</span></button>`).join("")}</div></div></div>`;
+    factionDetail
+      .querySelector(".civilization-close")
+      .addEventListener("click", () =>
+        factionGrid
+          .querySelector(`[data-civilization="${faction.id}"]`)
+          .click(),
+      );
+    factionDetail.querySelectorAll("[data-person]").forEach((button) =>
+      button.addEventListener("click", () => {
+        search.value = "";
+        factionSelect.value = faction.id;
+        selected = people.find((entry) => entry.id === button.dataset.person);
+        formIndex = 0;
+        render();
+        const url = new URL(location.href);
+        url.searchParams.set("character", selected.id);
+        url.hash = "characters";
+        history.replaceState(null, "", url);
+        const section = document.querySelector("#characters");
+        section.open = true;
+        section.querySelector("summary").focus({ preventScroll: true });
+        section.scrollIntoView({ block: "start" });
+      }),
+    );
+  }
   const factionSelect = document.querySelector("#characterFaction");
   for (const faction of data.factions)
     factionSelect.add(
@@ -201,6 +265,7 @@
           );
         const url = new URL(location.href);
         url.searchParams.set("character", selected.id);
+        url.hash = "characters";
         history.replaceState(null, "", url);
         renderFeature();
       }),
@@ -210,4 +275,10 @@
   search.addEventListener("input", render);
   factionSelect.addEventListener("change", render);
   render();
+  if (
+    data.factions.some((faction) => faction.id === params.get("civilization"))
+  )
+    activeCivilization = params.get("civilization");
+  renderCivilizations();
+  renderCivilizationDetail();
 })();

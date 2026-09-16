@@ -5,7 +5,7 @@ The setting site has three sources with different responsibilities:
 - `data/cards.json` owns current card names, classes, effects, art descriptions, and selected artwork. Never copy an old character biography over this source.
 - `data/setting.json` owns stable character dossier IDs, explicit card identity mappings, retained story-only identities, four class concept records, and unfinished background status.
 - `data/character-summaries.json` owns short bilingual visitor introductions extracted from current card briefs. `sourceDesignHash` is SHA-256 of the JSON array of `{artworkKey, name, artDescription}` for its ordered sources. A changed source hides the introduction until reviewed and re-fingerprinted; do not refresh a hash without reviewing its text. Full original briefs stay inside the source disclosure.
-- `bestiary.js` owns the existing 15 creature and boundary-entity records. The character migration does not rewrite or remove these records.
+- `bestiary-data.js` owns the existing 15 creature and boundary-entity records. The character migration does not rewrite or remove these records.
 
 Run `node tools/build-setting-data.mjs` after card changes or setting-map changes. It generates `setting-data.js` for static/offline display, including names, all mapped forms, the current selected artwork, and art descriptions. Do not hand-edit the generated file. The website should also resolve these mappings against current card data when available, so editor changes can be reflected without maintaining a second card database.
 

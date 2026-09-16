@@ -6,6 +6,10 @@
 
 ### Website organization
 
+- Unified the card-editor workspace with the new archive theme while preserving card rendering and operations.
+- Made all four setting sections collapsible within one page and added in-place civilization dossiers.
+- Rebuilt the complete cosmic bestiary inside the setting page; old bestiary URLs redirect to the corresponding inline entry.
+
 - Rebuilt the setting archive around four class concepts, 22 current-design character dossiers and the preserved cosmic bestiary.
 - Added a hierarchical Markdown rules Wiki with 18 explicitly unfinished pages.
 - Moved the unchanged card editor to its own ungated page and removed the obsolete Development Center and story presentation.

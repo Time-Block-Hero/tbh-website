@@ -1,6 +1,6 @@
 # Creature and boundary-entity dossier template
 
-The existing `bestiary.js` content remains authoritative for the preserved entries. Adapt future entries to this template without discarding current ecological, morphological, or handling detail.
+The existing `bestiary-data.js` content remains authoritative for the preserved entries. Adapt future entries to this template without discarding current ecological, morphological, or handling detail.
 
 ## Identity
 

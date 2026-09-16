@@ -9,7 +9,11 @@
       content="Explore the factions, characters and cosmic life of Time-Block Hero. Read the Rules Wiki or open the card editor."
     />
     <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./bestiary-inline.css" />
     <script src="./setting-data.js" defer></script>
+    <script src="./archive.js" defer></script>
+    <script src="./bestiary-data.js" defer></script>
+    <script src="./bestiary-inline.js" defer></script>
     <script src="./site.js" defer></script>
   </head>
   <body class="setting-site" data-language="en">
@@ -66,90 +70,116 @@
         ><a href="#characters"><span>03</span>Characters</a
         ><a href="#bestiary"><span>04</span>Cosmic bestiary</a>
       </nav>
-      <section id="background" class="archive-section background-section">
-        <div class="section-label">
-          <span>01 / BACKGROUND</span><span class="unfinished">UNFINISHED</span>
-        </div>
-        <div class="background-columns">
-          <h2>A world<br />still being written.</h2>
+      <details id="background" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">01 / BACKGROUND</span>
           <div>
-            <p>
-              The background story and timeline are being reorganized. Confirmed
-              chapters will appear here.
-            </p>
-            <p class="quiet-copy">No story chapters have been published yet.</p>
+            <h2>Background story</h2>
+            <p>World background and story chapters.</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">Explore</span
+            ><span class="when-open">Close</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div class="background-columns">
+            <h2>A world<br />still being written.</h2>
+            <div>
+              <p>
+                The background story and timeline are being reorganized.
+                Confirmed chapters will appear here.
+              </p>
+              <p class="quiet-copy">
+                No story chapters have been published yet.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
-      <section id="factions" class="archive-section">
-        <div class="section-label">
-          <span>02 / FACTIONS</span><span>CONCEPT COLLECTION</span>
+      </details>
+      <details id="factions" class="archive-section archive-disclosure" open>
+        <summary class="archive-summary">
+          <span class="archive-section-number">02 / CIVILIZATIONS</span>
+          <div>
+            <h2>Four civilizations</h2>
+            <p>Class concepts, civilization dossiers and their people.</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">Explore</span
+            ><span class="when-open">Close</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="factionGrid" class="faction-grid">
+            <p class="loading-copy">Loading concepts…</p>
+          </div>
+          <div id="factionDetail" class="civilization-detail" hidden></div>
         </div>
-        <div class="section-title-row">
-          <h2>Four identities.</h2>
-          <p>Visual concepts. Background chapters to follow.</p>
-        </div>
-        <div id="factionGrid" class="faction-grid">
-          <p class="loading-copy">Loading concepts…</p>
-        </div>
-      </section>
-      <section id="characters" class="archive-section character-section">
-        <div class="section-label">
-          <span>03 / CHARACTERS</span
-          ><span id="characterCount">CHARACTER ARCHIVE</span>
-        </div>
-        <div class="section-title-row">
-          <h2>Faces of this world.</h2>
-          <p>Character designs from the current card collection.</p>
-        </div>
-        <div class="character-controls">
-          <label
-            ><span>Find a character</span
-            ><input
-              id="characterSearch"
-              type="search"
-              placeholder="Name or title"
-              autocomplete="off" /></label
-          ><label
-            ><span>Faction</span
-            ><select id="characterFaction">
-              <option value="all">All characters</option>
-            </select></label
-          >
-        </div>
-        <div
-          id="characterFeature"
-          class="character-feature"
-          aria-live="polite"
-        ></div>
-        <div
-          id="characterRoster"
-          class="character-roster"
-          role="group"
-          aria-label="Choose a character"
-        ></div>
-        <p id="characterEmpty" class="empty-state" hidden>
-          No matching characters.
-        </p>
-      </section>
-      <section id="bestiary" class="bestiary-entry">
-        <img
-          src="./assets/creature-concepts/duskbell-matriarch/illustration.png"
-          loading="lazy"
-          alt="Duskbell Matriarch concept illustration"
-        />
-        <div class="bestiary-entry-copy">
-          <p class="eyebrow">04 / COSMIC BESTIARY</p>
-          <h2>Life beyond<br />the familiar.</h2>
-          <p>
-            Wildlife, synthetic life and boundary entities. Explore their forms,
-            habitats and relationships.
+      </details>
+      <details id="characters" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">03 / CHARACTERS</span>
+          <div>
+            <h2>Character archive</h2>
+            <p>Meet the people behind the latest card designs.</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">Explore</span
+            ><span class="when-open">Close</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <p id="characterCount" class="archive-count"></p>
+
+          <div class="character-controls">
+            <label
+              ><span>Find a character</span
+              ><input
+                id="characterSearch"
+                type="search"
+                placeholder="Name or title"
+                autocomplete="off" /></label
+            ><label
+              ><span>Faction</span
+              ><select id="characterFaction">
+                <option value="all">All characters</option>
+              </select></label
+            >
+          </div>
+          <div
+            id="characterFeature"
+            class="character-feature"
+            aria-live="polite"
+          ></div>
+          <div
+            id="characterRoster"
+            class="character-roster"
+            role="group"
+            aria-label="Choose a character"
+          ></div>
+          <p id="characterEmpty" class="empty-state" hidden>
+            No matching characters.
           </p>
-          <a class="portal-button" href="./bestiary-en.html"
-            >Open the bestiary <span>↗</span></a
-          >
         </div>
-      </section>
+      </details>
+      <details id="bestiary" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">04 / COSMIC BESTIARY</span>
+          <div>
+            <h2>Cosmic bestiary</h2>
+            <p>
+              Morphology, ecology, civilization relations and visual records.
+            </p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">Explore</span
+            ><span class="when-open">Close</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="creatureArchive"></div>
+        </div>
+      </details>
       <section class="archive-section reading-entry">
         <div>
           <p class="eyebrow">RULES & DESIGN</p>

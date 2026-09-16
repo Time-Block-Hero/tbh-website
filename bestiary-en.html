@@ -1,13 +1,33 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Creature archive has moved · Time-Block Hero</title><link rel="stylesheet" href="./site.css"><script src="./bestiary-data.js"></script></head>
-<body class="setting-site"><main style="padding:10vh 8vw"><h1>Creature archive has moved</h1><p><a href="./index-en.html#bestiary">Open the creature archive →</a></p></main>
-<script>
-(() => {
-  const url = new URL('./index-en.html', location.href);
-  let id = new URLSearchParams(location.search).get('creature');
-  if (!id) { try { id = decodeURIComponent(location.hash.slice(1)); } catch { id = ''; } }
-  if (window.TBH_BESTIARY_RECORDS?.some(record => record.id === id)) url.searchParams.set('creature', id);
-  url.hash = 'bestiary';
-  location.replace(url.href);
-})();
-</script></body></html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Creature archive has moved · Time-Block Hero</title>
+    <link rel="stylesheet" href="./site.css" />
+    <script src="./bestiary-data.js"></script>
+  </head>
+  <body class="setting-site">
+    <main style="padding: 10vh 8vw">
+      <h1>Creature archive has moved</h1>
+      <p><a href="./index-en.html#bestiary">Open the creature archive →</a></p>
+    </main>
+    <script>
+      (() => {
+        const url = new URL("./index-en.html", location.href);
+        let id = new URLSearchParams(location.search).get("creature");
+        if (!id) {
+          try {
+            id = decodeURIComponent(location.hash.slice(1));
+          } catch {
+            id = "";
+          }
+        }
+        if (window.TBH_BESTIARY_RECORDS?.some((record) => record.id === id))
+          url.searchParams.set("creature", id);
+        url.hash = "bestiary";
+        location.replace(url.href);
+      })();
+    </script>
+  </body>
+</html>

@@ -9,7 +9,11 @@
       content="Time-Block Hero 游戏设定集：职业概念、人物档案与宇宙生物。规则 Wiki 与卡牌编辑器的统一入口。"
     />
     <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./bestiary-inline.css" />
     <script src="./setting-data.js" defer></script>
+    <script src="./archive.js" defer></script>
+    <script src="./bestiary-data.js" defer></script>
+    <script src="./bestiary-inline.js" defer></script>
     <script src="./site.js" defer></script>
   </head>
   <body class="setting-site" data-language="zh">
@@ -58,90 +62,115 @@
       </section>
       <nav class="archive-index" aria-label="设定集目录">
         <a href="#background"><span>01</span>背景故事</a
-        ><a href="#factions"><span>02</span>四职业</a
+        ><a href="#factions"><span>02</span>四大文明</a
         ><a href="#characters"><span>03</span>人物图鉴</a
         ><a href="#bestiary"><span>04</span>宇宙生物</a>
       </nav>
-      <section id="background" class="archive-section background-section">
-        <div class="section-label">
-          <span>01 / BACKGROUND</span><span class="unfinished">未完成</span>
-        </div>
-        <div class="background-columns">
-          <h2>故事，<br />留待书写。</h2>
+      <details id="background" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">01 / BACKGROUND</span>
           <div>
-            <p>
-              背景故事与时间线正在重新整理。这里将收录确认后的世界背景和故事章节。
-            </p>
-            <p class="quiet-copy">当前暂无已发布的故事章节。</p>
+            <h2>背景故事</h2>
+            <p>世界背景与故事章节。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div class="background-columns">
+            <h2>故事，<br />留待书写。</h2>
+            <div>
+              <p>
+                背景故事与时间线正在重新整理。这里将收录确认后的世界背景和故事章节。
+              </p>
+              <p class="quiet-copy">当前暂无已发布的故事章节。</p>
+            </div>
           </div>
         </div>
-      </section>
-      <section id="factions" class="archive-section">
-        <div class="section-label">
-          <span>02 / FACTIONS</span><span>CONCEPT COLLECTION</span>
+      </details>
+      <details id="factions" class="archive-section archive-disclosure" open>
+        <summary class="archive-summary">
+          <span class="archive-section-number">02 / CIVILIZATIONS</span>
+          <div>
+            <h2>四大文明</h2>
+            <p>职业概念、文明设定与相关人物。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="factionGrid" class="faction-grid">
+            <p class="loading-copy">正在加载职业概念…</p>
+          </div>
+          <div id="factionDetail" class="civilization-detail" hidden></div>
         </div>
-        <div class="section-title-row">
-          <h2>四种文明气质。</h2>
-          <p>职业概念图与视觉方向；背景设定待完善。</p>
+      </details>
+      <details id="characters" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">03 / CHARACTERS</span>
+          <div>
+            <h2>人物图鉴</h2>
+            <p>从最新卡牌设计，认识这个世界中的人物。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <p id="characterCount" class="archive-count"></p>
+
+          <div class="character-controls">
+            <label
+              ><span>查找人物</span
+              ><input
+                id="characterSearch"
+                type="search"
+                placeholder="姓名或称号"
+                autocomplete="off" /></label
+            ><label
+              ><span>职业 / 阵营</span
+              ><select id="characterFaction">
+                <option value="all">全部人物</option>
+              </select></label
+            >
+          </div>
+          <div
+            id="characterFeature"
+            class="character-feature"
+            aria-live="polite"
+          ></div>
+          <div
+            id="characterRoster"
+            class="character-roster"
+            role="group"
+            aria-label="选择人物"
+          ></div>
+          <p id="characterEmpty" class="empty-state" hidden>
+            没有找到匹配的人物。
+          </p>
         </div>
-        <div id="factionGrid" class="faction-grid">
-          <p class="loading-copy">正在加载职业概念…</p>
+      </details>
+      <details id="bestiary" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">04 / COSMIC BESTIARY</span>
+          <div>
+            <h2>宇宙生物图鉴</h2>
+            <p>形态、生态、文明关系与视觉档案。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="creatureArchive"></div>
         </div>
-      </section>
-      <section id="characters" class="archive-section character-section">
-        <div class="section-label">
-          <span>03 / CHARACTERS</span
-          ><span id="characterCount">CHARACTER ARCHIVE</span>
-        </div>
-        <div class="section-title-row">
-          <h2>他们的名字。</h2>
-          <p>从最新卡牌设计，认识这个世界中的人物。</p>
-        </div>
-        <div class="character-controls">
-          <label
-            ><span>查找人物</span
-            ><input
-              id="characterSearch"
-              type="search"
-              placeholder="姓名或称号"
-              autocomplete="off" /></label
-          ><label
-            ><span>职业 / 阵营</span
-            ><select id="characterFaction">
-              <option value="all">全部人物</option>
-            </select></label
-          >
-        </div>
-        <div
-          id="characterFeature"
-          class="character-feature"
-          aria-live="polite"
-        ></div>
-        <div
-          id="characterRoster"
-          class="character-roster"
-          role="group"
-          aria-label="选择人物"
-        ></div>
-        <p id="characterEmpty" class="empty-state" hidden>
-          没有找到匹配的人物。
-        </p>
-      </section>
-      <section id="bestiary" class="bestiary-entry">
-        <img
-          src="./assets/creature-concepts/duskbell-matriarch/illustration.png"
-          loading="lazy"
-          alt="暮钟牧母概念插画"
-        />
-        <div class="bestiary-entry-copy">
-          <p class="eyebrow">04 / COSMIC BESTIARY</p>
-          <h2>宇宙之中，<br />万物有形。</h2>
-          <p>自然生命、人工生命与边界存在。查阅它们的形态、生态及文明关系。</p>
-          <a class="portal-button" href="./bestiary.html"
-            >进入宇宙生物图鉴 <span>↗</span></a
-          >
-        </div>
-      </section>
+      </details>
       <section class="archive-section reading-entry">
         <div>
           <p class="eyebrow">RULES & DESIGN</p>
