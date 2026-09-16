@@ -48,7 +48,10 @@ node tools/card-editor-server.mjs --port 4317
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
 | `formal_card_ref.json` | 由权威数据生成的游戏侧卡牌表参考；不要反向覆盖 `data/cards.json` |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
-| `bestiary-data.js` | 生物与边界存在的权威生态、形态和处置档案 |
+| `bestiary-taxonomy.js` | 六种族与分支目录、分支特征和未完成状态 |
+| `bestiary-data.js` | 保留的生物源档案；总类内容作为种族共性 |
+| `bestiary-card-sources.js` | 构建生成的关联卡牌快照，不手工编辑 |
+| `references/setting-art-contract.md` | 设定集作为资产生成依据的引用顺序与约束 |
 | `references/species-art-direction.md` | 从生物图鉴派生的卡牌美术识别与提示词规则 |
 
 卡牌数据变更后运行以下命令，同步游戏侧参考、文档镜像、人物设计快照和离线备用数据：
@@ -202,7 +205,8 @@ $artwork-generation
 - `setting-data.js`：生成的离线展示快照；HTTP 预览会读取当前卡牌设计。
 - `docs/rules/`：分层 Markdown、导航顺序、稳定页面 ID 与写作说明。目前的 18 页均为占位，不代表生效规则。
 - `content-templates/`：人物、生物词条格式与 AI 协作指南，包含设定板、插画和小人资产位置。
-- `bestiary-data.js`：保留原有 15 个生物条目。
+- 宇宙生物按六种族展开 23 个具体分支；原有 15 份源档案保留，总类与子类分层展示。四个缺少独立形象的分支明确标记未完成。
+- 设定集用于统一文明、角色与生物的资产设计约束；个体插画与分支标准分开标注。
 
 修改 Markdown 或人物映射后运行：
 

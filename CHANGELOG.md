@@ -6,6 +6,9 @@
 
 ### Website organization
 
+- Organized the inline bestiary into six collapsible race groups and 23 branches, preserving all source dossiers and separating shared principles from individual art references.
+- Added explicit incomplete entries, branch design constraints and production-reference routing for future consistent assets.
+
 - Unified the card-editor workspace with the new archive theme while preserving card rendering and operations.
 - Made all four setting sections collapsible within one page and added in-place civilization dossiers.
 - Rebuilt the complete cosmic bestiary inside the setting page; old bestiary URLs redirect to the corresponding inline entry.

@@ -8,9 +8,13 @@ The existing `bestiary-data.js` content remains authoritative for the preserved 
 | --- | --- |
 | Stable ID | Permanent species/entity slug |
 | Name and aliases | Approved common name and alternative names |
-| Classification | Organism, mechanical construct, crystal entity, boundary phenomenon, or approved category |
+| Race ID / branch ID | One approved race parent plus a stable concrete branch; umbrella entries are parent context, not sibling species |
 | Source links | Existing bestiary record, cards/artwork keys, approved references and revision |
 | Status | Draft, confirmed, or incomplete, with unresolved claims identified |
+
+## Production authority
+
+Apply [the setting art contract](../references/setting-art-contract.md). Explicitly record required identifiers, prohibited deviations, allowed variation, individual-only details, missing standards and source revision. A single card illustration is not automatically a universal species sheet.
 
 ## Text sections
 

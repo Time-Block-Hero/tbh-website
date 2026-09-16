@@ -6,6 +6,7 @@
     <title>Creature archive has moved · Time-Block Hero</title>
     <link rel="stylesheet" href="./site.css" />
     <script src="./bestiary-data.js"></script>
+    <script src="./bestiary-taxonomy.js"></script>
   </head>
   <body class="setting-site">
     <main style="padding: 10vh 8vw">
@@ -23,7 +24,7 @@
             id = "";
           }
         }
-        if (window.TBH_BESTIARY_RECORDS?.some((record) => record.id === id))
+        if (window.TBH_BESTIARY_RECORDS?.some((record) => record.id === id) || window.TBH_BESTIARY_CATALOG?.entries.some((record) => record.id === id) || window.TBH_BESTIARY_CATALOG?.races.some((race) => "race:" + race.id === id))
           url.searchParams.set("creature", id);
         url.hash = "bestiary";
         location.replace(url.href);

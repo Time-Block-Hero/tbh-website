@@ -1,6 +1,6 @@
 # Original Species Art Direction
 
-This file routes artwork through the newest Cosmic Bestiary. For Hollow-Nulls it defines recognition and derivation rules, not a stable species anatomy.
+This derived guide follows `references/setting-art-contract.md`, `bestiary-taxonomy.js` and the source dossiers in `bestiary-data.js`. Race-wide principles, branch-specific standards and individual examples have different scopes. For Hollow-Nulls it defines recognition and derivation rules, not a stable species anatomy.
 
 ## 天使机体 / Angel Chassis
 

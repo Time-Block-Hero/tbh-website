@@ -173,6 +173,7 @@ fs.writeFileSync(referencePath, `${JSON.stringify(dataset, null, 2)}\n`);
 await import(`./build-card-editor-fallback.mjs?sync=${Date.now()}`);
 const { buildSettingFile } = await import("./build-setting-data.mjs");
 buildSettingFile(root);
+await import(`./build-bestiary.mjs?sync=${Date.now()}`);
 console.log(
   `Synced ${dataset.cards.length} cards (${skyborneCards.length} Skyborne Alliance) from data/cards.json.`,
 );

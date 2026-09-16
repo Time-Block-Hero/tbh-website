@@ -5,7 +5,8 @@ Work from the repository root.
 - `data/cards.json`: authoritative editor schema and current card fields.
 - `formal_card_ref.json`: generated runtime reference; it must not override current website designs.
 - `data/setting.json` and `setting-data.js`: current dossier identity mapping and derived card descriptions. Full biographies and background are unfinished; do not restore retired website lore or invent canon to fill placeholders.
-- `references/species-art-direction.md`: authoritative visual and lore rules for the project's original lifeforms. Read the matching species section whenever a card name, tribe, or brief involves that lifeform.
+- `references/setting-art-contract.md`: required source routing and constraints for all setting-driven asset work. Resolve race → branch → individual in `bestiary-taxonomy.js`, `bestiary-data.js` and current cards; keep incomplete branches and conflicts explicit.
+- `references/species-art-direction.md`: approved derived visual and lore rules for the project's original lifeforms. Read the matching species section whenever a card name, tribe, or brief involves that lifeform.
 - `ReferenceDocs/TBH基础设定-1.docx`: historical setting reference requiring reconciliation with current designer decisions; it is not automatically approved canon. Use the documents skill if this file must be read.
 - Future expansion references: look for files whose names or contents match the card's expansion/set. If no expansion field or matching source exists, use only base-world and faction context and state that expansion context was unavailable.
 
