@@ -1,0 +1,71 @@
+[
+  {
+    "file": "start/index.md",
+    "pages": [
+      {
+        "file": "start/overview.md"
+      },
+      {
+        "file": "start/quickstart.md"
+      }
+    ]
+  },
+  {
+    "file": "concepts/index.md",
+    "pages": [
+      {
+        "file": "concepts/board.md"
+      },
+      {
+        "file": "concepts/glossary.md"
+      }
+    ]
+  },
+  {
+    "file": "match/index.md",
+    "pages": [
+      {
+        "file": "match/turns.md"
+      }
+    ]
+  },
+  {
+    "file": "economy/index.md",
+    "pages": []
+  },
+  {
+    "file": "actions/index.md",
+    "pages": [
+      {
+        "file": "actions/combat.md"
+      }
+    ]
+  },
+  {
+    "file": "effects/index.md",
+    "pages": [
+      {
+        "file": "effects/targets.md"
+      },
+      {
+        "file": "effects/resolution.md"
+      }
+    ]
+  },
+  {
+    "file": "reference/index.md",
+    "pages": []
+  },
+  {
+    "file": "rulings/index.md",
+    "pages": [
+      {
+        "file": "rulings/pending.md"
+      }
+    ]
+  },
+  {
+    "file": "contributing/index.md",
+    "pages": []
+  }
+]

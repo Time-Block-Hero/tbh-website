@@ -1,0 +1,9 @@
+{
+  "name": "time-block-hero-website",
+  "private": true,
+  "scripts": {
+    "build:wiki": "node tools/build-wiki.mjs",
+    "test:wiki": "node --test tools/tests/wiki*.test.mjs"
+  },
+  "devDependencies": { "marked": "15.0.12" }
+}
