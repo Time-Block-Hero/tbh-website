@@ -1,0 +1,16 @@
+{
+  "name": "time-block-hero-website",
+  "private": true,
+  "scripts": {
+    "build:wiki": "node tools/build-wiki.mjs",
+    "test:wiki": "node --test tools/tests/wiki*.test.mjs",
+    "build:setting": "node tools/build-setting-data.mjs",
+    "build": "npm run build:wiki && npm run build:setting && npm run build:bestiary",
+    "test": "node --test tools/tests/*.test.mjs",
+    "start": "node tools/card-editor-server.mjs --port 4317",
+    "build:bestiary": "node tools/build-bestiary.mjs"
+  },
+  "devDependencies": {
+    "marked": "15.0.12"
+  }
+}

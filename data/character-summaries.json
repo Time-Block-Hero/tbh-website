@@ -1,0 +1,176 @@
+{
+  "alesta": {
+    "zh": "阿斯特拉帝国的年轻皇子与第四集团军指挥官。深红黑色指挥外套覆于分段式重甲之上，臂甲配备护盾投射器，披风勾勒出鲜明的军官轮廓。",
+    "en": "Astra Imperium’s young crown prince and commander of the Fourth Army Group. A dark-red and black command coat covers segmented field armor, with a shield projector built into his gauntlet.",
+    "sourceArtworkKeys": [
+      "crown-prince-alesta"
+    ],
+    "sourceDesignHash": "02444296b61deaf6dd0f3bf2eaf92cc9d05b5095ae956e32eee363530863b55e"
+  },
+  "vera": {
+    "zh": "阿斯特拉帝国的年轻铁驭，驾驶人形泰坦「革命日」。黑色长发、军帽与佩剑构成她的标志，合身黑军服以深红饰边和战术披风收束轮廓。",
+    "en": "A young Astra Imperium titan pilot paired with the humanoid titan Revolution Day. Long black hair, a formal cap and an officer’s sword define her silhouette, framed by a fitted black uniform with dark-red trim.",
+    "sourceArtworkKeys": [
+      "titan-maiden-vera"
+    ],
+    "sourceDesignHash": "63f9973c3664fe8e8087d1076f290bbc04917f9c4612609a9ec53a4e2faf804f"
+  },
+  "wei": {
+    "zh": "阿斯特拉帝国的城市规划师，身穿深红与炭黑色建筑指挥制服。配备时额度控制装具和关节式绘图手甲，在立体城市模型前调度建筑位置。",
+    "en": "An Astra Imperium city planner in dark-red and charcoal architectural command dress. A time-quota harness and articulated drafting gauntlets accompany her work repositioning structures across a city model.",
+    "sourceArtworkKeys": [
+      "city-planner-wei"
+    ],
+    "sourceDesignHash": "226a96623e7af5a13ca90df4d4784a9878c3f3ce374c5b16253e3efea3c012f4"
+  },
+  "brandt": {
+    "zh": "年轻的金发铁驭，护目镜推至额前，坐在专属泰坦的装甲座舱内操纵战斗。深红黑色机体与清晰可见的驾驶员共同构成人与机械的作战形象。",
+    "en": "A young blond titan ace with flight goggles pushed above his brow. Brandt remains visibly seated at the controls of his dark-red and black titan, making pilot and machine a single combat presence.",
+    "sourceArtworkKeys": [
+      "proud-titan-pilot-brandt"
+    ],
+    "sourceDesignHash": "7a9d9169fab5acb24c72eee2d4203a714affc829cdf4fec248a44c1c5933c942"
+  },
+  "mira": {
+    "zh": "米拉-10K是一座深空服务器城市的少女型代理人格。珍珠白与钴蓝仿生机体、青色意识核心和数据光冠，映照出作为她本体的城市结构。",
+    "en": "Mira-10K is the youthful feminine proxy of a deep-space server city. Her pearl-white and cobalt synthetic body carries a cyan consciousness core and a data-light crown echoing the skyline of her true body.",
+    "sourceArtworkKeys": [
+      "mira-10k"
+    ],
+    "sourceDesignHash": "aff942edb018a2caae9d6c12a3a3530b9be332dbb61ad37cfaddbb3ffbd74325"
+  },
+  "emilys": {
+    "zh": "埃米莉丝的本体是巨型计算枢纽，白色机械陶瓷、石墨支架与钴蓝冷却通道围绕青色数据核心展开。建筑上方的少女影像是无实体的全息界面。",
+    "en": "Emilys is a colossal computation nexus built from white mechanical ceramic, graphite structures and cobalt cooling channels around a cyan data core. The girl above it is a nonphysical holographic interface.",
+    "sourceArtworkKeys": [
+      "swarm-overmind-emilys"
+    ],
+    "sourceDesignHash": "a7318c17052610ad2a5ca41be73109a7e89054e82726d6e76bc87c3c7cd2ca8f"
+  },
+  "jinbai": {
+    "zh": "灰白发色、灰蓝眼睛与修长身形贯穿烬白的两种形态。他携带单分子长剑；飞升形态显露白色机械陶瓷、石墨关节和青色胸部核心。",
+    "en": "Ash-white hair, gray-blue eyes and slender proportions connect both of Jinbai’s forms. He carries a monomolecular sword; his ascended form reveals white mechanical ceramic, graphite joints and a cyan chest core.",
+    "sourceArtworkKeys": [
+      "lost-sword-jinbai",
+      "ascended-sword-jinbai"
+    ],
+    "sourceDesignHash": "18e2018cb618d6d2fd5dd892fe69f24256d72a21c28011a0d558c0a28654b1aa"
+  },
+  "noa": {
+    "zh": "烈阳教会的少年教皇，胸前显露白橙色反应核心。白色礼服叠覆轻型装甲，橙红技术饰边与精密太阳环围绕他平静的面容展开。",
+    "en": "The Solar Church’s youthful boy pope bears a white-orange reactor core at his chest. White ceremonial layers cover restrained armor, while orange-red details and precise solar rings frame his calm face.",
+    "sourceArtworkKeys": [
+      "noa"
+    ],
+    "sourceDesignHash": "2506b1999630369caefc92c297fb65cccebea337c39e6c935beec50df81763c0"
+  },
+  "aletheia": {
+    "zh": "烈阳教会的年轻圣女，身披白色与暖象牙色礼仪装甲，配以橙红技术饰边和发光日核。她双手举起高耸火杖，杖冠如凝聚的白橙色太阳。",
+    "en": "A young saint of the Solar Church in flowing white and warm-ivory ceremonial armor, with orange-red trim and a luminous solar core. She raises a tall flame staff crowned by a contained white-orange sun.",
+    "sourceArtworkKeys": [
+      "solar-saint-aletheia"
+    ],
+    "sourceDesignHash": "1910ae51f0a07bbdda7a8d843435e15637ca94e1ed3737c63eba72a726adf68b"
+  },
+  "sola": {
+    "zh": "橙发、明亮笑容与白橙色飞行服构成索拉的鲜明形象。胸前日核连接背部与腿部推进器，短披风随飞行扬起，双手配备日冕充能拳甲。",
+    "en": "Sola is defined by vivid orange hair, a bright smile and a white-and-orange flight suit. His chest core powers back and leg thrusters, with a short mantle and oversized corona-charged gauntlets completing his airborne silhouette.",
+    "sourceArtworkKeys": [
+      "sunwheel-flying-star-sola"
+    ],
+    "sourceDesignHash": "b8ee21488f3c0fe9677be18e9bc6c942779be13ca5b57820c0bbfc4d5c16e32b"
+  },
+  "luolan": {
+    "zh": "猎空同盟的红发前线指挥官，佩戴发出绿光的时序义眼。深森林绿指挥外套叠覆炭黑模块装甲，暗血红标识与改装舰桥呼应她的前线形象。",
+    "en": "The Skyborne Alliance’s red-haired frontline commander wears a glowing green chrono-cybernetic eye. A forest-green command coat, charcoal modular armor and oxblood insignia define her presence aboard a rebuilt command bridge.",
+    "sourceArtworkKeys": [
+      "luolan"
+    ],
+    "sourceDesignHash": "53d491ebdbb55d690ba2bd7854cbaeded0d4db24b09328746faddf7b89b64574"
+  },
+  "drake": {
+    "zh": "白须老将德雷克身着反复修补的绿红指挥外套。裂隙惘生形态呈少年外貌，保留探险服轮廓，身体出现因果空缺与彼此错位的生物、陶瓷和机械碎片。",
+    "en": "The elderly, white-bearded Drake wears a heavily repaired green-and-oxblood command coat. His Rift-Reborn form appears adolescent, with expedition clothing interrupted by causal voids and misaligned biological, ceramic and mechanical fragments.",
+    "sourceArtworkKeys": [
+      "drake-the-forgotten-commander",
+      "rift-reborn-drake"
+    ],
+    "sourceDesignHash": "b6f60a13ef20df4bc431a2a7f95dd4f8120dba9e560c09ec87d9deb638ab4e09"
+  },
+  "ald": {
+    "zh": "猎空同盟的年轻星刃破阵者，黑发间带深红挑染，拥有鲜红双眼。他身披破损绿披风与炭黑装甲，手持红色等离子星刃和同盟战旗。",
+    "en": "A young Skyborne Alliance star-blade breacher with tousled black hair, a dark-red streak and red eyes. Ald wears charcoal armor and a torn green mantle, carrying a red plasma blade and a resistance banner.",
+    "sourceArtworkKeys": [
+      "ald-light-of-the-front"
+    ],
+    "sourceDesignHash": "b289f1912fda3fbfedf5635629fefea843c1844b6b32043530a309fdd4b76958"
+  },
+  "nyx": {
+    "zh": "猎空同盟的年轻义体医师、工程师与黑客，黑发凌乱，一只义眼泛着红光。修补过的绿外套下是技术服装，多条模块机械臂携带手术与维修工具。",
+    "en": "A young Skyborne Alliance cybernetic doctor, engineer and hacker with messy black hair and one red cybernetic eye. His patched green coat accompanies modular auxiliary arms equipped with surgical and engineering tools.",
+    "sourceArtworkKeys": [
+      "nyx-cybernetic-doctor"
+    ],
+    "sourceDesignHash": "02161201c5f4c7bb595ed0d01d2ebb1c0aa9d460ad19331dde3b92ed7a9f3521"
+  },
+  "seth": {
+    "zh": "塞特是十六至十七岁的同盟新兵旗帜手，身形清瘦，短棕发凌乱。略显宽大的二手装甲与短款绿外套衬出少年轮廓，双手撑住沉重的折叠旗标。",
+    "en": "Seth is a sixteen-to-seventeen-year-old rookie standard-bearer with a slim build and messy short brown hair. Slightly oversized secondhand armor and a cropped green coat frame him as he braces a heavy folding banner-beacon.",
+    "sourceArtworkKeys": [
+      "seth-legion-standard-bearer"
+    ],
+    "sourceDesignHash": "247e840c3a6bf6719d47411a2532f7a8286d436d83cf408626e9487f8732084c"
+  },
+  "qimo": {
+    "zh": "猎空同盟的资深「黑手」供货商，留银黑短发，佩戴黄铜光学放大镜。深绿色军需外套、暗红手套和多层工具腰带构成宽厚实用的轮廓。",
+    "en": "A veteran Blackhand supplier of the Skyborne Alliance with cropped silver-black hair and a brass optical loupe. A forest-green quartermaster coat, oxblood gloves and layered tool belts create a broad, practical silhouette.",
+    "sourceArtworkKeys": [
+      "qimo-blackhand-supplier"
+    ],
+    "sourceDesignHash": "7af37f3aab3850f1281465abee3a58d61ec2e6006a972ad48e655b03a98fd850"
+  },
+  "magellan": {
+    "zh": "麦哲伦是一位高大壮硕的白发舰队司令，面容严峻。标志性的白色指挥大衣覆盖深蓝制服与陶瓷肩甲，金色导航饰边和不对称披风强调军官轮廓。",
+    "en": "A tall, powerfully built fleet commander with swept-back white hair and a stern face. Magellan’s white command greatcoat covers a navy uniform and ceramic shoulder armor, accented by gold navigation trim and an asymmetric mantle.",
+    "sourceArtworkKeys": [
+      "interstellar-commander-magellan"
+    ],
+    "sourceDesignHash": "68a59ac64cd1e875e7a17b8aad8d0c2b6ca59c2c6475a6bec6d344dbd6ad45c9"
+  },
+  "assassin-j": {
+    "zh": "身形精瘦的成年刺客，佩戴深色镜面墨镜与不对称炭黑战术长衣。贴身技术护甲、消音短枪和青色坐标信标，构成刺客-J的装备特征。",
+    "en": "A lean adult assassin in dark mirrored sunglasses and an asymmetric charcoal tactical coat. Fitted technical armor, a compact suppressed sidearm and a cyan coordinate beacon define Assassin J’s equipment.",
+    "sourceArtworkKeys": [
+      "delayed-coordinate-cannon"
+    ],
+    "sourceDesignHash": "a84dab9f04740aa22c529f68fa5f72294dd203d300944a887809462948401a4b"
+  },
+  "jagg": {
+    "zh": "贾格是一位神态张扬的传送工程师，乱发向后扬起，佩戴防护镜。补丁长衣、拼装陶瓷护甲与挂满自制相位线圈的腰带，构成他的技术装束。",
+    "en": "An eccentric teleportation engineer with swept-back unruly hair and protective goggles. Jagg wears a patched technical coat, mismatched ceramic armor and a belt crowded with homemade phase coils.",
+    "sourceArtworkKeys": [
+      "jagg-mad-teleporter"
+    ],
+    "sourceDesignHash": "bae02739e57b55b736d7996c7e353f6efe64320cd12a303c7d4ac961c07deca0"
+  },
+  "tiffany": {
+    "zh": "蒂芙尼是活泼的粉色兔族兽裔，拥有完整兔形头部、长耳、青绿眼睛与玫粉色毛发。短款快递夹克、工具短裤和信使包配合轻快灵活的身形。",
+    "en": "Tiffany is an energetic pink rabbit Avatar with a fully rabbit-shaped head, long ears, teal eyes and rose-pink fur. A cropped courier jacket, utility shorts and a messenger pouch suit her agile silhouette.",
+    "sourceArtworkKeys": [
+      "know-it-all-tiffany"
+    ],
+    "sourceDesignHash": "25162f76e8173221df5fc1f2f97b9a618e4316eb94eef5d3d2365a4660c2301f"
+  },
+  "elaine": {
+    "zh": "伊莱恩的人物档案保留中。身份细节、外形设定与人物介绍尚未完成，原画、设定板及小人资产将依据后续确认的资料补全。",
+    "en": "Elaine’s dossier is reserved. Identity details, appearance and character introduction remain unfinished; key art, a concept sheet and a chibi asset await confirmed material.",
+    "sourceArtworkKeys": [],
+    "sourceDesignHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  },
+  "weiyang": {
+    "zh": "未央的人物档案保留中。身份细节、外形设定与人物介绍尚未完成，原画、设定板及小人资产将依据后续确认的资料补全。",
+    "en": "Weiyang’s dossier is reserved. Identity details, appearance and character introduction remain unfinished; key art, a concept sheet and a chibi asset await confirmed material.",
+    "sourceArtworkKeys": [],
+    "sourceDesignHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+  }
+}

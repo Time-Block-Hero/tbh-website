@@ -15,7 +15,7 @@ If a queued card has `artDescriptionNeedsPolish: true`, use `$polish-artwork-des
 
 ## Workflow
 
-1. Read `references/artwork-pipeline.md`.
+1. Read `references/artwork-pipeline.md` and the repository-root `references/setting-art-contract.md`. Resolve race, branch and individual references before generation. Preserve required identifiers and permitted variation; never fill missing branch anatomy or silently override a conflict with current card briefs.
 2. Read `../references/rarity-art-direction.md`. Use rarity to scale composition, narrative density, and finish while keeping the same output resolution and baseline production quality.
 3. From the repository root, list the generation queue:
 

@@ -1,0 +1,516 @@
+/* Editor chrome only. Card render layers, rarity colors and layout geometry remain in styles.css. */
+.editor-page {
+  --editor-surface: #1b1f1b;
+  --editor-field: #111511;
+  --editor-border: #efece32e;
+  --editor-subtle: #b4b7aa;
+  background: #141813;
+  color: var(--portal-paper);
+  color-scheme: dark;
+}
+.editor-page::before {
+  display: none;
+}
+.editor-page .card-editor-page {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 44px clamp(20px, 4vw, 64px) 64px;
+}
+.editor-page .section-heading {
+  max-width: none;
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--editor-border);
+}
+.editor-page .section-kicker {
+  color: var(--portal-accent);
+  font: 11px/1.5 var(--portal-font);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+.editor-page .section-heading h2 {
+  margin: 10px 0 14px;
+  color: var(--portal-paper);
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 650;
+  letter-spacing: -0.035em;
+}
+.editor-page .section-heading p {
+  margin: 0;
+  max-width: 760px;
+  color: var(--editor-subtle);
+  font: 13px/1.8 var(--portal-font);
+}
+.editor-page .formal-card-toolbar {
+  gap: 10px;
+  padding: 18px 0 22px;
+  border: 0;
+  border-bottom: 1px solid var(--editor-border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.editor-page .collectability-toggle {
+  gap: 0;
+  padding: 0;
+  border: 1px solid var(--editor-border);
+  border-radius: 0;
+  background: var(--editor-field);
+}
+.editor-page .collectability-toggle button {
+  min-height: 44px;
+  padding: 10px 17px;
+  border-radius: 0;
+  color: var(--editor-subtle);
+  font-family: var(--portal-font);
+}
+.editor-page .collectability-toggle button.active {
+  color: #171b15;
+  background: var(--portal-paper);
+  box-shadow: none;
+}
+.editor-page .card-search-input,
+.editor-page .card-sort-select {
+  min-width: 0;
+  height: 46px;
+  border: 1px solid var(--editor-border);
+  border-radius: 0;
+  background-color: var(--editor-field);
+  color: var(--portal-paper);
+  font-family: var(--portal-font);
+}
+.editor-page .card-search-input::placeholder {
+  color: #949b8d;
+}
+.editor-page .card-sort-select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b4b7aa'/%3E%3C/svg%3E");
+  padding-left: 12px;
+}
+.editor-page .card-count-label {
+  color: var(--editor-subtle);
+  font:
+    12px/1.5 ui-monospace,
+    monospace;
+  padding: 0 4px;
+}
+.editor-page .card-create-btn,
+.editor-page .card-export-btn,
+.editor-page .card-editor-save-btn,
+.editor-page .card-editor-cancel-btn,
+.editor-page .card-editor-del-btn {
+  min-height: 44px;
+  border: 1px solid var(--editor-border);
+  border-radius: 0;
+  color: var(--portal-paper);
+  background: var(--editor-surface);
+  font-family: var(--portal-font);
+  font-size: 12px;
+  box-shadow: none;
+}
+.editor-page .formal-card-toolbar .card-create-btn,
+.editor-page .card-editor-save-btn {
+  color: #1d2016;
+  background: var(--portal-accent);
+  border-color: var(--portal-accent);
+  font-weight: 800;
+}
+.editor-page .formal-card-toolbar .card-export-btn {
+  border-color: var(--editor-border);
+}
+.editor-page .card-editor-del-btn {
+  color: #ffb8a6;
+  border-color: #aa61564d;
+  background: #422a24;
+}
+.editor-page .card-editor-cancel-btn:hover,
+.editor-page .card-export-btn:not([aria-disabled="true"]):hover {
+  background: #2d3529;
+  border-color: #d8d9cc66;
+}
+.editor-page .card-editor-del-btn:hover {
+  background: #61382c;
+}
+.editor-page .card-search-input:focus,
+.editor-page .card-sort-select:focus,
+.editor-page .formal-card-form :is(input, select, textarea):focus {
+  outline: 1px solid var(--portal-accent);
+  outline-offset: 2px;
+  border-color: var(--portal-accent);
+}
+.editor-page
+  :is(
+    .formal-card-toolbar,
+    .formal-card-editor-head,
+    .formal-card-actions,
+    .derivative-panel,
+    .formal-card-form
+  )
+  button:focus-visible,
+.editor-page .art-upload-button:focus-within {
+  outline: 2px solid var(--portal-accent);
+  outline-offset: 3px;
+}
+.editor-page .card-center-grid {
+  gap: 22px;
+}
+/* Only the outer card tile and draggable affordance are themed, never its image/frame/text layers. */
+.editor-page .formal-card-tile {
+  border-color: var(--editor-border);
+  border-radius: 2px;
+  background: var(--editor-field);
+}
+.editor-page .formal-card-tile:hover {
+  border-color: #ee8c4baa;
+  box-shadow: 0 10px 25px #0005;
+}
+.editor-page .formal-card-drag-handle {
+  border-radius: 0;
+  border-color: #efece34d;
+  background: #171b15e6;
+}
+.editor-page .card-editor-overlay {
+  padding: 18px;
+  background: #10140fe8;
+  backdrop-filter: blur(8px);
+}
+.editor-page .formal-card-editor-shell {
+  height: min(960px, calc(100dvh - 36px));
+  border: 1px solid var(--editor-border);
+  border-radius: 2px;
+  background: var(--editor-surface);
+  box-shadow: 0 24px 90px #0009;
+}
+.editor-page .formal-card-editor-head {
+  min-height: 84px;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--editor-border);
+  background: #20251d;
+}
+.editor-page .formal-card-editor-head h3 {
+  color: var(--portal-paper);
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+.editor-page .card-save-status {
+  color: var(--editor-subtle);
+  font: 11px/1.5 var(--portal-font);
+}
+.editor-page .card-save-status[data-state="saved"] {
+  color: #b6d49a;
+}
+.editor-page .card-save-status[data-state="error"] {
+  color: #ffb8a6;
+}
+.editor-page .card-editor-close {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--editor-border);
+  border-radius: 0;
+  color: var(--portal-paper);
+  background: transparent;
+}
+.editor-page .card-editor-close:hover {
+  background: #363c2d;
+}
+.editor-page .derivative-panel {
+  padding: 16px 12px;
+  border-color: var(--editor-border);
+  background: #151a14;
+}
+.editor-page .derivative-panel-title {
+  color: var(--editor-subtle);
+  font: 12px/1.4 var(--portal-font);
+}
+.editor-page .derivative-panel-title button {
+  width: 36px;
+  height: 36px;
+  border-color: var(--editor-border);
+  border-radius: 0;
+  color: var(--portal-accent);
+  background: var(--editor-surface);
+}
+.editor-page .derivative-card-button {
+  border-radius: 1px;
+  border-color: var(--editor-border);
+  background: var(--editor-field);
+}
+.editor-page .derivative-card-button.active {
+  border-color: var(--portal-accent);
+  box-shadow: 0 0 0 1px var(--portal-accent);
+}
+.editor-page .derivative-card-button > span {
+  border-radius: 0;
+  background: #151a14e6;
+}
+.editor-page .hand-preview-stage {
+  background:
+    radial-gradient(ellipse at 50% 40%, #424b2833, transparent 68%), #191e17;
+}
+.editor-page .formal-card-form-panel {
+  border-color: var(--editor-border);
+  background: #20251d;
+}
+.editor-page .formal-card-form {
+  gap: 16px;
+  padding: 22px;
+  scrollbar-color: #68715d #20251d;
+}
+.editor-page .formal-card-form :is(label, legend) {
+  color: #c1c4b6;
+  font-family: var(--portal-font);
+  font-size: 12px;
+  letter-spacing: 0.015em;
+}
+.editor-page .formal-card-form :is(input, select, textarea) {
+  min-width: 0;
+  min-height: 42px;
+  border-color: var(--editor-border);
+  border-radius: 0;
+  background: var(--editor-field);
+  color: var(--portal-paper);
+  line-height: 1.55;
+}
+.editor-page .formal-card-form textarea {
+  min-height: 115px;
+}
+.editor-page .formal-card-form input[readonly] {
+  color: #dac1a3;
+  background: #181e16;
+}
+.editor-page .formal-card-form fieldset {
+  border-color: var(--editor-border);
+  border-radius: 0;
+  padding: 12px;
+}
+.editor-page .tribe-selector button {
+  min-height: 36px;
+  border-color: var(--editor-border);
+  border-radius: 0;
+  background: #171d14;
+  color: var(--editor-subtle);
+}
+.editor-page .tribe-selector button:hover {
+  color: var(--portal-paper);
+  border-color: #ee8c4b80;
+}
+.editor-page .tribe-selector button.active,
+.editor-page .formal-arrow-grid button.active {
+  background: var(--portal-paper);
+  color: #1b2218;
+  border-color: var(--portal-paper);
+}
+.editor-page .formal-arrow-grid {
+  grid-template-columns: repeat(3, 36px);
+  gap: 6px;
+}
+.editor-page .formal-arrow-grid :is(button, span) {
+  width: 36px;
+  height: 36px;
+  border-radius: 0;
+  border-color: var(--editor-border);
+}
+.editor-page .formal-arrow-grid button:not(.active),
+.editor-page .formal-arrow-grid span {
+  background: #171d14;
+  color: var(--editor-subtle);
+}
+.editor-page .formal-card-form .art-polish-toggle {
+  border-color: var(--editor-border);
+  border-radius: 0;
+  background: #171d14;
+  color: #c1c4b6;
+}
+.editor-page .formal-card-form .art-polish-toggle input {
+  min-height: 16px;
+  accent-color: var(--portal-accent);
+}
+.editor-page .artwork-manager {
+  padding: 14px;
+  border-radius: 0;
+  border-color: var(--editor-border);
+  background: #181e16;
+}
+.editor-page .artwork-manager-head strong {
+  color: var(--portal-paper);
+  font-size: 13px;
+}
+.editor-page .artwork-manager-head span,
+.editor-page .artwork-manager-help {
+  color: var(--editor-subtle);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.editor-page .formal-card-form .art-upload-button {
+  min-height: 40px;
+  border-color: #ee8c4b70;
+  border-radius: 0;
+  color: #f2b48b;
+  background: #32281c;
+}
+.editor-page .artwork-variant {
+  border-color: var(--editor-border);
+  border-radius: 0;
+  background: #11170f;
+}
+.editor-page .artwork-variant.is-selected {
+  border-color: var(--portal-accent);
+  box-shadow: 0 0 0 1px var(--portal-accent);
+}
+.editor-page .artwork-variant-label {
+  padding: 9px 6px;
+  color: #c1c4b6;
+}
+.editor-page .artwork-variant-badge {
+  border-radius: 0;
+  background: var(--portal-accent);
+  color: #1a2116;
+}
+.editor-page .artwork-variant-delete {
+  border-radius: 0;
+  color: #ffb8a6;
+  background: #231b15f0;
+  border-color: #b3837066;
+}
+.editor-page .artwork-variant-empty {
+  border-color: var(--editor-border);
+  border-radius: 0;
+  color: var(--editor-subtle);
+}
+.editor-page .formal-card-actions {
+  padding: 16px 22px;
+  border-color: var(--editor-border);
+  background: #181e15;
+}
+
+@media (max-width: 1050px) {
+  .editor-page .formal-card-editor-body {
+    grid-template-columns: 100px minmax(240px, 1fr) 350px;
+  }
+  .editor-page .formal-card-form {
+    padding: 18px;
+  }
+}
+@media (max-width: 760px) {
+  .editor-page .card-editor-page {
+    padding: 30px 18px 40px;
+  }
+  .editor-page .section-heading {
+    padding-bottom: 22px;
+    margin-bottom: 12px;
+  }
+  .editor-page .section-heading h2 {
+    font-size: 30px;
+  }
+  .editor-page .formal-card-toolbar {
+    gap: 10px;
+    padding-bottom: 22px;
+  }
+  .editor-page .collectability-toggle {
+    flex: 1 1 100%;
+  }
+  .editor-page .collectability-toggle button {
+    flex: 1;
+  }
+  .editor-page .formal-card-toolbar .card-search-input {
+    flex: 1 1 100%;
+  }
+  .editor-page .card-sort-select {
+    flex: 1 1 calc(50% - 10px);
+    width: 0;
+  }
+  .editor-page #cardViewSort {
+    flex: 1 1 calc(67% - 10px);
+  }
+  .editor-page .formal-card-toolbar .card-count-label {
+    flex: 1 0 auto;
+    margin-left: 0;
+    text-align: right;
+  }
+  .editor-page .card-create-btn,
+  .editor-page .card-export-btn {
+    flex: 1 1 calc(50% - 10px);
+    padding: 0 10px;
+  }
+  .editor-page .card-center-grid {
+    gap: 14px;
+  }
+  .editor-page .card-editor-overlay {
+    padding: 0;
+  }
+  .editor-page .formal-card-editor-shell {
+    width: 100%;
+    height: 100dvh;
+    border: 0;
+    border-radius: 0;
+  }
+  .editor-page .formal-card-editor-head {
+    min-height: 80px;
+    gap: 10px;
+    padding: 14px;
+  }
+  .editor-page .formal-card-editor-head h3 {
+    max-width: 210px;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+  }
+  .editor-page .formal-card-editor-head .section-kicker {
+    font-size: 10px;
+  }
+  .editor-page .card-save-status {
+    max-width: 78px;
+    font-size: 10px;
+  }
+  .editor-page .formal-card-editor-body {
+    grid-template-columns: 82px minmax(0, 1fr);
+    grid-template-rows: min(55dvh, 500px) max-content;
+    overflow-y: auto;
+  }
+  .editor-page .derivative-panel {
+    padding: 12px 7px;
+  }
+  .editor-page .derivative-panel-title {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 11px;
+  }
+  .editor-page .derivative-panel-title button {
+    width: 32px;
+    height: 32px;
+  }
+  .editor-page .derivative-rail {
+    height: calc(100% - 76px);
+    padding: 2px;
+  }
+  .editor-page .hand-preview-stage {
+    padding: 16px;
+  }
+  .editor-page .formal-card-form-panel {
+    min-height: 0;
+  }
+  .editor-page .formal-card-form {
+    flex: none;
+    overflow: visible;
+    padding: 22px 18px;
+  }
+  .editor-page .formal-card-form :is(input, select, textarea) {
+    font-size: 16px;
+  }
+  .editor-page .formal-card-actions {
+    position: sticky;
+    bottom: 0;
+    z-index: 50;
+    padding: 12px 18px max(12px, env(safe-area-inset-bottom));
+  }
+  .editor-page .formal-card-actions button {
+    flex: 1;
+    padding: 0 9px;
+    font-size: 11px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .editor-page .formal-card-tile {
+    transition: none;
+  }
+}

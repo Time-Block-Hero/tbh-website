@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "background": {
+    "status": "incomplete",
+    "title": "背景故事",
+    "body": null,
+    "note": "背景故事尚未完成，等待剧情内容整理。"
+  },
+  "factions": [
+    {
+      "id": "astra",
+      "classId": "AstraImperium",
+      "name": "阿斯特拉帝国",
+      "englishName": "Astra Imperium",
+      "accent": "#dc595b",
+      "image": "assets/generated/faction-astra.png",
+      "imageStatus": "concept-draft",
+      "status": "incomplete",
+      "description": "深红与炭黑军工材质、精密装甲、重型泰坦与城市工程。",
+      "descriptionScope": "visual-direction",
+      "sourceArtworkKeys": [
+        "crown-prince-alesta",
+        "titan-maiden-vera",
+        "city-planner-wei"
+      ]
+    },
+    {
+      "id": "machine",
+      "classId": "MachineHeaven",
+      "name": "械心天庭",
+      "englishName": "Machine Heaven",
+      "accent": "#80b8ed",
+      "image": "assets/generated/faction-machine.png",
+      "imageStatus": "concept-draft",
+      "status": "incomplete",
+      "description": "白蓝精密机体、发光接口与模块化机械结构。",
+      "descriptionScope": "visual-direction",
+      "sourceArtworkKeys": [
+        "mira-10k",
+        "swarm-overmind-emilys",
+        "lost-sword-jinbai"
+      ]
+    },
+    {
+      "id": "solar",
+      "classId": "SolarChurch",
+      "name": "烈阳教会",
+      "englishName": "Solar Church",
+      "accent": "#efb96e",
+      "image": "assets/generated/faction-solar.png",
+      "imageStatus": "concept-draft",
+      "status": "incomplete",
+      "description": "白金与橙红光照、太阳纹样与高温能量表现。",
+      "descriptionScope": "visual-direction",
+      "sourceArtworkKeys": [
+        "noa",
+        "solar-saint-aletheia",
+        "sunwheel-flying-star-sola"
+      ]
+    },
+    {
+      "id": "skyraider",
+      "classId": "SkyborneAlliance",
+      "name": "猎空同盟",
+      "englishName": "Skyborne Alliance",
+      "accent": "#83c7ae",
+      "image": "assets/generated/faction-skyraider.png",
+      "imageStatus": "concept-draft",
+      "status": "incomplete",
+      "description": "深森林绿与暗血红、修补装备、义体与工业朋克。",
+      "descriptionScope": "visual-direction",
+      "sourceArtworkKeys": [
+        "luolan",
+        "nyx-cybernetic-doctor",
+        "seth-legion-standard-bearer"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "alesta",
+      "sourceArtworkKeys": [
+        "crown-prince-alesta"
+      ],
+      "identityNameIncludes": "阿列斯塔"
+    },
+    {
+      "id": "vera",
+      "sourceArtworkKeys": [
+        "titan-maiden-vera"
+      ],
+      "identityNameIncludes": "维拉"
+    },
+    {
+      "id": "wei",
+      "sourceArtworkKeys": [
+        "city-planner-wei"
+      ],
+      "identityNameIncludes": "薇"
+    },
+    {
+      "id": "brandt",
+      "sourceArtworkKeys": [
+        "proud-titan-pilot-brandt"
+      ],
+      "identityNameIncludes": "布兰特"
+    },
+    {
+      "id": "mira",
+      "sourceArtworkKeys": [
+        "mira-10k"
+      ],
+      "identityNameIncludes": "米拉"
+    },
+    {
+      "id": "emilys",
+      "sourceArtworkKeys": [
+        "swarm-overmind-emilys"
+      ],
+      "identityNameIncludes": "埃米莉丝"
+    },
+    {
+      "id": "jinbai",
+      "sourceArtworkKeys": [
+        "lost-sword-jinbai",
+        "ascended-sword-jinbai"
+      ],
+      "identityNameIncludes": "烬白"
+    },
+    {
+      "id": "noa",
+      "sourceArtworkKeys": [
+        "noa"
+      ],
+      "identityNameIncludes": "诺亚"
+    },
+    {
+      "id": "aletheia",
+      "sourceArtworkKeys": [
+        "solar-saint-aletheia"
+      ],
+      "identityNameIncludes": "阿蕾缇娅"
+    },
+    {
+      "id": "sola",
+      "sourceArtworkKeys": [
+        "sunwheel-flying-star-sola"
+      ],
+      "identityNameIncludes": "索拉"
+    },
+    {
+      "id": "luolan",
+      "sourceArtworkKeys": [
+        "luolan"
+      ],
+      "identityNameIncludes": "洛岚"
+    },
+    {
+      "id": "drake",
+      "sourceArtworkKeys": [
+        "drake-the-forgotten-commander",
+        "rift-reborn-drake"
+      ],
+      "identityNameIncludes": "德雷克"
+    },
+    {
+      "id": "ald",
+      "sourceArtworkKeys": [
+        "ald-light-of-the-front"
+      ],
+      "identityNameIncludes": "阿尔德"
+    },
+    {
+      "id": "nyx",
+      "sourceArtworkKeys": [
+        "nyx-cybernetic-doctor"
+      ],
+      "identityNameIncludes": "尼克斯"
+    },
+    {
+      "id": "seth",
+      "sourceArtworkKeys": [
+        "seth-legion-standard-bearer"
+      ],
+      "identityNameIncludes": "塞特"
+    },
+    {
+      "id": "qimo",
+      "sourceArtworkKeys": [
+        "qimo-blackhand-supplier"
+      ],
+      "identityNameIncludes": "奇莫"
+    },
+    {
+      "id": "magellan",
+      "sourceArtworkKeys": [
+        "interstellar-commander-magellan"
+      ],
+      "identityNameIncludes": "麦哲伦"
+    },
+    {
+      "id": "assassin-j",
+      "sourceArtworkKeys": [
+        "delayed-coordinate-cannon"
+      ],
+      "identityNameIncludes": "刺客-J"
+    },
+    {
+      "id": "jagg",
+      "sourceArtworkKeys": [
+        "jagg-mad-teleporter"
+      ],
+      "identityNameIncludes": "贾格"
+    },
+    {
+      "id": "tiffany",
+      "sourceArtworkKeys": [
+        "know-it-all-tiffany"
+      ],
+      "identityNameIncludes": "蒂芙尼"
+    },
+    {
+      "id": "elaine",
+      "sourceArtworkKeys": [],
+      "retainedIdentity": {
+        "name": "伊莱恩",
+        "englishName": "Elaine",
+        "classId": "Neutral",
+        "reason": "按项目负责人要求保留的剧情角色；具体设定待重新整理。"
+      }
+    },
+    {
+      "id": "weiyang",
+      "sourceArtworkKeys": [],
+      "retainedIdentity": {
+        "name": "未央",
+        "englishName": "Weiyang",
+        "classId": "Neutral",
+        "reason": "按项目负责人要求保留的剧情角色；具体设定待重新整理。"
+      }
+    }
+  ]
+}

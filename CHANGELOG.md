@@ -4,6 +4,21 @@
 
 ## [Unreleased]
 
+### Website organization
+
+- Organized the inline bestiary into six collapsible race groups and 23 branches, preserving all source dossiers and separating shared principles from individual art references.
+- Added explicit incomplete entries, branch design constraints and production-reference routing for future consistent assets.
+
+- Unified the card-editor workspace with the new archive theme while preserving card rendering and operations.
+- Made all four setting sections collapsible within one page and added in-place civilization dossiers.
+- Rebuilt the complete cosmic bestiary inside the setting page; old bestiary URLs redirect to the corresponding inline entry.
+
+- Rebuilt the setting archive around four class concepts, 22 current-design character dossiers and the preserved cosmic bestiary.
+- Added a hierarchical Markdown rules Wiki with 18 explicitly unfinished pages.
+- Moved the unchanged card editor to its own ungated page and removed the obsolete Development Center and story presentation.
+- Added dossier templates with concept sheet, illustration and chibi slots.
+
+
 后续功能、修复和数据迁移应先记录在这里，并在发布或合并里程碑时移动到新的版本段落。
 
 ### Added

@@ -2,561 +2,204 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Time-Block Hero | 世界观概念展示</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>游戏设定集 · Time-Block Hero</title>
     <meta
       name="description"
-      content="Time-Block Hero 的科幻二游风世界观、剧情时间线、派系概念与角色档案展示站。"
+      content="Time-Block Hero 游戏设定集：职业概念、人物档案与宇宙生物。规则 Wiki 与卡牌编辑器的统一入口。"
     />
-    <link rel="stylesheet" href="./styles.css?v=20260816-insert-sort-v5" />
+    <link rel="stylesheet" href="./site.css" />
+    <link rel="stylesheet" href="./bestiary-inline.css" />
+    <script src="./setting-data.js" defer></script>
+    <script src="./archive.js" defer></script>
+    <script src="./bestiary-data.js" defer></script>
+    <script src="./bestiary-taxonomy.js" defer></script>
+    <script src="./bestiary-card-sources.js" defer></script>
+    <script src="./bestiary-inline.js" defer></script>
+    <script src="./site.js" defer></script>
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Time-Block Hero 首页">
-        <span class="brand-mark">TBH</span>
-        <span>
-          <strong>TIME-BLOCK HERO</strong>
-          <small>World Archive</small>
-        </span>
-      </a>
-      <nav class="nav" aria-label="页面导航">
-        <div class="mode-toggle" role="group" aria-label="模式切换">
-          <button class="mode-btn is-active" data-mode="archive" type="button">世界档案</button>
-          <button class="mode-btn" data-mode="devhub" type="button">⚙ 开发中心</button>
-          <button class="mode-btn" data-mode="cardeditor" type="button">🃏 卡牌编辑器</button>
-        </div>
-        <span class="nav-divider"></span>
-        <div class="nav-links nav-archive-links">
-          <a href="#timeline">剧情</a>
-          <a href="#factions">派系</a>
-          <a href="#characters">角色</a>
-          <a href="./bestiary.html">生物图鉴</a>
-          <a href="#" id="worldBibleBtn">设定文档</a>
-        </div>
-        <div class="nav-links nav-devhub-links" style="display:none">
-          <a href="#dev-intro">游戏介绍</a>
-          <a href="#dev-rules">游戏规则</a>
-          <a href="#dev-progress">设计进度</a>
-          <a href="#dev-assets">资产库</a>
-        </div>
-        <div class="nav-links nav-cardeditor-links" style="display:none">
-          <a href="#card-editor">卡牌管理</a>
-        </div>
-        <a href="./index-en.html" class="nav-lang">EN</a>
+  <body class="setting-site" data-language="zh">
+    <a class="portal-skip" href="#main">跳转至正文</a>
+    <header class="portal-header">
+      <a class="portal-brand" href="./index.html" aria-label="Time-Block Hero"
+        ><span class="portal-brand-symbol" aria-hidden="true"
+          >T<span>H</span></span
+        ><span>TIME-BLOCK<br /><strong>HERO</strong></span></a
+      >
+      <nav class="portal-nav" aria-label="主导航">
+        <a href="./index.html" aria-current="page"><span>01</span>游戏设定集</a
+        ><a href="./wiki.html"><span>02</span>规则 Wiki</a
+        ><a href="./card-editor.html"><span>03</span>卡牌编辑器</a>
       </nav>
+      <a class="portal-language" href="./index-en.html" lang="en">EN</a>
     </header>
-
-    <main id="top">
-      <section class="hero-section" aria-labelledby="hero-title">
-        <img class="hero-art" src="./assets/generated/hero-main.png" alt="" />
-        <div class="hero-vignette"></div>
-        <div class="hero-copy">
-          <p class="eyebrow">Future Sci-Fi Anime Card Game</p>
-          <h1 id="hero-title">TIME-BLOCK HERO</h1>
-          <p class="hero-line">偷取神明时间之后，人类终于听见宇宙索债的声音。</p>
-          <div class="hero-actions">
-            <a class="primary-link" href="#timeline">阅读时间线</a>
-            <a class="secondary-link" href="#characters">查看角色档案</a>
+    <main id="main">
+      <section class="archive-hero" aria-labelledby="hero-title">
+        <img
+          class="archive-hero-art"
+          src="./assets/generated/faction-astra.png"
+          alt="帝国工业城市概念图"
+          fetchpriority="high"
+        />
+        <div class="archive-hero-shade"></div>
+        <div class="archive-hero-content">
+          <p class="eyebrow">
+            <span class="accent-line"></span>THE WORLD OF TIME-BLOCK HERO
+          </p>
+          <h1 id="hero-title">
+            TIME-BLOCK<br /><span>HERO</span><i aria-hidden="true">/</i>
+          </h1>
+          <div class="hero-description">
+            <h2>游戏设定集</h2>
+            <p>文明、角色与生物的统一视觉设定，为游戏资产创作提供依据。</p>
           </div>
+          <a class="portal-button" href="#characters"
+            >查阅人物档案 <span aria-hidden="true">↗</span></a
+          >
         </div>
-        <aside class="hero-status" aria-label="世界状态">
-          <span>主线纪年 2460</span>
-          <strong>裂隙再启</strong>
-          <p>静域配额制度维持了一百年，但新的时间错位正在无声扩散。</p>
-        </aside>
-      </section>
-
-      <section class="section intro-grid" aria-label="核心设定">
-        <article>
-          <span class="section-kicker">CORE</span>
-          <h2>静域不是停止时间，而是向四维借债。</h2>
-        </article>
-        <article class="glass-panel">
-          <h3>刻冕之主</h3>
-          <p>栖居在四维之外的上位神，祂赐下局部时间加速的能力，也让每一次静域在现实背面留下时痕。</p>
-        </article>
-        <article class="glass-panel">
-          <h3>黑午裂变</h3>
-          <p>2350 年，累积的时债撕开无时之海。城市在一秒内老化百年，人类文明锐减 80%。</p>
-        </article>
-      </section>
-
-      <section id="timeline" class="section timeline-section" aria-labelledby="timeline-title">
-        <div class="section-heading">
-          <span class="section-kicker">STORYLINE</span>
-          <h2 id="timeline-title">零秒之后的三百年</h2>
-          <p>点击时间线上的事件预览图，阅读每个时代的关键故事。</p>
-        </div>
-        <div class="timeline-shell">
-          <div class="timeline-track" id="timelineTrack" aria-label="剧情时间线"></div>
-        </div>
-        <article class="detail-panel" id="timelineDetail" aria-live="polite"></article>
-      </section>
-
-      <section id="factions" class="section factions-section" aria-labelledby="factions-title">
-        <div class="section-heading">
-          <span class="section-kicker">FACTIONS</span>
-          <h2 id="factions-title">灾后文明分支</h2>
-          <p>秩序、进化、信仰、自由与流通，构成了人类继续前进的五条道路。</p>
-        </div>
-        <div class="faction-tabs" id="factionTabs" aria-label="派系切换"></div>
-        <div class="faction-feature" id="factionFeature"></div>
-      </section>
-
-      <section id="characters" class="section characters-section" aria-labelledby="characters-title">
-        <div class="section-heading">
-          <span class="section-kicker">DOSSIERS</span>
-          <h2 id="characters-title">群像档案</h2>
-          <p>二十位角色作为各阵营的门面、暗线与未来卡牌设计锚点。</p>
-        </div>
-        <div class="character-filters" id="characterFilters" aria-label="角色筛选"></div>
-        <div class="character-layout">
-          <div class="character-list" id="characterList" aria-label="角色列表"></div>
-          <article class="character-detail" id="characterDetail" aria-live="polite"></article>
+        <div class="hero-edge">
+          <span>ASTRA IMPERIUM / CONCEPT ART</span
+          ><a href="#background">向下探索 ↓</a>
         </div>
       </section>
-    </main>
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  开发中心 DEV HUB                                       -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <div id="devhub-main" style="display:none">
-
-      <!-- Dev Hub 概览 Hero -->
-      <section class="devhub-hero section">
-        <div class="devhub-hero-content">
-          <span class="section-kicker">INTERNAL DEV HUB · TIME-BLOCK HERO</span>
-          <h2>开发中心</h2>
-          <p>游戏介绍、规则文档、设计进度与资产索引的内部集合站。<br>在这里跟踪项目当前状态，对齐团队设计方向。</p>
-          <div class="devhub-status-bar">
-            <span class="status-chip chip-wip">🔨 开发中</span>
-            <span class="devhub-meta">卡牌游戏 · 科幻二次元 · Unity 6 · 20 角色</span>
-          </div>
-        </div>
-        <div class="devhub-quick-nav">
-          <a class="quick-nav-card" href="#dev-intro">
-            <span class="quick-nav-icon">📖</span>
-            <strong>游戏介绍</strong>
-            <span>核心设定与玩法概述</span>
-          </a>
-          <a class="quick-nav-card" href="#dev-rules">
-            <span class="quick-nav-icon">📋</span>
-            <strong>游戏规则</strong>
-            <span>卡牌机制与对战流程</span>
-          </a>
-          <a class="quick-nav-card" href="#dev-progress">
-            <span class="quick-nav-icon">📊</span>
-            <strong>设计进度</strong>
-            <span>角色 · 派系 · 卡牌</span>
-          </a>
-          <a class="quick-nav-card" href="#dev-assets">
-            <span class="quick-nav-icon">🎨</span>
-            <strong>资产库</strong>
-            <span>图档 · 设定图 · 派系图</span>
-          </a>
-        </div>
-        <a class="effect-dict-entry" href="./effect-dictionary.html">
-          <span class="effect-dict-entry-mark">FX</span>
-          <span>
-            <strong>效果字典 · Effect Dictionary</strong>
-            <small>Trigger · Scope · Selector · Effect · Aura 的可视化设计语法</small>
-          </span>
-          <em>打开独立页面</em>
-        </a>
-        <a class="effect-dict-entry effect-runtime-entry" href="./effect-runtime.html">
-          <span class="effect-dict-entry-mark">FLOW</span>
-          <span>
-            <strong>效果执行图谱 · Effect Runtime Map</strong>
-            <small>把卡牌效果从触发、选目标、支付代价、结算、持续光环到最终结果画成流程线图</small>
-          </span>
-          <em>打开独立页面</em>
-        </a>
-      </section>
-
-      <!-- 游戏介绍 -->
-      <section id="dev-intro" class="section" scroll-margin-top="92px">
-        <div class="section-heading">
-          <span class="section-kicker">GAME INTRO</span>
-          <h2>游戏介绍</h2>
-          <p>Time-Block Hero 的类型定位、核心循环与目标受众概述。</p>
-        </div>
-        <div class="dev-intro-grid">
-          <div class="glass-panel dev-card">
-            <div class="dev-card-header">
-              <span class="dev-card-icon">🎮</span>
-              <h3>游戏类型</h3>
-            </div>
-            <p>热座双人策略卡牌游戏，结合牌组构建与格子战术战斗。玩家构建主牌组与额外牌组，在 16×8 格子棋盘上部署随从、施放法术，消灭对方英雄即获胜。</p>
-            <div class="tag-grid">
-              <span>牌组构建</span>
-              <span>格子战术</span>
-              <span>热座双人</span>
-              <span>科幻二次元</span>
-            </div>
-          </div>
-          <div class="glass-panel dev-card">
-            <div class="dev-card-header">
-              <span class="dev-card-icon">🔄</span>
-              <h3>四阶段核心循环</h3>
-            </div>
-            <ul class="dev-list">
-              <li><strong>回合开始</strong> — 各自抽 5 张牌，触发"回合开始"效果</li>
-              <li><strong>静域阶段 (Time-Stop)</strong> — 双方同时将手牌放置到棋盘，遵循箭头影响规则</li>
-              <li><strong>时移阶段 (Time-Move)</strong> — 按顺序移动随从、发动攻击、施放法术</li>
-              <li><strong>回合结束</strong> — 弃手牌、清除法术格、重置充能 &amp; 护甲；约 15 回合一局</li>
-            </ul>
-          </div>
-          <div class="glass-panel dev-card">
-            <div class="dev-card-header">
-              <span class="dev-card-icon">⚡</span>
-              <h3>三种资源</h3>
-            </div>
-            <div class="rules-card-types" style="gap:14px">
-              <div class="rules-card-type">
-                <span class="card-type-badge badge-domain">星能</span>
-                <span>从额外牌组购买强力卡牌加入主牌组</span>
-              </div>
-              <div class="rules-card-type">
-                <span class="card-type-badge badge-hero">充能</span>
-                <span>进入射击模式，自由分配对任意敌方单位造成伤害</span>
-              </div>
-              <div class="rules-card-type">
-                <span class="card-type-badge badge-faction">护甲</span>
-                <span>消耗 1 护甲抵消 1 点充能伤害；回合结束时清空</span>
-              </div>
-            </div>
-          </div>
-          <div class="glass-panel dev-card">
-            <div class="dev-card-header">
-              <span class="dev-card-icon">🖥</span>
-              <h3>平台 &amp; 当前状态</h3>
-            </div>
-            <div class="tag-grid">
-              <span>Unity 6 (URP)</span>
-              <span>数字版</span>
-              <span>Milestone 2 进行中</span>
-            </div>
-            <p style="margin-top:12px;font-size:13px;color:var(--muted)">核心战斗、出牌/效果/触发系统已完成；牌组构建 UI、射击模式、美术资产待开发。</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 游戏规则 -->
-      <section id="dev-rules" class="section">
-        <div class="section-heading">
-          <span class="section-kicker">GAME RULES</span>
-          <h2>游戏规则</h2>
-          <p>以下为规则结构框架，请上传规则文档后替换内容。</p>
-        </div>
-        <a class="rules-effect-dictionary" href="./effect-dictionary.html" aria-label="打开效果字典页面">
-          <span class="rules-effect-kicker">EFFECT DICTIONARY</span>
-          <strong>效果字典 · Trigger / Scope / Effect</strong>
-          <span>把 Effect Dict.xlsx 拆成可搜索的触发时机、目标范围、效果原子和 Aura 规则，方便设计与程序一起对齐实装逻辑。</span>
-          <em>打开独立页面</em>
-        </a>
-        <div class="rules-grid">
-
-          <!-- 01 卡牌类型 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">01</span>
-              <h3>卡牌类型</h3>
-            </div>
-            <div class="rules-card-types">
-              <div class="rules-card-type">
-                <span class="card-type-badge badge-hero">随从</span>
-                <span>留在棋盘上直到被消灭；有攻击/血量/移速属性</span>
-              </div>
-              <div class="rules-card-type" style="padding-left:20px">
-                <span class="card-type-badge" style="background:rgba(210,67,67,0.12);color:#f77;border:1px solid rgba(210,67,67,0.3)">英雄</span>
-                <span>特殊随从，每人同时只能有一张；被消灭即败</span>
-              </div>
-              <div class="rules-card-type">
-                <span class="card-type-badge badge-domain">法术</span>
-                <span>回合结束时清除；占据格子可阻挡随从移动路径</span>
-              </div>
-            </div>
-            <p style="margin-top:12px;font-size:13px;color:var(--muted)">所有卡牌均带有方向箭头，决定你可放置卡牌的合法区域。</p>
-          </div>
-
-          <!-- 02 回合流程 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">02</span>
-              <h3>回合流程</h3>
-            </div>
-            <ol class="dev-list dev-list-ordered">
-              <li><strong>回合开始</strong> — 各自从主牌组抽 5 张牌；主牌组耗尽时重洗弃牌堆</li>
-              <li><strong>静域阶段 (Time-Stop)</strong> — 双方同时出牌到棋盘，遵循箭头放置规则；资源法术放置后不立即生效</li>
-              <li><strong>时移阶段 (Time-Move)</strong> — 按顺序移动/攻击/施法；出牌少的玩家先手，出牌数相同则先按结束键者先手</li>
-              <li><strong>回合结束</strong> — 弃手牌 → 清除所有法术格 → 重置未使用的充能和护甲</li>
-            </ol>
-          </div>
-
-          <!-- 03 放置规则 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">03</span>
-              <h3>放置规则 &amp; 箭头系统</h3>
-            </div>
-            <ul class="dev-list">
-              <li>卡牌只能放在己方领地内的格子</li>
-              <li>目标格必须被至少一个己方"箭头"所指向</li>
-              <li>放置卡牌可能需要支付费用：星能（自动扣除）、释放随从（牺牲己方单位）或弃牌</li>
-              <li>取消支付时，所有已选择的代价全部回滚</li>
-            </ul>
-          </div>
-
-          <!-- 04 战斗 & 移动 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">04</span>
-              <h3>战斗 &amp; 移动</h3>
-            </div>
-            <ul class="dev-list">
-              <li>随从每回合可消耗移速点数多次移动（每步耗 1 点）</li>
-              <li>攻击为双向同步结算：攻击方与防御方同时承受对方的攻击值</li>
-              <li>随从消灭敌方后，可花费 1 移速前进至该格</li>
-              <li><strong>射击模式</strong>：累积充能后点击充能计数器进入，点击敌方单位分配伤害；护甲优先抵消充能伤害</li>
-            </ul>
-          </div>
-
-          <!-- 05 牌组构建 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">05</span>
-              <h3>牌组构建</h3>
-            </div>
-            <ul class="dev-list">
-              <li><strong>主牌组</strong>：恰好 10 张；所有卡牌星能费用总和 ≤ 5</li>
-              <li><strong>额外牌组</strong>：恰好 30 张；游戏中用星能购买加入主牌组</li>
-              <li><strong>职业限制</strong>：只能选用本职业卡 + 中立卡</li>
-            </ul>
-            <div class="rules-card-types" style="margin-top:10px">
-              <div class="rules-card-type"><span class="card-type-badge badge-event" style="min-width:72px">Common</span><span>最多 5 张</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-domain" style="min-width:72px">Rare</span><span>最多 3 张</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-hero" style="min-width:72px">Epic</span><span>最多 2 张</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-faction" style="min-width:72px">Legendary</span><span>最多 1 张</span></div>
-            </div>
-          </div>
-
-          <!-- 06 卡牌效果触发时机 -->
-          <div class="glass-panel rules-panel">
-            <div class="rules-panel-header">
-              <span class="rules-number">06</span>
-              <h3>效果触发时机</h3>
-            </div>
-            <div class="rules-card-types">
-              <div class="rules-card-type"><span class="card-type-badge badge-domain" style="min-width:90px;font-size:10px">OnPlace</span><span>放置瞬间立即触发（静域阶段）</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-event" style="min-width:90px;font-size:10px">OnTimeMoveStart</span><span>时移阶段开始时自动触发</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-faction" style="min-width:90px;font-size:10px">OnCast</span><span>玩家手动点击棋盘上的卡牌激活</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-hero" style="min-width:90px;font-size:10px">OnDeath</span><span>单位被消灭时触发</span></div>
-              <div class="rules-card-type"><span class="card-type-badge badge-event" style="min-width:90px;font-size:10px">Aura</span><span>在场期间持续生效的被动效果</span></div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 设计进度 -->
-      <section id="dev-progress" class="section">
-        <div class="section-heading">
-          <span class="section-kicker">DESIGN PROGRESS</span>
-          <h2>设计进度</h2>
-          <p>角色、派系与游戏系统当前设计状态总览。</p>
-        </div>
-        <!-- 开发 Milestone -->
-        <h3 class="progress-sub-heading">开发里程碑</h3>
-        <div class="milestone-board" id="milestoneBoard"></div>
-
-        <!-- 角色设计状态 -->
-        <h3 class="progress-sub-heading" style="margin-top:48px">角色设计状态</h3>
-        <div class="progress-overview" id="progressOverview"></div>
-        <div class="progress-board" id="progressBoard"></div>
-      </section>
-
-      <!-- 资产库 -->
-      <section id="dev-assets" class="section">
-        <div class="section-heading">
-          <span class="section-kicker">ASSET LIBRARY</span>
-          <h2>资产库</h2>
-          <p>所有已生成的图档，按类型分类浏览。</p>
-        </div>
-        <div class="asset-tabs" id="assetTabs"></div>
-        <div class="asset-grid" id="assetGrid"></div>
-      </section>
-
-    </div>
-    <!-- /devhub-main -->
-
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <!--  卡牌编辑器 CARD EDITOR                                 -->
-    <!-- ═══════════════════════════════════════════════════════ -->
-    <main id="card-editor-main" style="display:none">
-      <section id="card-editor" class="section card-editor-page">
-        <div class="section-heading">
-          <span class="section-kicker">CARD EDITOR</span>
-          <h2>卡牌编辑器 · Card Editor</h2>
-          <p>主列表使用 Board View；按编号查看时，拖拽同势力、同收集状态的卡牌可插入新位置并重新编号。</p>
-        </div>
-
-        <div class="formal-card-toolbar glass-panel">
-          <div class="collectability-toggle" id="collectabilityToggle" aria-label="切换卡牌收集状态">
-            <button class="active" type="button" data-collectable="true">可收集</button>
-            <button type="button" data-collectable="false">不可收集</button>
-          </div>
-          <input type="search" id="cardSearch" placeholder="搜索名称或编号…" class="card-search-input" />
-          <select id="cardFactionFilter" class="card-sort-select" aria-label="势力筛选">
-            <option value="all">全部势力</option>
-          </select>
-          <select id="cardTypeFilter" class="card-sort-select" aria-label="类型筛选">
-            <option value="all">全部类型</option>
-            <option value="Minion">随从</option>
-            <option value="Spell">法术</option>
-          </select>
-          <select id="cardViewSort" class="card-sort-select" aria-label="视图排序">
-            <option value="id">按编号排序</option>
-            <option value="cost-asc">费用：从低到高</option>
-            <option value="cost-desc">费用：从高到低</option>
-          </select>
-          <span class="card-count-label" id="cardCountLabel"></span>
-          <button class="card-create-btn" id="cardCreateBtn" type="button" title="在当前收集分类与所选势力末尾添加；未选择势力时默认中立（银河航商会）">＋ 添加卡牌</button>
-          <button class="card-export-btn" id="cardExportJsonBtn" type="button">导出 JSON</button>
-        </div>
-
-        <!-- 卡牌网格 -->
-        <div class="card-center-grid" id="cardCenterGrid"></div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>Time-Block Hero Concept Archive</span>
-      <a href="../Docs/TimeBlock_World_Bible.md">打开世界观文档</a>
-    </footer>
-
-    <!-- ═══════════════ 受保护页面密码门禁 ═══════════════ -->
-    <div id="accessGateOverlay" class="access-gate-overlay" style="display:none" aria-modal="true" role="dialog" aria-labelledby="accessGateTitle">
-      <form id="accessGateForm" class="access-gate-panel">
-        <span class="section-kicker">PROTECTED AREA</span>
-        <h3 id="accessGateTitle">进入受保护页面</h3>
-        <p id="accessGateDescription">请输入密码以继续。</p>
-        <label for="accessGatePassword">密码</label>
-        <input id="accessGatePassword" type="password" autocomplete="current-password" required />
-        <p id="accessGateError" class="access-gate-error" role="alert" aria-live="polite"></p>
-        <div class="access-gate-actions">
-          <button id="accessGateCancel" class="card-editor-cancel-btn" type="button">取消</button>
-          <button class="card-editor-save-btn" type="submit">进入</button>
-        </div>
-      </form>
-    </div>
-
-    <!-- ═══════════════ 卡牌详情编辑器 ═══════════════ -->
-    <div id="cardEditorOverlay" class="card-editor-overlay" style="display:none" aria-modal="true" role="dialog">
-      <div class="formal-card-editor-shell">
-        <div class="formal-card-editor-head">
+      <nav class="archive-index" aria-label="设定集目录">
+        <a href="#background"><span>01</span>背景故事</a
+        ><a href="#factions"><span>02</span>四大文明</a
+        ><a href="#characters"><span>03</span>人物图鉴</a
+        ><a href="#bestiary"><span>04</span>宇宙生物</a>
+      </nav>
+      <details id="background" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">01 / BACKGROUND</span>
           <div>
-            <span class="section-kicker">HAND VIEW</span>
-            <h3 id="cardEditorTitle">卡牌详情</h3>
+            <h2>背景故事</h2>
+            <p>世界背景与故事章节。</p>
           </div>
-          <span id="cardSaveStatus" class="card-save-status">本地编辑</span>
-          <button class="card-editor-close" id="cardEditorClose" type="button" aria-label="关闭">✕</button>
-        </div>
-        <div class="formal-card-editor-body">
-          <aside class="derivative-panel">
-            <div class="derivative-panel-title"><strong>衍生卡</strong><button id="derivativeAddBtn" type="button">＋</button></div>
-            <div id="derivativeRail" class="derivative-rail"></div>
-          </aside>
-          <section class="hand-preview-stage"><div id="cardHandPreview" class="hand-preview-host"></div></section>
-          <aside class="formal-card-form-panel">
-            <form id="cardEditorForm" class="formal-card-form" novalidate>
-              <label>编号<input name="id" readonly /></label>
-              <div class="formal-form-row"><label>中文名<input name="nameKey" required /></label><label>英文名<input name="englishName" /></label></div>
-              <div class="formal-form-row"><label>类型<select name="cardType"><option value="Minion">随从</option><option value="Spell">法术</option></select></label><label>稀有度<select name="rarity"><option>Common</option><option>Rare</option><option>Epic</option><option>Legendary</option></select></label></div>
-              <div class="formal-form-row"><label>势力<select name="classId" id="formFaction"></select></label><label>收集状态<select name="collectable"><option value="true">可收集</option><option value="false">不可收集</option></select></label></div>
-              <div class="formal-form-row formal-form-row-4 formal-card-stats"><label>费用<input type="number" name="costAmount" min="0" /></label><label class="card-unit-only">攻击<input type="number" name="attack" min="0" /></label><label class="card-unit-only">生命<input type="number" name="health" min="0" /></label><label class="card-unit-only">移动<input type="number" name="movement" min="0" /></label></div>
-              <fieldset class="card-unit-only tribe-fieldset"><legend>种族（可多选）</legend><div class="tribe-selector" id="tribeSelector"></div></fieldset>
-              <fieldset><legend>箭头方向</legend><div class="formal-arrow-grid" id="arrowsCompass"><button type="button" data-dir="NW">↖</button><button type="button" data-dir="N">↑</button><button type="button" data-dir="NE">↗</button><button type="button" data-dir="W">←</button><span>◎</span><button type="button" data-dir="E">→</button><button type="button" data-dir="SW">↙</button><button type="button" data-dir="S">↓</button><button type="button" data-dir="SE">↘</button></div></fieldset>
-              <label>效果说明<textarea name="rulesText" rows="5"></textarea></label>
-              <label>画面描述<textarea name="artDescription" rows="5" placeholder="描述主体、动作、环境、构图、光线和氛围；不要包含卡框、文字或 UI。"></textarea></label>
-              <div class="art-description-controls">
-                <label class="art-polish-toggle"><input type="checkbox" name="artDescriptionNeedsPolish" /> <span>需要 Codex 精修补全这段画面描述</span></label>
-                <label>Art request<input type="number" name="artRequest" min="0" step="1" /></label>
-              </div>
-              <section class="artwork-manager" aria-labelledby="artworkManagerTitle">
-                <div class="artwork-manager-head">
-                  <div><strong id="artworkManagerTitle">插画方案</strong><span id="artworkVariantSummary">暂无插画</span></div>
-                  <label class="art-upload-button">＋ 添加插画<input id="cardArtUpload" type="file" accept="image/*" multiple /></label>
-                </div>
-                <p class="artwork-manager-help">点击缩略图选择正式卡图；删除操作会在“保存并渲染”后生效。</p>
-                <div id="artworkVariantList" class="artwork-variant-list"></div>
-              </section>
-            </form>
-            <div class="formal-card-actions">
-              <button class="card-editor-del-btn" id="cardEditorDelete" type="button" style="display:none">删除衍生卡</button>
-              <button class="card-editor-cancel-btn" id="cardEditorCancel" type="button">返回</button>
-              <button class="card-editor-save-btn" id="cardEditorSave" type="button">保存并渲染</button>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </div>
-
-    <!-- 图片裁剪编辑器 -->
-    <div id="imgCropOverlay" style="display:none;position:fixed;inset:0;z-index:500;background:rgba(5,7,15,0.92);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px;gap:24px">
-      <!-- 左：编辑区 -->
-      <div style="background:#0f1420;border:1px solid rgba(114,229,255,0.25);border-radius:12px;width:min(320px,42vw);display:flex;flex-direction:column;overflow:hidden;flex-shrink:0">
-        <div style="padding:14px 18px;border-bottom:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:space-between">
-          <strong style="color:#fff;font-size:14px">编辑图片</strong>
-          <button id="cropClose" style="background:none;border:none;color:var(--muted);font-size:20px;cursor:pointer;line-height:1">×</button>
-        </div>
-        <div style="padding:8px 16px;font-size:11px;color:var(--muted);border-bottom:1px solid rgba(255,255,255,0.06)">拖动调整位置，滚轮或拖动滑块缩放</div>
-        <div id="cropViewport" style="position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:#080c18;cursor:grab">
-          <img id="cropImg" style="position:absolute;transform-origin:0 0;user-select:none;-webkit-user-drag:none;max-width:none;pointer-events:none" />
-        </div>
-        <div style="padding:12px 16px;display:flex;align-items:center;gap:8px;border-top:1px solid rgba(255,255,255,0.06)">
-          <span style="font-size:11px;color:var(--muted);width:24px">🔍</span>
-          <input id="cropScale" type="range" min="10" max="400" value="100" style="flex:1" />
-          <span id="cropScaleLabel" style="font-size:12px;color:var(--cyan);width:38px;text-align:right">100%</span>
-        </div>
-        <div style="padding:0 16px 14px;display:flex;gap:8px">
-          <button id="cropReset" style="flex:1;height:34px;border:1px solid rgba(255,255,255,0.15);border-radius:6px;background:rgba(255,255,255,0.05);color:var(--muted);font:inherit;font-size:12px;cursor:pointer">重置</button>
-          <button id="cropConfirm" style="flex:2;height:34px;border:none;border-radius:6px;background:var(--cyan);color:#000;font:inherit;font-size:13px;font-weight:700;cursor:pointer">✓ 确认并保存</button>
-        </div>
-      </div>
-
-      <!-- 右：卡牌实时预览 -->
-      <div style="display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0">
-        <span style="font-size:11px;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase">卡牌预览</span>
-        <!-- 卡牌外壳（模拟真实卡牌）-->
-        <div id="cropCardPreview" style="width:240px;aspect-ratio:3/4;border-radius:9px;overflow:hidden;border:2px solid rgba(114,229,255,0.4);position:relative;background:#0d1022;box-shadow:0 0 20px rgba(114,229,255,0.12)">
-          <!-- 图片层 -->
-          <img id="cropPreviewImg" style="position:absolute;transform-origin:0 0;pointer-events:none" />
-          <!-- 渐变层 -->
-          <div style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 35%,rgba(6,8,18,0.55) 55%,rgba(6,8,18,0.82) 70%,rgba(6,8,18,0.96) 100%);pointer-events:none"></div>
-          <!-- 内容占位（模拟名字/词条/三围）-->
-          <div style="position:absolute;bottom:0;left:0;right:0;pointer-events:none">
-            <div id="cropPreviewName" style="padding:5px 8px 2px;font-size:12px;font-weight:900;color:#fff;text-align:center;text-shadow:0 1px 4px rgba(0,0,0,0.9)"></div>
-            <div id="cropPreviewTags" style="padding:2px 8px 3px;font-size:8px;font-weight:700;text-align:center;text-transform:uppercase;letter-spacing:0.05em;background:rgba(114,229,255,0.15);border-top:1px solid rgba(114,229,255,0.25);border-bottom:1px solid rgba(114,229,255,0.25)"></div>
-            <div id="cropPreviewStats" style="display:grid;grid-template-columns:1fr 1fr 1fr;background:rgba(4,5,14,0.88);border-top:1px solid rgba(255,255,255,0.08)">
-              <span id="cropPreviewAtk" style="padding:4px;font-size:14px;font-weight:900;color:#ff8a8a;text-align:center;border-right:1px solid rgba(255,255,255,0.08)"></span>
-              <span id="cropPreviewSpd" style="padding:4px;font-size:14px;font-weight:900;color:var(--cyan);text-align:center"></span>
-              <span id="cropPreviewHp" style="padding:4px;font-size:14px;font-weight:900;color:#7ddf8a;text-align:center;border-left:1px solid rgba(255,255,255,0.08)"></span>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div class="background-columns">
+            <h2>故事，<br />留待书写。</h2>
+            <div>
+              <p>
+                背景故事与时间线正在重新整理。这里将收录确认后的世界背景和故事章节。
+              </p>
+              <p class="quiet-copy">当前暂无已发布的故事章节。</p>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </details>
+      <details id="factions" class="archive-section archive-disclosure" open>
+        <summary class="archive-summary">
+          <span class="archive-section-number">02 / CIVILIZATIONS</span>
+          <div>
+            <h2>四大文明</h2>
+            <p>职业概念、文明设定与相关人物。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="factionGrid" class="faction-grid">
+            <p class="loading-copy">正在加载职业概念…</p>
+          </div>
+          <div id="factionDetail" class="civilization-detail" hidden></div>
+        </div>
+      </details>
+      <details id="characters" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">03 / CHARACTERS</span>
+          <div>
+            <h2>人物图鉴</h2>
+            <p>从最新卡牌设计，认识这个世界中的人物。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <p id="characterCount" class="archive-count"></p>
 
-    <!-- 世界观文档弹窗 -->
-    <div id="worldBibleOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(5,7,15,0.96);backdrop-filter:blur(12px);overflow-y:auto">
-      <div style="max-width:860px;margin:0 auto;padding:40px 24px 80px">
-        <button id="worldBibleClose" style="position:fixed;top:20px;right:24px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;color:#fff;font-size:14px;padding:8px 16px;cursor:pointer;z-index:10">✕ 关闭</button>
-        <div id="worldBibleContent" class="world-bible-content"></div>
-      </div>
-    </div>
-
-    <script src="./app.js?v=20260815-card-editor-page"></script>
-    <script src="./card-editor-data.js?v=20260817-building-tribe-v7"></script>
-    <script src="./card-editor.js?v=20260824-artwork-recovery-v13"></script>
+          <div class="character-controls">
+            <label
+              ><span>查找人物</span
+              ><input
+                id="characterSearch"
+                type="search"
+                placeholder="姓名或称号"
+                autocomplete="off" /></label
+            ><label
+              ><span>职业 / 阵营</span
+              ><select id="characterFaction">
+                <option value="all">全部人物</option>
+              </select></label
+            >
+          </div>
+          <div
+            id="characterFeature"
+            class="character-feature"
+            aria-live="polite"
+          ></div>
+          <div
+            id="characterRoster"
+            class="character-roster"
+            role="group"
+            aria-label="选择人物"
+          ></div>
+          <p id="characterEmpty" class="empty-state" hidden>
+            没有找到匹配的人物。
+          </p>
+        </div>
+      </details>
+      <details id="bestiary" class="archive-section archive-disclosure">
+        <summary class="archive-summary">
+          <span class="archive-section-number">04 / COSMIC BESTIARY</span>
+          <div>
+            <h2>宇宙生物图鉴</h2>
+            <p>按种族查阅分支形态、设计约束与资产参考。</p>
+          </div>
+          <span class="disclosure-action"
+            ><span class="when-closed">展开</span
+            ><span class="when-open">收起</span><i aria-hidden="true"></i
+          ></span>
+        </summary>
+        <div class="archive-disclosure-body">
+          <div id="creatureArchive"></div>
+        </div>
+      </details>
+      <section class="archive-section reading-entry">
+        <div>
+          <p class="eyebrow">RULES & DESIGN</p>
+          <h2>查阅规则，<br />设计下一张卡牌。</h2>
+        </div>
+        <div class="entry-links">
+          <a href="./wiki.html"
+            ><span>01 / DOCUMENTATION</span>
+            <h3>规则 Wiki ↗</h3>
+            <p>分层目录与条目引用已就位，规则正文待整理。</p></a
+          ><a href="./card-editor.html"
+            ><span>02 / CARD DESIGN</span>
+            <h3>卡牌编辑器 ↗</h3>
+            <p>查看与编辑最新卡牌设计和插画。</p></a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="portal-footer">
+      <a href="./index.html">TIME-BLOCK HERO</a
+      ><span>游戏设定集 / 规则 Wiki / 卡牌编辑器</span
+      ><a href="#main">返回顶部 ↑</a>
+    </footer>
+    <noscript
+      ><p class="noscript-note">
+        请启用 JavaScript 以查看人物图鉴、规则 Wiki 与卡牌编辑器。
+      </p></noscript
+    >
   </body>
 </html>
