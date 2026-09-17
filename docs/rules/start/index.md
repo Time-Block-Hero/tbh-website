@@ -35,4 +35,4 @@ status: draft
 - **已确认**：正文已经逐项确认，可作为正式依据。
 - **已归档**：不再适用于现行规则，仅供追溯。
 
-当前页面均保留草稿状态。第一章[规则总则](../common/principles.md)已录入确认的核心原则；[第二章](../common/elements.md)、[第三章](../common/rounds.md)、[第四章](../common/actions.md)已一并起草，等待集中审阅。其他章节仍为提纲，关键词库已补充本轮必要词条。后续按[逐章起草与审阅流程](../maintenance/index.md#逐章起草与审阅流程)推进。
+当前页面均保留草稿状态。第一章[规则总则](../common/principles.md)已录入确认的核心原则；[第二章](../common/elements.md)、[第三章](../common/rounds.md)、[第四章](../common/actions.md)已一并起草，等待集中审阅。其他章节以提纲为主；关键词库和第六章已补充确认的资源拾取规则。后续按[逐章起草与审阅流程](../maintenance/index.md#逐章起草与审阅流程)推进。
