@@ -4,7 +4,7 @@ id: maintenance/sources
 status: draft
 ---
 
-**规则正文待整理。** 本页记录已经确认的范围和资料的使用边界，不复制讨论全文或程序实现说明。
+本页记录已经确认的范围、草案来源和资料的使用边界，不复制讨论全文或程序实现说明。
 
 ## 本轮已确认决策
 
@@ -180,3 +180,35 @@ status: draft
 - 用户取消击杀推进，删除正文 ACT-007；后续移动依普通移动规则。主动能力默认每回合一次，随从与法术一致；攻击目标限定非己方随从。
 
 入场时序的实现参照来自 unified 引用的规则包 `2b0ec49079cbf7e0708100d02a356618d77c00ca`：普通放置先使卡牌入场，入场触发正文中再选目标；拾取本体提前转入虚空，入场触发先于拾取收益。该资源处理已与确认规则冲突，因此不能整段照搬。实现没有独立放置成本环节，也不能回答支付后箭头改变的问题。证据见[放置处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Match/PlaceCardCommandHandler.cs)、[拾取处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PickupCollectionPolicy.cs#L77-L118)和[事件顺序](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Settlement/SettlementEventLifecycle.cs#L99-L104)。
+
+
+## 第五至第七章起草与核对
+
+用户本次明确授权一并起草第五、六、七章，完成后集中审阅。章节起草不表示其中新增裁定已获批准；已确认规则继续优先，新增方案在正文和待裁定页分别标明。本轮仍仅修改 website Wiki，没有修改卡表或游戏实现，也没有运行 Unity 对局。
+
+### 第五章：星能、商店与购买
+
+旧长版的经济、商店和购买章节提供默认候选数、刷新、购买与牌组循环的草案依据；用户确认的区域正逆向规则及明示放置成本覆盖旧版不一致处理。
+
+- [商店候选生成](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/ShopOfferPolicy.cs)：实现先将旧候选送回额外卡组，再将新候选移入商店。旧文“展示不消耗”不能直接等同于实体始终留在额外卡组；5.2.2 将此区别列为 ECO-R01，未擅自为额外卡组添加 modifier 排序。
+- [阶段权限](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PhasePolicy.cs)：当前刷新次数和剩余候选条件仅作为 5.3 草案参考。候选生成也不能据当前程序概括为全部组合等概率随机。
+- [购买交易](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Match/PurchaseTransaction.cs)、[完成购买](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Match/PurchaseTransaction.Commit.cs)、[购买结算](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.PurchaseWork.cs)：付款、购买前取消、成功事实及支付后续有专门顺序。正文将该顺序作为待审阅草案，未把它扩展成所有行动的通用支付规则。支付后对象或目的地失效的实现失败路径不能替代玩法裁定。
+
+### 第六章：伤害、状态与生命周期
+
+用户确认的随从死亡进入弃牌堆、资源拾取后消失、建造封锁和区域正逆向 modifier 处理均直接保留。旧文关于英雄离场例外、资源进入虚空及进场统一重置的处理不覆盖这些决定。
+
+- [伤害](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/DamageRuleHandler.cs)与[治疗](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/HealRuleHandler.cs)：当前依次处理圣盾、护甲和生命，仅实际生命伤害产生受伤事实。零伤害、溢出伤害的计数及相关触发资格仍列为待审阅细则。
+- [有效属性变化](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/EffectiveAttributeSynchronizer.cs)：最大生命降低时截断当前值，与旧短版等量扣减不同；6.2 使用具体例子呈现差异，保留 LIF-R01。
+- [死亡处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/AttributeRuleHandler.cs)：当前先离场再产生死亡事件，且这里没有完成新规则要求的通用死亡转弃牌堆；旧长版则先处理死亡效果再离场。6.3 的先离场方案是提案，不声称新死亡规则已实现。
+- [生成](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/CreateCardRuleHandler.cs)、[从牌堆放置](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PlaceFromPileRuleHandler.cs)与[变形](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/TransformRuleHandler.cs)：分别说明新实例、既有牌移动和原实例变形的区别。复制继承什么、变形保留什么及新入场行动额度仍待裁定。
+
+控制权变化不自动改变拥有者、职业或全部实例状态的描述，保持“供审阅的默认方案”，未将此前撤回的归纳重新写成已确认规则。耐久退出行为也未借当前实现补定。
+
+### 第七章：效果与时序
+
+旧长版的结算、选择、成本和后续触发章节提供发生前改写、完成后触发、嵌套处理后返回的草案基础；正文去除工程结构，直接描述玩家可观察的步骤。操作窗口、窗口外合法随机、主动能力默认次数及明确例外原则沿用用户决定。
+
+同时触发排序、来源离场后的触发资格、多项成本插入、死亡与受伤触发先后及强制循环终止没有借内部编号或失败保护机制定成游戏规则。7.5.3 的“持续变化 → 拾取 → 入场效果”是供审阅方案；它与当前实现的入场先于拾取收益不同，也没有得到用户确认。资源本体在拾取完成后消失则是已确认规则。
+
+第五至第七章的全部问题集中列于[待裁定问题](pending.md)。流程图表达正文中的步骤与提案，不以图示箭头赋予额外行动权限。
