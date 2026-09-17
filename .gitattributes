@@ -1,0 +1,2 @@
+# Preserve the upstream Mermaid bundle byte-for-byte, including template-literal whitespace.
+assets/vendor/mermaid/** linguist-vendored -whitespace

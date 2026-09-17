@@ -14,7 +14,26 @@ status: draft
 
 “同步”表示双方同时进入同一阶段、各自操作；不要求双方在同一瞬间作出每个选择。阶段转换须等待双方均完成。时动阶段则按顺序逐人进行；正常情况下，N 名玩家每回合共有 N 个时动阶段，每人一个。额外时动阶段由明确效果另行增加。
 
-![双人回合流程图：同步时停、统一结束与湮灭、先后两个时动阶段、同步购买和回合末快照清理](../../../assets/wiki/round-two-player.svg)
+```mermaid
+flowchart TD
+  start["回合开始：刷新次数、自动机制、双方抽牌"]
+  start --> stop["同步时停：同时开放双方窗口"]
+  stop --> a["A 放置、结算效果，然后声明完成"]
+  stop --> b["B 放置、结算效果，然后声明完成"]
+  a --> join["等待双方完成：时停结束结算与湮灭"]
+  b --> join
+  join --> first["先行动者的时动阶段"]
+  first --> firstEnd["关闭其窗口，结算阶段结束效果"]
+  firstEnd --> second["后行动者的时动阶段"]
+  second --> secondEnd["关闭其窗口，结算阶段结束效果"]
+  secondEnd --> shop["同步购买：同时开放双方窗口"]
+  shop --> buyA["A 购买并声明完成"]
+  shop --> buyB["B 购买并声明完成"]
+  buyA --> finish["双方完成：回合结束，固定全体手牌快照"]
+  buyB --> finish
+  finish --> clean["结束效果、到期、法术清理、快照手牌弃置"]
+  clean --> next["下一回合"]
+```
 
 图 3-A 中“先行动者／后行动者”由本回合的排序决定，不固定为某个玩家。自动流程也会结算效果，但不会因此开放玩家操作窗口。
 
@@ -34,9 +53,26 @@ status: draft
 
 表中假定 A 先行动；B 先行动时交换两个时动阶段。某玩家提前完成同步阶段后，即使对方仍在操作，该玩家自己的窗口也已经关闭。
 
-![双人操作窗口时间轴：双方在时停和购买同时开放窗口，在各自时动阶段分别开放，其余时间自动选择](../../../assets/wiki/operation-windows.svg)
+```mermaid
+flowchart TD
+  start["回合开始：A、B 均无窗口"]
+  start --> stop["同步时停：A、B 各自有窗口"]
+  stop --> stopEnd["时停结束结算：A、B 均无窗口"]
+  stopEnd --> moveA["A 的时动：A 有窗口，B 无窗口"]
+  moveA --> endA["A 的阶段结束：A、B 均无窗口"]
+  endA --> moveB["B 的时动：B 有窗口，A 无窗口"]
+  moveB --> endB["B 的阶段结束：A、B 均无窗口"]
+  endB --> shop["同步购买：A、B 各自有窗口"]
+  shop --> finish["回合结束：A、B 均无窗口"]
+  classDef both fill:#234b38,stroke:#76bc90,color:#ffffff
+  classDef single fill:#394b64,stroke:#9cb7da,color:#ffffff
+  classDef closed fill:#343737,stroke:#888888,color:#ffffff
+  class stop,shop both
+  class moveA,moveB single
+  class start,stopEnd,endA,endB,finish closed
+```
 
-图 3-B 中绿色为有窗口，灰色为无窗口。每名玩家声明完成时，其绿色区间立即结束；图中的共同结束位置只表示阶段最终汇合，不保证两人等时长。
+图 3-B 按时间从上到下排列：绿色表示同步阶段中双方各有窗口，蓝色表示仅阶段所属玩家有窗口，灰色表示双方均无窗口。颜色只是辅助，节点文字给出完整权限。同步阶段内，每名玩家声明完成时，本人窗口立即关闭；共同结束位置只表示阶段最终汇合，不保证两人等时长。
 
 **窗口内外的效果选择：** 应作出选择的玩家拥有操作窗口时，由该玩家选择；不拥有窗口时，由系统自动选择，不等待该玩家输入。具体效果没有规定自动选择方式时，默认从合法选项中随机选取。自动选择仍须遵守目标、数量和其他合法性要求，不因此增加候选范围，也不会替玩家发起一项原本不能发动的主动能力。
 

@@ -51,6 +51,37 @@
     nav.append(group);
   });
   let currentId;
+  let diagramSerial = 0;
+  let diagramTask = Promise.resolve();
+  window.mermaid?.initialize({
+    startOnLoad: false,
+    securityLevel: "strict",
+    theme: "dark",
+    fontFamily: "Arial, sans-serif",
+    flowchart: { htmlLabels: false, useMaxWidth: false },
+  });
+  async function renderDiagrams(figures) {
+    for (const figure of figures) {
+      if (!figure.isConnected) continue;
+      const details = figure.querySelector("details");
+      const view = figure.querySelector(".wiki-flowchart-view");
+      try {
+        if (!window.mermaid) throw new Error("Mermaid unavailable");
+        const { svg } = await window.mermaid.render(
+          `wiki-diagram-${++diagramSerial}`,
+          figure.querySelector("code").textContent,
+        );
+        if (!figure.isConnected) continue;
+        view.innerHTML = svg;
+        view.tabIndex = 0;
+        details.open = false;
+      } catch {
+        if (!figure.isConnected) continue;
+        view.textContent = "图示暂时无法渲染，可阅读下方 Mermaid 源码。";
+        details.open = true;
+      }
+    }
+  }
   function navigate() {
     const hash = location.hash.startsWith("#/")
       ? location.hash.slice(2)
@@ -116,7 +147,12 @@
         document.createTextNode(page.title),
       );
     // Only build-time escaped HTML is loaded, never URL or user-supplied HTML.
-    if (changed) article.innerHTML = page.html;
+    if (changed) {
+      article.innerHTML = page.html;
+      const figures = [...article.querySelectorAll(".wiki-flowchart")];
+      // Serialize renders; a navigation detaches stale figures before they can be updated.
+      diagramTask = diagramTask.then(() => renderDiagrams(figures));
+    }
     nav.querySelectorAll("[data-page]").forEach((item) => {
       if (item.dataset.page === id) item.setAttribute("aria-current", "page");
       else item.removeAttribute("aria-current");
@@ -154,8 +190,14 @@
     requestAnimationFrame(() => {
       if (anchor) {
         const target = document.getElementById(anchor);
-        if (target && article.contains(target)) target.scrollIntoView();
+        if (target && article.contains(target)) target.scrollIntoView({ behavior: "instant" });
       } else if (changed) window.scrollTo({ top: 0, behavior: "instant" });
+    });
+    const targetHash = location.hash;
+    if (anchor) diagramTask.then(() => {
+      if (location.hash !== targetHash) return;
+      const target = document.getElementById(anchor);
+      if (target && article.contains(target)) target.scrollIntoView({ behavior: "instant" });
     });
   }
   nav.addEventListener("click", (event) => {

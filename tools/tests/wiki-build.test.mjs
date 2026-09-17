@@ -60,11 +60,25 @@ test('local illustrations open at full size without allowing remote or executabl
   }
 });
 
+test('Mermaid fences retain escaped readable source and do not change ordinary code blocks', () => {
+  const source = 'flowchart LR\n  A["<script>alert(1)</script>"] --> B["虚空"]';
+  const [result] = renderPages([page('concepts', '```mermaid\n' + source + '\n```\n\n```js\nconst a = 1;\n```')]);
+  assert.match(result.html, /class="wiki-flowchart"/);
+  assert.match(result.html, /<details open><summary>Mermaid 源码<\/summary>/);
+  assert.match(result.html, /&lt;script&gt;alert\(1\)&lt;\/script&gt;/);
+  assert.doesNotMatch(result.html, /<script>/);
+  assert.match(result.html, /<code class="language-js">const a = 1;/);
+  assert.equal(result.toc.length, 0);
+});
+
 test('checked-in data matches the Markdown build and contains only unapproved draft pages', async () => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'tbh-wiki-test-'));
   try {
     await fs.cp(path.join(root, 'docs/rules'), path.join(temp, 'docs/rules'), { recursive: true });
     const output = await buildWiki(temp);
+    for (const name of ['mermaid.tiny.js', 'LICENSE']) {
+      assert.deepEqual(await fs.readFile(path.join(temp, 'assets/vendor/mermaid', name)), await fs.readFile(path.join(root, 'assets/vendor/mermaid', name)));
+    }
     const generated = await fs.readFile(path.join(temp, 'wiki-data.js'), 'utf8');
     assert.equal(generated, await fs.readFile(path.join(root, 'wiki-data.js'), 'utf8'));
     assert.equal(output.sections.length, 5);

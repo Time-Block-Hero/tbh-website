@@ -42,6 +42,10 @@ export function renderPages(pages) {
     let headingIndex = 0;
     const renderer = {
       html({ text }) { return escapeHTML(text); },
+      code({ text, lang }) {
+        if (lang?.trim() !== 'mermaid') return false;
+        return `<figure class="wiki-flowchart"><div class="wiki-flowchart-view" aria-label="规则流程图"></div><details open><summary>Mermaid 源码</summary><pre><code class="language-mermaid">${escapeHTML(text)}</code></pre></details></figure>\n`;
+      },
       heading({ tokens, depth }) {
         const heading = page.toc[headingIndex++];
         return `<h${depth} id="${escapeHTML(heading.id)}">${this.parser.parseInline(tokens)}</h${depth}>\n`;
@@ -73,6 +77,12 @@ export function renderPages(pages) {
   return pages;
 }
 export async function buildWiki(directory = root) {
+  // Check in the pinned, self-contained runtime so static/offline previews need no CDN.
+  const vendor = path.join(directory, 'assets/vendor/mermaid');
+  await fs.mkdir(vendor, { recursive: true });
+  for (const [source, target] of [['dist/mermaid.tiny.js', 'mermaid.tiny.js'], ['LICENSE', 'LICENSE']]) {
+    await fs.copyFile(path.join(root, 'node_modules/@mermaid-js/tiny', source), path.join(vendor, target));
+  }
   const sourceRoot = path.join(directory, 'docs/rules');
   const navigation = JSON.parse(await fs.readFile(path.join(sourceRoot, 'navigation.json'), 'utf8'));
   const paths = navigation.flatMap(section => [section.file, ...(section.pages || []).map(item => item.file)]);

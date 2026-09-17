@@ -26,7 +26,7 @@
 - 每个正式章节的二级及更深标题必须带分级编号。标题锚点先忽略开头的阅读编号，再保留字母、数字、中文与连字符；空格改为连字符，重复标题追加 `-2`、`-3`。长期条款引用应在标题中包含稳定规则编号。
 - 站内 URL 为 `wiki.html#/effects`；节内 URL 为 `wiki.html#/keywords@入场`。页面 ID 保持稳定，修改已被引用的标题前检查链接。
 - 原始 HTML 仅作为文字显示，不执行。外部链接支持 HTTPS／HTTP；不支持脚本 URL。正文不嵌入交互组件。
-- 图片使用从当前页面到根目录 `assets` 的 `../../../assets/...` 路径。必要时使用本地 SVG 示意图或状态迁移图；配套文字说明范围及未定边界，图片点击可打开原图。
+- 图片使用从当前页面到根目录 `assets` 的 `../../../assets/...` 路径。棋盘等空间插图可以使用本地 SVG，点击可打开原图。流程和状态迁移统一写成 Markdown 的 `mermaid` 围栏代码块，使用 `flowchart`；不再手工维护对应 SVG。Wiki 使用固定版本的本地 Mermaid Tiny 渲染，图下可展开源码；失败时保留可读源码。图示须附文字说明范围及未定边界。
 - 单一主题只维护一个正式定义，其他页链接它；暂不支持跨页内容嵌入。关键词使用精确词条锚点，例如 `[入场](../reference/keywords.md#入场)`。
 
 ## 构建与检查
@@ -42,3 +42,5 @@ npm run test:wiki
 ## 目录迁移
 
 旧占位子页已并入对应章节，旧的 `start`、`concepts`、`match`、`actions`、`economy`、`effects`、`reference`、`rulings`、`rulings/pending`、`contributing` 页面 ID 保留于对应主题。旧细分占位页不再作为独立规则来源，站内链接全部使用新目录。
+
+Mermaid 运行库由 `npm run build:wiki` 从锁定的 `@mermaid-js/tiny` 包复制至 `assets/vendor/mermaid/`，连同许可证提交；浏览 Wiki 不请求 CDN。渲染遵循 [Mermaid 官方用法](https://mermaid.js.org/config/usage.html)，启用 strict 安全级别。
