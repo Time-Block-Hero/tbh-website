@@ -40,7 +40,7 @@
       if (!page) return;
       const item = document.createElement("li");
       const anchor = link(
-        id === section.id ? "章节概览" : page.title,
+        id === section.id ? "本组导读" : page.title,
         pageURL(id),
       );
       anchor.dataset.page = id;
@@ -95,7 +95,7 @@
     document.title = `${page.title} — TBH 规则 Wiki`;
     document.getElementById("wiki-title").textContent = page.title;
     document.getElementById("wiki-section-number").textContent =
-      `CHAPTER ${String(sectionIndex).padStart(2, "0")} / RULES WIKI`;
+      `SECTION ${String(sectionIndex).padStart(2, "0")} / RULES WIKI`;
     const status = document.getElementById("wiki-status");
     status.textContent =
       { draft: "待整理", approved: "已确认", retired: "已归档" }[page.status] ||

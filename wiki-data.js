@@ -3,497 +3,709 @@ window.TBH_WIKI = {
   "sections": [
     {
       "id": "start",
-      "title": "开始阅读",
-      "pages": [
-        "start/overview",
-        "start/quickstart"
-      ]
-    },
-    {
-      "id": "concepts",
-      "title": "核心概念",
-      "pages": [
-        "concepts/board",
-        "concepts/glossary"
-      ]
-    },
-    {
-      "id": "match",
-      "title": "对局与回合",
-      "pages": [
-        "match/turns"
-      ]
-    },
-    {
-      "id": "economy",
-      "title": "资源与卡牌流转",
+      "title": "规则 Wiki 导读",
       "pages": []
     },
     {
-      "id": "actions",
-      "title": "基础行动与战斗",
+      "id": "common",
+      "title": "第一部分：通用游戏规则",
       "pages": [
-        "actions/combat"
+        "principles",
+        "concepts",
+        "match",
+        "actions",
+        "economy",
+        "lifecycle",
+        "effects"
       ]
     },
     {
-      "id": "effects",
-      "title": "能力与效果结算",
+      "id": "standard",
+      "title": "第二部分：标准对战",
       "pages": [
-        "effects/targets",
-        "effects/resolution"
+        "standard/overview",
+        "standard/setup",
+        "standard/automatic"
       ]
     },
     {
       "id": "reference",
-      "title": "关键词与卡牌设计约定",
-      "pages": []
-    },
-    {
-      "id": "rulings",
-      "title": "裁定与案例",
+      "title": "第三部分：关键词库与裁定",
       "pages": [
-        "rulings/pending"
+        "keywords",
+        "rulings"
       ]
     },
     {
       "id": "contributing",
-      "title": "维护与开发参考",
-      "pages": []
+      "title": "维护附录",
+      "pages": [
+        "rulings/pending",
+        "maintenance/versions",
+        "maintenance/sources"
+      ]
     }
   ],
   "pages": [
     {
-      "title": "开始阅读",
+      "title": "规则 Wiki 导读",
       "id": "start",
       "status": "draft",
       "file": "start/index.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "阅读入口",
+          "text": "阅读入口",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "已确认的编写范围",
+          "text": "已确认的编写范围",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "正式规则的目标",
+          "text": "正式规则的目标",
+          "depth": 2
+        },
+        {
+          "id": "唯一定义与内容状态",
+          "text": "唯一定义与内容状态",
           "depth": 2
         }
       ],
-      "html": "\u003cp>Wiki 的范围、状态与阅读方式。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/start/overview\">游戏概览\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/start/quickstart\">快速入门\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">核心概念\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>目录结构已确认，规则正文待整理。\u003c/strong> 本 Wiki 将通过逐主题问答，整理成唯一、统一的正式游戏规则。目录获准不等于旧规则获准；各章在玩法确认前保持草稿。\u003c/p>\n\u003ch2 id=\"阅读入口\">阅读入口\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/common\">第一部分：通用游戏规则\u003c/a>：所有模式共享的核心玩法。\u003c/li>\n\u003cli>\u003ca href=\"#/standard\">第二部分：标准对战\u003c/a>：当前 1v1 模式的目标、开局配置和自动机制。\u003c/li>\n\u003cli>\u003ca href=\"#/reference\">第三部分：关键词库与裁定\u003c/a>：统一定义与具体局面的查询入口。\u003c/li>\n\u003cli>\u003ca href=\"#/contributing\">维护附录\u003c/a>：待裁定问题、版本与来源记录。\u003c/li>\n\u003c/ul>\n\u003cp>首次阅读可以从标准对战概览了解模式，再沿链接学习通用规则；系统阅读可以按第一至第三部分顺序进行。\u003c/p>\n\u003ch2 id=\"已确认的编写范围\">已确认的编写范围\u003c/h2>\n\u003cp>星能运营、卡组成长、棋盘对弈，以及回合流程和商店购买，都是所有模式共享的核心玩法。标准对战单独定义 1v1 的配置和专属规则。未来 Rogue 或剧情模式实际开始设计时，再新增模式章节并引用通用规则。\u003c/p>\n\u003cp>本版取消高度这一玩法维度。占格、飞行与拾取物的具体关系仍需逐项裁定，不能从旧文档直接沿用。\u003c/p>\n\u003ch2 id=\"正式规则的目标\">正式规则的目标\u003c/h2>\n\u003cp>给定相同的初始局面、玩家选择和随机结果，仅依据规则书，应能逐步推演出唯一的对局过程与结果。\u003c/p>\n\u003cp>正文使用游戏语言，明确选择、支付、触发、改写、失败、检查与结束的时点。程序类型、内部结构和执行架构不属于规则正文；规则可以作为工程实现的充分参考。\u003c/p>\n\u003ch2 id=\"唯一定义与内容状态\">唯一定义与内容状态\u003c/h2>\n\u003cp>同一规则只维护一处正式定义，其他章节通过链接引用。\u003ca href=\"#/keywords\">关键词库\u003c/a>保存关键词定义；案例解释正式条款，不额外创造隐含规则。\u003c/p>\n\u003cul>\n\u003cli>\u003cstrong>草稿\u003c/strong>：主题已建立，尚需确认具体规则。\u003c/li>\n\u003cli>\u003cstrong>已确认\u003c/strong>：正文已经逐项确认，可作为正式依据。\u003c/li>\n\u003cli>\u003cstrong>已归档\u003c/strong>：不再适用于现行规则，仅供追溯。\u003c/li>\n\u003c/ul>\n\u003cp>当前页面均为草稿。下一步按\u003ca href=\"#/contributing@%E9%97%AE%E7%AD%94%E4%B8%8E%E7%A1%AE%E8%AE%A4%E6%B5%81%E7%A8%8B\">问答与确认流程\u003c/a>逐章整理。\u003c/p>\n"
     },
     {
-      "title": "游戏概览",
-      "id": "start/overview",
+      "title": "第一部分：通用游戏规则",
+      "id": "common",
       "status": "draft",
-      "file": "start/overview.md",
+      "file": "common/index.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "章节目录",
+          "text": "章节目录",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "阅读入口",
+          "text": "阅读入口",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/start\">开始阅读\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>目录已确认，规则正文待整理。\u003c/strong>\u003c/p>\n\u003cp>本部分定义所有模式共享的星能运营、卡组成长和棋盘对弈。回合流程、行动权限、商店与购买属于通用规则。关键词的正式定义统一引用第三部分的关键词库。\u003c/p>\n\u003ch2 id=\"章节目录\">章节目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/principles\">1. 规则总则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/concepts\">2. 游戏要素\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/match\">3. 回合流程与行动权限\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/actions\">4. 行动规则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/economy\">5. 星能、商店与卡组成长\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/lifecycle\">6. 状态变化与卡牌生命周期\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">7. 效果与结算时序\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"阅读入口\">阅读入口\u003c/h2>\n\u003cp>\u003ca href=\"#/start\">返回规则 Wiki 导读\u003c/a>\u003c/p>\n"
     },
     {
-      "title": "快速入门",
-      "id": "start/quickstart",
+      "title": "1. 规则总则",
+      "id": "principles",
       "status": "draft",
-      "file": "start/quickstart.md",
+      "file": "common/principles.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "规则用语",
+          "text": "规则用语",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
+          "id": "规则优先关系",
+          "text": "规则优先关系",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "适用范围与例外",
+          "text": "适用范围与例外",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/start\">开始阅读\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章明确如何阅读、适用与解释游戏规则。\u003c/p>\n\u003ch2 id=\"规则用语\">规则用语\u003c/h2>\n\u003cp>待确认“必须”“可以”、数量、范围、时限和其他规则用语的准确含义。\u003c/p>\n\u003ch2 id=\"规则优先关系\">规则优先关系\u003c/h2>\n\u003cp>待确认基础规则、卡牌文本、关键词及模式专属条款冲突时的处理方式。\u003c/p>\n\u003ch2 id=\"适用范围与例外\">适用范围与例外\u003c/h2>\n\u003cp>待确认通用条款的默认适用范围，以及模式或卡牌明确改写规则时的边界。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">游戏要素\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/keywords\">关键词库与术语索引\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "核心概念",
+      "title": "2. 游戏要素",
       "id": "concepts",
       "status": "draft",
-      "file": "concepts/index.md",
+      "file": "common/elements.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "玩家与控制关系",
+          "text": "玩家与控制关系",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "卡牌种类与分类维度",
+          "text": "卡牌种类与分类维度",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "通用属性与各类型专属属性",
+          "text": "通用属性与各类型专属属性",
+          "depth": 2
+        },
+        {
+          "id": "基础属性与对局状态",
+          "text": "基础属性与对局状态",
+          "depth": 2
+        },
+        {
+          "id": "棋盘与空间关系",
+          "text": "棋盘与空间关系",
+          "depth": 2
+        },
+        {
+          "id": "游戏区域",
+          "text": "游戏区域",
+          "depth": 2
+        },
+        {
+          "id": "公开与隐藏信息",
+          "text": "公开与隐藏信息",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>对象、区域、空间与术语。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts/board\">棋盘与空间\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/concepts/glossary\">术语索引\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/match\">对局与回合\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章定义游戏中有哪些对象、卡牌种类及属性。属性的变化过程统一见第六章。\u003c/p>\n\u003ch2 id=\"玩家与控制关系\">玩家与控制关系\u003c/h2>\n\u003cp>待确认玩家、拥有者、控制者、友方、敌方和中立的定义与区别。\u003c/p>\n\u003ch2 id=\"卡牌种类与分类维度\">卡牌种类与分类维度\u003c/h2>\n\u003cp>待确认卡牌类型及其关系；分别说明职业、种族、稀有度和收集属性，避免将不同分类维度混为互斥种类。\u003c/p>\n\u003ch2 id=\"通用属性与各类型专属属性\">通用属性与各类型专属属性\u003c/h2>\n\u003cp>按卡牌种类逐项定义共有属性、专属属性、可缺省字段及缺省含义。卡面关键词链接到\u003ca href=\"#/keywords\">关键词库\u003c/a>。\u003c/p>\n\u003ch2 id=\"基础属性与对局状态\">基础属性与对局状态\u003c/h2>\n\u003cp>待确认卡面基础值、当前值、上限及次数等概念；区分卡牌本身与它在战场上的状态。\u003c/p>\n\u003ch2 id=\"棋盘与空间关系\">棋盘与空间关系\u003c/h2>\n\u003cp>待确认格子、方向、距离、领地和占格。本版不设高度维度；共存、阻挡及相关关键词的具体关系待裁定。\u003c/p>\n\u003ch2 id=\"游戏区域\">游戏区域\u003c/h2>\n\u003cp>待确认手牌、牌堆、弃牌堆、额外卡组、商店、战场和虚空等区域的定义。区域变化统一见\u003ca href=\"#/lifecycle@%E5%8C%BA%E5%9F%9F%E8%BD%AC%E7%A7%BB%E4%B8%8E%E7%8A%B6%E6%80%81%E4%BF%9D%E7%95%99\">卡牌生命周期\u003c/a>。\u003c/p>\n\u003ch2 id=\"公开与隐藏信息\">公开与隐藏信息\u003c/h2>\n\u003cp>待确认各区域和阶段的信息可见性、查看权限，以及必须公开的选择与结果。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/standard/setup\">构筑与开局配置\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/lifecycle\">状态变化与卡牌生命周期\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "棋盘与空间",
-      "id": "concepts/board",
-      "status": "draft",
-      "file": "concepts/board.md",
-      "toc": [
-        {
-          "id": "内容状态",
-          "text": "内容状态",
-          "depth": 2
-        },
-        {
-          "id": "规则与示例",
-          "text": "规则与示例",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
-          "depth": 2
-        }
-      ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">核心概念\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
-    },
-    {
-      "title": "术语索引",
-      "id": "concepts/glossary",
-      "status": "draft",
-      "file": "concepts/glossary.md",
-      "toc": [
-        {
-          "id": "内容状态",
-          "text": "内容状态",
-          "depth": 2
-        },
-        {
-          "id": "规则与示例",
-          "text": "规则与示例",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
-          "depth": 2
-        }
-      ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">核心概念\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
-    },
-    {
-      "title": "对局与回合",
+      "title": "3. 回合流程与行动权限",
       "id": "match",
       "status": "draft",
-      "file": "match/index.md",
+      "file": "common/rounds.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "回合总览",
+          "text": "回合总览",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "回合开始",
+          "text": "回合开始",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "时停",
+          "text": "时停",
+          "depth": 2
+        },
+        {
+          "id": "时动",
+          "text": "时动",
+          "depth": 2
+        },
+        {
+          "id": "购买",
+          "text": "购买",
+          "depth": 2
+        },
+        {
+          "id": "回合结束",
+          "text": "回合结束",
+          "depth": 2
+        },
+        {
+          "id": "阶段完成与转换",
+          "text": "阶段完成与转换",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>对局、回合与阶段的组织。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/match/turns\">回合与阶段\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/economy\">资源与卡牌流转\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>回合流程和行动权限属于所有模式共享的核心玩法。本章负责完整时间顺序，具体行动链接到其唯一规则章节。\u003c/p>\n\u003ch2 id=\"回合总览\">回合总览\u003c/h2>\n\u003cp>待确认回合开始、时停、时动、购买和回合结束之间的关系及准确顺序。\u003c/p>\n\u003ch2 id=\"回合开始\">回合开始\u003c/h2>\n\u003cp>待确认刷新状态、抽牌、回合开始效果及模式自动机制之间的顺序。标准对战的资源生成方案见\u003ca href=\"#/standard/automatic@%E8%B5%84%E6%BA%90%E7%94%9F%E6%88%90\">对局自动逻辑\u003c/a>。\u003c/p>\n\u003ch2 id=\"时停\">时停\u003c/h2>\n\u003cp>待确认双方可执行的行为、隐藏信息、同时操作边界及完成声明；\u003ca href=\"#/actions@%E6%94%BE%E7%BD%AE%E4%B8%8E%E7%AE%AD%E5%A4%B4\">放置\u003c/a>的具体步骤在行动章节定义。\u003c/p>\n\u003ch2 id=\"时动\">时动\u003c/h2>\n\u003cp>待确认行动顺序的确定、行动窗口的切换、可执行行为及完成条件。\u003c/p>\n\u003ch2 id=\"购买\">购买\u003c/h2>\n\u003cp>待确认购买窗口内的权限、双方操作关系和结束条件；商店与购买的完整定义见\u003ca href=\"#/economy\">第五章\u003c/a>。\u003c/p>\n\u003ch2 id=\"回合结束\">回合结束\u003c/h2>\n\u003cp>待确认结束效果、状态到期、场上清理、手牌处理和下一回合开始的顺序。\u003c/p>\n\u003ch2 id=\"阶段完成与转换\">阶段完成与转换\u003c/h2>\n\u003cp>待确认声明完成的限制、尚有选择或效果未完成时的处理，以及再次获得行动权限的条件。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions\">行动规则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/automatic\">标准对战的对局自动逻辑\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "回合与阶段",
-      "id": "match/turns",
-      "status": "draft",
-      "file": "match/turns.md",
-      "toc": [
-        {
-          "id": "内容状态",
-          "text": "内容状态",
-          "depth": 2
-        },
-        {
-          "id": "规则与示例",
-          "text": "规则与示例",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
-          "depth": 2
-        }
-      ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/match\">对局与回合\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
-    },
-    {
-      "title": "资源与卡牌流转",
-      "id": "economy",
-      "status": "draft",
-      "file": "economy/index.md",
-      "toc": [
-        {
-          "id": "内容状态",
-          "text": "内容状态",
-          "depth": 2
-        },
-        {
-          "id": "章节内容",
-          "text": "章节内容",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
-          "depth": 2
-        }
-      ],
-      "html": "\u003cp>资源与卡牌流转的整理入口。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"章节内容\">章节内容\u003c/h2>\n\u003cp>未完成。具体条目将在规则讨论中逐步建立。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions\">基础行动与战斗\u003c/a>\u003c/li>\n\u003c/ul>\n"
-    },
-    {
-      "title": "基础行动与战斗",
+      "title": "4. 行动规则",
       "id": "actions",
       "status": "draft",
-      "file": "actions/index.md",
+      "file": "common/actions.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "放置与箭头",
+          "text": "放置与箭头",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "移动与特殊位移",
+          "text": "移动与特殊位移",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "攻击与反击",
+          "text": "攻击与反击",
+          "depth": 2
+        },
+        {
+          "id": "战后推进",
+          "text": "战后推进",
+          "depth": 2
+        },
+        {
+          "id": "主动能力",
+          "text": "主动能力",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>玩家行动与战斗的整理入口。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions/combat\">攻击与伤害\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/effects\">能力与效果结算\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章逐项说明行动的条件、声明、支付、执行与完成过程；通用的结算顺序和失败处理引用第七章。\u003c/p>\n\u003ch2 id=\"放置与箭头\">放置与箭头\u003c/h2>\n\u003cp>待确认合法位置、箭头需求、选择与支付顺序、取消边界、入场后生效顺序及行动完成时点。涉及\u003ca href=\"#/keywords@%E5%85%A5%E5%9C%BA\">入场\u003c/a>时引用关键词库；其触发条件仍待裁定。\u003c/p>\n\u003ch2 id=\"移动与特殊位移\">移动与特殊位移\u003c/h2>\n\u003cp>待确认移动条件、点数消耗、路径、逐格处理、中途阻挡、瞬移及强制位移的规则。\u003c/p>\n\u003ch2 id=\"攻击与反击\">攻击与反击\u003c/h2>\n\u003cp>待确认目标合法性、攻击次数、反击条件、战斗伤害、取消和攻击完成时点。\u003c/p>\n\u003ch2 id=\"战后推进\">战后推进\u003c/h2>\n\u003cp>待确认推进条件、选择、位置、成本及其与死亡、拾取和其他效果的关系。\u003c/p>\n\u003ch2 id=\"主动能力\">主动能力\u003c/h2>\n\u003cp>待确认发动权限、目标与模式选择、成本、使用次数，以及发动、取消和完成的时点。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/match\">回合流程与行动权限\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/lifecycle\">状态变化与卡牌生命周期\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/keywords\">关键词库与术语索引\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "攻击与伤害",
-      "id": "actions/combat",
+      "title": "5. 星能、商店与卡组成长",
+      "id": "economy",
       "status": "draft",
-      "file": "actions/combat.md",
+      "file": "common/economy.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "星能",
+          "text": "星能",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
+          "id": "额外卡组与商店候选",
+          "text": "额外卡组与商店候选",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "商店刷新",
+          "text": "商店刷新",
+          "depth": 2
+        },
+        {
+          "id": "购买卡牌",
+          "text": "购买卡牌",
+          "depth": 2
+        },
+        {
+          "id": "卡组成长与循环",
+          "text": "卡组成长与循环",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions\">基础行动与战斗\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>星能运营、商店购买和卡组成长属于所有模式共用的核心玩法。本章定义经济循环，不将其限定为标准对战专属规则。\u003c/p>\n\u003ch2 id=\"星能\">星能\u003c/h2>\n\u003cp>待确认获得、支付、保留、数量限制及其他变化的规则。标准对战地图上的资源生成方案由\u003ca href=\"#/standard/automatic@%E8%B5%84%E6%BA%90%E7%94%9F%E6%88%90\">第十章\u003c/a>定义。\u003c/p>\n\u003ch2 id=\"额外卡组与商店候选\">额外卡组与商店候选\u003c/h2>\n\u003cp>待确认候选来源、展示、剩余牌数不足、购买后候选变化，以及商店与额外卡组的关系。\u003c/p>\n\u003ch2 id=\"商店刷新\">商店刷新\u003c/h2>\n\u003cp>待确认自动生成候选与主动刷新的区别、次数、成本和候选更换方式。\u003c/p>\n\u003ch2 id=\"购买卡牌\">购买卡牌\u003c/h2>\n\u003cp>待确认选择、报价、支付、目的地、成功与取消的完整顺序，以及相关效果发生的时点。\u003c/p>\n\u003ch2 id=\"卡组成长与循环\">卡组成长与循环\u003c/h2>\n\u003cp>待确认新获得的牌如何加入后续循环；具体\u003ca href=\"#/lifecycle@%E6%8A%BD%E7%89%8C%E5%BC%83%E7%89%8C%E4%B8%8E%E6%B4%97%E7%89%8C\">抽牌与洗牌\u003c/a>只在第六章定义。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/match\">回合流程与行动权限\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/setup\">标准对战的构筑与开局配置\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "能力与效果结算",
+      "title": "6. 状态变化与卡牌生命周期",
+      "id": "lifecycle",
+      "status": "draft",
+      "file": "common/lifecycle.md",
+      "toc": [
+        {
+          "id": "伤害护甲与治疗",
+          "text": "伤害护甲与治疗",
+          "depth": 2
+        },
+        {
+          "id": "属性变化",
+          "text": "属性变化",
+          "depth": 2
+        },
+        {
+          "id": "死亡与消灭",
+          "text": "死亡与消灭",
+          "depth": 2
+        },
+        {
+          "id": "抽牌弃牌与洗牌",
+          "text": "抽牌弃牌与洗牌",
+          "depth": 2
+        },
+        {
+          "id": "区域转移与状态保留",
+          "text": "区域转移与状态保留",
+          "depth": 2
+        },
+        {
+          "id": "生成召唤升级与变形",
+          "text": "生成召唤升级与变形",
+          "depth": 2
+        },
+        {
+          "id": "控制权变化",
+          "text": "控制权变化",
+          "depth": 2
+        },
+        {
+          "id": "拾取",
+          "text": "拾取",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章定义行动或效果引发的具体状态变化。全局资源生成方案属于标准对战的对局自动逻辑，不并入棋子状态规则。\u003c/p>\n\u003ch2 id=\"伤害护甲与治疗\">伤害护甲与治疗\u003c/h2>\n\u003cp>待确认伤害与生命变化的区别、护甲和其他防护的处理、治疗上限及相关效果的触发条件。\u003c/p>\n\u003ch2 id=\"属性变化\">属性变化\u003c/h2>\n\u003cp>待确认基础值、修正、当前值与上限的关系，持续加成的生效和移除，以及变化是否构成伤害或治疗。\u003c/p>\n\u003ch2 id=\"死亡与消灭\">死亡与消灭\u003c/h2>\n\u003cp>待确认死亡条件、死亡与离场的顺序、击杀归属及卡牌去向；标准对战的胜负规则见\u003ca href=\"#/standard/overview\">第八章\u003c/a>。\u003c/p>\n\u003ch2 id=\"抽牌弃牌与洗牌\">抽牌弃牌与洗牌\u003c/h2>\n\u003cp>待确认抽牌和弃牌的处理顺序、牌堆不足、洗牌及无牌可抽时的结果。\u003c/p>\n\u003ch2 id=\"区域转移与状态保留\">区域转移与状态保留\u003c/h2>\n\u003cp>待确认各区域之间的合法转移，以及离场、重入场后哪些属性与状态保留或清除。\u003c/p>\n\u003ch2 id=\"生成召唤升级与变形\">生成召唤升级与变形\u003c/h2>\n\u003cp>待确认这些变化各自的定义、对象身份、位置与属性继承，以及和放置的区别。\u003c/p>\n\u003ch2 id=\"控制权变化\">控制权变化\u003c/h2>\n\u003cp>待确认操作权限、友敌关系、效果归属及卡牌离场目的地的变化。\u003c/p>\n\u003ch2 id=\"拾取\">拾取\u003c/h2>\n\u003cp>待确认进入同格的各种方式、拾取资格、移除与奖励的顺序；标准对战的资源物件方案见\u003ca href=\"#/standard/automatic@%E8%B5%84%E6%BA%90%E7%94%9F%E6%88%90\">资源生成\u003c/a>。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">游戏要素\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/keywords\">关键词库与术语索引\u003c/a>\u003c/li>\n\u003c/ul>\n"
+    },
+    {
+      "title": "7. 效果与结算时序",
       "id": "effects",
       "status": "draft",
-      "file": "effects/index.md",
+      "file": "common/effects.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "效果分类",
+          "text": "效果分类",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "目标模式与数量选择",
+          "text": "目标模式与数量选择",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "成本支付",
+          "text": "成本支付",
+          "depth": 2
+        },
+        {
+          "id": "结算前改写与结算后触发",
+          "text": "结算前改写与结算后触发",
+          "depth": 2
+        },
+        {
+          "id": "多个效果与连续结算",
+          "text": "多个效果与连续结算",
+          "depth": 2
+        },
+        {
+          "id": "持续时间与失效",
+          "text": "持续时间与失效",
+          "depth": 2
+        },
+        {
+          "id": "取消失败与部分完成",
+          "text": "取消失败与部分完成",
+          "depth": 2
+        },
+        {
+          "id": "检查与行动完成时点",
+          "text": "检查与行动完成时点",
+          "depth": 2
+        },
+        {
+          "id": "自动机制与其他结算的衔接",
+          "text": "自动机制与其他结算的衔接",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>能力与精确结算语义。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/effects/targets\">目标与选择\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects/resolution\">效果结算过程\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/reference\">关键词与卡牌设计约定\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章以游戏语言定义结算，目标是让读者根据相同初始局面、选择和随机结果推演出唯一过程。程序架构不属于正文。\u003c/p>\n\u003ch2 id=\"效果分类\">效果分类\u003c/h2>\n\u003cp>待确认主动、触发、持续、替换等效果的定义和边界。\u003c/p>\n\u003ch2 id=\"目标模式与数量选择\">目标模式与数量选择\u003c/h2>\n\u003cp>待确认选择的时点、范围、合法性检查、必选与可选、随机结果，以及目标变化后的处理。\u003c/p>\n\u003ch2 id=\"成本支付\">成本支付\u003c/h2>\n\u003cp>待确认选择与支付的先后、多项成本、取消边界、部分支付和返还规则。\u003c/p>\n\u003ch2 id=\"结算前改写与结算后触发\">结算前改写与结算后触发\u003c/h2>\n\u003cp>待确认尚未发生的变化如何被改写，已经发生的事实如何引发后续效果。关键词的专属条件统一引用\u003ca href=\"#/keywords\">关键词库\u003c/a>。\u003c/p>\n\u003ch2 id=\"多个效果与连续结算\">多个效果与连续结算\u003c/h2>\n\u003cp>待确认同时满足条件的效果如何排序、同时与逐个处理的区别，以及新效果处理完毕后如何继续原过程。\u003c/p>\n\u003ch2 id=\"持续时间与失效\">持续时间与失效\u003c/h2>\n\u003cp>待确认生效条件、持续时间、到期时点、来源离场或条件改变后的结果。\u003c/p>\n\u003ch2 id=\"取消失败与部分完成\">取消失败与部分完成\u003c/h2>\n\u003cp>待确认目标失效、来源消失、控制权变化或步骤无法执行时，剩余部分及已完成变化如何处理。\u003c/p>\n\u003ch2 id=\"检查与行动完成时点\">检查与行动完成时点\u003c/h2>\n\u003cp>待确认死亡、胜负和其他必要检查在哪些时点进行，以及何时可以继续行动或结束阶段。\u003c/p>\n\u003ch2 id=\"自动机制与其他结算的衔接\">自动机制与其他结算的衔接\u003c/h2>\n\u003cp>对局规则可以在玩家操作和卡牌效果之外引发变化。待确认这些变化与玩家行动、触发效果的排序、选择及完成边界；具体方案见所属模式的规则。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions\">行动规则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/economy\">星能商店与卡组成长\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/automatic\">标准对战的对局自动逻辑\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings\">裁定与完整案例\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "目标与选择",
-      "id": "effects/targets",
+      "title": "第二部分：标准对战",
+      "id": "standard",
       "status": "draft",
-      "file": "effects/targets.md",
+      "file": "standard/index.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "章节目录",
+          "text": "章节目录",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "阅读入口",
+          "text": "阅读入口",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/effects\">能力与效果结算\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/actions\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>目录已确认，规则正文待整理。\u003c/strong>\u003c/p>\n\u003cp>标准对战是当前的 1v1 玩法。本部分引用\u003ca href=\"#/common\">通用游戏规则\u003c/a>，补充模式目标、构筑与开局配置，以及本模式的对局自动逻辑；不重复编写通用回合和商店规则。\u003c/p>\n\u003ch2 id=\"章节目录\">章节目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/standard/overview\">8. 模式概览与胜负\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/setup\">9. 构筑与开局配置\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/automatic\">10. 对局自动逻辑\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"阅读入口\">阅读入口\u003c/h2>\n\u003cp>\u003ca href=\"#/start\">返回规则 Wiki 导读\u003c/a>\u003c/p>\n"
     },
     {
-      "title": "效果结算过程",
-      "id": "effects/resolution",
+      "title": "8. 模式概览与胜负",
+      "id": "standard/overview",
       "status": "draft",
-      "file": "effects/resolution.md",
+      "file": "standard/overview.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "模式目标",
+          "text": "模式目标",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
+          "id": "胜利失败与平局",
+          "text": "胜利失败与平局",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "胜负判定时点",
+          "text": "胜负判定时点",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/effects\">能力与效果结算\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/actions\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>标准对战是当前主要设计的 1v1 模式，使用通用的星能运营、卡组成长、棋盘对弈、回合流程与商店购买规则。\u003c/p>\n\u003ch2 id=\"模式目标\">模式目标\u003c/h2>\n\u003cp>待确认标准对战的对局目标和参与者配置。\u003c/p>\n\u003ch2 id=\"胜利失败与平局\">胜利失败与平局\u003c/h2>\n\u003cp>待确认英雄、其他对象或局面变化与胜负的关系，以及双方同时满足条件时的结果。\u003c/p>\n\u003ch2 id=\"胜负判定时点\">胜负判定时点\u003c/h2>\n\u003cp>待确认何时判定结果、是否继续尚未完成的效果，以及对局结束后停止哪些流程。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/common\">通用游戏规则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/setup\">构筑与开局配置\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003c/ul>\n"
     },
     {
-      "title": "关键词与卡牌设计约定",
+      "title": "9. 构筑与开局配置",
+      "id": "standard/setup",
+      "status": "draft",
+      "file": "standard/setup.md",
+      "toc": [
+        {
+          "id": "英雄选择与构筑限制",
+          "text": "英雄选择与构筑限制",
+          "depth": 2
+        },
+        {
+          "id": "初始卡组与额外卡组",
+          "text": "初始卡组与额外卡组",
+          "depth": 2
+        },
+        {
+          "id": "地图与英雄部署",
+          "text": "地图与英雄部署",
+          "depth": 2
+        },
+        {
+          "id": "初始状态与开局步骤",
+          "text": "初始状态与开局步骤",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章定义标准对战的具体构筑和初始配置；卡牌类型与属性使用通用定义。\u003c/p>\n\u003ch2 id=\"英雄选择与构筑限制\">英雄选择与构筑限制\u003c/h2>\n\u003cp>待确认英雄选择、职业限制，以及稀有度和收集属性在构筑中的适用方式。\u003c/p>\n\u003ch2 id=\"初始卡组与额外卡组\">初始卡组与额外卡组\u003c/h2>\n\u003cp>待确认两类卡组的数量、费用、重复卡限制与合法性要求；对局中的商店与卡组循环见\u003ca href=\"#/economy\">第五章\u003c/a>。\u003c/p>\n\u003ch2 id=\"地图与英雄部署\">地图与英雄部署\u003c/h2>\n\u003cp>待确认棋盘尺寸、领地配置、可选部署位置、部署顺序和初始地图对象。\u003c/p>\n\u003ch2 id=\"初始状态与开局步骤\">初始状态与开局步骤\u003c/h2>\n\u003cp>待确认初始星能、牌堆和其他状态，以及开局初始化与第一个回合开始之间的准确边界。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/concepts\">游戏要素\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/match\">回合流程与行动权限\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/automatic\">对局自动逻辑\u003c/a>\u003c/li>\n\u003c/ul>\n"
+    },
+    {
+      "title": "10. 对局自动逻辑",
+      "id": "standard/automatic",
+      "status": "draft",
+      "file": "standard/automatic.md",
+      "toc": [
+        {
+          "id": "资源生成",
+          "text": "资源生成",
+          "depth": 2
+        },
+        {
+          "id": "生成后的处理",
+          "text": "生成后的处理",
+          "depth": 2
+        },
+        {
+          "id": "与回合流程的衔接",
+          "text": "与回合流程的衔接",
+          "depth": 2
+        },
+        {
+          "id": "后续自动机制的归属",
+          "text": "后续自动机制的归属",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>本章保存标准对战在玩家操作之外引入的自动变化方案。具体资源生成机制属于本模式，不作为所有模式必须采用的配置。\u003c/p>\n\u003ch2 id=\"资源生成\">资源生成\u003c/h2>\n\u003cp>待确认从第几回合开始、准确时点、总量与双方分配、位置选择、随机方式、残留、重叠、空间不足及缺额处理。讨论中举例的数量不自动成为规则。\u003c/p>\n\u003ch2 id=\"生成后的处理\">生成后的处理\u003c/h2>\n\u003cp>待确认生成是否引发效果、如何与现有对象交互，以及拾取和奖励；共通的\u003ca href=\"#/lifecycle@%E6%8B%BE%E5%8F%96\">拾取\u003c/a>行为只在第六章定义。\u003c/p>\n\u003ch2 id=\"与回合流程的衔接\">与回合流程的衔接\u003c/h2>\n\u003cp>方案确认后，在\u003ca href=\"#/match\">回合流程\u003c/a>的准确位置引用本章；结算顺序遵循\u003ca href=\"#/effects@%E8%87%AA%E5%8A%A8%E6%9C%BA%E5%88%B6%E4%B8%8E%E5%85%B6%E4%BB%96%E7%BB%93%E7%AE%97%E7%9A%84%E8%A1%94%E6%8E%A5\">自动机制与其他结算的衔接\u003c/a>。\u003c/p>\n\u003ch2 id=\"后续自动机制的归属\">后续自动机制的归属\u003c/h2>\n\u003cp>未来若为标准对战设计野怪刷新、天气或地图事件，在本章描述启用条件、时间、位置、数量、持续和结束方式。此处只确定内容归属，不代表这些机制已加入游戏。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/standard/overview\">标准对战概览\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+    },
+    {
+      "title": "第三部分：关键词库与裁定",
       "id": "reference",
       "status": "draft",
       "file": "reference/index.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "章节目录",
+          "text": "章节目录",
           "depth": 2
         },
         {
-          "id": "章节内容",
-          "text": "章节内容",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "阅读入口",
+          "text": "阅读入口",
           "depth": 2
         }
       ],
-      "html": "\u003cp>关键词、状态与卡面约定。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"章节内容\">章节内容\u003c/h2>\n\u003cp>未完成。具体条目将在规则讨论中逐步建立。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/rulings\">裁定与案例\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>目录已确认，规则正文待整理。\u003c/strong>\u003c/p>\n\u003cp>关键词库是共用规则的一部分，独立展示以便查询。每个词条只保留一处正式定义；裁定与案例必须引用正文，并明确适用模式。\u003c/p>\n\u003ch2 id=\"章节目录\">章节目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/keywords\">11. 关键词库与术语索引\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings\">12. 裁定与完整案例\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"阅读入口\">阅读入口\u003c/h2>\n\u003cp>\u003ca href=\"#/start\">返回规则 Wiki 导读\u003c/a>\u003c/p>\n"
     },
     {
-      "title": "裁定与案例",
-      "id": "rulings",
+      "title": "11. 关键词库与术语索引",
+      "id": "keywords",
       "status": "draft",
-      "file": "rulings/index.md",
+      "file": "reference/keywords.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "词条编写约定",
+          "text": "词条编写约定",
           "depth": 2
         },
         {
-          "id": "本章目录",
-          "text": "本章目录",
+          "id": "入场",
+          "text": "入场",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "后续关键词",
+          "text": "后续关键词",
+          "depth": 2
+        },
+        {
+          "id": "术语索引",
+          "text": "术语索引",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
           "depth": 2
         }
       ],
-      "html": "\u003cp>已确认裁定与未决问题。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"本章目录\">本章目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/contributing\">维护与开发参考\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>关键词库属于共用规则，独立展示以便按卡面查询。正文通过链接引用词条，不另写一套关键词定义。\u003c/p>\n\u003ch2 id=\"词条编写约定\">词条编写约定\u003c/h2>\n\u003cp>每个词条逐项确认含义、适用对象、条件、时点与例外；通用结算链接到\u003ca href=\"#/effects\">第七章\u003c/a>，专属模式限制明确标注。\u003c/p>\n\u003ch2 id=\"入场\">入场\u003c/h2>\n\u003cp>\u003cstrong>待裁定，尚无正式定义。\u003c/strong> 已确认“入场”在关键词库维护。\u003ca href=\"#/actions@%E6%94%BE%E7%BD%AE%E4%B8%8E%E7%AE%AD%E5%A4%B4\">放置规则\u003c/a>引用本词条；哪些进入战场的方式满足条件、效果发生的准确时点及例外，后续通过问答确认。\u003c/p>\n\u003ch2 id=\"后续关键词\">后续关键词\u003c/h2>\n\u003cp>随各主题讨论建立词条；不从旧规则书批量复制定义。\u003c/p>\n\u003ch2 id=\"术语索引\">术语索引\u003c/h2>\n\u003cp>后续按实际正文建立索引，直接链接术语首次定义的位置。当前可查：\u003ca href=\"#/concepts\">卡牌种类与属性\u003c/a>、\u003ca href=\"#/economy@%E6%98%9F%E8%83%BD\">星能\u003c/a>、\u003ca href=\"#/lifecycle@%E5%8C%BA%E5%9F%9F%E8%BD%AC%E7%A7%BB%E4%B8%8E%E7%8A%B6%E6%80%81%E4%BF%9D%E7%95%99\">区域转移\u003c/a>。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/actions\">行动规则\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings\">裁定与完整案例\u003c/a>\u003c/li>\n\u003c/ul>\n"
+    },
+    {
+      "title": "12. 裁定与完整案例",
+      "id": "rulings",
+      "status": "draft",
+      "file": "reference/rulings.md",
+      "toc": [
+        {
+          "id": "常见问题",
+          "text": "常见问题",
+          "depth": 2
+        },
+        {
+          "id": "复杂交互与具体卡牌裁定",
+          "text": "复杂交互与具体卡牌裁定",
+          "depth": 2
+        },
+        {
+          "id": "完整回合与对局复盘",
+          "text": "完整回合与对局复盘",
+          "depth": 2
+        },
+        {
+          "id": "关联章节",
+          "text": "关联章节",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本章范围已确认；下列提纲用于逐项讨论，不表示具体玩法已经裁定。\u003c/p>\n\u003cp>案例只能解释已确认条款。案例发现规则缺口时，先补充并确认正文，再给出正式裁定。\u003c/p>\n\u003ch2 id=\"常见问题\">常见问题\u003c/h2>\n\u003cp>待整理。每项回答链接具体条款，并说明适用模式。\u003c/p>\n\u003ch2 id=\"复杂交互与具体卡牌裁定\">复杂交互与具体卡牌裁定\u003c/h2>\n\u003cp>待整理。记录初始局面、玩家选择、随机结果、逐步结算和最终状态，逐步引用依据。\u003c/p>\n\u003ch2 id=\"完整回合与对局复盘\">完整回合与对局复盘\u003c/h2>\n\u003cp>待整理。用标准对战完整回合和跨回合案例检验规则是否足以唯一复刻过程。不得用案例填补未经确认的玩法。\u003c/p>\n\u003ch2 id=\"关联章节\">关联章节\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/effects\">效果与结算时序\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/keywords\">关键词库与术语索引\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/standard/overview\">标准对战概览\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+    },
+    {
+      "title": "维护附录",
+      "id": "contributing",
+      "status": "draft",
+      "file": "maintenance/index.md",
+      "toc": [
+        {
+          "id": "附录目录",
+          "text": "附录目录",
+          "depth": 2
+        },
+        {
+          "id": "问答与确认流程",
+          "text": "问答与确认流程",
+          "depth": 2
+        },
+        {
+          "id": "唯一性与可复盘性",
+          "text": "唯一性与可复盘性",
+          "depth": 2
+        },
+        {
+          "id": "未来模式",
+          "text": "未来模式",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>目录与编写流程已确认，规则正文待整理。\u003c/strong> 本附录保存规则维护记录，不构成额外玩法。\u003c/p>\n\u003ch2 id=\"附录目录\">附录目录\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/maintenance/versions\">版本与变更记录\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/maintenance/sources\">来源与确认记录\u003c/a>\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"问答与确认流程\">问答与确认流程\u003c/h2>\n\u003cp>每次聚焦一个主题：先对照旧文档与已确认条款，列出冲突和缺口，再用具体局面提出问题。用户确认后，将答案整理成连贯的规则、边界和案例，检查跨章一致性并记录替代了哪些旧说法。讨论可以是问答，正式正文不是聊天记录。\u003c/p>\n\u003cp>旧文档的“正式”标题、现有程序行为或示例都不能代替用户对新规则的确认。未裁定内容保持草稿。\u003c/p>\n\u003ch2 id=\"唯一性与可复盘性\">唯一性与可复盘性\u003c/h2>\n\u003cp>同一规则只维护一个正式定义。流程页说明时间顺序，行动页说明操作步骤，状态章节说明结果变化，时序章节说明多项效果如何组合，关键词库说明词条专属语义。其他位置使用链接。\u003c/p>\n\u003cp>给定相同初始局面、玩家选择和随机结果，正文应足以唯一推演整局。用完整案例检查选择、支付、触发、失败、检查与行动结束的遗漏。\u003c/p>\n\u003ch2 id=\"未来模式\">未来模式\u003c/h2>\n\u003cp>未来 Rogue 或剧情模式实际开始设计时再新增模式章节。沿用通用的星能运营、卡组成长、棋盘对弈、回合流程和商店购买，明确记录该模式的补充与例外。\u003c/p>\n\u003cp>\u003ca href=\"#/start\">返回导读\u003c/a>\u003c/p>\n"
     },
     {
       "title": "待裁定问题",
       "id": "rulings/pending",
       "status": "draft",
-      "file": "rulings/pending.md",
+      "file": "maintenance/pending.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "问题记录方式",
+          "text": "问题记录方式",
           "depth": 2
         },
         {
-          "id": "规则与示例",
-          "text": "规则与示例",
+          "id": "当前待讨论主题",
+          "text": "当前待讨论主题",
           "depth": 2
         },
         {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "已确认内容",
+          "text": "已确认内容",
           "depth": 2
         }
       ],
-      "html": "\u003cp>本页尚未完成，等待逐项讨论与整理。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 暂无已确认的规则正文。本页标题仅用于组织文档，不代表玩法已确定。\u003c/p>\n\u003ch2 id=\"规则与示例\">规则与示例\u003c/h2>\n\u003cp>未完成。待确认本主题的定义、边界与案例后填写。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/rulings\">裁定与案例\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"#/effects\">相关主题\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本页收集冲突与缺口，不把讨论建议写成现行规则。\u003c/p>\n\u003ch2 id=\"问题记录方式\">问题记录方式\u003c/h2>\n\u003cp>每项记录所属章节、来源、冲突或缺口、具体局面、需要用户决定的问题。确认后将规则写入唯一归属页，并在来源记录保留依据。\u003c/p>\n\u003ch2 id=\"当前待讨论主题\">当前待讨论主题\u003c/h2>\n\u003cul>\n\u003cli>按\u003ca href=\"#/common\">通用游戏规则\u003c/a>逐章确认概念、完整过程及边界。\u003c/li>\n\u003cli>本版已取消高度；占格、飞行、拾取物之间的关系需重新明确。\u003c/li>\n\u003cli>\u003ca href=\"#/standard/automatic@%E8%B5%84%E6%BA%90%E7%94%9F%E6%88%90\">标准资源生成\u003c/a>的时点、数量、位置及异常情况待确认。\u003c/li>\n\u003cli>\u003ca href=\"#/keywords@%E5%85%A5%E5%9C%BA\">入场\u003c/a>等关键词的准确条件与时点待确认。\u003c/li>\n\u003cli>两版旧规则书存在死亡卡牌归属、反击条件、成本取消等差异，需在对应主题逐项裁定，不默认采用任一版本。\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"已确认内容\">已确认内容\u003c/h2>\n\u003cp>目录和范围决策见\u003ca href=\"#/maintenance/sources\">来源与确认记录\u003c/a>；已确认的目录结构不等于这些具体玩法已经定稿。\u003c/p>\n"
     },
     {
-      "title": "维护与开发参考",
-      "id": "contributing",
+      "title": "版本与变更记录",
+      "id": "maintenance/versions",
       "status": "draft",
-      "file": "contributing/index.md",
+      "file": "maintenance/versions.md",
       "toc": [
         {
-          "id": "内容状态",
-          "text": "内容状态",
+          "id": "目录重建",
+          "text": "目录重建",
           "depth": 2
         },
         {
-          "id": "章节内容",
-          "text": "章节内容",
-          "depth": 2
-        },
-        {
-          "id": "相关页面",
-          "text": "相关页面",
+          "id": "后续版本记录",
+          "text": "后续版本记录",
           "depth": 2
         }
       ],
-      "html": "\u003cp>规则维护与开发参考入口。\u003c/p>\n\u003ch2 id=\"内容状态\">内容状态\u003c/h2>\n\u003cp>\u003cstrong>待整理。\u003c/strong> 本章仅建立文档位置，尚无已确认规则。旧文档不会自动成为这里的正式内容。\u003c/p>\n\u003ch2 id=\"章节内容\">章节内容\u003c/h2>\n\u003cp>未完成。具体条目将在规则讨论中逐步建立。\u003c/p>\n\u003ch2 id=\"相关页面\">相关页面\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"#/start\">开始阅读\u003c/a>\u003c/li>\n\u003c/ul>\n"
+      "html": "\u003cp>\u003cstrong>正式规则版本待整理。\u003c/strong> 当前只完成目录确认，尚未发布正式规则版本。\u003c/p>\n\u003ch2 id=\"目录重建\">目录重建\u003c/h2>\n\u003cul>\n\u003cli>建立导读、通用游戏规则、标准对战、关键词库与裁定、维护附录五组导航。\u003c/li>\n\u003cli>建立十二章及其讨论提纲，回合流程和商店购买归入通用规则。\u003c/li>\n\u003cli>标准对战单列资源生成等自动逻辑，通用状态变化章节不承载该方案。\u003c/li>\n\u003cli>关键词集中维护，正文引用；取消高度维度，相关细节仍待裁定。\u003c/li>\n\u003cli>所有页面保持草稿，没有将旧文档内容自动确认为新规则。\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"后续版本记录\">后续版本记录\u003c/h2>\n\u003cp>正式条款确认或变更后，记录版本、生效范围、条款链接、变化原因和替代关系。模式参数的变化必须能追溯到对应方案；尚未讨论的内容不补造版本号或生效日期。\u003c/p>\n\u003cp>\u003ca href=\"#/maintenance/sources\">来源与确认记录\u003c/a> · \u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>\u003c/p>\n"
+    },
+    {
+      "title": "来源与确认记录",
+      "id": "maintenance/sources",
+      "status": "draft",
+      "file": "maintenance/sources.md",
+      "toc": [
+        {
+          "id": "本轮已确认决策",
+          "text": "本轮已确认决策",
+          "depth": 2
+        },
+        {
+          "id": "参考材料",
+          "text": "参考材料",
+          "depth": 2
+        },
+        {
+          "id": "目录交付记录",
+          "text": "目录交付记录",
+          "depth": 2
+        }
+      ],
+      "html": "\u003cp>\u003cstrong>规则正文待整理。\u003c/strong> 本页记录已经确认的范围和资料的使用边界，不复制讨论全文或程序实现说明。\u003c/p>\n\u003ch2 id=\"本轮已确认决策\">本轮已确认决策\u003c/h2>\n\u003cul>\n\u003cli>使用同一 Wiki 维护通用游戏规则、标准对战，以及未来实际设计的新模式。\u003c/li>\n\u003cli>星能运营、卡组成长、棋盘对弈、回合流程和商店购买是所有模式共享的核心。\u003c/li>\n\u003cli>卡牌种类及每类属性归入游戏要素；状态变化另章定义。\u003c/li>\n\u003cli>当前资源生成机制归入标准对战的对局自动逻辑；保留对局规则自行引发变化的通用结算约定。\u003c/li>\n\u003cli>本版取消高度维度，不据此自行确定飞行、占格或拾取的替代玩法。\u003c/li>\n\u003cli>关键词统一由词条定义，正文链接引用；“入场”先建立待裁定入口。\u003c/li>\n\u003cli>规则只使用游戏语言，但结算必须精确到可依据初始局面、选择和随机结果复刻整局。\u003c/li>\n\u003cli>后续以逐主题问答确认规则；本轮只重建已批准的目录和提纲。\u003c/li>\n\u003c/ul>\n\u003ch2 id=\"参考材料\">参考材料\u003c/h2>\n\u003cul>\n\u003cli>\u003ca href=\"https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/Time-Block%20Heroes%20Official%20Rulebook.zh-CN.md\" rel=\"noopener noreferrer\">旧《正式规则书与结算手册》\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/Time-Block%20Heroes%20Rulebook.zh-CN.md\" rel=\"noopener noreferrer\">旧《中文规则书》\u003c/a>\u003c/li>\n\u003cli>\u003ca href=\"https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/current-game-logic/README.zh-CN.md\" rel=\"noopener noreferrer\">当前开发者文档入口\u003c/a>\u003c/li>\n\u003c/ul>\n\u003cp>以上仅为只读参考。旧文档混合了设计、历史和实现信息；现有实现用于对照，不能替代玩法裁定。每个新条款确认后，再补充准确来源与替代关系。\u003c/p>\n\u003ch2 id=\"目录交付记录\">目录交付记录\u003c/h2>\n\u003cp>本次目录重建的范围与验收记录见\u003ca href=\"https://github.com/Time-Block-Hero/time-block-hero-unified/issues/42\" rel=\"noopener noreferrer\">任务 #42\u003c/a>。审批目录只授权本次结构调整，未确认的玩法继续保留在\u003ca href=\"#/rulings/pending\">待裁定问题\u003c/a>。\u003c/p>\n"
     }
   ]
 };

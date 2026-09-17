@@ -6,6 +6,8 @@
 
 ### Website organization
 
+- 按已确认大纲重建规则 Wiki：五组导航、十二章及维护附录，回合流程与商店购买归入通用规则，标准对战单列自动资源逻辑；关键词统一链接到词条，正文保持待裁定草稿。
+
 - Organized the inline bestiary into six collapsible race groups and 23 branches, preserving all source dossiers and separating shared principles from individual art references.
 - Added explicit incomplete entries, branch design constraints and production-reference routing for future consistent assets.
 

@@ -1,71 +1,71 @@
 [
   {
     "file": "start/index.md",
-    "pages": [
-      {
-        "file": "start/overview.md"
-      },
-      {
-        "file": "start/quickstart.md"
-      }
-    ]
-  },
-  {
-    "file": "concepts/index.md",
-    "pages": [
-      {
-        "file": "concepts/board.md"
-      },
-      {
-        "file": "concepts/glossary.md"
-      }
-    ]
-  },
-  {
-    "file": "match/index.md",
-    "pages": [
-      {
-        "file": "match/turns.md"
-      }
-    ]
-  },
-  {
-    "file": "economy/index.md",
     "pages": []
   },
   {
-    "file": "actions/index.md",
+    "file": "common/index.md",
     "pages": [
       {
-        "file": "actions/combat.md"
+        "file": "common/principles.md"
+      },
+      {
+        "file": "common/elements.md"
+      },
+      {
+        "file": "common/rounds.md"
+      },
+      {
+        "file": "common/actions.md"
+      },
+      {
+        "file": "common/economy.md"
+      },
+      {
+        "file": "common/lifecycle.md"
+      },
+      {
+        "file": "common/effects.md"
       }
     ]
   },
   {
-    "file": "effects/index.md",
+    "file": "standard/index.md",
     "pages": [
       {
-        "file": "effects/targets.md"
+        "file": "standard/overview.md"
       },
       {
-        "file": "effects/resolution.md"
+        "file": "standard/setup.md"
+      },
+      {
+        "file": "standard/automatic.md"
       }
     ]
   },
   {
     "file": "reference/index.md",
-    "pages": []
-  },
-  {
-    "file": "rulings/index.md",
     "pages": [
       {
-        "file": "rulings/pending.md"
+        "file": "reference/keywords.md"
+      },
+      {
+        "file": "reference/rulings.md"
       }
     ]
   },
   {
-    "file": "contributing/index.md",
-    "pages": []
+    "file": "maintenance/index.md",
+    "pages": [
+      {
+        "file": "maintenance/pending.md"
+      },
+      {
+        "file": "maintenance/versions.md"
+      },
+      {
+        "file": "maintenance/sources.md"
+      }
+    ]
   }
 ]

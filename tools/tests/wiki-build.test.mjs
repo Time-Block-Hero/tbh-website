@@ -41,14 +41,14 @@ test('duplicate headings get unique predictable anchors', () => {
   assert.match(result.html, /id="重复-2"/);
 });
 
-test('checked-in data matches the Markdown build and contains only draft placeholders', async () => {
+test('checked-in data matches the Markdown build and contains only draft outlines', async () => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'tbh-wiki-test-'));
   try {
     await fs.cp(path.join(root, 'docs/rules'), path.join(temp, 'docs/rules'), { recursive: true });
     const output = await buildWiki(temp);
     const generated = await fs.readFile(path.join(temp, 'wiki-data.js'), 'utf8');
     assert.equal(generated, await fs.readFile(path.join(root, 'wiki-data.js'), 'utf8'));
-    assert.equal(output.sections.length, 9);
+    assert.equal(output.sections.length, 5);
     assert.ok(output.pages.length > output.sections.length);
     assert.ok(output.pages.every(page => page.status === 'draft' && /待整理/.test(page.html)));
     const context = { window: {} };
