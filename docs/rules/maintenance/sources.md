@@ -13,9 +13,11 @@ status: draft
 - 卡牌种类及每类属性归入游戏要素；状态变化另章定义。
 - 当前资源生成机制归入标准对战的对局自动逻辑；保留对局规则自行引发变化的通用结算约定。
 - 本版取消高度维度，不据此自行确定飞行、占格或拾取的替代玩法。
-- 关键词统一由词条定义，正文链接引用；“入场”先建立待裁定入口。
+- 关键词统一由词条定义，正文链接引用；关键词与展开文本同等有效。入场、保留、移除、建造与圣盾的讨论结果已录入，未定边界另标。
 - 规则只使用游戏语言，但结算必须精确到可依据初始局面、选择和随机结果复刻整局。
-- 目录重建已完成；用户随后授权逐章起草：先形成完整草案，再交用户审阅，通过问答与批注修改，一章确认后再推进下一章。
+- 目录重建已完成；默认逐章起草与审阅。本次用户明确授权更新第一章，并一并起草第二、第三、第四章，完成后集中审阅。
+- 先判断规则或效果的适用性和有效性，再应用有效且明确适用的例外，仅改写明示部分。废弃旧稿按模式、卡牌、关键词／状态、基础规则划分的来源等级。
+- 效果描述行为，关键词简写效果规则，状态记录持续条件、标记或累计数值；状态并非另一个优先级。
 
 ## 参考材料
 
@@ -31,15 +33,15 @@ status: draft
 
 ## 第一章来源
 
-本章为待审阅草案，采用以下资料与编辑性澄清；本表不表示条款已确认。
+本章保留草稿状态；其中 GEN-003 至 GEN-005 的核心原则已经用户确认，其余细节继续审阅。
 
 | 条款 | 依据与整理方式 |
 | --- | --- |
 | GEN-001 | 本次对话确认的通用核心与标准模式边界；将共用规则与模式补充的关系整理成连续正文。 |
 | GEN-002 | 旧长版前言“文档约定”；补充“不能”和“除非”的阅读说明，不赋予它们新的绝对优先权。 |
-| GEN-003 | 旧长版前言“规则优先级”第 1–4 层；将提示与表现单独说明。仅真正冲突时比较优先级、区别来源层级和执行顺序，是为消除歧义所作的待审阅澄清。 |
-| GEN-004 | 旧长版的明确改写用语和默认结算原则；用“无视箭头需求”的限定范围解释，未确定具体放置条件。 |
-| GEN-005 | 本次对话确认的关键词唯一来源及链接方式。 |
+| GEN-003 | 本次对话已确认有效性先判断、明确例外优先于相应默认处理；替代旧长版及初稿的来源等级。规则高于提示与表现保留。 |
+| GEN-004 | 用户确认例外仅改写明确部分；护甲、圣盾、保留及箭头例子用于说明范围，不越权确定词条全部边界。 |
+| GEN-005 | 用户确认关键词是效果规则简写，与展开文本同等有效；效果与状态定义同本次讨论。 |
 | GEN-006 | 旧长版“本回合”“本次结算”约定；将旧程序术语改写为行动及其后续处理，并对照回合语义文档的双方操作边界。延迟到其他时点的效果不自动延长本次结算，是避免过度扩大旧定义的待审阅澄清。 |
 
 旧长版的程序结构不进入本章。来源固定为上方链接中的 unified 提交；当前规则实现按该项目引用的规则包版本核对，不能用规则包仓库较新的提交替代。
@@ -54,4 +56,43 @@ status: draft
 
 旧内容中的“军团登陆艇”虽写有领地外放置文字，但在上述版本仍标记为未实现、不能正常构筑准入；因此不把它作为当前可用卡的裁定案例。证据：[内容定义及未实现说明](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Resources/TimeBlockRules/GameContent/v1/game-content.json#L1442-L1468)、[构筑准入检查](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Core/Decks/DeckConstructionPolicy.cs#L281-L286)。
 
-本轮尚未找到足以确立所有规则通用优先关系的实现依据；需要用户确认的事项仍见[第一章审阅事项](pending.md#第一章审阅事项)。
+新版宪法原则依据用户明确决定，不以实现是否已经符合决定其有效性。实现核对仅说明与新设计的差距；剩余边界见[第一章审阅事项](pending.md#第一章审阅事项)。
+
+
+## 第二至第四章来源与核对
+
+本轮用户要求三章一并完成后审阅；以下均为草案来源，不表示实现自动获得设计批准。旧规则以同一 unified 提交固定，卡牌字段以 website 当前 `data/cards.json` 为准。现行卡表有 90 张随从和 47 张魔法；英雄使用随从类型另加英雄身份，未修改任何卡牌设计数据。
+
+| 章节／主题 | 旧资料 | 本稿整理方式 |
+| --- | --- | --- |
+| 第二章对象与属性 | 长版第 66–197 行；短版第 175–194 行 | 区分控制／拥有、职业／身份；类型草案采用现行卡表的随从与魔法。缺少属性不解释为数值为零。 |
+| 第二章区域与空间 | 长版第 238–314 行 | 保留牌堆循环与区域区分；依据用户决定移除高度，拾取物共存作为待审阅方案。 |
+| 第二章状态 | 用户关于耀斑连射、建造与圣盾的说明 | 状态可记录累计量；卡牌因保留增强不代表自带保留。 |
+| 第三章回合 | 长版第 318–545 行；短版第 147–154 行 | 用较新回合说明与固定实现核对五步顺序，明确旧清理顺序冲突。 |
+| 第四章放置与移动 | 长版第 752–805 行；短版第 307–318 行 | 保留明示放置成本为草案，注明当前未接入；移动明确逐格及中止，自动选路规则未定。 |
+| 第四章攻击与推进 | 长版第 807–836 行；短版第 330–332 行 | 反击列冲突；推进暂保留短版可选耗 1 点，与当前自动免费明确区分。 |
+| 第四章主动能力 | 长版第 480–486 行；较新的成本与失败说明 | 草案采用选择后付费、再反制，注明旧文差异。 |
+
+### 第二章实现证据
+
+- [类型定义](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Core/Cards/CardType.cs#L3-L7)与[卡牌属性](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Core/Cards/CardDefinition.cs#L19-L74)。
+- [空间距离与方向](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/BoardRuleQueries.cs#L334-L414)。旧高度判断仍存在，不作为新规则依据。
+- [中立职业的拾取限制](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PickupCollectionPolicy.cs#L41-L45)。
+- [公开数量与本方可见内容](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Application/ProjectionService.Snapshot.cs#L117-L160)；[时停信息处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Application/ProjectionService.Snapshot.cs#L180-L217)。缺少展示不等于禁止查看。
+
+### 第三章实现证据
+
+- [回合开始处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Match/RoundStartCommandHandler.cs#L14-L132)：刷新、自动机制、抽牌及后续触发。
+- [阶段权限和行动顺序](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PhasePolicy.cs#L35-L155)：时停指定能力、时动窗口与放置数／完成顺序／席位。
+- [回合结束顺序](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.RoundEndCycleWork.cs#L98-L125)与[手牌、魔法清理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/TurnMaintenanceRuleHandler.cs#L70-L125)。
+- [回合语义文档](https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/current-game-logic/architecture/05-match-round-semantics.zh-CN.md)。若泛称临时单位清理与固定代码不一致，不自动写成所有衍生物消失。
+
+### 第四章实现证据
+
+- [普通放置](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Match/PlaceCardCommandHandler.cs#L16-L84)与[放置规则](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/CardPlacementPolicy.cs#L22-L64)：直接入场和计数；未执行旧文独立放置成本。
+- [逐格路径处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.PathMoveWork.cs#L30-L69)：途中失去来源、偏离路线或遇阻时停止。
+- [攻击扣次与取消](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/AttackRuleHandler.cs#L91-L171)及[战斗伤害与反击](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/ResolveAttackRuleHandler.cs#L38-L99)。
+- [当前自动免费推进](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/AdvanceAfterKillRuleHandler.cs#L34-L57)：不等于本稿已确认设计。
+- [能力选择、重验与成本](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.AbilityActivationWork.cs#L127-L260)、[反制与成功发动](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/EffectActivationRuleHandler.cs#L85-L143)及[较新成本说明](https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/current-game-logic/domain/04-costs-and-failure.zh-CN.md)。
+
+本轮只读检查源码，没有运行 Unity 对局，也没有修改 unified 或规则包。规则文档的构建与链接检查不能代替游戏实现验收。所有待审阅选择见[问题汇总](pending.md)。
