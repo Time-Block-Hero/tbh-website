@@ -41,6 +41,25 @@ test('duplicate headings get unique predictable anchors', () => {
   assert.match(result.html, /id="重复-2"/);
 });
 
+test('section numbering preserves semantic anchors and displayed hierarchy', () => {
+  const [result] = renderPages([page('concepts', '## 2.2 卡牌种类\n\n### 2.2.3 资源牌\n\n[资源](#资源牌)')]);
+  assert.deepEqual(result.toc, [
+    { id: '卡牌种类', text: '2.2 卡牌种类', depth: 2 },
+    { id: '资源牌', text: '2.2.3 资源牌', depth: 3 }
+  ]);
+  assert.match(result.html, /id="资源牌">2\.2\.3 资源牌/);
+  assert.match(result.html, /href="#\/concepts@%E8%B5%84%E6%BA%90%E7%89%8C"/);
+});
+
+test('local illustrations open at full size without allowing remote or executable images', () => {
+  const [result] = renderPages([page('concepts', '![棋盘](../../../assets/wiki/board-space.svg)')]);
+  assert.match(result.html, /class="wiki-illustration" href="\.\/assets\/wiki\/board-space.svg" target="_blank" rel="noopener noreferrer"/);
+  assert.match(result.html, /alt="棋盘"/);
+  for (const href of ['https://example.com/image.svg', 'javascript:bad', '../../../assets/wiki/../secret.svg']) {
+    assert.throws(() => renderPages([page('concepts', `![bad](${href})`)]), /unsupported image/);
+  }
+});
+
 test('checked-in data matches the Markdown build and contains only unapproved draft pages', async () => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'tbh-wiki-test-'));
   try {

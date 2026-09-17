@@ -394,6 +394,16 @@ kbd {
   max-width: 100%;
   height: auto;
 }
+.wiki-prose .wiki-illustration {
+  display: block;
+  cursor: zoom-in;
+}
+.wiki-prose .wiki-illustration img {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
 .wiki-prose code {
   font-size: 12px;
   background: #252a22;

@@ -22,7 +22,9 @@ function headings(markdown) {
   const tokens = [];
   marked.walkTokens(marked.lexer(markdown), token => { if (token.type === 'heading') tokens.push(token); });
   return tokens.map(token => {
-    const base = token.text.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') || 'section';
+    // Reading numbers may change; existing rule links keep their semantic anchors.
+    const anchorText = token.text.replace(/^\d+(?:\.\d+)+\s+/, '');
+    const base = anchorText.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') || 'section';
     const count = seen.get(base) || 0;
     seen.set(base, count + 1);
     return { id: `${base}${count ? `-${count + 1}` : ''}`, text: token.text, depth: token.depth };
@@ -62,7 +64,8 @@ export function renderPages(pages) {
       image({ href, text }) {
         // Images are local static assets only; no remote tracking or executable URLs.
         if (!/^\.\.\/\.\.\/\.\.\/assets\/[a-zA-Z0-9/_ .-]+\.(png|jpe?g|webp|gif|svg)$/i.test(href) || href.includes('/../', 9)) throw new Error(`${page.file}: unsupported image ${href}`);
-        return `<img src="${escapeHTML(href.replace('../../../', './'))}" alt="${escapeHTML(text)}" loading="lazy">`;
+        const asset = escapeHTML(href.replace('../../../', './'));
+        return `<a class="wiki-illustration" href="${asset}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(text)}（打开原图）"><img src="${asset}" alt="${escapeHTML(text)}" loading="lazy"></a>`;
       }
     };
     page.html = new Marked({ renderer, gfm: true }).parse(page.markdown);

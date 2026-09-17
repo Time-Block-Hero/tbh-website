@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 810" role="img" aria-labelledby="title desc"><title id="title">图 2-A 棋盘空间关系</title><desc id="desc">四向普通相邻与八向箭头不同。对角距离为二。资源只能生成在没有任何卡牌的格子；已在场的资源允许玩家卡牌放置或移动进入。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#e6ad77"/></marker></defs>
+<rect width="800" height="810" rx="16" fill="#141a17"/>
+<style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif;fill:#f2eee4} .small{fill:#bfc9c0} .arrow{fill:none;stroke:#e6ad77;stroke-width:3;marker-end:url(#arrow);stroke-linejoin:round} .node{fill:#202e28;stroke:#738b7b;stroke-width:2}</style>
+<text x="32" y="46" font-size="28" text-anchor="start">棋盘空间关系</text>
+<text x="32" y="77" font-size="17" text-anchor="start" style="fill:#bfc9c0">局部示意 · 不代表模式地图尺寸</text>
+<text x="64" y="124" font-size="21" text-anchor="start">普通相邻：上下左右</text>
+<rect x="64" y="148" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="140" y="148" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="216" y="148" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="64" y="224" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="140" y="224" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="216" y="224" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="64" y="300" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="140" y="300" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="216" y="300" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><text x="175" y="267" font-size="22" text-anchor="middle">牌</text><text x="175" y="192" font-size="23" text-anchor="middle" style="fill:#b6e9c8">1</text><text x="99" y="268" font-size="23" text-anchor="middle" style="fill:#b6e9c8">1</text><text x="251" y="268" font-size="23" text-anchor="middle" style="fill:#b6e9c8">1</text><text x="175" y="344" font-size="23" text-anchor="middle" style="fill:#b6e9c8">1</text><text x="251" y="191" font-size="23" text-anchor="middle" style="fill:#e6ad77">2</text>
+<text x="64" y="408" font-size="18" text-anchor="start" style="fill:#b6e9c8">绿色格：距离 1</text>
+<text x="64" y="440" font-size="18" text-anchor="start">对角格：距离 2，至少走两步</text>
+<text x="456" y="124" font-size="21" text-anchor="start">箭头：八个可选方向</text>
+<rect x="456" y="148" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="532" y="148" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="608" y="148" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="456" y="224" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="532" y="224" width="70" height="70" rx="6" fill="#345747" stroke="#597161"/><rect x="608" y="224" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="456" y="300" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="532" y="300" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><rect x="608" y="300" width="70" height="70" rx="6" fill="#202923" stroke="#597161"/><path class="arrow" d="M567 235 L567 199"/><path class="arrow" d="M591 235 L627 199"/><path class="arrow" d="M591 259 L627 259"/><path class="arrow" d="M591 283 L627 319"/><path class="arrow" d="M567 283 L567 319"/><path class="arrow" d="M543 283 L507 319"/><path class="arrow" d="M543 259 L507 259"/><path class="arrow" d="M543 235 L507 199"/><text x="567" y="267" font-size="22" text-anchor="middle">牌</text>
+<text x="456" y="408" font-size="18" text-anchor="start">箭头方向 ≠ 普通移动方向</text>
+<text x="456" y="440" font-size="18" text-anchor="start" style="fill:#bfc9c0">实际箭头以具体卡牌为准</text>
+<path d="M32 470H768" stroke="#46584c"/>
+<text x="40" y="514" font-size="23" text-anchor="start">生成限制</text>
+<text x="40" y="550" font-size="19" text-anchor="start">只允许空格；已有资源也不是空格。</text>
+<rect class="node" x="42" y="573" width="222" height="65" rx="12"/><text x="153.0" y="612.5" font-size="22" text-anchor="middle">空格</text>
+<text x="153" y="665" font-size="19" text-anchor="middle" style="fill:#b6e9c8">可生成</text>
+<rect class="node" x="286" y="573" width="222" height="65" rx="12"/><text x="397.0" y="612.5" font-size="22" text-anchor="middle">已有随从／法术</text>
+<text x="397" y="665" font-size="19" text-anchor="middle" style="fill:#e6ad77">不能生成</text>
+<rect class="node" x="530" y="573" width="222" height="65" rx="12"/><text x="641.0" y="612.5" font-size="22" text-anchor="middle">已有资源</text>
+<text x="641" y="665" font-size="19" text-anchor="middle" style="fill:#e6ad77">不能生成</text>
+<text x="40" y="716" font-size="23" text-anchor="start">共存例外</text>
+<text x="40" y="752" font-size="19" text-anchor="start">资源已在场时，玩家可放置或移动卡牌进入该格并拾取。</text>
+<text x="40" y="782" font-size="17" text-anchor="start" style="fill:#bfc9c0">资源能共存，不代表资源生成可以忽略空格限制。</text>
+</svg>
