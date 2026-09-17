@@ -6,6 +6,8 @@
 
 ### Website organization
 
+- 开始逐章编写规则正文：第一章总则形成带稳定条款编号的待审阅草案，附来源与未决优先级边界；草稿提示同时适用于提纲与已起草正文。
+
 - 按已确认大纲重建规则 Wiki：五组导航、十二章及维护附录，回合流程与商店购买归入通用规则，标准对战单列自动资源逻辑；关键词统一链接到词条，正文保持待裁定草稿。
 
 - Organized the inline bestiary into six collapsible race groups and 23 branches, preserving all source dossiers and separating shared principles from individual art references.

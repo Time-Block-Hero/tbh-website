@@ -98,7 +98,7 @@
       `SECTION ${String(sectionIndex).padStart(2, "0")} / RULES WIKI`;
     const status = document.getElementById("wiki-status");
     status.textContent =
-      { draft: "待整理", approved: "已确认", retired: "已归档" }[page.status] ||
+      { draft: "草稿", approved: "已确认", retired: "已归档" }[page.status] ||
       "待整理";
     status.dataset.status = page.status;
     document.getElementById("wiki-draft-banner").hidden =
