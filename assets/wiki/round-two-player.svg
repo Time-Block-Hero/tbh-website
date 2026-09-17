@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 1330" role="img" aria-labelledby="title desc"><title id="title">图 3-A 双人对战回合流程</title><desc id="desc">双方同步时停，同步结束后统一湮灭，再按顺序各进行自己的时动阶段。双方同步购买，进入回合结束时同时记录所有玩家手牌快照，后续新增牌不加入本次弃牌。</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#e6ad77"/></marker></defs>
+<rect width="820" height="1330" rx="16" fill="#141a17"/>
+<style>text{font-family:"PingFang SC","Microsoft YaHei",sans-serif} .arrow{fill:none;stroke:#e6ad77;stroke-width:3;marker-end:url(#arrow);stroke-linejoin:round}</style>
+<text x="36" y="45" font-size="29" fill="#f2eee4" text-anchor="start">双人对战 · 一个回合</text>
+<text x="36" y="77" font-size="17" fill="#bfc9c0" text-anchor="start">示例 A 先时动；本回合排序为 B 先时，交换两个时动阶段。</text>
+<rect x="180" y="107" width="460" height="115" rx="12" fill="#252d28" stroke="#6c8273" stroke-width="2"/><text x="410.0" y="138" font-size="23" fill="#f2eee4" text-anchor="middle">回合开始 · 无操作窗口</text><text x="410.0" y="167" font-size="18" fill="#d1d9d1" text-anchor="middle">刷新行动额度与每回合效果次数</text><text x="410.0" y="193" font-size="18" fill="#d1d9d1" text-anchor="middle">生成资源 → 双方抽牌 → 抽牌效果自动选择</text>
+<path class="arrow" d="M410 222V250H208V282"/>
+<path class="arrow" d="M410 250H612V282"/>
+<rect x="36" y="282" width="344" height="117" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="208.0" y="313" font-size="23" fill="#f2eee4" text-anchor="middle">A 的时停窗口</text><text x="208.0" y="342" font-size="18" fill="#d1d9d1" text-anchor="middle">阶段开始效果 → 放置与入场</text><text x="208.0" y="368" font-size="18" fill="#d1d9d1" text-anchor="middle">A 完成后关闭自己的窗口</text>
+<rect x="440" y="282" width="344" height="117" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="612.0" y="313" font-size="23" fill="#f2eee4" text-anchor="middle">B 的时停窗口</text><text x="612.0" y="342" font-size="18" fill="#d1d9d1" text-anchor="middle">阶段开始效果 → 放置与入场</text><text x="612.0" y="368" font-size="18" fill="#d1d9d1" text-anchor="middle">B 完成后关闭自己的窗口</text>
+<text x="410" y="334" font-size="18" fill="#e6ad77" text-anchor="middle">同</text>
+<text x="410" y="360" font-size="18" fill="#e6ad77" text-anchor="middle">步</text>
+<path class="arrow" d="M208 399V430H410V462"/>
+<path d="M612 399V430H410" stroke="#e6ad77" stroke-width="3" fill="none"/>
+<rect x="140" y="462" width="540" height="114" rx="12" fill="#252d28" stroke="#6c8273" stroke-width="2"/><text x="410.0" y="493" font-size="23" fill="#f2eee4" text-anchor="middle">双方完成 → 时停结束结算</text><text x="410.0" y="522" font-size="18" fill="#d1d9d1" text-anchor="middle">汇合放置 → 检查同格冲突与湮灭例外</text><text x="410.0" y="548" font-size="18" fill="#d1d9d1" text-anchor="middle">无窗口，自动选择 → 完成后统一揭示</text>
+<path class="arrow" d="M410 576V613"/>
+<rect x="180" y="613" width="460" height="88" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="410.0" y="644" font-size="23" fill="#f2eee4" text-anchor="middle">A 的时动阶段</text><text x="410.0" y="673" font-size="18" fill="#d1d9d1" text-anchor="middle">只有 A 有窗口；B 的效果选择自动处理</text>
+<path class="arrow" d="M410 701V737"/>
+<rect x="180" y="737" width="460" height="88" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="410.0" y="768" font-size="23" fill="#f2eee4" text-anchor="middle">B 的时动阶段</text><text x="410.0" y="797" font-size="18" fill="#d1d9d1" text-anchor="middle">只有 B 有窗口；A 的效果选择自动处理</text>
+<text x="655" y="677" font-size="18" fill="#e6ad77" text-anchor="start">依</text>
+<text x="655" y="703" font-size="18" fill="#e6ad77" text-anchor="start">次</text>
+<text x="655" y="729" font-size="18" fill="#e6ad77" text-anchor="start">进</text>
+<text x="655" y="755" font-size="18" fill="#e6ad77" text-anchor="start">行</text>
+<path class="arrow" d="M410 825V855H208V885"/>
+<path class="arrow" d="M410 855H612V885"/>
+<rect x="36" y="885" width="344" height="90" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="208.0" y="916" font-size="23" fill="#f2eee4" text-anchor="middle">A 的购买窗口</text><text x="208.0" y="945" font-size="18" fill="#d1d9d1" text-anchor="middle">购买／刷新／效果选择</text>
+<rect x="440" y="885" width="344" height="90" rx="12" fill="#244b3a" stroke="#7dbc97" stroke-width="2"/><text x="612.0" y="916" font-size="23" fill="#f2eee4" text-anchor="middle">B 的购买窗口</text><text x="612.0" y="945" font-size="18" fill="#d1d9d1" text-anchor="middle">购买／刷新／效果选择</text>
+<text x="410" y="928" font-size="18" fill="#e6ad77" text-anchor="middle">同步</text>
+<path class="arrow" d="M208 975V1004H410V1040"/>
+<path d="M612 975V1004H410" stroke="#e6ad77" stroke-width="3" fill="none"/>
+<rect x="102" y="1040" width="616" height="148" rx="12" fill="#252d28" stroke="#6c8273" stroke-width="2"/><text x="410.0" y="1071" font-size="23" fill="#f2eee4" text-anchor="middle">双方完成 → 回合结束 · 无窗口</text><text x="410.0" y="1100" font-size="18" fill="#d1d9d1" text-anchor="middle">进入瞬间同时固定双方手牌快照</text><text x="410.0" y="1126" font-size="18" fill="#d1d9d1" text-anchor="middle">结束效果 → 到期 → 清理法术 → 按快照弃牌</text><text x="410.0" y="1152" font-size="18" fill="#d1d9d1" text-anchor="middle">快照之后新增的手牌，不追加进本次弃牌</text>
+<path class="arrow" d="M410 1188V1225"/>
+<text x="410" y="1258" font-size="24" fill="#e6ad77" text-anchor="middle">下一回合</text>
+<text x="410" y="1297" font-size="17" fill="#bfc9c0" text-anchor="middle">所有阶段结束效果均在对应窗口关闭后处理。</text>
+</svg>
