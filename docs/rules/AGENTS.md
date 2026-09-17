@@ -13,10 +13,10 @@ These instructions apply to this directory and its descendants. Communicate with
 ## Structure and explanation
 
 - Write game rules, not programming architecture. Explain timing, choices, legality, costs, cancellation, state changes and follow-up effects precisely enough to reproduce play from the initial state, choices and random outcomes.
-- Number every subsection in the twelve chapters hierarchically (2.1, 2.2.1). Preserve stable page IDs and semantic anchors when renumbering; repair references when relocating content.
+- Number every subsection in the thirteen chapters hierarchically (2.1, 2.2.1). Preserve stable page IDs and semantic anchors when renumbering; repair references when relocating content.
 - Use Markdown Mermaid `flowchart` fences for processes, state transitions and operation windows when they clarify the rule. Keep diagram source in the owning Markdown file; do not hand-author SVG flowcharts. Spatial illustrations such as board geometry may use SVG. Explain diagram scope and ensure arrows do not imply ungranted permissions.
 - Treat minion, spell and resource cards as peer types. Cover the same lifecycle fields for each: generation, coexistence, benefits/effects, persistence, leaving play and deck circulation. Do not elaborate only the most recently discussed type.
-- Give each rule one canonical home and link to it elsewhere. Keep placement examples under placement, movement under movement, operation-window definitions in chapter 4, and keywords in the keyword library. Record cross-cutting resolution order in chapter 7.
+- Give each rule one canonical home and link to it elsewhere. Keep placement examples under placement, movement under movement, operation-window definitions in chapter 4, and keywords in the keyword library. Keep card-effect design vocabulary in chapter 7 and cross-cutting settlement timing in chapter 8.
 - Describe card definitions separately from instance attributes and counters. Use precise control terminology: uncontrolled cards/monsters are not a card profession. Define pickup eligibility by player control; do not add redundant profession-specific exceptions.
 - Record the final rule directly. Keep historical implementation restrictions, abandoned proposals and source disagreements in maintenance notes rather than repeatedly qualifying gameplay prose.
 - If a missing detail can change an outcome, state a concrete question and example for review. Do not silently invent a rule or leave a generic "needs clarification" marker. Identify editorial assumptions explicitly.

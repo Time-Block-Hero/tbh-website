@@ -10,8 +10,8 @@ status: draft
 
 ## 章节目录
 
-- [11. 关键词库与术语索引](keywords.md)
-- [12. 裁定与完整案例](rulings.md)
+- [12. 关键词库与术语索引](keywords.md)
+- [13. 裁定与完整案例](rulings.md)
 
 ## 阅读入口
 

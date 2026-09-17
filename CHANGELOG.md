@@ -60,6 +60,8 @@
 
 ### Documentation
 
+- Rules Wiki: split card-effect design (chapter 7) from general settlement (chapter 8); clarify attack ranges, fix window rule ID, consolidate region diagrams and confirm separate shop/extra-deck regions with modifier-preserving refresh returns.
+
 - 依据设计反馈将天庭机灵改为无腿、无轮、常态悬浮的可爱小机器人，并用同心悬浮环与矢量鳍表现累计移动后的速度成长。
 - 将天使机体从冷酷战斗机器人方向退回“意识飞升载体”定位，新增八套神性候选方案；正式骨架在设计师选定前保持待定，不提前覆盖为官方形象。
 - 将械心天庭的「天使机体」与「天庭机灵」纳入中英双语宇宙生物图鉴，新增人工机体谱系筛选、生态档案、统一设定板与叙事插画。

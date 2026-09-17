@@ -10,9 +10,9 @@ status: draft
 
 ## 章节目录
 
-- [8. 模式概览与胜负](overview.md)
-- [9. 构筑与开局配置](setup.md)
-- [10. 对局自动逻辑](automatic.md)
+- [9. 模式概览与胜负](overview.md)
+- [10. 构筑与开局配置](setup.md)
+- [11. 对局自动逻辑](automatic.md)
 
 ## 阅读入口
 
