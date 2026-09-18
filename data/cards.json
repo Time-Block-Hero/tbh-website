@@ -2945,7 +2945,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "每当你累计抽5张牌触发：令你英雄每回合开始时额外生成1点星能。",
+      "rulesText": "[循环进度：5] 计数：你抽牌的张数。完成：令你英雄每回合开始时额外生成1点星能。",
       "arrows": [
         "N"
       ],
@@ -2977,7 +2977,7 @@
       "health": 3,
       "movement": 0,
       "durability": 0,
-      "rulesText": "每当你累计获得4点星能时触发：抽一张牌并令其本回合获得保留。",
+      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
       "arrows": [
         "NW"
       ],
@@ -3006,7 +3006,7 @@
       "health": 5,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每当你累计放置3张牌时触发：随机点亮该卡牌的一个箭头。",
+      "rulesText": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮该卡牌的一个箭头。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3032,7 +3032,7 @@
       "health": 6,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每当你累计发动或触发效果4次时触发：为其5x5范围内的友方随从恢复1点行动力。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点行动力。",
       "arrows": [
         "NE"
       ],
@@ -3060,7 +3060,7 @@
       "health": 9,
       "movement": 0,
       "durability": 0,
-      "rulesText": "每当你的友方机械随从累计移动30步：随机触发你场上的3个进度效果。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个进度效果。",
       "arrows": [
         "NW",
         "N",
@@ -3091,7 +3091,7 @@
       "health": 8,
       "movement": 4,
       "durability": 0,
-      "rulesText": "每当该随从累计移动5格时触发：对最近的非友方单位造成4点伤害。",
+      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的非友方单位造成4点伤害。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3117,7 +3117,7 @@
       "health": 6,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每当该随从累计移动5格时触发：你获得2星能。",
+      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：你获得2星能。",
       "arrows": [],
       "tribes": [
         "机械",
@@ -3141,7 +3141,7 @@
       "costResource": "Star",
       "costAmount": 7,
       "durability": 0,
-      "rulesText": "入场：本回合内你所有的counter要求变为原始数值的75%。",
+      "rulesText": "入场：本回合内，你所有进度效果的目标值变为各自原始目标值的75%（向上取整）。",
       "arrows": [
         "NW",
         "SW"
@@ -3164,7 +3164,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "入场：在友方区域生成4张遗失的智慧。当你累计拾取4张遗失的智慧时触发：变身为飞升之剑-烬白。",
+      "rulesText": "入场：在友方区域生成4张遗失的智慧。[一次性进度：4] 计数：你拾取遗失的智慧的数量。完成：变身为飞升之剑-烬白。",
       "arrows": [
         "E"
       ],
@@ -3192,7 +3192,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "攻击时免疫。每当该随从累计移动8格时触发：该随从瞬移至最近的非友方随从并对其发动攻击。",
+      "rulesText": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
       "arrows": [
         "NW",
         "W"
@@ -3251,7 +3251,7 @@
       "health": 6,
       "movement": 2,
       "durability": 0,
-      "rulesText": "当累计4只友方随从死亡时触发：从牌堆随机召唤一只随从至其↗️格子。",
+      "rulesText": "[循环进度：4] 计数：死亡的友方随从数量。完成：从牌堆随机召唤一只随从至其↗️格子。",
       "arrows": [
         "NE"
       ],
@@ -3306,7 +3306,7 @@
       "health": 2,
       "movement": 1,
       "durability": 0,
-      "rulesText": "每当该随从累计移动4格时触发：获得+1移动。",
+      "rulesText": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1移动。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3332,7 +3332,7 @@
       "health": 5,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每当友方随从累计受到6点伤害时触发：随机为友方随从分配6点护甲。",
+      "rulesText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：随机为友方随从分配6点护甲。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3425,7 +3425,7 @@
       "health": 4,
       "movement": 0,
       "durability": 0,
-      "rulesText": "每当你累计消耗7星能时触发：你获得1点星能。",
+      "rulesText": "[循环进度：7] 计数：你消耗的星能数量。完成：你获得1点星能。",
       "arrows": [
         "NE"
       ],
@@ -3477,7 +3477,7 @@
       "health": 7,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每当该随从累计移动5格时触发：从牌堆将一张魔法卡放置于其⬅️格子上。",
+      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从牌堆将一张魔法卡放置于其⬅️格子上。",
       "arrows": [],
       "tribes": [
         "机械"
