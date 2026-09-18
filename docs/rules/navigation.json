@@ -104,6 +104,9 @@
     "file": "maintenance/index.md",
     "pages": [
       {
+        "file": "maintenance/neutral-card-audit.md"
+      },
+      {
         "file": "maintenance/pending.md"
       },
       {
