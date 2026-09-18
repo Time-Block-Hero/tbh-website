@@ -2687,7 +2687,7 @@
       "health": 2,
       "movement": 0,
       "durability": 0,
-      "rulesText": "该单位3x3范围内友方建筑的箭头层数和效果提供的数值+1。",
+      "rulesText": "该单位3x3范围内的其他友方建筑随从的箭头层数和效果提供的数值+1。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
@@ -3048,7 +3048,7 @@
       "health": 7,
       "movement": 0,
       "durability": 0,
-      "rulesText": "该单位5x5范围内友方建筑的箭头层数和效果提供的数值+3。死亡时：对其5x5范围内的所有单位造成5点伤害。",
+      "rulesText": "该单位5x5范围内的其他友方建筑随从的箭头层数和效果提供的数值+3。死亡时：对其5x5范围内的其他随从造成5点伤害。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
