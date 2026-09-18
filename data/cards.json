@@ -1985,7 +1985,7 @@
       "health": 5,
       "movement": 2,
       "durability": 0,
-      "rulesText": "法术伤害+2。",
+      "rulesText": "你控制的所有法术牌的法术伤害+2。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -2197,7 +2197,7 @@
       "health": 1,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[攻击范围：1] 每次被保留时，该卡牌所有的卡面数值永久+1。",
+      "rulesText": "[攻击范围：1] 每次被保留时，此牌的卡面攻击、生命、速度与攻击范围永久+1。",
       "arrows": [],
       "tribes": [
         "晶灵"
