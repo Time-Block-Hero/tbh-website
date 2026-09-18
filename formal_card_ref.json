@@ -299,7 +299,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "入场：移除一张手牌发动，抽一张牌。",
+      "rulesText": "入场：以移除一张手牌为成本，抽一张牌。",
       "upgradeToCardId": null,
       "arrows": [
         "W"
@@ -355,7 +355,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每个回合限两次，时停阶段中，当对方发动法术的效果时，将其无效。",
+      "rulesText": "",
       "upgradeToCardId": null,
       "arrows": [
         "N"
@@ -439,7 +439,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "入场：选定一个格子，[慢速]若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其摧毁。",
+      "rulesText": "入场：选定一个格子，[慢速]若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
       "upgradeToCardId": null,
       "arrows": [
         "NE"
@@ -722,7 +722,7 @@
       "health": 8,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：从牌堆发现一张牌，将其放置于其⬆️方格子。",
+      "rulesText": "发动：从你的牌堆随机展示三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
       "upgradeToCardId": null,
       "arrows": [
         "N"
@@ -750,7 +750,7 @@
       "health": 10,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[传送移动]该单位瞬移至任意敌方单位相邻的格子上。该单位移动后，对其3x3范围内的所有敌方目标造成4点伤害。",
+      "rulesText": "[传送移动]该单位以瞬移代替普通路线移动，消耗1行动点，移动至任意敌方单位相邻的合法格子。该单位每次完成移动后，对其3x3范围内的所有敌方目标造成4点伤害。",
       "upgradeToCardId": null,
       "arrows": [
         "W",
@@ -1062,7 +1062,7 @@
       "health": 4,
       "movement": 4,
       "durability": 0,
-      "rulesText": "击杀奖励：4星能；2充能。",
+      "rulesText": "击杀奖励：4星能。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
@@ -1116,7 +1116,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "拾取：获得 1 点充能。",
+      "rulesText": "",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [],
@@ -1248,7 +1248,7 @@
       "health": 4,
       "movement": 12,
       "durability": 0,
-      "rulesText": "击杀奖励：获得一个额外的时动阶段；本局游戏的剩余时间内，你时停阶段的行动计数 -2。",
+      "rulesText": "击杀奖励：本局游戏的剩余时间内，你时停阶段的行动计数 -2。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
@@ -1302,7 +1302,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[拾取] 获得1点充能。",
+      "rulesText": "",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [],
@@ -1529,7 +1529,7 @@
       "health": 3,
       "movement": 3,
       "durability": 0,
-      "rulesText": "该卡可被放置于非己方领土内，该单位不会因为时停阶段的放置重合而湮灭。当这张牌被移除时：改为将其洗回牌堆，并抽一张牌。",
+      "rulesText": "该卡可被放置于非己方领土内，该单位具有免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。当这张牌被移除时：改为将其洗回牌堆，并抽一张牌。",
       "upgradeToCardId": null,
       "arrows": [
         "NE"
@@ -1588,7 +1588,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "时动阶段开始时：将其↘️格子的卡牌移除。",
+      "rulesText": "你的时动阶段开始时：将其↘️格子的卡牌移除。",
       "upgradeToCardId": null,
       "arrows": [
         "N",
