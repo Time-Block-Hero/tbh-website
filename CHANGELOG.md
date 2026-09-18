@@ -60,6 +60,8 @@
 
 ### Documentation
 
+- Correct Wiki chapter 7 to the pinned content model: activated abilities, continuous effects and six contribution types, with execution content separate. Replace per-term headings and vertical tables with compact dictionaries, searchable stable row links and optional details.
+
 - Rebuild Wiki chapter 7 as four fillable effect-design guides and eight linked dictionaries; add nested page navigation, parent breadcrumbs and legacy deep-link redirects. Examples remain reviewable teaching designs.
 
 - Rules Wiki: confirm death by cause, clear the body before death effects, exclude sacrifice/direct discard transfers, and consolidate repeated definitions across all 21 pages with a canonical topic index.

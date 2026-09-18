@@ -1,8 +1,6 @@
 {
   "card-effects@效果的工作方式": "card-effects@设计方法与阅读入口",
-  "card-effects@主动能力": "card-effects/activated",
   "card-effects@触发效果": "card-effects/triggered",
-  "card-effects@持续效果": "card-effects/continuous",
   "card-effects@替换与阻止效果": "card-effects/replacement",
   "card-effects@每项效果的必要说明": "card-effects@如何填写要素表",
   "card-effects@触发事件目录": "card-effects/dictionary/events",
@@ -18,5 +16,23 @@
   "card-effects@存在期限与生效条件": "card-effects/dictionary/duration@有条件生效",
   "card-effects@次数窗口与统计对象": "card-effects/dictionary/usage",
   "card-effects@结果与完整描述示例": "card-effects/dictionary/results",
-  "card-effects@关联章节": "card-effects@共享设计字典"
+  "card-effects@关联章节": "card-effects@共享设计字典",
+  "card-effects/activated@条件必填的补充项": "card-effects/activated@必填要素",
+  "card-effects/activated@完整示例战地修复": "card-effects/activated@实牌示例鲁莽的先锋",
+  "card-effects/activated@含糊写法与修正": "card-effects/activated@有选择和成本的实牌",
+  "card-effects/continuous@按作用补充的内容": "card-effects/contributions",
+  "card-effects/continuous@完整示例据点指挥": "card-effects/continuous@存在生效与贡献",
+  "card-effects/continuous@如果要改成赋予能力": "card-effects/continuous@实牌示例临时赋予",
+  "card-effects/continuous@含糊写法与修正": "card-effects/continuous@作用范围与效果目标",
+  "card-effects/continuous@交付前检查": "card-effects/continuous@可复制填写模板",
+  "card-effects/triggered@完整示例时动供能": "card-effects/triggered@实牌示例星能石",
+  "card-effects/triggered@含糊写法与修正": "card-effects/triggered@三种对象与窗口",
+  "card-effects/triggered@交付前检查": "card-effects/triggered@可复制填写模板",
+  "card-effects/replacement@完整示例前线补给": "card-effects/replacement@实牌示例飞船失火",
+  "card-effects/replacement@含糊写法与修正": "card-effects/replacement@改写的边界",
+  "card-effects/replacement@交付前检查": "card-effects/replacement@可复制填写模板",
+  "card-effects@主动效果设计": "card-effects/activated",
+  "card-effects@触发效果设计": "card-effects/triggered",
+  "card-effects@持续效果设计": "card-effects/continuous",
+  "card-effects@替换与阻止效果设计": "card-effects/replacement"
 }

@@ -31,13 +31,21 @@
             "file": "common/effect-design/activated.md"
           },
           {
-            "file": "common/effect-design/triggered.md"
-          },
-          {
             "file": "common/effect-design/continuous.md"
           },
           {
-            "file": "common/effect-design/replacement.md"
+            "file": "common/effect-design/contributions.md",
+            "children": [
+              {
+                "file": "common/effect-design/triggered.md"
+              },
+              {
+                "file": "common/effect-design/replacement.md"
+              }
+            ]
+          },
+          {
+            "file": "common/effect-design/execution.md"
           },
           {
             "file": "common/effect-design/dictionary.md",

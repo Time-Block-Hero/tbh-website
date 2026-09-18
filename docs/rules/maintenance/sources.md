@@ -269,3 +269,24 @@ status: draft
 用户提出拥有者与控制者合并、另可记录创建者；本轮根据真实卡牌支持该方向，仍将跨玩家转区、默认离场接收方、临时归还与已产生效果归属列为 LIF-R05。没有将这一提案悄然写成全部边界已定的通则。
 
 按用户要求，逐张交叉审阅网站卡表中的全部 49 张中立牌，含 36 张可收集与 13 张不可收集。来源指纹、单卡覆盖、实际冲突和可复现的歧义用例见[中立卡牌交叉审阅](neutral-card-audit.md)。未修改卡牌数据或游戏实现；没有以旧实现压过资源牌、冻结时停等已确认规则。
+
+## 第七章按实际内容结构重写
+
+用户指出 7.2–7.5 的设计结构与现有设计不符，要求直接核对 unified 正在使用的卡牌数据，并确认彻底修正结构与字典展示。本轮据此撤下“四种平级模板”的组织方案。
+
+### 直接核对的内容版本
+
+- unified 的 rules 依赖锁定 `2b0ec49079cbf7e0708100d02a356618d77c00ca`。[实际加载入口](https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Assets/Scripts/Battle/Bootstrap/GameManager.cs#L51-L56)指定 `TimeBlockRules/GameContent/v1/game-content`，并不是名为 cards.json 的独立运行文件，也不是 reference-v1 测试内容。
+- [运行内容](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Resources/TimeBlockRules/GameContent/v1/game-content.json)：schemaVersion 20，104 cards、26 abilities、62 continuousEffects、89 plans、10 statuses。卡牌引用能力及持续效果；主动能力目前只有 Activated；触发和结算替换位于持续效果的 contributions 中。
+- [持续效果定义](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Content/Schema/ContinuousEffects/ContinuousEffectDefinitionData.cs)区分 lifetime、activeCondition、affectedScope、contributions。[作用定义](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Content/Schema/ContinuousEffects/ContributionDefinitionData.cs)对应触发、结算替换、属性修正、数值修正、移动规则和放置规则六类。
+- [单卡作者源示例：星能石](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Authoring~/Authoring/v1/cards/FNG-014.card.json)包含 card、abilities、continuousEffects、plans；当前入场能力通过持续效果向自身提供触发，然后引用执行内容。该运行 ID 与网站设计表不同，引用按名称与版本匹配，不进行身份迁移。
+
+### 前稿的问题与本次边界
+
+此前编辑使用术语表中的四个概念，又采用时点架构审计 §4.1 提议的四类能力形状，自行扩写了四套平级必填模板与虚构教学卡。[现行术语表 §3](https://github.com/Time-Block-Hero/time-block-hero-unified/blob/7d93d85f1027407853aa63d3d1b7905bf0d76ab2/Developer_docs/current-game-logic/reference/00-typed-terminology.zh-CN.md#L70-L105)实际已说明触发／替换由持续效果提供，旧稿没有忠实保留该关系。审计的重构提案不能当成运行结构，也不能当成用户已确认玩法。
+
+本轮将组织关系翻译成游戏设计语言，不要求读者填写程序优先级、引用 ID 或执行节点。触发可以观察发生前和发生后节点；它执行内容，替换则直接改写匹配结算。持续效果的受影响对象不自动等于触发事件对象或执行目标；主动的限次与外层发生次数条件也不混成一个通用字段。
+
+旧运行内容仍有时停主动、充能成本、旧资源类型及旧死亡／区域处理等差异；它们不因结构被采用而恢复。用户确认的时动主动、星能、资源牌、死亡原因、入场先于拾取等继续作为玩法依据。正文示例只采用能与已确认规则兼容的具体维度，未定交互仍引用审阅表。
+
+7.6 改为按类别横向比较词条，复杂边界按需展开，词条保留固定链接及独立搜索。本次只修改网站 Wiki 和必要渲染支持，未改网站卡表、unified 或规则包实现。
