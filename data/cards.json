@@ -3060,7 +3060,7 @@
       "health": 9,
       "movement": 0,
       "durability": 0,
-      "rulesText": "每当你的友方机械随从累计移动30步：随机触发你场上的3个触发效果。",
+      "rulesText": "每当你的友方机械随从累计移动30步：随机触发你场上的3个进度效果。",
       "arrows": [
         "NW",
         "N",
@@ -3225,7 +3225,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "失去2点生命以发动：触发其⬆️方格子的触发效果。",
+      "rulesText": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
       "arrows": [],
       "tribes": [
         "奇兽"
