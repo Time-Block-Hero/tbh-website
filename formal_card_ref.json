@@ -157,7 +157,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "入场：选择一个方向，[慢速]对该方向上的第一个目标造成1点伤害。",
+      "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，[慢速]对其造成1点伤害。",
       "upgradeToCardId": null,
       "arrows": [
         "E"
@@ -694,7 +694,7 @@
       "health": 3,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：选定一个方向，对该方向首个敌方单位造成3点伤害。",
+      "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
