@@ -30,13 +30,46 @@ function headings(markdown) {
     return { id: `${base}${count ? `-${count + 1}` : ''}`, text: token.text, depth: token.depth };
   });
 }
+function plainInline(tokens = []) {
+  return tokens.map(token => token.tokens ? plainInline(token.tokens) : token.text || '').join('').replace(/\s+/g, ' ').trim();
+}
+function indexEntries(page, tokens, marked) {
+  const used = new Set(page.toc.map(item => item.id));
+  page.entries = [];
+  marked.walkTokens(tokens, token => {
+    if (token.type !== 'table') return;
+    for (const row of token.rows) {
+      const cell = row[0];
+      if (!cell.text.includes('{#')) continue;
+      const match = cell.text.match(/^(.*?)\s+\{#([\p{L}\p{N}][\p{L}\p{N}-]*)\}\s*$/u);
+      if (!match || match[1].includes('{#')) throw new Error(`${page.file}: invalid dictionary anchor in ${cell.text}`);
+      const [, label, id] = match;
+      if (used.has(id)) throw new Error(`${page.file}: duplicate anchor ${id}`);
+      used.add(id);
+      cell.text = label;
+      cell.tokens = marked.Lexer.lexInline(label);
+      // The term itself becomes its permalink, so nested links would be invalid HTML.
+      marked.walkTokens(cell.tokens, part => {
+        if (part.type === 'link' || part.type === 'image') throw new Error(`${page.file}: dictionary term must not contain links or images: ${id}`);
+      });
+      row.entryId = id;
+      page.entries.push({ id, text: plainInline(cell.tokens), searchText: row.map(item => plainInline(item.tokens)).join(' ') });
+    }
+  });
+}
+const hasAnchor = (page, anchor) => [...page.toc, ...(page.entries || [])].some(item => item.id === anchor);
 export function renderPages(pages) {
   const files = new Map(pages.map(page => [page.file, page]));
   const ids = new Set();
+  const pageTokens = new Map();
+  const lexer = new Marked();
   for (const page of pages) {
     if (ids.has(page.id)) throw new Error(`Duplicate page id: ${page.id}`);
     ids.add(page.id);
     page.toc = headings(page.markdown);
+    const tokens = lexer.lexer(page.markdown);
+    indexEntries(page, tokens, lexer);
+    pageTokens.set(page, tokens);
   }
   for (const page of pages) {
     let headingIndex = 0;
@@ -47,10 +80,30 @@ export function renderPages(pages) {
         return `<figure class="wiki-flowchart"><div class="wiki-flowchart-view" aria-label="规则流程图"></div><details open><summary>Mermaid 源码</summary><pre><code class="language-mermaid">${escapeHTML(text)}</code></pre></details></figure>\n`;
       },
       table(token) {
-        const html = Renderer.prototype.table.call(this, token);
-        return token.header.length >= 4
+        const dictionary = token.rows.some(row => row.entryId);
+        let html;
+        if (dictionary) {
+          const header = token.header.map(cell => this.tablecell(cell)).join('');
+          const rows = token.rows.map(row => {
+            const cells = row.map((cell, index) => {
+              if (index !== 0 || !row.entryId) return this.tablecell(cell);
+              const href = `#/${page.id}@${encodeURIComponent(row.entryId)}`;
+              return `<td><a class="wiki-entry-link" href="${escapeHTML(href)}" title="此词条的固定链接">${this.parser.parseInline(cell.tokens)}</a></td>`;
+            }).join('');
+            return `<tr${row.entryId ? ` id="${escapeHTML(row.entryId)}" class="wiki-entry"` : ''}>${cells}</tr>\n`;
+          }).join('');
+          html = `<table class="wiki-dictionary"><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table>`;
+        } else html = Renderer.prototype.table.call(this, token);
+        return dictionary || token.header.length >= 4
           ? `<div class="wiki-table-scroll" tabindex="0" role="region" aria-label="规则表格，可横向滚动">${html}</div>\n`
           : html;
+      },
+      blockquote(token) {
+        const first = token.tokens[0];
+        const match = first?.type === 'paragraph' && first.text.match(/^\[!DETAILS\]\s+([^\n]+)$/);
+        if (!match) return false;
+        const titleTokens = lexer.Lexer.lexInline(match[1]);
+        return `<details class="wiki-details"><summary>${this.parser.parseInline(titleTokens)}</summary><div class="wiki-details-body">${this.parser.parse(token.tokens.slice(1))}</div></details>\n`;
       },
       heading({ tokens, depth }) {
         const heading = page.toc[headingIndex++];
@@ -67,7 +120,7 @@ export function renderPages(pages) {
         try { anchor = decodeURIComponent(encodedAnchor); } catch { throw new Error(`${page.file}: malformed link ${href}`); }
         const target = filename ? files.get(path.posix.normalize(path.posix.join(path.posix.dirname(page.file), filename))) : page;
         if (!target) throw new Error(`${page.file}: invalid or unsafe link ${href}`);
-        if (anchor && !target.toc.some(item => item.id === anchor)) throw new Error(`${page.file}: unknown anchor ${href}`);
+        if (anchor && !hasAnchor(target, anchor)) throw new Error(`${page.file}: unknown anchor ${href}`);
         url = `#/${target.id}${anchor ? `@${encodeURIComponent(anchor)}` : ''}`;
         return `<a href="${escapeHTML(url)}">${label}</a>`;
       },
@@ -78,7 +131,7 @@ export function renderPages(pages) {
         return `<a class="wiki-illustration" href="${asset}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(text)}（打开原图）"><img src="${asset}" alt="${escapeHTML(text)}" loading="lazy"></a>`;
       }
     };
-    page.html = new Marked({ renderer, gfm: true }).parse(page.markdown);
+    page.html = new Marked({ renderer, gfm: true }).parser(pageTokens.get(page));
   }
   return pages;
 }
@@ -92,7 +145,7 @@ export function validateRedirects(redirects, pages) {
   };
   const exists = ({ id, anchor }) => {
     const page = byId.get(id);
-    return page && (anchor === undefined || page.toc.some(item => item.id === anchor));
+    return page && (anchor === undefined || hasAnchor(page, anchor));
   };
   for (const [source, target] of Object.entries(redirects)) {
     const from = parseRoute(source);

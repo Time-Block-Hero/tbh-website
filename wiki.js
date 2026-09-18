@@ -235,17 +235,24 @@
       item.style.textAlign = label === "上一页" ? "left" : "right";
       pagination.append(item);
     });
+    article.querySelectorAll(".is-anchor-target").forEach(target => target.classList.remove("is-anchor-target"));
+    const revealAnchor = () => {
+      const target = document.getElementById(anchor);
+      if (!target || !article.contains(target)) return;
+      for (let parent = target.parentElement; parent && parent !== article; parent = parent.parentElement) {
+        if (parent.tagName === "DETAILS") parent.open = true;
+      }
+      target.classList.add("is-anchor-target");
+      target.scrollIntoView({ behavior: "instant", block: "start", inline: "nearest" });
+    };
     requestAnimationFrame(() => {
-      if (anchor) {
-        const target = document.getElementById(anchor);
-        if (target && article.contains(target)) target.scrollIntoView({ behavior: "instant" });
-      } else if (changed) window.scrollTo({ top: 0, behavior: "instant" });
+      if (anchor) revealAnchor();
+      else if (changed) window.scrollTo({ top: 0, behavior: "instant" });
     });
     const targetHash = location.hash;
     if (anchor) diagramTask.then(() => {
       if (location.hash !== targetHash) return;
-      const target = document.getElementById(anchor);
-      if (target && article.contains(target)) target.scrollIntoView({ behavior: "instant" });
+      revealAnchor();
     });
   }
   nav.addEventListener("click", (event) => {
@@ -301,12 +308,20 @@
           );
         }
       }
+      for (const entry of page.entries || []) {
+        if (`${entry.text} ${entry.searchText || ""}`.toLocaleLowerCase().includes(query)) {
+          matches.set(
+            `${pageURL(page.id)}@${encodeURIComponent(entry.id)}`,
+            `${entry.text} — ${page.title}`,
+          );
+        }
+      }
     }
     const summary = document.createElement("p");
     summary.setAttribute("role", "status");
     summary.textContent = matches.size
-      ? `${matches.size} 个页面或章节`
-      : "没有匹配的页面或章节标题，请尝试其他关键词。";
+      ? `${matches.size} 个页面、章节或词条`
+      : "没有匹配的页面、章节或词条，请尝试其他关键词。";
     results.append(
       summary,
       ...Array.from(matches, ([href, label]) => link(label, href)),

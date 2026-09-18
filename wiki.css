@@ -704,3 +704,20 @@ kbd {
 .wiki-table-scroll { max-width: 100%; overflow-x: auto; margin: 1.5em 0; }
 .wiki-prose .wiki-table-scroll table { min-width: 640px; margin: 0; }
 .wiki-table-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.wiki-prose .wiki-dictionary { display: table; width: 100%; line-height: 1.7; }
+.wiki-prose .wiki-dictionary th,
+.wiki-prose .wiki-dictionary td { padding: 10px 12px; vertical-align: top; overflow-wrap: normal; min-width: 130px; }
+.wiki-prose .wiki-dictionary th:first-child,
+.wiki-prose .wiki-dictionary td:first-child { min-width: 145px; }
+.wiki-prose .wiki-dictionary tbody tr:nth-child(even) { background: #20251f; }
+.wiki-prose .wiki-dictionary .wiki-entry-link { color: var(--ink); text-decoration-style: dotted; }
+.wiki-prose .wiki-dictionary .wiki-entry-link:hover { color: var(--accent); }
+.wiki-entry { scroll-margin-top: 115px; }
+.wiki-prose .wiki-dictionary .is-anchor-target { background: #443323; box-shadow: inset 3px 0 var(--accent); }
+.wiki-prose .wiki-details { margin: 18px 0; border: 1px solid var(--line); border-radius: 5px; background: var(--panel); }
+.wiki-prose .wiki-details > summary { padding: 12px 16px; cursor: pointer; color: var(--ink); }
+.wiki-prose .wiki-details[open] > summary { border-bottom: 1px solid var(--line); }
+.wiki-prose .wiki-details-body { padding: 4px 16px 12px; }
+@media (max-width: 700px) {
+  .wiki-entry { scroll-margin-top: 175px; }
+}

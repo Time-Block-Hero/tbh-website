@@ -200,3 +200,53 @@ test('wide design tables get keyboard-accessible scroll containers without bypas
   const [narrow] = renderPages([page('start', '| A | B |\n| - | - |\n| 1 | 2 |')]);
   assert.doesNotMatch(narrow.html, /wiki-table-scroll/);
 });
+
+const dictionary = (term = '**放置事件** {#放置事件}', description = '入场效果，例：星能石') =>
+  `| 词条 | 含义 | 参数 | 示例 |\n| - | - | - | - |\n| ${term} | ${description} | 无 | [正文](#分类) |`;
+
+test('dictionary rows keep stable permalinks and searchable text without becoming TOC headings', () => {
+  const pages = renderPages([
+    page('start', '[直达词条](dictionary.md#放置事件)'),
+    page('dictionary', `## 分类\n\n${dictionary()}\n\n[同页引用](#放置事件)`),
+  ]);
+  const result = pages[1];
+  assert.deepEqual(result.toc.map(item => item.id), ['分类']);
+  assert.deepEqual(result.entries, [{ id: '放置事件', text: '放置事件', searchText: '放置事件 入场效果，例：星能石 无 正文' }]);
+  assert.match(result.html, /<tr id="放置事件" class="wiki-entry">/);
+  assert.match(result.html, /<a class="wiki-entry-link" href="#\/dictionary@%E6%94%BE%E7%BD%AE%E4%BA%8B%E4%BB%B6"/);
+  assert.doesNotMatch(result.html, /\{#放置事件\}/);
+  assert.match(pages[0].html, /href="#\/dictionary@%E6%94%BE%E7%BD%AE%E4%BA%8B%E4%BB%B6"/);
+  assert.deepEqual(validateRedirects({ 'old@原放置': 'dictionary@放置事件' }, pages), { 'old@原放置': 'dictionary@放置事件' });
+  assert.throws(() => validateRedirects({ 'dictionary@放置事件': 'start' }, pages), /shadows existing/);
+});
+
+test('dictionary anchors reject collisions, malformed markers and nested term links', () => {
+  for (const term of ['词条 {#bad space}', '词条 {#"onclick="bad}', '词条 {#}', '词条 {#a} tail', '词条 {#a} {#b}']) {
+    assert.throws(() => renderPages([page('dictionary', `## 分类\n\n${dictionary(term)}`)]), /invalid dictionary anchor/);
+  }
+  assert.throws(() => renderPages([page('dictionary', `## 分类\n\n${dictionary('词条 {#分类}')}`)]), /duplicate anchor/);
+  assert.throws(() => renderPages([page('dictionary', `## 分类\n\n${dictionary()}\n\n${dictionary()}`)]), /duplicate anchor/);
+  assert.throws(() => renderPages([page('dictionary', `## 分类\n\n${dictionary('[词条](#分类) {#词条}')}`)]), /must not contain links or images/);
+});
+
+test('dictionary rendering keeps raw HTML escaped and validates links in every cell', () => {
+  const [result] = renderPages([page('dictionary', `## 分类\n\n${dictionary('**<script>bad()</script>** {#安全}', '<img src=x onerror=bad()>')}`)]);
+  assert.doesNotMatch(result.html, /<script|<img/);
+  assert.match(result.html, /&lt;script&gt;/);
+  assert.throws(() => renderPages([page('dictionary', `## 分类\n\n${dictionary(undefined, '[bad](javascript:alert%281%29)')}`)]), /invalid or unsafe link/);
+});
+
+test('DETAILS blocks are closed native disclosures with normal safe Markdown inside', () => {
+  const [result] = renderPages([page('dictionary', `## 分类\n\n> [!DETAILS] **说明** <img src=x>\n>\n> [返回分类](#分类)\n>\n> ### 深入说明\n>\n> ${dictionary().replaceAll('\n', '\n> ')}\n\n[隐藏行](#放置事件)\n\n> [!NOTE] 保留普通引用\n>\n> 正文`)]);
+  assert.match(result.html, /<details class="wiki-details"><summary><strong>说明<\/strong> &lt;img src=x&gt;<\/summary>/);
+  assert.doesNotMatch(result.html, /<details[^>]* open|<img/);
+  assert.match(result.html, /<h3 id="深入说明">/);
+  assert.match(result.html, /<tr id="放置事件"/);
+  assert.match(result.html, /<blockquote>\s*<p>\[!NOTE\]/);
+  assert.deepEqual(result.toc.map(item => item.id), ['分类', '深入说明']);
+  assert.equal(result.entries.length, 1);
+  for (const content of ['[bad](javascript:alert%281%29)', '[bad](#missing)']) {
+    assert.throws(() => renderPages([page('start', `> [!DETAILS] 说明\n>\n> ${content}`)]), /invalid or unsafe link|unknown anchor/);
+  }
+  assert.throws(() => renderPages([page('start', '> [!DETAILS] [bad](javascript:alert%281%29)\n>\n> 正文')]), /invalid or unsafe link/);
+});
