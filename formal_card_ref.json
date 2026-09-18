@@ -241,7 +241,7 @@
       "health": 8,
       "movement": 4,
       "durability": 0,
-      "rulesText": "发动：每回合限一次，从弃牌堆召唤两个星际佣兵，放置于其↖️↗️方格子。",
+      "rulesText": "发动：每回合限一次，从弃牌堆随机选取最多两个星际佣兵，召唤至其↖️↗️方格子。",
       "upgradeToCardId": null,
       "arrows": [
         "N"
@@ -722,7 +722,7 @@
       "health": 8,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：从你的牌堆随机展示三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
+      "rulesText": "发动：从你的牌堆随机展示最多三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
       "upgradeToCardId": null,
       "arrows": [
         "N"
@@ -1733,7 +1733,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "当此卡被移除时：[慢速] 为对手在其领土内召唤两只「食锈螯兽」。",
+      "rulesText": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
       "upgradeToCardId": null,
       "arrows": [
         "N"
@@ -2395,7 +2395,7 @@
       "health": 0,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[保留] 入场：从牌堆随机将3张法术牌放置于该卡牌的箭头区域内，它们视作被保留了等同于此牌的有效保留回合数。",
+      "rulesText": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
       "upgradeToCardId": null,
       "arrows": [
         "N",
