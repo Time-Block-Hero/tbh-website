@@ -71,7 +71,7 @@ test('Mermaid fences retain escaped readable source and do not change ordinary c
   assert.equal(result.toc.length, 0);
 });
 
-test('checked-in data matches the Markdown build and contains only unapproved draft pages', async () => {
+test('checked-in data matches Markdown, keeps current rules draft and retires only the decision archive', async () => {
   const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'tbh-wiki-test-'));
   try {
     await fs.cp(path.join(root, 'docs/rules'), path.join(temp, 'docs/rules'), { recursive: true });
@@ -83,7 +83,9 @@ test('checked-in data matches the Markdown build and contains only unapproved dr
     assert.equal(generated, await fs.readFile(path.join(root, 'wiki-data.js'), 'utf8'));
     assert.equal(output.sections.length, 5);
     assert.ok(output.pages.length > output.sections.length);
-    assert.ok(output.pages.every(page => page.status === 'draft' && page.html.trim().length > 0));
+    assert.ok(output.pages.every(page => page.html.trim().length > 0));
+    assert.deepEqual(output.pages.filter(page => page.status === 'retired').map(page => page.id), ['maintenance/ruling-history']);
+    assert.ok(output.pages.every(page => page.status === (page.id === 'maintenance/ruling-history' ? 'retired' : 'draft')));
     const context = { window: {} };
     vm.runInNewContext(generated, context);
     assert.equal(context.window.TBH_WIKI.pages.length, output.pages.length);

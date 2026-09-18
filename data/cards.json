@@ -529,7 +529,7 @@
       "health": 5,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：传送到场上任意一个空格子上。",
+      "rulesText": "发动：瞬移到场上任意一个空格子上。",
       "arrows": [
         "SW"
       ],
@@ -551,7 +551,7 @@
       "collectable": true,
       "costResource": "Star",
       "costAmount": 10,
-      "durability": 0,
+      "durability": 1,
       "rulesText": "发动：对一个单位造成12点伤害。[耐久度: 1]",
       "arrows": [
         "NE",
@@ -685,7 +685,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "入场：令一个机械获得+2ATK/+2SPD。",
+      "rulesText": "入场：令一个机械获得+2攻击/+2速度。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -815,7 +815,7 @@
       "health": 5,
       "movement": 4,
       "durability": 0,
-      "rulesText": "一回合一次，丢弃一张手牌以发动：令一个友方随从获得等同于丢弃牌星能费用的护甲。",
+      "rulesText": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得等同于该牌弃置前星能费用的护甲。",
       "arrows": [],
       "tribes": [
         "反抗军"
@@ -1227,7 +1227,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "该单位在非友方领土拾取卡牌时额外获得1点星能。",
+      "rulesText": "该单位在非友方领土拾取资源牌时额外获得1点星能。",
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_032",
@@ -1279,7 +1279,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "你可以在该单位指向的格子上无视领土单位放置反抗军单位。",
+      "rulesText": "你可以在该单位指向的格子上无视领土限制放置反抗军随从。",
       "arrows": [
         "NW",
         "NE"
@@ -1464,7 +1464,7 @@
       "health": 2,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。亡语：你下回合少抽一张牌。",
+      "rulesText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
       "arrows": [],
       "tribes": [
         "反抗军"
@@ -1693,7 +1693,7 @@
       "attack": 3,
       "health": 2,
       "movement": 3,
-      "durability": 0,
+      "durability": 1,
       "rulesText": "[耐久度：1] 该单位的箭头仅在其处于敌方领土时激活。",
       "arrows": [
         "SE"
@@ -1723,7 +1723,7 @@
       "health": 7,
       "movement": 4,
       "durability": 0,
-      "rulesText": "其位于友方领土内时，全体友方反抗军单位获得+1移动力；其位于敌方领土内时，全体友方反抗军单位获得+1攻击力。",
+      "rulesText": "其位于友方领土内时，全体友方反抗军单位获得+1速度；其位于敌方领土内时，全体友方反抗军单位获得+1攻击力。",
       "arrows": [
         "NW",
         "NE"
@@ -1752,7 +1752,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每回合限一次，发动：令一个友方反抗军获得+3攻击力/+3移动力以及[耐久度：1]。",
+      "rulesText": "每回合限一次，发动：令一个友方反抗军获得+3攻击力/+3速度以及[耐久度：1]。",
       "arrows": [
         "E"
       ],
@@ -1858,7 +1858,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：[慢速] 每回合限一次，对全场单位造成1点伤害。若该卡已被保留过，额外造成一次。",
+      "rulesText": "入场：[慢速]每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
       "arrows": [
         "S"
       ],
@@ -1907,8 +1907,8 @@
       "collectable": true,
       "costResource": "Star",
       "costAmount": 1,
-      "durability": 0,
-      "rulesText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害+1。每次被保留时，给予的法术伤害额外+1。",
+      "durability": 2,
+      "rulesText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
       "arrows": [
         "SE"
       ],
@@ -1959,7 +1959,7 @@
       "health": 4,
       "movement": 1,
       "durability": 0,
-      "rulesText": "每当该单位受到法术伤害，抽一张牌并令其获得本回合[保留]。",
+      "rulesText": "每当该单位受到法术伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -2008,7 +2008,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "抽1张牌，该卡牌抽卡数量会受到法术伤害加成。",
+      "rulesText": "抽1张牌，该卡牌抽牌数量会受到法术伤害加成。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -2054,7 +2054,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "若该卡已被保留过，入场：选择一个单位，[慢速]对其造成2点伤害。",
+      "rulesText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，[慢速]对其造成2点伤害。",
       "arrows": [
         "E"
       ],
@@ -2076,7 +2076,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[慢速]将总计6点伤害随机分配给所有敌方单位。每次被保留时，额外造成4点。",
+      "rulesText": "入场：[慢速]将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
       "arrows": [
         "NW",
         "NE"
@@ -2099,7 +2099,7 @@
       "costResource": "Star",
       "costAmount": 7,
       "durability": 0,
-      "rulesText": "[保留] 入场：从牌堆随机将3张魔法卡放置于该卡牌的箭头区域内，它们视作被保留了等同于该卡在手牌中的回合数。",
+      "rulesText": "[保留] 入场：从牌堆随机将3张法术牌放置于该卡牌的箭头区域内，它们视作被保留了等同于此牌的有效保留回合数。",
       "arrows": [
         "N",
         "SW",
@@ -2123,7 +2123,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "入场：选择一个友方和敌方随从，[慢速]对它们造成4点伤害。",
+      "rulesText": "入场：选择一个友方随从和一个敌方随从，[慢速]对它们各造成4点伤害。",
       "arrows": [
         "NE",
         "S"
@@ -2146,7 +2146,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：获得2星能。每次被保留时，获得的量翻倍。",
+      "rulesText": "入场：获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
       "arrows": [
         "NW"
       ],
@@ -2220,7 +2220,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "令的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "rulesText": "令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
       "arrows": [
         "N",
         "W",
@@ -2432,7 +2432,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "该单位的箭头只能用于放置或建造建筑单位。",
+      "rulesText": "该单位的箭头只能用于放置或建造建筑随从。",
       "arrows": [
         "NW"
       ],
@@ -2462,7 +2462,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "牺牲自己以发动：为一个相邻的友方单位提供2点建造进度。",
+      "rulesText": "献祭自己以发动：为一个相邻的友方单位提供2点建造进度。",
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_060",
@@ -2578,7 +2578,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求: 6, 可建造] 回合结束时，累计1点科研计数。当该卡科研计数达到3时，清空并令本局对战中你所有的可建造单位的箭头需求-1。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度+1。完成：本局对战中，你所有可建造单位的箭头需求−1。",
       "arrows": [
         "SW",
         "SE"
@@ -2604,7 +2604,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：令一个友方建筑的箭头箭头层数和效果提供的数值+3，但它会在本回合结束时被摧毁。",
+      "rulesText": "入场：令一个友方建筑的箭头层数和效果提供的数值+3，本回合结束时，将该建筑消灭。",
       "arrows": [
         "NW"
       ],
@@ -2675,7 +2675,7 @@
       "health": 7,
       "movement": 0,
       "durability": 0,
-      "rulesText": "该单位5x5范围内友方建筑的箭头层数和效果提供的数值+3。亡语：对其5x5范围内的所有单位造成5点伤害。",
+      "rulesText": "该单位5x5范围内友方建筑的箭头层数和效果提供的数值+3。死亡时：对其5x5范围内的所有单位造成5点伤害。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -2778,7 +2778,7 @@
       "health": 5,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其传送到其距离3以内的一个空格子上。",
+      "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
       "arrows": [
         "SW",
         "SE"
@@ -2888,7 +2888,7 @@
       "attack": 10,
       "health": 12,
       "movement": 10,
-      "durability": 0,
+      "durability": 1,
       "rulesText": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
       "arrows": [
         "E",
@@ -3032,7 +3032,7 @@
       "health": 6,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点行动力。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
       "arrows": [
         "NE"
       ],
@@ -3060,7 +3060,7 @@
       "health": 9,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个进度效果。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
       "arrows": [
         "NW",
         "N",
@@ -3164,7 +3164,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "入场：在友方区域生成4张遗失的智慧。[一次性进度：4] 计数：你拾取遗失的智慧的数量。完成：变身为飞升之剑-烬白。",
+      "rulesText": "入场：在己方领土的空格中生成4张遗失的智慧。[一次性进度：4] 计数：你拾取遗失的智慧的数量。完成：变身为飞升之剑-烬白。",
       "arrows": [
         "E"
       ],
@@ -3306,7 +3306,7 @@
       "health": 2,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1移动。",
+      "rulesText": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3377,7 +3377,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "消耗2星能以发动：令一个友方随从本回合获得2点移动。",
+      "rulesText": "消耗2星能以发动：令一个友方随从本回合获得+2速度。",
       "arrows": [
         "NW"
       ],
@@ -3477,7 +3477,7 @@
       "health": 7,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从牌堆将一张魔法卡放置于其⬅️格子上。",
+      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从牌堆将一张法术牌放置于其⬅️格子上。",
       "arrows": [],
       "tribes": [
         "机械"

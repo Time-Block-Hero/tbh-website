@@ -122,6 +122,9 @@
       },
       {
         "file": "maintenance/sources.md"
+      },
+      {
+        "file": "maintenance/ruling-history.md"
       }
     ]
   }
