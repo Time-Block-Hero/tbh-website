@@ -200,7 +200,7 @@ status: draft
 
 - [伤害](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/DamageRuleHandler.cs)与[治疗](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/HealRuleHandler.cs)：当前依次处理圣盾、护甲和生命，仅实际生命伤害产生受伤事实。零伤害、溢出伤害的计数及相关触发资格仍列为待审阅细则。
 - [有效属性变化](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/EffectiveAttributeSynchronizer.cs)：最大生命降低时截断当前值，与旧短版等量扣减不同；6.2 使用具体例子呈现差异，保留 LIF-R01。
-- [死亡处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/AttributeRuleHandler.cs)：当前先离场再产生死亡事件，且这里没有完成新规则要求的通用死亡转弃牌堆；旧长版则先处理死亡效果再离场。6.3 的先离场方案是提案，不声称新死亡规则已实现。
+- [死亡处理](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/AttributeRuleHandler.cs)：当前先离场再产生死亡事件，且这里没有完成新规则要求的通用死亡转弃牌堆；旧长版则先处理死亡效果再离场。当时 6.3 将先离场列为提案；用户随后确认先清理本体、再结算死亡效果，见下方死亡修订记录。此确认不声称新死亡规则已实现。
 - [生成](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/CreateCardRuleHandler.cs)、[从牌堆放置](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/PlaceFromPileRuleHandler.cs)与[变形](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Domain/Rules/TransformRuleHandler.cs)：分别说明新实例、既有牌移动和原实例变形的区别。复制继承什么、变形保留什么及新入场行动额度仍待裁定。
 
 控制权变化不自动改变拥有者、职业或全部实例状态的描述，保持“供审阅的默认方案”，未将此前撤回的归纳重新写成已确认规则。耐久退出行为也未借当前实现补定。
@@ -238,3 +238,15 @@ status: draft
 两份资料也不能混用成一套所谓现行完备规则：审计附录曾写入指令能力实现，较新的术语表已明确其删除，因此新设计目录不将指令能力列为正式第五类。审计还记录不同成本路径的触发处理尚未统一；不得把这两条工程路径分别变成玩家规则。术语表当前允许的时停主动阶段不覆盖用户已明确取消的时停主动能力。
 
 当前实现只作为可复查证据，仍按 unified 所引用的规则包 `2b0ec49079cbf7e0708100d02a356618d77c00ca` 只读核对。新第七章列的是设计选项与必要说明，不是程序字段、穷举批准全集或实现支持承诺；新第八章也没有照搬程序内部编号作为触发顺序。所有新增玩法仍保持审阅边界。
+
+
+## 死亡定义、死亡顺序与主定义归并
+
+本轮依据用户直接反馈修订，未用旧文或当前实现替代决定：
+
+- 死亡由当前生命降至 0 或以下，或明确“消灭”判定；直接将卡牌从战场移入弃牌堆、献祭随从不算死亡。离场目的地不能反推原因。
+- 6.3.1 的先清理本体、后结算死亡效果由提案转为确认。保留死亡格供“在其所在格召唤僵尸”使用；本体不再占格。受伤触发能否先救回、多个死亡与胜负检查排序、其他离场前数值仍未定。
+- 普查所有导航页面，将拾取、建造、操作窗口、主动次数、回合末快照、抽牌、商店区域与刷新、修正继承及持续贡献的重复定义改为主定义引用。完整归属见[规则主定义索引](index.md#规则主定义索引)。
+- 三类卡牌的平级生命周期、放置与移动的各自案例及必要流程图继续保留。历史来源记录不删除，但旧死亡顺序提案不再作为未决选择。
+
+本轮只改规则文档和生成数据，不迁移游戏实现，也不把整章草案自动批准为正式规则。

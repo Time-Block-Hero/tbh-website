@@ -60,6 +60,8 @@
 
 ### Documentation
 
+- Rules Wiki: confirm death by cause, clear the body before death effects, exclude sacrifice/direct discard transfers, and consolidate repeated definitions across all 21 pages with a canonical topic index.
+
 - Rules Wiki: split card-effect design (chapter 7) from general settlement (chapter 8); clarify attack ranges, fix window rule ID, consolidate region diagrams and confirm separate shop/extra-deck regions with modifier-preserving refresh returns.
 
 - 依据设计反馈将天庭机灵改为无腿、无轮、常态悬浮的可爱小机器人，并用同心悬浮环与矢量鳍表现累计移动后的速度成长。
