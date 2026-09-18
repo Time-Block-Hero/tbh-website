@@ -1248,7 +1248,7 @@
       "health": 4,
       "movement": 12,
       "durability": 0,
-      "rulesText": "击杀奖励：本局游戏的剩余时间内，你时停阶段的行动计数 -2。",
+      "rulesText": "击杀奖励：本局游戏的剩余时间内，你每回合的时停放置计数−2。",
       "upgradeToCardId": null,
       "arrows": [],
       "tribes": [
