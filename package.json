@@ -11,6 +11,7 @@
     "build:bestiary": "node tools/build-bestiary.mjs"
   },
   "devDependencies": {
+    "@mermaid-js/tiny": "11.17.2",
     "marked": "15.0.12"
   }
 }

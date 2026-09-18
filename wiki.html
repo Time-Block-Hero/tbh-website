@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="wiki.css" />
     <link rel="stylesheet" href="site.css" />
     <script src="wiki-data.js" defer></script>
+    <script src="assets/vendor/mermaid/mermaid.tiny.js" defer></script>
     <script src="wiki.js" defer></script>
   </head>
   <body>
@@ -45,7 +46,7 @@
           ><input
             id="wiki-search"
             type="search"
-            placeholder="按标题查找…"
+            placeholder="查找章节或字典词条…"
             autocomplete="off"
           /><kbd>/</kbd>
         </div>
@@ -53,7 +54,7 @@
         <nav id="wiki-navigation" aria-label="章节"></nav>
         <div class="sidebar-note">
           <span class="status-dot" aria-hidden="true"></span
-          ><span>结构已建立 · 内容待整理</span>
+          ><span>逐章起草 · 待审阅</span>
         </div>
       </aside>
       <main id="wiki-main">
@@ -70,8 +71,8 @@
         <div class="draft-banner" id="wiki-draft-banner">
           <span class="banner-symbol" aria-hidden="true">↗</span>
           <div>
-            <strong>规则正文尚未整理</strong>
-            <p>目前仅展示文档结构。具体玩法将逐页讨论、确认后补充。</p>
+            <strong>本页尚未确认为正式规则</strong>
+            <p>本页为提纲或待审阅草案，具体规则经逐章审阅确认后生效。</p>
           </div>
         </div>
         <article id="wiki-article" class="wiki-prose" tabindex="-1"></article>

@@ -6,6 +6,44 @@
 
 ### Website organization
 
+- 统一多对象／多卡批量结算原则，伤害、死亡、召唤、抽牌、弃牌及湮灭共用主定义；确认时停计数、慢速即时处理、冻结基准与同批入场格序，清除重复待裁定项。
+
+- 落实第三批免费效果位移（含冲锋）、瞬移计1格、效果召唤许可与数量不足规则；明确麦哲伦随机选牌、生物笼随机完全空格、高等阳炎术随机落点及谕晶不足三张的处理。
+
+- 落实第二批法术伤害、建筑数值放大、全属性、致死生命成本与行动恢复裁定；沐阳晶灵的永久卡面成长不增费用，且不受逆向转区或沉默清除，更新两张卡文及审阅记录。
+
+- 明确自身周围矩形范围默认影响其他随从，发电站及超级核电站卡文显式排除自身，清除对应待裁定项。
+
+- 落实全卡审阅第一批裁定：单位与非友方定义、相邻及行列、射线首个随从阻挡与合法选择、放置／建造箭头层数及随机点亮；同步两张射线卡文与审阅记录。
+
+- 全卡规则自检覆盖137张卡，规范33张卡文或耐久字段；清除待裁定页中的已解决项目并归档，修正资源占格残句与第七章过时卡例，集中记录共享规则和单卡缺口。
+
+- 按最新裁定调整回合结束快照／建造／临时 buff 顺序、时停末拾取、同级区域、数值与随机规则及沉默；修正直线方向，更新相关卡文并移除过时反制、额外时动和充能收益。
+
+- 规则 Wiki 落实第 23–28 组裁定，明确属性施加与撤销的不对称算法、建造完成时入场、两种复制、逆向属性刷新及触发排序；补充建造与属性流程图，并记录设计与当前实现的差异。
+
+- 规则 Wiki 明确变身保留当前状态与 buff，普通变身逆向转区还原、永久变身保留形态；以烬白死亡和再次打出流程说明。
+
+- 规则 Wiki 明确跨区保留型／逆向重置型状态与特殊状态、buff 速查；普通进度逆向归零，机械天国 15 张卡文统一进度格式，保留原有数值与收益。
+
+- 规则 Wiki 新增保留回合数状态：回合末实际保留时增加，正向转区保留、逆向转区清零；引用烈阳教会实牌说明并集中记录“视作保留”的未决交互。
+
+- 规则 Wiki 明确耐久跨循环保留和耗尽移除；新增进度触发机制、完成流程图与设计要素。借时蜉蝣和集群主脑的卡文限定为触发进度效果，保留原成本、范围和数量。
+
+- 补全规则 Wiki 第五至第七章：经济购买、卡牌生命周期与效果时序；新增六张 Mermaid 流程图，集中列出具体审阅问题并承接已确认修正。
+
+- 第四章集中操作窗口，确认放置成本、三种移动和主动能力缺省次数；取消击杀推进，限定攻击目标，按控制关系统一拾取并将放置案例归回放置章节。
+
+- Wiki 流程与状态图改为可展开源码的本地 Mermaid 渲染；补齐三类卡牌生命周期、商店及全部区域移除路径，记录正向保留／逆向清除 modifier 的区域顺序。
+
+- 重写第三章同步阶段、独立时动、操作窗口外随机选择、时停冻结与湮灭、回合末手牌快照，补充双人流程与时间轴；完善四类收集属性。
+- 重整第二章平级卡牌类型及卡牌信息／实例属性，确认资源空格生成，补充棋盘与区域状态图；十二章增加分级编号且保留语义锚点。
+- 按用户确认新增资源牌为第三种基础类型，统一 Wiki 的共存、拾取、回合末留场、移出游戏及卡组循环例外规则。
+- 更新规则总则为已确认的“有效性先判断、明确例外改写默认”原则；补全第二至第四章待审阅草案、关联关键词及旧文／固定实现分歧记录。
+- 开始逐章编写规则正文：第一章总则形成带稳定条款编号的待审阅草案，附来源与未决优先级边界；草稿提示同时适用于提纲与已起草正文。
+
+- 按已确认大纲重建规则 Wiki：五组导航、十二章及维护附录，回合流程与商店购买归入通用规则，标准对战单列自动资源逻辑；关键词统一链接到词条，正文保持待裁定草稿。
+
 - Organized the inline bestiary into six collapsible race groups and 23 branches, preserving all source dossiers and separating shared principles from individual art references.
 - Added explicit incomplete entries, branch design constraints and production-reference routing for future consistent assets.
 
@@ -45,6 +83,14 @@
 - 当浏览器草稿与仓库 `data/cards.json` 不同时，卡牌编辑器会询问加载来源；若选择仓库版本，首次保存前会再次警告覆盖风险，确认后继续自动保存本地草稿。
 
 ### Documentation
+
+- Correct Wiki chapter 7 to the pinned content model: activated abilities, continuous effects and six contribution types, with execution content separate. Replace per-term headings and vertical tables with compact dictionaries, searchable stable row links and optional details.
+
+- Rebuild Wiki chapter 7 as four fillable effect-design guides and eight linked dictionaries; add nested page navigation, parent breadcrumbs and legacy deep-link redirects. Examples remain reviewable teaching designs.
+
+- Rules Wiki: confirm death by cause, clear the body before death effects, exclude sacrifice/direct discard transfers, and consolidate repeated definitions across all 21 pages with a canonical topic index.
+
+- Rules Wiki: split card-effect design (chapter 7) from general settlement (chapter 8); clarify attack ranges, fix window rule ID, consolidate region diagrams and confirm separate shop/extra-deck regions with modifier-preserving refresh returns.
 
 - 依据设计反馈将天庭机灵改为无腿、无轮、常态悬浮的可爱小机器人，并用同心悬浮环与矢量鳍表现累计移动后的速度成长。
 - 将天使机体从冷酷战斗机器人方向退回“意识飞升载体”定位，新增八套神性候选方案；正式骨架在设计师选定前保持待定，不提前覆盖为官方形象。

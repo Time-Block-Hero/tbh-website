@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Marked } from 'marked';
+import { Marked, Renderer } from 'marked';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const escapeHTML = (text = '') => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -22,24 +22,89 @@ function headings(markdown) {
   const tokens = [];
   marked.walkTokens(marked.lexer(markdown), token => { if (token.type === 'heading') tokens.push(token); });
   return tokens.map(token => {
-    const base = token.text.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') || 'section';
+    // Reading numbers may change; existing rule links keep their semantic anchors.
+    const anchorText = token.text.replace(/^\d+(?:\.\d+)+\s+/, '');
+    const base = anchorText.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, '').trim().replace(/\s+/g, '-') || 'section';
     const count = seen.get(base) || 0;
     seen.set(base, count + 1);
     return { id: `${base}${count ? `-${count + 1}` : ''}`, text: token.text, depth: token.depth };
   });
 }
+function plainInline(tokens = []) {
+  return tokens.map(token => token.tokens ? plainInline(token.tokens) : token.text || '').join('').replace(/\s+/g, ' ').trim();
+}
+function indexEntries(page, tokens, marked) {
+  const used = new Set(page.toc.map(item => item.id));
+  page.entries = [];
+  marked.walkTokens(tokens, token => {
+    if (token.type !== 'table') return;
+    for (const row of token.rows) {
+      const cell = row[0];
+      if (!cell.text.includes('{#')) continue;
+      const match = cell.text.match(/^(.*?)\s+\{#([\p{L}\p{N}][\p{L}\p{N}-]*)\}\s*$/u);
+      if (!match || match[1].includes('{#')) throw new Error(`${page.file}: invalid dictionary anchor in ${cell.text}`);
+      const [, label, id] = match;
+      if (used.has(id)) throw new Error(`${page.file}: duplicate anchor ${id}`);
+      used.add(id);
+      cell.text = label;
+      cell.tokens = marked.Lexer.lexInline(label);
+      // The term itself becomes its permalink, so nested links would be invalid HTML.
+      marked.walkTokens(cell.tokens, part => {
+        if (part.type === 'link' || part.type === 'image') throw new Error(`${page.file}: dictionary term must not contain links or images: ${id}`);
+      });
+      row.entryId = id;
+      page.entries.push({ id, text: plainInline(cell.tokens), searchText: row.map(item => plainInline(item.tokens)).join(' ') });
+    }
+  });
+}
+const hasAnchor = (page, anchor) => [...page.toc, ...(page.entries || [])].some(item => item.id === anchor);
 export function renderPages(pages) {
   const files = new Map(pages.map(page => [page.file, page]));
   const ids = new Set();
+  const pageTokens = new Map();
+  const lexer = new Marked();
   for (const page of pages) {
     if (ids.has(page.id)) throw new Error(`Duplicate page id: ${page.id}`);
     ids.add(page.id);
     page.toc = headings(page.markdown);
+    const tokens = lexer.lexer(page.markdown);
+    indexEntries(page, tokens, lexer);
+    pageTokens.set(page, tokens);
   }
   for (const page of pages) {
     let headingIndex = 0;
     const renderer = {
       html({ text }) { return escapeHTML(text); },
+      code({ text, lang }) {
+        if (lang?.trim() !== 'mermaid') return false;
+        return `<figure class="wiki-flowchart"><div class="wiki-flowchart-view" aria-label="规则流程图"></div><details open><summary>Mermaid 源码</summary><pre><code class="language-mermaid">${escapeHTML(text)}</code></pre></details></figure>\n`;
+      },
+      table(token) {
+        const dictionary = token.rows.some(row => row.entryId);
+        let html;
+        if (dictionary) {
+          const header = token.header.map(cell => this.tablecell(cell)).join('');
+          const rows = token.rows.map(row => {
+            const cells = row.map((cell, index) => {
+              if (index !== 0 || !row.entryId) return this.tablecell(cell);
+              const href = `#/${page.id}@${encodeURIComponent(row.entryId)}`;
+              return `<td><a class="wiki-entry-link" href="${escapeHTML(href)}" title="此词条的固定链接">${this.parser.parseInline(cell.tokens)}</a></td>`;
+            }).join('');
+            return `<tr${row.entryId ? ` id="${escapeHTML(row.entryId)}" class="wiki-entry"` : ''}>${cells}</tr>\n`;
+          }).join('');
+          html = `<table class="wiki-dictionary"><thead><tr>${header}</tr></thead><tbody>${rows}</tbody></table>`;
+        } else html = Renderer.prototype.table.call(this, token);
+        return dictionary || token.header.length >= 4
+          ? `<div class="wiki-table-scroll" tabindex="0" role="region" aria-label="规则表格，可横向滚动">${html}</div>\n`
+          : html;
+      },
+      blockquote(token) {
+        const first = token.tokens[0];
+        const match = first?.type === 'paragraph' && first.text.match(/^\[!DETAILS\]\s+([^\n]+)$/);
+        if (!match) return false;
+        const titleTokens = lexer.Lexer.lexInline(match[1]);
+        return `<details class="wiki-details"><summary>${this.parser.parseInline(titleTokens)}</summary><div class="wiki-details-body">${this.parser.parse(token.tokens.slice(1))}</div></details>\n`;
+      },
       heading({ tokens, depth }) {
         const heading = page.toc[headingIndex++];
         return `<h${depth} id="${escapeHTML(heading.id)}">${this.parser.parseInline(tokens)}</h${depth}>\n`;
@@ -55,32 +120,88 @@ export function renderPages(pages) {
         try { anchor = decodeURIComponent(encodedAnchor); } catch { throw new Error(`${page.file}: malformed link ${href}`); }
         const target = filename ? files.get(path.posix.normalize(path.posix.join(path.posix.dirname(page.file), filename))) : page;
         if (!target) throw new Error(`${page.file}: invalid or unsafe link ${href}`);
-        if (anchor && !target.toc.some(item => item.id === anchor)) throw new Error(`${page.file}: unknown anchor ${href}`);
+        if (anchor && !hasAnchor(target, anchor)) throw new Error(`${page.file}: unknown anchor ${href}`);
         url = `#/${target.id}${anchor ? `@${encodeURIComponent(anchor)}` : ''}`;
         return `<a href="${escapeHTML(url)}">${label}</a>`;
       },
       image({ href, text }) {
         // Images are local static assets only; no remote tracking or executable URLs.
         if (!/^\.\.\/\.\.\/\.\.\/assets\/[a-zA-Z0-9/_ .-]+\.(png|jpe?g|webp|gif|svg)$/i.test(href) || href.includes('/../', 9)) throw new Error(`${page.file}: unsupported image ${href}`);
-        return `<img src="${escapeHTML(href.replace('../../../', './'))}" alt="${escapeHTML(text)}" loading="lazy">`;
+        const asset = escapeHTML(href.replace('../../../', './'));
+        return `<a class="wiki-illustration" href="${asset}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHTML(text)}（打开原图）"><img src="${asset}" alt="${escapeHTML(text)}" loading="lazy"></a>`;
       }
     };
-    page.html = new Marked({ renderer, gfm: true }).parse(page.markdown);
+    page.html = new Marked({ renderer, gfm: true }).parser(pageTokens.get(page));
   }
   return pages;
 }
+export function validateRedirects(redirects, pages) {
+  if (!redirects || typeof redirects !== 'object' || Array.isArray(redirects)) throw new Error('Redirects must be an object');
+  const byId = new Map(pages.map(page => [page.id, page]));
+  const parseRoute = route => {
+    if (typeof route !== 'string' || !/^[a-z][a-z0-9/-]*(?:@[\p{L}\p{N}-]+)?$/u.test(route)) throw new Error(`Invalid redirect route: ${route}`);
+    const [id, anchor] = route.split('@');
+    return { id, anchor };
+  };
+  const exists = ({ id, anchor }) => {
+    const page = byId.get(id);
+    return page && (anchor === undefined || hasAnchor(page, anchor));
+  };
+  for (const [source, target] of Object.entries(redirects)) {
+    const from = parseRoute(source);
+    const to = parseRoute(target);
+    if (exists(from)) throw new Error(`Redirect source shadows existing page or anchor: ${source}`);
+    // Targets must be real destinations, never other aliases; this also prevents cycles.
+    if (!exists(to)) throw new Error(`Unknown redirect target: ${target}`);
+  }
+  return redirects;
+}
+
 export async function buildWiki(directory = root) {
+  // Check in the pinned, self-contained runtime so static/offline previews need no CDN.
+  const vendor = path.join(directory, 'assets/vendor/mermaid');
+  await fs.mkdir(vendor, { recursive: true });
+  for (const [source, target] of [['dist/mermaid.tiny.js', 'mermaid.tiny.js'], ['LICENSE', 'LICENSE']]) {
+    await fs.copyFile(path.join(root, 'node_modules/@mermaid-js/tiny', source), path.join(vendor, target));
+  }
   const sourceRoot = path.join(directory, 'docs/rules');
   const navigation = JSON.parse(await fs.readFile(path.join(sourceRoot, 'navigation.json'), 'utf8'));
-  const paths = navigation.flatMap(section => [section.file, ...(section.pages || []).map(item => item.file)]);
-  const pages = await Promise.all(paths.map(async filename => {
-    if (!/^[a-z0-9/-]+\.md$/.test(filename)) throw new Error(`Invalid source path ${filename}`);
-    return parsePage(await fs.readFile(path.join(sourceRoot, filename), 'utf8'), filename);
-  }));
+  if (!Array.isArray(navigation)) throw new Error('Navigation must be an array');
+  const entries = [];
+  const seenFiles = new Set();
+  function visit(node, parentFile = null, isSection = false) {
+    const filename = node?.file;
+    if (typeof filename !== 'string' || !/^[a-z0-9/-]+\.md$/.test(filename) || filename.startsWith('/')) throw new Error(`Invalid source path ${filename}`);
+    if (seenFiles.has(filename)) throw new Error(`Duplicate navigation source: ${filename}`);
+    seenFiles.add(filename);
+    entries.push({ file: filename, parentFile });
+    const children = (isSection ? node.pages : node.children) ?? [];
+    if (!Array.isArray(children)) throw new Error(`${filename}: navigation children must be an array`);
+    const unexpected = isSection ? node.children : node.pages;
+    if (unexpected !== undefined) throw new Error(`${filename}: use ${isSection ? 'pages' : 'children'} for navigation children`);
+    return { file: filename, children: children.map(child => visit(child, filename)) };
+  }
+  const trees = navigation.map(section => visit(section, null, true));
+  const pages = await Promise.all(entries.map(async ({ file }) => parsePage(await fs.readFile(path.join(sourceRoot, file), 'utf8'), file)));
   renderPages(pages);
   const byFile = new Map(pages.map(page => [page.file, page]));
-  const sections = navigation.map(section => ({ id: byFile.get(section.file).id, title: byFile.get(section.file).title, pages: (section.pages || []).map(item => byFile.get(item.file).id) }));
-  const output = { sections, pages: pages.map(({ markdown, ...page }) => page) };
+  for (const { file, parentFile } of entries) {
+    if (parentFile) byFile.get(file).parentId = byFile.get(parentFile).id;
+  }
+  const toIds = node => ({ id: byFile.get(node.file).id, children: node.children.map(toIds) });
+  const descendants = node => node.children.flatMap(child => [child.id, ...descendants(child)]);
+  const sections = trees.map(tree => {
+    const node = toIds(tree);
+    return { id: node.id, title: byFile.get(tree.file).title, pages: descendants(node), tree: node.children };
+  });
+  let redirects = {};
+  try {
+    redirects = JSON.parse(await fs.readFile(path.join(sourceRoot, 'redirects.json'), 'utf8'));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  validateRedirects(redirects, pages);
+  const output = { sections, pages: pages.map(({ markdown, ...page }) => page), redirects };
   await fs.writeFile(path.join(directory, 'wiki-data.js'), `// Generated by tools/build-wiki.mjs. Edit docs/rules instead.\nwindow.TBH_WIKI = ${JSON.stringify(output, null, 2).replace(/</g, '\\u003c')};\n`);
   return output;
 }

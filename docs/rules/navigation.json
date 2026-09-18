@@ -1,71 +1,131 @@
 [
   {
     "file": "start/index.md",
-    "pages": [
-      {
-        "file": "start/overview.md"
-      },
-      {
-        "file": "start/quickstart.md"
-      }
-    ]
-  },
-  {
-    "file": "concepts/index.md",
-    "pages": [
-      {
-        "file": "concepts/board.md"
-      },
-      {
-        "file": "concepts/glossary.md"
-      }
-    ]
-  },
-  {
-    "file": "match/index.md",
-    "pages": [
-      {
-        "file": "match/turns.md"
-      }
-    ]
-  },
-  {
-    "file": "economy/index.md",
     "pages": []
   },
   {
-    "file": "actions/index.md",
+    "file": "common/index.md",
     "pages": [
       {
-        "file": "actions/combat.md"
+        "file": "common/principles.md"
+      },
+      {
+        "file": "common/elements.md"
+      },
+      {
+        "file": "common/rounds.md"
+      },
+      {
+        "file": "common/actions.md"
+      },
+      {
+        "file": "common/economy.md"
+      },
+      {
+        "file": "common/lifecycle.md"
+      },
+      {
+        "file": "common/card-effects.md",
+        "children": [
+          {
+            "file": "common/effect-design/activated.md"
+          },
+          {
+            "file": "common/effect-design/continuous.md"
+          },
+          {
+            "file": "common/effect-design/contributions.md",
+            "children": [
+              {
+                "file": "common/effect-design/triggered.md"
+              },
+              {
+                "file": "common/effect-design/replacement.md"
+              }
+            ]
+          },
+          {
+            "file": "common/effect-design/execution.md"
+          },
+          {
+            "file": "common/effect-design/dictionary.md",
+            "children": [
+              {
+                "file": "common/effect-design/dictionary/events.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/targets.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/selection.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/conditions.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/costs.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/results.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/duration.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/usage.md"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "file": "common/effects.md"
       }
     ]
   },
   {
-    "file": "effects/index.md",
+    "file": "standard/index.md",
     "pages": [
       {
-        "file": "effects/targets.md"
+        "file": "standard/overview.md"
       },
       {
-        "file": "effects/resolution.md"
+        "file": "standard/setup.md"
+      },
+      {
+        "file": "standard/automatic.md"
       }
     ]
   },
   {
     "file": "reference/index.md",
-    "pages": []
-  },
-  {
-    "file": "rulings/index.md",
     "pages": [
       {
-        "file": "rulings/pending.md"
+        "file": "reference/keywords.md"
+      },
+      {
+        "file": "reference/rulings.md"
       }
     ]
   },
   {
-    "file": "contributing/index.md",
-    "pages": []
+    "file": "maintenance/index.md",
+    "pages": [
+      {
+        "file": "maintenance/neutral-card-audit.md"
+      },
+      {
+        "file": "maintenance/pending.md"
+      },
+      {
+        "file": "maintenance/versions.md"
+      },
+      {
+        "file": "maintenance/sources.md"
+      },
+      {
+        "file": "maintenance/ruling-history.md"
+      }
+    ]
   }
 ]
