@@ -60,6 +60,8 @@
 
 ### Documentation
 
+- Rebuild Wiki chapter 7 as four fillable effect-design guides and eight linked dictionaries; add nested page navigation, parent breadcrumbs and legacy deep-link redirects. Examples remain reviewable teaching designs.
+
 - Rules Wiki: confirm death by cause, clear the body before death effects, exclude sacrifice/direct discard transfers, and consolidate repeated definitions across all 21 pages with a canonical topic index.
 
 - Rules Wiki: split card-effect design (chapter 7) from general settlement (chapter 8); clarify attack ranges, fix window rule ID, consolidate region diagrams and confirm separate shop/extra-deck regions with modifier-preserving refresh returns.

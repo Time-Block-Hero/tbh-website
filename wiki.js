@@ -25,6 +25,55 @@
     sidebar.classList.remove("is-open");
     menu.setAttribute("aria-expanded", "false");
   };
+  const parents = new Map(data.pages.filter(page => page.parentId).map(page => [page.id, page.parentId]));
+  const branches = new Map();
+  let branchSerial = 0;
+  // Older generated data contains only a flat section list.
+  for (const section of data.sections) {
+    for (const id of section.pages) if (!parents.has(id)) parents.set(id, section.id);
+  }
+  function ancestors(id) {
+    const chain = [];
+    const seen = new Set([id]);
+    for (let parent = parents.get(id); parent && !seen.has(parent); parent = parents.get(parent)) {
+      seen.add(parent);
+      chain.unshift(parent);
+    }
+    return chain;
+  }
+  function navigationItem(node, label) {
+    const page = byId.get(node.id);
+    const item = document.createElement("li");
+    const row = document.createElement("div");
+    row.className = "wiki-page-row";
+    const anchor = link(label || page.title, pageURL(node.id));
+    anchor.dataset.page = node.id;
+    row.append(anchor);
+    item.append(row);
+    if (node.children?.length) {
+      const children = document.createElement("ul");
+      children.className = "wiki-page-children";
+      children.id = `wiki-children-${++branchSerial}`;
+      children.hidden = true;
+      children.append(...node.children.map(child => navigationItem(child)));
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "wiki-page-toggle";
+      button.setAttribute("aria-controls", children.id);
+      const expand = open => {
+        children.hidden = !open;
+        button.textContent = open ? "−" : "+";
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", `${open ? "收起" : "展开"}${page.title}的子页`);
+      };
+      expand(false);
+      button.addEventListener("click", () => expand(children.hidden));
+      branches.set(node.id, expand);
+      row.append(button);
+      item.append(children);
+    }
+    return item;
+  }
   data.sections.forEach((section, index) => {
     const group = document.createElement("details");
     group.className = "wiki-group";
@@ -35,18 +84,9 @@
     number.textContent = String(index).padStart(2, "0");
     heading.append(number, document.createTextNode(section.title));
     const list = document.createElement("ul");
-    [section.id, ...section.pages].forEach((id) => {
-      const page = byId.get(id);
-      if (!page) return;
-      const item = document.createElement("li");
-      const anchor = link(
-        id === section.id ? "本组导读" : page.title,
-        pageURL(id),
-      );
-      anchor.dataset.page = id;
-      item.append(anchor);
-      list.append(item);
-    });
+    list.append(navigationItem({ id: section.id }, "本组导读"));
+    const tree = section.tree || section.pages.map(id => ({ id }));
+    list.append(...tree.filter(node => byId.has(node.id)).map(node => navigationItem(node)));
     group.append(heading, list);
     nav.append(group);
   });
@@ -86,13 +126,20 @@
     const hash = location.hash.startsWith("#/")
       ? location.hash.slice(2)
       : "start";
-    const [id, rawAnchor = ""] = hash.split("@");
+    const [id, rawAnchor = "", ...extraFragments] = hash.split("@");
     const page = byId.get(id);
     let anchor = "";
     try {
       anchor = decodeURIComponent(rawAnchor);
     } catch {
       /* Invalid fragment cannot execute or break routing. */
+    }
+    const redirectKey = `${id}${rawAnchor ? `@${anchor}` : ""}`;
+    if (!extraFragments.length && Object.hasOwn(data.redirects || {}, redirectKey)) {
+      const [targetId, targetAnchor] = data.redirects[redirectKey].split("@");
+      // Redirects are validated at build time and always remain within this Wiki.
+      location.replace(`${pageURL(targetId)}${targetAnchor ? `@${encodeURIComponent(targetAnchor)}` : ""}`);
+      return;
     }
     const changed = currentId !== id;
     currentId = id;
@@ -141,11 +188,11 @@
       document.createTextNode("/"),
       link(section.title, pageURL(section.id)),
     );
+    for (const parentId of ancestors(id).filter(parentId => parentId !== section.id)) {
+      crumbs.append(document.createTextNode("/"), link(byId.get(parentId).title, pageURL(parentId)));
+    }
     if (id !== section.id)
-      crumbs.append(
-        document.createTextNode("/"),
-        document.createTextNode(page.title),
-      );
+      crumbs.append(document.createTextNode("/"), document.createTextNode(page.title));
     // Only build-time escaped HTML is loaded, never URL or user-supplied HTML.
     if (changed) {
       article.innerHTML = page.html;
@@ -160,6 +207,7 @@
     nav.querySelectorAll("details").forEach((group) => {
       if (group.dataset.section === section.id) group.open = true;
     });
+    for (const ancestorId of [...ancestors(id), id]) branches.get(ancestorId)?.(true);
     const toc = document.getElementById("wiki-toc-links");
     toc.replaceChildren(
       ...page.toc.map((heading) => {
@@ -240,19 +288,28 @@
     nav.hidden = Boolean(query);
     results.replaceChildren();
     if (!query) return;
-    const matches = data.pages.filter(
-      (page) =>
-        page.title.toLocaleLowerCase().includes(query) ||
-        page.id.includes(query),
-    );
+    const matches = new Map();
+    for (const page of data.pages) {
+      if (page.title.toLocaleLowerCase().includes(query) || page.id.includes(query)) {
+        matches.set(pageURL(page.id), page.title);
+      }
+      for (const heading of page.toc || []) {
+        if (heading.text.toLocaleLowerCase().includes(query)) {
+          matches.set(
+            `${pageURL(page.id)}@${encodeURIComponent(heading.id)}`,
+            `${heading.text} — ${page.title}`,
+          );
+        }
+      }
+    }
     const summary = document.createElement("p");
     summary.setAttribute("role", "status");
-    summary.textContent = matches.length
-      ? `${matches.length} 个条目`
-      : "没有匹配的标题，请尝试其他关键词。";
+    summary.textContent = matches.size
+      ? `${matches.size} 个页面或章节`
+      : "没有匹配的页面或章节标题，请尝试其他关键词。";
     results.append(
       summary,
-      ...matches.map((page) => link(page.title, pageURL(page.id))),
+      ...Array.from(matches, ([href, label]) => link(label, href)),
     );
   });
   results.addEventListener("click", (event) => {

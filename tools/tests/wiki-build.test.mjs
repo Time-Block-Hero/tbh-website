@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import vm from 'node:vm';
 import { fileURLToPath } from 'node:url';
-import { parsePage, renderPages, buildWiki } from '../build-wiki.mjs';
+import { parsePage, renderPages, buildWiki, validateRedirects } from '../build-wiki.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const page = (id, markdown) => parsePage(`---\ntitle: ${id}\nid: ${id}\nstatus: draft\n---\n${markdown}`, `${id}.md`);
@@ -88,4 +88,115 @@ test('checked-in data matches the Markdown build and contains only unapproved dr
     vm.runInNewContext(generated, context);
     assert.equal(context.window.TBH_WIKI.pages.length, output.pages.length);
   } finally { await fs.rm(temp, { recursive: true, force: true }); }
+});
+
+async function navigationFixture(navigation, sources, check, redirects) {
+  const temp = await fs.mkdtemp(path.join(os.tmpdir(), 'tbh-wiki-navigation-'));
+  try {
+    const docs = path.join(temp, 'docs/rules');
+    await fs.mkdir(docs, { recursive: true });
+    await fs.writeFile(path.join(docs, 'navigation.json'), JSON.stringify(navigation));
+    if (redirects !== undefined) await fs.writeFile(path.join(docs, 'redirects.json'), JSON.stringify(redirects));
+    for (const [file, id, body = '## Content'] of sources) {
+      await fs.mkdir(path.dirname(path.join(docs, file)), { recursive: true });
+      await fs.writeFile(path.join(docs, file), `---\ntitle: ${id}\nid: ${id}\nstatus: draft\n---\n${body}`);
+    }
+    await check(() => buildWiki(temp));
+  } finally { await fs.rm(temp, { recursive: true, force: true }); }
+}
+
+test('nested navigation preserves DFS reading order, flat membership and exact parent chains', async () => {
+  const navigation = [{ file: 'index.md', pages: [
+    { file: 'effects.md', children: [
+      { file: 'active.md' },
+      { file: 'dictionary.md', children: [{ file: 'dictionary/events.md' }] }
+    ] },
+    { file: 'settlement.md' }
+  ] }];
+  const sources = [
+    ['index.md', 'common'], ['effects.md', 'card-effects'], ['active.md', 'active'],
+    ['dictionary.md', 'dictionary'], ['dictionary/events.md', 'events', '## Event list\n\n[Active](../active.md#content)'],
+    ['settlement.md', 'settlement']
+  ];
+  await navigationFixture(navigation, sources, async build => {
+    const result = await build();
+    assert.deepEqual(result.pages.map(page => page.id), ['common', 'card-effects', 'active', 'dictionary', 'events', 'settlement']);
+    assert.deepEqual(result.sections[0].pages, ['card-effects', 'active', 'dictionary', 'events', 'settlement']);
+    assert.deepEqual(result.sections[0].tree, [
+      { id: 'card-effects', children: [
+        { id: 'active', children: [] },
+        { id: 'dictionary', children: [{ id: 'events', children: [] }] }
+      ] },
+      { id: 'settlement', children: [] }
+    ]);
+    const pages = new Map(result.pages.map(page => [page.id, page]));
+    assert.equal(pages.get('events').parentId, 'dictionary');
+    assert.equal(pages.get('dictionary').parentId, 'card-effects');
+    assert.equal(pages.get('card-effects').parentId, 'common');
+    assert.equal(pages.get('common').parentId, undefined);
+    assert.equal(new Set(result.pages.map(page => page.id)).size, result.pages.length);
+    assert.deepEqual(result.redirects, {});
+    assert.match(pages.get('events').html, /href="#\/active@content"/);
+  });
+});
+
+test('nested navigation rejects duplicate files, invalid child collections and missing nested sources', async () => {
+  const sources = [['index.md', 'common'], ['effects.md', 'card-effects']];
+  await navigationFixture([{ file: 'index.md', pages: [{ file: 'effects.md', children: [{ file: 'effects.md' }] }] }], sources,
+    build => assert.rejects(build, /Duplicate navigation source: effects.md/));
+  await navigationFixture([{ file: 'index.md', pages: [{ file: 'effects.md', children: {} }] }], sources,
+    build => assert.rejects(build, /navigation children must be an array/));
+  await navigationFixture([{ file: 'index.md', pages: [{ file: 'effects.md', children: [{ file: 'missing.md' }] }] }], sources,
+    build => assert.rejects(build, /ENOENT.*missing.md/));
+  await navigationFixture([{ file: 'index.md', pages: [{ file: '/effects.md' }] }], sources,
+    build => assert.rejects(build, /Invalid source path/));
+  await navigationFixture([{ file: 'index.md', pages: [{ file: 'effects.md', pages: [] }] }], sources,
+    build => assert.rejects(build, /use children for navigation children/));
+});
+
+
+test('legacy page and decoded heading redirects resolve to real destinations', () => {
+  const pages = renderPages([page('card-effects', '## Current'), page('dictionary/usage', '## 统计主体')]);
+  const redirects = { 'card-effects@旧锚点': 'dictionary/usage@统计主体', 'old-page': 'card-effects' };
+  assert.deepEqual(validateRedirects(redirects, pages), redirects);
+  assert.deepEqual(validateRedirects({}, pages), {});
+});
+
+test('redirects reject shadowing, missing targets, alias chains, cycles and unsafe URLs', () => {
+  const pages = renderPages([page('card-effects', '## Current'), page('dictionary/usage', '## 统计主体')]);
+  for (const source of ['card-effects', 'card-effects@current']) {
+    assert.throws(() => validateRedirects({ [source]: 'dictionary/usage' }, pages), /shadows existing/);
+  }
+  for (const target of ['missing', 'dictionary/usage@缺失']) {
+    assert.throws(() => validateRedirects({ old: target }, pages), /Unknown redirect target/);
+  }
+  assert.throws(() => validateRedirects({ old: 'other', other: 'old' }, pages), /Unknown redirect target/);
+  assert.throws(() => validateRedirects({ old: 'other', other: 'card-effects' }, pages), /Unknown redirect target/);
+  for (const route of ['javascript:alert(1)', 'https://example.com', '//example.com', '../old', 'old@%E4%B8%AD', 'old@', 'old@a@b', 'old@<img>']) {
+    assert.throws(() => validateRedirects({ [route]: 'card-effects' }, pages), /Invalid redirect route/);
+    assert.throws(() => validateRedirects({ old: route }, pages), /Invalid redirect route/);
+  }
+  for (const invalid of [null, [], 'old']) assert.throws(() => validateRedirects(invalid, pages), /must be an object/);
+});
+
+
+test('build reads optional redirect mappings and validates destinations after heading generation', async () => {
+  const mapping = { 'old@旧标题': 'common@content' };
+  await navigationFixture([{ file: 'index.md', pages: [] }], [['index.md', 'common']], async build => {
+    const output = await build();
+    assert.deepEqual(output.redirects, mapping);
+  }, mapping);
+  await navigationFixture([{ file: 'index.md', pages: [] }], [['index.md', 'common']],
+    build => assert.rejects(build, /Unknown redirect target/), { old: 'common@不存在' });
+});
+
+test('wide design tables get keyboard-accessible scroll containers without bypassing safe rendering', () => {
+  const [result] = renderPages([page('start', '| A | B | C | D |\n| - | - | - | - |\n| **required** | [entry](#entry) | <img src=x> | value |\n\n## Entry')]);
+  assert.match(result.html, /class="wiki-table-scroll" tabindex="0" role="region"/);
+  assert.match(result.html, /<strong>required<\/strong>/);
+  assert.match(result.html, /href="#\/start@entry"/);
+  assert.match(result.html, /&lt;img src=x&gt;/);
+  assert.doesNotMatch(result.html, /<img/);
+  const [narrow] = renderPages([page('start', '| A | B |\n| - | - |\n| 1 | 2 |')]);
+  assert.doesNotMatch(narrow.html, /wiki-table-scroll/);
 });

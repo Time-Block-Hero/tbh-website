@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Marked } from 'marked';
+import { Marked, Renderer } from 'marked';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const escapeHTML = (text = '') => String(text).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -46,6 +46,12 @@ export function renderPages(pages) {
         if (lang?.trim() !== 'mermaid') return false;
         return `<figure class="wiki-flowchart"><div class="wiki-flowchart-view" aria-label="规则流程图"></div><details open><summary>Mermaid 源码</summary><pre><code class="language-mermaid">${escapeHTML(text)}</code></pre></details></figure>\n`;
       },
+      table(token) {
+        const html = Renderer.prototype.table.call(this, token);
+        return token.header.length >= 4
+          ? `<div class="wiki-table-scroll" tabindex="0" role="region" aria-label="规则表格，可横向滚动">${html}</div>\n`
+          : html;
+      },
       heading({ tokens, depth }) {
         const heading = page.toc[headingIndex++];
         return `<h${depth} id="${escapeHTML(heading.id)}">${this.parser.parseInline(tokens)}</h${depth}>\n`;
@@ -76,6 +82,28 @@ export function renderPages(pages) {
   }
   return pages;
 }
+export function validateRedirects(redirects, pages) {
+  if (!redirects || typeof redirects !== 'object' || Array.isArray(redirects)) throw new Error('Redirects must be an object');
+  const byId = new Map(pages.map(page => [page.id, page]));
+  const parseRoute = route => {
+    if (typeof route !== 'string' || !/^[a-z][a-z0-9/-]*(?:@[\p{L}\p{N}-]+)?$/u.test(route)) throw new Error(`Invalid redirect route: ${route}`);
+    const [id, anchor] = route.split('@');
+    return { id, anchor };
+  };
+  const exists = ({ id, anchor }) => {
+    const page = byId.get(id);
+    return page && (anchor === undefined || page.toc.some(item => item.id === anchor));
+  };
+  for (const [source, target] of Object.entries(redirects)) {
+    const from = parseRoute(source);
+    const to = parseRoute(target);
+    if (exists(from)) throw new Error(`Redirect source shadows existing page or anchor: ${source}`);
+    // Targets must be real destinations, never other aliases; this also prevents cycles.
+    if (!exists(to)) throw new Error(`Unknown redirect target: ${target}`);
+  }
+  return redirects;
+}
+
 export async function buildWiki(directory = root) {
   // Check in the pinned, self-contained runtime so static/offline previews need no CDN.
   const vendor = path.join(directory, 'assets/vendor/mermaid');
@@ -85,15 +113,42 @@ export async function buildWiki(directory = root) {
   }
   const sourceRoot = path.join(directory, 'docs/rules');
   const navigation = JSON.parse(await fs.readFile(path.join(sourceRoot, 'navigation.json'), 'utf8'));
-  const paths = navigation.flatMap(section => [section.file, ...(section.pages || []).map(item => item.file)]);
-  const pages = await Promise.all(paths.map(async filename => {
-    if (!/^[a-z0-9/-]+\.md$/.test(filename)) throw new Error(`Invalid source path ${filename}`);
-    return parsePage(await fs.readFile(path.join(sourceRoot, filename), 'utf8'), filename);
-  }));
+  if (!Array.isArray(navigation)) throw new Error('Navigation must be an array');
+  const entries = [];
+  const seenFiles = new Set();
+  function visit(node, parentFile = null, isSection = false) {
+    const filename = node?.file;
+    if (typeof filename !== 'string' || !/^[a-z0-9/-]+\.md$/.test(filename) || filename.startsWith('/')) throw new Error(`Invalid source path ${filename}`);
+    if (seenFiles.has(filename)) throw new Error(`Duplicate navigation source: ${filename}`);
+    seenFiles.add(filename);
+    entries.push({ file: filename, parentFile });
+    const children = (isSection ? node.pages : node.children) ?? [];
+    if (!Array.isArray(children)) throw new Error(`${filename}: navigation children must be an array`);
+    const unexpected = isSection ? node.children : node.pages;
+    if (unexpected !== undefined) throw new Error(`${filename}: use ${isSection ? 'pages' : 'children'} for navigation children`);
+    return { file: filename, children: children.map(child => visit(child, filename)) };
+  }
+  const trees = navigation.map(section => visit(section, null, true));
+  const pages = await Promise.all(entries.map(async ({ file }) => parsePage(await fs.readFile(path.join(sourceRoot, file), 'utf8'), file)));
   renderPages(pages);
   const byFile = new Map(pages.map(page => [page.file, page]));
-  const sections = navigation.map(section => ({ id: byFile.get(section.file).id, title: byFile.get(section.file).title, pages: (section.pages || []).map(item => byFile.get(item.file).id) }));
-  const output = { sections, pages: pages.map(({ markdown, ...page }) => page) };
+  for (const { file, parentFile } of entries) {
+    if (parentFile) byFile.get(file).parentId = byFile.get(parentFile).id;
+  }
+  const toIds = node => ({ id: byFile.get(node.file).id, children: node.children.map(toIds) });
+  const descendants = node => node.children.flatMap(child => [child.id, ...descendants(child)]);
+  const sections = trees.map(tree => {
+    const node = toIds(tree);
+    return { id: node.id, title: byFile.get(tree.file).title, pages: descendants(node), tree: node.children };
+  });
+  let redirects = {};
+  try {
+    redirects = JSON.parse(await fs.readFile(path.join(sourceRoot, 'redirects.json'), 'utf8'));
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  validateRedirects(redirects, pages);
+  const output = { sections, pages: pages.map(({ markdown, ...page }) => page), redirects };
   await fs.writeFile(path.join(directory, 'wiki-data.js'), `// Generated by tools/build-wiki.mjs. Edit docs/rules instead.\nwindow.TBH_WIKI = ${JSON.stringify(output, null, 2).replace(/</g, '\\u003c')};\n`);
   return output;
 }

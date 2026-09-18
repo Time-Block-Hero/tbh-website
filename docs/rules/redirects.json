@@ -1,0 +1,22 @@
+{
+  "card-effects@效果的工作方式": "card-effects@设计方法与阅读入口",
+  "card-effects@主动能力": "card-effects/activated",
+  "card-effects@触发效果": "card-effects/triggered",
+  "card-effects@持续效果": "card-effects/continuous",
+  "card-effects@替换与阻止效果": "card-effects/replacement",
+  "card-effects@每项效果的必要说明": "card-effects@如何填写要素表",
+  "card-effects@触发事件目录": "card-effects/dictionary/events",
+  "card-effects@卡牌与区域事件": "card-effects/dictionary/events@进入战场后",
+  "card-effects@战斗与位置事件": "card-effects/dictionary/events@攻击事件",
+  "card-effects@阶段经济与效果事件": "card-effects/dictionary/events@阶段开始或结束",
+  "card-effects@对象范围与选取方式": "card-effects/dictionary/targets",
+  "card-effects@对象和区域": "card-effects/dictionary/targets@对象身份",
+  "card-effects@空间范围": "card-effects/dictionary/targets@距离范围",
+  "card-effects@数量和选择": "card-effects/dictionary/selection",
+  "card-effects@执行时间存在期限与限次": "card-effects/dictionary/duration",
+  "card-effects@执行时间": "card-effects/dictionary/duration@当前执行",
+  "card-effects@存在期限与生效条件": "card-effects/dictionary/duration@有条件生效",
+  "card-effects@次数窗口与统计对象": "card-effects/dictionary/usage",
+  "card-effects@结果与完整描述示例": "card-effects/dictionary/results",
+  "card-effects@关联章节": "card-effects@共享设计字典"
+}

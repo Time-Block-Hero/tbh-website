@@ -25,7 +25,50 @@
         "file": "common/lifecycle.md"
       },
       {
-        "file": "common/card-effects.md"
+        "file": "common/card-effects.md",
+        "children": [
+          {
+            "file": "common/effect-design/activated.md"
+          },
+          {
+            "file": "common/effect-design/triggered.md"
+          },
+          {
+            "file": "common/effect-design/continuous.md"
+          },
+          {
+            "file": "common/effect-design/replacement.md"
+          },
+          {
+            "file": "common/effect-design/dictionary.md",
+            "children": [
+              {
+                "file": "common/effect-design/dictionary/events.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/targets.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/selection.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/conditions.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/costs.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/results.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/duration.md"
+              },
+              {
+                "file": "common/effect-design/dictionary/usage.md"
+              }
+            ]
+          }
+        ]
       },
       {
         "file": "common/effects.md"
