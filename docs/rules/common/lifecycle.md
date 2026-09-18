@@ -428,14 +428,13 @@ flowchart TD
   pickup --> effect["为符合条件的玩家结算资源收益"]
   effect --> gone["拾取完毕，资源本体消失"]
   gone --> slow["再执行普通慢速效果"]
-  stop -->|时动| immediate["当场结算拾取收益"]
-  immediate --> immediateGone["拾取完毕，资源本体消失，再继续移动流程"]
-  stop -->|其他阶段| pending["按具体效果明确时点"]
+  stop -->|否| immediate["当场结算拾取收益"]
+  immediate --> immediateGone["拾取完毕，资源本体消失，再继续原流程"]
 ```
 
 图 6-B 展示本次确认的时停拾取位置，资源本体仍在拾取收益完成后消失。入场与拾取的先后由[4.2.2](actions.md#放置与拾取)引用此流程。
 
-执行资格重检、收益对象及其他阶段的拾取时点，集中见[资源牌剩余边界](../maintenance/pending.md#资源牌剩余边界)。
+执行资格重检与收益对象，集中见[资源牌剩余边界](../maintenance/pending.md#资源牌剩余边界)。
 
 ## 6.9 关联章节
 
