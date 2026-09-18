@@ -373,3 +373,23 @@ status: draft
 用户明确：17 受伤特指生命实际扣除，圣盾／护甲完全抵挡不触发；18 重申生命／速度 debuff 同步等量扣除当前值，撤下额外截断方案，不再重复询问；19 离场再入场刷新攻击／主动能力次数，理由是重入本身有成本；20 普通一次性进度的完成标记逆向重置，烬白能再次完成；21 原生圣盾重入恢复；22 未写期限的一次性 buff 不默认回合末到期，仅本回合有效须注明。
 
 同步主定义、状态表和设计字典，清理相反提案。第 17 项不否定第 11 项的伤害步骤成功：执行成功与受伤触发资格分开。第 18 项不是重新批准一个新机制，而是落实第 13 项已有原则。剩余正文问题合并为 12 组审阅主题，标准模式未起草内容另列；不把主题数伪称为剩余原子问题数。只修改 website Wiki，不改卡表或游戏实现。
+
+## 第二十三至第二十八组确认与实现核对
+
+用户明确未批注的提案均通过；各批注修正覆盖原提案。第 23–28 组的规则落点与剩余事项见[集中裁定](pending.md#第二十三至第二十八组集中裁定)。本轮只更改 website Wiki 与生成数据，不迁移卡表、游戏实现或 Unity 配置。
+
+**施加与撤销属性修正不对称。** 施加生命／速度 buff 或 debuff 时等量影响当前值；撤销时只取 min（当前值，新上限）。这取代第 13／18 项中编辑推导的“撤销时反向等量调整”；此前的记录只表示历史稿，不能继续作为现行规则。尤其不能用撤销 +2 生命光环再扣 2 当前生命构造死亡例子。
+
+**建造与复制批注。** 未固定值为每个时刻的有效箭头数，回合末将其加入下一回合固定值；自身入场触发发生在完成建造时，不是放置时先登记延迟事项。复制由卡文明写原始版或相同复制，后者保留全部状态，取代未说明时复制当前形态并清空状态的提案。当前生命、行动点与圣盾有无在逆向转区刷新；此操作与原地撤销 buff 分开。
+
+**23b 只读实现核对。** unified 的 manifest、packages-lock 与本地 PackageCache 一致固定规则包 `2b0ec49079cbf7e0708100d02a356618d77c00ca`。本轮直接阅读该缓存及固定版本测试，没有运行游戏测试，也没有切换依赖。
+
+- [ResolutionSessionDriver.cs](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionSessionDriver.cs#L195) 挂起父结算、逆序压入子结算；先处理子结算，因此 A 引发 C 时，C 先于等待中的 B。
+- [PlanWork.cs](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.PlanWork.cs#L71) 与 [ApplyWork.cs](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Resolution/ResolutionRunner.ApplyWork.cs#L193) 允许每个步骤后先处理子结算再恢复父效果，实际可为 A 第一步→C→A 剩余步骤→B。
+- [ResolutionSchedulerTreeTests.cs](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Tests~/tests/TimeBlock.Rules.Headless.Tests/ResolutionSchedulerTreeTests.cs#L17) 包含深度优先顺序断言；本轮只读取该测试，未执行。
+
+**设计与实现差异必须保留。** 用户反对 23b 的队尾方案，指出子效果应插队；与此同时未批注的 23a“整份效果正文先完成”已获通过。Wiki 据此采用 A 完整正文→C 及其后续→B。不能把代码中更细的逐步骤插入直接覆盖该确认，后续实现需单独迁移。
+
+排序也并非已经全部实现：[ContinuousTriggerMatcher.cs](https://github.com/Time-Block-Hero/tbh-rules-engine/blob/2b0ec49079cbf7e0708100d02a356618d77c00ca/Runtime/Server/Execution/Triggers/ContinuousTriggerMatcher.cs#L80) 的实际排序以玩家席位等字段开头，包含入场顺序，但不等于新的本回合时动顺序；替换管线仍按其自身实例次序。链接版本均应以上述固定包为准。规则正文只维护玩法排序，不写这些内部字段。
+
+同时伤害的固定实现也仍与新规则有差异：每个伤害项后的效果可能在下一伤害项前处理，死亡集中于批次后。本轮不宣称现有代码已满足 Wiki 的“同时伤害及死亡清理整体完成后才处理后续”规则。
