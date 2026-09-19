@@ -1,0 +1,576 @@
+{
+  "schemaVersion": 1,
+  "baselineCommit": "61934bf29d0eec856c869aed0813e214e97f3cdc",
+  "baselineCardsSha256": "36b25808a643997769d68610645ca4cf6705a467cfa75318eb33a6953f7b1438",
+  "cards": [
+    {
+      "baselineDisplayId": "FNG-001",
+      "uid": "f14f6fca-6862-441b-9254-8b3df5556389"
+    },
+    {
+      "baselineDisplayId": "FNG-002",
+      "uid": "0166c132-1962-4fc7-9aa6-353ecdba8eab"
+    },
+    {
+      "baselineDisplayId": "FNG-003",
+      "uid": "094a41e6-d797-42ea-85ac-d44bd6049c47"
+    },
+    {
+      "baselineDisplayId": "FNG-004",
+      "uid": "c285d915-f68b-4827-9c39-c4911895e360"
+    },
+    {
+      "baselineDisplayId": "FNG-005",
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2"
+    },
+    {
+      "baselineDisplayId": "FNG-006",
+      "uid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79"
+    },
+    {
+      "baselineDisplayId": "FNG-007",
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6"
+    },
+    {
+      "baselineDisplayId": "FNG-008",
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e"
+    },
+    {
+      "baselineDisplayId": "FNG-009",
+      "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca"
+    },
+    {
+      "baselineDisplayId": "FNG-010",
+      "uid": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97"
+    },
+    {
+      "baselineDisplayId": "FNG-011",
+      "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124"
+    },
+    {
+      "baselineDisplayId": "FNG-012",
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976"
+    },
+    {
+      "baselineDisplayId": "FNG-013",
+      "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c"
+    },
+    {
+      "baselineDisplayId": "FNG-014",
+      "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454"
+    },
+    {
+      "baselineDisplayId": "FNG-015",
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba"
+    },
+    {
+      "baselineDisplayId": "FNG-016",
+      "uid": "ba9f57db-5a99-4893-a37d-492aaf23c59b"
+    },
+    {
+      "baselineDisplayId": "FNG-017",
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0"
+    },
+    {
+      "baselineDisplayId": "FNG-018",
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992"
+    },
+    {
+      "baselineDisplayId": "FNG-019",
+      "uid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad"
+    },
+    {
+      "baselineDisplayId": "FNG-020",
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d"
+    },
+    {
+      "baselineDisplayId": "FNG-021",
+      "uid": "774620fa-d879-4c02-8c43-bde70f4c2bb3"
+    },
+    {
+      "baselineDisplayId": "FNG-022",
+      "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9"
+    },
+    {
+      "baselineDisplayId": "FNG-023",
+      "uid": "353fe62e-a917-4f71-933c-c2de12eec7e1"
+    },
+    {
+      "baselineDisplayId": "FNG-024",
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65"
+    },
+    {
+      "baselineDisplayId": "FNG-025",
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17"
+    },
+    {
+      "baselineDisplayId": "FNG-026",
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d"
+    },
+    {
+      "baselineDisplayId": "FNG-027",
+      "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec"
+    },
+    {
+      "baselineDisplayId": "FNG-028",
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5"
+    },
+    {
+      "baselineDisplayId": "FNG-029",
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091"
+    },
+    {
+      "baselineDisplayId": "FNG-030",
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645"
+    },
+    {
+      "baselineDisplayId": "FNG-031",
+      "uid": "15ce0bd0-83ad-413b-9cc1-829390efaef4"
+    },
+    {
+      "baselineDisplayId": "FNG-032",
+      "uid": "619301f9-72b0-4f86-a36c-e55046d138f5"
+    },
+    {
+      "baselineDisplayId": "FNG-033",
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f"
+    },
+    {
+      "baselineDisplayId": "FNG-034",
+      "uid": "5401f9a3-9ab5-4882-b89b-e72a52b23651"
+    },
+    {
+      "baselineDisplayId": "FNG-035",
+      "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53"
+    },
+    {
+      "baselineDisplayId": "FNG-036",
+      "uid": "fec9be8d-5655-413d-aaf2-e1a3027034c7"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-001",
+      "uid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-002",
+      "uid": "b60225b4-f701-49cd-875a-ef77bb0eba0a"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-003",
+      "uid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-004",
+      "uid": "853ec50e-d868-4519-b2f4-201799a22887"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-005",
+      "uid": "a463123c-664c-427e-b079-c60d79dd60c9"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-006",
+      "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-007",
+      "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-008",
+      "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-009",
+      "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-010",
+      "uid": "92e377d2-5733-47ed-885b-d57e7f52bab1"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-011",
+      "uid": "72985209-0b77-4cf4-b619-cf8390ba8b24"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-012",
+      "uid": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf"
+    },
+    {
+      "baselineDisplayId": "FNG-UN-013",
+      "uid": "db73af85-5858-41f0-ac42-b4ff0e13376d"
+    },
+    {
+      "baselineDisplayId": "SA-000",
+      "uid": "e66c2fd5-ee14-4cb1-b55e-094324214830"
+    },
+    {
+      "baselineDisplayId": "SA-001",
+      "uid": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073"
+    },
+    {
+      "baselineDisplayId": "SA-002",
+      "uid": "70f56934-997a-4eaa-b34b-1745d6ac06f7"
+    },
+    {
+      "baselineDisplayId": "SA-003",
+      "uid": "ff002f60-4a64-4d42-96f1-ba163bb8e59c"
+    },
+    {
+      "baselineDisplayId": "SA-004",
+      "uid": "63699e58-6aa0-4012-b096-364a7cff20e7"
+    },
+    {
+      "baselineDisplayId": "SA-004-01",
+      "uid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e"
+    },
+    {
+      "baselineDisplayId": "SA-005",
+      "uid": "ef4b99f1-3ee1-44ba-ac60-4648d8082654"
+    },
+    {
+      "baselineDisplayId": "SA-006",
+      "uid": "49325659-618c-44a0-b0d7-0f3b5a9f88ae"
+    },
+    {
+      "baselineDisplayId": "SA-007",
+      "uid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405"
+    },
+    {
+      "baselineDisplayId": "SA-008",
+      "uid": "872bb708-d5c1-49c3-810d-d1d748a8276c"
+    },
+    {
+      "baselineDisplayId": "SA-009",
+      "uid": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f"
+    },
+    {
+      "baselineDisplayId": "SA-010",
+      "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75"
+    },
+    {
+      "baselineDisplayId": "SA-011",
+      "uid": "b47616d4-bdca-43f4-97f4-d0649b48ba8d"
+    },
+    {
+      "baselineDisplayId": "SA-011-01",
+      "uid": "c5972274-f51c-4859-ae8a-cd1f5739d941"
+    },
+    {
+      "baselineDisplayId": "SA-012",
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f"
+    },
+    {
+      "baselineDisplayId": "SA-013",
+      "uid": "ca101a43-d6c8-4289-b967-947e7212b941"
+    },
+    {
+      "baselineDisplayId": "SA-014",
+      "uid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f"
+    },
+    {
+      "baselineDisplayId": "SA-015",
+      "uid": "385f1bae-5ade-411d-abd1-850d74944004"
+    },
+    {
+      "baselineDisplayId": "SA-016",
+      "uid": "8e486b7d-4654-40fb-baf5-c52b38010dd4"
+    },
+    {
+      "baselineDisplayId": "SA-016-01",
+      "uid": "4eddea4a-df91-425d-bbdf-b216da8381d8"
+    },
+    {
+      "baselineDisplayId": "SA-017",
+      "uid": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f"
+    },
+    {
+      "baselineDisplayId": "SA-018",
+      "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd"
+    },
+    {
+      "baselineDisplayId": "SA-019",
+      "uid": "0dde3972-5b69-4c3c-a17b-855656bf15cf"
+    },
+    {
+      "baselineDisplayId": "SC-000",
+      "uid": "b85a69b8-6241-45c9-a168-a10282390c44"
+    },
+    {
+      "baselineDisplayId": "SC-001",
+      "uid": "a1edce46-f210-4215-ab59-f35a5173c50d"
+    },
+    {
+      "baselineDisplayId": "SC-002",
+      "uid": "07563f0e-c7d5-4448-a351-fa618dfd924c"
+    },
+    {
+      "baselineDisplayId": "SC-003",
+      "uid": "233e64f0-fc55-44a4-af3a-10222df336c4"
+    },
+    {
+      "baselineDisplayId": "SC-004",
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501"
+    },
+    {
+      "baselineDisplayId": "SC-005",
+      "uid": "4c2033a5-fb41-4c96-b540-16572b690c70"
+    },
+    {
+      "baselineDisplayId": "SC-006",
+      "uid": "69f1c181-ade4-485e-9923-e5949cda7f93"
+    },
+    {
+      "baselineDisplayId": "SC-007",
+      "uid": "204a68df-1ff8-4d10-9309-aafbd90d6079"
+    },
+    {
+      "baselineDisplayId": "SC-008",
+      "uid": "62452283-0e35-4ba0-83cc-2ae115078866"
+    },
+    {
+      "baselineDisplayId": "SC-009",
+      "uid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92"
+    },
+    {
+      "baselineDisplayId": "SC-010",
+      "uid": "6282e729-e313-4bb6-a979-d19a27917d85"
+    },
+    {
+      "baselineDisplayId": "SC-011",
+      "uid": "7a4d1b62-bf76-4807-a441-2b778ddd6f01"
+    },
+    {
+      "baselineDisplayId": "SC-012",
+      "uid": "bb14410e-c906-4620-a04c-6886f5039c8e"
+    },
+    {
+      "baselineDisplayId": "SC-013",
+      "uid": "c3f625a9-6093-4a21-ba51-fe7c864f7cef"
+    },
+    {
+      "baselineDisplayId": "SC-014",
+      "uid": "e456b12e-bbd3-444d-9583-222fc4e80780"
+    },
+    {
+      "baselineDisplayId": "SC-015",
+      "uid": "b5e0ec0b-e614-4862-9eff-bba73677708b"
+    },
+    {
+      "baselineDisplayId": "SC-016",
+      "uid": "43b464d4-781c-4390-80eb-d926b7dea2d9"
+    },
+    {
+      "baselineDisplayId": "SC-017",
+      "uid": "454171b3-f6cb-4907-8e6c-baca849b06b3"
+    },
+    {
+      "baselineDisplayId": "SC-018",
+      "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3"
+    },
+    {
+      "baselineDisplayId": "SC-018-01",
+      "uid": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1"
+    },
+    {
+      "baselineDisplayId": "SC-019",
+      "uid": "e7d3fe6a-821b-4c83-b660-1ada41ee2368"
+    },
+    {
+      "baselineDisplayId": "AI-000",
+      "uid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1"
+    },
+    {
+      "baselineDisplayId": "AI-001",
+      "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c"
+    },
+    {
+      "baselineDisplayId": "AI-002",
+      "uid": "e1362804-dea0-49b5-9513-8c1317369f9e"
+    },
+    {
+      "baselineDisplayId": "AI-003",
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448"
+    },
+    {
+      "baselineDisplayId": "AI-004",
+      "uid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b"
+    },
+    {
+      "baselineDisplayId": "AI-005",
+      "uid": "3e56ca22-efd1-4cd0-822f-beceb830e41d"
+    },
+    {
+      "baselineDisplayId": "AI-006",
+      "uid": "0764d0f5-4050-49ab-924f-2485c4381e26"
+    },
+    {
+      "baselineDisplayId": "AI-007",
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f"
+    },
+    {
+      "baselineDisplayId": "AI-008",
+      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298"
+    },
+    {
+      "baselineDisplayId": "AI-009",
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4"
+    },
+    {
+      "baselineDisplayId": "AI-010",
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942"
+    },
+    {
+      "baselineDisplayId": "AI-011",
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6"
+    },
+    {
+      "baselineDisplayId": "AI-012",
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4"
+    },
+    {
+      "baselineDisplayId": "AI-013",
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5"
+    },
+    {
+      "baselineDisplayId": "AI-014",
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70"
+    },
+    {
+      "baselineDisplayId": "AI-015",
+      "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572"
+    },
+    {
+      "baselineDisplayId": "AI-016",
+      "uid": "341ea244-575c-445b-b1a6-ea761c92145f"
+    },
+    {
+      "baselineDisplayId": "AI-017",
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7"
+    },
+    {
+      "baselineDisplayId": "AI-018",
+      "uid": "0bd031d4-49d5-4720-b75b-58eb95690fb1"
+    },
+    {
+      "baselineDisplayId": "AI-019",
+      "uid": "3d1865c5-b2e7-4003-96d1-07223a482030"
+    },
+    {
+      "baselineDisplayId": "AI-020",
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739"
+    },
+    {
+      "baselineDisplayId": "AI-020-01",
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2"
+    },
+    {
+      "baselineDisplayId": "MCC-000",
+      "uid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84"
+    },
+    {
+      "baselineDisplayId": "MCC-001",
+      "uid": "d65e0578-98e4-46af-aeb2-134cae1a812b"
+    },
+    {
+      "baselineDisplayId": "MCC-002",
+      "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58"
+    },
+    {
+      "baselineDisplayId": "MCC-003",
+      "uid": "7b3a2e75-79de-4c35-8bf1-29a4987c8187"
+    },
+    {
+      "baselineDisplayId": "MCC-004",
+      "uid": "faba227c-aad4-425d-b905-a7c62f14a94e"
+    },
+    {
+      "baselineDisplayId": "MCC-005",
+      "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e"
+    },
+    {
+      "baselineDisplayId": "MCC-006",
+      "uid": "675083cf-30bf-49c8-b7bf-d18fe67fe493"
+    },
+    {
+      "baselineDisplayId": "MCC-007",
+      "uid": "731b9886-bc52-4778-b3ea-3ec7319b5d12"
+    },
+    {
+      "baselineDisplayId": "MCC-008",
+      "uid": "6c82d274-e2b9-4626-9bab-deb01dd09048"
+    },
+    {
+      "baselineDisplayId": "MCC-009",
+      "uid": "c1a2c9af-3f22-4f77-993c-c6e4b1732695"
+    },
+    {
+      "baselineDisplayId": "MCC-009-01",
+      "uid": "5121261f-8b88-4bb0-b882-717b44188f74"
+    },
+    {
+      "baselineDisplayId": "MCC-010",
+      "uid": "8f084b1a-e770-413d-800e-61165fc3b4d9"
+    },
+    {
+      "baselineDisplayId": "MCC-011",
+      "uid": "0c3119ed-d309-4a38-b760-1839d8bae416"
+    },
+    {
+      "baselineDisplayId": "MCC-012",
+      "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b"
+    },
+    {
+      "baselineDisplayId": "MCC-013",
+      "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4"
+    },
+    {
+      "baselineDisplayId": "MCC-014",
+      "uid": "b6326476-ec83-478d-afcd-91b3cec23740"
+    },
+    {
+      "baselineDisplayId": "MCC-015",
+      "uid": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd"
+    },
+    {
+      "baselineDisplayId": "MCC-016",
+      "uid": "43588596-cb83-42e9-b6aa-8cc3ea07e6cf"
+    },
+    {
+      "baselineDisplayId": "MCC-017",
+      "uid": "ad01b613-32a7-422a-a227-6e921ce275c2"
+    },
+    {
+      "baselineDisplayId": "MCC-018",
+      "uid": "1b818098-53a5-4d54-8fb1-01bcdf9f4785"
+    },
+    {
+      "baselineDisplayId": "MCC-019",
+      "uid": "d06e4b53-ba45-4f1b-9034-7a7d9773bceb"
+    },
+    {
+      "baselineDisplayId": "MCC-020",
+      "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62"
+    }
+  ],
+  "excludedUids": [
+    "5121261f-8b88-4bb0-b882-717b44188f74",
+    "bdd6fa88-21f9-4eed-8248-00e550344739",
+    "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+    "ff153fcb-5387-455c-b673-ecf2d9ddfbc2"
+  ],
+  "blankEffectUids": [
+    "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+    "72985209-0b77-4cf4-b619-cf8390ba8b24",
+    "853ec50e-d868-4519-b2f4-201799a22887",
+    "e7d3fe6a-821b-4c83-b660-1ada41ee2368"
+  ],
+  "resourceMigrationUids": [
+    "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+    "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf",
+    "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+    "92e377d2-5733-47ed-885b-d57e7f52bab1",
+    "a463123c-664c-427e-b079-c60d79dd60c9",
+    "db73af85-5858-41f0-ac42-b4ff0e13376d",
+    "e5082c65-fe7d-41db-b934-5ba6a0990a6b"
+  ]
+}
