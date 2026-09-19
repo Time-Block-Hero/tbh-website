@@ -32,7 +32,7 @@ node tools/card-editor-server.mjs --port 4317
 - 添加、删除主卡和衍生卡；通过本地服务删除时同步删除对应实体卡图包。
 - 按编号模式拖拽卡牌并插入目标位置；保存后自动重新编号。
 - 按费用升序或降序浏览；视图排序不会修改卡牌 ID。
-- 随从与法术使用不同字段和布局；随从种族支持多选，“建筑”用于有生命值的非生物随从。
+- 支持随从、法术和资源三种类型；资源复用非随从布局，随从种族支持多选，“建筑”用于有生命值的非生物随从。
 - 卡名颜色表示稀有度：普通白色、稀有蓝色、史诗紫色、传说橙色。
 - 多插画方案、正式插画选择、画面描述精修标记和 `artRequest`。
 - 保存时同步写入项目 JSON，并重新生成直接打开网页所需的备用数据。
@@ -46,7 +46,8 @@ node tools/card-editor-server.mjs --port 4317
 | `card_layout_ref/layout.json` | Board View 与 Hand View 布局参数 |
 | `assets/card-template/` | 卡框、属性图标、箭头等模板资产 |
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
-| `formal_card_ref.json` | 由权威数据生成的游戏侧卡牌表参考；不要反向覆盖 `data/cards.json` |
+| `formal_card_ref.json` | 纯声明性设计的 dirty 预览，不是可执行内容或正式导入源 |
+| `data/card-identity-migration.json` | 原137张设计的持久 UID 桥接与排除/空白/资源迁移策略 |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
 | `bestiary-taxonomy.js` | 六种族与分支目录、分支特征和未完成状态 |
 | `bestiary-data.js` | 保留的生物源档案；总类内容作为种族共性 |
@@ -59,6 +60,8 @@ node tools/card-editor-server.mjs --port 4317
 ```bash
 node tools/sync-cards-from-data.mjs
 ```
+
+卡牌数据 schema 4 使用持久 UID，展示编号可以重排；资源类型与四种收集分类独立。正式导出指定已提交 SHA，合同和验证命令见 [卡牌设计导出](docs/design/card-design-export.md)。
 
 人物身份映射维护在 `data/setting.json`，通过 `artworkKey` 和姓名校验引用卡牌；不要按会重排的卡牌 ID 绑定人物。英文名导致 artworkKey 变化时，需要同步核对映射。失效引用会在生成时阻止构建，在线页面会标记待核对。
 
