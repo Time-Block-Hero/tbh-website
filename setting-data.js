@@ -166,7 +166,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Sunwheel Flying Star Sola",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+          "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Sola, the Solar Church's lively young hero known as the Sunwheel Flying Star, launches from a broken Dyson-ring platform with the joyful force of a small sun. He has vivid orange hair, bright expressive eyes, and a wide irresistible smile, wearing a white-and-orange athletic flight suit with fitted technical layers, a short Solar Church mantle streaming behind him, a radiant sun-source core at the chest, and oversized corona-charged combat gauntlets. His core drives compact thrusters along his back and legs as he rockets toward an enemy many times his size, one fist drawing back while the other begins to ignite the signature explosive punch he brings into battle. Keep Sola's smiling face, orange hair, chest core, short mantle, both gauntlets, and airborne forward motion unmistakable inside the upper square crop; extend the curved flight trail, broken ring structure, tiny allies, and enormous enemy silhouette downward for depth. Singular character-defining entrance, bold foreshortening, playful courage, intentional asymmetry, cinematic white-orange light, exceptional premium industrial sci-fi anime finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "sunwheel-flying-star-sola-01",
           "cover": "./assets/card-art/sunwheel-flying-star-sola/sunwheel-flying-star-sola-01.png"
@@ -688,7 +688,7 @@ window.__SETTING_DATA__ = {
         "en": "Sola is defined by vivid orange hair, a bright smile and a white-and-orange flight suit. His chest core powers back and leg thrusters, with a short mantle and oversized corona-charged gauntlets completing his airborne silhouette."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Sola, the Solar Church's lively young hero known as the Sunwheel Flying Star, launches from a broken Dyson-ring platform with the joyful force of a small sun. He has vivid orange hair, bright expressive eyes, and a wide irresistible smile, wearing a white-and-orange athletic flight suit with fitted technical layers, a short Solar Church mantle streaming behind him, a radiant sun-source core at the chest, and oversized corona-charged combat gauntlets. His core drives compact thrusters along his back and legs as he rockets toward an enemy many times his size, one fist drawing back while the other begins to ignite the signature explosive punch he brings into battle. Keep Sola's smiling face, orange hair, chest core, short mantle, both gauntlets, and airborne forward motion unmistakable inside the upper square crop; extend the curved flight trail, broken ring structure, tiny allies, and enormous enemy silhouette downward for depth. Singular character-defining entrance, bold foreshortening, playful courage, intentional asymmetry, cinematic white-orange light, exceptional premium industrial sci-fi anime finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
       "cover": "./assets/card-art/sunwheel-flying-star-sola/sunwheel-flying-star-sola-01.png",
       "sourceArtworkKeys": [
         "sunwheel-flying-star-sola"
@@ -702,7 +702,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Sunwheel Flying Star Sola",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+          "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Sola, the Solar Church's lively young hero known as the Sunwheel Flying Star, launches from a broken Dyson-ring platform with the joyful force of a small sun. He has vivid orange hair, bright expressive eyes, and a wide irresistible smile, wearing a white-and-orange athletic flight suit with fitted technical layers, a short Solar Church mantle streaming behind him, a radiant sun-source core at the chest, and oversized corona-charged combat gauntlets. His core drives compact thrusters along his back and legs as he rockets toward an enemy many times his size, one fist drawing back while the other begins to ignite the signature explosive punch he brings into battle. Keep Sola's smiling face, orange hair, chest core, short mantle, both gauntlets, and airborne forward motion unmistakable inside the upper square crop; extend the curved flight trail, broken ring structure, tiny allies, and enormous enemy silhouette downward for depth. Singular character-defining entrance, bold foreshortening, playful courage, intentional asymmetry, cinematic white-orange light, exceptional premium industrial sci-fi anime finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "sunwheel-flying-star-sola-01",
           "cover": "./assets/card-art/sunwheel-flying-star-sola/sunwheel-flying-star-sola-01.png"
@@ -1085,7 +1085,7 @@ window.__SETTING_DATA__ = {
         "en": "A lean adult assassin in dark mirrored sunglasses and an asymmetric charcoal tactical coat. Fitted technical armor, a compact suppressed sidearm and a cyan coordinate beacon define Assassin J’s equipment."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Assassin J, a lean adult killer in dark mirrored sunglasses, stands as the single dominant subject on a rain-slick industrial station roof, wearing a long asymmetric charcoal tactical coat, fitted technical armor, gloves, harnesses, and a compact suppressed sidearm. He has already placed a small cyan coordinate beacon on a distant armored target; a delayed vertical targeting line is beginning to converge around that figure while J turns away with cold certainty. Keep J's face, sunglasses, weapon, beacon gesture, and the doomed target relationship readable inside the upper square crop; use bold perspective, rain, receding gantries and restrained red warning light for layered environmental storytelling. Premium industrial sci-fi anime rendering with crisp facial design, tactile matte materials and cinematic finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
+      "rulesText": "入场：选定一个非英雄单位，将其消灭。",
       "cover": "./assets/card-art/delayed-coordinate-cannon/delayed-coordinate-cannon-01.png",
       "sourceArtworkKeys": [
         "delayed-coordinate-cannon"
@@ -1099,7 +1099,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Delayed Coordinate Cannon",
           "classId": "Neutral",
           "cardType": "Minion",
-          "rulesText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
+          "rulesText": "入场：选定一个非英雄单位，将其消灭。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Assassin J, a lean adult killer in dark mirrored sunglasses, stands as the single dominant subject on a rain-slick industrial station roof, wearing a long asymmetric charcoal tactical coat, fitted technical armor, gloves, harnesses, and a compact suppressed sidearm. He has already placed a small cyan coordinate beacon on a distant armored target; a delayed vertical targeting line is beginning to converge around that figure while J turns away with cold certainty. Keep J's face, sunglasses, weapon, beacon gesture, and the doomed target relationship readable inside the upper square crop; use bold perspective, rain, receding gantries and restrained red warning light for layered environmental storytelling. Premium industrial sci-fi anime rendering with crisp facial design, tactile matte materials and cinematic finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "delayed-coordinate-cannon-01",
           "cover": "./assets/card-art/delayed-coordinate-cannon/delayed-coordinate-cannon-01.png"

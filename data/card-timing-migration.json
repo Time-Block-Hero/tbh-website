@@ -1,0 +1,3121 @@
+{
+  "schemaVersion": 1,
+  "status": "ApprovedTimingMigration",
+  "sourceCommit": "226f69b9cfb07e77e37ca79166e62a6fb9be5781",
+  "authoringBaseline": "8d9a056",
+  "scope": "137 designs classified; 133 active and 4 excluded. Default slow entry and explicit Quick exceptions; non-entry timing preserved.",
+  "entryPolicy": {
+    "default": "Slow",
+    "exception": "Quick",
+    "slowMarker": "Remove redundant entry [慢速] only; do not remove unrelated non-entry slow markers.",
+    "targets": "Prepare declared player targets and lock entry epoch before enqueue. Keep random selection and step-current value/area queries in body.",
+    "outsideIndependentTimeStop": "Execute immediately, including newly produced follow-ups during the end queue."
+  },
+  "cards": [
+    {
+      "displayId": "AI-000",
+      "uid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "name": "皇子阿列斯塔",
+      "runtimeSupport": "Implemented",
+      "currentText": "每个回合开始时：获得1点护甲。",
+      "newText": "每个回合开始时：获得1点护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-001",
+      "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "name": "发电站",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位3×3范围内的其他友方建筑随从，已点亮方向的箭头层数＋1，效果提供的数值＋1。",
+      "newText": "该单位3×3范围内的其他友方建筑随从，已点亮方向的箭头层数＋1，效果提供的数值＋1。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:power-aura:arrows",
+          "kind": "ArrowLayerModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:power-aura:value",
+          "kind": "ValueModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-002",
+      "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
+      "name": "星能采矿场",
+      "runtimeSupport": "Implemented",
+      "currentText": "回合开始时，你获得1点星能。",
+      "newText": "回合开始时，你获得1点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "e1362804-dea0-49b5-9513-8c1317369f9e:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "e1362804-dea0-49b5-9513-8c1317369f9e:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-003",
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "name": "帝国军工厂",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位的箭头不能用于放置或建造建筑随从。",
+      "newText": "该单位的箭头不能用于放置或建造建筑随从。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "a60555e6-d405-47de-bdff-c84031d53448:arrow-restriction:contribution",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-004",
+      "uid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+      "name": "帝国基建小队",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位的箭头只能用于放置或建造建筑随从。",
+      "newText": "该单位的箭头只能用于放置或建造建筑随从。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "602b4a3a-0b69-4816-80a0-94a66bd61d1b:arrow-restriction:contribution",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-005",
+      "uid": "3e56ca22-efd1-4cd0-822f-beceb830e41d",
+      "name": "帝国征召兵",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动成本：献祭自己，移入你的弃牌堆。效果：为一个相邻的、尚未完成建造的友方随从增加2点已固定建造值。",
+      "newText": "发动成本：献祭自己，移入你的弃牌堆。效果：为一个相邻的、尚未完成建造的友方随从增加2点已固定建造值。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "献祭若涉及时停基准牌需要公共转区慢速屏障；此表不以原主动时间绕过新转区规则。"
+      ],
+      "effects": [
+        {
+          "id": "3e56ca22-efd1-4cd0-822f-beceb830e41d:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "3e56ca22-efd1-4cd0-822f-beceb830e41d:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-006",
+      "uid": "0764d0f5-4050-49ab-924f-2485c4381e26",
+      "name": "帝国特种兵",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求: 2, 可建造]",
+      "newText": "[箭头需求: 2, 可建造]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "AI-007",
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "name": "工程机器人",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位的箭头只能用于建造未完成的单位。",
+      "newText": "该单位的箭头只能用于建造未完成的单位。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "430888e7-5e44-4599-98d5-7a8c0824b40f:arrow-restriction:contribution",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-008",
+      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "name": "海燕",
+      "runtimeSupport": "Planned",
+      "currentText": "[箭头需求: 3, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+      "newText": "[箭头需求: 3, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "AI-009",
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "name": "泰拉理工学院",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：本局对战剩余时间内，你所有可建造随从的建造目标值−1，最低为0，包括此后进入游戏或归你控制的随从。",
+      "newText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：本局对战剩余时间内，你所有可建造随从的建造目标值−1，最低为0，包括此后进入游戏或归你控制的随从。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-010",
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "name": "超载运转",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "newText": "入场：令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选友方建筑并锁入场身份；正文施加增益并登记回合末消灭。"
+      ],
+      "effects": [
+        {
+          "id": "573781a0-235c-40aa-bff0-6a5e2c7fd942:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "573781a0-235c-40aa-bff0-6a5e2c7fd942:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-011",
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "name": "城市防护罩",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "newText": "入场：该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "箭头数量与全体建筑动态查询留在正文，不能因提前排队泄露或冻结未来数量。"
+      ],
+      "effects": [
+        {
+          "id": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-012",
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4",
+      "name": "综合作战指令",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求: 2] 入场：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
+      "newText": "[箭头需求: 2] 入场：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段完成护甲/伤害分配及目标锁；正文分别结算两批，不重开分配输入。"
+      ],
+      "effects": [
+        {
+          "id": "b682e438-d931-4a93-8698-ae9320f150c4:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "b682e438-d931-4a93-8698-ae9320f150c4:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-013",
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "name": "超级核电站",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位5×5范围内的其他友方建筑随从，已点亮方向的箭头层数＋3，效果提供的数值＋3。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "newText": "该单位5×5范围内的其他友方建筑随从，已点亮方向的箭头层数＋3，效果提供的数值＋3。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:power-aura:arrows",
+          "kind": "ArrowLayerModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:power-aura:value",
+          "kind": "ValueModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:death:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "eae5f157-9d0f-41c4-a674-a989dc4007d5:death:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-014",
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "name": "工程师的智慧",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "newText": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "按当前友方箭头抽牌，收益只进入己方手牌，供当前部署使用。"
+      ],
+      "effects": [
+        {
+          "id": "4f4645bc-0e60-4d70-8a89-ff73afffee70:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "4f4645bc-0e60-4d70-8a89-ff73afffee70:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-015",
+      "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "name": "晶灵哨塔",
+      "runtimeSupport": "Implemented",
+      "currentText": "[攻击范围：3] 攻击时：在本次普通攻击伤害及其后续结算完成后，对被攻击的随从额外造成3点伤害。",
+      "newText": "[攻击范围：3] 攻击时：在本次普通攻击伤害及其后续结算完成后，对被攻击的随从额外造成3点伤害。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "0be330dd-7d45-42a8-8235-ac57e8cf9572:attack:trigger",
+          "kind": "Triggered",
+          "event": "AttackDeclared",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "0be330dd-7d45-42a8-8235-ac57e8cf9572:attack:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-016",
+      "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
+      "name": "重型军用驮兽",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求：5, 可建造] 你每个回合开始时额外抽一张牌。",
+      "newText": "[箭头需求：5, 可建造] 你每个回合开始时额外抽一张牌。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "341ea244-575c-445b-b1a6-ea761c92145f:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "341ea244-575c-445b-b1a6-ea761c92145f:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-017",
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "name": "城市规划师-薇",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "newText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-018",
+      "uid": "0bd031d4-49d5-4720-b75b-58eb95690fb1",
+      "name": "爱国者泰坦-A005",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求: 6, 可建造]",
+      "newText": "[箭头需求: 6, 可建造]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "AI-019",
+      "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
+      "name": "骄傲铁驭-布兰特",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求：7，可建造] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。",
+      "newText": "[箭头需求：7，可建造] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "3d1865c5-b2e7-4003-96d1-07223a482030:kill-attack:trigger",
+          "kind": "Triggered",
+          "event": "UnitKilled",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "3d1865c5-b2e7-4003-96d1-07223a482030:kill-attack:body"
+        }
+      ]
+    },
+    {
+      "displayId": "AI-020",
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "name": "铁驭姬-维拉",
+      "runtimeSupport": "Excluded",
+      "currentText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "newText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "changed": false,
+      "entrySpeed": "Excluded",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户明确排除设计，保留原文与身份；不参与此次可执行速度迁移。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "AI-020-01",
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "name": "「革命日」",
+      "runtimeSupport": "Excluded",
+      "currentText": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
+      "newText": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
+      "changed": false,
+      "entrySpeed": "Excluded",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户明确排除设计，保留原文与身份；不参与此次可执行速度迁移。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-001",
+      "uid": "f14f6fca-6862-441b-9254-8b3df5556389",
+      "name": "星际佣兵",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-002",
+      "uid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "name": "萌萌机械狗",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-003",
+      "uid": "094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "name": "太空临时工",
+      "runtimeSupport": "Implemented",
+      "currentText": "[耐久度: 2]",
+      "newText": "[耐久度: 2]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-004",
+      "uid": "c285d915-f68b-4827-9c39-c4911895e360",
+      "name": "星能石",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：获得1[⭐星能]",
+      "newText": "入场：[快速] 获得1[⭐星能]",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "仅增加己方星能，供当前部署继续使用。"
+      ],
+      "effects": [
+        {
+          "id": "c285d915-f68b-4827-9c39-c4911895e360:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "c285d915-f68b-4827-9c39-c4911895e360:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-005",
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "name": "宝藏星能石",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：获得4[⭐星能]。",
+      "newText": "入场：[快速] 获得4[⭐星能]。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "仅增加己方星能，供当前部署继续使用。"
+      ],
+      "effects": [
+        {
+          "id": "788f870d-9238-41c3-9e98-b2d2fb05cab2:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "788f870d-9238-41c3-9e98-b2d2fb05cab2:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-006",
+      "uid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "name": "普通的子弹",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选择一个方向，以该方向上第一个随从为目标，[慢速]对其造成1点伤害。",
+      "newText": "入场：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "方向与首个随从在准备阶段选定并锁住入场身份；正文才扣血，不在准备时执行伤害。"
+      ],
+      "effects": [
+        {
+          "id": "158a6e85-9ab8-420d-9a1e-7a924bf04c79:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "158a6e85-9ab8-420d-9a1e-7a924bf04c79:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-007",
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "name": "胶囊防护罩",
+      "runtimeSupport": "Planned",
+      "currentText": "入场：令一个单位获得2护甲。",
+      "newText": "入场：令一个单位获得2护甲。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选择任一单位并锁入场身份；慢速正文获得护甲，跨区重入不追踪新实体。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-008",
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "name": "探机",
+      "runtimeSupport": "Implemented",
+      "currentText": "本随从的箭头仅在其被放置的回合生效。",
+      "newText": "本随从的箭头仅在其被放置的回合生效。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "1529f937-224e-4d19-a272-0740e98b649e:entry-round-arrows:contribution",
+          "kind": "ArrowAvailability",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-009",
+      "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "name": "星际司令麦哲伦",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：每回合限一次，从弃牌堆随机选取最多两个星际佣兵，召唤至其↖️↗️方格子。",
+      "newText": "发动：每回合限一次，从弃牌堆随机选取最多两个星际佣兵，召唤至其↖️↗️方格子。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "dd21e939-7227-4e9e-87ef-e020d66c80ca:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "dd21e939-7227-4e9e-87ef-e020d66c80ca:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-010",
+      "uid": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+      "name": "商人的智慧",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：抽两张牌。",
+      "newText": "入场：[快速] 抽两张牌。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户明确要求商人的智慧快速，抽牌可继续用于当前部署。"
+      ],
+      "effects": [
+        {
+          "id": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-011",
+      "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124",
+      "name": "放逐太空",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：以移除一张手牌为成本，抽一张牌。",
+      "newText": "入场：[快速] 以移除一张手牌为成本，抽一张牌。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "以移除己方手牌支付成本后抽牌，不修改既有战场牌；须保留真实成本管线。"
+      ],
+      "effects": [
+        {
+          "id": "76c85923-76d9-4465-b8bd-a2a3a0301124:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "76c85923-76d9-4465-b8bd-a2a3a0301124:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-012",
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
+      "name": "飞船失火！",
+      "runtimeSupport": "Implemented",
+      "currentText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将4点伤害随机分配到己方单位上。",
+      "newText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将4点伤害随机分配到己方单位上。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "购买目的地替换保持购买窗口；回合结束伤害保持回合末窗口。"
+      ],
+      "effects": [
+        {
+          "id": "11c4a471-c45c-4055-b1a7-a335f6833976:purchase:contribution",
+          "kind": "SettlementReplacement",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "11c4a471-c45c-4055-b1a7-a335f6833976:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "11c4a471-c45c-4055-b1a7-a335f6833976:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-013",
+      "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "name": "科学纪元驱魔师",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-014",
+      "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "name": "天元防壁",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+      "newText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "BeforeAttack发生前阻止节点必须即时完成，不延迟到攻击之后。"
+      ],
+      "effects": [
+        {
+          "id": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454:entry:trigger",
+          "kind": "Triggered",
+          "event": "BeforeAttack",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-015",
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "name": "刺客-J",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
+      "newText": "入场：选定一个非英雄单位，将其消灭。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选择非英雄目标并锁入场身份；正文消灭，不能快速移除冻结基准牌。"
+      ],
+      "effects": [
+        {
+          "id": "97538b9d-68f1-4a74-861c-3b6a517890ba:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "97538b9d-68f1-4a74-861c-3b6a517890ba:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-016",
+      "uid": "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "name": "预判投弹",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选定一个格子，[慢速]若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "newText": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选择格子；正文读取该格当时的随从/法术，不能把动态占格提前冻结成目标。"
+      ],
+      "effects": [
+        {
+          "id": "ba9f57db-5a99-4893-a37d-492aaf23c59b:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "ba9f57db-5a99-4893-a37d-492aaf23c59b:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-017",
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "name": "幼崽噗噜兽",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-018",
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "name": "星能矿机",
+      "runtimeSupport": "Implemented",
+      "currentText": "回合结束时，你获得1星能。",
+      "newText": "回合结束时，你获得1星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-019",
+      "uid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "name": "矿石扫描",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+      "newText": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "最多数量选择与随机空格发生在被执行的正文中；不预先抽随机格。"
+      ],
+      "effects": [
+        {
+          "id": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-020",
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "name": "鲁莽的先锋",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：每回合限一次，自身获得3点护甲。",
+      "newText": "发动：每回合限一次，自身获得3点护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "9e62707e-3614-45ea-8480-4d17d452cd2d:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "9e62707e-3614-45ea-8480-4d17d452cd2d:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-021",
+      "uid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "name": "货运噗噜兽",
+      "runtimeSupport": "Implemented",
+      "currentText": "你的商店拥有一个额外的普通格；该格在上货或刷新时填充。",
+      "newText": "你的商店拥有一个额外的普通格；该格在上货或刷新时填充。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "774620fa-d879-4c02-8c43-bde70f4c2bb3:shop-slot:contribution",
+          "kind": "ShopSlot",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-022",
+      "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "name": "疯狂的传送师-贾格",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：瞬移到场上任意一个空格子上。",
+      "newText": "发动：瞬移到场上任意一个空格子上。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-023",
+      "uid": "353fe62e-a917-4f71-933c-c2de12eec7e1",
+      "name": "中微子爆弹",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：对一个单位造成12点伤害。[耐久度: 1]",
+      "newText": "发动：对一个单位造成12点伤害。[耐久度: 1]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "353fe62e-a917-4f71-933c-c2de12eec7e1:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "353fe62e-a917-4f71-933c-c2de12eec7e1:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-024",
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "name": "轨道晶灵",
+      "runtimeSupport": "Implemented",
+      "currentText": "[攻击范围: 3]",
+      "newText": "[攻击范围: 3]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-025",
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "name": "日炎枪手",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
+      "newText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "bf071411-bdf6-41bb-847f-0e836ffffa17:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "bf071411-bdf6-41bb-847f-0e836ffffa17:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-026",
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "name": "谕晶",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：从你的牌堆随机展示最多三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
+      "newText": "发动：从你的牌堆随机展示最多三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-027",
+      "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "name": "星航恶兆-巨鳐",
+      "runtimeSupport": "Implemented",
+      "currentText": "[传送移动]该单位以瞬移代替普通路线移动，消耗1行动点，移动至任意敌方单位相邻的合法格子。该单位每次完成移动后，对其3x3范围内的所有敌方目标造成4点伤害。",
+      "newText": "[传送移动]该单位以瞬移代替普通路线移动，消耗1行动点，移动至任意敌方单位相邻的合法格子。该单位每次完成移动后，对其3x3范围内的所有敌方目标造成4点伤害。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "df060f7e-59a2-4f3b-8a60-572fbed47dec:teleport:contribution",
+          "kind": "MovementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "df060f7e-59a2-4f3b-8a60-572fbed47dec:move:trigger",
+          "kind": "Triggered",
+          "event": "UnitMoved",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "df060f7e-59a2-4f3b-8a60-572fbed47dec:move:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-028",
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "name": "「金扳手」工程师",
+      "runtimeSupport": "Planned",
+      "currentText": "入场：令一个机械获得+2攻击/+2速度。",
+      "newText": "入场：令一个机械获得+2攻击/+2速度。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选机械并锁入场身份；正文同批施加攻击与速度。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-029",
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "name": "泰坦X-003综合型",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-030",
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "name": "泰坦X-003强袭型",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-031",
+      "uid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "name": "造物之森疗愈师",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：令一个距离4以内的友方非机械随从回复5点生命值。",
+      "newText": "发动：令一个距离4以内的友方非机械随从回复5点生命值。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "15ce0bd0-83ad-413b-9cc1-829390efaef4:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "15ce0bd0-83ad-413b-9cc1-829390efaef4:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-032",
+      "uid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "name": "震荡晶核",
+      "runtimeSupport": "Implemented",
+      "currentText": "[攻击范围: 4] 该单位攻击时，会先减少目标5点护甲。",
+      "newText": "[攻击范围: 4] 该单位攻击时，会先减少目标5点护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "619301f9-72b0-4f86-a36c-e55046d138f5:attack:trigger",
+          "kind": "Triggered",
+          "event": "BeforeAttack",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "619301f9-72b0-4f86-a36c-e55046d138f5:attack:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-033",
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "name": "黑市护甲贩",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得等同于该牌弃置前星能费用的护甲。",
+      "newText": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得等同于该牌弃置前星能费用的护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "9818f4db-8848-4fc7-8c6e-79fadd38751f:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "9818f4db-8848-4fc7-8c6e-79fadd38751f:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-034",
+      "uid": "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "name": "轨道轰炸",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选择战场上的一行，[慢速]对该行上的单位造成7点伤害。",
+      "newText": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选择行；正文读取该行当前单位并同批造成伤害。"
+      ],
+      "effects": [
+        {
+          "id": "5401f9a3-9ab5-4882-b89b-e72a52b23651:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "5401f9a3-9ab5-4882-b89b-e72a52b23651:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-035",
+      "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "name": "精英豹人战士",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-036",
+      "uid": "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "name": "「百事通」蒂芙尼",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-UN-001",
+      "uid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
+      "name": "迷离的空亡体",
+      "runtimeSupport": "Implemented",
+      "currentText": "击杀奖励：2[⭐星能]。",
+      "newText": "击杀奖励：2[⭐星能]。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497:kill-reward:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497:kill-reward:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-002",
+      "uid": "b60225b4-f701-49cd-875a-ef77bb0eba0a",
+      "name": "飞翔型空亡体",
+      "runtimeSupport": "Implemented",
+      "currentText": "击杀奖励：4星能。",
+      "newText": "击杀奖励：4星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "b60225b4-f701-49cd-875a-ef77bb0eba0a:kill-reward:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "b60225b4-f701-49cd-875a-ef77bb0eba0a:kill-reward:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-003",
+      "uid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "name": "遗失的智慧",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：获得 1 点星能。",
+      "newText": "拾取：获得 1 点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-004",
+      "uid": "853ec50e-d868-4519-b2f4-201799a22887",
+      "name": "日光碎片",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-UN-005",
+      "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
+      "name": "美味的野果",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
+      "newText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "a463123c-664c-427e-b079-c60d79dd60c9:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "a463123c-664c-427e-b079-c60d79dd60c9:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-006",
+      "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+      "name": "癫癫果实",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：拾取的随从获得＋1攻击、＋1速度，并受到1点伤害。",
+      "newText": "拾取：拾取的随从获得＋1攻击、＋1速度，并受到1点伤害。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "e5082c65-fe7d-41db-b934-5ba6a0990a6b:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "e5082c65-fe7d-41db-b934-5ba6a0990a6b:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-007",
+      "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+      "name": "护甲碎片",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：拾取的随从获得1点护甲。",
+      "newText": "拾取：拾取的随从获得1点护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-008",
+      "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
+      "name": "咆哮型空亡体",
+      "runtimeSupport": "Implemented",
+      "currentText": "击杀奖励：获得 8 点星能。",
+      "newText": "击杀奖励：获得 8 点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "3151edbb-b703-4171-9e8f-e6b54e7bb8da:kill-reward:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "3151edbb-b703-4171-9e8f-e6b54e7bb8da:kill-reward:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-009",
+      "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
+      "name": "空亡时主",
+      "runtimeSupport": "Implemented",
+      "currentText": "击杀奖励：本局游戏的剩余时间内，你每回合的时停放置计数−2。",
+      "newText": "击杀奖励：本局游戏的剩余时间内，你每回合的时停放置计数−2。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "2a51f1cc-ab38-4d84-ba97-aca096943395:kill-reward:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "2a51f1cc-ab38-4d84-ba97-aca096943395:kill-reward:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-010",
+      "uid": "92e377d2-5733-47ed-885b-d57e7f52bab1",
+      "name": "遗失的智慧",
+      "runtimeSupport": "Implemented",
+      "currentText": "[拾取] 获得1点星能。",
+      "newText": "[拾取] 获得1点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "92e377d2-5733-47ed-885b-d57e7f52bab1:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "92e377d2-5733-47ed-885b-d57e7f52bab1:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-011",
+      "uid": "72985209-0b77-4cf4-b619-cf8390ba8b24",
+      "name": "太阳裂片",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "FNG-UN-012",
+      "uid": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf",
+      "name": "能量膜",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：拾取的随从获得1点护甲。",
+      "newText": "拾取：拾取的随从获得1点护甲。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "FNG-UN-013",
+      "uid": "db73af85-5858-41f0-ac42-b4ff0e13376d",
+      "name": "美味的野果",
+      "runtimeSupport": "Implemented",
+      "currentText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
+      "newText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "db73af85-5858-41f0-ac42-b4ff0e13376d:pickup:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "db73af85-5858-41f0-ac42-b4ff0e13376d:pickup:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-000",
+      "uid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "name": "米拉-10K",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合开始时，你获得1星能。",
+      "newText": "每回合开始时，你获得1星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-001",
+      "uid": "d65e0578-98e4-46af-aeb2-134cae1a812b",
+      "name": "训练服务机群",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：5] 计数：你抽牌的张数。完成：令你英雄每回合开始时额外生成1点星能。",
+      "newText": "[循环进度：5] 计数：你抽牌的张数。完成：令你英雄每回合开始时额外生成1点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "d65e0578-98e4-46af-aeb2-134cae1a812b:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-002",
+      "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "name": "星光运输管线",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+      "newText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "84ae8db2-69df-4ffb-9010-16d3551eda58:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-003",
+      "uid": "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+      "name": "天御MCP枢纽",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
+      "newText": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "7b3a2e75-79de-4c35-8bf1-29a4987c8187:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-004",
+      "uid": "faba227c-aad4-425d-b905-a7c62f14a94e",
+      "name": "天庭乐师",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+      "newText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "faba227c-aad4-425d-b905-a7c62f14a94e:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-005",
+      "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "name": "集群主脑-埃米莉丝",
+      "runtimeSupport": "Planned",
+      "currentText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
+      "newText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "MCC-006",
+      "uid": "675083cf-30bf-49c8-b7bf-d18fe67fe493",
+      "name": "上位天使-炮台巡游者",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
+      "newText": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "675083cf-30bf-49c8-b7bf-d18fe67fe493:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-007",
+      "uid": "731b9886-bc52-4778-b3ea-3ec7319b5d12",
+      "name": "天使-星光开悟者",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：5] 计数：该随从移动的格数。完成：你获得2星能。",
+      "newText": "[循环进度：5] 计数：该随从移动的格数。完成：你获得2星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "731b9886-bc52-4778-b3ea-3ec7319b5d12:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-008",
+      "uid": "6c82d274-e2b9-4626-9bab-deb01dd09048",
+      "name": "超越进制",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：本回合内，你所有进度效果的目标值变为各自原始目标值的75%（向上取整）。",
+      "newText": "入场：本回合内，你所有进度效果的目标值变为各自原始目标值的75%（向上取整）。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。"
+      ],
+      "effects": [
+        {
+          "id": "6c82d274-e2b9-4626-9bab-deb01dd09048:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "6c82d274-e2b9-4626-9bab-deb01dd09048:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-009",
+      "uid": "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+      "name": "迷离之剑-烬白",
+      "runtimeSupport": "Excluded",
+      "currentText": "入场：在己方领土的空格中生成4张遗失的智慧。[一次性进度：4] 计数：你拾取遗失的智慧的数量。完成：变身为飞升之剑-烬白。",
+      "newText": "入场：在己方领土的空格中生成4张遗失的智慧。[一次性进度：4] 计数：你拾取遗失的智慧的数量。完成：变身为飞升之剑-烬白。",
+      "changed": false,
+      "entrySpeed": "Excluded",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户明确排除设计，保留原文与身份；不参与此次可执行速度迁移。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "MCC-009-01",
+      "uid": "5121261f-8b88-4bb0-b882-717b44188f74",
+      "name": "飞升之剑-烬白",
+      "runtimeSupport": "Excluded",
+      "currentText": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
+      "newText": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
+      "changed": false,
+      "entrySpeed": "Excluded",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户明确排除设计，保留原文与身份；不参与此次可执行速度迁移。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "MCC-010",
+      "uid": "8f084b1a-e770-413d-800e-61165fc3b4d9",
+      "name": "借时蜉蝣",
+      "runtimeSupport": "Implemented",
+      "currentText": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
+      "newText": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "8f084b1a-e770-413d-800e-61165fc3b4d9:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "8f084b1a-e770-413d-800e-61165fc3b4d9:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-011",
+      "uid": "0c3119ed-d309-4a38-b760-1839d8bae416",
+      "name": "天使-阵线统御官",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：4] 计数：死亡的友方随从数量。完成：从牌堆随机召唤一只随从至其↗️格子。",
+      "newText": "[循环进度：4] 计数：死亡的友方随从数量。完成：从牌堆随机召唤一只随从至其↗️格子。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "0c3119ed-d309-4a38-b760-1839d8bae416:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-012",
+      "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "name": "蜂群无人机",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+      "newText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "复制与向下格合法性在正文重判，新复制品的入场再遵默认慢速。"
+      ],
+      "effects": [
+        {
+          "id": "274a5d57-9246-4b40-a51a-3bc473e7193b:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "274a5d57-9246-4b40-a51a-3bc473e7193b:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-013",
+      "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+      "name": "天庭机灵",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
+      "newText": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-014",
+      "uid": "b6326476-ec83-478d-afcd-91b3cec23740",
+      "name": "天使-家园守护者",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配6点护甲，逐点等概率抽取、可重复选中同一随从，确定分配后同批赋予。",
+      "newText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配6点护甲，逐点等概率抽取、可重复选中同一随从，确定分配后同批赋予。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "b6326476-ec83-478d-afcd-91b3cec23740:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-015",
+      "uid": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
+      "name": "灵光一闪",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：获得1点星能，抽一张牌。",
+      "newText": "入场：[快速] 获得1点星能，抽一张牌。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "只增加己方星能与手牌，供当前部署使用。"
+      ],
+      "effects": [
+        {
+          "id": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-016",
+      "uid": "43588596-cb83-42e9-b6aa-8cc3ea07e6cf",
+      "name": "星加速",
+      "runtimeSupport": "Implemented",
+      "currentText": "消耗2星能以发动：令一个友方随从本回合获得+2速度。",
+      "newText": "消耗2星能以发动：令一个友方随从本回合获得+2速度。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "43588596-cb83-42e9-b6aa-8cc3ea07e6cf:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "43588596-cb83-42e9-b6aa-8cc3ea07e6cf:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-017",
+      "uid": "ad01b613-32a7-422a-a227-6e921ce275c2",
+      "name": "防御弹幕",
+      "runtimeSupport": "Implemented",
+      "currentText": "消耗4星能以发动：本回合结束时，对己方领土内的所有非友方随从造成5点伤害。",
+      "newText": "消耗4星能以发动：本回合结束时，对己方领土内的所有非友方随从造成5点伤害。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ad01b613-32a7-422a-a227-6e921ce275c2:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "ad01b613-32a7-422a-a227-6e921ce275c2:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-018",
+      "uid": "1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+      "name": "星能循环模块",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：7] 计数：你消耗的星能数量。完成：你获得1点星能。",
+      "newText": "[循环进度：7] 计数：你消耗的星能数量。完成：你获得1点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "1b818098-53a5-4d54-8fb1-01bcdf9f4785:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-019",
+      "uid": "d06e4b53-ba45-4f1b-9034-7a7d9773bceb",
+      "name": "星核超载",
+      "runtimeSupport": "Implemented",
+      "currentText": "消耗6星能以发动：令一个友方机械本回合内获得6点全属性。",
+      "newText": "消耗6星能以发动：令一个友方机械本回合内获得6点全属性。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "d06e4b53-ba45-4f1b-9034-7a7d9773bceb:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "d06e4b53-ba45-4f1b-9034-7a7d9773bceb:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "MCC-020",
+      "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
+      "name": "上位天使-神谕者",
+      "runtimeSupport": "Implemented",
+      "currentText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。",
+      "newText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "7522e0e5-1fb6-4a32-914d-992aab4e3c62:progress",
+          "kind": "Progress",
+          "recommendation": "PreserveProgressTiming"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-000",
+      "uid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "name": "洛岚",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：每回合限一次，将你的一个反抗军移动一格。",
+      "newText": "发动：每回合限一次，将你的一个反抗军移动一格。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "e66c2fd5-ee14-4cb1-b55e-094324214830:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "e66c2fd5-ee14-4cb1-b55e-094324214830:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-001",
+      "uid": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073",
+      "name": "星石劫掠者",
+      "runtimeSupport": "Implemented",
+      "currentText": "该单位在非友方领土拾取资源牌时额外获得1点星能。",
+      "newText": "该单位在非友方领土拾取资源牌时额外获得1点星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073:pickup-enemy:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073:pickup-enemy:body"
+        },
+        {
+          "id": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073:pickup-neutral:trigger",
+          "kind": "Triggered",
+          "event": "PickupCollected",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073:pickup-neutral:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-002",
+      "uid": "70f56934-997a-4eaa-b34b-1745d6ac06f7",
+      "name": "猎空冒险者",
+      "runtimeSupport": "Implemented",
+      "currentText": "该卡可被放置于非己方领土内。",
+      "newText": "该卡可被放置于非己方领土内。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "70f56934-997a-4eaa-b34b-1745d6ac06f7:self-territory:contribution",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-003",
+      "uid": "ff002f60-4a64-4d42-96f1-ba163bb8e59c",
+      "name": "军团登陆艇",
+      "runtimeSupport": "Implemented",
+      "currentText": "你可以在该单位指向的格子上无视领土限制放置反抗军随从。",
+      "newText": "你可以在该单位指向的格子上无视领土限制放置反抗军随从。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ff002f60-4a64-4d42-96f1-ba163bb8e59c:landing-permission:grant",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-004",
+      "uid": "63699e58-6aa0-4012-b096-364a7cff20e7",
+      "name": "遗忘团长德雷克",
+      "runtimeSupport": "Implemented",
+      "currentText": "当这张牌被移除时：将一张「裂隙惘生德雷克」加入你的额外卡组。",
+      "newText": "当这张牌被移除时：将一张「裂隙惘生德雷克」加入你的额外卡组。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "63699e58-6aa0-4012-b096-364a7cff20e7:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "63699e58-6aa0-4012-b096-364a7cff20e7:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-004-01",
+      "uid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+      "name": "裂隙惘生德雷克",
+      "runtimeSupport": "Implemented",
+      "currentText": "该卡可被放置于非己方领土内。免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。若这张牌将被移除，改为将其洗回你的牌堆，并抽1张牌。",
+      "newText": "该卡可被放置于非己方领土内。免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。若这张牌将被移除，改为将其洗回你的牌堆，并抽1张牌。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "移除替换在转区之前应用，不能作为普通慢速正文处理。"
+      ],
+      "effects": [
+        {
+          "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:self-territory:contribution",
+          "kind": "PlacementRule",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:remove-replacement:contribution",
+          "kind": "SettlementReplacement",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:replaced-draw:trigger",
+          "kind": "Triggered",
+          "event": "CardTransferred",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:replaced-draw:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-005",
+      "uid": "ef4b99f1-3ee1-44ba-ac60-4648d8082654",
+      "name": "冲锋！！",
+      "runtimeSupport": "Implemented",
+      "currentText": "发动：将其⬆️格子的反抗军向前冲撞8格。",
+      "newText": "发动：将其⬆️格子的反抗军向前冲撞8格。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ef4b99f1-3ee1-44ba-ac60-4648d8082654:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "ef4b99f1-3ee1-44ba-ac60-4648d8082654:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-006",
+      "uid": "49325659-618c-44a0-b0d7-0f3b5a9f88ae",
+      "name": "探险者航线",
+      "runtimeSupport": "Implemented",
+      "currentText": "你的时动阶段开始时：将其↘️格子的卡牌移除。",
+      "newText": "你的时动阶段开始时：将其↘️格子的卡牌移除。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "49325659-618c-44a0-b0d7-0f3b5a9f88ae:time-move:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "49325659-618c-44a0-b0d7-0f3b5a9f88ae:time-move:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-007",
+      "uid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+      "name": "军团旗帜手-塞特",
+      "runtimeSupport": "Implemented",
+      "currentText": "每次入场后限一次，在敌方领土内可发动：选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
+      "newText": "每次入场后限一次，在敌方领土内可发动：选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-008",
+      "uid": "872bb708-d5c1-49c3-810d-d1d748a8276c",
+      "name": "忘记来源的数据包",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：[慢速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "newText": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "入场默认慢速；移除时复用该入场两次仍继承慢速，并保持两个实际入场能力调用而不伪造入场事实。"
+      ],
+      "effects": [
+        {
+          "id": "872bb708-d5c1-49c3-810d-d1d748a8276c:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": true,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "872bb708-d5c1-49c3-810d-d1d748a8276c:entry:body"
+        },
+        {
+          "id": "872bb708-d5c1-49c3-810d-d1d748a8276c:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "872bb708-d5c1-49c3-810d-d1d748a8276c:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-009",
+      "uid": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+      "name": "敌后渗透者",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
+      "newText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "控制权更改涉及冻结战场状态，需与核心新规则核对；此表不擅自视为可交换增量。"
+      ],
+      "effects": [
+        {
+          "id": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f:activate:body"
+        },
+        {
+          "id": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f:death-draw:trigger",
+          "kind": "Triggered",
+          "event": "UnitDied",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f:death-draw:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-010",
+      "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75",
+      "name": "奇怪的虫洞发生器",
+      "runtimeSupport": "Implemented",
+      "currentText": "该卡被移除时：[慢速] 将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "newText": "该卡被移除时：[慢速] 将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "df733651-e22b-4b6b-bd32-f0c80d350d75:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": true,
+          "recommendation": "PreserveExplicitSlow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "df733651-e22b-4b6b-bd32-f0c80d350d75:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-011",
+      "uid": "b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+      "name": "危险入侵生物笼",
+      "runtimeSupport": "Implemented",
+      "currentText": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
+      "newText": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "b47616d4-bdca-43f4-97f4-d0649b48ba8d:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": true,
+          "recommendation": "PreserveExplicitSlow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "b47616d4-bdca-43f4-97f4-d0649b48ba8d:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-011-01",
+      "uid": "c5972274-f51c-4859-ae8a-cd1f5739d941",
+      "name": "食锈螯兽",
+      "runtimeSupport": "Implemented",
+      "currentText": "回合结束时：随机选择一个己方机械或建筑随从，使其生命上限−3，自身生命上限＋3。",
+      "newText": "回合结束时：随机选择一个己方机械或建筑随从，使其生命上限−3，自身生命上限＋3。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "c5972274-f51c-4859-ae8a-cd1f5739d941:round-end:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "c5972274-f51c-4859-ae8a-cd1f5739d941:round-end:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-012",
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "name": "销赃",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选择并移除一张场上的己方卡牌，获得等同于其费用的星能。",
+      "newText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "用户裁定仅能移除本时停由你放置的己方场上牌，避免移除时停基准牌；星能供本次部署使用。"
+      ],
+      "effects": [
+        {
+          "id": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-013",
+      "uid": "ca101a43-d6c8-4289-b967-947e7212b941",
+      "name": "「黑手」供货商-奇莫",
+      "runtimeSupport": "Implemented",
+      "currentText": "你的商店额外带有一个从你的虚空进货的专属格，其中商品费用减半。该格刷新或自动上货前，未购商品退回虚空再重新进货；该格消失时，未购商品退回虚空。",
+      "newText": "你的商店额外带有一个从你的虚空进货的专属格，其中商品费用减半。该格刷新或自动上货前，未购商品退回虚空再重新进货；该格消失时，未购商品退回虚空。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "ca101a43-d6c8-4289-b967-947e7212b941:shop-slot:contribution",
+          "kind": "ShopSlot",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-014",
+      "uid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+      "name": "「黑手物流」货运站",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合限一次。发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
+      "newText": "每回合限一次。发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "手牌移除成本与下回合抽牌计划保持已批准的主动时间；不把手牌成本当战场转区。"
+      ],
+      "effects": [
+        {
+          "id": "acfbc239-3f00-48a8-ba1a-b264535c9c8f:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "acfbc239-3f00-48a8-ba1a-b264535c9c8f:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-015",
+      "uid": "385f1bae-5ade-411d-abd1-850d74944004",
+      "name": "猎空火枪手",
+      "runtimeSupport": "Implemented",
+      "currentText": "[攻击范围：3]",
+      "newText": "[攻击范围：3]",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "SA-016",
+      "uid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "name": "军团驯兽师",
+      "runtimeSupport": "Implemented",
+      "currentText": "每次入场后限一次，发动：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+      "newText": "每次入场后限一次，发动：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "8e486b7d-4654-40fb-baf5-c52b38010dd4:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "8e486b7d-4654-40fb-baf5-c52b38010dd4:activate:body"
+        },
+        {
+          "id": "8e486b7d-4654-40fb-baf5-c52b38010dd4:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": true,
+          "recommendation": "PreserveExplicitSlow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "8e486b7d-4654-40fb-baf5-c52b38010dd4:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-016-01",
+      "uid": "4eddea4a-df91-425d-bbdf-b216da8381d8",
+      "name": "苍空猎犬",
+      "runtimeSupport": "Implemented",
+      "currentText": "[耐久度：1] 该单位的箭头仅在其处于敌方领土时激活。",
+      "newText": "[耐久度：1] 该单位的箭头仅在其处于敌方领土时激活。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "4eddea4a-df91-425d-bbdf-b216da8381d8:enemy-arrows:contribution",
+          "kind": "ArrowAvailability",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-017",
+      "uid": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f",
+      "name": "前线之光-阿尔德",
+      "runtimeSupport": "Implemented",
+      "currentText": "其位于友方领土内时，全体友方反抗军单位获得+1速度；其位于敌方领土内时，全体友方反抗军单位获得+1攻击力。",
+      "newText": "其位于友方领土内时，全体友方反抗军单位获得+1速度；其位于敌方领土内时，全体友方反抗军单位获得+1攻击力。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f:friendly:stat",
+          "kind": "StatModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        },
+        {
+          "id": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f:enemy:stat",
+          "kind": "StatModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-018",
+      "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "name": "义体医师尼克斯",
+      "runtimeSupport": "Implemented",
+      "currentText": "每回合限一次，发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "newText": "每回合限一次，发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate",
+          "kind": "Activated",
+          "recommendation": "PreserveExistingNonEntryTiming",
+          "bodyPlanRef": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SA-019",
+      "uid": "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "name": "老资历探险者",
+      "runtimeSupport": "Implemented",
+      "currentText": "该卡从场上被移除时：在其位置上召唤一只「猎空冒险者」。",
+      "newText": "该卡从场上被移除时：在其位置上召唤一只「猎空冒险者」。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "没有入场正文；移除触发维持原事件时间，实际召唤的卡自身入场使用新默认。"
+      ],
+      "effects": [
+        {
+          "id": "0dde3972-5b69-4c3c-a17b-855656bf15cf:removed:trigger",
+          "kind": "Triggered",
+          "event": "CardRemoved",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "0dde3972-5b69-4c3c-a17b-855656bf15cf:removed:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-000",
+      "uid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "name": "诺亚",
+      "runtimeSupport": "Implemented",
+      "currentText": "首个回合开始时：抽2张牌并令其获得[保留]。",
+      "newText": "首个回合开始时：抽2张牌并令其获得[保留]。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "b85a69b8-6241-45c9-a168-a10282390c44:round:trigger",
+          "kind": "Triggered",
+          "event": "PhaseStarted",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "b85a69b8-6241-45c9-a168-a10282390c44:round:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-001",
+      "uid": "a1edce46-f210-4215-ab59-f35a5173c50d",
+      "name": "阳炎信徒",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：令你手牌最左侧不具有[保留]的牌获得[保留]。",
+      "newText": "入场：[快速] 令你手牌最左侧不具有[保留]的牌获得[保留]。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "只修改己方手牌的保留标签，不改冻结战场牌。"
+      ],
+      "effects": [
+        {
+          "id": "a1edce46-f210-4215-ab59-f35a5173c50d:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "a1edce46-f210-4215-ab59-f35a5173c50d:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-002",
+      "uid": "07563f0e-c7d5-4448-a351-fa618dfd924c",
+      "name": "太阳雨",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：[慢速]每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "newText": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。"
+      ],
+      "effects": [
+        {
+          "id": "07563f0e-c7d5-4448-a351-fa618dfd924c:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": true,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "07563f0e-c7d5-4448-a351-fa618dfd924c:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-003",
+      "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
+      "name": "烈阳圣女-阿蕾缇娅",
+      "runtimeSupport": "Implemented",
+      "currentText": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
+      "newText": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "233e64f0-fc55-44a4-af3a-10222df336c4:retained-aura:contribution",
+          "kind": "RetainedCountModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-004",
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501",
+      "name": "日珀蜂蜜",
+      "runtimeSupport": "Planned",
+      "currentText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
+      "newText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段选择场上法术并锁入场身份；正文读取源当前有效保留并施加法术伤害修正。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "SC-005",
+      "uid": "4c2033a5-fb41-4c96-b540-16572b690c70",
+      "name": "日珀蜂群",
+      "runtimeSupport": "Planned",
+      "currentText": "入场：生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
+      "newText": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "生成己方手牌并赋予己方手牌临时保留，不修改冻结战场。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "SC-006",
+      "uid": "69f1c181-ade4-485e-9923-e5949cda7f93",
+      "name": "燃魂学徒",
+      "runtimeSupport": "Implemented",
+      "currentText": "每当该单位受到法术伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
+      "newText": "每当该单位受到法术伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "69f1c181-ade4-485e-9923-e5949cda7f93:spell-hurt:trigger",
+          "kind": "Triggered",
+          "event": "DamageDealt",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "69f1c181-ade4-485e-9923-e5949cda7f93:spell-hurt:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-007",
+      "uid": "204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "name": "日光上师",
+      "runtimeSupport": "Implemented",
+      "currentText": "你控制的所有法术牌的法术伤害+2。",
+      "newText": "你控制的所有法术牌的法术伤害+2。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "204a68df-1ff8-4d10-9309-aafbd90d6079:spell-damage:contribution",
+          "kind": "ValueModifier",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-008",
+      "uid": "62452283-0e35-4ba0-83cc-2ae115078866",
+      "name": "教徒的智慧",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "newText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "抽牌收益进入己方手牌；数量仍在效果步骤读取当前法术伤害加成。"
+      ],
+      "effects": [
+        {
+          "id": "62452283-0e35-4ba0-83cc-2ae115078866:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "62452283-0e35-4ba0-83cc-2ae115078866:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-009",
+      "uid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+      "name": "魔法练习人偶",
+      "runtimeSupport": "Implemented",
+      "currentText": "当该单位将受到法术伤害时：将其无效并令你获得等量的星能。",
+      "newText": "当该单位将受到法术伤害时：将其无效并令你获得等量的星能。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。",
+        "伤害替换在原伤害执行前应用，必须保持替换管线即时性。"
+      ],
+      "effects": [
+        {
+          "id": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92:spell-ward:contribution",
+          "kind": "SettlementReplacement",
+          "recommendation": "PreserveContinuousOrReplacementSemantics"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-010",
+      "uid": "6282e729-e313-4bb6-a979-d19a27917d85",
+      "name": "见习阳炎射击",
+      "runtimeSupport": "Implemented",
+      "currentText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，[慢速]对其造成2点伤害。",
+      "newText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，对其造成2点伤害。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "有效保留门槛在事件触发时判定；准备阶段选单位，正文伤害。"
+      ],
+      "effects": [
+        {
+          "id": "6282e729-e313-4bb6-a979-d19a27917d85:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "6282e729-e313-4bb6-a979-d19a27917d85:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-011",
+      "uid": "7a4d1b62-bf76-4807-a441-2b778ddd6f01",
+      "name": "耀斑连射",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：[慢速]将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "newText": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。"
+      ],
+      "effects": [
+        {
+          "id": "7a4d1b62-bf76-4807-a441-2b778ddd6f01:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": true,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "7a4d1b62-bf76-4807-a441-2b778ddd6f01:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-012",
+      "uid": "bb14410e-c906-4620-a04c-6886f5039c8e",
+      "name": "高等阳炎术",
+      "runtimeSupport": "Planned",
+      "currentText": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
+      "newText": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "随机候选、随机位置、数量选择均保持规则顺序；只预先处理真正声明的玩家目标，不提前泄露随机结果。"
+      ],
+      "effects": []
+    },
+    {
+      "displayId": "SC-013",
+      "uid": "c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+      "name": "俱焚烈焰",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：选择一个友方随从和一个敌方随从，[慢速]对它们各造成4点伤害。",
+      "newText": "入场：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+      "changed": true,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段锁一个友方与一个敌方随从；正文按同批伤害规则结算。"
+      ],
+      "effects": [
+        {
+          "id": "c3f625a9-6093-4a21-ba51-fe7c864f7cef:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "c3f625a9-6093-4a21-ba51-fe7c864f7cef:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-014",
+      "uid": "e456b12e-bbd3-444d-9583-222fc4e80780",
+      "name": "耀变星能石",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
+      "newText": "入场：[快速] 获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "只增加己方星能；数量按执行时当前有效保留读取。"
+      ],
+      "effects": [
+        {
+          "id": "e456b12e-bbd3-444d-9583-222fc4e80780:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "e456b12e-bbd3-444d-9583-222fc4e80780:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-015",
+      "uid": "b5e0ec0b-e614-4862-9eff-bba73677708b",
+      "name": "唱诗班诗童",
+      "runtimeSupport": "Implemented",
+      "currentText": "每次被保留时，随机点亮他的一个箭头。",
+      "newText": "每次被保留时，随机点亮他的一个箭头。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "b5e0ec0b-e614-4862-9eff-bba73677708b:retained:trigger",
+          "kind": "Triggered",
+          "event": "CardRetained",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "b5e0ec0b-e614-4862-9eff-bba73677708b:retained:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-016",
+      "uid": "43b464d4-781c-4390-80eb-d926b7dea2d9",
+      "name": "沐阳晶灵",
+      "runtimeSupport": "Implemented",
+      "currentText": "[攻击范围：1] 每次被保留时，此牌的卡面攻击、生命、速度与攻击范围永久+1。",
+      "newText": "[攻击范围：1] 每次被保留时，此牌的卡面攻击、生命、速度与攻击范围永久+1。",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": [
+        {
+          "id": "43b464d4-781c-4390-80eb-d926b7dea2d9:retained:trigger",
+          "kind": "Triggered",
+          "event": "CardRetained",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "43b464d4-781c-4390-80eb-d926b7dea2d9:retained:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-017",
+      "uid": "454171b3-f6cb-4907-8e6c-baca849b06b3",
+      "name": "烈阳恩典",
+      "runtimeSupport": "Implemented",
+      "currentText": "入场：令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "newText": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "只修改己方手牌的保留记录与临时保留，不修改冻结战场牌。"
+      ],
+      "effects": [
+        {
+          "id": "454171b3-f6cb-4907-8e6c-baca849b06b3:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "454171b3-f6cb-4907-8e6c-baca849b06b3:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-018",
+      "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "name": "日轮飞星-索拉",
+      "runtimeSupport": "Implemented",
+      "currentText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+      "newText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
+      "changed": true,
+      "entrySpeed": "Quick",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "仅入场生成己方手牌标快速；购买成功效果仍保持购买窗口。"
+      ],
+      "effects": [
+        {
+          "id": "4b42977a-a289-4520-8aec-8439b6edc5a3:bought:trigger",
+          "kind": "Triggered",
+          "event": "CardBought",
+          "currentSlow": false,
+          "recommendation": "PreserveExistingEventTiming",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "4b42977a-a289-4520-8aec-8439b6edc5a3:bought:body"
+        },
+        {
+          "id": "4b42977a-a289-4520-8aec-8439b6edc5a3:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Quick",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "4b42977a-a289-4520-8aec-8439b6edc5a3:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-018-01",
+      "uid": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1",
+      "name": "阳炎爆裂拳",
+      "runtimeSupport": "Implemented",
+      "currentText": "[保留] 入场：选择一个位于任意己方「日轮飞星-索拉」3×3范围内的非友方随从，对其造成2点伤害，并按此牌的有效保留回合数额外重复等量次数。",
+      "newText": "[保留] 入场：选择一个位于任意己方「日轮飞星-索拉」3×3范围内的非友方随从，对其造成2点伤害，并按此牌的有效保留回合数额外重复等量次数。",
+      "changed": false,
+      "entrySpeed": "Slow",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "入场正文采用新的默认慢速；选择资格和目标锁在准备阶段，正文在时停结束合并队列结算，非时停及结束队列后续即时执行。",
+        "准备阶段查询任意己方索拉3×3并选非友方随从锁定；正文按当前有效保留重复伤害。"
+      ],
+      "effects": [
+        {
+          "id": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1:entry:trigger",
+          "kind": "Entry",
+          "event": "CardPlaced",
+          "currentSlow": false,
+          "recommendation": "Slow",
+          "preparationPlanRef": null,
+          "bodyPlanRef": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1:entry:body"
+        }
+      ]
+    },
+    {
+      "displayId": "SC-019",
+      "uid": "e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+      "name": "颂阳圣歌",
+      "runtimeSupport": "Implemented",
+      "currentText": "",
+      "newText": "",
+      "changed": false,
+      "entrySpeed": "NotApplicable",
+      "nonEntryPolicy": "PreserveExplicitTimingAndMandatoryReplacementWindows",
+      "reasons": [
+        "无入场正文；保持既有原生/持续/替换/事件/进度语义，不将旧即时能力统一伪标快速。"
+      ],
+      "effects": []
+    }
+  ],
+  "counts": {
+    "Quick": 13,
+    "Slow": 20,
+    "NotApplicable": 100,
+    "Excluded": 4
+  },
+  "approvalRecord": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/44#issuecomment-5747123659"
+}
