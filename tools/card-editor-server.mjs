@@ -1,4 +1,7 @@
 import http from "node:http";
+import { createHash } from "node:crypto";
+import { validateWrite } from "./card-design-write-contract.mjs";
+import designContract from "../card-design-contract.js";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -61,6 +64,7 @@ function readBody(request, limit = 50 * 1024 * 1024) {
 }
 
 function validateDataset(dataset) {
+  designContract.validateDataset(dataset);
   if (!dataset || !Array.isArray(dataset.cards)) throw new Error("卡牌数据格式无效");
   const cardIds = new Set();
   const artworkKeys = new Map();
@@ -85,7 +89,9 @@ function validateDataset(dataset) {
       ids.add(variant.id);
     }
     const selected = dataset.selectedArtworkIds?.[cardId];
-    if (selected && !ids.has(selected)) throw new Error(`正式插画不存在：${cardId}/${selected}`);
+    for (const selectedId of selected == null ? [] : Array.isArray(selected) ? selected : [selected]) {
+      if (!ids.has(selectedId)) throw new Error(`正式插画不存在：${cardId}/${selectedId}`);
+    }
   }
 }
 
@@ -182,18 +188,24 @@ function stageArtworkDeletions(keys) {
   };
 }
 
-function writeProject(dataset, artworkRename, artworkDeletes) {
+const cardsRevision = (text = fs.readFileSync(cardsPath)) => createHash("sha256").update(text).digest("hex");
+
+function writeProject(dataset, artworkRename, artworkDeletes, operation, baseRevision) {
   validateDataset(dataset);
   const oldCardsText = fs.readFileSync(cardsPath, "utf8");
   const oldFallbackText = fs.readFileSync(fallbackPath, "utf8");
+  if (baseRevision !== cardsRevision(oldCardsText)) throw new Error("卡牌源已变化，请重新加载后保存；未覆盖现有数据");
   const previousDataset = JSON.parse(oldCardsText);
+  validateWrite(previousDataset, dataset, operation);
   const deleteKeys = validateArtworkDeletes(dataset, previousDataset, artworkDeletes);
   if (artworkRename?.oldKey || artworkRename?.newKey) {
     const oldKey = safeArtworkKey(artworkRename.oldKey);
     const newKey = safeArtworkKey(artworkRename.newKey);
     if (oldKey === newKey) throw new Error("插画名称没有变化");
     if (deleteKeys.includes(oldKey) || deleteKeys.includes(newKey)) throw new Error("同一保存操作不能同时重命名并删除该卡图包");
-    const owner = dataset.cards.find((card) => card.artworkKey === newKey);
+    const beforeOwner = previousDataset.cards.find((card) => card.uid === operation.uid);
+    const owner = dataset.cards.find((card) => card.uid === operation.uid);
+    if (operation.type !== "edit" || beforeOwner?.artworkKey !== oldKey || owner?.artworkKey !== newKey) throw new Error("插画重命名必须属于本次编辑的同一UID");
     if (!owner) throw new Error(`新插画名称没有对应卡牌：${newKey}`);
     const variants = dataset.artworkVariants?.[owner.id] || [];
     if (variants.some((variant) => !variant.src.startsWith("data:") && !variant.src.startsWith(`./assets/card-art/${newKey}/`))) {
@@ -213,6 +225,7 @@ function writeProject(dataset, artworkRename, artworkDeletes) {
     fs.writeFileSync(cardsPath, cardsText);
     fs.writeFileSync(fallbackPath, fallbackText);
     stagedArtworkDeletes.commit();
+    return { cardsRevision: cardsRevision(cardsText) };
   } catch (error) {
     const rollbackErrors = [];
     try { stagedArtworkDeletes.rollback(); } catch (rollbackError) { rollbackErrors.push(rollbackError); }
@@ -229,10 +242,10 @@ function writeProject(dataset, artworkRename, artworkDeletes) {
 async function handleSave(request, response) {
   try {
     const body = JSON.parse(await readBody(request));
-    const job = () => writeProject(body.dataset, body.artworkRename, body.artworkDeletes);
+    const job = () => writeProject(body.dataset, body.artworkRename, body.artworkDeletes, body.operation, body.baseRevision);
     writeQueue = writeQueue.then(job, job);
-    await writeQueue;
-    sendJson(response, 200, { ok: true, savedAt: new Date().toISOString() });
+    const result = await writeQueue;
+    sendJson(response, 200, { ok: true, savedAt: new Date().toISOString(), cardsRevision: result.cardsRevision });
   } catch (error) {
     sendJson(response, 400, { ok: false, error: error.message });
   }
@@ -269,9 +282,14 @@ function serveStatic(request, response, url) {
 }
 
 const server = http.createServer(async (request, response) => {
-  const url = new URL(request.url || "/", `http://${host}:${port}`);
+  const url = new URL(request.url || "/", `http://${host}:${server.address().port}`);
+  if (request.method === "GET" && url.pathname === "/api/cards/state") {
+    const raw = fs.readFileSync(cardsPath);
+    sendJson(response, 200, { dataset: JSON.parse(raw), cardsRevision: cardsRevision(raw) });
+    return;
+  }
   if (request.method === "GET" && url.pathname === "/api/editor-capabilities") {
-    sendJson(response, 200, { projectWrite: true, artworkRename: true, artworkDelete: true });
+    sendJson(response, 200, { projectWrite: true, artworkRename: true, artworkDelete: true, cardsRevision: cardsRevision() });
     return;
   }
   if (request.method === "POST" && url.pathname === "/api/cards/save") {
@@ -286,6 +304,6 @@ const server = http.createServer(async (request, response) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`Time-Block Hero card editor: http://${host}:${port}`);
+  console.log(`Time-Block Hero card editor: http://${host}:${server.address().port}`);
   console.log(`Project writes enabled for: ${root}`);
 });

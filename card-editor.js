@@ -1,7 +1,9 @@
 (() => {
   "use strict";
 
-  const STORAGE_KEY = "tbh-formal-card-editor-v4";
+  const STORAGE_KEY = "tbh-formal-card-editor-v5";
+  const designContract = globalThis.TbhCardDesign;
+  const RECOVERY_KEY = "tbh-card-editor-unsynced-recovery-v1";
   const DIRECTIONS = ["NW", "N", "NE", "W", "E", "SW", "S", "SE"];
   const TRIBES = ["机械", "人类", "反抗军", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵", "建筑"];
   const TRIBE_ALIASES = {
@@ -35,17 +37,23 @@
   let projectSyncAvailable = false;
   let artworkDeleteAvailable = false;
   let projectSyncQueue = Promise.resolve();
+  let projectCardsRevision = null;
+  let projectConfirmedDataset = null;
+  let projectSyncBlocked = false;
   let browserDraftOverwriteWarningPending = false;
   let baseDatasetLabel = "仓库 JSON";
   const textMeasureContext = document.createElement("canvas").getContext("2d");
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const isDerivative = (id) => /^.+-\d{3}-\d{2}$/.test(id);
-  const parentId = (id) => isDerivative(id) ? id.replace(/-\d{2}$/, "") : id;
+  const isDerivative = (id) => Boolean(cardById(id)?.parentUid);
+  const parentId = (id) => {
+    const card = cardById(id);
+    return card?.parentUid ? dataset.cards.find((entry) => entry.uid === card.parentUid)?.id : id;
+  };
   const cardById = (id) => dataset?.cards.find((card) => card.id === id);
   const derivativesOf = (id) => dataset.cards.filter((card) => parentId(card.id) === parentId(id) && isDerivative(card.id));
-  const isHero = (card) => card?.tags?.includes("InitialHero");
+  const isHero = (card) => card?.collectionKind === "Hero";
   const sameCardGroup = (a, b) => a?.classId === b?.classId && Boolean(a?.collectable) === Boolean(b?.collectable);
 
   function artworkKeyFromEnglishName(englishName) {
@@ -116,7 +124,7 @@
 
     const remappedSelected = {};
     for (const [oldCardId, variantId] of Object.entries(dataset.selectedArtworkIds || {})) {
-      remappedSelected[cardMapping[oldCardId] || oldCardId] = variantIdMapping[variantId] || variantId;
+      remappedSelected[cardMapping[oldCardId] || oldCardId] = designContract.mapSelection(variantId, variantIdMapping);
     }
 
     for (const card of dataset.cards) card.id = cardMapping[card.id] || card.id;
@@ -163,6 +171,10 @@
   }
 
   function confirmBrowserDraftOverwrite() {
+    if (projectSyncBlocked) {
+      setStatus("请先导出未同步草稿，然后重新加载页面再继续编辑", "error");
+      return false;
+    }
     if (!browserDraftOverwriteWarningPending) return true;
     const confirmed = window.confirm(
       `你当前正在基于${baseDatasetLabel}进行编辑，但浏览器里已有一份不同的本地草稿。\n\n`
@@ -177,76 +189,11 @@
     return true;
   }
 
-  function normalizeDatasetForCurrentRules(baseDataset) {
-    const before = JSON.stringify(dataset);
-    const removedIds = dataset.cards
-      .filter((card) => card.classId === "Neutral" && isHero(card))
-      .map((card) => card.id);
-    dataset.cards = dataset.cards.filter((card) => !removedIds.includes(card.id));
-    dataset.artworkVariants ||= {};
-    dataset.selectedArtworkIds ||= {};
-    for (const id of removedIds) {
-      delete dataset.artworkVariants[id];
-      delete dataset.selectedArtworkIds[id];
-    }
-    for (const card of dataset.cards) {
-      if (card.cardType === "Spell") {
-        delete card.attack;
-        delete card.health;
-        delete card.movement;
-        delete card.tribes;
-      } else {
-        card.tribes = [...new Set((card.tribes || []).map((tribe) => TRIBE_ALIASES[tribe] || tribe).filter((tribe) => TRIBES.includes(tribe)))];
-      }
-      const baseCard = baseDataset.cards.find((entry) => entry.id === card.id)
-        || baseDataset.cards.find((entry) => entry.nameKey === card.nameKey
-          && entry.classId === card.classId
-          && entry.cardType === card.cardType)
-        || baseDataset.cards.find((entry) => card.artPath && entry.artPath === card.artPath);
-      if (!card.englishName && baseCard?.englishName) card.englishName = baseCard.englishName;
-      if (!card.artworkKey && baseCard?.artworkKey) card.artworkKey = baseCard.artworkKey;
-
-      const baseVariants = baseDataset.artworkVariants?.[baseCard?.id] || [];
-      const variants = dataset.artworkVariants[card.id] || [];
-      for (const baseVariant of baseVariants) {
-        const localVariant = variants.find((variant) => variant.id === baseVariant.id);
-        if (localVariant) {
-          if (!localVariant.src.startsWith("data:")) localVariant.src = baseVariant.src;
-        } else {
-          variants.push(structuredClone(baseVariant));
-        }
-      }
-      if (variants.length) {
-        dataset.artworkVariants[card.id] = variants;
-        const selectedId = dataset.selectedArtworkIds[card.id];
-        if (!variants.some((variant) => variant.id === selectedId)) {
-          const baseSelectedId = baseDataset.selectedArtworkIds?.[baseCard?.id];
-          dataset.selectedArtworkIds[card.id] = variants.some((variant) => variant.id === baseSelectedId)
-            ? baseSelectedId
-            : variants[0].id;
-        }
-      }
-      if (variants.length) {
-        const artworkKey = card.artworkKey || baseCard?.artworkKey || artworkKeyFromEnglishName(card.englishName || baseCard?.englishName);
-        if (artworkKey) {
-          card.artworkKey = artworkKey;
-          const selectedId = dataset.selectedArtworkIds[card.id];
-          variants.forEach((variant, index) => {
-            const order = variant.id.match(/(?:-A|-)(\d{2})$/)?.[1] || String(index + 1).padStart(2, "0");
-            const oldId = variant.id;
-            variant.id = `${artworkKey}-${order}`;
-            const baseVariant = baseVariants.find((entry) => entry.id.endsWith(`-${order}`));
-            if (baseVariant && !variant.src.startsWith("data:")) variant.src = baseVariant.src;
-            if (selectedId === oldId) dataset.selectedArtworkIds[card.id] = variant.id;
-          });
-        }
-      }
-    }
-    dataset.customRaces = [...TRIBES];
-    for (const classId of Object.keys(FACTIONS)) {
-      for (const collectable of [true, false]) renumberRootOrder(rootsInGroup(classId, collectable));
-    }
-    return before !== JSON.stringify(dataset);
+  function normalizeDatasetForCurrentRules() {
+    // Schema 4 is already explicit. Loading must never repair identities, card text,
+    // candidate art, or selected variants by guessing from names/display numbers.
+    designContract.validateDataset(dataset);
+    return false;
   }
 
   async function detectProjectSync() {
@@ -255,13 +202,15 @@
       const response = await fetch("./api/editor-capabilities", { cache: "no-store" });
       const capabilities = response.ok ? await response.json() : null;
       artworkDeleteAvailable = Boolean(capabilities?.artworkDelete);
+      projectCardsRevision = capabilities?.cardsRevision || null;
       return Boolean(capabilities?.projectWrite && capabilities?.artworkRename);
     } catch {
       return false;
     }
   }
 
-  async function persist({ artworkRename = null, artworkDeletes = [] } = {}) {
+  async function persist({ artworkRename = null, artworkDeletes = [], operation = { type: "reorder" } } = {}) {
+    designContract.validateDataset(dataset);
     const snapshot = structuredClone(dataset);
     if (!projectSyncAvailable) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
@@ -270,13 +219,16 @@
     }
     setStatus("正在写入项目…");
     const write = async () => {
+      if (projectSyncBlocked) throw new Error("先前保存失败，需要重新加载");
       const response = await fetch("./api/cards/save", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ dataset: snapshot, artworkRename, artworkDeletes }),
+        body: JSON.stringify({ dataset: snapshot, artworkRename, artworkDeletes, operation, baseRevision: projectCardsRevision }),
       });
       const result = await response.json().catch(() => ({}));
       if (!response.ok || !result.ok) throw new Error(result.error || `项目保存失败 (${response.status})`);
+      projectCardsRevision = result.cardsRevision;
+      projectConfirmedDataset = structuredClone(snapshot);
       return result;
     };
     projectSyncQueue = projectSyncQueue.then(write, write);
@@ -287,16 +239,33 @@
       return true;
     } catch (error) {
       console.error(error);
-      setStatus(error.message || "项目保存失败", "error");
+      projectSyncBlocked = true;
+      let recoveryMessage;
+      try {
+        localStorage.setItem(RECOVERY_KEY, JSON.stringify({ dataset: snapshot, operation, baseRevision: projectCardsRevision, error: error.message }));
+        recoveryMessage = "更改已保留为未同步草稿，可用“导出 JSON”恢复；请重新加载再编辑";
+      } catch {
+        downloadJson(snapshot, "unsynced-cards.json");
+        recoveryMessage = "本机草稿保存失败，已尝试下载恢复文件；请保留该文件后重新加载";
+      }
+      if (projectConfirmedDataset) {
+        const selectedUid = snapshot.cards.find((card) => card.id === currentId)?.uid;
+        dataset = structuredClone(projectConfirmedDataset);
+        renderGallery();
+        const selected = dataset.cards.find((card) => card.uid === selectedUid);
+        if (selected) showCard(selected.id);
+        else closeEditor();
+      }
+      setStatus(`${error.message || "项目保存失败"}。${recoveryMessage}`, "error");
       return false;
     }
   }
 
   function setStatus(message, state = "") {
-    const node = $("#cardSaveStatus");
-    if (!node) return;
-    node.textContent = message;
-    node.dataset.state = state;
+    for (const node of [$("#cardSaveStatus"), $("#projectSaveStatus")].filter(Boolean)) {
+      node.textContent = message;
+      node.dataset.state = state;
+    }
   }
 
   function assetForLayer(layer, card, viewName) {
@@ -346,7 +315,7 @@
     const selectedId = card.id === currentId && pendingArtworkVariants
       ? pendingSelectedArtworkId
       : dataset.selectedArtworkIds?.[card.id];
-    return variants.find((variant) => variant.id === selectedId)?.src || variants[0]?.src || "";
+    return variants.find((variant) => variant.id === (Array.isArray(selectedId) ? selectedId[0] : selectedId))?.src || variants[0]?.src || "";
   }
 
   function fittedCardNameSize(text, preferredSize, availableWidth, minimumSize = Math.max(22, preferredSize * 0.42)) {
@@ -358,7 +327,7 @@
   }
 
   function createCardRender(card, view = "board") {
-    const isSpell = card.cardType === "Spell";
+    const isSpell = card.cardType !== "Minion";
     const viewName = `${view}${isSpell ? "Spell" : "Unit"}`;
     const spec = layout[viewName];
     const canvas = spec.canvas;
@@ -503,10 +472,11 @@
       artDescriptionNeedsPolish: true,
       artRequest: 1,
     };
+    designContract.assignNewIdentity(card);
     dataset.cards.push(card);
     const mapping = renumberRootOrder([...rootsInGroup(classId, collectableView).filter((entry) => entry !== card), card]);
     const newId = mapping[temporaryId];
-    persist();
+    persist({ operation: { type: "create", uid: card.uid } });
     renderGallery();
     openEditor(newId);
   }
@@ -574,7 +544,7 @@
     }
     for (const variant of variants) {
       const item = document.createElement("div");
-      item.className = `artwork-variant${variant.id === pendingSelectedArtworkId ? " is-selected" : ""}`;
+      item.className = `artwork-variant${(Array.isArray(pendingSelectedArtworkId) ? pendingSelectedArtworkId.includes(variant.id) : variant.id === pendingSelectedArtworkId) ? " is-selected" : ""}`;
       const select = document.createElement("button");
       select.type = "button";
       select.className = "artwork-variant-select";
@@ -588,7 +558,7 @@
       label.textContent = variant.id;
       select.append(image, label);
       item.append(select);
-      if (variant.id === pendingSelectedArtworkId) {
+      if ((Array.isArray(pendingSelectedArtworkId) ? pendingSelectedArtworkId.includes(variant.id) : variant.id === pendingSelectedArtworkId)) {
         const badge = document.createElement("span");
         badge.className = "artwork-variant-badge";
         badge.textContent = "正式";
@@ -676,7 +646,7 @@
       }
       return { ...variant, id, src };
     });
-    pendingSelectedArtworkId = idMapping[selectedBefore] || pendingArtworkVariants[0]?.id || null;
+    pendingSelectedArtworkId = designContract.mapSelection(selectedBefore, idMapping) ?? null;
     pendingArtworkKey = newKey;
     return oldKey && oldKey !== newKey && pendingArtworkVariants.some((variant) => !variant.src.startsWith("data:"))
       ? { oldKey, newKey }
@@ -715,15 +685,11 @@
       delete card.movement;
       delete card.tribes;
     }
+    card.collectionKind = designContract.collectionFor(card);
     return card;
   }
 
   async function saveCard() {
-    const datasetBefore = structuredClone(dataset);
-    const currentIdBefore = currentId;
-    const pendingVariantsBefore = structuredClone(pendingArtworkVariants);
-    const pendingSelectedBefore = pendingSelectedArtworkId;
-    const pendingKeyBefore = pendingArtworkKey;
     const original = cardById(currentId);
     const originalGroup = { classId: original.classId, collectable: Boolean(original.collectable) };
     const updated = readForm();
@@ -785,17 +751,8 @@
       const destination = rootsInGroup(updated.classId, updated.collectable).filter((card) => card !== moved);
       renumberRootOrder([...destination, moved]);
     }
-    const saved = await persist({ artworkRename });
-    if (!saved) {
-      dataset = datasetBefore;
-      currentId = currentIdBefore;
-      pendingArtworkVariants = pendingVariantsBefore;
-      pendingSelectedArtworkId = pendingSelectedBefore;
-      pendingArtworkKey = pendingKeyBefore;
-      renderGallery();
-      showCard(currentIdBefore);
-      return;
-    }
+    const saved = await persist({ artworkRename, operation: { type: "edit", uid: updated.uid } });
+    if (!saved) return;
     renderGallery();
     showCard(currentId);
     setStatus("已保存并重新渲染", "saved");
@@ -821,8 +778,11 @@
       artDescriptionNeedsPolish: true,
       artRequest: 1,
     };
+    designContract.assignNewIdentity(derivative, root.uid);
+    derivative.artworkKey = "";
+    derivative.artPath = "";
     dataset.cards.push(derivative);
-    persist();
+    persist({ operation: { type: "create", uid: derivative.uid } });
     showCard(id);
   }
 
@@ -852,32 +812,33 @@
       : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张衍生卡。` : ""}${artworkDetail}`;
     if (!window.confirm(detail)) return;
     if (!confirmBrowserDraftOverwrite()) return;
-    const datasetBefore = structuredClone(dataset);
     dataset.cards = dataset.cards.filter((entry) => !deletedIds.includes(entry.id));
     for (const id of deletedIds) {
       delete dataset.artworkVariants[id];
       delete dataset.selectedArtworkIds[id];
     }
     if (!derivative) renumberRootOrder(rootsInGroup(card.classId, card.collectable));
-    const saved = await persist({ artworkDeletes: projectSyncAvailable ? artworkDeletes : [] });
-    if (!saved) {
-      dataset = datasetBefore;
-      renderGallery();
-      showCard(card.id);
-      return;
-    }
+    const saved = await persist({ artworkDeletes: projectSyncAvailable ? artworkDeletes : [], operation: { type: "delete", uid: card.uid } });
+    if (!saved) return;
     renderGallery();
     if (derivative) showCard(rootId);
     else closeEditor();
   }
 
-  function exportJson() {
-    const blob = new Blob([`${JSON.stringify(dataset, null, 2)}\n`], { type: "application/json" });
+  function downloadJson(value, filename) {
+    const blob = new Blob([`${JSON.stringify(value, null, 2)}\n`], { type: "application/json" });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.download = "cards.json";
+    link.download = filename;
     link.click();
     URL.revokeObjectURL(link.href);
+  }
+
+  function exportJson() {
+    const recovery = localStorage.getItem(RECOVERY_KEY);
+    if (recovery && window.confirm("存在上次未同步草稿。确定：导出该草稿；取消：导出当前卡牌。")) {
+      downloadJson(JSON.parse(recovery).dataset, "unsynced-cards.json");
+    } else downloadJson(dataset, "cards.json");
   }
 
   function compressArtwork(file) {
@@ -902,7 +863,7 @@
 
   function syncCardTypeFields() {
     const form = $("#cardEditorForm");
-    const isSpell = form.elements.namedItem("cardType").value === "Spell";
+    const isSpell = form.elements.namedItem("cardType").value !== "Minion";
     form.classList.toggle("is-spell", isSpell);
     $$(".card-unit-only input, .card-unit-only button", form).forEach((control) => {
       control.disabled = isSpell;
@@ -1047,7 +1008,8 @@
       if (remove) {
         const id = remove.dataset.deleteVariantId;
         pendingArtworkVariants = pendingArtworkVariants.filter((variant) => variant.id !== id);
-        if (pendingSelectedArtworkId === id) pendingSelectedArtworkId = pendingArtworkVariants[0]?.id || null;
+        if (Array.isArray(pendingSelectedArtworkId)) pendingSelectedArtworkId = pendingSelectedArtworkId.filter((value) => value !== id);
+        else if (pendingSelectedArtworkId === id) pendingSelectedArtworkId = pendingArtworkVariants[0]?.id || null;
         renderDraft();
         setStatus("删除待保存");
         return;
@@ -1083,7 +1045,7 @@
     initialized = true;
     const fallback = window.__CARD_EDITOR_FALLBACK__ || {};
     const isDirectFile = window.location.protocol === "file:";
-    const [loadedLayout, baseDataset] = isDirectFile
+    let [loadedLayout, baseDataset] = isDirectFile
       ? [structuredClone(fallback.layout), structuredClone(fallback.cards)]
       : await Promise.all([
           loadJson("./card_layout_ref/layout.json", fallback.layout),
@@ -1094,6 +1056,14 @@
     }
     layout = loadedLayout;
     projectSyncAvailable = await detectProjectSync();
+    if (projectSyncAvailable) {
+      const response = await fetch("./api/cards/state", { cache: "no-store" });
+      if (!response.ok) throw new Error("无法读取卡牌版本，请重启本地编辑服务");
+      const state = await response.json();
+      baseDataset = state.dataset;
+      projectCardsRevision = state.cardsRevision;
+      projectConfirmedDataset = structuredClone(state.dataset);
+    }
     baseDatasetLabel = projectSyncAvailable ? "项目 JSON" : "仓库 JSON";
     const localDataset = readLocalState(baseDataset);
     const browserDraftDiffers = localDataset && JSON.stringify(localDataset) !== JSON.stringify(baseDataset);
@@ -1118,11 +1088,12 @@
     renderGallery();
     const shouldPersistInitialization = importBrowserDraft
       || (normalized && (isDirectFile || (projectSyncAvailable && !browserDraftOverwriteWarningPending)));
-    if (shouldPersistInitialization) await persist();
+    if (shouldPersistInitialization) await persist({ operation: { type: "import" } });
     else if (browserDraftOverwriteWarningPending) setStatus(`已加载${baseDatasetLabel}；保存前将提醒覆盖本地草稿`, "saved");
     else if (projectSyncAvailable) setStatus("已连接本地项目", "saved");
     else if (isDirectFile) setStatus("浏览器本地模式", "saved");
     else setStatus("已加载仓库 JSON", "saved");
+    if (localStorage.getItem(RECOVERY_KEY)) setStatus("存在未同步恢复草稿，可用“导出 JSON”另存；当前加载的是项目数据", "error");
   }
 
   window.initFormalCardEditor = () => initialize().catch((error) => {

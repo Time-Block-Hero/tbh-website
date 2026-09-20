@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./site.css" />
     <link rel="stylesheet" href="./editor-theme.css" />
     <script src="./card-editor-data.js" defer></script>
+    <script src="./card-design-contract.js" defer></script>
     <script src="./card-editor.js" defer></script>
     <script src="./editor-page.js" defer></script>
   </head>
@@ -71,6 +72,7 @@
               <option value="all">全部类型</option>
               <option value="Minion">随从</option>
               <option value="Spell">法术</option>
+              <option value="Resource">资源</option>
             </select>
             <select
               id="cardViewSort"
@@ -99,6 +101,7 @@
             </button>
           </div>
 
+          <p id="projectSaveStatus" role="status" aria-live="polite"></p>
           <!-- 卡牌网格 -->
           <div class="card-center-grid" id="cardCenterGrid"></div>
         </section>
@@ -150,6 +153,7 @@
                   >类型<select name="cardType">
                     <option value="Minion">随从</option>
                     <option value="Spell">法术</option>
+                    <option value="Resource">资源</option>
                   </select></label
                 ><label
                   >稀有度<select name="rarity">
