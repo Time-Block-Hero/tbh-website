@@ -406,18 +406,18 @@
     "docs/rules/common/effect-design/execution.md": "1fc72c354eec61f6808c77f3cd7c194d5be050d6267df0e393cb1492a893f32b",
     "docs/rules/common/effect-design/replacement.md": "5fdff8ec1a07fe74242731a4f4c877ec5c9a6599768f194b9605ff22498f4445",
     "docs/rules/common/effect-design/triggered.md": "57bc6b7a9fcd315b16ea26fce523a981cd627a44ba6f7ec1573bde6754d0f529",
-    "docs/rules/common/effects.md": "977cad5eba0002059f385d8efc713a000e10cdb1c36315332ea8c9dcae7fdcd7",
+    "docs/rules/common/effects.md": "96566735284ad8f7ad2d88dfce02739c6c27d8c32f3a42d7ecdea44f6a2710b9",
     "docs/rules/common/elements.md": "85c83b43e04383375bdf4b7ed1cc07ac1402d9e7a0adf69c7e4f4b953e205257",
     "docs/rules/common/index.md": "b5af69978299bf0430884bb23568bbd8039d6086911b5fca8e109bfa6c3b1700",
     "docs/rules/common/lifecycle.md": "50b9e447f77f7981c4e4abc928bbf2c8e5c79be98768fb42356a3becdcf3fa3a",
     "docs/rules/common/principles.md": "d6ca1181f5020dd27552ffdb1a9826112a4bc8f30a136af7b7769bfb4faafff5",
-    "docs/rules/common/rounds.md": "77562800d642849b3bdd57edb5e631b7f75d9b81c940867fd60bd21617fb62cc",
+    "docs/rules/common/rounds.md": "03b05f1e62aa04a99366dbd4d67de31542e0f85d61fbe16fabfce0ee33f1d423",
     "docs/rules/maintenance/index.md": "762b210282c0d1a8eafedeeb32fe351995714cd61eddab0828da54fdf356a72a",
     "docs/rules/maintenance/neutral-card-audit.md": "db2877ea2843b8e47b046d8448d34a35d2c3d7b362050595a995c3319c28c1c5",
-    "docs/rules/maintenance/pending.md": "cbfbfffd92278a3bc1a4b1483df6bc32f13939a9f29782c1289a4d5d1db52cbf",
+    "docs/rules/maintenance/pending.md": "c40e5db970eb18fcc1edd2d5d64781363c68d033771729ce7a9173575aa41f27",
     "docs/rules/maintenance/ruling-history.md": "6a1327d6cc0ae4f5a3f566ef9279c9df84b3fd1f5335e10132928d5702dddf96",
-    "docs/rules/maintenance/sources.md": "28ebb389899fc3eb9da5518ed22f20e29ae4437ee3a118da57b8c9e2be536710",
-    "docs/rules/maintenance/versions.md": "7448e39a49db16ef611da4c8536757f3c097f0ec7e0eb4592af89dfde6965e4e",
+    "docs/rules/maintenance/sources.md": "302aa3270aa0a81fb6d2425bcbdf05bda6fd29e0ad3d677b0e01730fbc95d9d7",
+    "docs/rules/maintenance/versions.md": "aee96e761d9f877faf68f52b878f2c365aa2c12235bf0647ab8b9c65251b8819",
     "docs/rules/reference/index.md": "b137362c1cf4a266de37012fc9d1c8535f1c25a5c22d2534681a4d95d5aeab3b",
     "docs/rules/reference/keywords.md": "b3d945b05d6c84e9b8bf66a570164300a95b0b2d2644a806b03540d2c496abc1",
     "docs/rules/reference/rulings.md": "f506db90f10b0dd8a08c1591d49ff0454c143fc35eb02c37be381d503613fd82",
@@ -427,7 +427,6 @@
     "docs/rules/standard/setup.md": "1eace59163b2e8e374d5cd5879aab5bb4c44625e218e8337cfc26d0663ab974b",
     "docs/rules/start/index.md": "f5638f6bcc9d2b2b45bfbfc5492c179c1a32e35346d80d2239ba09a6f1fc73b0"
   },
-  "openDecisions": [
-    "Whether explicit random choices are prepared immediately or sampled at delayed resolution; selection distribution and batch settlement are already confirmed."
-  ]
+  "openDecisions": [],
+  "randomSelectionTiming": "Sample explicit random choices from current legal candidates when the effect body executes; slow TimeStop effects sample at their own end-of-TimeStop settlement, Quick effects sample immediately."
 }
