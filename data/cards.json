@@ -1093,29 +1093,6 @@
     },
     {
       "id": "FNG-UN-004",
-      "nameKey": "日光碎片",
-      "englishName": "",
-      "cardType": "Spell",
-      "classId": "Neutral",
-      "rarity": "Common",
-      "collectable": false,
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "rulesText": "",
-      "arrows": [],
-      "tags": [],
-      "artPath": "CardArt/card_050",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "853ec50e-d868-4519-b2f4-201799a22887",
-      "parentUid": null,
-      "collectionKind": "NonCollectible"
-    },
-    {
-      "id": "FNG-UN-005",
       "nameKey": "美味的野果",
       "englishName": "",
       "cardType": "Resource",
@@ -1138,7 +1115,7 @@
       "collectionKind": "NonCollectible"
     },
     {
-      "id": "FNG-UN-006",
+      "id": "FNG-UN-005",
       "nameKey": "癫癫果实",
       "englishName": "",
       "cardType": "Resource",
@@ -1161,7 +1138,7 @@
       "collectionKind": "NonCollectible"
     },
     {
-      "id": "FNG-UN-007",
+      "id": "FNG-UN-006",
       "nameKey": "护甲碎片",
       "englishName": "",
       "cardType": "Resource",
@@ -1184,7 +1161,7 @@
       "collectionKind": "NonCollectible"
     },
     {
-      "id": "FNG-UN-008",
+      "id": "FNG-UN-007",
       "nameKey": "咆哮型空亡体",
       "englishName": "Roaring Hollow-Null",
       "cardType": "Minion",
@@ -1213,7 +1190,7 @@
       "collectionKind": "NonCollectible"
     },
     {
-      "id": "FNG-UN-009",
+      "id": "FNG-UN-008",
       "nameKey": "空亡时主",
       "englishName": "Hollow Time Lord",
       "cardType": "Minion",
@@ -1242,98 +1219,6 @@
       "collectionKind": "NonCollectible"
     },
     {
-      "id": "FNG-UN-010",
-      "nameKey": "遗失的智慧",
-      "englishName": "Lost Wisdom",
-      "cardType": "Resource",
-      "classId": "Neutral",
-      "rarity": "Common",
-      "collectable": false,
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "rulesText": "[拾取] 获得1点星能。",
-      "arrows": [],
-      "tags": [],
-      "artPath": "CardArt/card_075",
-      "artworkKey": "",
-      "artDescription": "拾取：获得 1 点星能。",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "92e377d2-5733-47ed-885b-d57e7f52bab1",
-      "parentUid": null,
-      "collectionKind": "NonCollectible"
-    },
-    {
-      "id": "FNG-UN-011",
-      "nameKey": "太阳裂片",
-      "englishName": "",
-      "cardType": "Spell",
-      "classId": "Neutral",
-      "rarity": "Common",
-      "collectable": false,
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "rulesText": "",
-      "arrows": [],
-      "tags": [],
-      "artPath": "CardArt/card_076",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "72985209-0b77-4cf4-b619-cf8390ba8b24",
-      "parentUid": null,
-      "collectionKind": "NonCollectible"
-    },
-    {
-      "id": "FNG-UN-012",
-      "nameKey": "能量膜",
-      "englishName": "",
-      "cardType": "Resource",
-      "classId": "Neutral",
-      "rarity": "Common",
-      "collectable": false,
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "rulesText": "拾取：拾取的随从获得1点护甲。",
-      "arrows": [],
-      "tags": [],
-      "artPath": "CardArt/card_077",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf",
-      "parentUid": null,
-      "collectionKind": "NonCollectible"
-    },
-    {
-      "id": "FNG-UN-013",
-      "nameKey": "美味的野果",
-      "englishName": "",
-      "cardType": "Resource",
-      "classId": "Neutral",
-      "rarity": "Common",
-      "collectable": false,
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "rulesText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
-      "arrows": [],
-      "tags": [],
-      "artPath": "CardArt/card_078",
-      "artworkKey": "",
-      "artDescription": "拾取：该怪物回复 2 点生命，并立即获得 2 步额外移动。",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "db73af85-5858-41f0-ac42-b4ff0e13376d",
-      "parentUid": null,
-      "collectionKind": "NonCollectible"
-    },
-    {
       "id": "SA-000",
       "nameKey": "洛岚",
       "englishName": "Luolan",
@@ -1344,7 +1229,7 @@
       "costResource": "Hero",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "发动：每回合限一次，将你的一个反抗军移动一格。",
+      "rulesText": "发动：每回合限一次，将你的一个反抗军移动1格。",
       "arrows": [
         "NE"
       ],
@@ -1613,7 +1498,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "arrows": [
         "NW"
       ],
@@ -1693,7 +1578,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
+      "rulesText": "当此卡被移除时：随机选择对方领土的两个空格子，为对方召唤两只「食锈螯兽」。",
       "arrows": [
         "N",
         "W"
@@ -1748,7 +1633,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
       "arrows": [
         "SE"
       ],
@@ -1867,7 +1752,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每次入场后限一次，发动：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+      "rulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
       "arrows": [
         "N"
       ],
@@ -2080,7 +1965,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "rulesText": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
       "arrows": [
         "S"
       ],
@@ -2105,7 +1990,7 @@
       "costResource": "Star",
       "costAmount": 10,
       "durability": 0,
-      "rulesText": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
+      "rulesText": "你的所有卡牌的保留回合数视作+2。",
       "arrows": [
         "N"
       ],
@@ -2136,7 +2021,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 2,
-      "rulesText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
+      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "arrows": [
         "SE"
       ],
@@ -2325,7 +2210,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "rulesText": "入场：将总计6点伤害随机分配给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
       "arrows": [
         "NW",
         "NE"
@@ -2351,7 +2236,7 @@
       "costResource": "Star",
       "costAmount": 7,
       "durability": 0,
-      "rulesText": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
+      "rulesText": "[保留] 入场：[快速] 从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；令它们获得等同于本卡牌的被保留回合数。",
       "arrows": [
         "N",
         "SW",
@@ -2432,7 +2317,7 @@
       "health": 3,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每次被保留时，随机点亮他的一个箭头。",
+      "rulesText": "入场：[快速] 随机点亮等同于其被保留回合数的箭头。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -2487,7 +2372,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 令你所有手牌立即被额外保留一次，并令其在本回合获得[保留]。",
       "arrows": [
         "N",
         "W",
@@ -2517,7 +2402,7 @@
       "health": 6,
       "movement": 8,
       "durability": 0,
-      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
+      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 抽取「阳炎爆裂拳」。",
       "arrows": [
         "S"
       ],
@@ -2689,7 +2574,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "该单位的箭头不能用于放置或建造建筑随从。",
+      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从。",
       "arrows": [
         "NW",
         "NE"
@@ -2884,7 +2769,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：本局对战剩余时间内，你所有可建造随从的建造目标值−1，最低为0，包括此后进入游戏或归你控制的随从。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值−1。",
       "arrows": [
         "SW",
         "SE"
@@ -2913,7 +2798,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "rulesText": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
       "arrows": [
         "NW"
       ],
@@ -2938,7 +2823,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "入场：该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "rulesText": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
       "arrows": [
         "N",
         "NE"
@@ -3199,7 +3084,7 @@
       "health": 5,
       "movement": 5,
       "durability": 0,
-      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
       "arrows": [
         "E",
         "S"
@@ -3231,7 +3116,7 @@
       "health": 12,
       "movement": 10,
       "durability": 1,
-      "rulesText": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
+      "rulesText": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。",
       "arrows": [
         "E",
         "S"
@@ -3420,7 +3305,7 @@
       "health": 9,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：填满你场上三张卡牌的进度；不足3个时全部触发。",
       "arrows": [
         "NW",
         "N",
@@ -3603,7 +3488,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
+      "rulesText": "失去2点生命以发动：填满其⬆️方格子中卡牌的进度。",
       "arrows": [],
       "tribes": [
         "奇兽"
@@ -3976,7 +3861,7 @@
         "src": "./assets/card-art/lost-hollow-null/lost-hollow-null-01.png"
       }
     ],
-    "FNG-UN-009": [
+    "FNG-UN-008": [
       {
         "id": "hollow-time-lord-01",
         "src": "./assets/card-art/hollow-time-lord/hollow-time-lord-01.png"
@@ -4791,7 +4676,7 @@
     "FNG-024": "orbital-crystal-spirit-02",
     "FNG-026": "oracle-crystal-spirit-01",
     "FNG-UN-001": "lost-hollow-null-01",
-    "FNG-UN-009": "hollow-time-lord-01",
+    "FNG-UN-008": "hollow-time-lord-01",
     "FNG-021": "cargo-puru-beast-01",
     "FNG-005": "treasure-star-ore-01",
     "FNG-006": "regular-bullet-01",
