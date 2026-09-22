@@ -336,9 +336,9 @@
       "rarity": "Epic",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 6,
+      "costAmount": 7,
       "durability": 0,
-      "rulesText": "",
+      "rulesText": "入场及时停阶段开始时：选择场上两个空的格子，湮灭其中的魔法卡。",
       "arrows": [
         "N"
       ],
@@ -351,7 +351,9 @@
       "attack": 2,
       "health": 4,
       "movement": 2,
-      "tribes": [],
+      "tribes": [
+        "人类"
+      ],
       "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
       "parentUid": null,
       "collectionKind": "Collectible"
@@ -444,12 +446,12 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 1,
-      "attack": 1,
+      "costAmount": 2,
+      "attack": 2,
       "health": 3,
-      "movement": 3,
+      "movement": 4,
       "durability": 0,
-      "rulesText": "",
+      "rulesText": "冲撞移动。",
       "arrows": [],
       "tribes": [
         "奇兽"
@@ -1011,6 +1013,37 @@
       "collectionKind": "Collectible"
     },
     {
+      "id": "FNG-037",
+      "nameKey": "迷你卫星",
+      "englishName": "",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 0,
+      "attack": 0,
+      "health": 2,
+      "movement": 0,
+      "durability": 0,
+      "rulesText": "",
+      "arrows": [
+        "N"
+      ],
+      "tribes": [
+        "机械"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
       "id": "FNG-UN-001",
       "nameKey": "迷离的空亡体",
       "englishName": "Lost Hollow Null",
@@ -1383,7 +1416,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "该卡可被放置于非己方领土内。免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。若这张牌将被移除，改为将其洗回你的牌堆，并抽1张牌。",
+      "rulesText": "该卡可被放置于非己方领土内。免湮灭。这张牌被移除时，将其洗回牌库，并抽1张牌。",
       "arrows": [
         "NE"
       ],
@@ -1470,7 +1503,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每次入场后限一次，在敌方领土内可发动：选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
+      "rulesText": "每次入场后限一次，在敌方领土内可发动：随机选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
       "arrows": [
         "S"
       ],
@@ -1526,7 +1559,7 @@
       "health": 2,
       "movement": 3,
       "durability": 0,
-      "rulesText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
+      "rulesText": "在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
       "arrows": [],
       "tribes": [
         "反抗军"
@@ -1552,7 +1585,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "该卡被移除时：[慢速] 将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "rulesText": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
       "arrows": [
         "NE",
         "SW"
@@ -1633,7 +1666,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
       "arrows": [
         "SE"
       ],
@@ -1847,7 +1880,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "每回合限一次，发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "rulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
       "arrows": [
         "E"
       ],

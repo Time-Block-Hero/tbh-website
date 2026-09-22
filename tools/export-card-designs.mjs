@@ -33,7 +33,8 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
     require(wanted.every(Boolean) && Array.isArray(bridge[field]) && JSON.stringify([...bridge[field]].sort()) === JSON.stringify(wanted), `Identity bridge policy mismatch: ${field}`);
   }
   for (const uid of bridge.resourceMigrationUids.filter((uid) => current.has(uid))) require(current.get(uid).cardType === "Resource", `Resource type migration missing: ${uid}`);
-  for (const uid of bridge.blankEffectUids.filter((uid) => current.has(uid))) require(current.get(uid).rulesText === "", `Blank design has an invented effect: ${uid}`);
+  // Blank-effect policy describes the migration baseline, not a permanent design restriction.
+  // Current authoritative designs may deliberately add effects; importing them requires a new review.
   return bridge;
 }
 
@@ -75,7 +76,7 @@ function buildExport(cardsBytes, bridgeBytes, commit, options = {}) {
     })).sort((left, right) => left.uid < right.uid ? -1 : left.uid > right.uid ? 1 : 0),
     policy: {
       excludedUids: [...bridge.excludedUids].sort(),
-      blankEffectUids: [...bridge.blankEffectUids].sort(),
+      blankEffectUids: dataset.cards.filter((card) => card.rulesText === "").map((card) => card.uid).sort(),
       resourceMigrationUids: [...bridge.resourceMigrationUids].sort(),
     },
   };

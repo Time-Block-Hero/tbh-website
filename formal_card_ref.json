@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "c46bb2c631e358fe23ea777e6b7e059e9beb14e54e77e84efb0e12d4d8d075bf",
+    "cardsSha256": "172e3a4569b58e6a0b751a195580cb9eafe45f79969f7196dd428f732c520b8a",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -173,6 +173,35 @@
             "sourcePath": "./assets/card-art/imperial-special-forces/imperial-special-forces-01.png"
           }
         ]
+      }
+    },
+    {
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "displayId": "FNG-037",
+      "name": "迷你卫星",
+      "nameEn": "",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "attack": 0,
+      "health": 2,
+      "movement": 0,
+      "arrows": [
+        "N"
+      ],
+      "tribes": [
+        "机械"
+      ],
+      "tags": [],
+      "rulesText": "",
+      "artwork": {
+        "key": null,
+        "selected": []
       }
     },
     {
@@ -845,7 +874,7 @@
         "空亡体"
       ],
       "tags": [],
-      "rulesText": "该卡可被放置于非己方领土内。免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。若这张牌将被移除，改为将其洗回你的牌堆，并抽1张牌。",
+      "rulesText": "该卡可被放置于非己方领土内。免湮灭。这张牌被移除时，将其洗回牌库，并抽1张牌。",
       "artwork": {
         "key": "rift-reborn-drake",
         "selected": [
@@ -1014,7 +1043,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每回合限一次，发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "rulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
       "artwork": {
         "key": "nyx-cybernetic-doctor",
         "selected": [
@@ -1162,7 +1191,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 6,
+      "costAmount": 7,
       "durability": 0,
       "attack": 2,
       "health": 4,
@@ -1170,9 +1199,11 @@
       "arrows": [
         "N"
       ],
-      "tribes": [],
+      "tribes": [
+        "人类"
+      ],
       "tags": [],
-      "rulesText": "",
+      "rulesText": "入场及时停阶段开始时：选择场上两个空的格子，湮灭其中的魔法卡。",
       "artwork": {
         "key": "science-era-exorcist",
         "selected": [
@@ -3131,7 +3162,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
+      "rulesText": "在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
       "artwork": {
         "key": "behind-lines-infiltrator",
         "selected": [
@@ -3294,7 +3325,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
       "artwork": {
         "key": "fence-the-goods",
         "selected": [
@@ -3527,7 +3558,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每次入场后限一次，在敌方领土内可发动：选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
+      "rulesText": "每次入场后限一次，在敌方领土内可发动：随机选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
       "artwork": {
         "key": "seth-legion-standard-bearer",
         "selected": [
@@ -3681,17 +3712,17 @@
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 1,
+      "costAmount": 2,
       "durability": 0,
-      "attack": 1,
+      "attack": 2,
       "health": 3,
-      "movement": 3,
+      "movement": 4,
       "arrows": [],
       "tribes": [
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "",
+      "rulesText": "冲撞移动。",
       "artwork": {
         "key": "puru-beast-cub",
         "selected": [
@@ -3793,7 +3824,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "该卡被移除时：[慢速] 将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "rulesText": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
       "artwork": {
         "key": "strange-wormhole-generator",
         "selected": [
@@ -4335,10 +4366,14 @@
       "ff153fcb-5387-455c-b673-ecf2d9ddfbc2"
     ],
     "blankEffectUids": [
-      "3b4ba62f-c700-4411-8c51-a901df1cb57c",
-      "72985209-0b77-4cf4-b619-cf8390ba8b24",
-      "853ec50e-d868-4519-b2f4-201799a22887",
-      "e7d3fe6a-821b-4c83-b660-1ada41ee2368"
+      "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "1be158d1-50ba-4f53-a52f-08696554c091",
+      "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+      "f14f6fca-6862-441b-9254-8b3df5556389",
+      "fec9be8d-5655-413d-aaf2-e1a3027034c7"
     ],
     "resourceMigrationUids": [
       "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",

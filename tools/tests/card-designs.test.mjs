@@ -276,3 +276,11 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
   assert.equal((await post(deleted, { type: "delete", uid: removed.uid })).status, 200);
   assert.equal((await (await fetch(`${url}/api/cards/state`)).json()).dataset.cards.length, 136);
 });
+
+ test("current designer revisions can add effects to formerly blank cards", (t) => {
+  const edited = revised((d) => { d.cards.find((c) => c.uid === bridge.blankEffectUids[0]).rulesText = "入场：抽1张牌。"; });
+  const exported = exportDirtyDesigns(fixture(t, edited));
+  assert.equal(exported.cards.find((c) => c.uid === bridge.blankEffectUids[0]).rulesText, "入场：抽1张牌。");
+  assert.equal(exported.policy.blankEffectUids.includes(bridge.blankEffectUids[0]), false);
+  assert.equal(bridge.blankEffectUids.length, 4);
+});
