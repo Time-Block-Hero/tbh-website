@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "172e3a4569b58e6a0b751a195580cb9eafe45f79969f7196dd428f732c520b8a",
+    "cardsSha256": "657226e68abc6078e0de12ccc4c044c227a504ba83129eb2fbb3fc8b8b9b10e3",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -1008,7 +1008,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：填满你场上三张卡牌的进度；不足3个时全部触发。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度；不足3个时全部触发。",
       "artwork": {
         "key": "swarm-overmind-emilys",
         "selected": [
