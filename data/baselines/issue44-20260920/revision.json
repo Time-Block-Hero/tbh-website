@@ -1,0 +1,432 @@
+{
+  "schemaVersion": 1,
+  "baselineId": "issue44-20260920",
+  "sourceBaseCommit": "2b8be370ba22522ed52f7fef7982040ad8e6d4a2",
+  "previousCardsSha256": "9c8d2e32547ff8dcbc47ad015a8b3a8c6200f18e97087492a7ae77f37a5d517e",
+  "cardsSha256": "c46bb2c631e358fe23ea777e6b7e059e9beb14e54e77e84efb0e12d4d8d075bf",
+  "cardCount": 132,
+  "neutralCollectibleCount": 36,
+  "status": "DesignFrozen_ExecutionNotValidated",
+  "deleted": [
+    {
+      "id": "FNG-UN-004",
+      "nameKey": "日光碎片",
+      "englishName": "",
+      "cardType": "Spell",
+      "classId": "Neutral",
+      "rarity": "Common",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "",
+      "arrows": [],
+      "tags": [],
+      "artPath": "CardArt/card_050",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "853ec50e-d868-4519-b2f4-201799a22887",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    },
+    {
+      "id": "FNG-UN-010",
+      "nameKey": "遗失的智慧",
+      "englishName": "Lost Wisdom",
+      "cardType": "Resource",
+      "classId": "Neutral",
+      "rarity": "Common",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "[拾取] 获得1点星能。",
+      "arrows": [],
+      "tags": [],
+      "artPath": "CardArt/card_075",
+      "artworkKey": "",
+      "artDescription": "拾取：获得 1 点星能。",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "92e377d2-5733-47ed-885b-d57e7f52bab1",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    },
+    {
+      "id": "FNG-UN-011",
+      "nameKey": "太阳裂片",
+      "englishName": "",
+      "cardType": "Spell",
+      "classId": "Neutral",
+      "rarity": "Common",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "",
+      "arrows": [],
+      "tags": [],
+      "artPath": "CardArt/card_076",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "72985209-0b77-4cf4-b619-cf8390ba8b24",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    },
+    {
+      "id": "FNG-UN-012",
+      "nameKey": "能量膜",
+      "englishName": "",
+      "cardType": "Resource",
+      "classId": "Neutral",
+      "rarity": "Common",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "拾取：拾取的随从获得1点护甲。",
+      "arrows": [],
+      "tags": [],
+      "artPath": "CardArt/card_077",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    },
+    {
+      "id": "FNG-UN-013",
+      "nameKey": "美味的野果",
+      "englishName": "",
+      "cardType": "Resource",
+      "classId": "Neutral",
+      "rarity": "Common",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
+      "arrows": [],
+      "tags": [],
+      "artPath": "CardArt/card_078",
+      "artworkKey": "",
+      "artDescription": "拾取：该怪物回复 2 点生命，并立即获得 2 步额外移动。",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "db73af85-5858-41f0-ac42-b4ff0e13376d",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    }
+  ],
+  "added": [],
+  "changed": [
+    {
+      "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
+      "name": "美味的野果",
+      "fields": {
+        "id": {
+          "before": "FNG-UN-005",
+          "after": "FNG-UN-004"
+        }
+      }
+    },
+    {
+      "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+      "name": "癫癫果实",
+      "fields": {
+        "id": {
+          "before": "FNG-UN-006",
+          "after": "FNG-UN-005"
+        }
+      }
+    },
+    {
+      "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+      "name": "护甲碎片",
+      "fields": {
+        "id": {
+          "before": "FNG-UN-007",
+          "after": "FNG-UN-006"
+        }
+      }
+    },
+    {
+      "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
+      "name": "咆哮型空亡体",
+      "fields": {
+        "id": {
+          "before": "FNG-UN-008",
+          "after": "FNG-UN-007"
+        }
+      }
+    },
+    {
+      "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
+      "name": "空亡时主",
+      "fields": {
+        "id": {
+          "before": "FNG-UN-009",
+          "after": "FNG-UN-008"
+        }
+      }
+    },
+    {
+      "uid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "name": "洛岚",
+      "fields": {
+        "rulesText": {
+          "before": "发动：每回合限一次，将你的一个反抗军移动一格。",
+          "after": "发动：每回合限一次，将你的一个反抗军移动1格。"
+        }
+      }
+    },
+    {
+      "uid": "872bb708-d5c1-49c3-810d-d1d748a8276c",
+      "name": "忘记来源的数据包",
+      "fields": {
+        "rulesText": {
+          "before": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+          "after": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。"
+        }
+      }
+    },
+    {
+      "uid": "b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+      "name": "危险入侵生物笼",
+      "fields": {
+        "rulesText": {
+          "before": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
+          "after": "当此卡被移除时：随机选择对方领土的两个空格子，为对方召唤两只「食锈螯兽」。"
+        }
+      }
+    },
+    {
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "name": "销赃",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+          "after": "入场：选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。"
+        }
+      }
+    },
+    {
+      "uid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "name": "军团驯兽师",
+      "fields": {
+        "rulesText": {
+          "before": "每次入场后限一次，发动：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+          "after": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。"
+        }
+      }
+    },
+    {
+      "uid": "07563f0e-c7d5-4448-a351-fa618dfd924c",
+      "name": "太阳雨",
+      "fields": {
+        "rulesText": {
+          "before": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+          "after": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。"
+        }
+      }
+    },
+    {
+      "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
+      "name": "烈阳圣女-阿蕾缇娅",
+      "fields": {
+        "rulesText": {
+          "before": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
+          "after": "你的所有卡牌的保留回合数视作+2。"
+        }
+      }
+    },
+    {
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501",
+      "name": "日珀蜂蜜",
+      "fields": {
+        "rulesText": {
+          "before": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
+          "after": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。"
+        }
+      }
+    },
+    {
+      "uid": "7a4d1b62-bf76-4807-a441-2b778ddd6f01",
+      "name": "耀斑连射",
+      "fields": {
+        "rulesText": {
+          "before": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+          "after": "入场：将总计6点伤害随机分配给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。"
+        }
+      }
+    },
+    {
+      "uid": "bb14410e-c906-4620-a04c-6886f5039c8e",
+      "name": "高等阳炎术",
+      "fields": {
+        "rulesText": {
+          "before": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
+          "after": "[保留] 入场：[快速] 从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；令它们获得等同于本卡牌的被保留回合数。"
+        }
+      }
+    },
+    {
+      "uid": "b5e0ec0b-e614-4862-9eff-bba73677708b",
+      "name": "唱诗班诗童",
+      "fields": {
+        "rulesText": {
+          "before": "每次被保留时，随机点亮他的一个箭头。",
+          "after": "入场：[快速] 随机点亮等同于其被保留回合数的箭头。"
+        }
+      }
+    },
+    {
+      "uid": "454171b3-f6cb-4907-8e6c-baca849b06b3",
+      "name": "烈阳恩典",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+          "after": "入场：[快速] 令你所有手牌立即被额外保留一次，并令其在本回合获得[保留]。"
+        }
+      }
+    },
+    {
+      "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "name": "日轮飞星-索拉",
+      "fields": {
+        "rulesText": {
+          "before": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
+          "after": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 抽取「阳炎爆裂拳」。"
+        }
+      }
+    },
+    {
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "name": "帝国军工厂",
+      "fields": {
+        "rulesText": {
+          "before": "该单位的箭头不能用于放置或建造建筑随从。",
+          "after": "该单位的箭头只能用于放置或建造非建筑的随从。"
+        }
+      }
+    },
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "name": "泰拉理工学院",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：本局对战剩余时间内，你所有可建造随从的建造目标值−1，最低为0，包括此后进入游戏或归你控制的随从。",
+          "after": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值−1。"
+        }
+      }
+    },
+    {
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "name": "超载运转",
+      "fields": {
+        "rulesText": {
+          "before": "入场：令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+          "after": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。"
+        }
+      }
+    },
+    {
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "name": "城市防护罩",
+      "fields": {
+        "rulesText": {
+          "before": "入场：该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+          "after": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。"
+        }
+      }
+    },
+    {
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "name": "铁驭姬-维拉",
+      "fields": {
+        "rulesText": {
+          "before": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+          "after": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”"
+        }
+      }
+    },
+    {
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "name": "「革命日」",
+      "fields": {
+        "rulesText": {
+          "before": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
+          "after": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。"
+        }
+      }
+    },
+    {
+      "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "name": "集群主脑-埃米莉丝",
+      "fields": {
+        "rulesText": {
+          "before": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
+          "after": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：填满你场上三张卡牌的进度；不足3个时全部触发。"
+        }
+      }
+    },
+    {
+      "uid": "8f084b1a-e770-413d-800e-61165fc3b4d9",
+      "name": "借时蜉蝣",
+      "fields": {
+        "rulesText": {
+          "before": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
+          "after": "失去2点生命以发动：填满其⬆️方格子中卡牌的进度。"
+        }
+      }
+    }
+  ],
+  "rulesSha256": {
+    "docs/rules/common/actions.md": "d72fa524b856b275bf08318ce0c04eb273b53e7bff8d0bf2a859e427c2746537",
+    "docs/rules/common/card-effects.md": "5f6370d25bf02dd63ffa306209daae70c68486b5dcd7c4f3d19ea7868935c507",
+    "docs/rules/common/economy.md": "c55739d8b8abf9a04d1097751dd34c3aed64c70e8d66cd42e0cd27a568b2970f",
+    "docs/rules/common/effect-design/activated.md": "c477cb4a72aa2dd30905a8e9c1bdb0c48234a8506df9cc411418b31f71cc6065",
+    "docs/rules/common/effect-design/continuous.md": "61abe9fa951e480d9224ee9ae8b8bbee4dc60f6fd259a175fcb29f6424367a8b",
+    "docs/rules/common/effect-design/contributions.md": "0cb5a8f78be931a2f16e20fec84fa868321b460ed5befcd099c319566fa1b312",
+    "docs/rules/common/effect-design/dictionary/conditions.md": "38fd22868fc7b3aa88ad52dbdc855d888622327b6f0be628a21b218b15490054",
+    "docs/rules/common/effect-design/dictionary/costs.md": "4ec16a360b9bdab38c8ab33c8970826110e1f4caa75ba576cb6c61e8a0431712",
+    "docs/rules/common/effect-design/dictionary/duration.md": "c69e5dd4a0fced2720dfac9c91a6d390412c3e67187a008395638b64a72bce73",
+    "docs/rules/common/effect-design/dictionary/events.md": "063619a7bd7004453d864a4fc40c9a08f6883f0822747301afd8e92ec6e7428f",
+    "docs/rules/common/effect-design/dictionary/results.md": "a3c7919feba871a23863e9f4e55a8cc60f9585779ea37af742f442c4b27117cd",
+    "docs/rules/common/effect-design/dictionary/selection.md": "4657e0c50e9ba5d0953b3a783ee3374de6497a0029bac995eebd9a1894e862e5",
+    "docs/rules/common/effect-design/dictionary/targets.md": "4b133b00b1e18c97a29e262fd49377a341914081fdc156c11da22a7003f505f0",
+    "docs/rules/common/effect-design/dictionary/usage.md": "a5227c0b351cbfd6e2c32ee2069650569afa217631eb0678292cb0b485d1f051",
+    "docs/rules/common/effect-design/dictionary.md": "cb7eaa8d44393678a263c20e63364bc6e90481ca067b1f73201e51fba26051d4",
+    "docs/rules/common/effect-design/execution.md": "1fc72c354eec61f6808c77f3cd7c194d5be050d6267df0e393cb1492a893f32b",
+    "docs/rules/common/effect-design/replacement.md": "5fdff8ec1a07fe74242731a4f4c877ec5c9a6599768f194b9605ff22498f4445",
+    "docs/rules/common/effect-design/triggered.md": "57bc6b7a9fcd315b16ea26fce523a981cd627a44ba6f7ec1573bde6754d0f529",
+    "docs/rules/common/effects.md": "96566735284ad8f7ad2d88dfce02739c6c27d8c32f3a42d7ecdea44f6a2710b9",
+    "docs/rules/common/elements.md": "85c83b43e04383375bdf4b7ed1cc07ac1402d9e7a0adf69c7e4f4b953e205257",
+    "docs/rules/common/index.md": "b5af69978299bf0430884bb23568bbd8039d6086911b5fca8e109bfa6c3b1700",
+    "docs/rules/common/lifecycle.md": "50b9e447f77f7981c4e4abc928bbf2c8e5c79be98768fb42356a3becdcf3fa3a",
+    "docs/rules/common/principles.md": "d6ca1181f5020dd27552ffdb1a9826112a4bc8f30a136af7b7769bfb4faafff5",
+    "docs/rules/common/rounds.md": "03b05f1e62aa04a99366dbd4d67de31542e0f85d61fbe16fabfce0ee33f1d423",
+    "docs/rules/maintenance/index.md": "762b210282c0d1a8eafedeeb32fe351995714cd61eddab0828da54fdf356a72a",
+    "docs/rules/maintenance/neutral-card-audit.md": "db2877ea2843b8e47b046d8448d34a35d2c3d7b362050595a995c3319c28c1c5",
+    "docs/rules/maintenance/pending.md": "c40e5db970eb18fcc1edd2d5d64781363c68d033771729ce7a9173575aa41f27",
+    "docs/rules/maintenance/ruling-history.md": "6a1327d6cc0ae4f5a3f566ef9279c9df84b3fd1f5335e10132928d5702dddf96",
+    "docs/rules/maintenance/sources.md": "302aa3270aa0a81fb6d2425bcbdf05bda6fd29e0ad3d677b0e01730fbc95d9d7",
+    "docs/rules/maintenance/versions.md": "aee96e761d9f877faf68f52b878f2c365aa2c12235bf0647ab8b9c65251b8819",
+    "docs/rules/reference/index.md": "b137362c1cf4a266de37012fc9d1c8535f1c25a5c22d2534681a4d95d5aeab3b",
+    "docs/rules/reference/keywords.md": "b3d945b05d6c84e9b8bf66a570164300a95b0b2d2644a806b03540d2c496abc1",
+    "docs/rules/reference/rulings.md": "f506db90f10b0dd8a08c1591d49ff0454c143fc35eb02c37be381d503613fd82",
+    "docs/rules/standard/automatic.md": "431aae8415845b5f531c4189ae2473a3d08da2e72a33facc9ee4b9f0b5dc2b2d",
+    "docs/rules/standard/index.md": "08591b4812e39989ac1ce77dfd16fa3c03e029b7b58c5d97785e0d01361f28e5",
+    "docs/rules/standard/overview.md": "0d742d4442b806e1b182d3167db206299646b3073dc95e4b7acae12aae77404f",
+    "docs/rules/standard/setup.md": "1eace59163b2e8e374d5cd5879aab5bb4c44625e218e8337cfc26d0663ab974b",
+    "docs/rules/start/index.md": "f5638f6bcc9d2b2b45bfbfc5492c179c1a32e35346d80d2239ba09a6f1fc73b0"
+  },
+  "openDecisions": [],
+  "randomSelectionTiming": "Sample explicit random choices from current legal candidates when the effect body executes; slow TimeStop effects sample at their own end-of-TimeStop settlement, Quick effects sample immediately."
+}

@@ -1,0 +1,116 @@
+{
+  "previousWebsiteCommit": "049eaf34fe90433471a50f0ee7388b12aaa68cf7",
+  "source": "Designer local card editor working copy; imported without editing gameplay text",
+  "sourceCardsSha256": "172e3a4569b58e6a0b751a195580cb9eafe45f79969f7196dd428f732c520b8a",
+  "scope": {
+    "classes": [
+      "SkyborneAlliance",
+      "SolarChurch"
+    ],
+    "neutral": "Collectible only; includes revised FNG013/FNG017 and new FNG037",
+    "excluded": "Other classes and neutral noncollectibles remain pending"
+  },
+  "changes": [
+    {
+      "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "displayId": "FNG-013",
+      "name": "科学纪元驱魔师",
+      "changedFields": [
+        "costAmount",
+        "rulesText",
+        "tribes"
+      ]
+    },
+    {
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "displayId": "FNG-017",
+      "name": "幼崽噗噜兽",
+      "changedFields": [
+        "attack",
+        "costAmount",
+        "movement",
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "displayId": "FNG-037",
+      "name": "迷你卫星",
+      "changedFields": [
+        "arrows",
+        "artDescription",
+        "artDescriptionNeedsPolish",
+        "artPath",
+        "artRequest",
+        "artworkKey",
+        "attack",
+        "cardType",
+        "classId",
+        "collectable",
+        "collectionKind",
+        "costAmount",
+        "costResource",
+        "durability",
+        "englishName",
+        "health",
+        "id",
+        "movement",
+        "nameKey",
+        "rarity",
+        "rulesText",
+        "tags",
+        "tribes",
+        "uid"
+      ]
+    },
+    {
+      "uid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+      "displayId": "SA-004-01",
+      "name": "裂隙惘生德雷克",
+      "changedFields": [
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+      "displayId": "SA-007",
+      "name": "军团旗帜手-塞特",
+      "changedFields": [
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+      "displayId": "SA-009",
+      "name": "敌后渗透者",
+      "changedFields": [
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75",
+      "displayId": "SA-010",
+      "name": "奇怪的虫洞发生器",
+      "changedFields": [
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "displayId": "SA-012",
+      "name": "销赃",
+      "changedFields": [
+        "rulesText"
+      ]
+    },
+    {
+      "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "displayId": "SA-018",
+      "name": "义体医师尼克斯",
+      "changedFields": [
+        "rulesText"
+      ]
+    }
+  ],
+  "deletedUids": []
+}

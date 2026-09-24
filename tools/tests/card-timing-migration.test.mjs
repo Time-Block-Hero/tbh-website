@@ -3,7 +3,8 @@ import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
 
 const read = path => JSON.parse(readFileSync(new URL(`../../${path}`, import.meta.url), 'utf8'));
-const data = read('data/cards.json');
+// The 13-Quick migration is historical; later user edits are recorded in the new baseline.
+const data = read('data/baselines/issue44-20260920/previous-cards.json');
 const migration = read('data/card-timing-migration.json');
 const expectedQuick = new Set(['AI-014', 'FNG-004', 'FNG-005', 'FNG-010', 'FNG-011', 'MCC-015',
   'SA-012', 'SC-001', 'SC-005', 'SC-008', 'SC-014', 'SC-017', 'SC-018']);

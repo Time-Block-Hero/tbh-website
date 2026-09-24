@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "9c8d2e32547ff8dcbc47ad015a8b3a8c6200f18e97087492a7ae77f37a5d517e",
+    "cardsSha256": "8dccf007f3ac5dcd1a54d4ce52c10c32595fd5f1fc3e75b7d1b3d7d3d7b69be5",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -129,7 +129,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "rulesText": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
       "artwork": {
         "key": "solar-rain",
         "selected": [
@@ -173,6 +173,35 @@
             "sourcePath": "./assets/card-art/imperial-special-forces/imperial-special-forces-01.png"
           }
         ]
+      }
+    },
+    {
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "displayId": "FNG-037",
+      "name": "迷你卫星",
+      "nameEn": "",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "attack": 0,
+      "health": 2,
+      "movement": 0,
+      "arrows": [
+        "N"
+      ],
+      "tribes": [
+        "机械"
+      ],
+      "tags": [],
+      "rulesText": "",
+      "artwork": {
+        "key": null,
+        "selected": []
       }
     },
     {
@@ -788,6 +817,34 @@
       }
     },
     {
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "displayId": "MCC-012-01",
+      "name": "蜂群无人机幻影",
+      "nameEn": "",
+      "cardType": "Minion",
+      "collectionKind": "Token",
+      "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "classId": "MachineHeaven",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 2,
+      "durability": 0,
+      "attack": 1,
+      "health": 1,
+      "movement": 5,
+      "arrows": [],
+      "tribes": [
+        "机械",
+        "奇兽"
+      ],
+      "tags": [],
+      "rulesText": "耐久度：1",
+      "artwork": {
+        "key": null,
+        "selected": []
+      }
+    },
+    {
       "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
       "displayId": "SC-003",
       "name": "烈阳圣女-阿蕾缇娅",
@@ -810,7 +867,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "你的所有卡牌在结算效果时算作额外在手牌中保留了两回合。",
+      "rulesText": "你的所有卡牌的保留回合数视作+2。",
       "artwork": {
         "key": "solar-saint-aletheia",
         "selected": [
@@ -819,31 +876,6 @@
             "sourcePath": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png"
           }
         ]
-      }
-    },
-    {
-      "uid": "2353bd8e-6c3a-4a7f-ab26-dcda308ac0bf",
-      "displayId": "FNG-UN-012",
-      "name": "能量膜",
-      "nameEn": "",
-      "cardType": "Resource",
-      "collectionKind": "NonCollectible",
-      "parentUid": null,
-      "classId": "Neutral",
-      "rarity": "Common",
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "attack": null,
-      "health": null,
-      "movement": null,
-      "arrows": [],
-      "tribes": [],
-      "tags": [],
-      "rulesText": "拾取：拾取的随从获得1点护甲。",
-      "artwork": {
-        "key": null,
-        "selected": []
       }
     },
     {
@@ -870,7 +902,7 @@
         "空亡体"
       ],
       "tags": [],
-      "rulesText": "该卡可被放置于非己方领土内。免湮灭：时停放置重合时，若仅自身免湮灭则留下；双方都免湮灭时仍一起湮灭。若这张牌将被移除，改为将其洗回你的牌堆，并抽1张牌。",
+      "rulesText": "该卡可被放置于非己方领土内。免湮灭。这张牌被移除时，将其洗回牌库，并抽1张牌。",
       "artwork": {
         "key": "rift-reborn-drake",
         "selected": [
@@ -903,7 +935,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+      "rulesText": "入场：在自身⬇️方格子召唤一个属性与自身相等的幻影。",
       "artwork": {
         "key": "swarm-drone",
         "selected": [
@@ -948,7 +980,7 @@
     },
     {
       "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
-      "displayId": "FNG-UN-009",
+      "displayId": "FNG-UN-008",
       "name": "空亡时主",
       "nameEn": "Hollow Time Lord",
       "cardType": "Minion",
@@ -1004,7 +1036,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机触发你场上的3个不同的有效进度效果；不足3个时全部触发。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度；不足3个时全部触发。",
       "artwork": {
         "key": "swarm-overmind-emilys",
         "selected": [
@@ -1039,7 +1071,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每回合限一次，发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "rulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
       "artwork": {
         "key": "nyx-cybernetic-doctor",
         "selected": [
@@ -1052,7 +1084,7 @@
     },
     {
       "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
-      "displayId": "FNG-UN-008",
+      "displayId": "FNG-UN-007",
       "name": "咆哮型空亡体",
       "nameEn": "Roaring Hollow-Null",
       "cardType": "Minion",
@@ -1187,7 +1219,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 6,
+      "costAmount": 7,
       "durability": 0,
       "attack": 2,
       "health": 4,
@@ -1195,9 +1227,11 @@
       "arrows": [
         "N"
       ],
-      "tribes": [],
+      "tribes": [
+        "人类"
+      ],
       "tags": [],
-      "rulesText": "",
+      "rulesText": "入场及时停阶段开始时：选择场上两个空的格子，湮灭其中的魔法卡。",
       "artwork": {
         "key": "science-era-exorcist",
         "selected": [
@@ -1430,7 +1464,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 令你所有手牌立即被额外保留一次，并令其在本回合获得[保留]。",
       "artwork": {
         "key": "grace-of-the-blazing-sun",
         "selected": [
@@ -1498,7 +1532,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
+      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 抽取「阳炎爆裂拳」。",
       "artwork": {
         "key": "sunwheel-flying-star-sola",
         "selected": [
@@ -1697,7 +1731,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "rulesText": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
       "artwork": {
         "key": "overdrive-operation",
         "selected": [
@@ -1729,7 +1763,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "[耐久度：2] 入场：选择场上的一张法术，令其法术伤害增加1＋此牌的有效保留回合数。",
+      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "artwork": {
         "key": "sun-amber-honey",
         "selected": [
@@ -2098,31 +2132,6 @@
       }
     },
     {
-      "uid": "72985209-0b77-4cf4-b619-cf8390ba8b24",
-      "displayId": "FNG-UN-011",
-      "name": "太阳裂片",
-      "nameEn": "",
-      "cardType": "Spell",
-      "collectionKind": "NonCollectible",
-      "parentUid": null,
-      "classId": "Neutral",
-      "rarity": "Common",
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "attack": null,
-      "health": null,
-      "movement": null,
-      "arrows": [],
-      "tribes": [],
-      "tags": [],
-      "rulesText": "",
-      "artwork": {
-        "key": null,
-        "selected": []
-      }
-    },
-    {
       "uid": "731b9886-bc52-4778-b3ea-3ec7319b5d12",
       "displayId": "MCC-007",
       "name": "天使-星光开悟者",
@@ -2305,7 +2314,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "rulesText": "入场：将总计6点伤害随机分配给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
       "artwork": {
         "key": "flare-barrage",
         "selected": [
@@ -2372,7 +2381,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：[快速] 抽一张牌并令其本回合获得保留。",
       "artwork": {
         "key": "starlight-transit-pipeline",
         "selected": [
@@ -2381,31 +2390,6 @@
             "sourcePath": "./assets/card-art/starlight-transit-pipeline/starlight-transit-pipeline-01.png"
           }
         ]
-      }
-    },
-    {
-      "uid": "853ec50e-d868-4519-b2f4-201799a22887",
-      "displayId": "FNG-UN-004",
-      "name": "日光碎片",
-      "nameEn": "",
-      "cardType": "Spell",
-      "collectionKind": "NonCollectible",
-      "parentUid": null,
-      "classId": "Neutral",
-      "rarity": "Common",
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "attack": null,
-      "health": null,
-      "movement": null,
-      "arrows": [],
-      "tribes": [],
-      "tags": [],
-      "rulesText": "",
-      "artwork": {
-        "key": null,
-        "selected": []
       }
     },
     {
@@ -2429,7 +2413,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "artwork": {
         "key": "orphaned-data-packet",
         "selected": [
@@ -2442,7 +2426,7 @@
     },
     {
       "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
-      "displayId": "FNG-UN-007",
+      "displayId": "FNG-UN-006",
       "name": "护甲碎片",
       "nameEn": "",
       "cardType": "Resource",
@@ -2488,7 +2472,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每次入场后限一次，发动：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+      "rulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
       "artwork": {
         "key": "legion-beastmaster",
         "selected": [
@@ -2520,7 +2504,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "失去2点生命以发动：触发其⬆️方格子中卡牌的一个进度效果。",
+      "rulesText": "失去2点生命以发动：填满其⬆️方格子中卡牌的进度。",
       "artwork": {
         "key": "borrowed-time-mayfly",
         "selected": [
@@ -2529,31 +2513,6 @@
             "sourcePath": "./assets/card-art/borrowed-time-mayfly/borrowed-time-mayfly-01.png"
           }
         ]
-      }
-    },
-    {
-      "uid": "92e377d2-5733-47ed-885b-d57e7f52bab1",
-      "displayId": "FNG-UN-010",
-      "name": "遗失的智慧",
-      "nameEn": "Lost Wisdom",
-      "cardType": "Resource",
-      "collectionKind": "NonCollectible",
-      "parentUid": null,
-      "classId": "Neutral",
-      "rarity": "Common",
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "attack": null,
-      "health": null,
-      "movement": null,
-      "arrows": [],
-      "tribes": [],
-      "tags": [],
-      "rulesText": "[拾取] 获得1点星能。",
-      "artwork": {
-        "key": null,
-        "selected": []
       }
     },
     {
@@ -2723,7 +2682,7 @@
     },
     {
       "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
-      "displayId": "FNG-UN-005",
+      "displayId": "FNG-UN-004",
       "name": "美味的野果",
       "nameEn": "",
       "cardType": "Resource",
@@ -2772,7 +2731,7 @@
       "tags": [
         "Building"
       ],
-      "rulesText": "该单位的箭头不能用于放置或建造建筑随从。",
+      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从。",
       "artwork": {
         "key": "imperial-arms-factory",
         "selected": [
@@ -2908,7 +2867,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "当此卡被移除时：[慢速] 为对手在其领土内的随机空格子上召唤两只「食锈螯兽」，不重复占格。空格中不能有任何卡牌，包括资源牌。",
+      "rulesText": "当此卡被移除时：随机选择对方领土的两个空格子，为对方召唤两只「食锈螯兽」。",
       "artwork": {
         "key": "dangerous-invasive-creature-cage",
         "selected": [
@@ -2940,7 +2899,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "每次被保留时，随机点亮他的一个箭头。",
+      "rulesText": "入场：[快速] 随机点亮等同于其被保留回合数的箭头。",
       "artwork": {
         "key": "choir-child",
         "selected": [
@@ -3132,7 +3091,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "[保留] 入场：从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；它们视作被保留了等同于此牌的有效保留回合数。",
+      "rulesText": "[保留] 入场：[快速] 从牌堆随机选取最多3张法术牌，随机放置于该卡牌箭头指向的合法格子，不重复占格；令它们获得等同于本卡牌的被保留回合数。",
       "artwork": {
         "key": "advanced-corona-arts",
         "selected": [
@@ -3167,7 +3126,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：[慢速]传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
       "artwork": {
         "key": "titan-maiden-vera",
         "selected": [
@@ -3231,7 +3190,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每回合限一次，在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
+      "rulesText": "在敌方领土时可发动：将该卡的控制权交给对方。死亡时：你下回合少抽一张牌。",
       "artwork": {
         "key": "behind-lines-infiltrator",
         "selected": [
@@ -3627,7 +3586,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每次入场后限一次，在敌方领土内可发动：选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
+      "rulesText": "每次入场后限一次，在敌方领土内可发动：随机选择你的牌堆中一张费用低于5的反抗军，将其召唤到自身⬇️方格子。",
       "artwork": {
         "key": "seth-legion-standard-bearer",
         "selected": [
@@ -3727,7 +3686,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "rulesText": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
       "artwork": {
         "key": "city-shield",
         "selected": [
@@ -3781,17 +3740,17 @@
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 1,
+      "costAmount": 2,
       "durability": 0,
-      "attack": 1,
+      "attack": 2,
       "health": 3,
-      "movement": 3,
+      "movement": 4,
       "arrows": [],
       "tribes": [
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "",
+      "rulesText": "冲撞移动。",
       "artwork": {
         "key": "puru-beast-cub",
         "selected": [
@@ -3800,31 +3759,6 @@
             "sourcePath": "./assets/card-art/puru-beast-cub/puru-beast-cub-01.png"
           }
         ]
-      }
-    },
-    {
-      "uid": "db73af85-5858-41f0-ac42-b4ff0e13376d",
-      "displayId": "FNG-UN-013",
-      "name": "美味的野果",
-      "nameEn": "",
-      "cardType": "Resource",
-      "collectionKind": "NonCollectible",
-      "parentUid": null,
-      "classId": "Neutral",
-      "rarity": "Common",
-      "costResource": "Star",
-      "costAmount": 0,
-      "durability": 0,
-      "attack": null,
-      "health": null,
-      "movement": null,
-      "arrows": [],
-      "tribes": [],
-      "tags": [],
-      "rulesText": "拾取：拾取的随从恢复2点生命，本回合速度＋2。",
-      "artwork": {
-        "key": null,
-        "selected": []
       }
     },
     {
@@ -3918,7 +3852,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "该卡被移除时：[慢速] 将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "rulesText": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
       "artwork": {
         "key": "strange-wormhole-generator",
         "selected": [
@@ -3995,7 +3929,7 @@
     },
     {
       "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
-      "displayId": "FNG-UN-006",
+      "displayId": "FNG-UN-005",
       "name": "癫癫果实",
       "nameEn": "",
       "cardType": "Resource",
@@ -4043,7 +3977,7 @@
       "tags": [
         "InitialHero"
       ],
-      "rulesText": "发动：每回合限一次，将你的一个反抗军移动一格。",
+      "rulesText": "发动：每回合限一次，将你的一个反抗军移动1格。",
       "artwork": {
         "key": "luolan",
         "selected": [
@@ -4305,7 +4239,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：本局对战剩余时间内，你所有可建造随从的建造目标值−1，最低为0，包括此后进入游戏或归你控制的随从。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "artwork": {
         "key": "terra-institute-of-technology",
         "selected": [
@@ -4440,7 +4374,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[耐久度：1] 发动：选择一个方向，对该方向的首个目标造成8点伤害，溢出的伤害会贯穿给该方向的下一个随从。亡语：在所在格子上召唤维拉。",
+      "rulesText": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。",
       "artwork": {
         "key": "revolution-day",
         "selected": [
@@ -4460,10 +4394,14 @@
       "ff153fcb-5387-455c-b673-ecf2d9ddfbc2"
     ],
     "blankEffectUids": [
-      "3b4ba62f-c700-4411-8c51-a901df1cb57c",
-      "72985209-0b77-4cf4-b619-cf8390ba8b24",
-      "853ec50e-d868-4519-b2f4-201799a22887",
-      "e7d3fe6a-821b-4c83-b660-1ada41ee2368"
+      "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "1be158d1-50ba-4f53-a52f-08696554c091",
+      "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+      "f14f6fca-6862-441b-9254-8b3df5556389",
+      "fec9be8d-5655-413d-aaf2-e1a3027034c7"
     ],
     "resourceMigrationUids": [
       "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",

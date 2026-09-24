@@ -12,7 +12,8 @@ import { validateWrite } from "../card-design-write-contract.mjs";
 import { exportCommittedDesigns, exportDirtyDesigns, validateBridge, guardExportOutput } from "../export-card-designs.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const source = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json")));
+// Historical migration tests retain their original 137-card fixture. Current designs are checked separately.
+const source = JSON.parse(fs.readFileSync(path.join(root, "data/baselines/issue44-20260920/previous-cards.json")));
 const bridge = JSON.parse(fs.readFileSync(path.join(root, "data/card-identity-migration.json")));
 function fixture(t, dataset = source, identityBridge = bridge) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "tbh-design-test-"));
@@ -274,4 +275,12 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
   const deleted = revised((d) => { d.cards = d.cards.filter((c) => c.uid !== removed.uid); delete d.artworkVariants[removed.id]; delete d.selectedArtworkIds[removed.id]; });
   assert.equal((await post(deleted, { type: "delete", uid: removed.uid })).status, 200);
   assert.equal((await (await fetch(`${url}/api/cards/state`)).json()).dataset.cards.length, 136);
+});
+
+ test("current designer revisions can add effects to formerly blank cards", (t) => {
+  const edited = revised((d) => { d.cards.find((c) => c.uid === bridge.blankEffectUids[0]).rulesText = "入场：抽1张牌。"; });
+  const exported = exportDirtyDesigns(fixture(t, edited));
+  assert.equal(exported.cards.find((c) => c.uid === bridge.blankEffectUids[0]).rulesText, "入场：抽1张牌。");
+  assert.equal(exported.policy.blankEffectUids.includes(bridge.blankEffectUids[0]), false);
+  assert.equal(bridge.blankEffectUids.length, 4);
 });
