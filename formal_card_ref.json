@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "657226e68abc6078e0de12ccc4c044c227a504ba83129eb2fbb3fc8b8b9b10e3",
+    "cardsSha256": "8dccf007f3ac5dcd1a54d4ce52c10c32595fd5f1fc3e75b7d1b3d7d3d7b69be5",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -817,6 +817,34 @@
       }
     },
     {
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "displayId": "MCC-012-01",
+      "name": "蜂群无人机幻影",
+      "nameEn": "",
+      "cardType": "Minion",
+      "collectionKind": "Token",
+      "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "classId": "MachineHeaven",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 2,
+      "durability": 0,
+      "attack": 1,
+      "health": 1,
+      "movement": 5,
+      "arrows": [],
+      "tribes": [
+        "机械",
+        "奇兽"
+      ],
+      "tags": [],
+      "rulesText": "耐久度：1",
+      "artwork": {
+        "key": null,
+        "selected": []
+      }
+    },
+    {
       "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
       "displayId": "SC-003",
       "name": "烈阳圣女-阿蕾缇娅",
@@ -907,7 +935,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+      "rulesText": "入场：在自身⬇️方格子召唤一个属性与自身相等的幻影。",
       "artwork": {
         "key": "swarm-drone",
         "selected": [
@@ -2353,7 +2381,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：[快速] 抽一张牌并令其本回合获得保留。",
       "artwork": {
         "key": "starlight-transit-pipeline",
         "selected": [
@@ -4211,7 +4239,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值−1。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "artwork": {
         "key": "terra-institute-of-technology",
         "selected": [

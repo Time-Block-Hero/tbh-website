@@ -52,12 +52,30 @@ test('frozen rulebook bytes are bound to the same design revision', () => {
 });
 
 test('current approved faction batch keeps latest designer bytes and exact typed scope', () => {
-  const latest = parse('data/cards.json');
+  const raw = execFileSync('git', ['show', '9813550:data/cards.json'], { cwd: root });
+  const latest = JSON.parse(raw);
   const batch = parse('data/baselines/issue44-factions-v1/revision.json');
-  assert.equal(hash(read('data/cards.json')), batch.sourceCardsSha256);
+  assert.equal(hash(raw), batch.sourceCardsSha256);
   const scope = latest.cards.filter(c => ['SkyborneAlliance', 'SolarChurch'].includes(c.classId) || c.classId === 'Neutral' && c.collectionKind === 'Collectible');
   assert.equal(scope.length, 81);
   assert.equal(new Set(scope.map(c => c.uid)).size, 81);
   assert.equal(scope.filter(c => c.classId === 'Neutral').length, 37);
+  contract.validateDataset(latest, { exportArtwork: true });
+});
+
+ test('approved effect revision records exactly three edits and a new phantom identity', () => {
+  const latest = parse('data/cards.json');
+  const revision = parse('data/baselines/issue44-effects-v2/revision.json');
+  assert.equal(hash(read('data/cards.json')), revision.sourceCardsSha256);
+  const previous = JSON.parse(execFileSync('git', ['show', `${revision.previousWebsiteCommit}:data/cards.json`], { cwd: root }));
+  const cards = new Map(previous.cards.map(c => [c.uid, c]));
+  assert.equal(revision.changes.length, 4);
+  assert.equal(revision.changes.filter(c => c.before === null).length, 1);
+  for (const c of revision.changes) {
+    assert.deepEqual(cards.get(c.uid) ?? null, c.before);
+    cards.set(c.uid, c.after);
+  }
+  assert.deepEqual([...cards.values()].sort((a,b)=>a.uid.localeCompare(b.uid)), [...latest.cards].sort((a,b)=>a.uid.localeCompare(b.uid)));
+  assert.equal(latest.cards.length, 134);
   contract.validateDataset(latest, { exportArtwork: true });
 });

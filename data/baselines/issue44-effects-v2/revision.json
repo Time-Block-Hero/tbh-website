@@ -1,0 +1,244 @@
+{
+  "previousWebsiteCommit": "b18481570b5e89c06b6abd887f1036a0d1e27784",
+  "sourceCardsSha256": "8dccf007f3ac5dcd1a54d4ce52c10c32595fd5f1fc3e75b7d1b3d7d3d7b69be5",
+  "status": "DesignFrozen_ExecutionValidatedSeparately",
+  "scope": "Three approved card revisions and one drone phantom token",
+  "decisions": [
+    "幻影复制来源当前攻击、生命上限和速度，再接受自身光环；不复制入场效果；耐久按卡文为1。",
+    "运输管线完成抽牌快速，后续独立触发遵循各自速度。",
+    "学院进度受电力加成，每次完成固定-1建造目标。"
+  ],
+  "changes": [
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "before": {
+        "id": "AI-009",
+        "nameKey": "泰拉理工学院",
+        "englishName": "Terra Institute of Technology",
+        "cardType": "Minion",
+        "classId": "AstraImperium",
+        "rarity": "Legendary",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 8,
+        "attack": 0,
+        "health": 5,
+        "movement": 0,
+        "durability": 0,
+        "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值−1。",
+        "arrows": [
+          "SW",
+          "SE"
+        ],
+        "tribes": [
+          "建筑"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "terra-institute-of-technology",
+        "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary building minion. Terra Institute of Technology reaches its defining breakthrough inside a monumental Astra Imperium research city: six severe black-steel laboratory towers align around a central construction atrium as three accumulated research phases culminate in one brilliant synchronized experiment. Below the converging beams, engineers and students watch an incomplete military prototype simplify itself into a cleaner modular design, with entire layers of support machinery retracting as the new method makes future construction visibly easier. Preserve the central prototype, the six-tower convergence, and a small but emotionally readable group of researchers inside the upper square crop; extend the vast terraced campus, transit rails, archives, and military skyline downward for depth. Iconic institutional moment, bold elevated perspective, intentional asymmetry, exceptional architectural finish, dark red and blackened steel cut by precise pale-cyan research light, cinematic haze, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
+        "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      },
+      "after": {
+        "id": "AI-009",
+        "nameKey": "泰拉理工学院",
+        "englishName": "Terra Institute of Technology",
+        "cardType": "Minion",
+        "classId": "AstraImperium",
+        "rarity": "Legendary",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 8,
+        "attack": 0,
+        "health": 5,
+        "movement": 0,
+        "durability": 0,
+        "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+        "arrows": [
+          "SW",
+          "SE"
+        ],
+        "tribes": [
+          "建筑"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "terra-institute-of-technology",
+        "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary building minion. Terra Institute of Technology reaches its defining breakthrough inside a monumental Astra Imperium research city: six severe black-steel laboratory towers align around a central construction atrium as three accumulated research phases culminate in one brilliant synchronized experiment. Below the converging beams, engineers and students watch an incomplete military prototype simplify itself into a cleaner modular design, with entire layers of support machinery retracting as the new method makes future construction visibly easier. Preserve the central prototype, the six-tower convergence, and a small but emotionally readable group of researchers inside the upper square crop; extend the vast terraced campus, transit rails, archives, and military skyline downward for depth. Iconic institutional moment, bold elevated perspective, intentional asymmetry, exceptional architectural finish, dark red and blackened steel cut by precise pale-cyan research light, cinematic haze, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
+        "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "before": {
+        "id": "MCC-002",
+        "nameKey": "星光运输管线",
+        "englishName": "Starlight Transit Pipeline",
+        "cardType": "Minion",
+        "classId": "MachineHeaven",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 4,
+        "attack": 0,
+        "health": 3,
+        "movement": 0,
+        "durability": 0,
+        "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+        "arrows": [
+          "NW"
+        ],
+        "tribes": [
+          "机械",
+          "建筑"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "starlight-transit-pipeline",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 0,
+        "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      },
+      "after": {
+        "id": "MCC-002",
+        "nameKey": "星光运输管线",
+        "englishName": "Starlight Transit Pipeline",
+        "cardType": "Minion",
+        "classId": "MachineHeaven",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 4,
+        "attack": 0,
+        "health": 3,
+        "movement": 0,
+        "durability": 0,
+        "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：[快速] 抽一张牌并令其本回合获得保留。",
+        "arrows": [
+          "NW"
+        ],
+        "tribes": [
+          "机械",
+          "建筑"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "starlight-transit-pipeline",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 0,
+        "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "before": {
+        "id": "MCC-012",
+        "nameKey": "蜂群无人机",
+        "englishName": "Swarm Drone",
+        "cardType": "Minion",
+        "classId": "MachineHeaven",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 2,
+        "attack": 1,
+        "health": 1,
+        "movement": 5,
+        "durability": 0,
+        "rulesText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+        "arrows": [],
+        "tribes": [
+          "机械",
+          "奇兽"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "swarm-drone",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 0,
+        "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      },
+      "after": {
+        "id": "MCC-012",
+        "nameKey": "蜂群无人机",
+        "englishName": "Swarm Drone",
+        "cardType": "Minion",
+        "classId": "MachineHeaven",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 2,
+        "attack": 1,
+        "health": 1,
+        "movement": 5,
+        "durability": 0,
+        "rulesText": "入场：在自身⬇️方格子召唤一个属性与自身相等的幻影。",
+        "arrows": [],
+        "tribes": [
+          "机械",
+          "奇兽"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "swarm-drone",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 0,
+        "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "before": null,
+      "after": {
+        "id": "MCC-012-01",
+        "nameKey": "蜂群无人机幻影",
+        "englishName": "",
+        "cardType": "Minion",
+        "classId": "MachineHeaven",
+        "rarity": "Rare",
+        "collectable": false,
+        "costResource": "Star",
+        "costAmount": 2,
+        "attack": 1,
+        "health": 1,
+        "movement": 5,
+        "durability": 0,
+        "rulesText": "耐久度：1",
+        "arrows": [],
+        "tribes": [
+          "机械",
+          "奇兽"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+        "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+        "collectionKind": "Token"
+      }
+    }
+  ]
+}

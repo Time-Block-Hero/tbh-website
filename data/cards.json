@@ -2802,7 +2802,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：回合结束的次数，每次进度＋1。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值−1。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "arrows": [
         "SW",
         "SE"
@@ -3246,7 +3246,7 @@
       "health": 3,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：抽一张牌并令其本回合获得保留。",
+      "rulesText": "[循环进度：4] 计数：你获得的星能数量。完成：[快速] 抽一张牌并令其本回合获得保留。",
       "arrows": [
         "NW"
       ],
@@ -3581,7 +3581,7 @@
       "health": 1,
       "movement": 5,
       "durability": 0,
-      "rulesText": "入场：在自身⬇️方格子召唤一个自身的原始版复制，并将复制品的剩余耐久设为1。",
+      "rulesText": "入场：在自身⬇️方格子召唤一个属性与自身相等的幻影。",
       "arrows": [],
       "tribes": [
         "机械",
@@ -3817,6 +3817,36 @@
       "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
       "parentUid": null,
       "collectionKind": "Collectible"
+    },
+    {
+      "id": "MCC-012-01",
+      "nameKey": "蜂群无人机幻影",
+      "englishName": "",
+      "cardType": "Minion",
+      "classId": "MachineHeaven",
+      "rarity": "Rare",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 2,
+      "attack": 1,
+      "health": 1,
+      "movement": 5,
+      "durability": 0,
+      "rulesText": "耐久度：1",
+      "arrows": [],
+      "tribes": [
+        "机械",
+        "奇兽"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "collectionKind": "Token"
     }
   ],
   "artworkVariants": {
