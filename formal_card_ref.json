@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "b55f91bc934e10e0c04ed294b681d67fc904725923ceb169be43ff2addb283a2",
+    "cardsSha256": "9c8d2e32547ff8dcbc47ad015a8b3a8c6200f18e97087492a7ae77f37a5d517e",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -65,7 +65,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：获得1点星能，抽一张牌。",
+      "rulesText": "入场：[快速] 获得1点星能，抽一张牌。",
       "artwork": {
         "key": "flash-of-insight",
         "selected": [
@@ -129,7 +129,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[慢速]每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "rulesText": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
       "artwork": {
         "key": "solar-rain",
         "selected": [
@@ -544,7 +544,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，[慢速]对其造成1点伤害。",
+      "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。",
       "artwork": {
         "key": "regular-bullet",
         "selected": [
@@ -1430,7 +1430,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
       "artwork": {
         "key": "grace-of-the-blazing-sun",
         "selected": [
@@ -1498,7 +1498,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
       "artwork": {
         "key": "sunwheel-flying-star-sola",
         "selected": [
@@ -1530,7 +1530,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "入场：生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
       "artwork": {
         "key": "sun-amber-swarm",
         "selected": [
@@ -1597,7 +1597,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "rulesText": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
       "artwork": {
         "key": "engineer-s-wisdom",
         "selected": [
@@ -1665,7 +1665,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择战场上的一行，[慢速]对该行上的单位造成7点伤害。",
+      "rulesText": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
       "artwork": {
         "key": "orbital-bombardment",
         "selected": [
@@ -1827,7 +1827,7 @@
       "arrows": [],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "rulesText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
       "artwork": {
         "key": "believer-s-wisdom",
         "selected": [
@@ -1859,7 +1859,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，[慢速]对其造成2点伤害。",
+      "rulesText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，对其造成2点伤害。",
       "artwork": {
         "key": "novice-corona-shot",
         "selected": [
@@ -2208,7 +2208,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：以移除一张手牌为成本，抽一张牌。",
+      "rulesText": "入场：[快速] 以移除一张手牌为成本，抽一张牌。",
       "artwork": {
         "key": "cast-into-space",
         "selected": [
@@ -2272,7 +2272,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：获得4[⭐星能]。",
+      "rulesText": "入场：[快速] 获得4[⭐星能]。",
       "artwork": {
         "key": "treasure-star-ore",
         "selected": [
@@ -2305,7 +2305,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[慢速]将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "rulesText": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
       "artwork": {
         "key": "flare-barrage",
         "selected": [
@@ -2429,7 +2429,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[慢速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "artwork": {
         "key": "orphaned-data-packet",
         "selected": [
@@ -2577,7 +2577,7 @@
       "tags": [
         "DelayedEffect"
       ],
-      "rulesText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
+      "rulesText": "入场：选定一个非英雄单位，将其消灭。",
       "artwork": {
         "key": "delayed-coordinate-cannon",
         "selected": [
@@ -2710,7 +2710,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场：令你手牌最左侧不具有[保留]的牌获得[保留]。",
+      "rulesText": "入场：[快速] 令你手牌最左侧不具有[保留]的牌获得[保留]。",
       "artwork": {
         "key": "corona-believer",
         "selected": [
@@ -3098,7 +3098,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选定一个格子，[慢速]若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "rulesText": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
       "artwork": {
         "key": "predictive-bombing",
         "selected": [
@@ -3297,7 +3297,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：获得1[⭐星能]",
+      "rulesText": "入场：[快速] 获得1[⭐星能]",
       "artwork": {
         "key": "star-energy-ore",
         "selected": [
@@ -3330,7 +3330,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择一个友方随从和一个敌方随从，[慢速]对它们各造成4点伤害。",
+      "rulesText": "入场：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
       "artwork": {
         "key": "mutual-immolation",
         "selected": [
@@ -3394,7 +3394,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择并移除一张场上的己方卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
       "artwork": {
         "key": "fence-the-goods",
         "selected": [
@@ -3982,7 +3982,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
+      "rulesText": "入场：[快速] 获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
       "artwork": {
         "key": "radiant-star-energy-stone",
         "selected": [
@@ -4172,7 +4172,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：抽两张牌。",
+      "rulesText": "入场：[快速] 抽两张牌。",
       "artwork": {
         "key": "merchant-s-wisdom",
         "selected": [

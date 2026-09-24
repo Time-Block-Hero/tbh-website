@@ -103,7 +103,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：获得1[⭐星能]",
+      "rulesText": "入场：[快速] 获得1[⭐星能]",
       "arrows": [
         "W"
       ],
@@ -128,7 +128,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：获得4[⭐星能]。",
+      "rulesText": "入场：[快速] 获得4[⭐星能]。",
       "arrows": [
         "W"
       ],
@@ -153,7 +153,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，[慢速]对其造成1点伤害。",
+      "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。",
       "arrows": [
         "E"
       ],
@@ -263,7 +263,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：抽两张牌。",
+      "rulesText": "入场：[快速] 抽两张牌。",
       "arrows": [
         "E"
       ],
@@ -288,7 +288,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "入场：以移除一张手牌为成本，抽一张牌。",
+      "rulesText": "入场：[快速] 以移除一张手牌为成本，抽一张牌。",
       "arrows": [
         "W"
       ],
@@ -392,7 +392,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：选定一个非英雄单位，[慢速]将其消灭。",
+      "rulesText": "入场：选定一个非英雄单位，将其消灭。",
       "arrows": [],
       "tags": [
         "DelayedEffect"
@@ -421,7 +421,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：选定一个格子，[慢速]若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "rulesText": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
       "arrows": [
         "NE"
       ],
@@ -937,7 +937,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "入场：选择战场上的一行，[慢速]对该行上的单位造成7点伤害。",
+      "rulesText": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
       "arrows": [
         "NE"
       ],
@@ -1613,7 +1613,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：[慢速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "arrows": [
         "NW"
       ],
@@ -1748,7 +1748,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：选择并移除一张场上的己方卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
       "arrows": [
         "SE"
       ],
@@ -2051,7 +2051,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：令你手牌最左侧不具有[保留]的牌获得[保留]。",
+      "rulesText": "入场：[快速] 令你手牌最左侧不具有[保留]的牌获得[保留]。",
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_089",
@@ -2080,7 +2080,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：[慢速]每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
+      "rulesText": "入场：每回合限一次，对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外执行一次该伤害。",
       "arrows": [
         "S"
       ],
@@ -2164,7 +2164,7 @@
       "health": 2,
       "movement": 3,
       "durability": 0,
-      "rulesText": "入场：生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
       "arrows": [],
       "tribes": [
         "奇兽"
@@ -2248,7 +2248,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "rulesText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -2300,7 +2300,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，[慢速]对其造成2点伤害。",
+      "rulesText": "若此牌的有效保留回合数至少为1，入场：选择一个单位，对其造成2点伤害。",
       "arrows": [
         "E"
       ],
@@ -2325,7 +2325,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[慢速]将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
+      "rulesText": "入场：将总计6＋4×此牌有效保留回合数的伤害，随机分配给所有敌方单位。",
       "arrows": [
         "NW",
         "NE"
@@ -2378,7 +2378,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "入场：选择一个友方随从和一个敌方随从，[慢速]对它们各造成4点伤害。",
+      "rulesText": "入场：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
       "arrows": [
         "NE",
         "S"
@@ -2404,7 +2404,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
+      "rulesText": "入场：[快速] 获得2星能；此牌的有效保留回合数每有1，获得的数量翻倍。",
       "arrows": [
         "NW"
       ],
@@ -2487,7 +2487,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "入场：令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
+      "rulesText": "入场：[快速] 令你的所有手牌视作额外保留了1次，并令其在本回合获得[保留]。",
       "arrows": [
         "N",
         "W",
@@ -2517,7 +2517,7 @@
       "health": 6,
       "movement": 8,
       "durability": 0,
-      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：生成1张「阳炎爆裂拳」加入你的手牌。",
+      "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 生成1张「阳炎爆裂拳」加入你的手牌。",
       "arrows": [
         "S"
       ],
@@ -3019,7 +3019,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "rulesText": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
       "arrows": [
         "NE"
       ],
@@ -3748,7 +3748,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "入场：获得1点星能，抽一张牌。",
+      "rulesText": "入场：[快速] 获得1点星能，抽一张牌。",
       "arrows": [
         "W"
       ],
