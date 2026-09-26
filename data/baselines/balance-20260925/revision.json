@@ -1,0 +1,215 @@
+{
+  "schemaVersion": 1,
+  "previousWebsiteCommit": "650e439025a15e527179cad2bd80cd72507d6dec",
+  "previousCardsSha256": "8dccf007f3ac5dcd1a54d4ce52c10c32595fd5f1fc3e75b7d1b3d7d3d7b69be5",
+  "sourceCardsSha256": "3424e00dccc045462310111814c2aad96fd9a1869787249e6de3e931ab144971",
+  "status": "DesignFrozen_ExecutionValidatedSeparately",
+  "scope": "Fourteen existing cards; stable identities and admission unchanged",
+  "decisions": [
+    "阳炎信徒每个光环来源分别保留一张最左侧尚无保留的手牌；两个来源分别保留两张，来源离场重新分配。",
+    "俱焚烈焰从入场改为主动发动；遵守通用主动能力规则，不额外添加卡文未声明的限制。",
+    "训练服务机群完成后每回合产星的奖励属于该单位，不再赋给英雄。"
+  ],
+  "changes": [
+    {
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "displayId": "FNG-008",
+      "name": "探机",
+      "fields": {
+        "attack": {
+          "before": 0,
+          "after": 1
+        },
+        "tribes": {
+          "before": [],
+          "after": [
+            "机械"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "displayId": "FNG-018",
+      "name": "星能矿机",
+      "fields": {
+        "costAmount": {
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "uid": "a1edce46-f210-4215-ab59-f35a5173c50d",
+      "displayId": "SC-001",
+      "name": "阳炎信徒",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 令你手牌最左侧不具有[保留]的牌获得[保留]。",
+          "after": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。"
+        }
+      }
+    },
+    {
+      "uid": "4c2033a5-fb41-4c96-b540-16572b690c70",
+      "displayId": "SC-005",
+      "name": "日珀蜂群",
+      "fields": {
+        "costAmount": {
+          "before": 3,
+          "after": 2
+        }
+      }
+    },
+    {
+      "uid": "69f1c181-ade4-485e-9923-e5949cda7f93",
+      "displayId": "SC-006",
+      "name": "燃魂学徒",
+      "fields": {
+        "costAmount": {
+          "before": 2,
+          "after": 1
+        }
+      }
+    },
+    {
+      "uid": "62452283-0e35-4ba0-83cc-2ae115078866",
+      "displayId": "SC-008",
+      "name": "教徒的智慧",
+      "fields": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "NE"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+      "displayId": "SC-009",
+      "name": "魔法练习人偶",
+      "fields": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "N"
+          ]
+        },
+        "movement": {
+          "before": 1,
+          "after": 0
+        }
+      }
+    },
+    {
+      "uid": "c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+      "displayId": "SC-013",
+      "name": "俱焚烈焰",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NE",
+            "S"
+          ],
+          "after": [
+            "N",
+            "S"
+          ]
+        },
+        "rulesText": {
+          "before": "入场：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+          "after": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。"
+        }
+      }
+    },
+    {
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "displayId": "AI-017",
+      "name": "城市规划师-薇",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+          "after": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。"
+        }
+      }
+    },
+    {
+      "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
+      "displayId": "AI-019",
+      "name": "骄傲铁驭-布兰特",
+      "fields": {
+        "attack": {
+          "before": 10,
+          "after": 8
+        },
+        "health": {
+          "before": 12,
+          "after": 10
+        }
+      }
+    },
+    {
+      "uid": "d65e0578-98e4-46af-aeb2-134cae1a812b",
+      "displayId": "MCC-001",
+      "name": "训练服务机群",
+      "fields": {
+        "arrows": {
+          "before": [
+            "N"
+          ],
+          "after": []
+        },
+        "rulesText": {
+          "before": "[循环进度：5] 计数：你抽牌的张数。完成：令你英雄每回合开始时额外生成1点星能。",
+          "after": "[循环进度：5] 计数：你抽牌的张数。完成：该单位每回合开始时额外生成1点星能。"
+        }
+      }
+    },
+    {
+      "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "displayId": "MCC-002",
+      "name": "星光运输管线",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NW"
+          ],
+          "after": []
+        },
+        "costAmount": {
+          "before": 4,
+          "after": 3
+        }
+      }
+    },
+    {
+      "uid": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
+      "displayId": "MCC-015",
+      "name": "灵光一闪",
+      "fields": {
+        "costAmount": {
+          "before": 1,
+          "after": 2
+        }
+      }
+    },
+    {
+      "uid": "1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+      "displayId": "MCC-018",
+      "name": "星能循环模块",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NE"
+          ],
+          "after": []
+        },
+        "rulesText": {
+          "before": "[循环进度：7] 计数：你消耗的星能数量。完成：你获得1点星能。",
+          "after": "[循环进度：6] 计数：你消耗的星能数量。完成：你获得1点星能。"
+        }
+      }
+    }
+  ]
+}
