@@ -56,7 +56,7 @@ window.__SETTING_DATA__ = {
           "englishName": "City Planner Wei",
           "classId": "AstraImperium",
           "cardType": "Minion",
-          "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+          "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Wei, a young adult Astra Imperium city planner, stands before a vast military-city model wearing a precise dark-red and charcoal architectural command uniform, fitted technical coat, compact time-quota control harness, and articulated drafting gauntlets. She selects a complete allied tower with one hand and relocates it with the other: the building separates into disciplined geometric light blocks inside a red spatial grid, vanishes from its foundation, and reappears several blocks away between existing structures. Keep Wei's focused face, two-handed planning gesture, and both departure and arrival silhouettes readable inside the upper square crop; use the lower portrait extension for layered transit channels, physical planning tools, and the immense city below. Ambitious architectural perspective, strong depth, controlled motion, distinctive imperial planning motifs, dark red and black steel with precise pale projection light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "city-planner-wei-01",
           "cover": "./assets/card-art/city-planner-wei/city-planner-wei-01.png"
@@ -339,7 +339,7 @@ window.__SETTING_DATA__ = {
         "en": "An Astra Imperium city planner in dark-red and charcoal architectural command dress. A time-quota harness and articulated drafting gauntlets accompany her work repositioning structures across a city model."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Wei, a young adult Astra Imperium city planner, stands before a vast military-city model wearing a precise dark-red and charcoal architectural command uniform, fitted technical coat, compact time-quota control harness, and articulated drafting gauntlets. She selects a complete allied tower with one hand and relocates it with the other: the building separates into disciplined geometric light blocks inside a red spatial grid, vanishes from its foundation, and reappears several blocks away between existing structures. Keep Wei's focused face, two-handed planning gesture, and both departure and arrival silhouettes readable inside the upper square crop; use the lower portrait extension for layered transit channels, physical planning tools, and the immense city below. Ambitious architectural perspective, strong depth, controlled motion, distinctive imperial planning motifs, dark red and black steel with precise pale projection light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
       "cover": "./assets/card-art/city-planner-wei/city-planner-wei-01.png",
       "sourceArtworkKeys": [
         "city-planner-wei"
@@ -353,7 +353,7 @@ window.__SETTING_DATA__ = {
           "englishName": "City Planner Wei",
           "classId": "AstraImperium",
           "cardType": "Minion",
-          "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+          "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Wei, a young adult Astra Imperium city planner, stands before a vast military-city model wearing a precise dark-red and charcoal architectural command uniform, fitted technical coat, compact time-quota control harness, and articulated drafting gauntlets. She selects a complete allied tower with one hand and relocates it with the other: the building separates into disciplined geometric light blocks inside a red spatial grid, vanishes from its foundation, and reappears several blocks away between existing structures. Keep Wei's focused face, two-handed planning gesture, and both departure and arrival silhouettes readable inside the upper square crop; use the lower portrait extension for layered transit channels, physical planning tools, and the immense city below. Ambitious architectural perspective, strong depth, controlled motion, distinctive imperial planning motifs, dark red and black steel with precise pale projection light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "city-planner-wei-01",
           "cover": "./assets/card-art/city-planner-wei/city-planner-wei-01.png"

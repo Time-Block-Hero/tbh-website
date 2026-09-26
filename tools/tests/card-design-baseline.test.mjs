@@ -64,9 +64,10 @@ test('current approved faction batch keeps latest designer bytes and exact typed
 });
 
  test('approved effect revision records exactly three edits and a new phantom identity', () => {
-  const latest = parse('data/cards.json');
+  const raw = execFileSync('git', ['show', '2a5074f8d9cf62c8701acf15a1639be47a76f9a5:data/cards.json'], { cwd: root });
+  const latest = JSON.parse(raw);
   const revision = parse('data/baselines/issue44-effects-v2/revision.json');
-  assert.equal(hash(read('data/cards.json')), revision.sourceCardsSha256);
+  assert.equal(hash(raw), revision.sourceCardsSha256);
   const previous = JSON.parse(execFileSync('git', ['show', `${revision.previousWebsiteCommit}:data/cards.json`], { cwd: root }));
   const cards = new Map(previous.cards.map(c => [c.uid, c]));
   assert.equal(revision.changes.length, 4);
@@ -78,4 +79,26 @@ test('current approved faction batch keeps latest designer bytes and exact typed
   assert.deepEqual([...cards.values()].sort((a,b)=>a.uid.localeCompare(b.uid)), [...latest.cards].sort((a,b)=>a.uid.localeCompare(b.uid)));
   assert.equal(latest.cards.length, 134);
   contract.validateDataset(latest, { exportArtwork: true });
+});
+
+
+test('balance revision reconstructs exactly fourteen approved cards with stable identities', () => {
+  const revision = parse('data/baselines/balance-20260925/revision.json');
+  const before = execFileSync('git', ['show', `${revision.previousWebsiteCommit}:data/cards.json`], { cwd: root });
+  assert.equal(hash(before), revision.previousCardsSha256);
+  assert.equal(hash(read('data/cards.json')), revision.sourceCardsSha256);
+  const reconstructed = JSON.parse(before);
+  const cards = new Map(reconstructed.cards.map(c => [c.uid, c]));
+  assert.deepEqual(revision.changes.map(c => c.displayId), ['FNG-008','FNG-018','SC-001','SC-005','SC-006','SC-008','SC-009','SC-013','AI-017','AI-019','MCC-001','MCC-002','MCC-015','MCC-018']);
+  for (const entry of revision.changes) {
+    const card = cards.get(entry.uid);
+    assert.equal(card.id, entry.displayId);
+    for (const [field, change] of Object.entries(entry.fields)) {
+      assert.ok(!['uid','id','parentUid','collectionKind','collectable'].includes(field));
+      assert.deepEqual(card[field], change.before);
+      card[field] = change.after;
+    }
+  }
+  assert.deepEqual(reconstructed, parse('data/cards.json'));
+  contract.validateDataset(reconstructed, { exportArtwork: true });
 });

@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "8dccf007f3ac5dcd1a54d4ce52c10c32595fd5f1fc3e75b7d1b3d7d3d7b69be5",
+    "cardsSha256": "3424e00dccc045462310111814c2aad96fd9a1869787249e6de3e931ab144971",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "datasetSchemaVersion": 4,
     "dirty": true
@@ -55,7 +55,7 @@
       "classId": "MachineHeaven",
       "rarity": "Common",
       "costResource": "Star",
-      "costAmount": 1,
+      "costAmount": 2,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -533,13 +533,15 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "attack": 0,
+      "attack": 1,
       "health": 1,
       "movement": 1,
       "arrows": [
         "NE"
       ],
-      "tribes": [],
+      "tribes": [
+        "机械"
+      ],
       "tags": [],
       "rulesText": "本随从的箭头仅在其被放置的回合生效。",
       "artwork": {
@@ -701,15 +703,13 @@
       "attack": 0,
       "health": 4,
       "movement": 0,
-      "arrows": [
-        "NE"
-      ],
+      "arrows": [],
       "tribes": [
         "机械",
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：7] 计数：你消耗的星能数量。完成：你获得1点星能。",
+      "rulesText": "[循环进度：6] 计数：你消耗的星能数量。完成：你获得1点星能。",
       "artwork": {
         "key": "star-energy-recirculation-module",
         "selected": [
@@ -1257,8 +1257,10 @@
       "durability": 0,
       "attack": 0,
       "health": 1,
-      "movement": 1,
-      "arrows": [],
+      "movement": 0,
+      "arrows": [
+        "N"
+      ],
       "tribes": [
         "机械"
       ],
@@ -1287,8 +1289,8 @@
       "costResource": "Star",
       "costAmount": 9,
       "durability": 0,
-      "attack": 10,
-      "health": 12,
+      "attack": 8,
+      "health": 10,
       "movement": 8,
       "arrows": [],
       "tribes": [
@@ -1554,7 +1556,7 @@
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "durability": 0,
       "attack": 1,
       "health": 2,
@@ -1858,7 +1860,9 @@
       "attack": null,
       "health": null,
       "movement": null,
-      "arrows": [],
+      "arrows": [
+        "NE"
+      ],
       "tribes": [],
       "tags": [],
       "rulesText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
@@ -2013,7 +2017,7 @@
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 1,
       "durability": 0,
       "attack": 1,
       "health": 4,
@@ -2368,14 +2372,12 @@
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 4,
+      "costAmount": 3,
       "durability": 0,
       "attack": 0,
       "health": 3,
       "movement": 0,
-      "arrows": [
-        "NW"
-      ],
+      "arrows": [],
       "tribes": [
         "机械",
         "建筑"
@@ -2603,7 +2605,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "[箭头需求: 3, 可建造] 每回合限两次发动：选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
       "artwork": {
         "key": "city-planner-wei",
         "selected": [
@@ -2669,7 +2671,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场：[快速] 令你手牌最左侧不具有[保留]的牌获得[保留]。",
+      "rulesText": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。",
       "artwork": {
         "key": "corona-believer",
         "selected": [
@@ -3284,12 +3286,12 @@
       "health": null,
       "movement": null,
       "arrows": [
-        "NE",
+        "N",
         "S"
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+      "rulesText": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
       "artwork": {
         "key": "mutual-immolation",
         "selected": [
@@ -3477,7 +3479,7 @@
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "durability": 0,
       "attack": 0,
       "health": 3,
@@ -3645,15 +3647,13 @@
       "attack": 0,
       "health": 3,
       "movement": 0,
-      "arrows": [
-        "N"
-      ],
+      "arrows": [],
       "tribes": [
         "机械",
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：5] 计数：你抽牌的张数。完成：令你英雄每回合开始时额外生成1点星能。",
+      "rulesText": "[循环进度：5] 计数：你抽牌的张数。完成：该单位每回合开始时额外生成1点星能。",
       "artwork": {
         "key": "training-service-swarm",
         "selected": [
