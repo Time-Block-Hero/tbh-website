@@ -63,6 +63,8 @@ node tools/sync-cards-from-data.mjs
 
 卡牌数据 schema 4 使用持久 UID，展示编号可以重排；资源类型与四种收集分类独立。正式导出指定已提交 SHA，合同和验证命令见 [卡牌设计导出](docs/design/card-design-export.md)。
 
+本轮140张设计的来源、六张新卡英文名及后续电能/转化/动态数值接口边界见 [T1 并行交接](docs/design/revisions/2026-09-27-parallel-contract.md)，逐字段变更见 [设计增量记录](docs/design/revisions/2026-09-27-electricity-cards.json)。这些是设计与接口准备，游戏执行实现由后续任务交付。
+
 人物身份映射维护在 `data/setting.json`，通过 `artworkKey` 和姓名校验引用卡牌；不要按会重排的卡牌 ID 绑定人物。英文名导致 artworkKey 变化时，需要同步核对映射。失效引用会在生成时阻止构建，在线页面会标记待核对。
 
 插画使用英文卡名生成的 slug 作为稳定索引：
