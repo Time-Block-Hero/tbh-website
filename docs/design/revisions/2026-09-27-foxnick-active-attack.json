@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/80",
+  "approval": "用户明确要求狐尼克仅主动攻击并造成伤害后获得护甲，防止防御反击不断恢复护甲。",
+  "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+  "field": "rulesText",
+  "before": "每回合可以攻击两次，本随从造成伤害后，自身获得等量护甲。",
+  "after": "每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。",
+  "semantics": {
+    "eligibleDamage": "Attack",
+    "excludedDamage": [
+      "AttackCounter",
+      "Effect",
+      "Spell"
+    ],
+    "amount": "actual damage; unchanged",
+    "attacksPerRound": 2
+  }
+}

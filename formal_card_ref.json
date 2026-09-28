@@ -4,8 +4,11 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "3424e00dccc045462310111814c2aad96fd9a1869787249e6de3e931ab144971",
+    "cardsSha256": "d3b79d81b1fba3e15c229111b2e73fb8a8c995098ce981c0824e944ade72c6c3",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
+    "sourceRevisionPath": "data/card-design-source-revision.json",
+    "sourceRevisionId": "issue78-20260927",
+    "sourceRevisionSha256": "be2e26490b98458a0a6dc6f5eafa06b5a208075362791f1f73252f006eebfe25",
     "datasetSchemaVersion": 4,
     "dirty": true
   },
@@ -338,7 +341,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "attack": 0,
+      "attack": 3,
       "health": 3,
       "movement": 1,
       "arrows": [],
@@ -347,7 +350,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[攻击范围：3] 攻击时：在本次普通攻击伤害及其后续结算完成后，对被攻击的随从额外造成3点伤害。",
+      "rulesText": "[攻击范围：3] 本随从的攻击力和攻击范围受电能加成。",
       "artwork": {
         "key": "crystal-spirit-watchtower",
         "selected": [
@@ -407,13 +410,13 @@
       "durability": 0,
       "attack": 5,
       "health": 7,
-      "movement": 4,
+      "movement": 5,
       "arrows": [],
       "tribes": [
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "该卡从场上被移除时：在其位置上召唤一只「猎空冒险者」。",
+      "rulesText": "",
       "artwork": {
         "key": "veteran-explorer",
         "selected": [
@@ -597,19 +600,21 @@
       "classId": "AstraImperium",
       "rarity": "Common",
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 1,
       "durability": 0,
       "attack": 0,
       "health": 2,
       "movement": 0,
-      "arrows": [],
+      "arrows": [
+        "NW"
+      ],
       "tribes": [
         "建筑"
       ],
       "tags": [
         "Building"
       ],
-      "rulesText": "该单位3×3范围内的其他友方建筑随从，已点亮方向的箭头层数＋1，效果提供的数值＋1。",
+      "rulesText": "光环：为3x3范围内的友方单位提供1点电能。",
       "artwork": {
         "key": "power-station",
         "selected": [
@@ -766,7 +771,7 @@
       "costAmount": 7,
       "durability": 0,
       "attack": 7,
-      "health": 7,
+      "health": 8,
       "movement": 5,
       "arrows": [],
       "tribes": [
@@ -795,7 +800,7 @@
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 5,
+      "costAmount": 4,
       "durability": 0,
       "attack": 1,
       "health": 5,
@@ -805,7 +810,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "你控制的所有法术牌的法术伤害+2。",
+      "rulesText": "你控制的所有法术牌的法术伤害+1。",
       "artwork": {
         "key": "sunlight-master",
         "selected": [
@@ -955,12 +960,12 @@
       "collectionKind": "Collectible",
       "parentUid": null,
       "classId": "Neutral",
-      "rarity": "Epic",
+      "rarity": "Rare",
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
       "attack": 8,
-      "health": 4,
+      "health": 5,
       "movement": 7,
       "arrows": [],
       "tribes": [
@@ -1368,7 +1373,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "该单位的箭头只能用于建造未完成的单位。",
+      "rulesText": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "artwork": {
         "key": "engineering-robot",
         "selected": [
@@ -1473,6 +1478,38 @@
           {
             "variantId": "grace-of-the-blazing-sun-01",
             "sourcePath": "./assets/card-art/grace-of-the-blazing-sun/grace-of-the-blazing-sun-01.png"
+          }
+        ]
+      }
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "name": "护甲军需官",
+      "nameEn": "Armor Quartermaster",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 6,
+      "durability": 0,
+      "attack": 2,
+      "health": 4,
+      "movement": 2,
+      "arrows": [],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
+      "artwork": {
+        "key": "armor-quartermaster",
+        "selected": [
+          {
+            "variantId": "armor-quartermaster-01",
+            "sourcePath": "./assets/card-art/armor-quartermaster/armor-quartermaster-01.png"
           }
         ]
       }
@@ -1633,7 +1670,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "rulesText": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。",
       "artwork": {
         "key": "engineer-s-wisdom",
         "selected": [
@@ -1657,19 +1694,18 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "attack": 8,
+      "attack": 7,
       "health": 8,
       "movement": 5,
       "arrows": [
-        "NW",
-        "W"
+        "NW"
       ],
       "tribes": [
         "机械",
         "人类"
       ],
       "tags": [],
-      "rulesText": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
+      "rulesText": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。",
       "artwork": {
         "key": "ascended-sword-jinbai",
         "selected": [
@@ -1733,7 +1769,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "rulesText": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。",
       "artwork": {
         "key": "overdrive-operation",
         "selected": [
@@ -1865,7 +1901,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "rulesText": "入场：本阶段结束时，抽2张牌并令其获得保留；本效果的抽牌数量享受此牌的法术伤害加成。",
       "artwork": {
         "key": "believer-s-wisdom",
         "selected": [
@@ -2415,7 +2451,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：[快速] 在场上随机生成2张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "artwork": {
         "key": "orphaned-data-packet",
         "selected": [
@@ -2617,6 +2653,38 @@
       }
     },
     {
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "displayId": "FNG-038",
+      "name": "领域防护罩",
+      "nameEn": "Domain Shield",
+      "cardType": "Spell",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 4,
+      "durability": 0,
+      "attack": null,
+      "health": null,
+      "movement": null,
+      "arrows": [
+        "S"
+      ],
+      "tribes": [],
+      "tags": [],
+      "rulesText": "入场：为友方随从分配6点护甲。",
+      "artwork": {
+        "key": "domain-shield",
+        "selected": [
+          {
+            "variantId": "domain-shield-01",
+            "sourcePath": "./assets/card-art/domain-shield/domain-shield-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
       "displayId": "FNG-020",
       "name": "鲁莽的先锋",
@@ -2708,6 +2776,38 @@
       }
     },
     {
+      "uid": "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+      "displayId": "SC-020",
+      "name": "守护光罩",
+      "nameEn": "Guardian Halo",
+      "cardType": "Spell",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "SolarChurch",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 3,
+      "durability": 0,
+      "attack": null,
+      "health": null,
+      "movement": null,
+      "arrows": [
+        "N"
+      ],
+      "tribes": [],
+      "tags": [],
+      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "artwork": {
+        "key": "guardian-halo",
+        "selected": [
+          {
+            "variantId": "guardian-halo-01",
+            "sourcePath": "./assets/card-art/guardian-halo/guardian-halo-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "a60555e6-d405-47de-bdff-c84031d53448",
       "displayId": "AI-003",
       "name": "帝国军工厂",
@@ -2733,13 +2833,45 @@
       "tags": [
         "Building"
       ],
-      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从。",
+      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
       "artwork": {
         "key": "imperial-arms-factory",
         "selected": [
           {
             "variantId": "imperial-arms-factory-01",
             "sourcePath": "./assets/card-art/imperial-arms-factory/imperial-arms-factory-01.png"
+          }
+        ]
+      }
+    },
+    {
+      "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "displayId": "AI-020-02",
+      "name": "奥古斯都计划",
+      "nameEn": "Project Augustus",
+      "cardType": "Minion",
+      "collectionKind": "Token",
+      "parentUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "classId": "AstraImperium",
+      "rarity": "Legendary",
+      "costResource": "Star",
+      "costAmount": 10,
+      "durability": 0,
+      "attack": 0,
+      "health": 12,
+      "movement": 0,
+      "arrows": [],
+      "tribes": [
+        "机械"
+      ],
+      "tags": [],
+      "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+      "artwork": {
+        "key": "project-augustus",
+        "selected": [
+          {
+            "variantId": "project-augustus-01",
+            "sourcePath": "./assets/card-art/project-augustus/project-augustus-01.png"
           }
         ]
       }
@@ -2767,7 +2899,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "每回合限一次。发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
+      "rulesText": "发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
       "artwork": {
         "key": "blackhand-logistics-freight-station",
         "selected": [
@@ -3059,7 +3191,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "rulesText": "入场：选定一个空格子，时停结束时，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其湮灭。",
       "artwork": {
         "key": "predictive-bombing",
         "selected": [
@@ -3128,7 +3260,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "rulesText": "入场：[快速] 若场上没有己方控制的「奥古斯都计划」，将一个「奥古斯都计划」放置于友方领土的任意格子上。发动：移除场上已经建造完毕的己方「奥古斯都计划」，转化为「革命日」。",
       "artwork": {
         "key": "titan-maiden-vera",
         "selected": [
@@ -3345,7 +3477,7 @@
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 1,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -3355,7 +3487,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：选择并移除己方场上一张卡牌，然后你获得等同于其费用+1的星能。",
       "artwork": {
         "key": "fence-the-goods",
         "selected": [
@@ -3686,7 +3818,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "rulesText": "入场：[快速] 你的所有建筑获得3护甲。",
       "artwork": {
         "key": "city-shield",
         "selected": [
@@ -3831,6 +3963,39 @@
       }
     },
     {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "name": "战线曙光",
+      "nameEn": "Dawn of the Frontline",
+      "cardType": "Spell",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Epic",
+      "costResource": "Star",
+      "costAmount": 8,
+      "durability": 0,
+      "attack": null,
+      "health": null,
+      "movement": null,
+      "arrows": [
+        "N",
+        "S"
+      ],
+      "tribes": [],
+      "tags": [],
+      "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "artwork": {
+        "key": "dawn-of-the-frontline",
+        "selected": [
+          {
+            "variantId": "dawn-of-the-frontline-01",
+            "sourcePath": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75",
       "displayId": "SA-010",
       "name": "奇怪的虫洞发生器",
@@ -3852,7 +4017,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "rulesText": "该卡被移除时：从你的弃牌堆随机选择两个反抗军召唤到敌方场上的随机位置。",
       "artwork": {
         "key": "strange-wormhole-generator",
         "selected": [
@@ -3884,7 +4049,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "回合开始时，你获得1点星能。",
+      "rulesText": "回合开始时，你获得2点星能（受电能加成）。",
       "artwork": {
         "key": "star-energy-mine",
         "selected": [
@@ -4074,7 +4239,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "该单位5×5范围内的其他友方建筑随从，已点亮方向的箭头层数＋3，效果提供的数值＋3。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "rulesText": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。",
       "artwork": {
         "key": "super-nuclear-power-plant",
         "selected": [
@@ -4239,7 +4404,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "artwork": {
         "key": "terra-institute-of-technology",
         "selected": [
@@ -4351,6 +4516,39 @@
       }
     },
     {
+      "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "displayId": "SA-020",
+      "name": "大将狐尼克",
+      "nameEn": "General Foxnick",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "SkyborneAlliance",
+      "rarity": "Epic",
+      "costResource": "Star",
+      "costAmount": 7,
+      "durability": 0,
+      "attack": 4,
+      "health": 5,
+      "movement": 6,
+      "arrows": [],
+      "tribes": [
+        "反抗军",
+        "兽裔(Avatar)"
+      ],
+      "tags": [],
+      "rulesText": "每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。",
+      "artwork": {
+        "key": "general-foxnick",
+        "selected": [
+          {
+            "variantId": "general-foxnick-01",
+            "sourcePath": "./assets/card-art/general-foxnick/general-foxnick-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
       "displayId": "AI-020-01",
       "name": "「革命日」",
@@ -4374,7 +4572,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。",
+      "rulesText": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方单位。该单位即将离开场上时，改为转化为维拉。",
       "artwork": {
         "key": "revolution-day",
         "selected": [
@@ -4387,15 +4585,11 @@
     }
   ],
   "policy": {
-    "excludedUids": [
-      "5121261f-8b88-4bb0-b882-717b44188f74",
-      "bdd6fa88-21f9-4eed-8248-00e550344739",
-      "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
-      "ff153fcb-5387-455c-b673-ecf2d9ddfbc2"
-    ],
+    "excludedUids": [],
     "blankEffectUids": [
       "0166c132-1962-4fc7-9aa6-353ecdba8eab",
       "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "0dde3972-5b69-4c3c-a17b-855656bf15cf",
       "1be158d1-50ba-4f53-a52f-08696554c091",
       "2946ca82-3e15-40d8-93f8-55acfad43645",
       "6b3fbb6a-30bf-4385-9462-2677f99d6b53",

@@ -425,7 +425,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+      "rulesText": "入场：选定一个空格子，时停结束时，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其湮灭。",
       "arrows": [
         "NE"
       ],
@@ -796,7 +796,7 @@
       "costResource": "Star",
       "costAmount": 7,
       "attack": 7,
-      "health": 7,
+      "health": 8,
       "movement": 5,
       "durability": 0,
       "rulesText": "",
@@ -820,12 +820,12 @@
       "englishName": "Titan X-003 Assault Type",
       "cardType": "Minion",
       "classId": "Neutral",
-      "rarity": "Epic",
+      "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
       "costAmount": 8,
       "attack": 8,
-      "health": 4,
+      "health": 5,
       "movement": 7,
       "durability": 0,
       "rulesText": "",
@@ -1042,6 +1042,86 @@
       "artDescriptionNeedsPolish": true,
       "artRequest": 1,
       "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-038",
+      "nameKey": "领域防护罩",
+      "englishName": "Domain Shield",
+      "cardType": "Spell",
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 4,
+      "durability": 0,
+      "rulesText": "入场：为友方随从分配6点护甲。",
+      "arrows": [
+        "S"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "domain-shield",
+      "artDescription": "Rare spell, Domain Shield. On the exposed freight deck of a battered orbital convoy, a compact industrial field generator releases a translucent cyan protective canopy that bends down into separate reinforced segments over a small group of allied armored fighters. Show the effect actively redistributing protection: one broad curved wave divides into distinct layered shields while white sparks from incoming debris skate along their outer surfaces. The shield formation is the dominant subject, not a portrait. A three-quarter elevated view places the generator, branching energy junction and three sheltered silhouettes in the upper half; the lower extension reveals deck rails, maintenance cables and the long shadow of the convoy hull. Slate and warm gray machinery, restrained cyan energy, warm amber emergency illumination. One clear protective process with specific industrial structure, quiet determination amid incoming fire. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-039",
+      "nameKey": "护甲军需官",
+      "englishName": "Armor Quartermaster",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 6,
+      "attack": 2,
+      "health": 4,
+      "movement": 2,
+      "durability": 0,
+      "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
+      "arrows": [],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "armor-quartermaster",
+      "artDescription": "Rare human minion, Armor Quartermaster. A seasoned adult human quartermaster with a sharp composed anime face and short dark hair is the dominant subject in a mobile freight-bay armory. They wear layered charcoal logistics fatigues, a short utility coat, a reinforced glove and a practical mechanical lifting harness. At a resupply window they pull a fresh segmented ceramic armor assembly from a rack and fasten it onto an allied fighter in the foreground while another ally waits in depth. Their face, confident stance, articulate clamp and the armor handoff remain clear in the upper crop. Frame from a slightly low three-quarter angle; the lower portrait shows orderly crates, spare plate racks, power couplings and worn deck tracks. Gunmetal, off-white armor and amber task lamps. Emphasize competent rapid distribution and human presence, not a merchant transaction or generic armored warrior. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-040",
+      "nameKey": "战线曙光",
+      "englishName": "Dawn of the Frontline",
+      "cardType": "Spell",
+      "classId": "Neutral",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 8,
+      "durability": 0,
+      "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "arrows": [
+        "N",
+        "S"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "dawn-of-the-frontline",
+      "artDescription": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines activates a growing mantle of armor together. A luminous white-gold protective wave propagates from the near front rank through successive defenders; every additional ally visibly reinforces the next overlapping barrier segment. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -1533,7 +1613,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+      "rulesText": "入场：[快速] 在场上随机生成2张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
       "arrows": [
         "NW"
       ],
@@ -1587,7 +1667,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+      "rulesText": "该卡被移除时：从你的弃牌堆随机选择两个反抗军召唤到敌方场上的随机位置。",
       "arrows": [
         "NE",
         "SW"
@@ -1666,9 +1746,9 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 1,
       "durability": 0,
-      "rulesText": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+      "rulesText": "入场：选择并移除己方场上一张卡牌，然后你获得等同于其费用+1的星能。",
       "arrows": [
         "SE"
       ],
@@ -1727,7 +1807,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "每回合限一次。发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
+      "rulesText": "发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
       "arrows": [
         "SW"
       ],
@@ -1912,9 +1992,9 @@
       "costAmount": 6,
       "attack": 5,
       "health": 7,
-      "movement": 4,
+      "movement": 5,
       "durability": 0,
-      "rulesText": "该卡从场上被移除时：在其位置上召唤一只「猎空冒险者」。",
+      "rulesText": "",
       "arrows": [],
       "tribes": [
         "反抗军"
@@ -1926,6 +2006,36 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "SA-020",
+      "nameKey": "大将狐尼克",
+      "englishName": "General Foxnick",
+      "cardType": "Minion",
+      "classId": "SkyborneAlliance",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 7,
+      "attack": 4,
+      "health": 5,
+      "movement": 6,
+      "durability": 0,
+      "rulesText": "每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。",
+      "arrows": [],
+      "tribes": [
+        "反抗军",
+        "兽裔(Avatar)"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "general-foxnick",
+      "artDescription": "Epic minion, General Foxnick of the Skyborne Alliance. Create this individual as a small-statured adult anthropomorphic fox commander: a coherent russet-and-cream fox muzzle, alert pointed ears, intelligent narrow eyes, lean compact proportions and a single fox tail. No human face with attached ears, no deer antlers or hooves, no chibi or baby proportions. Foxnick lands with assured balance on a shattered industrial barricade after a swift second strike, a compact energy saber held low and away from the face; bright residual impact sparks crystallize into reinforced armor segments around a scarred forearm guard. A deep forest-green military mantle with dark oxblood straps sweeps behind practical patched charcoal combat gear. Shoot from a low three-quarter angle so the small commander commands the frame; face, ears, saber gesture and protective forearm silhouette read in the upper square. Larger allied silhouettes far behind establish stature and respect without competing. Industrial punk equipment, shipyard haze, directional amber rim light, controlled green/red cloth, decisive tactical confidence. This is an individual character design, not a new canonical fox-species standard. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -2137,12 +2247,12 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 5,
+      "costAmount": 4,
       "attack": 1,
       "health": 5,
       "movement": 2,
       "durability": 0,
-      "rulesText": "你控制的所有法术牌的法术伤害+2。",
+      "rulesText": "你控制的所有法术牌的法术伤害+1。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -2168,7 +2278,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+      "rulesText": "入场：本阶段结束时，抽2张牌并令其获得保留；本效果的抽牌数量享受此牌的法术伤害加成。",
       "arrows": [
         "NE"
       ],
@@ -2510,6 +2620,31 @@
       "collectionKind": "Collectible"
     },
     {
+      "id": "SC-020",
+      "nameKey": "守护光罩",
+      "englishName": "Guardian Halo",
+      "cardType": "Spell",
+      "classId": "SolarChurch",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 3,
+      "durability": 0,
+      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "arrows": [
+        "N"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "guardian-halo",
+      "artDescription": "Rare spell, Guardian Halo of the Solar Church. In a white ceramic sanctuary built into a sun-facing industrial platform, three arcs of brilliant orange-gold energy travel outward from a compact sacred-engineering emitter. Two arcs overlap around the same allied armored figure in the foreground and a third settles around another ally behind, forming clean luminous protective shells with distinct layered edges. Focus on the repeated protective action and the strengthened overlap, not a character portrait or literal interface diagram. A close three-quarter view keeps the emitter, branching arcs and receiving shoulder armor in the upper square; the lower extension shows ceramic steps, heat vents and long sunlit shadows. Ivory, warm gold and restrained orange-red solar energy, crisp linework, modest depth and solemn warmth. Mechanical sun motifs are abstract and unlettered. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
       "id": "AI-000",
       "nameKey": "皇子阿列斯塔",
       "englishName": "Crown Prince Alesta",
@@ -2551,10 +2686,12 @@
       "rarity": "Common",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 1,
       "durability": 0,
-      "rulesText": "该单位3×3范围内的其他友方建筑随从，已点亮方向的箭头层数＋1，效果提供的数值＋1。",
-      "arrows": [],
+      "rulesText": "光环：为3x3范围内的友方单位提供1点电能。",
+      "arrows": [
+        "NW"
+      ],
       "tags": [
         "Building"
       ],
@@ -2587,7 +2724,7 @@
       "health": 2,
       "movement": 0,
       "durability": 0,
-      "rulesText": "回合开始时，你获得1点星能。",
+      "rulesText": "回合开始时，你获得2点星能（受电能加成）。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -2613,7 +2750,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从。",
+      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
       "arrows": [
         "NW",
         "NE"
@@ -2741,7 +2878,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "该单位的箭头只能用于建造未完成的单位。",
+      "rulesText": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "arrows": [
         "N",
         "W",
@@ -2808,7 +2945,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "arrows": [
         "SW",
         "SE"
@@ -2837,7 +2974,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+      "rulesText": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。",
       "arrows": [
         "NW"
       ],
@@ -2862,7 +2999,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+      "rulesText": "入场：[快速] 你的所有建筑获得3护甲。",
       "arrows": [
         "N",
         "NE"
@@ -2917,7 +3054,7 @@
       "health": 7,
       "movement": 0,
       "durability": 0,
-      "rulesText": "该单位5×5范围内的其他友方建筑随从，已点亮方向的箭头层数＋3，效果提供的数值＋3。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "rulesText": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -2943,7 +3080,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
+      "rulesText": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。",
       "arrows": [
         "NE"
       ],
@@ -2967,11 +3104,11 @@
       "collectable": true,
       "costResource": "Star",
       "costAmount": 2,
-      "attack": 0,
+      "attack": 3,
       "health": 3,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[攻击范围：3] 攻击时：在本次普通攻击伤害及其后续结算完成后，对被攻击的随从额外造成3点伤害。",
+      "rulesText": "[攻击范围：3] 本随从的攻击力和攻击范围受电能加成。",
       "arrows": [],
       "tribes": [
         "晶灵",
@@ -3123,7 +3260,7 @@
       "health": 5,
       "movement": 5,
       "durability": 0,
-      "rulesText": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+      "rulesText": "入场：[快速] 若场上没有己方控制的「奥古斯都计划」，将一个「奥古斯都计划」放置于友方领土的任意格子上。发动：移除场上已经建造完毕的己方「奥古斯都计划」，转化为「革命日」。",
       "arrows": [
         "E",
         "S"
@@ -3155,7 +3292,7 @@
       "health": 12,
       "movement": 10,
       "durability": 1,
-      "rulesText": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。",
+      "rulesText": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方单位。该单位即将离开场上时，改为转化为维拉。",
       "arrows": [
         "E",
         "S"
@@ -3487,10 +3624,9 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
+      "rulesText": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。",
       "arrows": [
-        "NW",
-        "W"
+        "NW"
       ],
       "tags": [],
       "artPath": "CardArt/card_085",
@@ -3498,7 +3634,7 @@
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary derivative Machine Celestial Court mechanical-human minion. Ascended Sword Jinbai must remain unmistakably the same youthful male swordsman as Lost Sword Jinbai: preserve his ash-white hair, masculine anime face, warm gray-blue eyes, slender proportions, and restrained grief, but reveal a fully mechanized humanoid body of pearl-white mechanical ceramic, graphite joints, cobalt armor seams, a luminous cyan chest core, and precise exposed structures beneath the elegant silhouette. Depict the defining combat instant when he crosses impossible distance in a teleporting sword strike: an extreme diagonal composition through a shattered data corridor, Jinbai arriving from background to foreground with one decisive luminous blade arc, compressed speed echoes and broken particles showing displacement rather than duplicate characters. Behind him, several warm translucent scenes from his human life survive briefly in floating memory panes—a lover reaching for his hand, family gathered in an intimate embrace or at a table, friends laughing or training together—then crack, fragment, and dissolve into light as he accelerates away from them. These are emotional background memories, not a counted set and not collectible wisdom objects. Keep Jinbai's face, chest core, sword hand, and decisive slash readable inside the upper square crop; use the lower extension for the fully mechanical body, vanishing-point speed trail, and fading human memories. Singular Legendary transformation moment, dynamic perspective, deep authored hierarchy, crisp anime contours and cel-shaped facial values, premium painterly industrial sci-fi rendering, white-blue ceramic against warm amber memory light and cold deep-space cyan. No giant flying sword, no four-part diagram, no literal cards. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
-      "attack": 8,
+      "attack": 7,
       "health": 8,
       "movement": 5,
       "tribes": [
@@ -3598,6 +3734,36 @@
       "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
       "parentUid": null,
       "collectionKind": "Collectible"
+    },
+    {
+      "id": "MCC-012-01",
+      "nameKey": "蜂群无人机幻影",
+      "englishName": "",
+      "cardType": "Minion",
+      "classId": "MachineHeaven",
+      "rarity": "Rare",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 2,
+      "attack": 1,
+      "health": 1,
+      "movement": 5,
+      "durability": 0,
+      "rulesText": "耐久度：1",
+      "arrows": [],
+      "tribes": [
+        "机械",
+        "奇兽"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "collectionKind": "Token"
     },
     {
       "id": "MCC-013",
@@ -3819,33 +3985,32 @@
       "collectionKind": "Collectible"
     },
     {
-      "id": "MCC-012-01",
-      "nameKey": "蜂群无人机幻影",
-      "englishName": "",
+      "id": "AI-020-02",
+      "nameKey": "奥古斯都计划",
+      "englishName": "Project Augustus",
       "cardType": "Minion",
-      "classId": "MachineHeaven",
-      "rarity": "Rare",
+      "classId": "AstraImperium",
+      "rarity": "Legendary",
       "collectable": false,
       "costResource": "Star",
-      "costAmount": 2,
-      "attack": 1,
-      "health": 1,
-      "movement": 5,
+      "costAmount": 10,
+      "attack": 0,
+      "health": 12,
+      "movement": 0,
       "durability": 0,
-      "rulesText": "耐久度：1",
+      "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
       "arrows": [],
       "tribes": [
-        "机械",
-        "奇兽"
+        "机械"
       ],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
-      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
-      "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "artworkKey": "project-augustus",
+      "artDescription": "Legendary derivative minion, Project Augustus. In an immense Astra Imperium titan assembly base operating through the night toward dawn, Revolution Day is being built at a relentless pace. Preserve the established titan identity from its reference: colossal black and dark-crimson humanoid siege chassis, severe angular helmet crown, pointed layered shoulder armor, protected upper-torso cockpit and massive long axial penetrator cannon. Depict the singular instant when an overhead gantry lowers the last great shoulder plate toward the unfinished titan while coordinated welding arms flare along its exposed ribs. The machine is powered down and supported by steel cradles, not fighting or firing; some plates remain absent to reveal structure. Bold upward three-quarter framing from a low maintenance catwalk, asymmetric crane diagonals and tiny human technicians convey enormous scale. Keep the crown, cockpit, suspended plate and welding junctions in the upper square crop; the lower portrait deepens through lifts, cables and stacked maintenance decks. Night-black foundry depth, disciplined deep-red metal, concentrated white-amber welding light and a cold dawn slit high behind the structure. An iconic industrial birth scene; use the existing titan appearance without copying its battle pose or energy-discharge composition. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "parentUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
       "collectionKind": "Token"
     }
   ],
@@ -4725,6 +4890,42 @@
         "id": "celestial-sprite-01",
         "src": "./assets/card-art/celestial-sprite/celestial-sprite-01.png"
       }
+    ],
+    "FNG-038": [
+      {
+        "id": "domain-shield-01",
+        "src": "./assets/card-art/domain-shield/domain-shield-01.png"
+      }
+    ],
+    "FNG-039": [
+      {
+        "id": "armor-quartermaster-01",
+        "src": "./assets/card-art/armor-quartermaster/armor-quartermaster-01.png"
+      }
+    ],
+    "FNG-040": [
+      {
+        "id": "dawn-of-the-frontline-01",
+        "src": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-01.png"
+      }
+    ],
+    "SA-020": [
+      {
+        "id": "general-foxnick-01",
+        "src": "./assets/card-art/general-foxnick/general-foxnick-01.png"
+      }
+    ],
+    "SC-020": [
+      {
+        "id": "guardian-halo-01",
+        "src": "./assets/card-art/guardian-halo/guardian-halo-01.png"
+      }
+    ],
+    "AI-020-02": [
+      {
+        "id": "project-augustus-01",
+        "src": "./assets/card-art/project-augustus/project-augustus-01.png"
+      }
     ]
   },
   "selectedArtworkIds": {
@@ -4853,7 +5054,13 @@
     "MCC-010": "borrowed-time-mayfly-01",
     "MCC-011": "angel-frontline-commander-02",
     "MCC-012": "swarm-drone-01",
-    "MCC-013": "celestial-sprite-01"
+    "MCC-013": "celestial-sprite-01",
+    "FNG-038": "domain-shield-01",
+    "FNG-039": "armor-quartermaster-01",
+    "FNG-040": "dawn-of-the-frontline-01",
+    "SA-020": "general-foxnick-01",
+    "SC-020": "guardian-halo-01",
+    "AI-020-02": "project-augustus-01"
   },
   "customRaces": [
     "机械",

@@ -1,0 +1,538 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/78",
+  "baseCommit": "ce357dcdfc332bb06662abfc62e6e4f2aee212e7",
+  "approvedInputCardsSha256": "54d95a1888a938869b29ff3af924db6b3d6e8eb67dacee4180532ec15c0e63fa",
+  "preparedCardsSha256": "3910f554fd3a9067ad02054fac719898ad8bf81743d3ee8cefe1c0012609d12d",
+  "designCardCount": 140,
+  "added": 6,
+  "modified": 23,
+  "removed": [],
+  "notes": [
+    "本清单为T1固定设计差异，不声明Rules已实现。",
+    "六张英文名/artworkKey为T1补全，其余字段保留批准输入。",
+    "货运站仅精简重复文案，主动能力仍默认每回合一次。",
+    "后续T5修改美术字段将产生新cards摘要，必须使用新的正式提交和来源记录。"
+  ],
+  "cards": [
+    {
+      "uid": "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "displayId": "FNG-016",
+      "name": "预判投弹",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：选定一个格子，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其移入弃牌堆。",
+          "after": "入场：选定一个空格子，时停结束时，若该格子上有随从，对其造成4点伤害；若该格子上有法术，将其湮灭。"
+        }
+      }
+    },
+    {
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "displayId": "FNG-029",
+      "name": "泰坦X-003综合型",
+      "kind": "modified",
+      "fields": {
+        "health": {
+          "before": 7,
+          "after": 8
+        }
+      }
+    },
+    {
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "displayId": "FNG-030",
+      "name": "泰坦X-003强袭型",
+      "kind": "modified",
+      "fields": {
+        "health": {
+          "before": 4,
+          "after": 5
+        },
+        "rarity": {
+          "before": "Epic",
+          "after": "Rare"
+        }
+      }
+    },
+    {
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "displayId": "FNG-038",
+      "name": "领域防护罩",
+      "kind": "added",
+      "after": {
+        "id": "FNG-038",
+        "nameKey": "领域防护罩",
+        "englishName": "Domain Shield",
+        "cardType": "Spell",
+        "classId": "Neutral",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 4,
+        "durability": 0,
+        "rulesText": "入场：为友方随从分配6点护甲。",
+        "arrows": [
+          "S"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "domain-shield",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "name": "护甲军需官",
+      "kind": "added",
+      "after": {
+        "id": "FNG-039",
+        "nameKey": "护甲军需官",
+        "englishName": "Armor Quartermaster",
+        "cardType": "Minion",
+        "classId": "Neutral",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 6,
+        "attack": 2,
+        "health": 4,
+        "movement": 2,
+        "durability": 0,
+        "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
+        "arrows": [],
+        "tribes": [
+          "人类"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "armor-quartermaster",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "name": "战线曙光",
+      "kind": "added",
+      "after": {
+        "id": "FNG-040",
+        "nameKey": "战线曙光",
+        "englishName": "Dawn of the Frontline",
+        "cardType": "Spell",
+        "classId": "Neutral",
+        "rarity": "Epic",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 8,
+        "durability": 0,
+        "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+        "arrows": [
+          "N",
+          "S"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "dawn-of-the-frontline",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "872bb708-d5c1-49c3-810d-d1d748a8276c",
+      "displayId": "SA-008",
+      "name": "忘记来源的数据包",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 在场上随机生成4张「遗失的智慧」。此卡被移除时：触发其入场效果两次。",
+          "after": "入场：[快速] 在场上随机生成2张「遗失的智慧」。此卡被移除时：触发其入场效果两次。"
+        }
+      }
+    },
+    {
+      "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75",
+      "displayId": "SA-010",
+      "name": "奇怪的虫洞发生器",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "该卡被移除时：将你弃牌堆最上方的反抗军召唤到敌方领土的随机位置。",
+          "after": "该卡被移除时：从你的弃牌堆随机选择两个反抗军召唤到敌方场上的随机位置。"
+        }
+      }
+    },
+    {
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "displayId": "SA-012",
+      "name": "销赃",
+      "kind": "modified",
+      "fields": {
+        "costAmount": {
+          "before": 3,
+          "after": 1
+        },
+        "rulesText": {
+          "before": "入场：[快速] 选择并移除一张本时停中由你放置的己方场上卡牌，获得等同于其费用的星能。",
+          "after": "入场：选择并移除己方场上一张卡牌，然后你获得等同于其费用+1的星能。"
+        }
+      }
+    },
+    {
+      "uid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+      "displayId": "SA-014",
+      "name": "「黑手物流」货运站",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "每回合限一次。发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
+          "after": "发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。"
+        }
+      }
+    },
+    {
+      "uid": "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "displayId": "SA-019",
+      "name": "老资历探险者",
+      "kind": "modified",
+      "fields": {
+        "movement": {
+          "before": 4,
+          "after": 5
+        },
+        "rulesText": {
+          "before": "该卡从场上被移除时：在其位置上召唤一只「猎空冒险者」。",
+          "after": ""
+        }
+      }
+    },
+    {
+      "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "displayId": "SA-020",
+      "name": "大将狐尼克",
+      "kind": "added",
+      "after": {
+        "id": "SA-020",
+        "nameKey": "大将狐尼克",
+        "englishName": "General Foxnick",
+        "cardType": "Minion",
+        "classId": "SkyborneAlliance",
+        "rarity": "Epic",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 7,
+        "attack": 4,
+        "health": 5,
+        "movement": 6,
+        "durability": 0,
+        "rulesText": "每回合可以攻击两次，本随从造成伤害后，自身获得等量护甲。",
+        "arrows": [],
+        "tribes": [
+          "反抗军",
+          "兽裔(Avatar)"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "general-foxnick",
+        "artDescription": "一只狐形兽人，身型小巧，但是战力非凡！颇有大将风范。",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "displayId": "SC-007",
+      "name": "日光上师",
+      "kind": "modified",
+      "fields": {
+        "costAmount": {
+          "before": 5,
+          "after": 4
+        },
+        "rulesText": {
+          "before": "你控制的所有法术牌的法术伤害+2。",
+          "after": "你控制的所有法术牌的法术伤害+1。"
+        }
+      }
+    },
+    {
+      "uid": "62452283-0e35-4ba0-83cc-2ae115078866",
+      "displayId": "SC-008",
+      "name": "教徒的智慧",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 抽1张牌；本效果的抽牌数量享受此牌的法术伤害加成。",
+          "after": "入场：本阶段结束时，抽2张牌并令其获得保留；本效果的抽牌数量享受此牌的法术伤害加成。"
+        }
+      }
+    },
+    {
+      "uid": "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+      "displayId": "SC-020",
+      "name": "守护光罩",
+      "kind": "added",
+      "after": {
+        "id": "SC-020",
+        "nameKey": "守护光罩",
+        "englishName": "Guardian Halo",
+        "cardType": "Spell",
+        "classId": "SolarChurch",
+        "rarity": "Rare",
+        "collectable": true,
+        "costResource": "Star",
+        "costAmount": 3,
+        "durability": 0,
+        "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+        "arrows": [
+          "N"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "guardian-halo",
+        "artDescription": "",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+        "parentUid": null,
+        "collectionKind": "Collectible"
+      }
+    },
+    {
+      "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "displayId": "AI-001",
+      "name": "发电站",
+      "kind": "modified",
+      "fields": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "NW"
+          ]
+        },
+        "costAmount": {
+          "before": 2,
+          "after": 1
+        },
+        "rulesText": {
+          "before": "该单位3×3范围内的其他友方建筑随从，已点亮方向的箭头层数＋1，效果提供的数值＋1。",
+          "after": "光环：为3x3范围内的友方单位提供1点电能。"
+        }
+      }
+    },
+    {
+      "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
+      "displayId": "AI-002",
+      "name": "星能采矿场",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "回合开始时，你获得1点星能。",
+          "after": "回合开始时，你获得2点星能（受电能加成）。"
+        }
+      }
+    },
+    {
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "displayId": "AI-003",
+      "name": "帝国军工厂",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "该单位的箭头只能用于放置或建造非建筑的随从。",
+          "after": "该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。"
+        }
+      }
+    },
+    {
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "name": "工程机器人",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "该单位的箭头只能用于建造未完成的单位。",
+          "after": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。"
+        }
+      }
+    },
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "displayId": "AI-009",
+      "name": "泰拉理工学院",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电力影响）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+          "after": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。"
+        }
+      }
+    },
+    {
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "displayId": "AI-010",
+      "name": "超载运转",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 令一个友方建筑随从已点亮方向的箭头层数＋3，效果提供的数值＋3；本回合结束时，将该建筑消灭。",
+          "after": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。"
+        }
+      }
+    },
+    {
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "displayId": "AI-011",
+      "name": "城市防护罩",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 该卡牌每被一个友方箭头指向，令你的所有建筑获得2护甲。",
+          "after": "入场：[快速] 你的所有建筑获得3护甲。"
+        }
+      }
+    },
+    {
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "displayId": "AI-013",
+      "name": "超级核电站",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "该单位5×5范围内的其他友方建筑随从，已点亮方向的箭头层数＋3，效果提供的数值＋3。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+          "after": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。"
+        }
+      }
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "name": "工程师的智慧",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：[快速] 该卡所在格子每有一个友方箭头指向，抽一张牌。",
+          "after": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。"
+        }
+      }
+    },
+    {
+      "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "displayId": "AI-015",
+      "name": "晶灵哨塔",
+      "kind": "modified",
+      "fields": {
+        "attack": {
+          "before": 0,
+          "after": 3
+        },
+        "rulesText": {
+          "before": "[攻击范围：3] 攻击时：在本次普通攻击伤害及其后续结算完成后，对被攻击的随从额外造成3点伤害。",
+          "after": "[攻击范围：3] 本随从的攻击力和攻击范围受电能加成。"
+        }
+      }
+    },
+    {
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "displayId": "AI-020",
+      "name": "铁驭姬-维拉",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "入场：将一个建造中的「革命日」放置于友方领土的任意格子上。\n光环：你的「革命日」拥有“入场：传送至维拉的位置并对其周围3x3区域的敌方单位造成3点伤害。”",
+          "after": "入场：[快速] 若场上没有己方控制的「奥古斯都计划」，将一个「奥古斯都计划」放置于友方领土的任意格子上。发动：移除场上已经建造完毕的己方「奥古斯都计划」，转化为「革命日」。"
+        }
+      }
+    },
+    {
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "displayId": "AI-020-01",
+      "name": "「革命日」",
+      "kind": "modified",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求：8/可建造/耐久度：1] 该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。亡语：在所在格子上召唤维拉。",
+          "after": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。该单位即将离开场上时，改为转化为维拉。"
+        }
+      }
+    },
+    {
+      "uid": "5121261f-8b88-4bb0-b882-717b44188f74",
+      "displayId": "MCC-009-01",
+      "name": "飞升之剑-烬白",
+      "kind": "modified",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NW",
+            "W"
+          ],
+          "after": [
+            "NW"
+          ]
+        },
+        "attack": {
+          "before": 8,
+          "after": 7
+        },
+        "rulesText": {
+          "before": "攻击时免疫。[循环进度：8] 计数：该随从移动的格数。完成：该随从瞬移至最近的非友方随从并对其发动攻击。",
+          "after": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。"
+        }
+      }
+    },
+    {
+      "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "displayId": "AI-020-02",
+      "name": "奥古斯都计划",
+      "kind": "added",
+      "after": {
+        "id": "AI-020-02",
+        "nameKey": "奥古斯都计划",
+        "englishName": "Project Augustus",
+        "cardType": "Minion",
+        "classId": "AstraImperium",
+        "rarity": "Legendary",
+        "collectable": false,
+        "costResource": "Star",
+        "costAmount": 10,
+        "attack": 0,
+        "health": 12,
+        "movement": 0,
+        "durability": 0,
+        "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+        "arrows": [],
+        "tribes": [
+          "机械"
+        ],
+        "tags": [],
+        "artPath": "",
+        "artworkKey": "project-augustus",
+        "artDescription": "在巨大的建造基地中，革命日正在被日夜赶工地建造着。",
+        "artDescriptionNeedsPolish": true,
+        "artRequest": 1,
+        "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+        "parentUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+        "collectionKind": "Token"
+      }
+    }
+  ]
+}
