@@ -13,6 +13,7 @@ const read = relative => readFileSync(new URL(`../../${relative}`, import.meta.u
 const parse = relative => JSON.parse(read(relative));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const revision = parse('docs/design/revisions/2026-09-27-electricity-cards.json');
+const rulings = parse('docs/design/revisions/2026-09-27-rulings.json');
 const currentBytes = read('data/cards.json');
 const current = JSON.parse(currentBytes);
 // Historical source receipts require full Git history, as do the existing baseline tests.
@@ -61,9 +62,23 @@ function reconstructPrepared() {
   return { ...structuredClone(base), cards: order.preparedUidOrder.map(uid => reconstructed.get(uid)) };
 }
 
+function currentApprovedDesign() {
+  const dataset = reconstructPrepared();
+  assert.equal(rulings.schemaVersion, 1);
+  assert.equal(rulings.cards.length, 1);
+  const amendment = rulings.cards[0];
+  assert.equal(amendment.uid, 'ff153fcb-5387-455c-b673-ecf2d9ddfbc2');
+  assert.equal(amendment.field, 'rulesText');
+  const card = dataset.cards.find(value => value.uid === amendment.uid);
+  assert.equal(card.rulesText, amendment.before);
+  assert.equal(amendment.after, amendment.before.replace('敌方随从', '敌方单位'));
+  card.rulesText = amendment.after;
+  return dataset;
+}
+
 function assertCurrentDesign(dataset) {
   contract.validateDataset(dataset, { exportArtwork: true });
-  const prepared = reconstructPrepared();
+  const prepared = currentApprovedDesign();
   const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath']);
   const withoutArt = card => Object.fromEntries(Object.entries(card).filter(([key]) => !artFields.has(key)));
   assert.deepEqual(sorted(dataset.cards).map(withoutArt), sorted(prepared.cards).map(withoutArt));
@@ -98,7 +113,7 @@ test('current cards retain every approved non-art field while allowing subsequen
 });
 
 test('T5 illustration edits and selected variants pass without changing historical T1 receipts', () => {
-  const dataset = reconstructPrepared();
+  const dataset = currentApprovedDesign();
   const card = dataset.cards.find(value => value.uid === additions[0].uid);
   Object.assign(card, { artDescription: 'An approved new illustration prompt.', artDescriptionNeedsPolish: false,
     artRequest: 0, artPath: `CardArt/Designs/${card.uid}` });
@@ -114,7 +129,7 @@ test('T5 illustration edits and selected variants pass without changing historic
 test('the art allowance cannot hide gameplay, English-name, artwork-key or identity changes', () => {
   for (const [field, value] of [['rulesText', 'Changed gameplay'], ['costAmount', 99], ['englishName', 'Changed Name'],
     ['artworkKey', 'changed-key'], ['uid', '00000000-0000-4000-8000-000000000001']]) {
-    const dataset = reconstructPrepared();
+    const dataset = currentApprovedDesign();
     dataset.cards.find(card => card.uid === additions[0].uid)[field] = value;
     assert.throws(() => assertCurrentDesign(dataset), undefined, field);
   }

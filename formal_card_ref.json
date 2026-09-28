@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "6b8c913c4ad44952f9173f72c7bb174c6a6ff0597f9cef8b6e689295a74abf51",
+    "cardsSha256": "31955ab3415b10fcedd2bcdf464866c4d96e7702c0e9f21420fade158caefd78",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue78-20260927",
@@ -4572,7 +4572,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方随从。该单位即将离开场上时，改为转化为维拉。",
+      "rulesText": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方单位。该单位即将离开场上时，改为转化为维拉。",
       "artwork": {
         "key": "revolution-day",
         "selected": [
