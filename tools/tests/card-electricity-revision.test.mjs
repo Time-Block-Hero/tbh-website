@@ -20,11 +20,12 @@ const base = JSON.parse(execFileSync('git', ['--no-replace-objects', 'show', `${
 const sorted = cards => [...cards].sort((a, b) => a.uid.localeCompare(b.uid));
 const additions = revision.cards.filter(card => card.kind === 'added');
 const modifications = revision.cards.filter(card => card.kind === 'modified');
+const order = parse('docs/design/revisions/2026-09-27-card-order.json');
+const preparedBytes = dataset => `${JSON.stringify(dataset, null, 2)}\n`;
 
-test('electricity revision reconstructs exactly 23 existing changes and six additions without hidden field changes', () => {
+function reconstructPrepared() {
   assert.equal(revision.schemaVersion, 1);
   assert.equal(revision.baseCommit, 'ce357dcdfc332bb06662abfc62e6e4f2aee212e7');
-  assert.equal(hash(currentBytes), revision.preparedCardsSha256);
   assert.deepEqual([revision.designCardCount, revision.added, revision.modified], [140, 6, 23]);
   assert.deepEqual(revision.removed, []);
   assert.equal(revision.cards.length, 29);
@@ -53,13 +54,32 @@ test('electricity revision reconstructs exactly 23 existing changes and six addi
     assert.equal(entry.after.nameKey, entry.name);
     reconstructed.set(entry.uid, structuredClone(entry.after));
   }
-  assert.deepEqual(sorted([...reconstructed.values()]), sorted(current.cards));
-  const withoutCards = dataset => Object.fromEntries(Object.entries(dataset).filter(([key]) => key !== 'cards'));
-  assert.deepEqual(withoutCards(current), withoutCards(base));
+  assert.equal(order.schemaVersion, 1);
+  assert.equal(order.revision, '2026-09-27-electricity-cards.json');
+  assert.equal(new Set(order.preparedUidOrder).size, 140);
+  assert.deepEqual([...order.preparedUidOrder].sort(), [...reconstructed.keys()].sort());
+  return { ...structuredClone(base), cards: order.preparedUidOrder.map(uid => reconstructed.get(uid)) };
+}
+
+function assertCurrentDesign(dataset) {
+  contract.validateDataset(dataset, { exportArtwork: true });
+  const prepared = reconstructPrepared();
+  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath']);
+  const withoutArt = card => Object.fromEntries(Object.entries(card).filter(([key]) => !artFields.has(key)));
+  assert.deepEqual(sorted(dataset.cards).map(withoutArt), sorted(prepared.cards).map(withoutArt));
+  const withoutCardsOrArt = value => Object.fromEntries(Object.entries(value)
+    .filter(([key]) => !['cards', 'artworkVariants', 'selectedArtworkIds'].includes(key)));
+  assert.deepEqual(withoutCardsOrArt(dataset), withoutCardsOrArt(prepared));
+}
+
+test('electricity revision reconstructs the historical prepared bytes from 29 deltas and the retained UID order', () => {
+  const prepared = reconstructPrepared();
+  // These hashes certify T1's historical bytes, never the mutable art workflow.
+  assert.equal(hash(preparedBytes(prepared)), revision.preparedCardsSha256);
 });
 
 test('preparing the approved input changes only the six new English names and artwork keys', () => {
-  const restored = structuredClone(current);
+  const restored = reconstructPrepared();
   assert.deepEqual(additions.map(card => card.displayId), ['FNG-038', 'FNG-039', 'FNG-040', 'SA-020', 'SC-020', 'AI-020-02']);
   for (const entry of additions) {
     const card = restored.cards.find(value => value.uid === entry.uid);
@@ -70,7 +90,34 @@ test('preparing the approved input changes only the six new English names and ar
     card.artworkKey = '';
   }
   // This reconstructs the exact approved input bytes, not just selected fields.
-  assert.equal(hash(`${JSON.stringify(restored, null, 2)}\n`), revision.approvedInputCardsSha256);
+  assert.equal(hash(preparedBytes(restored)), revision.approvedInputCardsSha256);
+});
+
+test('current cards retain every approved non-art field while allowing subsequent illustration work', () => {
+  assertCurrentDesign(current);
+});
+
+test('T5 illustration edits and selected variants pass without changing historical T1 receipts', () => {
+  const dataset = reconstructPrepared();
+  const card = dataset.cards.find(value => value.uid === additions[0].uid);
+  Object.assign(card, { artDescription: 'An approved new illustration prompt.', artDescriptionNeedsPolish: false,
+    artRequest: 0, artPath: `CardArt/Designs/${card.uid}` });
+  const variant = { id: `${card.artworkKey}-01`, src: `./assets/card-art/${card.artworkKey}/${card.artworkKey}-01.png` };
+  dataset.artworkVariants[card.id] = [variant];
+  dataset.selectedArtworkIds[card.id] = variant.id;
+  assert.notEqual(hash(preparedBytes(dataset)), revision.preparedCardsSha256);
+  assertCurrentDesign(dataset);
+  assert.deepEqual(contract.selectedArtwork(dataset, card), [{ variantId: variant.id, sourcePath: variant.src }]);
+  assert.equal(hash(preparedBytes(reconstructPrepared())), revision.preparedCardsSha256);
+});
+
+test('the art allowance cannot hide gameplay, English-name, artwork-key or identity changes', () => {
+  for (const [field, value] of [['rulesText', 'Changed gameplay'], ['costAmount', 99], ['englishName', 'Changed Name'],
+    ['artworkKey', 'changed-key'], ['uid', '00000000-0000-4000-8000-000000000001']]) {
+    const dataset = reconstructPrepared();
+    dataset.cards.find(card => card.uid === additions[0].uid)[field] = value;
+    assert.throws(() => assertCurrentDesign(dataset), undefined, field);
+  }
 });
 
 test('current approved identities and parent references stay intact, including Augustus and all four admissions', () => {
