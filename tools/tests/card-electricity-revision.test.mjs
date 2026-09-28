@@ -14,6 +14,7 @@ const parse = relative => JSON.parse(read(relative));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const revision = parse('docs/design/revisions/2026-09-27-electricity-cards.json');
 const rulings = parse('docs/design/revisions/2026-09-27-rulings.json');
+const foxnick = parse('docs/design/revisions/2026-09-27-foxnick-active-attack.json');
 const currentBytes = read('data/cards.json');
 const current = JSON.parse(currentBytes);
 // Historical source receipts require full Git history, as do the existing baseline tests.
@@ -73,6 +74,12 @@ function currentApprovedDesign() {
   assert.equal(card.rulesText, amendment.before);
   assert.equal(amendment.after, amendment.before.replace('敌方随从', '敌方单位'));
   card.rulesText = amendment.after;
+  assert.equal(foxnick.uid, 'ff038236-2919-4bbc-9ca7-58c132b2c7fb');
+  assert.equal(foxnick.field, 'rulesText');
+  const fox = dataset.cards.find(value => value.uid === foxnick.uid);
+  assert.equal(fox.rulesText, foxnick.before);
+  assert.equal(foxnick.after, '每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。');
+  fox.rulesText = foxnick.after;
   return dataset;
 }
 
