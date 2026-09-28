@@ -5,10 +5,11 @@
     "build:wiki": "node tools/build-wiki.mjs",
     "test:wiki": "node --test tools/tests/wiki*.test.mjs",
     "build:setting": "node tools/build-setting-data.mjs",
-    "build": "npm run build:wiki && npm run build:setting && npm run build:bestiary",
+    "build": "npm run build:wiki && npm run build:setting && npm run build:bestiary && npm run build:editor",
     "test": "node --test tools/tests/*.test.mjs",
     "start": "node tools/card-editor-server.mjs --port 4317",
-    "build:bestiary": "node tools/build-bestiary.mjs"
+    "build:bestiary": "node tools/build-bestiary.mjs",
+    "build:editor": "node tools/build-card-editor-fallback.mjs"
   },
   "devDependencies": {
     "@mermaid-js/tiny": "11.17.2",
