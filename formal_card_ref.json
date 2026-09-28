@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "3910f554fd3a9067ad02054fac719898ad8bf81743d3ee8cefe1c0012609d12d",
+    "cardsSha256": "6b8c913c4ad44952f9173f72c7bb174c6a6ff0597f9cef8b6e689295a74abf51",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue78-20260927",
@@ -1506,7 +1506,12 @@
       "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
       "artwork": {
         "key": "armor-quartermaster",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "armor-quartermaster-01",
+            "sourcePath": "./assets/card-art/armor-quartermaster/armor-quartermaster-01.png"
+          }
+        ]
       }
     },
     {
@@ -2671,7 +2676,12 @@
       "rulesText": "入场：为友方随从分配6点护甲。",
       "artwork": {
         "key": "domain-shield",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "domain-shield-01",
+            "sourcePath": "./assets/card-art/domain-shield/domain-shield-01.png"
+          }
+        ]
       }
     },
     {
@@ -2789,7 +2799,12 @@
       "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
       "artwork": {
         "key": "guardian-halo",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "guardian-halo-01",
+            "sourcePath": "./assets/card-art/guardian-halo/guardian-halo-01.png"
+          }
+        ]
       }
     },
     {
@@ -2853,7 +2868,12 @@
       "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
       "artwork": {
         "key": "project-augustus",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "project-augustus-01",
+            "sourcePath": "./assets/card-art/project-augustus/project-augustus-01.png"
+          }
+        ]
       }
     },
     {
@@ -3967,7 +3987,12 @@
       "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
       "artwork": {
         "key": "dawn-of-the-frontline",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "dawn-of-the-frontline-01",
+            "sourcePath": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-01.png"
+          }
+        ]
       }
     },
     {
@@ -4515,7 +4540,12 @@
       "rulesText": "每回合可以攻击两次，本随从造成伤害后，自身获得等量护甲。",
       "artwork": {
         "key": "general-foxnick",
-        "selected": []
+        "selected": [
+          {
+            "variantId": "general-foxnick-01",
+            "sourcePath": "./assets/card-art/general-foxnick/general-foxnick-01.png"
+          }
+        ]
       }
     },
     {
