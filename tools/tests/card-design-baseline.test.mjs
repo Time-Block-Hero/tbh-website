@@ -84,9 +84,12 @@ test('current approved faction batch keeps latest designer bytes and exact typed
 
 test('balance revision reconstructs exactly fourteen approved cards with stable identities', () => {
   const revision = parse('data/baselines/balance-20260925/revision.json');
+  // Like the other historical receipt tests above, this requires the retained
+  // full Git history. Later current-card revisions must not replace these bytes.
+  const original = execFileSync('git', ['--no-replace-objects', 'show', '4e68250dc3e04bc497025204320eb4982203d819:data/cards.json'], { cwd: root });
   const before = execFileSync('git', ['show', `${revision.previousWebsiteCommit}:data/cards.json`], { cwd: root });
   assert.equal(hash(before), revision.previousCardsSha256);
-  assert.equal(hash(read('data/cards.json')), revision.sourceCardsSha256);
+  assert.equal(hash(original), revision.sourceCardsSha256);
   const reconstructed = JSON.parse(before);
   const cards = new Map(reconstructed.cards.map(c => [c.uid, c]));
   assert.deepEqual(revision.changes.map(c => c.displayId), ['FNG-008','FNG-018','SC-001','SC-005','SC-006','SC-008','SC-009','SC-013','AI-017','AI-019','MCC-001','MCC-002','MCC-015','MCC-018']);
@@ -99,6 +102,6 @@ test('balance revision reconstructs exactly fourteen approved cards with stable 
       card[field] = change.after;
     }
   }
-  assert.deepEqual(reconstructed, parse('data/cards.json'));
+  assert.deepEqual(reconstructed, JSON.parse(original));
   contract.validateDataset(reconstructed, { exportArtwork: true });
 });
