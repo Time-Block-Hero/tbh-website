@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import contract from "../card-design-contract.js";
+import { SOURCE_REVISION_PATH, validateSourceRevision } from "./card-design-source-revision.mjs";
 
 export const REPOSITORY = "https://github.com/Time-Block-Hero/tbh-website";
 export const BASELINE_COMMIT = "61934bf29d0eec856c869aed0813e214e97f3cdc";
@@ -38,9 +39,11 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
   return bridge;
 }
 
-function buildExport(cardsBytes, bridgeBytes, commit, options = {}) {
+function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionBytes = null) {
   const dataset = contract.validateDataset(JSON.parse(cardsBytes), { exportArtwork: true });
-  const bridge = validateBridge(JSON.parse(bridgeBytes), dataset, options);
+  const bridge = validateBridge(JSON.parse(bridgeBytes), dataset, revisionBytes ? { requireCompleteBaseline: false } : options);
+  const revision = revisionBytes ? validateSourceRevision(revisionBytes, bridgeBytes, bridge, dataset,
+    { requireInventory: options.requireCompleteBaseline !== false }) : null;
   return {
     schemaVersion: 1,
     kind: "timeblock.card-designs",
@@ -49,6 +52,7 @@ function buildExport(cardsBytes, bridgeBytes, commit, options = {}) {
       commit,
       cardsSha256: hash(cardsBytes),
       identityBridgeSha256: hash(bridgeBytes),
+      ...(revision ? { sourceRevisionPath: SOURCE_REVISION_PATH, sourceRevisionId: revision.revisionId, sourceRevisionSha256: revision.sha256 } : {}),
       datasetSchemaVersion: dataset.schemaVersion,
       dirty: commit === null,
     },
@@ -75,7 +79,7 @@ function buildExport(cardsBytes, bridgeBytes, commit, options = {}) {
       artwork: { key: card.artworkKey || null, selected: contract.selectedArtwork(dataset, card) },
     })).sort((left, right) => left.uid < right.uid ? -1 : left.uid > right.uid ? 1 : 0),
     policy: {
-      excludedUids: [...bridge.excludedUids].sort(),
+      excludedUids: revision ? revision.excludedUids : [...bridge.excludedUids].sort(),
       blankEffectUids: dataset.cards.filter((card) => card.rulesText === "").map((card) => card.uid).sort(),
       resourceMigrationUids: [...bridge.resourceMigrationUids].sort(),
     },
@@ -87,11 +91,14 @@ export function exportCommittedDesigns(root, commit) {
   const resolved = execFileSync("git", ["--no-replace-objects", "rev-parse", "--verify", `${commit}^{commit}`], { cwd: root, encoding: "utf8" }).trim();
   require(resolved === commit, "Source SHA did not resolve to the specified commit");
   const read = (relative) => execFileSync("git", ["--no-replace-objects", "show", `${commit}:${relative}`], { cwd: root, maxBuffer: 20 * 1024 * 1024 });
-  return buildExport(read("data/cards.json"), read("data/card-identity-migration.json"), commit);
+  const revisionEntry = execFileSync("git", ["--no-replace-objects", "ls-tree", "--name-only", commit, "--", SOURCE_REVISION_PATH], { cwd: root, encoding: "utf8" }).trim();
+  return buildExport(read("data/cards.json"), read("data/card-identity-migration.json"), commit, {}, revisionEntry ? read(SOURCE_REVISION_PATH) : null);
 }
 
 export function exportDirtyDesigns(root, options = {}) {
-  return buildExport(fs.readFileSync(path.join(root, "data/cards.json")), fs.readFileSync(path.join(root, "data/card-identity-migration.json")), null, options);
+  const revisionPath = path.join(root, SOURCE_REVISION_PATH);
+  return buildExport(fs.readFileSync(path.join(root, "data/cards.json")), fs.readFileSync(path.join(root, "data/card-identity-migration.json")), null, options,
+    fs.existsSync(revisionPath) ? fs.readFileSync(revisionPath) : null);
 }
 
 function canonicalPath(value) {
