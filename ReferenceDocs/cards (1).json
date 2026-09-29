@@ -2630,7 +2630,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：[快速] 选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
       "arrows": [
         "N"
       ],

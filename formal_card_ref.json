@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "3d24116dad6f5693baba66fd609e43f43a67228bccff1ae19ca538f46e67896e",
+    "cardsSha256": "f294572cee770b420c4219c94781c396e9f2f67219b838aeeafda63ab2b53f2d",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue78-20260927",
@@ -2801,7 +2801,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
       "artwork": {
         "key": "guardian-halo",
         "selected": [
