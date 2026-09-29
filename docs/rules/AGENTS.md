@@ -4,6 +4,8 @@ These instructions apply to this directory and its descendants. Communicate with
 
 ## Design authority
 
+- The website rulebook is the sole gameplay source. Use current mainline rules and later explicitly confirmed revisions; obsolete developer architecture rules have no gameplay authority. Historical pinned versions preserve acceptance evidence only and do not freeze future rules. This does not promote unapproved drafts to confirmed rules.
+
 - The user's explicit, confirmed decisions are the golden source for this rulebook. When they conflict with historical Rulebooks, developer documentation or current implementation, follow the confirmed user decision. A newer explicit correction supersedes the older decision on that point; silence does not approve a proposal.
 - Before drafting a chapter, read its existing rules, linked definitions, [confirmed decisions and sources](maintenance/sources.md), [change history](maintenance/versions.md) and relevant [open questions](maintenance/pending.md). Do not revive a superseded mechanic from historical material.
 - Old documents supply missing context. Inspect unified's actually pinned implementation read-only when needed to explain ambiguities; distinguish historical design, implemented behavior and proposed rules. Implementation is evidence, not design authority.
