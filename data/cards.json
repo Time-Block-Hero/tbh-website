@@ -178,7 +178,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "入场：令一个单位获得2护甲。",
+      "rulesText": "入场：[快速] 令一个单位获得2护甲。",
       "arrows": [
         "S"
       ],
@@ -1056,7 +1056,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "入场：为友方随从分配6点护甲。",
+      "rulesText": "入场：[快速] 为友方随从分配6点护甲。",
       "arrows": [
         "S"
       ],
@@ -1084,7 +1084,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
+      "rulesText": "入场&时停阶段开始时：[快速] 为友方单位分配3点护甲。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -1110,7 +1110,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "rulesText": "入场：[快速] 为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
       "arrows": [
         "N",
         "S"
@@ -2021,7 +2021,7 @@
       "costAmount": 7,
       "attack": 4,
       "health": 5,
-      "movement": 6,
+      "movement": 5,
       "durability": 0,
       "rulesText": "每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。",
       "arrows": [],
@@ -2630,7 +2630,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "rulesText": "入场：[快速] 选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
       "arrows": [
         "N"
       ],

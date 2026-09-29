@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "feb521577f27c872afc7a3cc87094df5cea9490a657b90eee5c636b278564b8c",
+    "cardsSha256": "3d24116dad6f5693baba66fd609e43f43a67228bccff1ae19ca538f46e67896e",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue78-20260927",
@@ -1508,7 +1508,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场&时停阶段开始时：为友方单位分配3点护甲。",
+      "rulesText": "入场&时停阶段开始时：[快速] 为友方单位分配3点护甲。",
       "artwork": {
         "key": "armor-quartermaster",
         "selected": [
@@ -1970,7 +1970,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：令一个单位获得2护甲。",
+      "rulesText": "入场：[快速] 令一个单位获得2护甲。",
       "artwork": {
         "key": "energy-shield",
         "selected": [
@@ -2678,7 +2678,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：为友方随从分配6点护甲。",
+      "rulesText": "入场：[快速] 为友方随从分配6点护甲。",
       "artwork": {
         "key": "domain-shield",
         "selected": [
@@ -2801,7 +2801,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
+      "rulesText": "入场：[快速] 选择友方单位三次（可重复），令目标获得1护甲，该数值接受法术伤害加成。",
       "artwork": {
         "key": "guardian-halo",
         "selected": [
@@ -3989,7 +3989,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "rulesText": "入场：[快速] 为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
       "artwork": {
         "key": "dawn-of-the-frontline",
         "selected": [
@@ -4535,7 +4535,7 @@
       "durability": 0,
       "attack": 4,
       "health": 5,
-      "movement": 6,
+      "movement": 5,
       "arrows": [],
       "tribes": [
         "反抗军",
