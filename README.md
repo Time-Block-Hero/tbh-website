@@ -27,7 +27,7 @@ node tools/card-editor-server.mjs --port 4317
 
 编辑器当前支持：
 
-- 主列表使用 Board View，详情编辑使用 Hand View。
+- 主列表使用 Board View，详情中央可切换「卡面 / 角色立绘」；切换页签保留未保存表单。随从、英雄、建筑及衍生单位显示各自立绘，法术与资源显示不适用。
 - 可收集与不可收集卡牌分开展示；衍生卡位于父卡详情页。
 - 添加、删除主卡和衍生卡；通过本地服务删除时同步删除对应实体卡图包。
 - 按编号模式拖拽卡牌并插入目标位置；保存后自动重新编号。
@@ -46,6 +46,8 @@ node tools/card-editor-server.mjs --port 4317
 | `card_layout_ref/layout.json` | Board View 与 Hand View 布局参数 |
 | `assets/card-template/` | 卡框、属性图标、箭头等模板资产 |
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
+| `assets/card-standees/` | Assets 正式立绘的静态镜像，按持久 UID 命名 |
+| `data/card-standees.json` | 独立立绘索引，记录来源 Assets 提交和逐图 SHA-256 |
 | `formal_card_ref.json` | 纯声明性设计的 dirty 预览，不是可执行内容或正式导入源 |
 | `data/card-identity-migration.json` | 原137张设计的持久 UID 桥接与排除/空白/资源迁移策略 |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
@@ -81,6 +83,19 @@ assets/card-art/space-soldier/space-soldier-01.png
 ```
 
 请通过本地编辑器修改已绑定插画的英文名，使 JSON 引用、目录名和文件名一起更新。卡牌编号会随设计顺序变化，因此不用于命名插画。
+
+## 游戏立绘同步
+
+角色立绘独立于卡图与卡牌设计，由 `tbh-assets` 正式清单管理。本地服务、静态部署和直接打开 HTML 都使用本仓库的镜像文件，不依赖相邻仓库路径。
+
+```bash
+node tools/sync-card-standees.mjs --assets ../tbh-assets --commit <完整Assets提交SHA>
+node tools/sync-card-standees.mjs --assets ../tbh-assets --commit <同一SHA> --check
+```
+
+先在 Assets checkout 准备对应提交的图片（包括 Git LFS 实体）。工具读取指定提交的 roster，按持久 UID 校验当前随从覆盖、路径、文件哈希、提交内 PNG/LFS 对象与尺寸，然后同步图片、索引和离线数据。它不会修改 `data/cards.json` 或正式卡图，也不会按名称、展示编号匹配。默认缺少任一单位立绘即失败；仅开发旧资产时可显式 `--allow-missing`，交付验证不用该参数。重复同步结果稳定。
+
+构建立绘索引后，`node tools/build-card-editor-fallback.mjs`、卡牌同步工具及本地保存服务都会保留它。新建但尚未生成立绘的单位显示明确空态；同步最新 Assets 后即可展示。界面只读，不提供立绘上传或选图。
 
 ## 插画工作流
 

@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "d3b79d81b1fba3e15c229111b2e73fb8a8c995098ce981c0824e944ade72c6c3",
+    "cardsSha256": "feb521577f27c872afc7a3cc87094df5cea9490a657b90eee5c636b278564b8c",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue78-20260927",
@@ -182,7 +182,7 @@
       "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
       "displayId": "FNG-037",
       "name": "迷你卫星",
-      "nameEn": "",
+      "nameEn": "Mini Satellite",
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -203,8 +203,13 @@
       "tags": [],
       "rulesText": "",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "mini-satellite",
+        "selected": [
+          {
+            "variantId": "mini-satellite-01",
+            "sourcePath": "./assets/card-art/mini-satellite/mini-satellite-01.png"
+          }
+        ]
       }
     },
     {
@@ -3989,8 +3994,8 @@
         "key": "dawn-of-the-frontline",
         "selected": [
           {
-            "variantId": "dawn-of-the-frontline-01",
-            "sourcePath": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-01.png"
+            "variantId": "dawn-of-the-frontline-02",
+            "sourcePath": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-02.png"
           }
         ]
       }

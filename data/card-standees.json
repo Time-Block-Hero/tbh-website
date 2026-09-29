@@ -1,0 +1,676 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "repository": "Time-Block-Hero/tbh-assets",
+    "commit": "9a83f679b2a0f00697f066488425436c4040ad78",
+    "rosterPath": "Runtime/Resources/TimeBlockHeroAssets/stillfield-roster.json",
+    "rosterSha256": "ef50563205e5e2bb7e7cbf9d8c86b3748f5ad13cc0855da32987e1575d783376"
+  },
+  "entries": [
+    {
+      "definitionUid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "src": "./assets/card-standees/0166c132-1962-4fc7-9aa6-353ecdba8eab.png",
+      "sha256": "261c6cd75cf9d13dbb7fc2c04e7a8daff5f0fcf09d76f068f4d2e6ca538e52b1",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
+      "src": "./assets/card-standees/068fe88a-04a3-4eb7-abb3-d0fea5c8f497.png",
+      "sha256": "03af23f4a264d6b32d3932656599058c123984c54fe5379faca8eb13c3ded90b",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "0764d0f5-4050-49ab-924f-2485c4381e26",
+      "src": "./assets/card-standees/0764d0f5-4050-49ab-924f-2485c4381e26.png",
+      "sha256": "018757a86b599d5815cff61d23457e865024333a057092d6b9746a87789f3799",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "src": "./assets/card-standees/080140fa-2ebe-45ad-b64f-05f10904ac64.png",
+      "sha256": "c4ea4b68a064affaa7ea38dc5d265987a89d6d990a00bb3ddd9a1e6b845f59dc",
+      "pixelWidth": 1240,
+      "pixelHeight": 1269
+    },
+    {
+      "definitionUid": "094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "src": "./assets/card-standees/094a41e6-d797-42ea-85ac-d44bd6049c47.png",
+      "sha256": "81c1d37337d7e3c293bc08cf0a21a07a2596f354d788c93a670f08b08eb2e25e",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "0bd031d4-49d5-4720-b75b-58eb95690fb1",
+      "src": "./assets/card-standees/0bd031d4-49d5-4720-b75b-58eb95690fb1.png",
+      "sha256": "94058b5ab2bb98e3401075df4b501f757228128a823be5dc13ead15aff86b9a9",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "src": "./assets/card-standees/0be330dd-7d45-42a8-8235-ac57e8cf9572.png",
+      "sha256": "3c1ada61563ba82033a092466169c501aa35b8dcaf776ad9eb9ecfc28a7cfc3f",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "0c3119ed-d309-4a38-b760-1839d8bae416",
+      "src": "./assets/card-standees/0c3119ed-d309-4a38-b760-1839d8bae416.png",
+      "sha256": "c57e9f43c60d13ab479eb8b7ccbe3834c1c49bfc44a59ad6706795dfcd963c4d",
+      "pixelWidth": 1145,
+      "pixelHeight": 1374
+    },
+    {
+      "definitionUid": "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "src": "./assets/card-standees/0dde3972-5b69-4c3c-a17b-855656bf15cf.png",
+      "sha256": "9b77e649bcbb7a358ccc6960b8aa246bc2fafe810ac1b85e9d90966c0f85fb33",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "src": "./assets/card-standees/0f329ffc-f031-448f-aaa0-4f4456f81298.png",
+      "sha256": "229891fc325cb1ed2a16cdcb82ca76f2fcf6b2a29b303dda937e87534ecd0c8b",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "src": "./assets/card-standees/1529f937-224e-4d19-a272-0740e98b649e.png",
+      "sha256": "9bfff564c0596b3e4e4c3f52daf4ba9aaa4795e42914924681e992257e3b5295",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "src": "./assets/card-standees/15cbb572-6a6a-47f0-ae48-561df3be738c.png",
+      "sha256": "d766de2602498764538b4a20834ec5d9e02bdfc47a1034c4d5bb4dc53495035e",
+      "pixelWidth": 1230,
+      "pixelHeight": 1278
+    },
+    {
+      "definitionUid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "src": "./assets/card-standees/15ce0bd0-83ad-413b-9cc1-829390efaef4.png",
+      "sha256": "b1cee6c77e8768b829853cb9b2eeda1aeb16dc31f13af518f2f8a2b4e04344d3",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f",
+      "src": "./assets/card-standees/1a8e356b-c72a-4181-8aa1-f2426c52cc8f.png",
+      "sha256": "f4d6b14994a42ee4f43e1fc833771660b70c9a720a5f8e7efb6ec85e01c757ac",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+      "src": "./assets/card-standees/1b818098-53a5-4d54-8fb1-01bcdf9f4785.png",
+      "sha256": "af3083db25904c43cb4277f916920d1ef1e6d0c5518a4d460bc3bcf6f0942f7b",
+      "pixelWidth": 1324,
+      "pixelHeight": 1188
+    },
+    {
+      "definitionUid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "src": "./assets/card-standees/1bcd6c06-a63a-47ba-a9a5-62ef42c480e9.png",
+      "sha256": "5504b31de562f580edcd43dcfd62965bceb94ac88b0b29a30457765a1239b834",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "src": "./assets/card-standees/1be158d1-50ba-4f53-a52f-08696554c091.png",
+      "sha256": "c5c782294688d5131828f546146530b14ab01a636cd3d7e6b62e4dfe14a84ade",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "src": "./assets/card-standees/204a68df-1ff8-4d10-9309-aafbd90d6079.png",
+      "sha256": "e3b5a0b6adc1054f2abd38fca79e28dee03117cf942e7faed8aec916d6a4fb60",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "src": "./assets/card-standees/21401534-7b13-41d1-a4c4-e52108726727.png",
+      "sha256": "11ad89cf6099c5bbaa9ce1779ec630c299601f41cc1387f7b48e3e1abcef434a",
+      "pixelWidth": 1374,
+      "pixelHeight": 1145
+    },
+    {
+      "definitionUid": "233e64f0-fc55-44a4-af3a-10222df336c4",
+      "src": "./assets/card-standees/233e64f0-fc55-44a4-af3a-10222df336c4.png",
+      "sha256": "c610b6917fd611b268898e2bc87f26e9198627375b632a56ab6a7e00e4f05e24",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+      "src": "./assets/card-standees/243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e.png",
+      "sha256": "f1525c19a3befe17abd6b0680a63af8e41b265aeb8a3e52842508724be379e61",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "src": "./assets/card-standees/274a5d57-9246-4b40-a51a-3bc473e7193b.png",
+      "sha256": "d8b2934dd9abbf8c7f6eff09c51bf0c5f8554cfaede3bcd058cf2fabe96e3cf2",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "src": "./assets/card-standees/2946ca82-3e15-40d8-93f8-55acfad43645.png",
+      "sha256": "40b54fa6c7c1e151c604a6ee974f5bd77925b25977c26761fd7d9bba20f65abc",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
+      "src": "./assets/card-standees/2a51f1cc-ab38-4d84-ba97-aca096943395.png",
+      "sha256": "15213ad8d9370a422b0aff4cd3b45c3762b85c836333e171a44247024532b4f7",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "src": "./assets/card-standees/2d4d2da4-9358-485f-a2f5-be712ae86c9e.png",
+      "sha256": "7493a34dd7e007955627913d213cfa12b1240b08fef7c895bc266faa4334edfb",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "src": "./assets/card-standees/2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd.png",
+      "sha256": "018d32304b60dd9299bf0cfe0a419188bc41d23d9bc3683716c38296feb400d3",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
+      "src": "./assets/card-standees/3151edbb-b703-4171-9e8f-e6b54e7bb8da.png",
+      "sha256": "744d44f926b0e8c0b79e3e00db7cbb9e0e055ff10c779a0926f9230c2b3c32d3",
+      "pixelWidth": 1206,
+      "pixelHeight": 1305
+    },
+    {
+      "definitionUid": "341ea244-575c-445b-b1a6-ea761c92145f",
+      "src": "./assets/card-standees/341ea244-575c-445b-b1a6-ea761c92145f.png",
+      "sha256": "2119a6519fb88eaf5bdae37896bd96c9db2a42167e8f692706898dfa68fc9416",
+      "pixelWidth": 1374,
+      "pixelHeight": 1145
+    },
+    {
+      "definitionUid": "385f1bae-5ade-411d-abd1-850d74944004",
+      "src": "./assets/card-standees/385f1bae-5ade-411d-abd1-850d74944004.png",
+      "sha256": "19b42ebf7298c8107ecb95bb23852a324960c7ef0bd99d5558b913c65121d3c8",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "src": "./assets/card-standees/3b4ba62f-c700-4411-8c51-a901df1cb57c.png",
+      "sha256": "d39041f988fad9f804658e63762c1efdbbf31a05b92f83ecbb728ffb88e1271e",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+      "src": "./assets/card-standees/3c14c875-f4ce-4545-88a7-aa57b0ae9b92.png",
+      "sha256": "d1c208e04abdf0235a86b6f876fa1d63c6ee5fe8d42fc61aa8ca30cdc3bd143f",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "3d1865c5-b2e7-4003-96d1-07223a482030",
+      "src": "./assets/card-standees/3d1865c5-b2e7-4003-96d1-07223a482030.png",
+      "sha256": "62dec81a7ab73f112a0a2be54de921440789e7fdb2edb00f5f73ab58de7161bc",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "3e56ca22-efd1-4cd0-822f-beceb830e41d",
+      "src": "./assets/card-standees/3e56ca22-efd1-4cd0-822f-beceb830e41d.png",
+      "sha256": "7725b1b86a18e07d3ef4528baa38f20946d861a9d8fce063a3805c0be5d88d16",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "src": "./assets/card-standees/430888e7-5e44-4599-98d5-7a8c0824b40f.png",
+      "sha256": "b66b3bce0812ae0c7a79170ea45e49547817537507eb2fafdd98403e40ff0414",
+      "pixelWidth": 1203,
+      "pixelHeight": 1307
+    },
+    {
+      "definitionUid": "43b464d4-781c-4390-80eb-d926b7dea2d9",
+      "src": "./assets/card-standees/43b464d4-781c-4390-80eb-d926b7dea2d9.png",
+      "sha256": "111af5c55741859053397abeb64fee1fa788370c930d49b72b1b052226e6ff5f",
+      "pixelWidth": 1177,
+      "pixelHeight": 1336
+    },
+    {
+      "definitionUid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "src": "./assets/card-standees/455cde9d-fbe7-4a12-94a9-df76ed1b2aca.png",
+      "sha256": "ea1c3ccea82b970e2176993215f2ab9f101c5dc89a79039867205e0fb5437497",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "src": "./assets/card-standees/4b42977a-a289-4520-8aec-8439b6edc5a3.png",
+      "sha256": "0765648f0a19681bb1948ef4d02c3b6eb54cd603cc748bfe8c7db8d0781411f2",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "4c2033a5-fb41-4c96-b540-16572b690c70",
+      "src": "./assets/card-standees/4c2033a5-fb41-4c96-b540-16572b690c70.png",
+      "sha256": "fc1999bb8a97aa7ff4968e0986126881de8808c7b5da953a54eea423d01b1c7e",
+      "pixelWidth": 1379,
+      "pixelHeight": 1141
+    },
+    {
+      "definitionUid": "4eddea4a-df91-425d-bbdf-b216da8381d8",
+      "src": "./assets/card-standees/4eddea4a-df91-425d-bbdf-b216da8381d8.png",
+      "sha256": "82b7dd4b3958ff6b94e10e252a01d45bcb9019bf6c2b438fd24feee70079a93e",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "5121261f-8b88-4bb0-b882-717b44188f74",
+      "src": "./assets/card-standees/5121261f-8b88-4bb0-b882-717b44188f74.png",
+      "sha256": "b4fc8e3f8f3042ccffe698401643dabd73d82a59ce9cc10f5f7cff7065317087",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+      "src": "./assets/card-standees/602b4a3a-0b69-4816-80a0-94a66bd61d1b.png",
+      "sha256": "e596b4ae74ff4c7243b6f84366e9589419f8ca2923bafeba3ce968dcfcc5d395",
+      "pixelWidth": 1145,
+      "pixelHeight": 1374
+    },
+    {
+      "definitionUid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "src": "./assets/card-standees/619301f9-72b0-4f86-a36c-e55046d138f5.png",
+      "sha256": "a0d24e99268756807cd8d1be54c9e83774644d909493c144c8b4ac9c4158442c",
+      "pixelWidth": 1145,
+      "pixelHeight": 1374
+    },
+    {
+      "definitionUid": "63699e58-6aa0-4012-b096-364a7cff20e7",
+      "src": "./assets/card-standees/63699e58-6aa0-4012-b096-364a7cff20e7.png",
+      "sha256": "beb3cab34db9f838b95de80a5892506eacd7151030fc84a7ac7dd1b3d5f773b1",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "675083cf-30bf-49c8-b7bf-d18fe67fe493",
+      "src": "./assets/card-standees/675083cf-30bf-49c8-b7bf-d18fe67fe493.png",
+      "sha256": "f1fbd2dfb99e385d0f8a9799012bbfe4a1c980283c34c4b979ea395db18c0dfe",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "69f1c181-ade4-485e-9923-e5949cda7f93",
+      "src": "./assets/card-standees/69f1c181-ade4-485e-9923-e5949cda7f93.png",
+      "sha256": "813da4f62a7b0ca5912f4efaf3477c9320490e54dd13209e7ec954019d968dd8",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "src": "./assets/card-standees/6b3fbb6a-30bf-4385-9462-2677f99d6b53.png",
+      "sha256": "eeef202162ece2a8a8d8093c38c8d72973f42fb5541c38db0ea86b19d804167d",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "70f56934-997a-4eaa-b34b-1745d6ac06f7",
+      "src": "./assets/card-standees/70f56934-997a-4eaa-b34b-1745d6ac06f7.png",
+      "sha256": "224e5dfd3710c89187f04357e8fd1028c8f465b2289c59cea59e32e9f80c068e",
+      "pixelWidth": 992,
+      "pixelHeight": 1585
+    },
+    {
+      "definitionUid": "731b9886-bc52-4778-b3ea-3ec7319b5d12",
+      "src": "./assets/card-standees/731b9886-bc52-4778-b3ea-3ec7319b5d12.png",
+      "sha256": "96b1e0b946d1a5a5e7120d95b9223d7d286decc7abfe16ec70ade1ad60b3118c",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
+      "src": "./assets/card-standees/7522e0e5-1fb6-4a32-914d-992aab4e3c62.png",
+      "sha256": "c71d0b8432d0624ce2469764745a94bdfdae96b5a512d164125a26415eac53ee",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "src": "./assets/card-standees/774620fa-d879-4c02-8c43-bde70f4c2bb3.png",
+      "sha256": "251fe678bd4acc53d6f5668e0a7fb2ea06ae3d645d1878043cdbf135b1c65d3f",
+      "pixelWidth": 1374,
+      "pixelHeight": 1145
+    },
+    {
+      "definitionUid": "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+      "src": "./assets/card-standees/7b3a2e75-79de-4c35-8bf1-29a4987c8187.png",
+      "sha256": "8ae5f5a4ea5e864e1bc775883968755515de5988773f5ca3d454850e3d466bc5",
+      "pixelWidth": 1230,
+      "pixelHeight": 1278
+    },
+    {
+      "definitionUid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "src": "./assets/card-standees/84ae8db2-69df-4ffb-9010-16d3551eda58.png",
+      "sha256": "d091a7cfae3dc4885be7ecd5f6db97d770ef75d2618d4d69f2c1a4eb55c20cb2",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "src": "./assets/card-standees/8e486b7d-4654-40fb-baf5-c52b38010dd4.png",
+      "sha256": "e93dc1b182d4cf09a86506cd910369e41140ff0ac8351eb642e635bbb9fae4cf",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "8f084b1a-e770-413d-800e-61165fc3b4d9",
+      "src": "./assets/card-standees/8f084b1a-e770-413d-800e-61165fc3b4d9.png",
+      "sha256": "a5d19dbc6baec5ed23b67d1c16dec7b866d7b83dda1e9a4333434a262ec60e41",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "src": "./assets/card-standees/97538b9d-68f1-4a74-861c-3b6a517890ba.png",
+      "sha256": "efb156510458747a90af7a7c58ee382c317a74e8f61b0eeb8df98aee93090999",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "src": "./assets/card-standees/9818f4db-8848-4fc7-8c6e-79fadd38751f.png",
+      "sha256": "195f45377aa75deb8e708cd5e596e8f3db833bfe1fffd9cc44620c8cf31920f8",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "src": "./assets/card-standees/9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7.png",
+      "sha256": "d7f5624ef25702dc53358951b95f9d6c9ac6fcaf01e2182898eb4d28ca8e71d1",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "src": "./assets/card-standees/9e62707e-3614-45ea-8480-4d17d452cd2d.png",
+      "sha256": "52e3482c0446500bcc6dbcc545196d465b7e46c6df8857e8a88d3e6b4f131555",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "a1edce46-f210-4215-ab59-f35a5173c50d",
+      "src": "./assets/card-standees/a1edce46-f210-4215-ab59-f35a5173c50d.png",
+      "sha256": "295cd625a453c7773f42827cd2fd1aa53276c93f487aadb99dfb82d5ca9c50e6",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "src": "./assets/card-standees/a60555e6-d405-47de-bdff-c84031d53448.png",
+      "sha256": "861c01ab128884084d79040b4125547252797ec103d35a3c38a14daca6d8e4d6",
+      "pixelWidth": 1330,
+      "pixelHeight": 1182
+    },
+    {
+      "definitionUid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "src": "./assets/card-standees/a7ce77ca-ee11-49d0-8581-5da3fa1a92f5.png",
+      "sha256": "23a3ae9499ef2df9748f87b7cb3a61df48dea6b1ade48d85ab3143d211f5803d",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+      "src": "./assets/card-standees/acfbc239-3f00-48a8-ba1a-b264535c9c8f.png",
+      "sha256": "5ecd9c9b86201f81f2d2ed3ab9d93c76fb93cf2fbe13ca1d1ddad335db350056",
+      "pixelWidth": 1312,
+      "pixelHeight": 1199
+    },
+    {
+      "definitionUid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "src": "./assets/card-standees/ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1.png",
+      "sha256": "feb9fff807bb0cbafbaa85ec784de360b90365f2782ecd8080eea209338a58f8",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "b5e0ec0b-e614-4862-9eff-bba73677708b",
+      "src": "./assets/card-standees/b5e0ec0b-e614-4862-9eff-bba73677708b.png",
+      "sha256": "373b40f13fc261b650b590cf2429782b8682d0ef33c56a59ab2c65252360c478",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "b60225b4-f701-49cd-875a-ef77bb0eba0a",
+      "src": "./assets/card-standees/b60225b4-f701-49cd-875a-ef77bb0eba0a.png",
+      "sha256": "e713aa438eb4b87ffb7a364036708b91c8edddead3c40566f4a8b80227f39c92",
+      "pixelWidth": 1374,
+      "pixelHeight": 1145
+    },
+    {
+      "definitionUid": "b6326476-ec83-478d-afcd-91b3cec23740",
+      "src": "./assets/card-standees/b6326476-ec83-478d-afcd-91b3cec23740.png",
+      "sha256": "ff93498539a54f36ae9d69b2ffe516b4d21c257221f09e3498765288bb9c9809",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "src": "./assets/card-standees/b85a69b8-6241-45c9-a168-a10282390c44.png",
+      "sha256": "7e5473b8b1e6edca05191f7406f15ad910fc9073276fa6101916861e7a877fe3",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "src": "./assets/card-standees/bdd6fa88-21f9-4eed-8248-00e550344739.png",
+      "sha256": "472a697ca73054b13658e5bf24aa0bf4603d4a41ef5e3f4afb98e9d92d06f97e",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "src": "./assets/card-standees/bf071411-bdf6-41bb-847f-0e836ffffa17.png",
+      "sha256": "ce8e1bd3af55b07972ef825494ed135a8794c6e9f0f746e986fa37a5d08a354a",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+      "src": "./assets/card-standees/bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f.png",
+      "sha256": "4cf8e63fec9e5246fdd63f7f459673227f73909b914bd9af17343767fe59bc52",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+      "src": "./assets/card-standees/c1a2c9af-3f22-4f77-993c-c6e4b1732695.png",
+      "sha256": "a619783aaaba4ecd7a5e9af16293fd6be20a612ee40327f1e33cdc911fbb817c",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "c5972274-f51c-4859-ae8a-cd1f5739d941",
+      "src": "./assets/card-standees/c5972274-f51c-4859-ae8a-cd1f5739d941.png",
+      "sha256": "861f5b8be66a81d94a922c2265c42a9f1efb80b2a8e17bbc1d4465fa73102569",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "src": "./assets/card-standees/c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65.png",
+      "sha256": "abd3426bcda27c1a02e9435d30aad606ddcba75e600711b5c24aac1e6f022fe3",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "ca101a43-d6c8-4289-b967-947e7212b941",
+      "src": "./assets/card-standees/ca101a43-d6c8-4289-b967-947e7212b941.png",
+      "sha256": "efe5ec16e90d116ea7f1eb6ae618021199be2df67a83320ec55550c322720cd2",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "src": "./assets/card-standees/caaf4d44-6a11-4b8a-a040-d77ce6f4ae84.png",
+      "sha256": "3d24c506fc20ff345f970a8c3f0af76d73200a6ccafe44d8cc8a3bab5f6168b8",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "src": "./assets/card-standees/cdacfc95-dbd2-41c6-bacb-ba32a3df7992.png",
+      "sha256": "bdda64d2d117cc7deb137a1367b3635206cd105dd81fffa9d3f7a8dc33616a8d",
+      "pixelWidth": 1312,
+      "pixelHeight": 1199
+    },
+    {
+      "definitionUid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "src": "./assets/card-standees/d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d.png",
+      "sha256": "10b16ade0cab2bc71c6a02afcdbc586d9d6840682fb20fb857df6b831e7b2249",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+      "src": "./assets/card-standees/d0adc8fd-8c03-47a6-ae6b-bff72b4a9405.png",
+      "sha256": "4b52373f84d0593edfd3e16ac3be821b2c566d2fef0851dfeb2294e9e0f375f2",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "d65e0578-98e4-46af-aeb2-134cae1a812b",
+      "src": "./assets/card-standees/d65e0578-98e4-46af-aeb2-134cae1a812b.png",
+      "sha256": "2c9cd242166d8c5fd4b5b3021a584893b9efa7ee15d33dc620a9a9895478271e",
+      "pixelWidth": 1254,
+      "pixelHeight": 1254
+    },
+    {
+      "definitionUid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+      "src": "./assets/card-standees/da873ed9-d6f2-4ab0-a01f-b0a39971a6b4.png",
+      "sha256": "c513274353dc8252700cca3213a5b5e24b46a9e1977804fa8a45acf84780fdfe",
+      "pixelWidth": 1212,
+      "pixelHeight": 1297
+    },
+    {
+      "definitionUid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "src": "./assets/card-standees/dadb0449-68f4-49d4-8fa5-bfb29099e3e0.png",
+      "sha256": "7bfb09691728902290d48700e75a6ba0d6b370407d68a08bdbaea4bb2d1f4197",
+      "pixelWidth": 1402,
+      "pixelHeight": 1122
+    },
+    {
+      "definitionUid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "src": "./assets/card-standees/dd21e939-7227-4e9e-87ef-e020d66c80ca.png",
+      "sha256": "adcfb1f0ebb8d5954e54b8cef7209fb1f699b63854cf380911a42426d233be14",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "src": "./assets/card-standees/df060f7e-59a2-4f3b-8a60-572fbed47dec.png",
+      "sha256": "6e75b93c0b670924344b1eb6622ac25ef3a91128bf616c72505ffaac0ed3a0b4",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "e1362804-dea0-49b5-9513-8c1317369f9e",
+      "src": "./assets/card-standees/e1362804-dea0-49b5-9513-8c1317369f9e.png",
+      "sha256": "23773a0ec5680ee5154b220cfc86a0be2a16a41a254339342419920da1cbbc10",
+      "pixelWidth": 1214,
+      "pixelHeight": 1295
+    },
+    {
+      "definitionUid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "src": "./assets/card-standees/e66c2fd5-ee14-4cb1-b55e-094324214830.png",
+      "sha256": "0174e26f7b26f19f9e7c8392a78b6cfcc7f4be620fa28b945d9b53e127a582e2",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073",
+      "src": "./assets/card-standees/ea18dc9c-79f3-46e5-8db8-8bf1211b6073.png",
+      "sha256": "b1adb74e858af7fa138c80ed4c33e8c07b5240cadf7c125f8b949c6ac2cf4202",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "src": "./assets/card-standees/eae5f157-9d0f-41c4-a674-a989dc4007d5.png",
+      "sha256": "17ea916a4b4f72a3e993fa3bf5656c84d0afc2c8c238c492d91fff5854b9721f",
+      "pixelWidth": 1222,
+      "pixelHeight": 1287
+    },
+    {
+      "definitionUid": "f14f6fca-6862-441b-9254-8b3df5556389",
+      "src": "./assets/card-standees/f14f6fca-6862-441b-9254-8b3df5556389.png",
+      "sha256": "5f52812b8182ce719c0534e5ac0ac21be2999476d13ccf1bc6c85597684198e1",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "faba227c-aad4-425d-b905-a7c62f14a94e",
+      "src": "./assets/card-standees/faba227c-aad4-425d-b905-a7c62f14a94e.png",
+      "sha256": "5db8f961de031920ce961e6c1c1320a658f7d7adfa6f00f028b15a091fa08e3b",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "src": "./assets/card-standees/fb5f4fc9-e46b-4f07-97bd-6a469c323cc4.png",
+      "sha256": "f6af36ea62f041d2fcb16a1d1512cd7052ca9faff762ad201824d79a9e0e204a",
+      "pixelWidth": 1298,
+      "pixelHeight": 1212
+    },
+    {
+      "definitionUid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "src": "./assets/card-standees/fe9569d6-b84c-4fe5-bcd4-03054d21ded5.png",
+      "sha256": "b3008ad7daa7844a9ebf234c95f386c6e12f07d0284bef47724719b40f5a952e",
+      "pixelWidth": 1086,
+      "pixelHeight": 1448
+    },
+    {
+      "definitionUid": "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "src": "./assets/card-standees/fec9be8d-5655-413d-aaf2-e1a3027034c7.png",
+      "sha256": "72b7f3cd2656e6766b429897385d0c38b47e872ac107760e11be4a6686a43fac",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    },
+    {
+      "definitionUid": "ff002f60-4a64-4d42-96f1-ba163bb8e59c",
+      "src": "./assets/card-standees/ff002f60-4a64-4d42-96f1-ba163bb8e59c.png",
+      "sha256": "5be64643c774cbb3e48cc37d13fc00ffc041a9535a31b9dc6b181528cd954b47",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "src": "./assets/card-standees/ff038236-2919-4bbc-9ca7-58c132b2c7fb.png",
+      "sha256": "f20b46ec4a1d0fa6e78d5d938b8b9e95721e89c661470fa5f18154727d1f9b5e",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
+      "definitionUid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "src": "./assets/card-standees/ff153fcb-5387-455c-b673-ecf2d9ddfbc2.png",
+      "sha256": "e6ef3a22841711cebefe3199c4b6b97989e54df62fc6401537cc60480b0b4cb6",
+      "pixelWidth": 992,
+      "pixelHeight": 1586
+    }
+  ]
+}

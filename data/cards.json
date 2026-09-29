@@ -1017,7 +1017,7 @@
     {
       "id": "FNG-037",
       "nameKey": "迷你卫星",
-      "englishName": "",
+      "englishName": "Mini Satellite",
       "cardType": "Minion",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -1037,10 +1037,10 @@
       ],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "mini-satellite",
+      "artDescription": "Rare neutral mechanical unit, Mini Satellite. One compact autonomous satellite drifts above a vast planet at dawn, briefly adjusting its orientation beside the edge of an orbital maintenance gantry. Preserve the existing standee identity: an off-white cuboid ceramic body, dark inset mechanical seams, one cyan optical lens, two hinged navy-blue solar panels, a short red-tipped antenna and small dish, twin compact underside thrusters. Three-quarter view, the satellite fills the upper square region with both panels fully visible and comfortable edge margins; the bright cyan lens is the focal point. A thin sunlit atmospheric arc, softly painted clouds, distant industrial orbital structures and sparse stars create modest depth below and behind it without competing with the small machine. Warm rim light on weathered white ceramic contrasts with cool blue panels and charcoal mechanisms. Premium Industrial Sci-Fi Anime illustration: crisp designed contours, deliberate cel-shaped values, restrained painterly atmosphere, matte engineered materials; neither photographic space footage nor a glossy 3D product render. Portrait 5:8, crop-safe upper-square composition. Artwork only; no text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
       "parentUid": null,
       "collectionKind": "Collectible"
@@ -4907,6 +4907,10 @@
       {
         "id": "dawn-of-the-frontline-01",
         "src": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-01.png"
+      },
+      {
+        "id": "dawn-of-the-frontline-02",
+        "src": "./assets/card-art/dawn-of-the-frontline/dawn-of-the-frontline-02.png"
       }
     ],
     "SA-020": [
@@ -4925,6 +4929,12 @@
       {
         "id": "project-augustus-01",
         "src": "./assets/card-art/project-augustus/project-augustus-01.png"
+      }
+    ],
+    "FNG-037": [
+      {
+        "id": "mini-satellite-01",
+        "src": "./assets/card-art/mini-satellite/mini-satellite-01.png"
       }
     ]
   },
@@ -5057,10 +5067,11 @@
     "MCC-013": "celestial-sprite-01",
     "FNG-038": "domain-shield-01",
     "FNG-039": "armor-quartermaster-01",
-    "FNG-040": "dawn-of-the-frontline-01",
+    "FNG-040": "dawn-of-the-frontline-02",
     "SA-020": "general-foxnick-01",
     "SC-020": "guardian-halo-01",
-    "AI-020-02": "project-augustus-01"
+    "AI-020-02": "project-augustus-01",
+    "FNG-037": "mini-satellite-01"
   },
   "customRaces": [
     "机械",

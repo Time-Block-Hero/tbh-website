@@ -139,7 +139,12 @@
             <div id="derivativeRail" class="derivative-rail"></div>
           </aside>
           <section class="hand-preview-stage">
-            <div id="cardHandPreview" class="hand-preview-host"></div>
+            <div class="card-preview-tabs" role="tablist" aria-label="卡牌预览">
+              <button id="cardPreviewTab" type="button" role="tab" aria-selected="true" aria-controls="cardHandPreview" data-preview-tab="card">卡面</button>
+              <button id="standeePreviewTab" type="button" role="tab" aria-selected="false" aria-controls="cardStandeePreview" tabindex="-1" data-preview-tab="standee">角色立绘</button>
+            </div>
+            <div id="cardHandPreview" class="hand-preview-host" role="tabpanel" aria-labelledby="cardPreviewTab"></div>
+            <div id="cardStandeePreview" class="standee-preview-host" role="tabpanel" aria-labelledby="standeePreviewTab" hidden></div>
           </section>
           <aside class="formal-card-form-panel">
             <form id="cardEditorForm" class="formal-card-form" novalidate>

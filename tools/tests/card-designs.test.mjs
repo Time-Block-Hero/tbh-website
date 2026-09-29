@@ -246,6 +246,8 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
   fs.mkdirSync(path.join(dir, "card_layout_ref"));
   fs.writeFileSync(path.join(dir, "card_layout_ref/layout.json"), "{}");
   fs.writeFileSync(path.join(dir, "card-editor-data.js"), "original fallback");
+  const standees = { schemaVersion: 1, source: { commit: "pinned-assets" }, entries: [{ definitionUid: source.cards[0].uid, src: "./assets/card-standees/example.png" }] };
+  fs.writeFileSync(path.join(dir, "data/card-standees.json"), JSON.stringify(standees));
   const child = spawn(process.execPath, [path.join(root, "tools/card-editor-server.mjs"), "--root", dir, "--port", "0"], { stdio: ["ignore", "pipe", "pipe"] });
   t.after(() => child.kill());
   const url = await new Promise((resolve, reject) => {
@@ -259,6 +261,9 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
     const result = await response.json(); if (response.ok) revision = result.cardsRevision; return response;
   };
   assert.equal((await post(source)).status, 200);
+  const fallbackContext = { window: {} };
+  vm.runInNewContext(fs.readFileSync(path.join(dir, "card-editor-data.js"), "utf8"), fallbackContext);
+  assert.deepEqual(JSON.parse(JSON.stringify(fallbackContext.window.__CARD_EDITOR_FALLBACK__.standees)), standees);
   const reopened = await (await fetch(`${url}/data/cards.json`)).json();
   assert.deepEqual(reopened.cards.filter((card) => card.cardType === "Resource"), source.cards.filter((card) => card.cardType === "Resource"));
   const saved = fs.readFileSync(path.join(dir, "data/cards.json"), "utf8");

@@ -514,3 +514,51 @@
     transition: none;
   }
 }
+
+/* Card and unit artwork share the preview column, without rebuilding the form. */
+.editor-page .hand-preview-stage {
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 16px;
+}
+.editor-page .card-preview-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: #10150f;
+  border: 1px solid var(--editor-border);
+}
+.editor-page .card-preview-tabs button {
+  padding: 9px 18px;
+  border: 0;
+  background: transparent;
+  color: #aeb6a4;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.editor-page .card-preview-tabs button[aria-selected="true"] {
+  background: #343e29;
+  color: #ecf1df;
+  box-shadow: inset 0 -2px var(--portal-accent);
+}
+.editor-page .card-preview-tabs button:focus-visible { outline: 2px solid var(--portal-accent); }
+.editor-page .hand-preview-host[hidden],
+.editor-page .standee-preview-host[hidden] { display: none; }
+.editor-page .standee-preview-host {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  place-items: center;
+  background: repeating-conic-gradient(#20271d 0% 25%, #252d22 0% 50%) 0 / 24px 24px;
+  border: 1px solid var(--editor-border);
+  overflow: hidden;
+}
+.editor-page .standee-preview-host img { width: 100%; height: 100%; min-height: 0; object-fit: contain; padding: 16px; box-sizing: border-box; }
+.editor-page .standee-preview-caption { align-self: end; margin: 0; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; color: #c1cbb8; background: #141b13e8; font-size: 12px; }
+.editor-page .standee-preview-empty { grid-row: 1 / -1; padding: 24px; text-align: center; color: #b7c1ad; line-height: 1.8; }
+@media (max-width: 600px) {
+  .editor-page .card-preview-tabs button { padding: 9px 12px; }
+  .editor-page .hand-preview-stage { gap: 10px; padding: 10px; }
+}
