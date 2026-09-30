@@ -142,7 +142,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Noa",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "首个回合开始时：抽2张牌并令其获得[保留]。",
+          "rulesText": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero. Noa, the Solar Church's eternally young boy pope and perfected solar vessel, stands within a Dyson-ring chapel that is equal parts sacred sanctuary and stellar engineering facility. He wears delicate white and warm off-white futuristic ceremonial layers over restrained modular armor, with orange-red technical accents and a luminous white-orange reactor core visible at his chest. A precise halo of small solar rings and contained supernova light frames his calm childlike face, conveying that he is both revered and imprisoned by his role. Waist-up portrait with face, halo, shoulders, and chest core concentrated entirely in the upper square of a 5:8 portrait canvas; flowing mantle and chapel steps descend into the lower area. Premium cinematic sci-fi anime concept art, crisp expressive face, hybrid cel-and-painterly rendering, radiant rim light, volumetric shafts, engineered ceramic and technical fabric textures. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "noa-01",
           "cover": "./assets/card-art/noa/noa-01.png"
@@ -154,7 +154,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Solar Saint Aletheia",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "你的所有卡牌的保留回合数视作+2。",
+          "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "solar-saint-aletheia-01",
           "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png"
@@ -592,7 +592,7 @@ window.__SETTING_DATA__ = {
         "en": "The Solar Church’s youthful boy pope bears a white-orange reactor core at his chest. White ceremonial layers cover restrained armor, while orange-red details and precise solar rings frame his calm face."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero. Noa, the Solar Church's eternally young boy pope and perfected solar vessel, stands within a Dyson-ring chapel that is equal parts sacred sanctuary and stellar engineering facility. He wears delicate white and warm off-white futuristic ceremonial layers over restrained modular armor, with orange-red technical accents and a luminous white-orange reactor core visible at his chest. A precise halo of small solar rings and contained supernova light frames his calm childlike face, conveying that he is both revered and imprisoned by his role. Waist-up portrait with face, halo, shoulders, and chest core concentrated entirely in the upper square of a 5:8 portrait canvas; flowing mantle and chapel steps descend into the lower area. Premium cinematic sci-fi anime concept art, crisp expressive face, hybrid cel-and-painterly rendering, radiant rim light, volumetric shafts, engineered ceramic and technical fabric textures. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "首个回合开始时：抽2张牌并令其获得[保留]。",
+      "rulesText": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。",
       "cover": "./assets/card-art/noa/noa-01.png",
       "sourceArtworkKeys": [
         "noa"
@@ -606,7 +606,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Noa",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "首个回合开始时：抽2张牌并令其获得[保留]。",
+          "rulesText": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero. Noa, the Solar Church's eternally young boy pope and perfected solar vessel, stands within a Dyson-ring chapel that is equal parts sacred sanctuary and stellar engineering facility. He wears delicate white and warm off-white futuristic ceremonial layers over restrained modular armor, with orange-red technical accents and a luminous white-orange reactor core visible at his chest. A precise halo of small solar rings and contained supernova light frames his calm childlike face, conveying that he is both revered and imprisoned by his role. Waist-up portrait with face, halo, shoulders, and chest core concentrated entirely in the upper square of a 5:8 portrait canvas; flowing mantle and chapel steps descend into the lower area. Premium cinematic sci-fi anime concept art, crisp expressive face, hybrid cel-and-painterly rendering, radiant rim light, volumetric shafts, engineered ceramic and technical fabric textures. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "noa-01",
           "cover": "./assets/card-art/noa/noa-01.png"
@@ -640,7 +640,7 @@ window.__SETTING_DATA__ = {
         "en": "A young saint of the Solar Church in flowing white and warm-ivory ceremonial armor, with orange-red trim and a luminous solar core. She raises a tall flame staff crowned by a contained white-orange sun."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "你的所有卡牌的保留回合数视作+2。",
+      "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
       "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png",
       "sourceArtworkKeys": [
         "solar-saint-aletheia"
@@ -654,7 +654,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Solar Saint Aletheia",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "你的所有卡牌的保留回合数视作+2。",
+          "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "solar-saint-aletheia-01",
           "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png"

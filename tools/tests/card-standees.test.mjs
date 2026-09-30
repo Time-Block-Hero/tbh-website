@@ -119,7 +119,15 @@ test("checked-in mirrored standees match their SHA and offline manifest", () => 
   const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/card-standees.json")));
   assert.equal(new Set(manifest.entries.map((entry) => entry.definitionUid)).size, manifest.entries.length);
   const currentCards = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json"))).cards;
-  assert.deepEqual(manifest.entries.map((entry) => entry.definitionUid).sort(), currentCards.filter((card) => card.cardType === "Minion").map((card) => card.uid).sort());
+  // The approved new units explicitly have no artwork yet; retain the UI's missing-art fallback.
+  const pending = new Set(["103f0af6-2a92-471e-be1a-e5fad6fa5735", "0580aac7-5301-43db-b2d9-1bc56b2e75b8"]);
+  const mirrored = new Set(manifest.entries.map((entry) => entry.definitionUid));
+  assert.deepEqual([...mirrored].sort(), currentCards.filter((card) => card.cardType === "Minion" && !pending.has(card.uid)).map((card) => card.uid).sort());
+  for (const uid of pending) {
+    const card = currentCards.find((value) => value.uid === uid);
+    assert.ok(card && card.artPath === "" && card.artworkKey === "");
+    assert.equal(mirrored.has(uid), false);
+  }
   for (const entry of manifest.entries) assert.equal(digest(fs.readFileSync(path.join(root, entry.src))), entry.sha256);
   const context = { window: {} };
   vm.runInNewContext(fs.readFileSync(path.join(root, "card-editor-data.js"), "utf8"), context);
