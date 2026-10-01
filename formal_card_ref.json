@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "a472f8ac9cb4bfc49e6f806d6187177926ac2b1fc1f9515c2dd6f1e3c2bdedbb",
+    "cardsSha256": "1dd40b44fbc069e0db7bccd8ce18a4f4db707ad1b771fb634219344ae75cab6b",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue100-20260930",
@@ -1492,8 +1492,8 @@
         "key": "engineering-drone",
         "selected": [
           {
-            "variantId": "engineering-drone-01",
-            "sourcePath": "./assets/card-art/engineering-drone/engineering-drone-01.png"
+            "variantId": "engineering-drone-03",
+            "sourcePath": "./assets/card-art/engineering-drone/engineering-drone-03.png"
           }
         ]
       }
@@ -4018,8 +4018,8 @@
     {
       "uid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
       "displayId": "AI-022",
-      "name": "剑齿虎行动",
-      "nameEn": "Operation Sabertooth",
+      "name": "鱼鹰行动",
+      "nameEn": "Operation Osprey",
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -4039,11 +4039,11 @@
       "tags": [],
       "rulesText": "发动：选择一个敌方非英雄随从，从牌堆/弃牌堆尽可能将征召兵召唤至其左右两侧的格子。",
       "artwork": {
-        "key": "operation-sabertooth",
+        "key": "operation-osprey",
         "selected": [
           {
-            "variantId": "operation-sabertooth-01",
-            "sourcePath": "./assets/card-art/operation-sabertooth/operation-sabertooth-01.png"
+            "variantId": "operation-osprey-02",
+            "sourcePath": "./assets/card-art/operation-osprey/operation-osprey-02.png"
           }
         ]
       }
