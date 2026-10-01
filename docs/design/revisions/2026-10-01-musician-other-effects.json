@@ -1,0 +1,9 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/113",
+  "uid": "faba227c-aad4-425d-b905-a7c62f14a94e",
+  "field": "rulesText",
+  "before": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+  "after": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+  "decision": "用户最终明确修正：采用通用不同名条件，仅与本卡不同名的卡牌效果计数，自己和其他同名卡牌均不计。"
+}

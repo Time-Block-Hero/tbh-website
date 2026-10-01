@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "bac89248ce0fc88c43c13c65eef5cefb1c79bad8cd62509904556e9ac872c867",
+    "cardsSha256": "fb901b5cbcd8f4e76716c299badd88cbee6453fa3bd68a58fbd1d061a4a8fd98",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue100-20260930",
@@ -4488,7 +4488,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：4] 计数：你发动或触发效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
       "artwork": {
         "key": "celestial-court-musician",
         "selected": [
