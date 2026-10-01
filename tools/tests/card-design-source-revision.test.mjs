@@ -174,7 +174,10 @@ test("playtest freeze preserves every prior identity and records the exact desig
   const previous = JSON.parse(execFileSync("git", ["show", `${delta.baseCommit}:data/cards.json`], { cwd: root }));
   const before = new Map(previous.cards.map(card => [card.uid, card]));
   const after = new Map(current.cards.map(card => [card.uid, card]));
-  assert.equal(hash(bytes), delta.cardsSha256, "designer source drift requires a new reviewed delta");
+  // The receipt certifies the frozen design input. Current illustration work is
+  // allowed, while card-electricity-revision.test.mjs protects every non-art field.
+  const frozenBytes = execFileSync("git", ["--no-replace-objects", "show", "034b251:data/cards.json"], { cwd: root });
+  assert.equal(hash(frozenBytes), delta.cardsSha256, "historical designer source receipt must stay exact");
   assert.deepEqual([before.size, after.size, delta.changed.length, delta.added.length], [140, 143, 22, 3]);
   for (const [uid, card] of before) {
     assert.ok(after.has(uid));

@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "5909854d833c20d0e963ffc81f71671a4846f0ad8f157fda601cf9b0f45ed3c8",
+    "cardsSha256": "bac89248ce0fc88c43c13c65eef5cefb1c79bad8cd62509904556e9ac872c867",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue100-20260930",
@@ -51,7 +51,7 @@
       "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
       "displayId": "AI-021",
       "name": "帝国之盾",
-      "nameEn": "",
+      "nameEn": "Shield of the Imperium",
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -72,8 +72,13 @@
       "tags": [],
       "rulesText": "[箭头需求: 3，可建造] 入场&时停阶段开始时：选择两个己方随从，令其获得3护甲（受电能加成）。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "shield-of-the-imperium",
+        "selected": [
+          {
+            "variantId": "shield-of-the-imperium-01",
+            "sourcePath": "./assets/card-art/shield-of-the-imperium/shield-of-the-imperium-01.png"
+          }
+        ]
       }
     },
     {
@@ -326,8 +331,13 @@
       "tags": [],
       "rulesText": "拾取：获得 1 点星能。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "lost-wisdom",
+        "selected": [
+          {
+            "variantId": "lost-wisdom-01",
+            "sourcePath": "./assets/card-art/lost-wisdom/lost-wisdom-01.png"
+          }
+        ]
       }
     },
     {
@@ -529,7 +539,7 @@
       "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
       "displayId": "SC-021",
       "name": "赋能者艾诗丽",
-      "nameEn": "",
+      "nameEn": "Ashley the Empowerer",
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -550,8 +560,13 @@
       "tags": [],
       "rulesText": "入场&时停阶段开始时：选择两张手牌，它们视作被额外保留了一回合。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "ashley-the-empowerer",
+        "selected": [
+          {
+            "variantId": "ashley-the-empowerer-01",
+            "sourcePath": "./assets/card-art/ashley-the-empowerer/ashley-the-empowerer-01.png"
+          }
+        ]
       }
     },
     {
@@ -2505,7 +2520,7 @@
       "uid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
       "displayId": "FNG-UN-009",
       "name": "虚空神的赦免",
-      "nameEn": "",
+      "nameEn": "Mercy of the Void God",
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -2522,8 +2537,13 @@
       "tags": [],
       "rulesText": "该卡所在的格子视作被箭头指向。拾取：你的英雄失去2生命。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "mercy-of-the-void-god",
+        "selected": [
+          {
+            "variantId": "mercy-of-the-void-god-01",
+            "sourcePath": "./assets/card-art/mercy-of-the-void-god/mercy-of-the-void-god-01.png"
+          }
+        ]
       }
     },
     {

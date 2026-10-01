@@ -1,0 +1,40 @@
+{
+  "generator": "built-in imagegen",
+  "styleTemplate": "artifact-template-industrial-sci-fi-anime",
+  "referenceSha256": "0dfb8b478381398a278402f94bca5ccd3bb6179b23621bc7488c8eb666398622",
+  "scope": "试玩后视觉精调，不更改玩法",
+  "records": [
+    {
+      "uid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "name": "遗失的智慧",
+      "path": "./assets/card-art/lost-wisdom/lost-wisdom-01.png",
+      "sha256": "ebe5e6f3859898a16399988c3a59fe7cefb4fc6216d6c461754a7323771d1d74",
+      "prompt": "Use case: stylized-concept. Create one portrait 1024x1536 card illustration. Reference is industrial sci-fi anime rendering language ONLY. Subject: Lost Wisdom, a compact luminous cyan-white energy sphere enclosing a small angular archival crystal, floating just above a weathered abandoned industrial metal pedestal. One clear readable resource object, small fragmented data-like light facets with NO readable glyphs. Main glowing orb in the upper square crop, spare dark slate technological environment below, cool restrained palette, elegant simple common-card composition with polished authored contour lines, deliberate cel-shaped highlights, painted atmosphere, functional engineered panel seams and fasteners. Avoid photographic lens effects, PBR 3D render and generic medieval magic. Artwork only; no text, logos, watermark, card frame, decorative borders, arrows, costs, stats, or UI.",
+      "visualReview": "主体、风格、卡面上方裁切及无UI检查通过；赦免使用用户修订的虚空神明施舍形象，战场球体由表现层独立实现。"
+    },
+    {
+      "uid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "name": "虚空神的赦免",
+      "path": "./assets/card-art/mercy-of-the-void-god/mercy-of-the-void-god-01.png",
+      "sha256": "e0e14606b91621230dcd16a6c06289e3df60f8ae97b2c7c64041eb38c0e5d37c",
+      "prompt": "Use case: stylized-concept. One portrait 1024x1536 industrial sci-fi anime card illustration. Style reference is only for cel-painterly rendering and engineered world language, never its characters. MERCY OF THE VOID GOD: depict an enigmatic unknowable VOID DEITY graciously offering ALMS to the viewer, with an unsettling unknown price. Absolutely NOT a sphere or orb as the primary subject. A colossal vaguely humanoid divine silhouette occupying a ruined futuristic sanctuary, its impossible tall body dissolving into black-violet negative space and folds of cosmic darkness. Face unreadable beneath a fractured void veil, no ordinary human face, no wizard hat/staff, no religious iconography. One long elegant hand reaches toward the viewer, open palm offering a small pale luminous angular shard, a merciful invitation with ambiguous menace. Foreshortened offered hand and distant hidden face together within the upper square crop; low camera, bold asymmetry, enormous scale, violet rimlight, black and lilac layered planes, subtle tendril-like shadows extending downward toward the viewer, no gore. Beneath the cosmic presence, tiny damaged industrial ribs and circuitry establish scale and sci-fi setting, no extra people. Legendary iconic charged still moment: irresistible aid, unsettling bargain, the exact price remains unstated and unseen. Authored contours, crisp cel-shaped highlights, controlled painterly atmosphere, never photographic or glossy 3D. Artwork only, no text, logos, watermark, frames, borders, arrows, UI, coins with text or stat icons.",
+      "visualReview": "主体、风格、卡面上方裁切及无UI检查通过；赦免使用用户修订的虚空神明施舍形象，战场球体由表现层独立实现。"
+    },
+    {
+      "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "name": "赋能者艾诗丽",
+      "path": "./assets/card-art/ashley-the-empowerer/ashley-the-empowerer-01.png",
+      "sha256": "92d51f35268923f277a508abcc8e09afdd96b4494e41a403ddfbfce71b4ae8a0",
+      "prompt": "Use case: stylized-concept. Create one finished portrait card illustration, 1024x1536. Reference image is ONLY the Industrial Sci-Fi Anime style template, not identity or composition. Subject: Ashley the Empowerer, an adult human woman support specialist of the Solar Church. Crisp anime face, natural human ears, warm brown skin, dark auburn hair tied in a practical low ponytail. White and charcoal layered high-collar tactical vestments with engineered gold ceramic shoulder plates and a restrained orange solar motif. Both hands in clear elegant gestures, operating two small warm amber energy reservoirs suspended between her gauntlets, visualizing the preservation of power. Three-quarter waist-up view with face and hands in upper square crop, confident calm expression. Industrial solar-energy sanctuary with structural ribs and a hot orange backlight, background subordinate. Epic card polish, cinematic rimlight, matte metal and technical fabric, authored contours, hybrid cel-and-painterly shading. One recognizable woman; no fantasy staff, no animal traits, no halo as anatomy. Artwork only; no text, logos, watermark, borders, card frame, UI, arrows, numbers or stat icons.",
+      "visualReview": "主体、风格、卡面上方裁切及无UI检查通过；赦免使用用户修订的虚空神明施舍形象，战场球体由表现层独立实现。"
+    },
+    {
+      "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "name": "帝国之盾",
+      "path": "./assets/card-art/shield-of-the-imperium/shield-of-the-imperium-01.png",
+      "sha256": "950fe464c6499d32f49965338debbd47d88cabb7c2e0a76587be540cd51e8316",
+      "prompt": "Use case: stylized-concept. One portrait 1024x1536 sci-fi anime card illustration. Reference is rendering style only, no copying subjects or composition. Subject: Shield of the Imperium, an immobile fortified shield-generator BUILDING of Astra Imperium, not a person or handheld shield. Compact monumental charcoal armored central generator tower anchored to broad mechanical feet, deep crimson inset armor, carefully articulated ceramic plates, vents, heavy structural braces and two side emitter fins. A restrained red-orange protective energy canopy unfolds from the central generator. Three-quarter slightly low camera, primary complete tower silhouette in upper square crop; lower portrait shows fortified industrial city foundation, distant subordinate architecture. No humanoid anatomy. Epic engineering concept art, crisp linework and broad cel-shaped value groups, painted atmosphere, matte tactile materials, cinematic backlight. Avoid photographic/PBR/3D-render appearance. Artwork only, no text, logo, watermark, frame, border, arrows, costs or UI.",
+      "visualReview": "主体、风格、卡面上方裁切及无UI检查通过；赦免使用用户修订的虚空神明施舍形象，战场球体由表现层独立实现。"
+    }
+  ]
+}

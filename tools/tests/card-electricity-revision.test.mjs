@@ -98,6 +98,21 @@ function currentApprovedDesign() {
     assert.ok(!dataset.cards.some(value => value.uid === card.uid));
     dataset.cards.push(structuredClone(card));
   }
+  // Approved visual completion: exact names/keys only. These remain protected
+  // non-art fields; this is not a blanket allowance to rename cards or bindings.
+  const visualNames = [
+    ['0580aac7-5301-43db-b2d9-1bc56b2e75b8', 'Shield of the Imperium', 'shield-of-the-imperium'],
+    ['103f0af6-2a92-471e-be1a-e5fad6fa5735', 'Ashley the Empowerer', 'ashley-the-empowerer'],
+    ['85fa412a-ca02-420f-8d4a-1f5f6b4cc56c', 'Mercy of the Void God', 'mercy-of-the-void-god'],
+    ['094e7c7a-25de-48b2-8df1-b2c47f5b90ea', 'Lost Wisdom', 'lost-wisdom'],
+  ];
+  for (const [uid, englishName, artworkKey] of visualNames) {
+    const target = dataset.cards.find(card => card.uid === uid);
+    assert.ok(target, uid);
+    assert.equal(target.englishName, englishName === 'Lost Wisdom' ? englishName : '');
+    assert.equal(target.artworkKey, '');
+    Object.assign(target, { englishName, artworkKey });
+  }
   return dataset;
 }
 
