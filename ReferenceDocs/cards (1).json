@@ -947,7 +947,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
+      "rulesText": "发动：选择战场上的一行，对该行上的单位造成7点伤害。",
       "arrows": [
         "NE"
       ],
@@ -1116,9 +1116,9 @@
       "rarity": "Epic",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
-      "rulesText": "入场：[快速] 为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "rulesText": "入场：[快速] 所有友方单位恢复2生命，为全体友方随从分配8点护甲。",
       "arrows": [
         "N",
         "S"
@@ -1126,10 +1126,41 @@
       "tags": [],
       "artPath": "",
       "artworkKey": "dawn-of-the-frontline",
-      "artDescription": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines activates a growing mantle of armor together. A luminous white-gold protective wave propagates from the near front rank through successive defenders; every additional ally visibly reinforces the next overlapping barrier segment. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
+      "artDescription": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines receives restorative light while infantry armor systems deploy a shared protective mantle. A luminous white-gold protective wave propagates from the near front rank through successive defenders; fading damage indicators stabilize as a finite wave of overlapping armor barriers is distributed along the infantry line. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-041",
+      "nameKey": "撕裂时潮的潜兽",
+      "englishName": "Chronotide Riftsurf Diver",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 8,
+      "attack": 3,
+      "health": 7,
+      "movement": 4,
+      "durability": 0,
+      "rulesText": "发动：选择一张己方的魔法卡，重置其发动效果。",
+      "arrows": [
+        "NE"
+      ],
+      "tribes": [
+        "奇兽"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "chronotide-riftsurf-diver",
+      "artDescription": "Epic creature. A single Riftsurf Diver tears along the edge of a temporal current through an abandoned industrial phase laboratory. Preserve the established coherent elongated SIX-LIMBED body, forked frontal sensory crown, paired translucent pressure vanes, obsidian-blue skin, pale causal stripes and cyan phase edges. Show three paired sets of limbs on one continuous body, never a broken or fragmented Hollow-Null anatomy. Its crown parts a narrow flowing time seam; beside the dive path a spent spell apparatus returns to an earlier charged configuration, expressed by a controlled returning light sequence, without UI or literal cards. Dynamic three-quarter view, crown and forebody uppermost, the long tail curling into the lower portrait; distant intact gantries and suspended dust establish ordered time displacement. Cool slate machinery, deep blue creature and disciplined cyan-white rim light, Epic layered depth, clear natural anatomy, no armor costume or invented new species traits. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -2935,8 +2966,8 @@
     },
     {
       "id": "AI-007",
-      "nameKey": "工程机器人",
-      "englishName": "Engineering Robot",
+      "nameKey": "工程无人机",
+      "englishName": "Engineering Drone",
       "cardType": "Minion",
       "classId": "AstraImperium",
       "rarity": "Rare",
@@ -2944,22 +2975,22 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+      "rulesText": "该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "arrows": [
-        "N",
-        "W",
-        "E",
-        "S"
+        "NW",
+        "NE",
+        "SW",
+        "SE"
       ],
       "tags": [],
       "artPath": "CardArt/card_079",
-      "artworkKey": "engineering-robot",
-      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Rare minion. A mobile Astra Imperium engineering robot braces itself beside an unfinished allied titan, unfolding four articulated construction arms toward separate work zones while welding, fastening armor, feeding cable, and calibrating a joint at the same time. Its compact black-steel body combines a stable multi-legged base, dark-red armored housings, retractable tools, bright inspection optics, and heavy magnetic anchors, making it read as both machine and deployable construction platform. Keep the robot, all four purposeful tool arms, and the incomplete titan joint readable inside the upper square crop; use the lower portrait extension for scaffold feet, cables, sparks, and receding factory floor. Specific industrial action, clear functional silhouette, layered but controlled mechanical detail, warm weld light against cool steel, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artworkKey": "engineering-drone",
+      "artDescription": "Rare Astra Imperium autonomous flying construction drone. A compact unmanned dark-red and black-steel chassis hovers above occupied battlefield lanes to reach an unfinished allied machine. Four articulated tool arms unfold diagonally from its body: one grips an armor panel, one aligns a joint, one welds a seam, one routes a thick power cable. Paired enclosed lift units and visible downward thrust hold the robot in the air, with no legs, wheels, human pilot or ground anchors. Its equipment is functional construction machinery, not weapons. Keep the hovering body, separated tool silhouettes and the assembly seam clearly readable in the upper square; the lower extension shows the incomplete frame, scaffolds and grounded troop silhouettes establishing flight clearance. Rare specific industrial action, cool inspection light and restrained warm welding sparks against matte crimson ceramic, worn steel and smoky factory depth. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "attack": 0,
       "health": 4,
-      "movement": 3,
+      "movement": 5,
       "tribes": [
         "机械",
         "建筑"
@@ -3040,14 +3071,14 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。",
+      "rulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。",
       "arrows": [
         "NW"
       ],
       "tags": [],
       "artPath": "",
       "artworkKey": "overdrive-operation",
-      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. An Astra Imperium industrial building is deliberately forced far beyond its operating limit: turbines spin white-hot, armored conduits bulge with triple-flow energy, exhaust stacks flare, and every connected output surges while the structure's black-steel ribs begin to split apart. A calm engineer at a remote control station has already committed to the irreversible overload, contrasting disciplined intent with imminent destruction. Keep the overdriven core, expanding energy paths, and first catastrophic structural cracks readable inside the upper square crop; use the lower portrait extension for warped gantries, flying fasteners, heat shimmer, and evacuating personnel. Dramatic tilted perspective, layered industrial storytelling, violent crimson-white light against deep charcoal metal, strong motion and exceptional material stress detail, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. An Astra Imperium industrial building is deliberately forced far beyond its operating limit: turbines spin white-hot, armored conduits bulge with triple-flow energy, exhaust stacks flare, and every connected output surges while repeated power pulses scorch the structure's black-steel ribs and reopen stressed seams. A calm engineer at a remote control station has already committed to the sustained overload, contrasting disciplined intent with accumulating structural damage. Keep the overdriven core, expanding energy paths, and progressive structural cracks readable inside the upper square crop; use the lower portrait extension for warped gantries, flying fasteners, heat shimmer, and evacuating personnel. Dramatic tilted perspective, layered industrial storytelling, violent crimson-white light against deep charcoal metal, strong motion and exceptional material stress detail, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
@@ -3091,7 +3122,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "[箭头需求: 2] 入场：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
+      "rulesText": "发动：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
       "arrows": [
         "NE",
         "E"
@@ -3121,7 +3152,10 @@
       "movement": 0,
       "durability": 0,
       "rulesText": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。",
-      "arrows": [],
+      "arrows": [
+        "NW",
+        "SE"
+      ],
       "tribes": [
         "建筑"
       ],
@@ -3144,16 +3178,17 @@
       "rarity": "Epic",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 4,
+      "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。",
+      "rulesText": "发动：为己方建造中的单位分配至多4点建造进度。",
       "arrows": [
-        "NE"
+        "NW",
+        "W"
       ],
       "tags": [],
       "artPath": "",
       "artworkKey": "engineer-s-wisdom",
-      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. A veteran Astra Imperium engineer stands over a deep three-dimensional planning table as construction signals arrive from several surrounding directions, each connection resolving a different fragment of an impossible design. With one precise gesture, the fragments lock into multiple complete luminous blueprint prisms that rise toward the viewer, visually translating a well-connected building network into new knowledge rather than showing literal cards. Keep the engineer's focused face, hands, converging signal lines, and completed design prisms readable inside the upper square crop; use the lower portrait extension for layered machinery cutaways, physical model parts, drafting arms, and the surrounding dark laboratory. Sophisticated industrial problem-solving, ambitious perspective, rich brass, black steel, dark-red fabric, and cool projection-light contrast, cinematic depth, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescription": "Epic Astra Imperium construction spell. Preserve the established mature male engineer with swept dark hair, focused expression, charcoal technical coat and dark-red high collar, but show a concrete act of distributed construction instead of gathering knowledge. He directs a limited set of fabrication arms across several incomplete allied structures on a vast industrial assembly deck; one actuator closes a tower brace, another seats a machine armor panel, and a third locks a conduit into an unfinished support frame. The structures remain at visibly different completion stages; this is allocated incremental work, not instant creation of a completed city. His hand and the nearest assembly junction dominate the upper square; other work sites recede in layered depth into the lower portrait. Crisp meaningful machinery, cool inspection projection lines without text, restrained golden weld light, dark red cloth and matte black steel, Epic ambitious perspective and controlled narrative detail. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
@@ -3235,9 +3270,9 @@
       "health": 5,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。",
       "arrows": [
-        "SW",
+        "S",
         "SE"
       ],
       "tribes": [
@@ -3432,6 +3467,32 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "AI-022",
+      "nameKey": "剑齿虎行动",
+      "englishName": "Operation Sabertooth",
+      "cardType": "Spell",
+      "classId": "AstraImperium",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 7,
+      "durability": 0,
+      "rulesText": "发动：选择一个敌方非英雄随从，从牌堆/弃牌堆尽可能将征召兵召唤至其左右两侧的格子。",
+      "arrows": [
+        "W",
+        "E"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "operation-sabertooth",
+      "artDescription": "Rare Astra Imperium tactical spell. Depict a coordinated pincer deployment rather than a tiger animal: two ordinary imperial conscripts in matching standardized dark-red and gunmetal combat armor arrive on opposite sides of one isolated hostile armored non-hero soldier. The conscripts close in simultaneously, making the left-and-right encirclement instantly legible. One emerges from a dim troop-access passage; the other returns through dust from a wrecked combat position, showing troops being called back into the operation without ghosts, resurrection claims or magic portals. Elevated oblique view of a narrow industrial interchange, three distinct human silhouettes kept in the upper square, opposing movement lines forming two inward-pointing fangs. Functional rifles, battered ceramic armor, pipes and railings; controlled crimson command light and cold white overhead lamps. The central action is tactical encirclement, not gore, a static hero portrait, an interface or a literal game grid. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -4553,12 +4614,6 @@
         "src": "./assets/card-art/imperial-special-forces/imperial-special-forces-01.png"
       }
     ],
-    "AI-007": [
-      {
-        "id": "engineering-robot-01",
-        "src": "./assets/card-art/engineering-robot/engineering-robot-01.png"
-      }
-    ],
     "AI-008": [
       {
         "id": "sea-swallow-01",
@@ -4599,6 +4654,10 @@
       {
         "id": "engineer-s-wisdom-01",
         "src": "./assets/card-art/engineer-s-wisdom/engineer-s-wisdom-01.png"
+      },
+      {
+        "id": "engineer-s-wisdom-02",
+        "src": "./assets/card-art/engineer-s-wisdom/engineer-s-wisdom-02.png"
       }
     ],
     "AI-015": [
@@ -5058,6 +5117,28 @@
         "id": "lost-wisdom-01",
         "src": "./assets/card-art/lost-wisdom/lost-wisdom-01.png"
       }
+    ],
+    "AI-007": [
+      {
+        "id": "engineering-drone-01",
+        "src": "./assets/card-art/engineering-drone/engineering-drone-01.png"
+      },
+      {
+        "id": "engineering-drone-02",
+        "src": "./assets/card-art/engineering-drone/engineering-drone-02.png"
+      }
+    ],
+    "AI-022": [
+      {
+        "id": "operation-sabertooth-01",
+        "src": "./assets/card-art/operation-sabertooth/operation-sabertooth-01.png"
+      }
+    ],
+    "FNG-041": [
+      {
+        "id": "chronotide-riftsurf-diver-01",
+        "src": "./assets/card-art/chronotide-riftsurf-diver/chronotide-riftsurf-diver-01.png"
+      }
     ]
   },
   "selectedArtworkIds": {
@@ -5126,14 +5207,13 @@
     "SC-018-01": "solar-burst-fist-02",
     "SC-019": "hymn-to-the-sun-01",
     "AI-006": "imperial-special-forces-01",
-    "AI-007": "engineering-robot-01",
     "AI-008": "sea-swallow-01",
     "AI-009": "terra-institute-of-technology-01",
     "AI-010": "overdrive-operation-01",
     "AI-011": "city-shield-01",
     "AI-012": "integrated-combat-directive-01",
     "AI-013": "super-nuclear-power-plant-01",
-    "AI-014": "engineer-s-wisdom-01",
+    "AI-014": "engineer-s-wisdom-02",
     "AI-015": "crystal-spirit-watchtower-01",
     "AI-016": "heavy-military-packbeast-03",
     "AI-017": "city-planner-wei-01",
@@ -5197,7 +5277,10 @@
     "SC-021": "ashley-the-empowerer-01",
     "FNG-UN-009": "mercy-of-the-void-god-01",
     "AI-021": "shield-of-the-imperium-01",
-    "FNG-UN-003": "lost-wisdom-01"
+    "FNG-UN-003": "lost-wisdom-01",
+    "AI-007": "engineering-drone-01",
+    "AI-022": "operation-sabertooth-01",
+    "FNG-041": "chronotide-riftsurf-diver-01"
   },
   "customRaces": [
     "机械",

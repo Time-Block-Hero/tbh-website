@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "bac89248ce0fc88c43c13c65eef5cefb1c79bad8cd62509904556e9ac872c867",
+    "cardsSha256": "a472f8ac9cb4bfc49e6f806d6187177926ac2b1fc1f9515c2dd6f1e3c2bdedbb",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue100-20260930",
@@ -1427,10 +1427,44 @@
       }
     },
     {
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-041",
+      "name": "撕裂时潮的潜兽",
+      "nameEn": "Chronotide Riftsurf Diver",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Epic",
+      "costResource": "Star",
+      "costAmount": 8,
+      "durability": 0,
+      "attack": 3,
+      "health": 7,
+      "movement": 4,
+      "arrows": [
+        "NE"
+      ],
+      "tribes": [
+        "奇兽"
+      ],
+      "tags": [],
+      "rulesText": "发动：选择一张己方的魔法卡，重置其发动效果。",
+      "artwork": {
+        "key": "chronotide-riftsurf-diver",
+        "selected": [
+          {
+            "variantId": "chronotide-riftsurf-diver-01",
+            "sourcePath": "./assets/card-art/chronotide-riftsurf-diver/chronotide-riftsurf-diver-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
       "displayId": "AI-007",
-      "name": "工程机器人",
-      "nameEn": "Engineering Robot",
+      "name": "工程无人机",
+      "nameEn": "Engineering Drone",
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -1441,25 +1475,25 @@
       "durability": 0,
       "attack": 0,
       "health": 4,
-      "movement": 3,
+      "movement": 5,
       "arrows": [
-        "N",
-        "W",
-        "E",
-        "S"
+        "NW",
+        "NE",
+        "SW",
+        "SE"
       ],
       "tribes": [
         "机械",
         "建筑"
       ],
       "tags": [],
-      "rulesText": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+      "rulesText": "该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "artwork": {
-        "key": "engineering-robot",
+        "key": "engineering-drone",
         "selected": [
           {
-            "variantId": "engineering-robot-01",
-            "sourcePath": "./assets/card-art/engineering-robot/engineering-robot-01.png"
+            "variantId": "engineering-drone-01",
+            "sourcePath": "./assets/card-art/engineering-drone/engineering-drone-01.png"
           }
         ]
       }
@@ -1744,23 +1778,24 @@
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 4,
+      "costAmount": 5,
       "durability": 0,
       "attack": null,
       "health": null,
       "movement": null,
       "arrows": [
-        "NE"
+        "NW",
+        "W"
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。",
+      "rulesText": "发动：为己方建造中的单位分配至多4点建造进度。",
       "artwork": {
         "key": "engineer-s-wisdom",
         "selected": [
           {
-            "variantId": "engineer-s-wisdom-01",
-            "sourcePath": "./assets/card-art/engineer-s-wisdom/engineer-s-wisdom-01.png"
+            "variantId": "engineer-s-wisdom-02",
+            "sourcePath": "./assets/card-art/engineer-s-wisdom/engineer-s-wisdom-02.png"
           }
         ]
       }
@@ -1821,7 +1856,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
+      "rulesText": "发动：选择战场上的一行，对该行上的单位造成7点伤害。",
       "artwork": {
         "key": "orbital-bombardment",
         "selected": [
@@ -1853,7 +1888,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。",
+      "rulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。",
       "artwork": {
         "key": "overdrive-operation",
         "selected": [
@@ -2752,14 +2787,14 @@
       "health": 5,
       "movement": 3,
       "arrows": [
-        "SW",
+        "S",
         "SE"
       ],
       "tribes": [
         "人类"
       ],
       "tags": [],
-      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。",
       "artwork": {
         "key": "city-planner-wei",
         "selected": [
@@ -3243,7 +3278,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "[箭头需求: 2] 入场：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
+      "rulesText": "发动：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
       "artwork": {
         "key": "integrated-combat-directive",
         "selected": [
@@ -3981,6 +4016,39 @@
       }
     },
     {
+      "uid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
+      "displayId": "AI-022",
+      "name": "剑齿虎行动",
+      "nameEn": "Operation Sabertooth",
+      "cardType": "Spell",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "AstraImperium",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 7,
+      "durability": 0,
+      "attack": null,
+      "health": null,
+      "movement": null,
+      "arrows": [
+        "W",
+        "E"
+      ],
+      "tribes": [],
+      "tags": [],
+      "rulesText": "发动：选择一个敌方非英雄随从，从牌堆/弃牌堆尽可能将征召兵召唤至其左右两侧的格子。",
+      "artwork": {
+        "key": "operation-sabertooth",
+        "selected": [
+          {
+            "variantId": "operation-sabertooth-01",
+            "sourcePath": "./assets/card-art/operation-sabertooth/operation-sabertooth-01.png"
+          }
+        ]
+      }
+    },
+    {
       "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
       "displayId": "FNG-017",
       "name": "幼崽噗噜兽",
@@ -4092,7 +4160,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -4103,7 +4171,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+      "rulesText": "入场：[快速] 所有友方单位恢复2生命，为全体友方随从分配8点护甲。",
       "artwork": {
         "key": "dawn-of-the-frontline",
         "selected": [
@@ -4353,7 +4421,10 @@
       "attack": 0,
       "health": 7,
       "movement": 0,
-      "arrows": [],
+      "arrows": [
+        "NW",
+        "SE"
+      ],
       "tribes": [
         "建筑"
       ],

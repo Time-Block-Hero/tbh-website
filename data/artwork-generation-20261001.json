@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-01",
+  "generator": "built-in image_gen",
+  "styleTemplate": "artifact-template-industrial-sci-fi-anime",
+  "designerInputSha256": "f77858304ea3c4184a8b09005e893a4188ef72efe311eed0f7b7b6fe6ce9be03",
+  "scope": "website illustrations and prompts; not a runtime 145-card import or standee release",
+  "records": [
+    {
+      "cardUid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-041",
+      "name": "撕裂时潮的潜兽",
+      "variantId": "chronotide-riftsurf-diver-01",
+      "path": "./assets/card-art/chronotide-riftsurf-diver/chronotide-riftsurf-diver-01.png",
+      "sha256": "3d27c82f636d0862d12044b37f4524150b432328dc00517b5b5816cd78fa01b4",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-01/FNG-041-prompt.txt",
+      "selected": true
+    },
+    {
+      "cardUid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "name": "工程无人机",
+      "variantId": "engineering-drone-01",
+      "path": "./assets/card-art/engineering-drone/engineering-drone-01.png",
+      "sha256": "ae199d34c2651ab9159ccde6845b1b824b2de7c4576e033f147d86392889d5f7",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-01/AI-007-prompt.txt",
+      "selected": true
+    },
+    {
+      "cardUid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "name": "工程无人机",
+      "variantId": "engineering-drone-02",
+      "path": "./assets/card-art/engineering-drone/engineering-drone-02.png",
+      "sha256": "49d239e8e2a603d0434393e582cf0a098438479c669538ea8c835f383c318096",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-01/AI-007-prompt.txt",
+      "selected": false
+    },
+    {
+      "cardUid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "name": "工程师的智慧",
+      "variantId": "engineer-s-wisdom-02",
+      "path": "./assets/card-art/engineer-s-wisdom/engineer-s-wisdom-02.png",
+      "sha256": "57d5a03e438abe15149c17e925fc71d6997eeb23996957c9b9425366349928dc",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-01/AI-014-prompt.txt",
+      "selected": true
+    },
+    {
+      "cardUid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
+      "displayId": "AI-022",
+      "name": "剑齿虎行动",
+      "variantId": "operation-sabertooth-01",
+      "path": "./assets/card-art/operation-sabertooth/operation-sabertooth-01.png",
+      "sha256": "dd9278d311598e1f83e3ba1fd112ce9b065fedf8b5358bc9ff90a832eecf3ac8",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-01/AI-022-prompt.txt",
+      "selected": true
+    }
+  ],
+  "qualityNotes": [
+    "Riftsurf anatomy corrected to six visible limbs in three pairs; initial four-limb output rejected.",
+    "Initial drone output rejected for excessive realistic material rendering; two anime contour variants registered.",
+    "Engineer identity retained while replacing knowledge imagery with physical construction."
+  ],
+  "unchangedGameplayAndIdentities": true
+}
