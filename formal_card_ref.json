@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "9f1db8590811fcacc2afd63da691753ecfe360a0a59e2458da833bfdead92de5",
+    "cardsSha256": "93278076f8412169b7e9d433a67ab62902f3b493ca285cd65648d3fc444a6fbd",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001",
@@ -4035,7 +4035,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[一次性箭头] \n[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
+      "rulesText": "[一次性箭头] [循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
       "artwork": {
         "key": "celestial-sprite",
         "selected": [

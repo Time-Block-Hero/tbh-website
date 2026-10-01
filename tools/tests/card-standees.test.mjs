@@ -120,7 +120,7 @@ test("checked-in mirrored standees match their SHA and offline manifest", () => 
   assert.equal(new Set(manifest.entries.map((entry) => entry.definitionUid)).size, manifest.entries.length);
   const currentCards = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json"))).cards;
   const mirrored = new Set(manifest.entries.map((entry) => entry.definitionUid));
-  assert.equal(mirrored.size, 97);
+  assert.equal(mirrored.size, 99);
   assert.deepEqual([...mirrored].sort(), currentCards.filter((card) => card.cardType === "Minion").map((card) => card.uid).sort());
   for (const entry of manifest.entries) assert.equal(digest(fs.readFileSync(path.join(root, entry.src))), entry.sha256);
   const context = { window: {} };
