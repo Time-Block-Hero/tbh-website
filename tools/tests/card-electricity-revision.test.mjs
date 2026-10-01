@@ -113,6 +113,15 @@ function currentApprovedDesign() {
     assert.equal(target.artworkKey, '');
     Object.assign(target, { englishName, artworkKey });
   }
+  // Explicit 2026-10-01 ruling supersedes self-counting; retain the historical receipts.
+  const musician = parse('docs/design/revisions/2026-10-01-musician-other-effects.json');
+  assert.equal(musician.schemaVersion, 1);
+  assert.equal(musician.uid, 'faba227c-aad4-425d-b905-a7c62f14a94e');
+  assert.equal(musician.field, 'rulesText');
+  const musicianCard = dataset.cards.find(card => card.uid === musician.uid);
+  assert.equal(musicianCard.rulesText, musician.before);
+  assert.equal(musician.after, musician.before.replace('你发动或触发效果的次数', '你发动或触发与本卡不同名的卡牌效果的次数'));
+  musicianCard.rulesText = musician.after;
   return dataset;
 }
 
