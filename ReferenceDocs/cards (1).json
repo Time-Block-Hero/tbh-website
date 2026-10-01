@@ -921,7 +921,7 @@
       "health": 5,
       "movement": 4,
       "durability": 0,
-      "rulesText": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得5护甲。",
+      "rulesText": "以弃置一张手牌为成本发动：令一个友方随从获得圣盾。",
       "arrows": [],
       "tribes": [
         "反抗军"
@@ -1118,7 +1118,7 @@
       "costResource": "Star",
       "costAmount": 9,
       "durability": 0,
-      "rulesText": "入场：[快速] 所有友方单位恢复2生命，为全体友方随从分配8点护甲。",
+      "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。",
       "arrows": [
         "N",
         "S"
@@ -1126,7 +1126,7 @@
       "tags": [],
       "artPath": "",
       "artworkKey": "dawn-of-the-frontline",
-      "artDescription": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines receives restorative light while infantry armor systems deploy a shared protective mantle. A luminous white-gold protective wave propagates from the near front rank through successive defenders; fading damage indicators stabilize as a finite wave of overlapping armor barriers is distributed along the infantry line. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
+      "artDescription": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines receives restorative light while three allied infantry units receive individual luminous protective shields. A luminous white-gold protective wave propagates from the near front rank through successive defenders; fading damage indicators stabilize as three distinct white-gold protective shields form around allied silhouettes. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
@@ -1147,7 +1147,7 @@
       "health": 7,
       "movement": 4,
       "durability": 0,
-      "rulesText": "发动：选择一张己方的魔法卡，重置其发动效果。",
+      "rulesText": "发动：选择一张己方法术牌，重置其发动效果。",
       "arrows": [
         "NE"
       ],
@@ -1161,6 +1161,35 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-042",
+      "nameKey": "光能盾特工",
+      "englishName": "Photonic Shield Operative",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 4,
+      "attack": 4,
+      "health": 4,
+      "movement": 4,
+      "durability": 0,
+      "rulesText": "圣盾。",
+      "arrows": [],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "photonic-shield-operative",
+      "artDescription": "Use case: stylized-concept. Create standalone vertical card artwork for Time-Block Hero, portrait 5:8, for Photonic Shield Operative, a Rare neutral human minion. A single adult human futuristic field agent advances through an industrial service corridor protected by an enormous translucent photonic shield screen projected from a substantial forearm emitter. The shield screen spans wider than the agent and from head to shins, angled toward incoming sparks; it is a clearly readable single protective plane with restrained cyan-white edge light and a few broad structural facets, not a solid metal riot shield and not a magical rune circle. Keep the agent's face and silhouette readable behind the transparent screen. Short swept dark hair, focused expression, charcoal layered tactical coat, slate modular ceramic chest and shoulder armor, practical gloves, harness, utility pouches and boots. Confident braced forward step; one forearm drives the shield emitter while the free hand stays near the utility belt. Neutral original equipment, no faction insignia. Medium-low three-quarter camera with the agent's face, torso and enormous shield forming the decisive upper-square composition; lower portrait extends into boots, grated deck and restrained industrial haze. Premium industrial sci-fi anime rendering following the supplied reference's hand-drawn aesthetic only: crisp expressive facial lines, strong designed contours, controlled cel-shaped value groups, tactile matte engineered materials, atmospheric painted depth, cool slate and navy with disciplined cyan light. Do not copy reference characters, animal traits, costumes, logos or composition. Not photorealistic, not glossy 3D, not chibi. Keep safe edge clearance. Artwork only; no readable text, logos, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -3042,7 +3071,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "arrows": [
         "SW",
         "SE"
@@ -3053,7 +3082,7 @@
       "tags": [],
       "artPath": "",
       "artworkKey": "terra-institute-of-technology",
-      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary building minion. Terra Institute of Technology reaches its defining breakthrough inside a monumental Astra Imperium research city: six severe black-steel laboratory towers align around a central construction atrium as three accumulated research phases culminate in one brilliant synchronized experiment. Below the converging beams, engineers and students watch an incomplete military prototype simplify itself into a cleaner modular design, with entire layers of support machinery retracting as the new method makes future construction visibly easier. Preserve the central prototype, the six-tower convergence, and a small but emotionally readable group of researchers inside the upper square crop; extend the vast terraced campus, transit rails, archives, and military skyline downward for depth. Iconic institutional moment, bold elevated perspective, intentional asymmetry, exceptional architectural finish, dark red and blackened steel cut by precise pale-cyan research light, cinematic haze, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+      "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary building minion. Terra Institute of Technology reaches its defining breakthrough inside a monumental Astra Imperium research city: six severe black-steel laboratory towers align around a central construction atrium as four accumulated research phases culminate in one brilliant synchronized experiment. Below the converging beams, engineers and students watch an incomplete military prototype simplify itself into a cleaner modular design, with entire layers of support machinery retracting as the new method makes future construction visibly easier. Preserve the central prototype, the six-tower convergence, and a small but emotionally readable group of researchers inside the upper square crop; extend the vast terraced campus, transit rails, archives, and military skyline downward for depth. Iconic institutional moment, bold elevated perspective, intentional asymmetry, exceptional architectural finish, dark red and blackened steel cut by precise pale-cyan research light, cinematic haze, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
@@ -3479,7 +3508,7 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 7,
+      "costAmount": 6,
       "durability": 0,
       "rulesText": "发动：选择一个敌方非英雄随从，从牌堆/弃牌堆尽可能将征召兵召唤至其左右两侧的格子。",
       "arrows": [
@@ -3603,7 +3632,7 @@
       "health": 5,
       "movement": 2,
       "durability": 0,
-      "rulesText": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
+      "rulesText": "[循环进度：4] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3632,7 +3661,7 @@
       "health": 6,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计3点行动点。",
       "arrows": [
         "NE"
       ],
@@ -3658,12 +3687,12 @@
       "rarity": "Legendary",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 10,
+      "costAmount": 12,
       "attack": 0,
-      "health": 9,
+      "health": 10,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度；不足3个时全部触发。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度。",
       "arrows": [
         "NW",
         "N",
@@ -3692,12 +3721,12 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "attack": 2,
       "health": 8,
-      "movement": 4,
+      "movement": 5,
       "durability": 0,
-      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
+      "rulesText": "[循环进度：4] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3751,12 +3780,11 @@
       "rarity": "Epic",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "rulesText": "入场：[快速] 本回合内，你所有进度效果的目标值变为各自原始目标值的一半（向上取整）。",
       "arrows": [
-        "NW",
-        "SW"
+        "NW"
       ],
       "tags": [],
       "artPath": "",
@@ -3810,7 +3838,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。",
+      "rulesText": "圣盾。[循环进度：7] 计数：你获得星能的数量。完成：获得圣盾，复原你本回合的移动点数和攻击次数。",
       "arrows": [
         "NW"
       ],
@@ -3996,7 +4024,7 @@
       "health": 5,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配6点护甲，逐点等概率抽取、可重复选中同一随从，确定分配后同批赋予。",
+      "rulesText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配4点护甲。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -5147,6 +5175,12 @@
         "id": "chronotide-riftsurf-diver-01",
         "src": "./assets/card-art/chronotide-riftsurf-diver/chronotide-riftsurf-diver-01.png"
       }
+    ],
+    "FNG-042": [
+      {
+        "id": "photonic-shield-operative-01",
+        "src": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
+      }
     ]
   },
   "selectedArtworkIds": {
@@ -5288,7 +5322,8 @@
     "FNG-UN-003": "lost-wisdom-01",
     "AI-007": "engineering-drone-03",
     "AI-022": "operation-osprey-02",
-    "FNG-041": "chronotide-riftsurf-diver-01"
+    "FNG-041": "chronotide-riftsurf-diver-01",
+    "FNG-042": "photonic-shield-operative-01"
   },
   "customRaces": [
     "机械",

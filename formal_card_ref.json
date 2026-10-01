@@ -4,11 +4,11 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "d8d841653eb2ebcad03079206ed4f360248af5864a408e918aa0dca0e980cfe5",
+    "cardsSha256": "9f1db8590811fcacc2afd63da691753ecfe360a0a59e2458da833bfdead92de5",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
-    "sourceRevisionId": "issue100-20260930",
-    "sourceRevisionSha256": "b7486616ca510f57b97e9e1b05b82e3488f6fc26cbf63c1f06f96c1935658dea",
+    "sourceRevisionId": "issue114-20261001",
+    "sourceRevisionSha256": "bfaab082eb6348a181492ff7fd5af2a496ce713357b5db08bb0dc5d96fda9b13",
     "datasetSchemaVersion": 4,
     "dirty": true
   },
@@ -1106,10 +1106,10 @@
       "classId": "MachineHeaven",
       "rarity": "Legendary",
       "costResource": "Star",
-      "costAmount": 10,
+      "costAmount": 12,
       "durability": 0,
       "attack": 0,
-      "health": 9,
+      "health": 10,
       "movement": 0,
       "arrows": [
         "NW",
@@ -1121,7 +1121,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度；不足3个时全部触发。",
+      "rulesText": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度。",
       "artwork": {
         "key": "swarm-overmind-emilys",
         "selected": [
@@ -1449,7 +1449,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "发动：选择一张己方的魔法卡，重置其发动效果。",
+      "rulesText": "发动：选择一张己方法术牌，重置其发动效果。",
       "artwork": {
         "key": "chronotide-riftsurf-diver",
         "selected": [
@@ -1824,7 +1824,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。",
+      "rulesText": "圣盾。[循环进度：7] 计数：你获得星能的数量。完成：获得圣盾，复原你本回合的移动点数和攻击次数。",
       "artwork": {
         "key": "ascended-sword-jinbai",
         "selected": [
@@ -2140,17 +2140,17 @@
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": 2,
       "health": 8,
-      "movement": 4,
+      "movement": 5,
       "arrows": [],
       "tribes": [
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
+      "rulesText": "[循环进度：4] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
       "artwork": {
         "key": "upper-angel-turret-roamer",
         "selected": [
@@ -2238,14 +2238,13 @@
       "classId": "MachineHeaven",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": null,
       "health": null,
       "movement": null,
       "arrows": [
-        "NW",
-        "SW"
+        "NW"
       ],
       "tribes": [],
       "tags": [],
@@ -2507,7 +2506,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
+      "rulesText": "[循环进度：4] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
       "artwork": {
         "key": "celestial-mcp-nexus",
         "selected": [
@@ -2759,7 +2758,7 @@
         "反抗军"
       ],
       "tags": [],
-      "rulesText": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得5护甲。",
+      "rulesText": "以弃置一张手牌为成本发动：令一个友方随从获得圣盾。",
       "artwork": {
         "key": "black-market-armor-dealer",
         "selected": [
@@ -3245,7 +3244,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配6点护甲，逐点等概率抽取、可重复选中同一随从，确定分配后同批赋予。",
+      "rulesText": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配4点护甲。",
       "artwork": {
         "key": "angel-home-guardian",
         "selected": [
@@ -3614,6 +3613,38 @@
           {
             "variantId": "rust-eater-clawbeast-01",
             "sourcePath": "./assets/card-art/rust-eater-clawbeast/rust-eater-clawbeast-01.png"
+          }
+        ]
+      }
+    },
+    {
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "displayId": "FNG-042",
+      "name": "光能盾特工",
+      "nameEn": "Photonic Shield Operative",
+      "cardType": "Minion",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 4,
+      "durability": 0,
+      "attack": 4,
+      "health": 4,
+      "movement": 4,
+      "arrows": [],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "rulesText": "圣盾。",
+      "artwork": {
+        "key": "photonic-shield-operative",
+        "selected": [
+          {
+            "variantId": "photonic-shield-operative-01",
+            "sourcePath": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
           }
         ]
       }
@@ -4026,7 +4057,7 @@
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 7,
+      "costAmount": 6,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -4171,7 +4202,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 所有友方单位恢复2生命，为全体友方随从分配8点护甲。",
+      "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。",
       "artwork": {
         "key": "dawn-of-the-frontline",
         "selected": [
@@ -4559,7 +4590,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计3点行动点。",
       "artwork": {
         "key": "celestial-court-musician",
         "selected": [
@@ -4594,7 +4625,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+      "rulesText": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
       "artwork": {
         "key": "terra-institute-of-technology",
         "selected": [

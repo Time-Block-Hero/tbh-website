@@ -122,6 +122,24 @@ function currentApprovedDesign() {
   assert.equal(musicianCard.rulesText, musician.before);
   assert.equal(musician.after, musician.before.replace('你发动或触发效果的次数', '你发动或触发与本卡不同名的卡牌效果的次数'));
   musicianCard.rulesText = musician.after;
+  const imported = parse('docs/design/revisions/2026-10-01-complete-card-import.json');
+  assert.equal(imported.baseCommit, '6bd472e236c48a9b3c1a1ef678115ece9103273f');
+  assert.deepEqual([imported.oldCount, imported.newCount, imported.added.length], [143, 146, 3]);
+  assert.deepEqual(imported.deleted, []);
+  dataset = JSON.parse(execFileSync('git', ['--no-replace-objects', 'show', `${imported.baseCommit}:data/cards.json`], { cwd: root }));
+  for (const entry of imported.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
+  for (const card of imported.added) {
+    assert.ok(!dataset.cards.some(value => value.uid === card.uid));
+    dataset.cards.push(structuredClone(card));
+  }
   return dataset;
 }
 
@@ -200,7 +218,7 @@ test('current approved identities and parent references stay intact, including A
   assert.equal(augustus.parentUid, 'bdd6fa88-21f9-4eed-8248-00e550344739');
   assert.equal(augustus.collectionKind, 'Token');
   const exported = exportDirtyDesigns(root);
-  assert.equal(exported.cards.length, 143);
+  assert.equal(exported.cards.length, 146);
   assert.deepEqual(exported.policy.excludedUids, []);
   for (const uid of identities.admittedPreviouslyExcludedUids) assert.ok(exported.cards.some(card => card.uid === uid));
 });

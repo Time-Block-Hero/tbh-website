@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/114",
+  "baseCommit": "6bd472e236c48a9b3c1a1ef678115ece9103273f",
+  "rawEditorSha256": "f8ac922f8bb97d1e4519d7ba4402edbbabeae5cadb57cc81e813eadf434db933",
+  "oldCount": 143,
+  "newCount": 146,
+  "deleted": [],
+  "changed": [
+    {
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "displayId": "FNG-033",
+      "name": "黑市护甲贩",
+      "fields": {
+        "rulesText": {
+          "before": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得5护甲。",
+          "after": "以弃置一张手牌为成本发动：令一个友方随从获得圣盾。"
+        }
+      }
+    },
+    {
+      "uid": "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "displayId": "FNG-034",
+      "name": "轨道轰炸",
+      "fields": {
+        "rulesText": {
+          "before": "入场：选择战场上的一行，对该行上的单位造成7点伤害。",
+          "after": "发动：选择战场上的一行，对该行上的单位造成7点伤害。"
+        }
+      }
+    },
+    {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "name": "战线曙光",
+      "fields": {
+        "artDescription": {
+          "before": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines activates a growing mantle of armor together. A luminous white-gold protective wave propagates from the near front rank through successive defenders; every additional ally visibly reinforces the next overlapping barrier segment. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual.",
+          "after": "Epic spell, Dawn of the Frontline. At first light along the broken deck of an immense spaceport barricade, a connected line of allied infantry and support machines receives restorative light while infantry armor systems deploy a shared protective mantle. A luminous white-gold protective wave propagates from the near front rank through successive defenders; fading damage indicators stabilize as a finite wave of overlapping armor barriers is distributed along the infantry line. Use an ambitious low diagonal view along the line, with the nearest shield convergence and three clear allied silhouettes in the upper square crop; ranks recede into atmospheric depth without becoming a cluttered crowd. Dawn breaks through industrial towers behind them, warm light cutting navy smoke, chipped ceramic armor, repaired steel cover and drifting sparks. The lower extension carries rails and shattered barricade geometry. Show a collective defensive turning point with broad scale and controlled luminous motion; no single heroic portrait and no literal board grid. Premium industrial sci-fi anime illustration, crisp authored contours, purposeful cel-shaped values, matte engineered materials and painterly atmosphere; never photorealistic or glossy 3D. Portrait 5:8; keep the decisive action and principal face in the upper square crop with comfortable edge clearance. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons. Every foreground ally is a fully helmeted adult human in original rectangular industrial visor helmets or a compact support machine. No visible hair, no animal ears, no fantasy humanoids, no recognizable reference characters, no perforated knight helmet. The light wave and communal defense are the main subject, not an individual."
+        },
+        "costAmount": {
+          "before": 8,
+          "after": 9
+        },
+        "rulesText": {
+          "before": "入场：[快速] 为全体友方随从分配8点护甲，战场上每个你的随从令护甲数值额外+2。",
+          "after": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。"
+        }
+      }
+    },
+    {
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "name": "工程无人机",
+      "fields": {
+        "arrows": {
+          "before": [
+            "N",
+            "W",
+            "E",
+            "S"
+          ],
+          "after": [
+            "NW",
+            "NE",
+            "SW",
+            "SE"
+          ]
+        },
+        "artDescription": {
+          "before": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Rare minion. A mobile Astra Imperium engineering robot braces itself beside an unfinished allied titan, unfolding four articulated construction arms toward separate work zones while welding, fastening armor, feeding cable, and calibrating a joint at the same time. Its compact black-steel body combines a stable multi-legged base, dark-red armored housings, retractable tools, bright inspection optics, and heavy magnetic anchors, making it read as both machine and deployable construction platform. Keep the robot, all four purposeful tool arms, and the incomplete titan joint readable inside the upper square crop; use the lower portrait extension for scaffold feet, cables, sparks, and receding factory floor. Specific industrial action, clear functional silhouette, layered but controlled mechanical detail, warm weld light against cool steel, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+          "after": "Rare Astra Imperium MEDIUM-SIZED general-purpose autonomous flying construction assistant, a substantial work vehicle rather than a small drone or humanoid robot. The broad central fuselage is the size of a delivery truck, about four meters long, with total lift-unit span around seven meters. Four powerful enclosed vector-thrust lift nacelles support a heavy rectangular crimson-and-gunmetal modular hull with a clearly readable underside cargo bay, cable winch, tool racks and standardized replacement modules. Four robust non-humanoid articulated construction booms perform different useful jobs: one hoists a thick wall panel larger than an adult person, one stabilizes a structural beam, one welds a joint, and one plugs a heavy conduit into an unfinished allied machine. The assistant hovers only a few meters above an industrial construction apron. Two adult helmeted engineers stand on an adjacent gantry at the SAME DEPTH as the drone, each less than half the central hull height, to provide honest unmistakable scale. Arrange the complete wide body, four lift units, large lifted panel and at least one full-height human scale figure within the upper square. Modest low three-quarter side view, no extreme fisheye or miniature city illusion. All limbs are mechanical cranes and tools, not hands or legs. General-purpose utility roles must be obvious; no guns, missiles, cockpit pilot or combat-fighter silhouette. Lower portrait extends through scaffolds, power spools and the construction apron. Controlled warm weld light and cold lift exhaust, crisp anime mecha illustration with visible contour drawing and simple hard cel-shadows, no photoreal microtexture. Standalone vertical card illustration, portrait 5:8. Keep the main machine, decisive action and scale references readable in the upper square crop, with safe margins. Premium Industrial Sci-Fi Anime style with strong hand-drawn contour lines, deliberate cel-shaped value groups and designed highlights, painterly smoke and atmosphere. Matte dark-red ceramic and gunmetal industrial materials; original sci-fi equipment, no photorealism or glossy 3D render. Artwork only; no text, logos, watermarks, card frame, border, arrows, stat icons or other UI."
+        },
+        "artworkKey": {
+          "before": "engineering-robot",
+          "after": "engineering-drone"
+        },
+        "englishName": {
+          "before": "Engineering Robot",
+          "after": "Engineering Drone"
+        },
+        "movement": {
+          "before": 3,
+          "after": 5
+        },
+        "nameKey": {
+          "before": "工程机器人",
+          "after": "工程无人机"
+        },
+        "rulesText": {
+          "before": "该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+          "after": "该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。"
+        }
+      }
+    },
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "displayId": "AI-009",
+      "name": "泰拉理工学院",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求：6，可建造] [循环进度：3] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+          "after": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。"
+        }
+      }
+    },
+    {
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "displayId": "AI-010",
+      "name": "超载运转",
+      "fields": {
+        "artDescription": {
+          "before": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. An Astra Imperium industrial building is deliberately forced far beyond its operating limit: turbines spin white-hot, armored conduits bulge with triple-flow energy, exhaust stacks flare, and every connected output surges while the structure's black-steel ribs begin to split apart. A calm engineer at a remote control station has already committed to the irreversible overload, contrasting disciplined intent with imminent destruction. Keep the overdriven core, expanding energy paths, and first catastrophic structural cracks readable inside the upper square crop; use the lower portrait extension for warped gantries, flying fasteners, heat shimmer, and evacuating personnel. Dramatic tilted perspective, layered industrial storytelling, violent crimson-white light against deep charcoal metal, strong motion and exceptional material stress detail, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+          "after": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. An Astra Imperium industrial building is deliberately forced far beyond its operating limit: turbines spin white-hot, armored conduits bulge with triple-flow energy, exhaust stacks flare, and every connected output surges while repeated power pulses scorch the structure's black-steel ribs and reopen stressed seams. A calm engineer at a remote control station has already committed to the sustained overload, contrasting disciplined intent with accumulating structural damage. Keep the overdriven core, expanding energy paths, and progressive structural cracks readable inside the upper square crop; use the lower portrait extension for warped gantries, flying fasteners, heat shimmer, and evacuating personnel. Dramatic tilted perspective, layered industrial storytelling, violent crimson-white light against deep charcoal metal, strong motion and exceptional material stress detail, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons."
+        },
+        "rulesText": {
+          "before": "入场：[快速] 为一个友方建筑提供3点电能；本回合结束时，将该建筑消灭。",
+          "after": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。"
+        }
+      }
+    },
+    {
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4",
+      "displayId": "AI-012",
+      "name": "综合作战指令",
+      "fields": {
+        "rulesText": {
+          "before": "[箭头需求: 2] 入场：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
+          "after": "发动：为友方随从分配4点护甲；为敌方随从分配4点伤害。"
+        }
+      }
+    },
+    {
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "displayId": "AI-013",
+      "name": "超级核电站",
+      "fields": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "NW",
+            "SE"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "name": "工程师的智慧",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NE"
+          ],
+          "after": [
+            "NW",
+            "W"
+          ]
+        },
+        "artDescription": {
+          "before": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic spell. A veteran Astra Imperium engineer stands over a deep three-dimensional planning table as construction signals arrive from several surrounding directions, each connection resolving a different fragment of an impossible design. With one precise gesture, the fragments lock into multiple complete luminous blueprint prisms that rise toward the viewer, visually translating a well-connected building network into new knowledge rather than showing literal cards. Keep the engineer's focused face, hands, converging signal lines, and completed design prisms readable inside the upper square crop; use the lower portrait extension for layered machinery cutaways, physical model parts, drafting arms, and the surrounding dark laboratory. Sophisticated industrial problem-solving, ambitious perspective, rich brass, black steel, dark-red fabric, and cool projection-light contrast, cinematic depth, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+          "after": "Epic Astra Imperium construction spell. Preserve the established mature male engineer with swept dark hair, focused expression, charcoal technical coat and dark-red high collar, but show a concrete act of distributed construction instead of gathering knowledge. He directs a limited set of fabrication arms across several incomplete allied structures on a vast industrial assembly deck; one actuator closes a tower brace, another seats a machine armor panel, and a third locks a conduit into an unfinished support frame. The structures remain at visibly different completion stages; this is allocated incremental work, not instant creation of a completed city. His hand and the nearest assembly junction dominate the upper square; other work sites recede in layered depth into the lower portrait. Crisp meaningful machinery, cool inspection projection lines without text, restrained golden weld light, dark red cloth and matte black steel, Epic ambitious perspective and controlled narrative detail. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons."
+        },
+        "costAmount": {
+          "before": 4,
+          "after": 5
+        },
+        "rulesText": {
+          "before": "入场：[快速] 其3x3范围内每存在一个友方建筑单位，抽一张牌。",
+          "after": "发动：为己方建造中的单位分配至多4点建造进度。"
+        }
+      }
+    },
+    {
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "displayId": "AI-017",
+      "name": "城市规划师-薇",
+      "fields": {
+        "arrows": {
+          "before": [
+            "SW",
+            "SE"
+          ],
+          "after": [
+            "S",
+            "SE"
+          ]
+        },
+        "rulesText": {
+          "before": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离3以内的一个空格子上。",
+          "after": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
+        }
+      }
+    },
+    {
+      "uid": "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+      "displayId": "MCC-003",
+      "name": "天御MCP枢纽",
+      "fields": {
+        "rulesText": {
+          "before": "[循环进度：3] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
+          "after": "[循环进度：4] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。"
+        }
+      }
+    },
+    {
+      "uid": "faba227c-aad4-425d-b905-a7c62f14a94e",
+      "displayId": "MCC-004",
+      "name": "天庭乐师",
+      "fields": {
+        "rulesText": {
+          "before": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为其5x5范围内的友方随从恢复1点剩余行动点。",
+          "after": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计3点行动点。"
+        }
+      }
+    },
+    {
+      "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "displayId": "MCC-005",
+      "name": "集群主脑-埃米莉丝",
+      "fields": {
+        "costAmount": {
+          "before": 10,
+          "after": 12
+        },
+        "health": {
+          "before": 9,
+          "after": 10
+        },
+        "rulesText": {
+          "before": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度；不足3个时全部触发。",
+          "after": "[循环进度：30] 计数：友方机械随从移动的总格数。完成：随机填满你场上三张卡牌的进度。"
+        }
+      }
+    },
+    {
+      "uid": "675083cf-30bf-49c8-b7bf-d18fe67fe493",
+      "displayId": "MCC-006",
+      "name": "上位天使-炮台巡游者",
+      "fields": {
+        "costAmount": {
+          "before": 8,
+          "after": 9
+        },
+        "movement": {
+          "before": 4,
+          "after": 5
+        },
+        "rulesText": {
+          "before": "[循环进度：5] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。",
+          "after": "[循环进度：4] 计数：该随从移动的格数。完成：对最近的一个非友方随从造成4点伤害；距离相同时随机选择。"
+        }
+      }
+    },
+    {
+      "uid": "6c82d274-e2b9-4626-9bab-deb01dd09048",
+      "displayId": "MCC-008",
+      "name": "超越进制",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NW",
+            "SW"
+          ],
+          "after": [
+            "NW"
+          ]
+        },
+        "costAmount": {
+          "before": 8,
+          "after": 9
+        }
+      }
+    },
+    {
+      "uid": "5121261f-8b88-4bb0-b882-717b44188f74",
+      "displayId": "MCC-009-01",
+      "name": "飞升之剑-烬白",
+      "fields": {
+        "rulesText": {
+          "before": "[循环进度：7] 计数：你获得星能的数量。完成：复原你本回合的移动点数和攻击次数。",
+          "after": "圣盾。[循环进度：7] 计数：你获得星能的数量。完成：获得圣盾，复原你本回合的移动点数和攻击次数。"
+        }
+      }
+    },
+    {
+      "uid": "b6326476-ec83-478d-afcd-91b3cec23740",
+      "displayId": "MCC-014",
+      "name": "天使-家园守护者",
+      "fields": {
+        "rulesText": {
+          "before": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配6点护甲，逐点等概率抽取、可重复选中同一随从，确定分配后同批赋予。",
+          "after": "[循环进度：6] 计数：友方随从受到的伤害量。完成：为友方随从随机分配4点护甲。"
+        }
+      }
+    }
+  ],
+  "added": [
+    {
+      "id": "FNG-041",
+      "nameKey": "撕裂时潮的潜兽",
+      "englishName": "Chronotide Riftsurf Diver",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 8,
+      "attack": 3,
+      "health": 7,
+      "movement": 4,
+      "durability": 0,
+      "rulesText": "发动：选择一张己方法术牌，重置其发动效果。",
+      "arrows": [
+        "NE"
+      ],
+      "tribes": [
+        "奇兽"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "chronotide-riftsurf-diver",
+      "artDescription": "Epic creature. A single Riftsurf Diver tears along the edge of a temporal current through an abandoned industrial phase laboratory. Preserve the established coherent elongated SIX-LIMBED body, forked frontal sensory crown, paired translucent pressure vanes, obsidian-blue skin, pale causal stripes and cyan phase edges. Show three paired sets of limbs on one continuous body, never a broken or fragmented Hollow-Null anatomy. Its crown parts a narrow flowing time seam; beside the dive path a spent spell apparatus returns to an earlier charged configuration, expressed by a controlled returning light sequence, without UI or literal cards. Dynamic three-quarter view, crown and forebody uppermost, the long tail curling into the lower portrait; distant intact gantries and suspended dust establish ordered time displacement. Cool slate machinery, deep blue creature and disciplined cyan-white rim light, Epic layered depth, clear natural anatomy, no armor costume or invented new species traits. Standalone vertical card artwork for Time-Block Hero, portrait 5:8. Keep the decisive subject and action within the upper square crop, with edge clearance; the lower extension carries environmental depth. Premium industrial sci-fi anime illustration, crisp contour drawing, designed cel-shaped shadows and highlights, matte engineered materials and painterly atmosphere; no photorealism, glossy 3D or chibi styling. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "FNG-042",
+      "nameKey": "光能盾特工",
+      "englishName": "Photonic Shield Operative",
+      "cardType": "Minion",
+      "classId": "Neutral",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 4,
+      "attack": 4,
+      "health": 4,
+      "movement": 4,
+      "durability": 0,
+      "rulesText": "圣盾。",
+      "arrows": [],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "photonic-shield-operative",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "AI-022",
+      "nameKey": "鱼鹰行动",
+      "englishName": "Operation Osprey",
+      "cardType": "Spell",
+      "classId": "AstraImperium",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 6,
+      "durability": 0,
+      "rulesText": "发动：选择一个敌方非英雄随从，从牌堆/弃牌堆尽可能将征召兵召唤至其左右两侧的格子。",
+      "arrows": [
+        "W",
+        "E"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "operation-osprey",
+      "artDescription": "Rare Astra Imperium tactical spell, Operation Osprey. A low-flying original military tilt-rotor assault transport breaches a defended industrial front line and air-drops imperial conscripts directly into the enemy position. The narrative is vertical insertion from sky to hostile ground: the aircraft is clearly in flight with two large rotating lift nacelles and an open troop ramp, two armored conscripts are visibly descending on separate rappel lines, and another has just touched down beside hostile barricades. Their dark-red standardized armor distinguishes them from an off-white enemy defender turning toward the sudden incursion. Downwash lifts dust, tracer streaks pass behind the transport, and troops spread to opposite sides of the enemy position after landing. Show the aircraft and suspended troops together in the upper square, with a low three-quarter dramatic view across the broken defensive line; the lower extension contains the landing zone, debris and receding trench structures. This must read immediately as an airborne assault onto an enemy line, not soldiers walking out of ground passages and not an osprey bird. No modern real-world military logos, copied real aircraft markings or science-fantasy teleport portals. Standalone vertical card illustration, portrait 5:8. Keep the main machine, decisive action and scale references readable in the upper square crop, with safe margins. Premium Industrial Sci-Fi Anime style with strong hand-drawn contour lines, deliberate cel-shaped value groups and designed highlights, painterly smoke and atmosphere. Matte dark-red ceramic and gunmetal industrial materials; original sci-fi equipment, no photorealism or glossy 3D render. Artwork only; no text, logos, watermarks, card frame, border, arrows, stat icons or other UI.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
+      "uid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    }
+  ],
+  "preparedUidOrder": [
+    "f14f6fca-6862-441b-9254-8b3df5556389",
+    "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+    "094a41e6-d797-42ea-85ac-d44bd6049c47",
+    "c285d915-f68b-4827-9c39-c4911895e360",
+    "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+    "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+    "631f5e35-9d09-4221-b994-d2ac011560a6",
+    "1529f937-224e-4d19-a272-0740e98b649e",
+    "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+    "ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+    "76c85923-76d9-4465-b8bd-a2a3a0301124",
+    "11c4a471-c45c-4055-b1a7-a335f6833976",
+    "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+    "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+    "97538b9d-68f1-4a74-861c-3b6a517890ba",
+    "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+    "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+    "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+    "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+    "9e62707e-3614-45ea-8480-4d17d452cd2d",
+    "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+    "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+    "353fe62e-a917-4f71-933c-c2de12eec7e1",
+    "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+    "bf071411-bdf6-41bb-847f-0e836ffffa17",
+    "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+    "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+    "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+    "1be158d1-50ba-4f53-a52f-08696554c091",
+    "2946ca82-3e15-40d8-93f8-55acfad43645",
+    "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+    "619301f9-72b0-4f86-a36c-e55046d138f5",
+    "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+    "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+    "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+    "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+    "080140fa-2ebe-45ad-b64f-05f10904ac64",
+    "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+    "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+    "df4f769d-486c-4233-a0ca-f1827c7521c4",
+    "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+    "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+    "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
+    "b60225b4-f701-49cd-875a-ef77bb0eba0a",
+    "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+    "a463123c-664c-427e-b079-c60d79dd60c9",
+    "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+    "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+    "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
+    "2a51f1cc-ab38-4d84-ba97-aca096943395",
+    "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+    "e66c2fd5-ee14-4cb1-b55e-094324214830",
+    "ea18dc9c-79f3-46e5-8db8-8bf1211b6073",
+    "70f56934-997a-4eaa-b34b-1745d6ac06f7",
+    "ff002f60-4a64-4d42-96f1-ba163bb8e59c",
+    "63699e58-6aa0-4012-b096-364a7cff20e7",
+    "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+    "ef4b99f1-3ee1-44ba-ac60-4648d8082654",
+    "49325659-618c-44a0-b0d7-0f3b5a9f88ae",
+    "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+    "872bb708-d5c1-49c3-810d-d1d748a8276c",
+    "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+    "df733651-e22b-4b6b-bd32-f0c80d350d75",
+    "b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+    "c5972274-f51c-4859-ae8a-cd1f5739d941",
+    "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+    "ca101a43-d6c8-4289-b967-947e7212b941",
+    "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+    "385f1bae-5ade-411d-abd1-850d74944004",
+    "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+    "4eddea4a-df91-425d-bbdf-b216da8381d8",
+    "1a8e356b-c72a-4181-8aa1-f2426c52cc8f",
+    "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+    "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+    "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+    "b85a69b8-6241-45c9-a168-a10282390c44",
+    "a1edce46-f210-4215-ab59-f35a5173c50d",
+    "07563f0e-c7d5-4448-a351-fa618dfd924c",
+    "233e64f0-fc55-44a4-af3a-10222df336c4",
+    "60268ee4-2023-490d-86ba-a6476cead501",
+    "4c2033a5-fb41-4c96-b540-16572b690c70",
+    "69f1c181-ade4-485e-9923-e5949cda7f93",
+    "204a68df-1ff8-4d10-9309-aafbd90d6079",
+    "62452283-0e35-4ba0-83cc-2ae115078866",
+    "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+    "6282e729-e313-4bb6-a979-d19a27917d85",
+    "7a4d1b62-bf76-4807-a441-2b778ddd6f01",
+    "bb14410e-c906-4620-a04c-6886f5039c8e",
+    "c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+    "e456b12e-bbd3-444d-9583-222fc4e80780",
+    "b5e0ec0b-e614-4862-9eff-bba73677708b",
+    "43b464d4-781c-4390-80eb-d926b7dea2d9",
+    "454171b3-f6cb-4907-8e6c-baca849b06b3",
+    "4b42977a-a289-4520-8aec-8439b6edc5a3",
+    "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1",
+    "e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+    "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+    "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+    "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+    "15cbb572-6a6a-47f0-ae48-561df3be738c",
+    "e1362804-dea0-49b5-9513-8c1317369f9e",
+    "a60555e6-d405-47de-bdff-c84031d53448",
+    "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+    "3e56ca22-efd1-4cd0-822f-beceb830e41d",
+    "0764d0f5-4050-49ab-924f-2485c4381e26",
+    "430888e7-5e44-4599-98d5-7a8c0824b40f",
+    "0f329ffc-f031-448f-aaa0-4f4456f81298",
+    "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+    "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+    "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+    "b682e438-d931-4a93-8698-ae9320f150c4",
+    "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+    "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+    "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+    "341ea244-575c-445b-b1a6-ea761c92145f",
+    "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+    "0bd031d4-49d5-4720-b75b-58eb95690fb1",
+    "3d1865c5-b2e7-4003-96d1-07223a482030",
+    "bdd6fa88-21f9-4eed-8248-00e550344739",
+    "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+    "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+    "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+    "daa6589c-0ae6-4073-9591-ea63af74ae54",
+    "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+    "d65e0578-98e4-46af-aeb2-134cae1a812b",
+    "84ae8db2-69df-4ffb-9010-16d3551eda58",
+    "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+    "faba227c-aad4-425d-b905-a7c62f14a94e",
+    "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+    "675083cf-30bf-49c8-b7bf-d18fe67fe493",
+    "731b9886-bc52-4778-b3ea-3ec7319b5d12",
+    "6c82d274-e2b9-4626-9bab-deb01dd09048",
+    "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+    "5121261f-8b88-4bb0-b882-717b44188f74",
+    "8f084b1a-e770-413d-800e-61165fc3b4d9",
+    "0c3119ed-d309-4a38-b760-1839d8bae416",
+    "274a5d57-9246-4b40-a51a-3bc473e7193b",
+    "21401534-7b13-41d1-a4c4-e52108726727",
+    "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+    "b6326476-ec83-478d-afcd-91b3cec23740",
+    "05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
+    "43588596-cb83-42e9-b6aa-8cc3ea07e6cf",
+    "ad01b613-32a7-422a-a227-6e921ce275c2",
+    "1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+    "d06e4b53-ba45-4f1b-9034-7a7d9773bceb",
+    "7522e0e5-1fb6-4a32-914d-992aab4e3c62"
+  ],
+  "semanticDecisions": {
+    "FNG-033": "删除默认每回合一次只是卡文精简，实际每能力每回合一次保持；5护甲改圣盾。",
+    "MCC-005": "删除不足说明仅卡文精简，随机不同卡牌不足3全取、填满逻辑保持；费用12、生命10。",
+    "MCC-014": "随机分配算法说明删除不改行为；点数6改4，逐点等概率有放回，汇总同批。",
+    "MCC-004": "不同名来源计数保持；取消5×5，改全场随机分配3行动点，按实际缺口封顶、缺口不足不浪费。",
+    "FNG-040": "尽可能选3不同友方随从赋圣盾；不足3全取，另全体治疗2。",
+    "FNG-041": "重置己方场上法术全部主动能力已用次数，不自动执行、不返还成本；魔法卡规范为法术牌。",
+    "AI-009": "循环3改4，计数受电能加成，完成减免恒1。",
+    "AI-022": "费用6；自家牌堆与弃牌堆联合候选召唤征召兵，左右合法格尽可能执行。"
+  }
+}
