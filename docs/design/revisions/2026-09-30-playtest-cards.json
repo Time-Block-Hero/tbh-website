@@ -1,0 +1,493 @@
+{
+  "schemaVersion": 1,
+  "issueUrl": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/100",
+  "baseCommit": "09b844cf0897154c07d78037e37f4eb7a73e2de2",
+  "cardsSha256": "5909854d833c20d0e963ffc81f71671a4846f0ad8f157fda601cf9b0f45ed3c8",
+  "status": "DesignApproved_ExecutionNotValidated",
+  "oldCount": 140,
+  "newCount": 143,
+  "changed": [
+    {
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "displayId": "FNG-005",
+      "name": "宝藏星能石",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "rarity": {
+          "before": "Epic",
+          "after": "Rare"
+        }
+      }
+    },
+    {
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "displayId": "FNG-008",
+      "name": "探机",
+      "changeKinds": [
+        "behavior"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "本随从的箭头仅在其被放置的回合生效。",
+          "after": "[一次性箭头]"
+        }
+      }
+    },
+    {
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
+      "displayId": "FNG-012",
+      "name": "飞船失火！",
+      "changeKinds": [
+        "behavior"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将4点伤害随机分配到己方单位上。",
+          "after": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。"
+        }
+      }
+    },
+    {
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "displayId": "FNG-015",
+      "name": "刺客-J",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "tribes": {
+          "before": [],
+          "after": [
+            "反抗军"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "displayId": "FNG-018",
+      "name": "星能矿机",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "costAmount": {
+          "before": 2,
+          "after": 0
+        },
+        "movement": {
+          "before": 2,
+          "after": 1
+        }
+      }
+    },
+    {
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "displayId": "FNG-020",
+      "name": "鲁莽的先锋",
+      "changeKinds": [
+        "wordingOnly"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "发动：每回合限一次，自身获得3点护甲。",
+          "after": "发动：自身获得3点护甲。"
+        }
+      }
+    },
+    {
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "displayId": "FNG-028",
+      "name": "「金扳手」工程师",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "W"
+          ]
+        },
+        "attack": {
+          "before": 3,
+          "after": 2
+        },
+        "rulesText": {
+          "before": "入场：令一个机械获得+2攻击/+2速度。",
+          "after": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。"
+        }
+      }
+    },
+    {
+      "uid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "displayId": "FNG-031",
+      "name": "造物之森疗愈师",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "NE"
+          ]
+        },
+        "rulesText": {
+          "before": "发动：令一个距离4以内的友方非机械随从回复5点生命值。",
+          "after": "[一次性箭头] 发动：令一个距离4以内的友方非机械随从回复5点生命值。"
+        }
+      }
+    },
+    {
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "displayId": "FNG-033",
+      "name": "黑市护甲贩",
+      "changeKinds": [
+        "behavior"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得等同于该牌弃置前星能费用的护甲。",
+          "after": "每回合限一次，以弃置一张手牌为成本发动：令一个友方随从获得5护甲。"
+        }
+      }
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "name": "护甲军需官",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "SE"
+          ]
+        },
+        "attack": {
+          "before": 2,
+          "after": 3
+        },
+        "movement": {
+          "before": 2,
+          "after": 3
+        }
+      }
+    },
+    {
+      "uid": "63699e58-6aa0-4012-b096-364a7cff20e7",
+      "displayId": "SA-004",
+      "name": "遗忘团长德雷克",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "costAmount": {
+          "before": 0,
+          "after": 1
+        }
+      }
+    },
+    {
+      "uid": "ca101a43-d6c8-4289-b967-947e7212b941",
+      "displayId": "SA-013",
+      "name": "「黑手」供货商-奇莫",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "costAmount": {
+          "before": 7,
+          "after": 6
+        }
+      }
+    },
+    {
+      "uid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "displayId": "SC-000",
+      "name": "诺亚",
+      "changeKinds": [
+        "behavior"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "首个回合开始时：抽2张牌并令其获得[保留]。",
+          "after": "光环：你手牌最左侧不具有[保留]的牌获得[保留]。"
+        }
+      }
+    },
+    {
+      "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
+      "displayId": "SC-003",
+      "name": "烈阳圣女-阿蕾缇娅",
+      "changeKinds": [
+        "wordingOnly"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "你的所有卡牌的保留回合数视作+2。",
+          "after": "光环：你的所有卡牌的保留回合数视作+2。"
+        }
+      }
+    },
+    {
+      "uid": "4c2033a5-fb41-4c96-b540-16572b690c70",
+      "displayId": "SC-005",
+      "name": "日珀蜂群",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "SE"
+          ]
+        },
+        "attack": {
+          "before": 1,
+          "after": 2
+        },
+        "rulesText": {
+          "before": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有「日珀蜂蜜」在本回合获得[保留]。",
+          "after": "[一次性箭头] 入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有蜂蜜在本回合获得 [保留]。"
+        }
+      }
+    },
+    {
+      "uid": "69f1c181-ade4-485e-9923-e5949cda7f93",
+      "displayId": "SC-006",
+      "name": "燃魂学徒",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "S"
+          ]
+        },
+        "rulesText": {
+          "before": "每当该单位受到法术伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
+          "after": "[一次性箭头] 每当该单位受到伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。"
+        }
+      }
+    },
+    {
+      "uid": "204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "displayId": "SC-007",
+      "name": "日光上师",
+      "changeKinds": [
+        "wordingOnly"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "你控制的所有法术牌的法术伤害+1。",
+          "after": "光环：你控制的所有法术牌的法术伤害+1。"
+        }
+      }
+    },
+    {
+      "uid": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1",
+      "displayId": "SC-018-01",
+      "name": "阳炎爆裂拳",
+      "changeKinds": [
+        "behavior"
+      ],
+      "changes": {
+        "rulesText": {
+          "before": "[保留] 入场：选择一个位于任意己方「日轮飞星-索拉」3×3范围内的非友方随从，对其造成2点伤害，并按此牌的有效保留回合数额外重复等量次数。",
+          "after": "[保留] 发动：选择一个位于任意己方「日轮飞星-索拉」3×3范围内的非友方随从，对其造成2点伤害，并按此牌的有效保留回合数额外重复等量次数。"
+        }
+      }
+    },
+    {
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "displayId": "AI-020",
+      "name": "铁驭姬-维拉",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [
+            "E",
+            "S"
+          ],
+          "after": [
+            "NW"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "displayId": "AI-020-01",
+      "name": "「革命日」",
+      "changeKinds": [
+        "attributes"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [
+            "E",
+            "S"
+          ],
+          "after": [
+            "NW",
+            "SE"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "6c82d274-e2b9-4626-9bab-deb01dd09048",
+      "displayId": "MCC-008",
+      "name": "超越进制",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "costAmount": {
+          "before": 7,
+          "after": 8
+        },
+        "rulesText": {
+          "before": "入场：本回合内，你所有进度效果的目标值变为各自原始目标值的75%（向上取整）。",
+          "after": "入场：[快速] 本回合内，你所有进度效果的目标值变为各自原始目标值的一半（向上取整）。"
+        }
+      }
+    },
+    {
+      "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+      "displayId": "MCC-013",
+      "name": "天庭机灵",
+      "changeKinds": [
+        "attributes",
+        "behavior"
+      ],
+      "changes": {
+        "arrows": {
+          "before": [],
+          "after": [
+            "NW"
+          ]
+        },
+        "attack": {
+          "before": 2,
+          "after": 1
+        },
+        "rulesText": {
+          "before": "[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。",
+          "after": "[一次性箭头] \n[循环进度：4] 计数：该随从移动的格数。完成：获得+1速度。"
+        }
+      }
+    }
+  ],
+  "added": [
+    {
+      "id": "FNG-UN-009",
+      "nameKey": "虚空神的赦免",
+      "englishName": "",
+      "cardType": "Resource",
+      "classId": "Neutral",
+      "rarity": "Legendary",
+      "collectable": false,
+      "costResource": "Star",
+      "costAmount": 0,
+      "durability": 0,
+      "rulesText": "该卡所在的格子视作被箭头指向。拾取：你的英雄失去2生命。",
+      "arrows": [],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "parentUid": null,
+      "collectionKind": "NonCollectible"
+    },
+    {
+      "id": "SC-021",
+      "nameKey": "赋能者艾诗丽",
+      "englishName": "",
+      "cardType": "Minion",
+      "classId": "SolarChurch",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 4,
+      "attack": 2,
+      "health": 4,
+      "movement": 2,
+      "durability": 0,
+      "rulesText": "入场&时停阶段开始时：选择两张手牌，它们视作被额外保留了一回合。",
+      "arrows": [
+        "N"
+      ],
+      "tribes": [
+        "人类"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "AI-021",
+      "nameKey": "帝国之盾",
+      "englishName": "",
+      "cardType": "Minion",
+      "classId": "AstraImperium",
+      "rarity": "Epic",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 6,
+      "attack": 0,
+      "health": 6,
+      "movement": 0,
+      "durability": 0,
+      "rulesText": "[箭头需求: 3，可建造] 入场&时停阶段开始时：选择两个己方随从，令其获得3护甲（受电能加成）。",
+      "arrows": [
+        "NE"
+      ],
+      "tribes": [
+        "建筑"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    }
+  ],
+  "deleted": [],
+  "interpretations": {
+    "诺亚": "与阳炎信徒采用相同保留名额光环，多个来源叠加名额、实时递补。",
+    "赋能者艾诗丽": "真实发生一次保留并触发被保留时；不授予烈阳恩典另附的临时保留资格或快速。",
+    "所有蜂蜜": "当前明确身份集合仅日珀蜂蜜，不按名称子串推断。",
+    "鲁莽的先锋": "移除重复限次文字，仍遵守默认主动能力每回合一次。"
+  },
+  "newArtworkStatus": "三张新卡英文名、画面描述和正式插画未完成；本轮使用明确fallback，不生成美术。"
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "revisionId": "issue78-20260927",
-  "approvalUrl": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/78",
+  "revisionId": "issue100-20260930",
+  "approvalUrl": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/100",
   "status": "DesignApproved_ExecutionNotValidated",
   "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
   "deletionEvidence": "data/baselines/issue44-20260920/revision.json",
@@ -35,6 +35,7 @@
   ],
   "expectedUids": [
     "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+    "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
     "05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
     "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
     "07563f0e-c7d5-4448-a351-fa618dfd924c",
@@ -49,6 +50,7 @@
     "0dde3972-5b69-4c3c-a17b-855656bf15cf",
     "0f329ffc-f031-448f-aaa0-4f4456f81298",
     "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+    "103f0af6-2a92-471e-be1a-e5fad6fa5735",
     "11c4a471-c45c-4055-b1a7-a335f6833976",
     "1529f937-224e-4d19-a272-0740e98b649e",
     "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
@@ -108,6 +110,7 @@
     "7a4d1b62-bf76-4807-a441-2b778ddd6f01",
     "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
     "84ae8db2-69df-4ffb-9010-16d3551eda58",
+    "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
     "872bb708-d5c1-49c3-810d-d1d748a8276c",
     "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
     "8e486b7d-4654-40fb-baf5-c52b38010dd4",

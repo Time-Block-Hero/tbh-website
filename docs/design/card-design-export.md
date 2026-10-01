@@ -10,7 +10,9 @@
 
 `data/card-identity-migration.json` 固定原设计基线提交和原 cards 文件 SHA-256，以及137条 `baselineDisplayId → uid` 关系。它不是当前编号索引；重排后不得改写历史编号。四张排除、四张明确空效果、七张资源类型迁移以 UID 数组记录。两份智慧、两份野果分别保留身份。此文件经评审后不重新生成；后续变动必须提供明确迁移和差异记录。
 
-`data/card-design-source-revision.json` 保存后续批准的身份与收录策略修订。当前 `issue78-20260927` 对应[统一任务 #78](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/78)：保留历史 bridge 原字节，引用 `data/baselines/issue44-20260920/revision.json` 已批准的五张旧中立衍生删除记录（原 FNG-UN-004/010/011/012/013），解除维拉、革命日、烬白两形态的四 UID 排除，并固定本轮140张 UID 集合。历史137张减去5张、加上前轮2张及本轮6张，得到140张。这里的收录许可不是游戏实现或执行验收证明。
+`data/card-design-source-revision.json` 保存后续批准的身份与收录策略修订。历史 `issue78-20260927` 对应[统一任务 #78](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/78)：保留历史 bridge 原字节，引用 `data/baselines/issue44-20260920/revision.json` 已批准的五张旧中立衍生删除记录（原 FNG-UN-004/010/011/012/013），解除维拉、革命日、烬白两形态的四 UID 排除，并固定本轮140张 UID 集合。历史137张减去5张、加上前轮2张及本轮6张，得到140张。这里的收录许可不是游戏实现或执行验收证明。
+
+当前 `issue100-20260930` 对应[试玩来源任务 #100](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/100)，保留此前140张身份与父子关系，仅新增赦免、艾诗丽、帝国之盾三个 UID，固定143张集合。逐 UID 的22项旧卡差异、3张新增完整设计、基线提交、原始源摘要及已确认解释见 [试玩设计修订](revisions/2026-09-30-playtest-cards.json)。三张新卡英文名与美术尚未完成；导出允许明确空美术，游戏fallback由内容交付登记。再次读取设计源并与该记录 `cardsSha256` 比较可检测后续编辑漂移，不能把旧冻结快照称为最新设计。
 
 导出器独立保存已审阅修订内容的规范化摘要：单独改写修订文件不能新增删除许可或更换身份。修订必须匹配历史 bridge 原字节摘要、原始编号/UID关系、完整的批准 UID 集合及解除排除列表。增删 UID 或变更收录策略需要新的明确来源修订及对应合同审阅；卡文、数值、名称、展示编号、美术描述和插画选择修改不需要改这份身份清单，仍由 cards 原始字节摘要及接收方审阅追踪。合同不固定整份当前 cards 摘要，允许后续卡图任务正常导出。
 
@@ -45,6 +47,6 @@ cards 按 UID 升序输出，policy 数组排序，格式与输入字节相同�
 
 运行 `node tools/sync-cards-from-data.mjs` 同步预览、镜像和页面数据；`npm run build`、`npm test` 验证生成数据及合同。新增测试包含编辑器真实重排/新建/衍生/表单路径、HTTP Resource 保存重开、拒绝非法保存、两份同名身份、选图完整性、版本来源和导出确定性。HTTP 测试需要能绑定 localhost 临时端口。
 
-`node --test tools/tests/card-design-source-revision.test.mjs tools/tests/card-designs.test.mjs` 另行验证140张来源修订、历史删除凭据、解除四 UID 排除、未声明删除/新增/身份替换、无效修订、历史提交不受工作树修订污染，以及卡文/美术修改无需重写身份合同。Rules 接收方仍需在后续任务适配此修订、作者内容和正式验收，website 导出成功不等于已完成该适配。
+`node --test tools/tests/card-design-source-revision.test.mjs tools/tests/card-designs.test.mjs` 另行验证143张来源修订、历史删除凭据、解除四 UID 排除、未声明删除/新增/身份替换、无效修订、历史提交不受工作树修订污染，以及卡文/美术修改无需重写身份合同。Rules 接收方仍需在后续任务适配此修订、作者内容和正式验收，website 导出成功不等于已完成该适配。
 
 本地保存使用原子读取的 cardsRevision 和显式 UID 操作（编辑、新建、删除、重排）验证变更范围；旧快照、身份互换或越权改动其他卡牌会被拒绝。失败更改单独保留为未同步恢复草稿，不覆盖最后成功草稿；编辑器恢复已确认身份并提示先导出草稿、重新加载。浏览器草稿导入只能修改既有身份的内容，不能在导入时改写 UID 与展示编号关系。

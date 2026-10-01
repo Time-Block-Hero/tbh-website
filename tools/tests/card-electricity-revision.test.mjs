@@ -14,6 +14,7 @@ const parse = relative => JSON.parse(read(relative));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const revision = parse('docs/design/revisions/2026-09-27-electricity-cards.json');
 const rulings = parse('docs/design/revisions/2026-09-27-rulings.json');
+const playtest = parse('docs/design/revisions/2026-09-30-playtest-cards.json');
 const foxnick = parse('docs/design/revisions/2026-09-27-foxnick-active-attack.json');
 const currentBytes = read('data/cards.json');
 const current = JSON.parse(currentBytes);
@@ -64,7 +65,7 @@ function reconstructPrepared() {
 }
 
 function currentApprovedDesign() {
-  const dataset = reconstructPrepared();
+  let dataset = reconstructPrepared();
   assert.equal(rulings.schemaVersion, 1);
   assert.equal(rulings.cards.length, 1);
   const amendment = rulings.cards[0];
@@ -80,6 +81,38 @@ function currentApprovedDesign() {
   assert.equal(fox.rulesText, foxnick.before);
   assert.equal(foxnick.after, '每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。');
   fox.rulesText = foxnick.after;
+  // Later committed revisions (Quick support, art naming and Foxnick speed) are
+  // retained by the next approved batch; the earlier receipts stay historical.
+  dataset = JSON.parse(execFileSync("git", ["--no-replace-objects", "show", `${playtest.baseCommit}:data/cards.json`], { cwd: root }));
+  assert.deepEqual([playtest.oldCount, playtest.newCount, playtest.changed.length, playtest.added.length], [140, 143, 22, 3]);
+  assert.deepEqual(playtest.deleted, []);
+  for (const entry of playtest.changed) {
+    const target = dataset.cards.find(value => value.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, change] of Object.entries(entry.changes)) {
+      assert.deepEqual(target[field], change.before, `${entry.name}/${field}`);
+      target[field] = structuredClone(change.after);
+    }
+  }
+  for (const card of playtest.added) {
+    assert.ok(!dataset.cards.some(value => value.uid === card.uid));
+    dataset.cards.push(structuredClone(card));
+  }
+  // Approved visual completion: exact names/keys only. These remain protected
+  // non-art fields; this is not a blanket allowance to rename cards or bindings.
+  const visualNames = [
+    ['0580aac7-5301-43db-b2d9-1bc56b2e75b8', 'Shield of the Imperium', 'shield-of-the-imperium'],
+    ['103f0af6-2a92-471e-be1a-e5fad6fa5735', 'Ashley the Empowerer', 'ashley-the-empowerer'],
+    ['85fa412a-ca02-420f-8d4a-1f5f6b4cc56c', 'Mercy of the Void God', 'mercy-of-the-void-god'],
+    ['094e7c7a-25de-48b2-8df1-b2c47f5b90ea', 'Lost Wisdom', 'lost-wisdom'],
+  ];
+  for (const [uid, englishName, artworkKey] of visualNames) {
+    const target = dataset.cards.find(card => card.uid === uid);
+    assert.ok(target, uid);
+    assert.equal(target.englishName, englishName === 'Lost Wisdom' ? englishName : '');
+    assert.equal(target.artworkKey, '');
+    Object.assign(target, { englishName, artworkKey });
+  }
   return dataset;
 }
 
@@ -158,7 +191,7 @@ test('current approved identities and parent references stay intact, including A
   assert.equal(augustus.parentUid, 'bdd6fa88-21f9-4eed-8248-00e550344739');
   assert.equal(augustus.collectionKind, 'Token');
   const exported = exportDirtyDesigns(root);
-  assert.equal(exported.cards.length, 140);
+  assert.equal(exported.cards.length, 143);
   assert.deepEqual(exported.policy.excludedUids, []);
   for (const uid of identities.admittedPreviouslyExcludedUids) assert.ok(exported.cards.some(card => card.uid === uid));
 });

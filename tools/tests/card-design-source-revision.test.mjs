@@ -51,15 +51,15 @@ function commit(dir) {
 test("approved revision retains historical bridge and exactly the five previously approved retirements", () => {
   const evidence = JSON.parse(read(revision.deletionEvidence));
   assert.equal(hash(bridgeBytes), revision.identityBridgeSha256);
-  assert.equal(revision.expectedUids.length, 140);
+  assert.equal(revision.expectedUids.length, 143);
   assert.deepEqual(revision.deletedBaselineCards.map((entry) => entry.uid).sort(), evidence.deleted.map((entry) => entry.uid).sort());
   for (const entry of revision.deletedBaselineCards) assert.deepEqual(bridge.cards.find((card) => card.uid === entry.uid), entry);
   assert.deepEqual(revision.admittedPreviouslyExcludedUids, [...bridge.excludedUids].sort());
 });
 
-test("committed 140-card revision records raw provenance and admits the four previously excluded identities", (t) => {
+test("committed 143-card revision records raw provenance and admits the four previously excluded identities", (t) => {
   const dir = fixture(t), sha = commit(dir), result = exportCommittedDesigns(dir, sha);
-  assert.equal(result.cards.length, 140);
+  assert.equal(result.cards.length, 143);
   assert.deepEqual(result.policy.excludedUids, []);
   assert.equal(result.source.sourceRevisionSha256, hash(revisionBytes));
   assert.equal(result.source.sourceRevisionId, revision.revisionId);
@@ -148,7 +148,7 @@ test("card text, art and display-ID edits do not require changing the approved U
   dataset.cards[0].artDescription = "Revised illustration";
   dataset.cards[0].id = "REORDERED-001";
   const dir = fixture(t, dataset), sha = commit(dir), result = exportCommittedDesigns(dir, sha);
-  assert.equal(result.cards.length, 140);
+  assert.equal(result.cards.length, 143);
   assert.equal(result.source.sourceRevisionSha256, hash(revisionBytes));
   assert.equal(result.cards.find((card) => card.uid === dataset.cards[0].uid).rulesText, dataset.cards[0].rulesText);
   assert.equal(exportDirtyDesigns(dir).source.dirty, true);
@@ -161,8 +161,28 @@ test("explicit sync preview may diverge from inventory without becoming producti
   const dir = fixture(t, dataset);
   assert.throws(() => exportDirtyDesigns(dir), /expected UID missing/);
   const preview = exportDirtyDesigns(dir, { requireCompleteBaseline: false });
-  assert.equal(preview.cards.length, 139);
+  assert.equal(preview.cards.length, 142);
   assert.equal(preview.source.dirty, true);
   assert.equal(preview.source.commit, null);
   assert.throws(() => exportCommittedDesigns(dir, commit(dir)), /expected UID missing/);
+});
+
+test("playtest freeze preserves every prior identity and records the exact designer delta", () => {
+  const delta = JSON.parse(read("docs/design/revisions/2026-09-30-playtest-cards.json"));
+  const bytes = read("data/cards.json");
+  const current = JSON.parse(bytes);
+  const previous = JSON.parse(execFileSync("git", ["show", `${delta.baseCommit}:data/cards.json`], { cwd: root }));
+  const before = new Map(previous.cards.map(card => [card.uid, card]));
+  const after = new Map(current.cards.map(card => [card.uid, card]));
+  // The receipt certifies the frozen design input. Current illustration work is
+  // allowed, while card-electricity-revision.test.mjs protects every non-art field.
+  const frozenBytes = execFileSync("git", ["--no-replace-objects", "show", "034b251:data/cards.json"], { cwd: root });
+  assert.equal(hash(frozenBytes), delta.cardsSha256, "historical designer source receipt must stay exact");
+  assert.deepEqual([before.size, after.size, delta.changed.length, delta.added.length], [140, 143, 22, 3]);
+  for (const [uid, card] of before) {
+    assert.ok(after.has(uid));
+    for (const field of ["uid", "parentUid", "collectionKind"]) assert.deepEqual(after.get(uid)[field], card[field]);
+  }
+  assert.deepEqual([...after.keys()].filter(uid => !before.has(uid)).sort(), delta.added.map(card => card.uid).sort());
+  assert.deepEqual(delta.deleted, []);
 });
