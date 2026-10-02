@@ -156,6 +156,19 @@ function currentApprovedDesign() {
     assert.ok(!dataset.cards.some(value => value.uid === card.uid));
     dataset.cards.push(structuredClone(card));
   }
+  const finalTune = parse('docs/design/revisions/2026-10-02-ashley-master-corona.json');
+  assert.deepEqual([finalTune.oldCount, finalTune.newCount, finalTune.changed.length], [147, 147, 2]);
+  assert.deepEqual(finalTune.added, []);
+  assert.deepEqual(finalTune.deleted, []);
+  for (const entry of finalTune.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
   return dataset;
 }
 

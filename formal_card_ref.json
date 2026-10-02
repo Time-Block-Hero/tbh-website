@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "9aec7c64cdce3fd960f7b2960fa1ba0bb49c2e846b882290a1af0cf499c7da4c",
+    "cardsSha256": "77ec3efa1cbab2a447fea27dfd9f1ac97f3b6f236e4bb9d978a601a50e8a423c",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -560,7 +560,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场&时停阶段开始时：[快速] 选择两张手牌，它们视作被额外保留了一回合。",
+      "rulesText": "入场&时停阶段开始时：[快速] 选择一张手牌，其视作被额外保留了一回合。",
       "artwork": {
         "key": "ashley-the-empowerer",
         "selected": [
@@ -2263,8 +2263,8 @@
     {
       "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
       "displayId": "SC-022",
-      "name": "高阶阳炎术",
-      "nameEn": "",
+      "name": "大师阳炎射击",
+      "nameEn": "Master Corona Shot",
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -2283,8 +2283,13 @@
       "tags": [],
       "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成10点伤害。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "master-corona-shot",
+        "selected": [
+          {
+            "variantId": "master-corona-shot-04",
+            "sourcePath": "./assets/card-art/master-corona-shot/master-corona-shot-04.png"
+          }
+        ]
       }
     },
     {

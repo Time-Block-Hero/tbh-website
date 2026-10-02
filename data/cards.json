@@ -2752,7 +2752,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "入场&时停阶段开始时：[快速] 选择两张手牌，它们视作被额外保留了一回合。",
+      "rulesText": "入场&时停阶段开始时：[快速] 选择一张手牌，其视作被额外保留了一回合。",
       "arrows": [
         "N"
       ],
@@ -2771,8 +2771,8 @@
     },
     {
       "id": "SC-022",
-      "nameKey": "高阶阳炎术",
-      "englishName": "",
+      "nameKey": "大师阳炎射击",
+      "englishName": "Master Corona Shot",
       "cardType": "Spell",
       "classId": "SolarChurch",
       "rarity": "Rare",
@@ -2786,10 +2786,10 @@
       ],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "master-corona-shot",
+      "artDescription": "Use case: stylized-concept. Asset type: final standalone spell-card illustration for Time-Block Hero. Title concept: Master Corona Shot (大师阳炎射击), Solar Church, Rare spell. Portrait 5:8 composition. The ONLY protagonist is the spell being cast; ABSOLUTELY NO PEOPLE, CASTERS, CHARACTERS, HANDS, BODY PARTS, FACES, HUMAN SILHOUETTES, HUMANOID TARGETS OR STATUES anywhere. Show the complete visual action of long-stored sunlight being compressed and released as one devastatingly precise shot. Three nested but spatially separated corona focusing rings, formed from floating dark-bronze segments and radiant geometric solar tracery, suspended in the air of an empty ivory cathedral-laboratory. Flowing ribbons and layered filaments of accumulated amber light spiral inward from the surrounding space, condensing into a tiny dazzling white-hot focus. That focus releases ONE dense white-gold lance through the aligned ring apertures, with an orange plasma sheath and a razor-straight trajectory into depth, striking a distant plain dark stone testing slab; a restrained starburst and a fine crack at that single impact point. Make the process visibly legible in one image: layered stored radiance on the intake side, extreme compression in the focus, brilliant straight beam on the release side. Masterful control, stored potency, intensity and precision. Dynamic oblique close view of the rings and the light itself, rich perspective depth, floating particles and subtle heat distortion, beautiful refracted reflections on pale ceramic flooring. The rings, charging filaments, focus and start of beam fill the UPPER SQUARE CROP; lower portrait extension carries sweeping light trails and floor reflections, not empty filler. Monumental pale structural ribs and restrained dark-metal fixtures are subordinate and out of focus. Echo the ivory, bronze, charcoal and orange-white visual language of Novice Corona Shot, with far stronger energy concentration. Premium industrial sci-fi anime illustration, elegant crisp contour design, cel-shaped shadows, painterly volumetric atmosphere, detailed matte materials, balanced highlights with readable shapes, beautiful cinematic lighting. Depict magical casting VFX, not a physical gun, turret, laser cannon, abstract icon, diagram or machinery catalog shot. Artwork only: no lettering, text, logos, watermark, UI, frame, border, arrows or stat symbols. No photorealism, glossy 3D or giant spherical explosion.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
       "parentUid": null,
       "collectionKind": "Collectible"
@@ -5207,6 +5207,24 @@
         "id": "photonic-shield-operative-01",
         "src": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
       }
+    ],
+    "SC-022": [
+      {
+        "id": "master-corona-shot-01",
+        "src": "./assets/card-art/master-corona-shot/master-corona-shot-01.png"
+      },
+      {
+        "id": "master-corona-shot-02",
+        "src": "./assets/card-art/master-corona-shot/master-corona-shot-02.png"
+      },
+      {
+        "id": "master-corona-shot-03",
+        "src": "./assets/card-art/master-corona-shot/master-corona-shot-03.png"
+      },
+      {
+        "id": "master-corona-shot-04",
+        "src": "./assets/card-art/master-corona-shot/master-corona-shot-04.png"
+      }
     ]
   },
   "selectedArtworkIds": {
@@ -5349,7 +5367,8 @@
     "AI-007": "engineering-drone-03",
     "AI-022": "operation-osprey-02",
     "FNG-041": "chronotide-riftsurf-diver-01",
-    "FNG-042": "photonic-shield-operative-01"
+    "FNG-042": "photonic-shield-operative-01",
+    "SC-022": "master-corona-shot-04"
   },
   "customRaces": [
     "机械",

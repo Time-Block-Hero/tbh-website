@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-02",
+  "generator": "built-in image_gen",
+  "styleTemplate": "artifact-template-industrial-sci-fi-anime",
+  "scope": "SC-022 master corona shot formal illustration and retained unselected candidates; no standee or gameplay change",
+  "records": [
+    {
+      "cardUid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "大师阳炎射击",
+      "variantId": "master-corona-shot-01",
+      "path": "./assets/card-art/master-corona-shot/master-corona-shot-01.png",
+      "sha256": "533c0b6eda7f6d1a1e583ed48cc1058a520775ceca8628b814bdde015eb6b6e5",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-02/SC-022-prompt.txt",
+      "selected": false,
+      "reviewNote": "未采用：用户指出手部问题，后续要求改为纯法术施法过程。"
+    },
+    {
+      "cardUid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "大师阳炎射击",
+      "variantId": "master-corona-shot-02",
+      "path": "./assets/card-art/master-corona-shot/master-corona-shot-02.png",
+      "sha256": "8164a519294bb66db807fa6eccc2cd33c54e959b5b1a773c66640f13f97aeca7",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-02/SC-022-prompt02.txt",
+      "selected": false,
+      "reviewNote": "未采用：用户要求不以金发男性为主体，改为纯法术施法过程。"
+    },
+    {
+      "cardUid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "大师阳炎射击",
+      "variantId": "master-corona-shot-03",
+      "path": "./assets/card-art/master-corona-shot/master-corona-shot-03.png",
+      "sha256": "2e16f5a03abef6d5caaca105912e87881cd8ae60edee931ea6e89a59b218afbb",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-02/SC-022-prompt03.txt",
+      "selected": false,
+      "reviewNote": "方案B未采用：用户改为纯法术施法过程。"
+    },
+    {
+      "cardUid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "大师阳炎射击",
+      "variantId": "master-corona-shot-04",
+      "path": "./assets/card-art/master-corona-shot/master-corona-shot-04.png",
+      "sha256": "f6b0ef2e52da326228fd9505881e264409275b5e2e4c3d4bf05337caae6c2709",
+      "width": 992,
+      "height": 1586,
+      "promptFile": "docs/design/artwork/2026-10-02/SC-022-prompt04.txt",
+      "selected": true,
+      "reviewNote": "按用户明确要求绘制无人物的施法过程，agent目视验收：蓄能、聚焦与阳炎射击。"
+    }
+  ]
+}
