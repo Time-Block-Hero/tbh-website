@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/114",
+  "baseCommit": "72ede3e5fa78f593f9bd8cafc2a68cf61cc4dcb1",
+  "oldCount": 147,
+  "newCount": 147,
+  "deleted": [],
+  "added": [],
+  "changed": [
+    {
+      "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "displayId": "SC-021",
+      "name": "赋能者艾诗丽",
+      "fields": {
+        "rulesText": {
+          "before": "入场&时停阶段开始时：[快速] 选择两张手牌，它们视作被额外保留了一回合。",
+          "after": "入场&时停阶段开始时：[快速] 选择一张手牌，其视作被额外保留了一回合。"
+        }
+      }
+    },
+    {
+      "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "大师阳炎射击",
+      "fields": {
+        "nameKey": {
+          "before": "高阶阳炎术",
+          "after": "大师阳炎射击"
+        },
+        "englishName": {
+          "before": "",
+          "after": "Master Corona Shot"
+        },
+        "artworkKey": {
+          "before": "",
+          "after": "master-corona-shot"
+        }
+      }
+    }
+  ],
+  "decisions": [
+    "赋能者艾诗丽每次入场／时停阶段开始触发只选择一张手牌；真实保留、快速与增加一回合不变。",
+    "SC-022由高阶阳炎术更名大师阳炎射击，承接见习阳炎射击命名；身份和效果完全不变。",
+    "147卡身份集合及原有删除／准入政策不变，沿用issue114-20261001-playtest147来源许可。",
+    "大师阳炎射击画面改为无人物的施法过程：蓄能、聚焦与射击；正式选用04，前三张保留未采用候选，生成来源见data/artwork-generation-20261002.json。"
+  ]
+}
