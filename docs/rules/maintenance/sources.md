@@ -675,3 +675,7 @@ status: draft
 ## 2026-10-01 147卡编辑器修订
 
 用户完成13张旧卡修订并新增高阶阳炎术，要求更新导入游戏。设计原文、逐字段差异及稳定身份见[147卡修订](https://github.com/Time-Block-Hero/tbh-website/blob/a172de272fdc8291fadba8380f9ca84f2737fd34/docs/design/revisions/2026-10-01-playtest147.json)。天庭乐师当前完成奖励为随机恢复总计2行动点，覆盖本日早先3点的数值，其他分配和不同名规则不变。
+
+## 2026-10-01 工程师的智慧分配交互
+
+用户指出工程师的智慧先选数字再分配不符合卡文，要求直接分配4点。按现有“至多4点”卡文修正交互：直接提供4点额度并允许少分配，零点确认仍完成本次发动；不改卡文、合法目标或其他精确总量分配。跟踪 [unified #114](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/114)。
