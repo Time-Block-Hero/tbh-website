@@ -4,11 +4,11 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "93278076f8412169b7e9d433a67ab62902f3b493ca285cd65648d3fc444a6fbd",
+    "cardsSha256": "9aec7c64cdce3fd960f7b2960fa1ba0bb49c2e846b882290a1af0cf499c7da4c",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
-    "sourceRevisionId": "issue114-20261001",
-    "sourceRevisionSha256": "bfaab082eb6348a181492ff7fd5af2a496ce713357b5db08bb0dc5d96fda9b13",
+    "sourceRevisionId": "issue114-20261001-playtest147",
+    "sourceRevisionSha256": "0bb5247b73ad09b237fc8c6b6e577d7096d96a97ccaf8d10a2a3b57d76dc8b97",
     "datasetSchemaVersion": 4,
     "dirty": true
   },
@@ -70,7 +70,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[箭头需求: 3，可建造] 入场&时停阶段开始时：选择两个己方随从，令其获得3护甲（受电能加成）。",
+      "rulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
       "artwork": {
         "key": "shield-of-the-imperium",
         "selected": [
@@ -156,7 +156,7 @@
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -361,7 +361,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[箭头需求: 6, 可建造]",
+      "rulesText": "[箭头需求: 5, 可建造]",
       "artwork": {
         "key": "patriot-titan-a005",
         "selected": [
@@ -381,20 +381,22 @@
       "collectionKind": "Collectible",
       "parentUid": null,
       "classId": "AstraImperium",
-      "rarity": "Epic",
+      "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 5,
       "durability": 0,
-      "attack": 3,
-      "health": 3,
+      "attack": 4,
+      "health": 4,
       "movement": 1,
-      "arrows": [],
+      "arrows": [
+        "S"
+      ],
       "tribes": [
         "晶灵",
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[攻击范围：3] 本随从的攻击力和攻击范围受电能加成。",
+      "rulesText": "[箭头需求：4，可建造] 该随从每回合可至多攻击三次。[攻击范围：4] 本随从的攻击力和攻击范围受电能加成。",
       "artwork": {
         "key": "crystal-spirit-watchtower",
         "selected": [
@@ -485,14 +487,14 @@
       "costAmount": 6,
       "durability": 0,
       "attack": 6,
-      "health": 4,
-      "movement": 6,
+      "health": 5,
+      "movement": 8,
       "arrows": [],
       "tribes": [
         "机械"
       ],
       "tags": [],
-      "rulesText": "[箭头需求: 3, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+      "rulesText": "[箭头需求: 5, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
       "artwork": {
         "key": "sea-swallow",
         "selected": [
@@ -558,7 +560,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "入场&时停阶段开始时：选择两张手牌，它们视作被额外保留了一回合。",
+      "rulesText": "入场&时停阶段开始时：[快速] 选择两张手牌，它们视作被额外保留了一回合。",
       "artwork": {
         "key": "ashley-the-empowerer",
         "selected": [
@@ -1217,7 +1219,7 @@
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：5, 可建造] 你每个回合开始时额外抽一张牌。",
+      "rulesText": "[箭头需求：4, 可建造] 你每个回合开始时额外抽一张牌。",
       "artwork": {
         "key": "heavy-military-packbeast",
         "selected": [
@@ -1487,7 +1489,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+      "rulesText": "[箭头需求：4，可建造] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "artwork": {
         "key": "engineering-drone",
         "selected": [
@@ -1579,7 +1581,6 @@
       "health": null,
       "movement": null,
       "arrows": [
-        "N",
         "W",
         "E"
       ],
@@ -2260,6 +2261,33 @@
       }
     },
     {
+      "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "name": "高阶阳炎术",
+      "nameEn": "",
+      "cardType": "Spell",
+      "collectionKind": "Collectible",
+      "parentUid": null,
+      "classId": "SolarChurch",
+      "rarity": "Rare",
+      "costResource": "Star",
+      "costAmount": 8,
+      "durability": 0,
+      "attack": null,
+      "health": null,
+      "movement": null,
+      "arrows": [
+        "NE"
+      ],
+      "tribes": [],
+      "tags": [],
+      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成10点伤害。",
+      "artwork": {
+        "key": null,
+        "selected": []
+      }
+    },
+    {
       "uid": "70f56934-997a-4eaa-b34b-1745d6ac06f7",
       "displayId": "SA-002",
       "name": "猎空冒险者",
@@ -2499,7 +2527,7 @@
       "costAmount": 5,
       "durability": 0,
       "attack": 0,
-      "health": 5,
+      "health": 4,
       "movement": 2,
       "arrows": [],
       "tribes": [
@@ -2973,7 +3001,7 @@
       "costAmount": 4,
       "durability": 0,
       "attack": 0,
-      "health": 3,
+      "health": 4,
       "movement": 0,
       "arrows": [
         "NW",
@@ -2985,7 +3013,7 @@
       "tags": [
         "Building"
       ],
-      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
+      "rulesText": "[箭头需求：2，可建造] 该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
       "artwork": {
         "key": "imperial-arms-factory",
         "selected": [
@@ -4450,7 +4478,7 @@
       "costAmount": 7,
       "durability": 0,
       "attack": 0,
-      "health": 7,
+      "health": 8,
       "movement": 0,
       "arrows": [
         "NW",
@@ -4460,7 +4488,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "rulesText": "[箭头需求：5，可建造] 光环：为该单位5x5范围内所有友方单位提供3点电能。",
       "artwork": {
         "key": "super-nuclear-power-plant",
         "selected": [
@@ -4590,7 +4618,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计3点行动点。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计2点行动点。",
       "artwork": {
         "key": "celestial-court-musician",
         "selected": [

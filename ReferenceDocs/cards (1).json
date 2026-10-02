@@ -2199,7 +2199,7 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "durability": 0,
       "rulesText": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
       "arrows": [
@@ -2618,7 +2618,6 @@
       "durability": 0,
       "rulesText": "入场：[快速] 令你所有手牌立即被额外保留一次，并令其在本回合获得[保留]。",
       "arrows": [
-        "N",
         "W",
         "E"
       ],
@@ -2753,7 +2752,7 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "入场&时停阶段开始时：选择两张手牌，它们视作被额外保留了一回合。",
+      "rulesText": "入场&时停阶段开始时：[快速] 选择两张手牌，它们视作被额外保留了一回合。",
       "arrows": [
         "N"
       ],
@@ -2767,6 +2766,31 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "parentUid": null,
+      "collectionKind": "Collectible"
+    },
+    {
+      "id": "SC-022",
+      "nameKey": "高阶阳炎术",
+      "englishName": "",
+      "cardType": "Spell",
+      "classId": "SolarChurch",
+      "rarity": "Rare",
+      "collectable": true,
+      "costResource": "Star",
+      "costAmount": 8,
+      "durability": 0,
+      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成10点伤害。",
+      "arrows": [
+        "NE"
+      ],
+      "tags": [],
+      "artPath": "",
+      "artworkKey": "",
+      "artDescription": "",
+      "artDescriptionNeedsPolish": true,
+      "artRequest": 1,
+      "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
       "parentUid": null,
       "collectionKind": "Collectible"
     },
@@ -2876,7 +2900,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
+      "rulesText": "[箭头需求：2，可建造] 该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
       "arrows": [
         "NW",
         "NE"
@@ -2890,7 +2914,7 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "attack": 0,
-      "health": 3,
+      "health": 4,
       "movement": 0,
       "tribes": [
         "建筑"
@@ -3004,7 +3028,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+      "rulesText": "[箭头需求：4，可建造] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "arrows": [
         "NW",
         "NE",
@@ -3039,7 +3063,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "[箭头需求: 3, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+      "rulesText": "[箭头需求: 5, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -3048,8 +3072,8 @@
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
       "attack": 6,
-      "health": 4,
-      "movement": 6,
+      "health": 5,
+      "movement": 8,
       "tribes": [
         "机械"
       ],
@@ -3177,10 +3201,10 @@
       "costResource": "Star",
       "costAmount": 7,
       "attack": 0,
-      "health": 7,
+      "health": 8,
       "movement": 0,
       "durability": 0,
-      "rulesText": "光环：为该单位5x5范围内所有友方单位提供3点电能。死亡时：对其5×5范围内的其他随从造成5点伤害。",
+      "rulesText": "[箭头需求：5，可建造] 光环：为该单位5x5范围内所有友方单位提供3点电能。",
       "arrows": [
         "NW",
         "SE"
@@ -3230,16 +3254,18 @@
       "englishName": "Crystal Spirit Watchtower",
       "cardType": "Minion",
       "classId": "AstraImperium",
-      "rarity": "Epic",
+      "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 2,
-      "attack": 3,
-      "health": 3,
+      "costAmount": 5,
+      "attack": 4,
+      "health": 4,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[攻击范围：3] 本随从的攻击力和攻击范围受电能加成。",
-      "arrows": [],
+      "rulesText": "[箭头需求：4，可建造] 该随从每回合可至多攻击三次。[攻击范围：4] 本随从的攻击力和攻击范围受电能加成。",
+      "arrows": [
+        "S"
+      ],
       "tribes": [
         "晶灵",
         "建筑"
@@ -3268,7 +3294,7 @@
       "health": 10,
       "movement": 2,
       "durability": 0,
-      "rulesText": "[箭头需求：5, 可建造] 你每个回合开始时额外抽一张牌。",
+      "rulesText": "[箭头需求：4, 可建造] 你每个回合开始时额外抽一张牌。",
       "arrows": [
         "SW"
       ],
@@ -3331,7 +3357,7 @@
       "health": 10,
       "movement": 7,
       "durability": 0,
-      "rulesText": "[箭头需求: 6, 可建造]",
+      "rulesText": "[箭头需求: 5, 可建造]",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3482,7 +3508,7 @@
       "health": 6,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求: 3，可建造] 入场&时停阶段开始时：选择两个己方随从，令其获得3护甲（受电能加成）。",
+      "rulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
       "arrows": [
         "NE"
       ],
@@ -3629,7 +3655,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "attack": 0,
-      "health": 5,
+      "health": 4,
       "movement": 2,
       "durability": 0,
       "rulesText": "[循环进度：4] 计数：你放置卡牌的张数。完成：随机点亮本随从一个尚未点亮的箭头方向。",
@@ -3661,7 +3687,7 @@
       "health": 6,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计3点行动点。",
+      "rulesText": "[循环进度：4] 计数：你发动或触发与本卡不同名的卡牌效果的次数。完成：为行动点不满的友方随从随机恢复总计2点行动点。",
       "arrows": [
         "NE"
       ],

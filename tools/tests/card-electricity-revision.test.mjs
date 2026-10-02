@@ -140,6 +140,22 @@ function currentApprovedDesign() {
     assert.ok(!dataset.cards.some(value => value.uid === card.uid));
     dataset.cards.push(structuredClone(card));
   }
+  const latest = parse('docs/design/revisions/2026-10-01-playtest147.json');
+  assert.deepEqual([latest.oldCount, latest.newCount, latest.changed.length, latest.added.length], [146, 147, 13, 1]);
+  assert.deepEqual(latest.deleted, []);
+  for (const entry of latest.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
+  for (const card of latest.added) {
+    assert.ok(!dataset.cards.some(value => value.uid === card.uid));
+    dataset.cards.push(structuredClone(card));
+  }
   return dataset;
 }
 
@@ -218,7 +234,7 @@ test('current approved identities and parent references stay intact, including A
   assert.equal(augustus.parentUid, 'bdd6fa88-21f9-4eed-8248-00e550344739');
   assert.equal(augustus.collectionKind, 'Token');
   const exported = exportDirtyDesigns(root);
-  assert.equal(exported.cards.length, 146);
+  assert.equal(exported.cards.length, 147);
   assert.deepEqual(exported.policy.excludedUids, []);
   for (const uid of identities.admittedPreviouslyExcludedUids) assert.ok(exported.cards.some(card => card.uid === uid));
 });
