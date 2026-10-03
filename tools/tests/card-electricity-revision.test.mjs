@@ -169,6 +169,19 @@ function currentApprovedDesign() {
       target[field] = structuredClone(delta.after);
     }
   }
+  const balance = parse('docs/design/revisions/2026-10-03-balance147.json');
+  assert.deepEqual([balance.oldCount, balance.newCount, balance.changed.length], [147, 147, 17]);
+  assert.deepEqual(balance.added, []);
+  assert.deepEqual(balance.deleted, []);
+  for (const entry of balance.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
   return dataset;
 }
 

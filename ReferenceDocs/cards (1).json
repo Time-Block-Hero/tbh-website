@@ -947,7 +947,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "发动：选择战场上的一行，对该行上的单位造成7点伤害。",
+      "rulesText": "发动：选择战场上的一行，对该行上的单位造成4点伤害。",
       "arrows": [
         "NE"
       ],
@@ -2226,7 +2226,7 @@
       "costResource": "Star",
       "costAmount": 10,
       "durability": 0,
-      "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
+      "rulesText": "若此牌的有效保留回合数至少为2，光环：你的所有卡牌的保留回合数视作+2。",
       "arrows": [
         "N"
       ],
@@ -2257,7 +2257,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 2,
-      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+      "rulesText": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "arrows": [
         "SE"
       ],
@@ -2285,10 +2285,8 @@
       "health": 2,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[一次性箭头] 入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有蜂蜜在本回合获得 [保留]。",
-      "arrows": [
-        "SE"
-      ],
+      "rulesText": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，获得等同于你手牌中蜂蜜数量的星能。",
+      "arrows": [],
       "tribes": [
         "奇兽"
       ],
@@ -2313,10 +2311,10 @@
       "costResource": "Star",
       "costAmount": 1,
       "attack": 1,
-      "health": 4,
+      "health": 3,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[一次性箭头] 每当该单位受到伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
+      "rulesText": "[一次性箭头] 发动成本：丢弃一张手牌；效果：抽一张牌并令其本回合获得保留。如果丢弃的牌已被保留过，改为抽两张。",
       "arrows": [
         "S"
       ],
@@ -2398,10 +2396,10 @@
       "costResource": "Star",
       "costAmount": 1,
       "attack": 0,
-      "health": 1,
+      "health": 3,
       "movement": 0,
       "durability": 0,
-      "rulesText": "当该单位将受到法术伤害时：将其无效并令你获得等量的星能。",
+      "rulesText": "当该单位将受到友方法术伤害时：将其无效并令你获得等量的星能。",
       "arrows": [
         "N"
       ],
@@ -2454,7 +2452,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：将总计6点伤害随机分配给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
+      "rulesText": "入场：将总计6点伤害连射给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
       "arrows": [
         "NW",
         "NE"
@@ -2509,7 +2507,6 @@
       "durability": 0,
       "rulesText": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
       "arrows": [
-        "N",
         "S"
       ],
       "tags": [],
@@ -2646,9 +2643,7 @@
       "movement": 8,
       "durability": 0,
       "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 抽取「阳炎爆裂拳」。",
-      "arrows": [
-        "S"
-      ],
+      "arrows": [],
       "tribes": [
         "人类"
       ],
@@ -2747,15 +2742,13 @@
       "rarity": "Epic",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 4,
+      "costAmount": 6,
       "attack": 2,
       "health": 4,
       "movement": 2,
       "durability": 0,
       "rulesText": "入场&时停阶段开始时：[快速] 选择一张手牌，其视作被额外保留了一回合。",
-      "arrows": [
-        "N"
-      ],
+      "arrows": [],
       "tribes": [
         "人类"
       ],
@@ -2780,7 +2773,7 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成10点伤害。",
+      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成8点伤害。",
       "arrows": [
         "NE"
       ],
@@ -2871,10 +2864,10 @@
       "costResource": "Star",
       "costAmount": 1,
       "attack": 0,
-      "health": 2,
+      "health": 4,
       "movement": 0,
       "durability": 0,
-      "rulesText": "回合开始时，你获得2点星能（受电能加成）。",
+      "rulesText": "[箭头需求：2，可建造] 回合开始时，你获得2点星能（受电能加成）。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -3030,10 +3023,10 @@
       "durability": 0,
       "rulesText": "[箭头需求：4，可建造] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
       "arrows": [
-        "NW",
-        "NE",
-        "SW",
-        "SE"
+        "N",
+        "W",
+        "E",
+        "S"
       ],
       "tags": [],
       "artPath": "CardArt/card_079",
@@ -3352,7 +3345,7 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 7,
+      "costAmount": 6,
       "attack": 8,
       "health": 10,
       "movement": 7,
@@ -3479,7 +3472,7 @@
       "health": 12,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+      "rulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3595,7 +3588,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "[循环进度：5] 计数：你抽牌的张数。完成：该单位每回合开始时额外生成1点星能。",
+      "rulesText": "每个回合开始时，你获得0点星能。\n[循环进度：5] 计数：你抽牌的张数。完成：增加1点该单位提供星能量。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -4150,7 +4143,7 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "attack": 0,
       "health": 4,
       "movement": 0,
@@ -5202,12 +5195,6 @@
         "src": "./assets/card-art/chronotide-riftsurf-diver/chronotide-riftsurf-diver-01.png"
       }
     ],
-    "FNG-042": [
-      {
-        "id": "photonic-shield-operative-01",
-        "src": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
-      }
-    ],
     "SC-022": [
       {
         "id": "master-corona-shot-01",
@@ -5224,6 +5211,12 @@
       {
         "id": "master-corona-shot-04",
         "src": "./assets/card-art/master-corona-shot/master-corona-shot-04.png"
+      }
+    ],
+    "FNG-042": [
+      {
+        "id": "photonic-shield-operative-01",
+        "src": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
       }
     ]
   },
@@ -5367,8 +5360,8 @@
     "AI-007": "engineering-drone-03",
     "AI-022": "operation-osprey-02",
     "FNG-041": "chronotide-riftsurf-diver-01",
-    "FNG-042": "photonic-shield-operative-01",
-    "SC-022": "master-corona-shot-04"
+    "SC-022": "master-corona-shot-04",
+    "FNG-042": "photonic-shield-operative-01"
   },
   "customRaces": [
     "机械",

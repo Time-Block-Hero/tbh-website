@@ -154,7 +154,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Solar Saint Aletheia",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
+          "rulesText": "若此牌的有效保留回合数至少为2，光环：你的所有卡牌的保留回合数视作+2。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "solar-saint-aletheia-01",
           "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png"
@@ -640,7 +640,7 @@ window.__SETTING_DATA__ = {
         "en": "A young saint of the Solar Church in flowing white and warm-ivory ceremonial armor, with orange-red trim and a luminous solar core. She raises a tall flame staff crowned by a contained white-orange sun."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
+      "rulesText": "若此牌的有效保留回合数至少为2，光环：你的所有卡牌的保留回合数视作+2。",
       "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png",
       "sourceArtworkKeys": [
         "solar-saint-aletheia"
@@ -654,7 +654,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Solar Saint Aletheia",
           "classId": "SolarChurch",
           "cardType": "Minion",
-          "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
+          "rulesText": "若此牌的有效保留回合数至少为2，光环：你的所有卡牌的保留回合数视作+2。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Aletheia, the beloved young Saint of the Solar Church, stands beneath a vast shaft of sunlight in the central nave of a futuristic Dyson-ring cathedral. She wears flowing white and warm-ivory ceremonial armor with elegant orange-red technical trim and a luminous solar core, her gentle but formidable face framed by restrained radiant rings. With both hands she raises a tall flame staff whose crown burns like a contained white-orange sun; behind and below her, a dense congregation of devoted believers reaches toward the light and gathers around her in reverent affection rather than fear. Keep Aletheia's face, raised staff, solar flame, upper-body silhouette, and the nearest worshippers readable inside the upper square crop; extend the immense congregation, cathedral steps, reactor-like columns, and curved ring architecture downward for depth. Singular iconic public appearance, majestic low angle, intentional asymmetry, exceptional ceramic, metal, fabric, and fire detail, cinematic volumetric light, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "solar-saint-aletheia-01",
           "cover": "./assets/card-art/solar-saint-aletheia/solar-saint-aletheia-01.png"

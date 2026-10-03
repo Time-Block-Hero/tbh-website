@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "77ec3efa1cbab2a447fea27dfd9f1ac97f3b6f236e4bb9d978a601a50e8a423c",
+    "cardsSha256": "cd91de65dd7a63b8dcce75474af16807b350ee42970888d5619258f5c00c3ae5",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -351,7 +351,7 @@
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 7,
+      "costAmount": 6,
       "durability": 0,
       "attack": 8,
       "health": 10,
@@ -548,14 +548,12 @@
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 4,
+      "costAmount": 6,
       "durability": 0,
       "attack": 2,
       "health": 4,
       "movement": 2,
-      "arrows": [
-        "N"
-      ],
+      "arrows": [],
       "tribes": [
         "人类"
       ],
@@ -785,7 +783,7 @@
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 3,
+      "costAmount": 2,
       "durability": 0,
       "attack": 0,
       "health": 4,
@@ -954,7 +952,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "光环：你的所有卡牌的保留回合数视作+2。",
+      "rulesText": "若此牌的有效保留回合数至少为2，光环：你的所有卡牌的保留回合数视作+2。",
       "artwork": {
         "key": "solar-saint-aletheia",
         "selected": [
@@ -1343,7 +1341,7 @@
       "costAmount": 1,
       "durability": 0,
       "attack": 0,
-      "health": 1,
+      "health": 3,
       "movement": 0,
       "arrows": [
         "N"
@@ -1352,7 +1350,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "当该单位将受到法术伤害时：将其无效并令你获得等量的星能。",
+      "rulesText": "当该单位将受到友方法术伤害时：将其无效并令你获得等量的星能。",
       "artwork": {
         "key": "magic-practice-automaton",
         "selected": [
@@ -1479,10 +1477,10 @@
       "health": 4,
       "movement": 5,
       "arrows": [
-        "NW",
-        "NE",
-        "SW",
-        "SE"
+        "N",
+        "W",
+        "E",
+        "S"
       ],
       "tribes": [
         "机械",
@@ -1681,9 +1679,7 @@
       "attack": 3,
       "health": 6,
       "movement": 8,
-      "arrows": [
-        "S"
-      ],
+      "arrows": [],
       "tribes": [
         "人类"
       ],
@@ -1715,14 +1711,12 @@
       "attack": 2,
       "health": 2,
       "movement": 3,
-      "arrows": [
-        "SE"
-      ],
+      "arrows": [],
       "tribes": [
         "奇兽"
       ],
       "tags": [],
-      "rulesText": "[一次性箭头] 入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，令你手中的所有蜂蜜在本回合获得 [保留]。",
+      "rulesText": "入场：[快速] 生成1张「日珀蜂蜜」加入你的手牌，获得等同于你手牌中蜂蜜数量的星能。",
       "artwork": {
         "key": "sun-amber-swarm",
         "selected": [
@@ -1857,7 +1851,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "发动：选择战场上的一行，对该行上的单位造成7点伤害。",
+      "rulesText": "发动：选择战场上的一行，对该行上的单位造成4点伤害。",
       "artwork": {
         "key": "orbital-bombardment",
         "selected": [
@@ -1921,7 +1915,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+      "rulesText": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "artwork": {
         "key": "sun-amber-honey",
         "selected": [
@@ -2176,7 +2170,7 @@
       "costAmount": 1,
       "durability": 0,
       "attack": 1,
-      "health": 4,
+      "health": 3,
       "movement": 1,
       "arrows": [
         "S"
@@ -2185,7 +2179,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "[一次性箭头] 每当该单位受到伤害后，抽一张牌，并令抽到的牌本回合获得[保留]。",
+      "rulesText": "[一次性箭头] 发动成本：丢弃一张手牌；效果：抽一张牌并令其本回合获得保留。如果丢弃的牌已被保留过，改为抽两张。",
       "artwork": {
         "key": "soul-burning-acolyte",
         "selected": [
@@ -2281,7 +2275,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成10点伤害。",
+      "rulesText": "若此牌的有效保留回合数至少为3，入场：选择一个单位，对其造成8点伤害。",
       "artwork": {
         "key": "master-corona-shot",
         "selected": [
@@ -2507,7 +2501,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：将总计6点伤害随机分配给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
+      "rulesText": "入场：将总计6点伤害连射给所有敌方单位。此牌每被保留一回合，造成伤害额外增加4点。",
       "artwork": {
         "key": "flare-barrage",
         "selected": [
@@ -3050,7 +3044,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[箭头需求：8/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+      "rulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
       "artwork": {
         "key": "project-augustus",
         "selected": [
@@ -3602,7 +3596,6 @@
       "health": null,
       "movement": null,
       "arrows": [
-        "N",
         "S"
       ],
       "tribes": [],
@@ -4001,7 +3994,7 @@
         "建筑"
       ],
       "tags": [],
-      "rulesText": "[循环进度：5] 计数：你抽牌的张数。完成：该单位每回合开始时额外生成1点星能。",
+      "rulesText": "每个回合开始时，你获得0点星能。\n[循环进度：5] 计数：你抽牌的张数。完成：增加1点该单位提供星能量。",
       "artwork": {
         "key": "training-service-swarm",
         "selected": [
@@ -4293,14 +4286,14 @@
       "costAmount": 1,
       "durability": 0,
       "attack": 0,
-      "health": 2,
+      "health": 4,
       "movement": 0,
       "arrows": [],
       "tribes": [
         "建筑"
       ],
       "tags": [],
-      "rulesText": "回合开始时，你获得2点星能（受电能加成）。",
+      "rulesText": "[箭头需求：2，可建造] 回合开始时，你获得2点星能（受电能加成）。",
       "artwork": {
         "key": "star-energy-mine",
         "selected": [
