@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/114",
+  "baseCommit": "06b9cbc823bc3834945a4904b7fb66957b7740e8",
+  "rawEditorSha256": "381c903f1a056ba2810c5a779e4a264f3ed82262b58b2f2b1eaa0be0a1a5f639",
+  "oldCount": 147,
+  "newCount": 147,
+  "deleted": [],
+  "added": [],
+  "changed": [
+    {
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "displayId": "FNG-042",
+      "name": "光能盾特工",
+      "fields": {
+        "movement": {
+          "before": 4,
+          "after": 3
+        }
+      }
+    },
+    {
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501",
+      "displayId": "SC-004",
+      "name": "日珀蜂蜜",
+      "fields": {
+        "rulesText": {
+          "before": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+          "after": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。"
+        }
+      }
+    },
+    {
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4",
+      "displayId": "AI-012",
+      "name": "综合作战指令",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NE",
+            "E"
+          ],
+          "after": [
+            "NE"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "name": "工程师的智慧",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NW",
+            "W"
+          ],
+          "after": [
+            "NW"
+          ]
+        }
+      }
+    }
+  ],
+  "decisions": [
+    "试玩后4卡轻量调整；蜂蜜移除原生保留能力，其他效果不变。",
+    "仅做必要的内容编译、数据一致性及受影响检查，不重复整轮游戏验收。"
+  ]
+}

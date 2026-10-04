@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "source": {
     "repository": "Time-Block-Hero/tbh-assets",
-    "commit": "c4ab6ba259dff05d72476d711b05c8fce496635a",
+    "commit": "240524c573166edcd198e6256991f0109acf02fc",
     "rosterPath": "Runtime/Resources/TimeBlockHeroAssets/stillfield-roster.json",
-    "rosterSha256": "ede1423687e632df1cc56ff4632048d43f5e7d62ff5d60033a412070bfc8a416"
+    "rosterSha256": "53cf04253ec1fb43fb9cf11140f62c397525c7dd7dbfb60b088f9d1543de2856"
   },
   "entries": [
     {
@@ -253,11 +253,18 @@
       "pixelHeight": 1536
     },
     {
+      "definitionUid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "src": "./assets/card-standees/3eb7075a-6989-4e6e-a911-f0dfb83b1fc0.png",
+      "sha256": "4aca4aafa8c3c999b60bec8a36ae6fafd7eb77e46b5402958b0d0e5ad769f07f",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
+    },
+    {
       "definitionUid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
       "src": "./assets/card-standees/430888e7-5e44-4599-98d5-7a8c0824b40f.png",
-      "sha256": "b66b3bce0812ae0c7a79170ea45e49547817537507eb2fafdd98403e40ff0414",
-      "pixelWidth": 1203,
-      "pixelHeight": 1307
+      "sha256": "2595b36d75bd50ca8865e76372bcc66ff245ed905f0801ae2b7821954764be57",
+      "pixelWidth": 1536,
+      "pixelHeight": 1024
     },
     {
       "definitionUid": "43b464d4-781c-4390-80eb-d926b7dea2d9",
@@ -524,6 +531,13 @@
       "sha256": "861f5b8be66a81d94a922c2265c42a9f1efb80b2a8e17bbc1d4465fa73102569",
       "pixelWidth": 1536,
       "pixelHeight": 1024
+    },
+    {
+      "definitionUid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "src": "./assets/card-standees/c6b00125-47ad-438e-b1b5-721fce7ccf49.png",
+      "sha256": "740c14be839f97f76cdd42af844f25361d53baddea4cfbe0959fdc5b66601123",
+      "pixelWidth": 1024,
+      "pixelHeight": 1536
     },
     {
       "definitionUid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
