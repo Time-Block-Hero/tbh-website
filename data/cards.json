@@ -1176,7 +1176,7 @@
       "costAmount": 4,
       "attack": 4,
       "health": 4,
-      "movement": 4,
+      "movement": 3,
       "durability": 0,
       "rulesText": "圣盾。",
       "arrows": [],
@@ -2257,7 +2257,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 2,
-      "rulesText": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "arrows": [
         "SE"
       ],
@@ -3170,8 +3170,7 @@
       "durability": 0,
       "rulesText": "发动：为友方随从分配4点护甲；为敌方随从分配4点伤害。",
       "arrows": [
-        "NE",
-        "E"
+        "NE"
       ],
       "tags": [],
       "artPath": "",
@@ -3228,8 +3227,7 @@
       "durability": 0,
       "rulesText": "发动：为己方建造中的单位分配至多4点建造进度。",
       "arrows": [
-        "NW",
-        "W"
+        "NW"
       ],
       "tags": [],
       "artPath": "",

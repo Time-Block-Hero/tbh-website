@@ -4,7 +4,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "cd91de65dd7a63b8dcce75474af16807b350ee42970888d5619258f5c00c3ae5",
+    "cardsSha256": "381c903f1a056ba2810c5a779e4a264f3ed82262b58b2f2b1eaa0be0a1a5f639",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -1779,8 +1779,7 @@
       "health": null,
       "movement": null,
       "arrows": [
-        "NW",
-        "W"
+        "NW"
       ],
       "tribes": [],
       "tags": [],
@@ -1915,7 +1914,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+      "rulesText": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
       "artwork": {
         "key": "sun-amber-honey",
         "selected": [
@@ -3299,8 +3298,7 @@
       "health": null,
       "movement": null,
       "arrows": [
-        "NE",
-        "E"
+        "NE"
       ],
       "tribes": [],
       "tags": [],
@@ -3658,7 +3656,7 @@
       "durability": 0,
       "attack": 4,
       "health": 4,
-      "movement": 4,
+      "movement": 3,
       "arrows": [],
       "tribes": [
         "人类"
