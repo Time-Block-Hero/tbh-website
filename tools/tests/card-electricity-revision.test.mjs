@@ -182,17 +182,32 @@ function currentApprovedDesign() {
       target[field] = structuredClone(delta.after);
     }
   }
+  const finalBaseline = parse('docs/design/revisions/2026-10-05-baseline-test-repair.json');
+  assert.equal(finalBaseline.sourceCommit, 'db210674f1143f3b1b82ea7a7f05234158a20d61');
+  assert.equal(finalBaseline.changed.length, 4);
+  for (const entry of finalBaseline.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
   return dataset;
 }
 
 function assertCurrentDesign(dataset) {
   contract.validateDataset(dataset, { exportArtwork: true });
   const prepared = currentApprovedDesign();
-  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath']);
+  // Execution is independently checked against frozen bundle hashes in card-execution.test.mjs.
+  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath', 'execution']);
   const withoutArt = card => Object.fromEntries(Object.entries(card).filter(([key]) => !artFields.has(key)));
   assert.deepEqual(sorted(dataset.cards).map(withoutArt), sorted(prepared.cards).map(withoutArt));
   const withoutCardsOrArt = value => Object.fromEntries(Object.entries(value)
     .filter(([key]) => !['cards', 'artworkVariants', 'selectedArtworkIds'].includes(key)));
+  if (dataset.schemaVersion === 5) {
+    prepared.schemaVersion = 5; prepared.sourceSchemaVersion = 5;
+    prepared.executionSchemaVersion = 21; prepared.shared = { statuses: [{ id: 'Retain', lifetime: 'Permanent', removableBySilence: true, tags: ['Retain'] }, { id: 'DivineShield', lifetime: 'Permanent', removableBySilence: true, tags: ['DivineShield'] }] };
+  }
   assert.deepEqual(withoutCardsOrArt(dataset), withoutCardsOrArt(prepared));
 }
 

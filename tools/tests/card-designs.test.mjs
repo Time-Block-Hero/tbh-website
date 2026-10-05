@@ -73,7 +73,7 @@ function editorHarness() {
   persist = async () => true; closeEditor = () => {}; renderGallery = () => {}; openEditor = () => {}; showCard = () => {};
   confirmBrowserDraftOverwrite = () => true;
   globalThis.editorTest = { actualPersist, connect: (value) => { projectSyncAvailable = true; projectConfirmedDataset = structuredClone(value); projectCardsRevision = "baseline"; projectSyncBlocked = false; }, load: (value) => dataset = value, get: () => dataset,
-    select: (id) => currentId = id, remapCardIds, addMainCard, addDerivative, readForm, normalizeDatasetForCurrentRules,
+    select: (id) => currentId = id, readLocalState, remapCardIds, addMainCard, addDerivative, readForm, normalizeDatasetForCurrentRules,
     pending: (variants, selected) => { pendingArtworkVariants = variants; pendingSelectedArtworkId = selected; },
     getPending: () => ({ variants: pendingArtworkVariants, selected: pendingSelectedArtworkId }), renamePendingArtwork };
   window.initFormalCardEditor =`);
@@ -288,4 +288,24 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
   assert.equal(exported.cards.find((c) => c.uid === bridge.blankEffectUids[0]).rulesText, "入场：抽1张牌。");
   assert.equal(exported.policy.blankEffectUids.includes(bridge.blankEffectUids[0]), false);
   assert.equal(bridge.blankEffectUids.length, 4);
+});
+
+
+test("actual editor schema5 draft isolation and form paths retain execution without inheriting identities", () => {
+  const current = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json")));
+  const { api, memory, form } = editorHarness();
+  const legacy = JSON.stringify(source);
+  memory.set("tbh-formal-card-editor-v5", legacy);
+  assert.equal(api.readLocalState(current), null);
+  assert.equal(memory.get("tbh-card-editor-legacy-schema-draft-v1"), legacy);
+  assert.equal(memory.get("tbh-formal-card-editor-v5"), legacy);
+  memory.set("tbh-formal-card-editor-v5", JSON.stringify(current));
+  assert.deepEqual(JSON.parse(JSON.stringify(api.readLocalState(current))), current);
+  api.load(structuredClone(current)); const original = api.get().cards[0]; api.select(original.id);
+  form({ nameKey: original.nameKey, englishName: original.englishName, cardType: original.cardType, rarity: original.rarity, classId: original.classId, collectable: String(original.collectable) });
+  assert.deepEqual(api.readForm().execution, original.execution);
+  api.addDerivative();
+  const derivative = api.get().cards.at(-1);
+  assert.deepEqual(JSON.parse(JSON.stringify(derivative.execution)), contract.plannedExecution());
+  assert.equal(derivative.parentUid, original.uid);
 });

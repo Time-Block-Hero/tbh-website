@@ -48,7 +48,7 @@ node tools/card-editor-server.mjs --port 4317
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
 | `assets/card-standees/` | Assets 正式立绘的静态镜像，按持久 UID 命名 |
 | `data/card-standees.json` | 独立立绘索引，记录来源 Assets 提交和逐图 SHA-256 |
-| `formal_card_ref.json` | 纯声明性设计的 dirty 预览，不是可执行内容或正式导入源 |
+| `formal_card_ref.json` | 包含执行段的 dirty 开发预览，不是正式发布源 |
 | `data/card-identity-migration.json` | 原137张设计的持久 UID 桥接与排除/空白/资源迁移策略 |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
 | `bestiary-taxonomy.js` | 六种族与分支目录、分支特征和未完成状态 |
@@ -63,7 +63,7 @@ node tools/card-editor-server.mjs --port 4317
 node tools/sync-cards-from-data.mjs
 ```
 
-卡牌数据 schema 4 使用持久 UID，展示编号可以重排；资源类型与四种收集分类独立。正式导出指定已提交 SHA，合同和验证命令见 [卡牌设计导出](docs/design/card-design-export.md)。
+卡牌数据 schema 5 使用持久 UID，展示编号可以重排；`execution` 与 `shared.statuses` 是同一源内的 schema21 执行定义，普通保存完整保留，新增/衍生卡初始化为 Planned。执行映射和通用编译接口见 [卡牌执行单一源](docs/design/card-execution-source.md)。资源类型与四种收集分类独立。正式导出指定已提交 SHA，合同和验证命令见 [卡牌设计导出](docs/design/card-design-export.md)。
 
 本轮140张设计的来源、六张新卡英文名及后续电能/转化/动态数值接口边界见 [T1 并行交接](docs/design/revisions/2026-09-27-parallel-contract.md)，逐字段变更见 [设计增量记录](docs/design/revisions/2026-09-27-electricity-cards.json)。这些是设计与接口准备，游戏执行实现由后续任务交付。
 

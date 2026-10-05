@@ -1,0 +1,1456 @@
+{
+  "schemaVersion": 1,
+  "websiteCommit": "a198c4b0c21886501adbabeba22eda4ed019600f",
+  "rulesCommit": "a46014e674da86c47831a27b4dbbaa62f728bd5b",
+  "sourceCardsSha256": "381c903f1a056ba2810c5a779e4a264f3ed82262b58b2f2b1eaa0be0a1a5f639",
+  "entries": [
+    {
+      "uid": "f14f6fca-6862-441b-9254-8b3df5556389",
+      "displayId": "FNG-001",
+      "designHash": "24c70d4d94c3807e5d953ea59cdce71d19ca54dd4a4c8366b6822b8eac34cd6e",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "e07cc0b319b49be6bf70aa8b0be16e09d9dd4d0069b004513ca77b68641796e6",
+      "runtimeArtPath": "CardArt/Designs/f14f6fca-6862-441b-9254-8b3df5556389",
+      "differences": {}
+    },
+    {
+      "uid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "displayId": "FNG-002",
+      "designHash": "29c60db79d5434fd09a29e1207fba9fe047692abaab220130c561fdadded27fe",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "78588ffbe725e346e757c40d1e2ee42871aee3d571962f17904cde21e2b5fa79",
+      "runtimeArtPath": "CardArt/Designs/0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "differences": {}
+    },
+    {
+      "uid": "094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "displayId": "FNG-003",
+      "designHash": "aa5ca78c429a96de18994e5b6faf8896fffab1c8a1903e4d4e61e42b6d1d6fab",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "2ae2ffa21fce2ed280257ff32a055863984cbcd84af42c0b834390382ae9465d",
+      "runtimeArtPath": "CardArt/Designs/094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "differences": {}
+    },
+    {
+      "uid": "c285d915-f68b-4827-9c39-c4911895e360",
+      "displayId": "FNG-004",
+      "designHash": "9cfa5dbf5861681e79494cf6a93d3091ad329a41158f2cbdc856f49dd7f9bb77",
+      "executionHash": "5e47d5c344946023bf84dbcce5798fd955f39af9175ea48153c9cc63333a7057",
+      "bundleHash": "3e9d8cabd8d3fd64dbaa25c9b8494e6de41a9d9c710703426c64e3a3249a0ef6",
+      "runtimeArtPath": "CardArt/Designs/c285d915-f68b-4827-9c39-c4911895e360",
+      "differences": {}
+    },
+    {
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "displayId": "FNG-005",
+      "designHash": "810adf7010701cd8916faa9f1c26efac7f8a09b0662c55a7098e4fe9e80088d6",
+      "executionHash": "174ab0ff9553f1cdfd25a5514aedcc122b09e479d1e23f8c1909567d4f5dbada",
+      "bundleHash": "93b7e60d810d11211b47a049c96c4bfccbac7705277bb45bf960623b3235840e",
+      "runtimeArtPath": "CardArt/Designs/788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "differences": {}
+    },
+    {
+      "uid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "displayId": "FNG-006",
+      "designHash": "2844622bd15ed312a40634470e0cf50bc2489c2f6035817a24436913a5bfb272",
+      "executionHash": "3e4f1df9f58b92354998f2ff96743ace2d3eaf17c20a81aa26c6a1ce356af71c",
+      "bundleHash": "947ff6ed36d7d84618cdcc80edcb3339bf029370ea66a170f82dce5bd02f6445",
+      "runtimeArtPath": "CardArt/Designs/158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "differences": {}
+    },
+    {
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "displayId": "FNG-007",
+      "designHash": "5c03b6c397889c952dd8ff308a59392ce48fa23f21c15c04a05571f52b6451b2",
+      "executionHash": "a04ca46cb12231c63825cd0ee805a96f7f4bccc7fca02f426f7d48a51308c5f2",
+      "bundleHash": "266f8e4b8acb0bfcaf037b3598971d425a27b9daaa2fea20caafa3144b3202de",
+      "runtimeArtPath": "CardArt/Designs/631f5e35-9d09-4221-b994-d2ac011560a6",
+      "differences": {}
+    },
+    {
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "displayId": "FNG-008",
+      "designHash": "f6badb4facf5cfa00aab9c8813332a9ab9c2a6df41a707d1845e660d4578e352",
+      "executionHash": "eaea22d444b7ac03116b35e1e2e0f916b76cf9dbe774e0c78d70985ccc77698b",
+      "bundleHash": "f7964e73d882dbca77e444fbbf410ec537b132259c50925c6d446271065e1e1c",
+      "runtimeArtPath": "CardArt/Designs/1529f937-224e-4d19-a272-0740e98b649e",
+      "differences": {
+        "arrows": {
+          "design": [
+            "NE"
+          ],
+          "runtime": []
+        }
+      }
+    },
+    {
+      "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "displayId": "FNG-009",
+      "designHash": "688f5e76075bad188383da4c20d8d0725f33f8797f7c13133405f53853043929",
+      "executionHash": "6ea18c94b0aa6b1babb48a76e4ebae8f4e730ff57237c91a07a868f889ab9b0a",
+      "bundleHash": "680d727ff274495f28861af66f01a2f0899df8c6bde3e7152ab017b49ee4b4df",
+      "runtimeArtPath": "CardArt/Designs/dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "differences": {}
+    },
+    {
+      "uid": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+      "displayId": "FNG-010",
+      "designHash": "76216e51a99cdaadd11fae14b3dc8929305f11fedd0d21259bd6a124bd950daa",
+      "executionHash": "ed697fba336cf3fdd638328808dacb1a85bdcc03b08694ab94c96c7a4930bd19",
+      "bundleHash": "f5f85fc6999ad110b8ce6fb1678c82bddb09bad5f88829e9eddb97b37ad5e2cd",
+      "runtimeArtPath": "CardArt/Designs/ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+      "differences": {}
+    },
+    {
+      "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124",
+      "displayId": "FNG-011",
+      "designHash": "fee985d9731c9f1051f71153155371e055d3ed3739a629f717febb7a9b59b6f6",
+      "executionHash": "f0f38d64b0bbb8c62d1709daf68782d54e0408a1c64cd9d236c99c98b0de4452",
+      "bundleHash": "7b4e7fbf6a6eda8594d898efa7757473a283e089fca6bb33dea338df778c2668",
+      "runtimeArtPath": "CardArt/Designs/76c85923-76d9-4465-b8bd-a2a3a0301124",
+      "differences": {}
+    },
+    {
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
+      "displayId": "FNG-012",
+      "designHash": "f7910c4bab3244e54c878a7890a09271858aad70d91101b24c007bfc678eafb2",
+      "executionHash": "7b65de9a0567406375aaab8336436243f443363c85b401c81d58fdad65d57834",
+      "bundleHash": "2e735c6d97cda76332b52ff5140a476f40697412116170591bca81298063cdae",
+      "runtimeArtPath": "CardArt/Designs/11c4a471-c45c-4055-b1a7-a335f6833976",
+      "differences": {}
+    },
+    {
+      "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "displayId": "FNG-013",
+      "designHash": "1e8bfd2eaa94a1f0a3b64a16addb1536c0c6a1de3abc33928e4a598d3aad2827",
+      "executionHash": "7621161847c7f85666c8c04369e10f3c3125657323bc5911779b87ca5f192f7d",
+      "bundleHash": "fe34d12e5cd48e5a3d494abc415cd65bd0d4d72e1185eb024d604f26d5e58273",
+      "runtimeArtPath": "CardArt/Designs/3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "differences": {}
+    },
+    {
+      "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "displayId": "FNG-014",
+      "designHash": "d81da4e80ebc65c68febf4bb1d374dea597e75f5caa053499505b5ccfeaebd07",
+      "executionHash": "0a7ed4eb5adf6f4c8b6edae83b9211d5ccf51dccd15d1b499bf4ae04f87d45f7",
+      "bundleHash": "eba79a05045fc4dc71c9ef2b51dd0d66259f7ea430fe9ee27beb647db70a69ec",
+      "runtimeArtPath": "CardArt/Designs/0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "differences": {}
+    },
+    {
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "displayId": "FNG-015",
+      "designHash": "e711a6d985b8e2e9bfc512f7fef4ae3e07628610ec53b5b670c094d7b6e9c376",
+      "executionHash": "2d1e6e9cb186694962506d768b3edccdb4d4f2ca14d754a043b63063a644957a",
+      "bundleHash": "4f4d71f7e13cfb4fb559c79f2f292dae8cc7d9c399977e5fb76972173dc363d7",
+      "runtimeArtPath": "CardArt/Designs/97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "differences": {}
+    },
+    {
+      "uid": "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "displayId": "FNG-016",
+      "designHash": "7ac6f69e686411be3e37c61768358f0d610fd3a81db3cedfb5644346580d5a65",
+      "executionHash": "2026cad9c3568501948285b120ac6cad63746b04941a16899f016b55a876d418",
+      "bundleHash": "ab6e199c7871bf93663b01ddf89fd4532930d078ec798966ea9bbd360fb85114",
+      "runtimeArtPath": "CardArt/Designs/ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "differences": {}
+    },
+    {
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "displayId": "FNG-017",
+      "designHash": "5922d568e03a05b3798aa94952181100b05471868a91ccede1c91365af82d177",
+      "executionHash": "1f120856c83cd8e2a9732385d5de37c9b9492e19dc3c91899b07ad50df02996e",
+      "bundleHash": "21ca74c296e40b1eec1aeb94f3311aa8859cc8bf28e38f9f219fa7641bbca3b0",
+      "runtimeArtPath": "CardArt/Designs/dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "differences": {}
+    },
+    {
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "displayId": "FNG-018",
+      "designHash": "186fe49b0968d349525d2c00453518b5c7eae923c87b7b014c523460555b976c",
+      "executionHash": "85d1460bbc951e2e391bf27e3e29b6fdeb570814a18538da5a7aff618740f328",
+      "bundleHash": "fec5366a05f9d15e287b2c6b00565a8c9b136194d541bd527a40bc5d55635e18",
+      "runtimeArtPath": "CardArt/Designs/cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "differences": {}
+    },
+    {
+      "uid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "displayId": "FNG-019",
+      "designHash": "9b6463d6b245f49749bc61cd3f0c04090468eec86992bd58fea644a2408e84c2",
+      "executionHash": "a78ccb842bdac68ce09f24aaa944ce2f8622fa85fab155f4993153c648d07ced",
+      "bundleHash": "47a6fdc07e25f839911c2a6e3d8a8a98782723d44a06ceec5e661a347dc35e2f",
+      "runtimeArtPath": "CardArt/Designs/d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "differences": {}
+    },
+    {
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "displayId": "FNG-020",
+      "designHash": "ff24a0e059a0491ea959a5e06155d5387415e027e76e4b30b580b225bdd6fde7",
+      "executionHash": "e03341a00bc9f42b0bc8d255b55ec3454c9133ad1d6226c9292d7724c11102a8",
+      "bundleHash": "d924baca6e11af5701f74dbc74507960b61fac08ea3db4ccfccb2c2f2d8b2e7a",
+      "runtimeArtPath": "CardArt/Designs/9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "differences": {}
+    },
+    {
+      "uid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "displayId": "FNG-021",
+      "designHash": "f5ed4d9882d938670c9fa8bf90cc162f111b7ea7fbe633881c187cc9a12401f3",
+      "executionHash": "82259692213a35c4762e633c6377d340042094f5c159e07f8b195636623f607d",
+      "bundleHash": "df0c748e5f9969d2128761beb82e0b6349a3f0edea32a60d09af4ea6eeeed682",
+      "runtimeArtPath": "CardArt/Designs/774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "differences": {}
+    },
+    {
+      "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "displayId": "FNG-022",
+      "designHash": "7659ba3cca5e355bc6e9621c0ad7e97d1269dafa4fc24063f7156aa7c7c9e06a",
+      "executionHash": "70fb9d24c756266c466942792885c680bc539608992f110c314033c54734ba86",
+      "bundleHash": "967e886a0484c68ba3b8fe8597e9c6c34c7f5c8f95ce8f1e6a6c26ffff71dced",
+      "runtimeArtPath": "CardArt/Designs/1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "differences": {}
+    },
+    {
+      "uid": "353fe62e-a917-4f71-933c-c2de12eec7e1",
+      "displayId": "FNG-023",
+      "designHash": "15572ca71c308f955111e5e0f38d44e98dba3dec93ffb0e2b5fbceef9cfa2174",
+      "executionHash": "e5a4c108643b620ac846ab5d4ee4d996b1aefc07c8b453ba138b54c58941c098",
+      "bundleHash": "545acc51ac5ea09fe65b8e0d5d90b1c794cc29632c98cabca2f665abcc0b383f",
+      "runtimeArtPath": "CardArt/Designs/353fe62e-a917-4f71-933c-c2de12eec7e1",
+      "differences": {}
+    },
+    {
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "displayId": "FNG-024",
+      "designHash": "1f0abdca9bab660bccad249a2292ade2a7f754feddcbf6619240e16bb61f4881",
+      "executionHash": "39761749d280666e82c9bef9deaf8ff71f18ea26a7e46d72441ca7e3091dd1b2",
+      "bundleHash": "b39f3fba9d65e14ada4e4652676f9f20ebb23535391f4a012c0cf9d78c850f3c",
+      "runtimeArtPath": "CardArt/Designs/c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "differences": {}
+    },
+    {
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "displayId": "FNG-025",
+      "designHash": "313781c3e54680628df9fd787708a5eaa6c5b990bc8fc72584340460493d78b4",
+      "executionHash": "eb35f85232240b2d69fd01cec478d80b35620030b88c00ff432e8c60774bc8bb",
+      "bundleHash": "3f647e238e0491978da2812ca9780765dda4ca3d1a842ab504c595a47dec48b7",
+      "runtimeArtPath": "CardArt/Designs/bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "differences": {}
+    },
+    {
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "displayId": "FNG-026",
+      "designHash": "7883b11a1a4310a714769725902b7bf3aebcfc5a9f7622fbcc0227c807fe5064",
+      "executionHash": "cfc18382e173a863bdb4ee24d30f33e2c9258ae54f016ae1044b202606d572f8",
+      "bundleHash": "293744a5fb8ed0e84126d75cffe970b1d79105e5df611a2247b9a86ffa2ddef5",
+      "runtimeArtPath": "CardArt/Designs/d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "differences": {}
+    },
+    {
+      "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "displayId": "FNG-027",
+      "designHash": "25340f3890b407dd872d376564920c8bc23bb562135c01c27c693de6a4b76b38",
+      "executionHash": "22d338ee91fb05d96a72f066e75d77008ebc7b800a09a97448d9d828a04ca936",
+      "bundleHash": "8dceca66c5aabce6fbaef4e032b4126a12c15bdd2b44eab6636b6e056348e9af",
+      "runtimeArtPath": "CardArt/Designs/df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "differences": {}
+    },
+    {
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "displayId": "FNG-028",
+      "designHash": "3272693d60c41844c6f2f2a662c711b44aa7d1fce20504512b32beb069ffe82a",
+      "executionHash": "53cc1e9a55ad1794d765d67c8d5d7d62a0cd851d56ee2abb86e8b7b18e6b8236",
+      "bundleHash": "369b5df33962bcde209f22938efa9a1bb4c26d543478050ce1c004a3f8224d9c",
+      "runtimeArtPath": "CardArt/Designs/fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "differences": {
+        "arrows": {
+          "design": [
+            "W"
+          ],
+          "runtime": []
+        }
+      }
+    },
+    {
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "displayId": "FNG-029",
+      "designHash": "c64958c9d131e3ccbbaa4c08de62fdc02c9e72143ecd493edf40777c34284de1",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "3a61804e41004c199b7be07d58b23275d1f74358148fee7661f1c27618757bce",
+      "runtimeArtPath": "CardArt/Designs/1be158d1-50ba-4f53-a52f-08696554c091",
+      "differences": {}
+    },
+    {
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "displayId": "FNG-030",
+      "designHash": "19539d4763b92ddaa1be1f011d49f7d1a9f88591a8fbec7c4c579bd2657460a9",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "611e5244ea8773a4d6c48933f3b6a8db48436aee8be8a70f42a8aee781d68994",
+      "runtimeArtPath": "CardArt/Designs/2946ca82-3e15-40d8-93f8-55acfad43645",
+      "differences": {}
+    },
+    {
+      "uid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "displayId": "FNG-031",
+      "designHash": "bd8d81f6b721144d690c3314a63125c8d90ccc28e4ed7acabdc42565e034352d",
+      "executionHash": "93b633dee4023c533eefb09778566f8025b4cb35ae81cdfd27919ec366badb41",
+      "bundleHash": "775d2fe99f5dd27137d3638c9afc28aa84c64494d9b341b67fc39ea311421eaf",
+      "runtimeArtPath": "CardArt/Designs/15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "differences": {
+        "arrows": {
+          "design": [
+            "NE"
+          ],
+          "runtime": []
+        }
+      }
+    },
+    {
+      "uid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "displayId": "FNG-032",
+      "designHash": "da67bde2e8ee9873077beb271eb8fc7fa4c68ef558b42ae82cb1e0a8583f768c",
+      "executionHash": "9d0999c28df033aef4240c72c067346fe1700ab88d1a0179e9e3c50c33e05376",
+      "bundleHash": "a7fb92107a2002c94ae452dc46f6710e09518c1d800fcfb033eecacd9af41576",
+      "runtimeArtPath": "CardArt/Designs/619301f9-72b0-4f86-a36c-e55046d138f5",
+      "differences": {}
+    },
+    {
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "displayId": "FNG-033",
+      "designHash": "2d61924dff8afb35eccaa19e03e0d681cd68f137e20bf9bc9dd6df33ee2d521c",
+      "executionHash": "f3be11294bfedc2ee78f85f20474071cbe083f6f33dc7adca0bdedca4b4fd843",
+      "bundleHash": "05b3557e705fbb44d3db5e513c835ce61ea3bea618cfcf090d2155220903e152",
+      "runtimeArtPath": "CardArt/Designs/9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "differences": {}
+    },
+    {
+      "uid": "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "displayId": "FNG-034",
+      "designHash": "9f03a98acf05813be4fa345b3611d9dc8795b2a8b7c8869c7303da33a8ab2d7f",
+      "executionHash": "0d7d408079486e8b34b5193b892e97ed0b4063e0cd7ddbacdf4eeffe0617bfa1",
+      "bundleHash": "3af312bba92ac789e036c7b182d5cdc13e2be6153470073486366d8f48645d05",
+      "runtimeArtPath": "CardArt/Designs/5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "differences": {}
+    },
+    {
+      "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "displayId": "FNG-035",
+      "designHash": "152d26d8520ac9e843c965d2df3151de09aa0a9c38d987cd727bb64dfb321a5d",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "e870162e48305c0c1fbbd10d86b615bbbfefc80f14aa4004f21d69dde0f5d68e",
+      "runtimeArtPath": "CardArt/Designs/6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "differences": {}
+    },
+    {
+      "uid": "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "displayId": "FNG-036",
+      "designHash": "4990e7d9b95c358b5d67fdb56b2ceb4a90fcb05979b7c779ddfe6d6734f62352",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "28098a840327f278776abe675dceec00859bb3a7b76872b4445ad1daf16eca2a",
+      "runtimeArtPath": "CardArt/Designs/fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "differences": {}
+    },
+    {
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "displayId": "FNG-037",
+      "designHash": "5419f07ce27f004e9eea19788d87194c85708906e3c3ff3fd0aa6a249f364ed7",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "6220e9906386e54acee410a2dcc8ebe526c669e2ee95d59ecccf49d7d8c817f9",
+      "runtimeArtPath": "CardArt/Designs/080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "differences": {}
+    },
+    {
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "displayId": "FNG-038",
+      "designHash": "caddbed3a9585b93ea06847b42e434ef671a6383548471f279ccff3467db298f",
+      "executionHash": "0e1d8cee4e06e98324ac75bc0b71c2c96e8ba5bc4723ddd99951bf33b3a7a9e2",
+      "bundleHash": "2d9d4e3b42f57a233dd6828716969095173bc72286d99542b11d1ad63980338d",
+      "runtimeArtPath": "CardArt/Designs/9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "differences": {}
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "designHash": "2d4156c456496569a811ff954f73fe9e2cc9d15051b049df48e57a2f6a75dd3b",
+      "executionHash": "936951eb14c876b1ae8bc455306221bfa0eff80e9689cc8ab837f151653f05d3",
+      "bundleHash": "51ccf86a8cad25686b739a34357284ebf4f182b83e5190e8d3d2e28ceb7bf1a7",
+      "runtimeArtPath": "CardArt/Designs/455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "differences": {}
+    },
+    {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "designHash": "5fabba4c6ef33a5be72598784d97cd4f591334d152cb58d8092881a2834780b1",
+      "executionHash": "2e5a62f24e7dda59ab3380890c7ce4fa1caf69f8f490978d9ae23a0641ad15c2",
+      "bundleHash": "9c9a6ece982d5e69493b01abe7b563200e5ee70cf2344c8aec93de48a7f0da29",
+      "runtimeArtPath": "CardArt/Designs/df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "differences": {}
+    },
+    {
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-041",
+      "designHash": "1be91db52ef6500619c2191d5c5a4ab097fddbb8b2e2308525ee15c46e30c870",
+      "executionHash": "20ce6da19ca5a62a167ed7ddcef1703eb795860554ce5261a0391ef5af1775da",
+      "bundleHash": "83348857ca4c01bfb3217ff8d2bf3317356ed6e3cfb995bafef34e926428718b",
+      "runtimeArtPath": "CardArt/Designs/3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "differences": {}
+    },
+    {
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "displayId": "FNG-042",
+      "designHash": "23a58bce6e993ef0f9df6d8d140719d32d4a43b98bf41baabf34e0939e3e5e91",
+      "executionHash": "cb7ac3e334e17b133258b98e1e65e96e9e0641207f111d2c45f8af55422d00de",
+      "bundleHash": "64e9cc93f0103b9c57cfde0b07fa17c976120d1b31b85b5bc0d61e7983a552df",
+      "runtimeArtPath": "CardArt/Designs/c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "DivineShield"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
+      "displayId": "FNG-UN-001",
+      "designHash": "86fe18674dabb30e234d302c1000bfd33c997ff7061baa264d0b3c4bd2bb947d",
+      "executionHash": "32acdf0e2598a92d22b6b204c8275107d196dc4204bc725ab0f25d0627e84d0b",
+      "bundleHash": "fcee08a2d79c3de37d675e1d56fa6df7ed55b2891335a4163ed5a21ea7b2817e",
+      "runtimeArtPath": "CardArt/Designs/068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
+      "differences": {}
+    },
+    {
+      "uid": "b60225b4-f701-49cd-875a-ef77bb0eba0a",
+      "displayId": "FNG-UN-002",
+      "designHash": "aa1b885fdb06b1e1ac9996440a8921ae330e07686939a7867233aaf7c7a0340a",
+      "executionHash": "2a12d7b336f610348602aa1007b175f648a919185dc417f9edce95e2f4b8e5dd",
+      "bundleHash": "3d763fb1c586a347a07f9953d4ea1ec9e6e7fbbfdd1a42d90f0b07f7a182af96",
+      "runtimeArtPath": null,
+      "differences": {}
+    },
+    {
+      "uid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "displayId": "FNG-UN-003",
+      "designHash": "dc36793afc2652921bfd27a4c88045c42262cb9b13bb1347290773498700ebac",
+      "executionHash": "d1471d6292f771ea0f7152eb08034405a9a515ad03fad7edf04580f23d010251",
+      "bundleHash": "340daf8eed194e3a98d0e3f348f6117731eb06e2c6d10c9ac03d84169bc9f812",
+      "runtimeArtPath": "CardArt/Designs/094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "differences": {}
+    },
+    {
+      "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
+      "displayId": "FNG-UN-004",
+      "designHash": "adfd02ec3078182ed523f6a50a7c15f16a0e156030e3b069b0f5581e4fcac560",
+      "executionHash": "45a7fb15a8818c03930c0fe16ea6c257011b18087887995310def322fd1a3f75",
+      "bundleHash": "adc119252dd4f1a43bf9204f12fc78138abe5a0f05fb4cb95cd105fea821d25a",
+      "runtimeArtPath": null,
+      "differences": {}
+    },
+    {
+      "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+      "displayId": "FNG-UN-005",
+      "designHash": "5a7707b0554c1d2006c55aa63e706c1e1096ebd613786b27793b9aacdfef7e5f",
+      "executionHash": "38e70cc3884067d812edd391a0c1989b6c6519262e9f55a7f6eab3950a6005fc",
+      "bundleHash": "a3daff6a7700b308af73a34d1808ec7d3aa306a4f7572ed61dc85556a02911a2",
+      "runtimeArtPath": null,
+      "differences": {}
+    },
+    {
+      "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+      "displayId": "FNG-UN-006",
+      "designHash": "8c1e7d24fb13868dbb0f432be6d8037dea5a3a33e1e20b017198cf08bad7a2a6",
+      "executionHash": "3b723aba3283f6308677702c3e04b968064c36b0a68c157e625e49686f0bf3c2",
+      "bundleHash": "410578f402dea9f9c1c2a5809b1e07ae26f13655629b8b1f1e6d4490ded07389",
+      "runtimeArtPath": null,
+      "differences": {}
+    },
+    {
+      "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
+      "displayId": "FNG-UN-007",
+      "designHash": "0642dba94f7bb7159d652f275cb618b9fdb9b1ff8c33f0143d21f8c84e9a1450",
+      "executionHash": "df15f9d0787097995a2b64eba7e3e532ac5b32f317f43b9d6e8ded12c6e8d98f",
+      "bundleHash": "992cc4419ff36278083a330ccbedb4b2e10eb2ce8b9cc61654a41d6ca773193d",
+      "runtimeArtPath": null,
+      "differences": {}
+    },
+    {
+      "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
+      "displayId": "FNG-UN-008",
+      "designHash": "779d36cf62dc7a2b023ded910f5388db0e001ac381e85d4e41414a23bdc95b30",
+      "executionHash": "df4b7adc64e3b3c63c85485e1ec218c92cb16bae34dcff43757a8a0c6e7fb84b",
+      "bundleHash": "ef183b2fcd1f49469cf409f234c068245850e5517f8c9b41ed97d14bda79011d",
+      "runtimeArtPath": "CardArt/Designs/2a51f1cc-ab38-4d84-ba97-aca096943395",
+      "differences": {}
+    },
+    {
+      "uid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "displayId": "FNG-UN-009",
+      "designHash": "6181ceff34a0665e71c084094b75ca16fc965b09369cfe763847146739c63376",
+      "executionHash": "c00735fa0a77c172858bdc7b2f9a30d52beeb37d21888ee28b707a07bc15ac9b",
+      "bundleHash": "8c8b4cc1afe6b6e5220723a3190b29fe245bae2c43344b7739586578cdfdf1c8",
+      "runtimeArtPath": "CardArt/Designs/85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "differences": {}
+    },
+    {
+      "uid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "displayId": "SA-000",
+      "designHash": "7bd571e65aebd1fbb7e877f3f6c70cc4cf64d706cdb708ba337172afd1d65845",
+      "executionHash": "69fffc529ec1093a99392da4eb0dd430a3d3e657b4c85050f633d1ef7048fc92",
+      "bundleHash": "adcf5ee8dd6d219c5bd7795250464968b9ab94b1905e8c00a16c0db8a0990185",
+      "runtimeArtPath": "CardArt/Designs/e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "differences": {
+        "collectable": {
+          "design": true,
+          "runtime": false
+        },
+        "costResource": {
+          "design": "Hero",
+          "runtime": "Star"
+        }
+      }
+    },
+    {
+      "uid": "ea18dc9c-79f3-46e5-8db8-8bf1211b6073",
+      "displayId": "SA-001",
+      "designHash": "3139a71d731b9a6d8e2ad68e3a301bae531955131b8d410c9b632819569cb844",
+      "executionHash": "c9ee69c4bde11881361594a1abf781eb31724047e1badbc6e576414fab9f85a9",
+      "bundleHash": "1e6619a13f9596f47db0afc8f3c35c3e886cb00585a39c70beb3fb9672d42298",
+      "runtimeArtPath": "CardArt/Designs/ea18dc9c-79f3-46e5-8db8-8bf1211b6073",
+      "differences": {}
+    },
+    {
+      "uid": "70f56934-997a-4eaa-b34b-1745d6ac06f7",
+      "displayId": "SA-002",
+      "designHash": "cdbeb7ca0959a0b4a1894ce38c6018f014735404e5d4f6b9c590f1d41ebb43b3",
+      "executionHash": "9f50064ae4de3e312782eafaec77743ffcbf57f182ada5a3f3bd98919529cdbe",
+      "bundleHash": "9a707383b9bba73767f893e4bab71834a9f75e504759da14d1345a07c2bf1052",
+      "runtimeArtPath": "CardArt/Designs/70f56934-997a-4eaa-b34b-1745d6ac06f7",
+      "differences": {}
+    },
+    {
+      "uid": "ff002f60-4a64-4d42-96f1-ba163bb8e59c",
+      "displayId": "SA-003",
+      "designHash": "0ac3d2addd0573adfa0804624aa1b1b97106dd162c9baf305c663400f91d19ea",
+      "executionHash": "b15640eac8ec371f5b972dfaf41427ff0a403320e052c04b5a8d737c117660b3",
+      "bundleHash": "4272807f8ba8b740c2b68721a563d21f10305c4571dce690463fb164bc1053e2",
+      "runtimeArtPath": "CardArt/Designs/ff002f60-4a64-4d42-96f1-ba163bb8e59c",
+      "differences": {}
+    },
+    {
+      "uid": "63699e58-6aa0-4012-b096-364a7cff20e7",
+      "displayId": "SA-004",
+      "designHash": "9983ba142b12b8a51495547cee323cc554fb0bdc74d59cb55c1448f22e3d4f42",
+      "executionHash": "6fc9c3634e95def6537b8dde4469ea638f2eb4ebc3d02d8c7d2284599aa8fd57",
+      "bundleHash": "e66301b0730de7bb8cd9bd9a574531afaafbbc042ff335533c11bdb74715841d",
+      "runtimeArtPath": "CardArt/Designs/63699e58-6aa0-4012-b096-364a7cff20e7",
+      "differences": {}
+    },
+    {
+      "uid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+      "displayId": "SA-004-01",
+      "designHash": "1a707ef0008de09c5ec1b47a1289f41fa03cd12c259d8fb05b5127845d2c5dd6",
+      "executionHash": "e11b3039a32cd51102ea0b8137ae12323a77711378debc5180caa1332ea89d5f",
+      "bundleHash": "65e388dab0f9d37e9a88766d4f208108ed12f6e4e8369b2b6a32aff2ed5862ff",
+      "runtimeArtPath": "CardArt/Designs/243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "AnnihilationImmune"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "ef4b99f1-3ee1-44ba-ac60-4648d8082654",
+      "displayId": "SA-005",
+      "designHash": "7d6a3ea045a8d8e2b8ae15cbf8ca4d16871c8a8a3fe2a272265c981eda02d9e3",
+      "executionHash": "5c9968949d0e56ce0fa56019eb9133b82138f22c783c7e3dedef5a2e74d013ec",
+      "bundleHash": "423b011324a1204a6e2db9d72660c686e39c9671b22d09cccca0f561f7a36e01",
+      "runtimeArtPath": "CardArt/Designs/ef4b99f1-3ee1-44ba-ac60-4648d8082654",
+      "differences": {}
+    },
+    {
+      "uid": "49325659-618c-44a0-b0d7-0f3b5a9f88ae",
+      "displayId": "SA-006",
+      "designHash": "3d82b49653a60e8139cd967d001c8c8185cebbaf5d3214fcfc0eba5345896a8d",
+      "executionHash": "b2c90a6b8d96c2adac429369bda717c93e14bffee66a1add2ed7d03106d900d6",
+      "bundleHash": "0f4e35c5d26b3a76b701a46bd021ed1894a82ac6989a5a277db73761f4ee9f7d",
+      "runtimeArtPath": "CardArt/Designs/49325659-618c-44a0-b0d7-0f3b5a9f88ae",
+      "differences": {}
+    },
+    {
+      "uid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+      "displayId": "SA-007",
+      "designHash": "79c3f486fc52f6df92d26a02d6397f25787b3602f7679da729216b3b66dbe69b",
+      "executionHash": "9fe34890d26d8eff11ee6c9acae5f7ad4828fd66c8d72376cb7b800188242151",
+      "bundleHash": "79990cfef908f8238907262e83e0f41c1269c612e2a9be3c153f6a1e59b0c363",
+      "runtimeArtPath": "CardArt/Designs/d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
+      "differences": {}
+    },
+    {
+      "uid": "872bb708-d5c1-49c3-810d-d1d748a8276c",
+      "displayId": "SA-008",
+      "designHash": "b3baaf7f8b02e4b67c89526cdc2b3ed206484f644a439b9de8e41719251e5293",
+      "executionHash": "47f58d3d6ca6e0b0d268209d35104a2c5e5eaa9769b8004114d9a22159cfd318",
+      "bundleHash": "eac09cf286de9c66ff85a2634ebf7e09a5ccb250ab711fb2654094f2d9865ab8",
+      "runtimeArtPath": "CardArt/Designs/872bb708-d5c1-49c3-810d-d1d748a8276c",
+      "differences": {}
+    },
+    {
+      "uid": "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+      "displayId": "SA-009",
+      "designHash": "e58da652ba2522445bee5d666068f3e7d1d799b4ac2d793f3543d515ddb0680b",
+      "executionHash": "900b574c18a1fada6b6ffa38fec2c1968f444bb234692d633a7e59502996bd16",
+      "bundleHash": "7bc68c0a252b7c435b4318a9f162fe5bf3d2618870be42a1d99c3b926d5be0e4",
+      "runtimeArtPath": "CardArt/Designs/bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f",
+      "differences": {}
+    },
+    {
+      "uid": "df733651-e22b-4b6b-bd32-f0c80d350d75",
+      "displayId": "SA-010",
+      "designHash": "33778fd5797ac7f23491df44fffdd97e5a21be3d305574f359dccc04411b1b23",
+      "executionHash": "c606c0b2d39acf4dd024c83105edf4da60405384d5a6119490b29a1bb1d0f1dd",
+      "bundleHash": "85b11d29c332cc6342e535aaa1204d778e4d296c4599d26f4ce80fde1d59eb13",
+      "runtimeArtPath": "CardArt/Designs/df733651-e22b-4b6b-bd32-f0c80d350d75",
+      "differences": {}
+    },
+    {
+      "uid": "b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+      "displayId": "SA-011",
+      "designHash": "7f327fe1dd0768ea5e192f45a9e1451f347dc312d0993b2722561985e0ece10c",
+      "executionHash": "a17f6ee2acc972faa0ada638bfb252efaac2f0f63cec252e600d2b324a187196",
+      "bundleHash": "5ce9de8244b850a8faf0b7b732714c41bfcd44cda8e41a1d6ee12be4af29ba37",
+      "runtimeArtPath": "CardArt/Designs/b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+      "differences": {}
+    },
+    {
+      "uid": "c5972274-f51c-4859-ae8a-cd1f5739d941",
+      "displayId": "SA-011-01",
+      "designHash": "dee4095c6bb88b1d14e388e9b06c0c5fd977cc26c25bc46ed1beb05ef606a50c",
+      "executionHash": "3cf173574a44acf5676afbb5e2fad3d4871dfa02e82f91f0649961640400ee25",
+      "bundleHash": "312c5b3d4f3272b6e9063a9d1fae985d525574535859604433102a96b077ff4f",
+      "runtimeArtPath": "CardArt/Designs/c5972274-f51c-4859-ae8a-cd1f5739d941",
+      "differences": {}
+    },
+    {
+      "uid": "c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "displayId": "SA-012",
+      "designHash": "91d5cd06c12deeee2706cb5301219d1393ff362fbe90378f0f0d1fe6f55b206e",
+      "executionHash": "9772f8ace9a2725d4cc67873719f3e81676bd2da2195f6d884cc5bdc9394e005",
+      "bundleHash": "45f53d91a5a5666fa6a10e92517d937cc0a549bcbf9829be0a2cdba44c2bbdb6",
+      "runtimeArtPath": "CardArt/Designs/c6db8868-62f6-46e9-a3b6-5e3efcf7f05f",
+      "differences": {}
+    },
+    {
+      "uid": "ca101a43-d6c8-4289-b967-947e7212b941",
+      "displayId": "SA-013",
+      "designHash": "5aadeabac9c84ada9c8d7b8d495dc29218f1fbf9acb1b5a032fd399fff011c4b",
+      "executionHash": "76bc0f3b6850734ceb56ff459fdc94abf8773fb3fb5ba9425793ba2f20bb01ac",
+      "bundleHash": "65a90958d248dbdb2fca957a6c0bf85c1f5e76d8deca2ed2cea3c520d450bfc4",
+      "runtimeArtPath": "CardArt/Designs/ca101a43-d6c8-4289-b967-947e7212b941",
+      "differences": {}
+    },
+    {
+      "uid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+      "displayId": "SA-014",
+      "designHash": "bb559889b89588b78442d463a948056873d1902730cbfdf09de040f11d5071aa",
+      "executionHash": "ae45e87c22992c9afdcafa4fd7d260583edcf11f43bd7179c3e8c8d22d42a17a",
+      "bundleHash": "4e1a62a43af430c0548212e83a1578435de149f9ed0c9374c5885cbab6f3056c",
+      "runtimeArtPath": "CardArt/Designs/acfbc239-3f00-48a8-ba1a-b264535c9c8f",
+      "differences": {}
+    },
+    {
+      "uid": "385f1bae-5ade-411d-abd1-850d74944004",
+      "displayId": "SA-015",
+      "designHash": "97422f40560dd8552bbdb915d4f9ff728ee06f51bf1a4590a0eb1bdd88cf4ef2",
+      "executionHash": "39761749d280666e82c9bef9deaf8ff71f18ea26a7e46d72441ca7e3091dd1b2",
+      "bundleHash": "38c8d5676010a776f3e5bc2120ee1e55221599e8a8bf23487e8b4c23ca72f4ab",
+      "runtimeArtPath": "CardArt/Designs/385f1bae-5ade-411d-abd1-850d74944004",
+      "differences": {}
+    },
+    {
+      "uid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "displayId": "SA-016",
+      "designHash": "399f287bb5ae1d153349824669c288d4c71eb87257ce8826663baf82c3e68f65",
+      "executionHash": "049a1b6a0cc4f4ccc5c6b0b265cd8f5d066b1a1637a2d79b069c74bde88e0f01",
+      "bundleHash": "910356eaceca7c411aa53c9cda4b19c9425d6d72c220aef3958a98d5f16adc24",
+      "runtimeArtPath": "CardArt/Designs/8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "differences": {}
+    },
+    {
+      "uid": "4eddea4a-df91-425d-bbdf-b216da8381d8",
+      "displayId": "SA-016-01",
+      "designHash": "28adf6174170f82a5965992417b175c1f34dc649d476a563da334a4218080ed3",
+      "executionHash": "44d780f70db08939ebd288f31fb360df05b713da6d648f43f08b4eb5eae3fb5f",
+      "bundleHash": "60242a232967929095b3e9e8e9dd93a4cac814585ee972b9d72c3123251bb84f",
+      "runtimeArtPath": "CardArt/Designs/4eddea4a-df91-425d-bbdf-b216da8381d8",
+      "differences": {}
+    },
+    {
+      "uid": "1a8e356b-c72a-4181-8aa1-f2426c52cc8f",
+      "displayId": "SA-017",
+      "designHash": "09257762f2964a712f819f11fc9630705e6f8c660fb3a0ece66b16d2995f5883",
+      "executionHash": "c6d6af4b34a16132ae1e45711397e7e359b9a14a6c77afc8ca479bd47eba9102",
+      "bundleHash": "cec9ae0bcbc6a8f8a5703ec61aa1e72638020837249567f6dda0340e29104d51",
+      "runtimeArtPath": "CardArt/Designs/1a8e356b-c72a-4181-8aa1-f2426c52cc8f",
+      "differences": {}
+    },
+    {
+      "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "displayId": "SA-018",
+      "designHash": "6c6c2635af70d7a18a213e5e7e2e22593161f9e6685ca4833d1cb93ffd4fee28",
+      "executionHash": "f7d0ff2c6f6f9866bff93752a030e06c65d748ef8429bbab2c1a228387a74adc",
+      "bundleHash": "a165fc77791a9050abe2da6d1f8a5828d271998b00c8a48fc9e6eb82f5b34594",
+      "runtimeArtPath": "CardArt/Designs/2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "differences": {}
+    },
+    {
+      "uid": "0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "displayId": "SA-019",
+      "designHash": "fa2826e378df6a94a9c91b6b8343f0415f6d127058f9956b5bbb0b343153d4a8",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "4f10c3b280cd86a260a9460867b9bd8c48ff03ab8694e9e54a960e3e97fab386",
+      "runtimeArtPath": "CardArt/Designs/0dde3972-5b69-4c3c-a17b-855656bf15cf",
+      "differences": {}
+    },
+    {
+      "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "displayId": "SA-020",
+      "designHash": "3e7f9a97b829da97bcf8e5f97a118e41a1b4837a1f8d566d535238b1d782bcb0",
+      "executionHash": "dcd6e4285da4a897fe2bdddcb675b647c643b25908166db934f750d0a8c73086",
+      "bundleHash": "36b833c81ad277f6cf2f065855741e9c1193f6031fa0a78094b38d9abbc66ddd",
+      "runtimeArtPath": "CardArt/Designs/ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "Windfury"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "displayId": "SC-000",
+      "designHash": "2bc0b3f19b68a833a6ef17b34b52d74dcadce4a53b527a02a0bc590bbf069716",
+      "executionHash": "7c83a8eac8f149302a25fc9d5ab1c67d0057bcabe77ba936539e62e6c02dc1bc",
+      "bundleHash": "72af6dda08ac64b1076b9d683c27178cb367ea36794fc6edd80d10dfa6762f99",
+      "runtimeArtPath": "CardArt/Designs/b85a69b8-6241-45c9-a168-a10282390c44",
+      "differences": {
+        "collectable": {
+          "design": true,
+          "runtime": false
+        },
+        "costResource": {
+          "design": "Hero",
+          "runtime": "Star"
+        }
+      }
+    },
+    {
+      "uid": "a1edce46-f210-4215-ab59-f35a5173c50d",
+      "displayId": "SC-001",
+      "designHash": "f39c7b4a8edd154a3c15a224ed106db6eee7e6dadaa6b2bd5ba0a30bce11a4b6",
+      "executionHash": "f48c87866c1452c89b6d53c64fe54a1b7d4e9b112d94bfe574200e3163455ae7",
+      "bundleHash": "ad130994cede88fca3b3b9dfb5109dbea31436b12e71db6884f02bbca0ce6b86",
+      "runtimeArtPath": "CardArt/Designs/a1edce46-f210-4215-ab59-f35a5173c50d",
+      "differences": {}
+    },
+    {
+      "uid": "07563f0e-c7d5-4448-a351-fa618dfd924c",
+      "displayId": "SC-002",
+      "designHash": "1ef06df39b2006245453dfb0e3925768cffdf23dc0f3f5206fe683f3acbb7f65",
+      "executionHash": "f9d8f5966301c7acc53dad233a537f775075e94f14e0059a53ea8035479fc1ae",
+      "bundleHash": "9dae309b43d6093b29211065720991103324b0de267858695ce0a1c6d96341a1",
+      "runtimeArtPath": "CardArt/Designs/07563f0e-c7d5-4448-a351-fa618dfd924c",
+      "differences": {}
+    },
+    {
+      "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
+      "displayId": "SC-003",
+      "designHash": "f2b7ec8c803c297991b86d00b36e74a44449070a45ed7812be1784928dfb0555",
+      "executionHash": "555a4e4b8afebbf40fb2285b2a016f19c060ad3e8ef4fe43a12424453201aecf",
+      "bundleHash": "ca73666075ae8d35c3cfbc4854b9972a0e08192d14530299ff4eb5bee0928a11",
+      "runtimeArtPath": "CardArt/Designs/233e64f0-fc55-44a4-af3a-10222df336c4",
+      "differences": {}
+    },
+    {
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501",
+      "displayId": "SC-004",
+      "designHash": "120c9e197c5774b2c946dbf1630a88ae3b32f3507f0d2148cfa9ed3a7a0e07d8",
+      "executionHash": "55a98e8be19279ca84547a163ac165b48444370d793f2d398c3bb8637dbf4daa",
+      "bundleHash": "eb38924e13baeb6b730dbadc898cf5e277e8bb8f50f4bd28c802b8d426be62ee",
+      "runtimeArtPath": "CardArt/Designs/60268ee4-2023-490d-86ba-a6476cead501",
+      "differences": {}
+    },
+    {
+      "uid": "4c2033a5-fb41-4c96-b540-16572b690c70",
+      "displayId": "SC-005",
+      "designHash": "3f54fc023649ca740a791381358b7c7cc66d0bc7da8b4b8b4cc3a45015d863f6",
+      "executionHash": "88f9eb82c1355343506f14e770ed1a12fd0410334a541ded7f2579f2de1a2671",
+      "bundleHash": "eb2df09606976bdf0c4b34ea05dc19d1bd23cef9df3a42abb9576c18789a8022",
+      "runtimeArtPath": "CardArt/Designs/4c2033a5-fb41-4c96-b540-16572b690c70",
+      "differences": {}
+    },
+    {
+      "uid": "69f1c181-ade4-485e-9923-e5949cda7f93",
+      "displayId": "SC-006",
+      "designHash": "c72942e64d1df8a6187cc75a5c86a2928d3ce41a93b28b81618443b5a742536e",
+      "executionHash": "3dcc648498b9934993a7e8e524dd9999ebaea475555ec8a0063fbabbbd4c9401",
+      "bundleHash": "a87d7eca9ebb30067d928d252ed36e0adda63329b491970f7fc28548cb58f448",
+      "runtimeArtPath": "CardArt/Designs/69f1c181-ade4-485e-9923-e5949cda7f93",
+      "differences": {
+        "arrows": {
+          "design": [
+            "S"
+          ],
+          "runtime": []
+        }
+      }
+    },
+    {
+      "uid": "204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "displayId": "SC-007",
+      "designHash": "3c24fca65da3a6af182e267013d48875781ecd9a6c93bb8323334957fa6eb3b3",
+      "executionHash": "b544ba56ba7814fb5d06ff9cfa32f6e403fe848b835076b2d5b32222a002805b",
+      "bundleHash": "11fe1be2e642220f78c7fcacf118758c9f2fb4ad9f24648be654dab3a4bf4761",
+      "runtimeArtPath": "CardArt/Designs/204a68df-1ff8-4d10-9309-aafbd90d6079",
+      "differences": {}
+    },
+    {
+      "uid": "62452283-0e35-4ba0-83cc-2ae115078866",
+      "displayId": "SC-008",
+      "designHash": "e28a86fe34961caffdc69df30393889f66bf2869f832eb629ff792247d57782e",
+      "executionHash": "fa41318647522c3fabbffeda36d6ff6fed9781992d4048bb69be5fe04c0f0e4e",
+      "bundleHash": "d535796427d3360fa6878beb54325434d0565852d5f6e9a62c7921e530e62e6f",
+      "runtimeArtPath": "CardArt/Designs/62452283-0e35-4ba0-83cc-2ae115078866",
+      "differences": {}
+    },
+    {
+      "uid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+      "displayId": "SC-009",
+      "designHash": "2d258e1d49562f6732377d9ee15324b663dd6de35073700939f4f047587f33ba",
+      "executionHash": "def1db7d3dd7808531cbe370e0db247574b92a5f3a65740579230573b8c37e65",
+      "bundleHash": "2c07f04c55a9683194a411cd9a25b8410cdcf626b54ef05e171576758eefab15",
+      "runtimeArtPath": "CardArt/Designs/3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
+      "differences": {}
+    },
+    {
+      "uid": "6282e729-e313-4bb6-a979-d19a27917d85",
+      "displayId": "SC-010",
+      "designHash": "e6dd1a54e8fc6cc085fa49774d92c13046e020f4ad1218810059c639fd7fd292",
+      "executionHash": "0c95764fe4774b0d59849e4b99b242fcce757284dd17856297f412f56d98e00c",
+      "bundleHash": "417851eb785da2e0e9e2ea25f1e1a323dcb94a8e95e3cfddeef8e3acd6bb0bbd",
+      "runtimeArtPath": "CardArt/Designs/6282e729-e313-4bb6-a979-d19a27917d85",
+      "differences": {}
+    },
+    {
+      "uid": "7a4d1b62-bf76-4807-a441-2b778ddd6f01",
+      "displayId": "SC-011",
+      "designHash": "3ca49528a2cdc2d2908828bb3f9867c6bc1a6ef32fbb5460e3cd6683f70365a3",
+      "executionHash": "363161b3763a3e973d1a75fedd96a4921d6a40584b36b21d024a54c48ef5ee13",
+      "bundleHash": "8a2ad3a6b685ddef28b0b91171fc9fc64d7cb44f4a32316914728ede67c52189",
+      "runtimeArtPath": "CardArt/Designs/7a4d1b62-bf76-4807-a441-2b778ddd6f01",
+      "differences": {}
+    },
+    {
+      "uid": "bb14410e-c906-4620-a04c-6886f5039c8e",
+      "displayId": "SC-012",
+      "designHash": "81603f0eb68bf183cac589018309dc735a1569218996269f307781a4b773bb2e",
+      "executionHash": "06a3676adbd1762cb57768cf163c9098a2b3839eb24f427806dfa20901af49c2",
+      "bundleHash": "c0dce3d6d3a8f96f386614783beb94d68944f38ce75a2c88c1a673429bfe5023",
+      "runtimeArtPath": "CardArt/Designs/bb14410e-c906-4620-a04c-6886f5039c8e",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "Retain"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+      "displayId": "SC-013",
+      "designHash": "ea19607252ed87d64bad8d3e297dd393dbbb47cb95babbe447965833b528f1d1",
+      "executionHash": "921931bb364aa0f0a8eeeab9998765f2b0e4d9950ba56a0ba8fb7ecb7dde96c6",
+      "bundleHash": "b5cf13d4f71f74f94a77f0ca31a9eddb3ead9457945b89d609260eab106435f3",
+      "runtimeArtPath": "CardArt/Designs/c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+      "differences": {}
+    },
+    {
+      "uid": "e456b12e-bbd3-444d-9583-222fc4e80780",
+      "displayId": "SC-014",
+      "designHash": "4d9415f8573d7d689088f10c034145c1a951f30727b88361a872c4290eeff323",
+      "executionHash": "4f4eb897bee0831f41733f3f7f497c9267f74844ec567008fb6e0e82d6ea6f21",
+      "bundleHash": "01ef6b7583634ae1948ffa2dbb5c8ec917c09505e9c42a5b17349436af660425",
+      "runtimeArtPath": "CardArt/Designs/e456b12e-bbd3-444d-9583-222fc4e80780",
+      "differences": {}
+    },
+    {
+      "uid": "b5e0ec0b-e614-4862-9eff-bba73677708b",
+      "displayId": "SC-015",
+      "designHash": "8e7ec63dbe5e511929ba73406d32b7752d1774e2f5b6b1a7244f011340bd0d6a",
+      "executionHash": "46992b2fc16c83c88985e8960c249749d55122b6abc0dcbeac79a03bdd3e4501",
+      "bundleHash": "64743ca3b47d3d7e197bbe471c161e48caa4030a8386ef871f05aa878ab23a7f",
+      "runtimeArtPath": "CardArt/Designs/b5e0ec0b-e614-4862-9eff-bba73677708b",
+      "differences": {}
+    },
+    {
+      "uid": "43b464d4-781c-4390-80eb-d926b7dea2d9",
+      "displayId": "SC-016",
+      "designHash": "429600a11ffb83d8a6047579dd27bdbbf6966d54fae1c78f101d08a07e4993a4",
+      "executionHash": "d661e25ce1b8a44146bce4c1d11d984c3657a7474b2ade2685d1ad5193b60afa",
+      "bundleHash": "af2871ba51c53478c78ff10ebe75a9131af19ec092ca2447cf42699215a2061f",
+      "runtimeArtPath": "CardArt/Designs/43b464d4-781c-4390-80eb-d926b7dea2d9",
+      "differences": {}
+    },
+    {
+      "uid": "454171b3-f6cb-4907-8e6c-baca849b06b3",
+      "displayId": "SC-017",
+      "designHash": "1b822b2be98eb73f7296567d7b8b3208e8da38dd985b9cc85441759a41759d3f",
+      "executionHash": "af29118d24dca075ee35f82b42bc5a7435e8826bd6ad33ee85171c6050e732b7",
+      "bundleHash": "4b24a49996e1cde2e906538016da372e0844b4b7a10c7e8343167b162e31c628",
+      "runtimeArtPath": "CardArt/Designs/454171b3-f6cb-4907-8e6c-baca849b06b3",
+      "differences": {}
+    },
+    {
+      "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "displayId": "SC-018",
+      "designHash": "65acda02ee755177ad25a6c7b39d0d1aaf65b50852278c37d8329a9dfa7c4317",
+      "executionHash": "a51115e901791e8622755ff5cc03a56f8ce29c97a0f176211aad61c0f6a2ea87",
+      "bundleHash": "35cc35865d92a6e4c28f6b99c1e2765ca25f725ffe9889bf94b4826f4b04c9fd",
+      "runtimeArtPath": "CardArt/Designs/4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "differences": {}
+    },
+    {
+      "uid": "0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1",
+      "displayId": "SC-018-01",
+      "designHash": "42bf3be536701c409919b23ed59d1d27d2576fe6bd51503a10056bf9fd499187",
+      "executionHash": "5c97795db7e7c9845fcefd0145804884384a0a5b485d7829142b0887183746e1",
+      "bundleHash": "6f4db681e4a2239af97ca35e3def3fd2321c1ea4db3f3aa80f096d5fcf697f9d",
+      "runtimeArtPath": "CardArt/Designs/0811b57d-da6e-4e2c-bf87-ae2a3fbcbae1",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "Retain"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+      "displayId": "SC-019",
+      "designHash": "d9d5a0a09686176536e9d2da2a612004c4f452e43f5b71ed698a440124918be2",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "0cb9b3f436069615ab30c41cde1da1330de089c0569018d25a4c817547856ef6",
+      "runtimeArtPath": "CardArt/Designs/e7d3fe6a-821b-4c83-b660-1ada41ee2368",
+      "differences": {}
+    },
+    {
+      "uid": "a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+      "displayId": "SC-020",
+      "designHash": "d91a957a7d8b59a1812b4334f53b8fcd77a8fe11cb4353411eb62f0527c20424",
+      "executionHash": "face32b5169e81e33079cb277cf4cc118980adc5685a4d2617df673c01e39989",
+      "bundleHash": "76cf56699d2902b769295dbcd93bfee3b89d0a901278ba1f393f2edd9206b49e",
+      "runtimeArtPath": "CardArt/Designs/a4d6fe29-57a9-48c8-a1dd-c33b36f75bc1",
+      "differences": {}
+    },
+    {
+      "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "displayId": "SC-021",
+      "designHash": "93784546ecf49a9594a96147bf0bef6e9bca62dbc1a5c6dec6f8e205a2bf10e5",
+      "executionHash": "d191d7152c1880d1050271f4af227f7380e316b8971c73dab7650ca386651b1c",
+      "bundleHash": "ce5d29059c3af2bce38bb34c45df06fe7c0c5a402e0bf6b7155a0710d9a66f0c",
+      "runtimeArtPath": "CardArt/Designs/103f0af6-2a92-471e-be1a-e5fad6fa5735",
+      "differences": {}
+    },
+    {
+      "uid": "6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "displayId": "SC-022",
+      "designHash": "8cf4978143829f82eabac8e14e790ec3accfaa9d4e575b814ae1c1197705594e",
+      "executionHash": "21758d8a32d39dee39e19523bd11b2419e32dbb88fa90bd6f4958777408ece72",
+      "bundleHash": "c92d550f535b35865ccb220b894d3558f3a947b491f738830c851eca26523e2a",
+      "runtimeArtPath": "CardArt/Designs/6ddc36ab-de9f-4bb4-bf28-def6548454cd",
+      "differences": {}
+    },
+    {
+      "uid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "displayId": "AI-000",
+      "designHash": "a894c606b8b11c3e4224715fc1a0b801845b0903b0ae2ae6ea631cfad8f2bf5c",
+      "executionHash": "92a31ddbd487fe78324c715d38585a96c7e5a4c1ae46d9c198186c76c792132c",
+      "bundleHash": "b06e215fe9894b660383e9ed11042e6652433e6742b04c368851ec4024f6c089",
+      "runtimeArtPath": "CardArt/Designs/ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "differences": {
+        "collectable": {
+          "design": true,
+          "runtime": false
+        },
+        "costResource": {
+          "design": "Hero",
+          "runtime": "Star"
+        }
+      }
+    },
+    {
+      "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "displayId": "AI-001",
+      "designHash": "4d857b78f70fc36eb0724598a930fc71ec4b62fa73ca5300fd7b9cdf0be6a865",
+      "executionHash": "949716040ecc14bcdfdece43a8c82d5d94718e79b848e79d59d73b06877a6c2c",
+      "bundleHash": "98c7080496da281eccf6ff3191ac1c929c44eff03376c9269c45f54ca8db3ae9",
+      "runtimeArtPath": "CardArt/Designs/15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "differences": {}
+    },
+    {
+      "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
+      "displayId": "AI-002",
+      "designHash": "5ef583f1dc9cf192b8db0c937c7e4cba2c619613ed1cd81dc45f624c991ee8f7",
+      "executionHash": "ef2926870395705179bd2bb2518adf161492292ae3ce35692c27695fa144ef77",
+      "bundleHash": "db9c7d192f143677c57304445a6c59d7e4c01febee8e5e1b4041f7ec5914950a",
+      "runtimeArtPath": "CardArt/Designs/e1362804-dea0-49b5-9513-8c1317369f9e",
+      "differences": {}
+    },
+    {
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "displayId": "AI-003",
+      "designHash": "9f81ae6db9cfeb50011335133852ab358b2c9fc62743784843625d54adb35963",
+      "executionHash": "f515daefe6c4eb69921ef88047a9774177effbe80cb749add65395e3d3677a2a",
+      "bundleHash": "365b3db11bc8d7cd4691c7e901acfc1bf99abc3a5b97ac19e6ba87f7172e793d",
+      "runtimeArtPath": "CardArt/Designs/a60555e6-d405-47de-bdff-c84031d53448",
+      "differences": {}
+    },
+    {
+      "uid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+      "displayId": "AI-004",
+      "designHash": "d4b19d5aee9b52a30fde6e00b8a9f59e094f930b24d2f615cc27b2d3e3d88252",
+      "executionHash": "25a02d1bc9515255ba8e01519edd6b2a29ee4e8b6e560528208e10b91d884e8b",
+      "bundleHash": "984618bbd4364a8dbab7f9510995be3252ac921cf46827b6a2ba597d0b8985c6",
+      "runtimeArtPath": "CardArt/Designs/602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+      "differences": {}
+    },
+    {
+      "uid": "3e56ca22-efd1-4cd0-822f-beceb830e41d",
+      "displayId": "AI-005",
+      "designHash": "d5e9125e2638cc1965ce979e3862332ebacd159e372ae3e4f3f60c39d23b73ed",
+      "executionHash": "3d1b3acdeec2ced9b35c1f266ed45fa561be2357cfb131a63c77510627577514",
+      "bundleHash": "8e658ee7212bb118c3d4613d84226c117ce9f0a9ff1f33606569ddf91d1c1a2b",
+      "runtimeArtPath": "CardArt/Designs/3e56ca22-efd1-4cd0-822f-beceb830e41d",
+      "differences": {}
+    },
+    {
+      "uid": "0764d0f5-4050-49ab-924f-2485c4381e26",
+      "displayId": "AI-006",
+      "designHash": "c677145165f313749a85aa17ba2dc567fab07bc8a08d7c6b29e0670738dbf871",
+      "executionHash": "adfc98599d2563616016eee91324546969601499ece48d14b674530425134e5a",
+      "bundleHash": "7fa1c819c02247413903455cc0b6137977804e1617107cd9ce3686b69dd12229",
+      "runtimeArtPath": "CardArt/Designs/0764d0f5-4050-49ab-924f-2485c4381e26",
+      "differences": {}
+    },
+    {
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "designHash": "b872730949e18351ceab5f377e1b638f8e00fb182e4f3994a74c8af7ec6090aa",
+      "executionHash": "2e5c5e4dc8b22d0dd056e7e5aceb34c52ae37c63b20fd2c51d00fbf3ea5633d7",
+      "bundleHash": "033520eb2d282f94e905458909c2c2f9692bc191aa23a79cf4f2ef38dad66978",
+      "runtimeArtPath": "CardArt/Designs/430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "differences": {}
+    },
+    {
+      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "displayId": "AI-008",
+      "designHash": "e7241d8c93d1e6b734420ebfdbf6608cbc907223a135de3f6a4b197570aa1c46",
+      "executionHash": "28243c6e5c5b221eb9501bf2dd6e3b3efa76a614b914d6c895a3317e995d14df",
+      "bundleHash": "1bf5df038984d4ee199805c8414c21ecf517576093f354a5802d5b1d64fea3e6",
+      "runtimeArtPath": "CardArt/Designs/0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "differences": {}
+    },
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "displayId": "AI-009",
+      "designHash": "ce4a85155cbeb7c22e7f73f85210c52f8f478a23aae32507248c88467db6dffa",
+      "executionHash": "24effc1700d78fe1319719e7e0c03a9219f4393f258d43a3e832bccbacaab398",
+      "bundleHash": "5a51ce4cf9e917d931827e32a4019e436ff9a6aada9a9b6e5d4af129cf07394f",
+      "runtimeArtPath": "CardArt/Designs/fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "differences": {}
+    },
+    {
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "displayId": "AI-010",
+      "designHash": "11aa6610676c3ac1a16c8d3ccb20d4497c23fdd29bf2b66540784424cefc420c",
+      "executionHash": "48b99e8397d77baf236d3e5144091395d4e51415cd9830dfa0cdb1affe391f54",
+      "bundleHash": "4a73f81cb45d0384d4f7a6ed97f55f57d46ac9935aa1745e5b18eddeda998867",
+      "runtimeArtPath": "CardArt/Designs/573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "differences": {}
+    },
+    {
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "displayId": "AI-011",
+      "designHash": "920f5b4011017cbf2ff66084b67ca99448496484d7a7fcd0e0ad433f3de24711",
+      "executionHash": "c6a0e3157bd98064acd4a00ba631a9e7460857ce9cb1ecdffa3ea15da7309496",
+      "bundleHash": "fd203c74a3f9ef1d9e574845f56b80f45de46918d1e87d666092a95410b08748",
+      "runtimeArtPath": "CardArt/Designs/d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "differences": {}
+    },
+    {
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4",
+      "displayId": "AI-012",
+      "designHash": "336d893c8f0a303d934c8ccd2af76d3bff65239728b7adbb79b1b3a8904b90d8",
+      "executionHash": "639c96661efb5359e2ecf33143d6a10a18383fc80e06f14d1b711d75e4a6ed40",
+      "bundleHash": "6c2007b720f6801a3d9c0b9bb6e300ea5216d61411242e3dd952dfd6884fafe7",
+      "runtimeArtPath": "CardArt/Designs/b682e438-d931-4a93-8698-ae9320f150c4",
+      "differences": {}
+    },
+    {
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "displayId": "AI-013",
+      "designHash": "cc3ad7e69cd7ddcb28e6e5ed06a071e5e4c732b4ba88426921314c9790c30694",
+      "executionHash": "c43076c11a8249958fc302dab8ebf445e735c00e442518ef1768d8982c62d63a",
+      "bundleHash": "8f108b4bfc3a8fe28ded2be1e36dc862a5f551826986d6c83fa8b4f8ff8bed88",
+      "runtimeArtPath": "CardArt/Designs/eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "differences": {}
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "designHash": "0101c0182861a0b1243d027e3e41d1341a434076f56f762196bfb18a6c69fca6",
+      "executionHash": "c6a3b71d47bbb415b5384956d2b6ba7b6596795c1d605dffe4c7e2f99f4ebb5d",
+      "bundleHash": "61dc326515786c8080d1302ac642c5f4994ae001a69941bbb83bde8e8c3de9e2",
+      "runtimeArtPath": "CardArt/Designs/4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "differences": {}
+    },
+    {
+      "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "displayId": "AI-015",
+      "designHash": "3da0704f2fa088459e994654f2c5144b9052c6e6e925fe19f276d865edc55bfc",
+      "executionHash": "5db554c5efa419287d2bd74ab91e9b336c5122c6fcce609907fcb474b3cdb63f",
+      "bundleHash": "ae4bfca72f2430543486a5e95723f0273badfb4be7b9e4c5f22d45af51f2c1e0",
+      "runtimeArtPath": "CardArt/Designs/0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "differences": {}
+    },
+    {
+      "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
+      "displayId": "AI-016",
+      "designHash": "69a620e4bd54555d0489a209bdec950d74aef4961fe0ea0656d7a23addcc88f3",
+      "executionHash": "fd529f3874e278cae05a65e1442ccdbdf8b1f2d4430b34795e4a1876442483be",
+      "bundleHash": "be9c10a20e1ca471d0edf2eeb86011144c46716d42687fc2cffcd2b2e409c42e",
+      "runtimeArtPath": "CardArt/Designs/341ea244-575c-445b-b1a6-ea761c92145f",
+      "differences": {}
+    },
+    {
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "displayId": "AI-017",
+      "designHash": "4aee45480d823113d5fc78579505c42b85f677c8edae85d134c18f02767e2c2b",
+      "executionHash": "0a27c42ab07a49d9194714af170e45b02dcc2d69c96ef5ed88bb444a9a4896a0",
+      "bundleHash": "a5e7f4b8251f2a0743c5ea81ba66fffede88193a9caef214fa775d01ebe38427",
+      "runtimeArtPath": "CardArt/Designs/9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "differences": {}
+    },
+    {
+      "uid": "0bd031d4-49d5-4720-b75b-58eb95690fb1",
+      "displayId": "AI-018",
+      "designHash": "3143fbf407800703f133068d4b07593f6287df130a0f59cae129fb4df9f8225d",
+      "executionHash": "ef52f32d6365b142d813a666ac69361e6146b2199add963be30a6299b1ed5403",
+      "bundleHash": "920adb12ad2719f026a853e7163fb98e827abd2ccd2ca7578f94cbe9dc6d81a0",
+      "runtimeArtPath": "CardArt/Designs/0bd031d4-49d5-4720-b75b-58eb95690fb1",
+      "differences": {}
+    },
+    {
+      "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
+      "displayId": "AI-019",
+      "designHash": "fad3b92c5421d653d11de35d11e3175f851e496eb868b62713872ffb89ef95d2",
+      "executionHash": "ff5f50f8f9457583e0da8f17d78c4b97819026eb8b9a6527f4f3c4a6d29b22e4",
+      "bundleHash": "1c32912692891463b2bb2d46b323e4e631dd83c6f6d536edbafcd82cabe62171",
+      "runtimeArtPath": "CardArt/Designs/3d1865c5-b2e7-4003-96d1-07223a482030",
+      "differences": {}
+    },
+    {
+      "uid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "displayId": "AI-020",
+      "designHash": "92ca0d3459deadcb937120c100688b4d6608419bd7914e1bbe9501e0f348baf6",
+      "executionHash": "544e47c83a3dab568ff37529faad3f27abb5d372559fc3d1270c8e897534f6a1",
+      "bundleHash": "29bf483b662a3d738712806933e613e992606a9ecdef4a3368096d83946352ae",
+      "runtimeArtPath": "CardArt/Designs/bdd6fa88-21f9-4eed-8248-00e550344739",
+      "differences": {}
+    },
+    {
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "displayId": "AI-020-01",
+      "designHash": "e95967144c3793412b2a0c8b0d1f42fa0640e210e25c3b9ea6bf79b75ac6ca7a",
+      "executionHash": "3cbb64c9f02c41d725acbbabf1f701e926ca883a3dd16cd053a1b51e59593041",
+      "bundleHash": "66480a9c1a151853dc789f6ed10a05ed441e97452ad0c130cbb84f8c7d0b8fa8",
+      "runtimeArtPath": "CardArt/Designs/ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "differences": {}
+    },
+    {
+      "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "displayId": "AI-020-02",
+      "designHash": "4b0501130bf8ca9c98d9b506e1e8b697263494d5c76899e6465584e9d55aa54e",
+      "executionHash": "ee3c46239b9dcc39eddac93abc5ac6cb1f5ee53c97452a19d311abff7c1a20c3",
+      "bundleHash": "bc27fb32a1a9a5709f33db30c0f9babb4169a66ec4ee61c30e255b9f3f904210",
+      "runtimeArtPath": "CardArt/Designs/a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "differences": {}
+    },
+    {
+      "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "displayId": "AI-021",
+      "designHash": "87554b49fee8b81adb478e17f761b87358aa1aee27192967d33b34d7f2eb72cd",
+      "executionHash": "f34ff824e97a3175f4e9505866ac818838339f92de5d4f54c66ea8a61d209fc8",
+      "bundleHash": "04376c44e7ac4b7e131c28898e736b7d659ba063f016f06fe82283c8adfd9ee1",
+      "runtimeArtPath": "CardArt/Designs/0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "differences": {}
+    },
+    {
+      "uid": "daa6589c-0ae6-4073-9591-ea63af74ae54",
+      "displayId": "AI-022",
+      "designHash": "7f73d1ed911614635f0e0508de1a22a49916fbc52d112c3cb026e07685e66924",
+      "executionHash": "997b1f5ba80cd1cf68608deb7908a282db9ec0abdfa71a2ef6a18e6f5239582a",
+      "bundleHash": "7cbecdde8c2a55c7ed837d9f08f0e2941f63e2c828fc54eff026cc3abd4fc933",
+      "runtimeArtPath": "CardArt/Designs/daa6589c-0ae6-4073-9591-ea63af74ae54",
+      "differences": {}
+    },
+    {
+      "uid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "displayId": "MCC-000",
+      "designHash": "7784deb74cc88db492b25cf698f1d59133229e31c2c6688cbd97969cfe97ba18",
+      "executionHash": "6ae8633f930e8e0e5ab7dee0484f1c519c82589f883f33ffbb0ebf4a12bc7acb",
+      "bundleHash": "0569844af4cb26b20b9a7071f49ee5288c840e444ee0ff8a01762592d89036b5",
+      "runtimeArtPath": "CardArt/Designs/caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "differences": {
+        "collectable": {
+          "design": true,
+          "runtime": false
+        },
+        "costResource": {
+          "design": "Hero",
+          "runtime": "Star"
+        }
+      }
+    },
+    {
+      "uid": "d65e0578-98e4-46af-aeb2-134cae1a812b",
+      "displayId": "MCC-001",
+      "designHash": "598c2f6245d9fd052f8c02ff6c10b7fc4668f34a70a0ae1cbd2cdaf6d6948f8d",
+      "executionHash": "a35cdbcd4221719c1de260f17094c6b2938c60bddb205dbaf3340df92947d1df",
+      "bundleHash": "00188620cbad44e92cd17e0a630223c86503cedfbb3523e9b7396be05c46ee07",
+      "runtimeArtPath": "CardArt/Designs/d65e0578-98e4-46af-aeb2-134cae1a812b",
+      "differences": {}
+    },
+    {
+      "uid": "84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "displayId": "MCC-002",
+      "designHash": "ad664bf7800d1348d3841c91a5ce856c012f235b7c260e92d1de49a2bf76daa6",
+      "executionHash": "9d86044df481e6469978c57edaf3fcd4d0efe292ddf68db87e5ff1833eaffcb2",
+      "bundleHash": "d551b01f406ee0ed7a9376ff8b5fabea174b26d972c1ff5f0056cc63fdf32da1",
+      "runtimeArtPath": "CardArt/Designs/84ae8db2-69df-4ffb-9010-16d3551eda58",
+      "differences": {}
+    },
+    {
+      "uid": "7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+      "displayId": "MCC-003",
+      "designHash": "3d5e0dbd43415c8219d8ce7efd2b5dab56324243cf7bd724e412ff8032cfe0cb",
+      "executionHash": "c9e891c881a97616469e78541aec3ecb1765628b71dbcba70bf659bc6eaa5349",
+      "bundleHash": "1f63ab059527defae5642bfee8df9c86718f9b1d909d1a93381a6031ef8b9a69",
+      "runtimeArtPath": "CardArt/Designs/7b3a2e75-79de-4c35-8bf1-29a4987c8187",
+      "differences": {}
+    },
+    {
+      "uid": "faba227c-aad4-425d-b905-a7c62f14a94e",
+      "displayId": "MCC-004",
+      "designHash": "457ca06d8940b8f0bf66d625a2d499e5e0af3bdb3dd67ee335b12fe71f3b3ab4",
+      "executionHash": "afb55da5ce52deaed69ddc430e15a94af5e8be7b21638aeeda3c340f84d71b64",
+      "bundleHash": "e53f4436330cfb7549b8955f6e9093a62dab8b13cc096da08309fbd70aefa05f",
+      "runtimeArtPath": "CardArt/Designs/faba227c-aad4-425d-b905-a7c62f14a94e",
+      "differences": {}
+    },
+    {
+      "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "displayId": "MCC-005",
+      "designHash": "bf28b375a6d374ff039cea14a86cc4c1504050b9a4026eef0baa483622b8c86c",
+      "executionHash": "86fda39b67daa3858ec75714687f8f92ecdda7e1982e74cfa2b05c1f1ca3ca48",
+      "bundleHash": "c343b95c5f2631b283e358518630b25631e709a68a911bdaaa2fe2444d77a704",
+      "runtimeArtPath": "CardArt/Designs/2d4d2da4-9358-485f-a2f5-be712ae86c9e",
+      "differences": {}
+    },
+    {
+      "uid": "675083cf-30bf-49c8-b7bf-d18fe67fe493",
+      "displayId": "MCC-006",
+      "designHash": "f9177013511873481b4b8638fa27cfbb1a811eea641df00a2949ca2ff1b7f16f",
+      "executionHash": "19a0255678b1c1b250a1fc8805e6331d9c10503e4b33a960b9562c22d9365a25",
+      "bundleHash": "e5e68d6f925be66725bf86991f807b69c4aa751b164eadb38d82cc996e6ccb96",
+      "runtimeArtPath": "CardArt/Designs/675083cf-30bf-49c8-b7bf-d18fe67fe493",
+      "differences": {}
+    },
+    {
+      "uid": "731b9886-bc52-4778-b3ea-3ec7319b5d12",
+      "displayId": "MCC-007",
+      "designHash": "edfe0c8be0c54a4872a338cbd7106fc3376c1c41a02d4c61d584deec3648283a",
+      "executionHash": "2ea6211cfc8b82b85f4ea6f7adc7a8ca6c1a91be65fa1a24be4cacb4502b5bb3",
+      "bundleHash": "2d2801c5cd3b92d0d468e153ee4e73bd75b230d2558437dcc46635f9f90e2f9f",
+      "runtimeArtPath": "CardArt/Designs/731b9886-bc52-4778-b3ea-3ec7319b5d12",
+      "differences": {}
+    },
+    {
+      "uid": "6c82d274-e2b9-4626-9bab-deb01dd09048",
+      "displayId": "MCC-008",
+      "designHash": "37d5bef483652f6f4484ea8e5c890df2cb4204927f168cc82e8769376115269e",
+      "executionHash": "439376a7b7e311621c1d292fb660daa113beebfda7bf07796b87962ec5dd6c1e",
+      "bundleHash": "90b17a8091de5fd3e24533e16fbf994a502a558aeec68f95b9ca8277d3197ea7",
+      "runtimeArtPath": "CardArt/Designs/6c82d274-e2b9-4626-9bab-deb01dd09048",
+      "differences": {}
+    },
+    {
+      "uid": "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+      "displayId": "MCC-009",
+      "designHash": "9700809057e70e7b15b66749ce46afd8edcb20ae0ba816a919bf49b7658a2429",
+      "executionHash": "72d8659ca3b6046634a7d7efe5aa4337cd20d039b783b7e2d3dfc87a821eb757",
+      "bundleHash": "b9ff0ec25cec7356cbb0092c945ad504084fbcdc9a9f0774dbef0d6f083acbe0",
+      "runtimeArtPath": "CardArt/Designs/c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+      "differences": {}
+    },
+    {
+      "uid": "5121261f-8b88-4bb0-b882-717b44188f74",
+      "displayId": "MCC-009-01",
+      "designHash": "f6a2defe67d20ad00e8020bac6fab1971b8ec5a97717e0337704a66ef0af2e2e",
+      "executionHash": "9d3a31d35ea9c822d49cf3282c3b9941fe6b4f3e34cbf824fee8b2f750b78954",
+      "bundleHash": "fba641c68cb5b9ecd1ac4a41d51adfa64d3cb39e38d83efd310f4038dc740048",
+      "runtimeArtPath": "CardArt/Designs/5121261f-8b88-4bb0-b882-717b44188f74",
+      "differences": {
+        "tags": {
+          "design": [],
+          "runtime": [
+            "DivineShield"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "8f084b1a-e770-413d-800e-61165fc3b4d9",
+      "displayId": "MCC-010",
+      "designHash": "2449721d92f255293a944e847c8c2c00b82e37def71ed53d298ee1740e78be12",
+      "executionHash": "0b8f604837ca3196f622cb71c9d480bdd76f725ca2752c35a4d36819972a1cf9",
+      "bundleHash": "31301324fa58705a6b712286ca590bf1313b76781ffd48de2fac3d2265ca96c1",
+      "runtimeArtPath": "CardArt/Designs/8f084b1a-e770-413d-800e-61165fc3b4d9",
+      "differences": {}
+    },
+    {
+      "uid": "0c3119ed-d309-4a38-b760-1839d8bae416",
+      "displayId": "MCC-011",
+      "designHash": "39b1e0ab37bf49c30af0b358e2022ebd2f05b94cb9cca628ce678e4bff7daa0a",
+      "executionHash": "5706e31ad9d6217bccd55b752de529de1ee8b6fc8d58a95105357bcb31360f1c",
+      "bundleHash": "564e6765c2fb39ed96a1f5b32cc03a829d6a7c90255944c685e8bf6f4bf70963",
+      "runtimeArtPath": "CardArt/Designs/0c3119ed-d309-4a38-b760-1839d8bae416",
+      "differences": {}
+    },
+    {
+      "uid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "displayId": "MCC-012",
+      "designHash": "a9ca6790e9023f522e8a72c3883d28913ede69a693cadd4fac03d91c0e5dec61",
+      "executionHash": "1b57f5ddb5b5ecfe283a012ab77b0c154dce6d69bb1b8526882d791abb86f8f6",
+      "bundleHash": "33e5c1d99209f7e85733bd40859ccab15065f28b4403bbe58be01756c4880b45",
+      "runtimeArtPath": "CardArt/Designs/274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "differences": {}
+    },
+    {
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "displayId": "MCC-012-01",
+      "designHash": "4c782bb99059b185bfd02ea7c2ab38439681cfd46e0b775e5740c456b2090b3c",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "83bb75a147749f81725df805a9f6eb33d7c0672b64b117771657a9a5061190b4",
+      "runtimeArtPath": null,
+      "differences": {
+        "durability": {
+          "design": 0,
+          "runtime": 1
+        }
+      }
+    },
+    {
+      "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+      "displayId": "MCC-013",
+      "designHash": "f1f369a4a88ee52799fdff12025b6429a5a57440a8e4bd9c03477aa1330dc987",
+      "executionHash": "493cf98629e9342b9e1e4fe9f34a2e836d8cd836bfa76138d5a94d4e064f692f",
+      "bundleHash": "ecbd4b7e50ed29f8c4fed7cf64629078eb2026a8260402c89328f589a4d794db",
+      "runtimeArtPath": "CardArt/Designs/da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
+      "differences": {
+        "arrows": {
+          "design": [
+            "NW"
+          ],
+          "runtime": []
+        }
+      }
+    },
+    {
+      "uid": "b6326476-ec83-478d-afcd-91b3cec23740",
+      "displayId": "MCC-014",
+      "designHash": "28f3a6402191cb3dfc61a47a2365a46d390cebeed89eb1bd0f5fd011be5a032c",
+      "executionHash": "af05c1c215819cac1eee4587b0803ac0349121e13c65c734905b8d98f63c3590",
+      "bundleHash": "e5281d97bd997c09a30e6eabcb38df835859be0956449b4b1125c16bf0912c3a",
+      "runtimeArtPath": "CardArt/Designs/b6326476-ec83-478d-afcd-91b3cec23740",
+      "differences": {}
+    },
+    {
+      "uid": "05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
+      "displayId": "MCC-015",
+      "designHash": "19824a06436106b8700246cd8f2ceea90bf0e445635ec022202e391fd64df45f",
+      "executionHash": "e6b54bc46995b94f755105839529d83c506942483cca0d0e0abbc984603a4ddf",
+      "bundleHash": "1427d3fe991014798139368ae139a4246765c5f99d9ce0631531876ec1429dc9",
+      "runtimeArtPath": "CardArt/Designs/05b4cfb1-983a-4a31-8e58-25e95a3a51fd",
+      "differences": {}
+    },
+    {
+      "uid": "43588596-cb83-42e9-b6aa-8cc3ea07e6cf",
+      "displayId": "MCC-016",
+      "designHash": "8fddc41300ac842b3558306fbef9fce9321413603d1c9924c6d6f0e47fd9a552",
+      "executionHash": "157a3b0ac4b9cd61ed02cdd88b945a7261326a9eda71c1e2e6bbf2f931698d7d",
+      "bundleHash": "d4cb48d0194390b3162d2b84a891744a2f116c7ffe29d16b5f207f0a47aebf26",
+      "runtimeArtPath": "CardArt/Designs/43588596-cb83-42e9-b6aa-8cc3ea07e6cf",
+      "differences": {}
+    },
+    {
+      "uid": "ad01b613-32a7-422a-a227-6e921ce275c2",
+      "displayId": "MCC-017",
+      "designHash": "71769daf2b1668d49a0a149377168413182c92a20e0edbc77eed2375eee50604",
+      "executionHash": "583ab5182404197cd17d7e6dc25196e0d9f99ec0107ce412559b50fc946afeab",
+      "bundleHash": "a23cc82f1a9388cf459f19b1c2a534eefbcf999971b394b411b9782469fc754e",
+      "runtimeArtPath": "CardArt/Designs/ad01b613-32a7-422a-a227-6e921ce275c2",
+      "differences": {}
+    },
+    {
+      "uid": "1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+      "displayId": "MCC-018",
+      "designHash": "86c463f27351a880deca853604ad3a1f4aa1092fc4264ffdabaff5392d8e750d",
+      "executionHash": "f88c474a2a083adac4828a11afe11d3c70cf9d2e3063722f1ca373e1a7fc475c",
+      "bundleHash": "499c5cbb4a79e45141a85ab1a04f67aac510b3db45b4500b1a214397c431a53b",
+      "runtimeArtPath": "CardArt/Designs/1b818098-53a5-4d54-8fb1-01bcdf9f4785",
+      "differences": {}
+    },
+    {
+      "uid": "d06e4b53-ba45-4f1b-9034-7a7d9773bceb",
+      "displayId": "MCC-019",
+      "designHash": "de2e564de88abbeca3a9eae127170d7b3dc11631dde76ac195dd40c6fe217038",
+      "executionHash": "d2bc38aa22eb4d5e805b1215003f4ba8fcacad45e340640045c6d59d194857f9",
+      "bundleHash": "5ec4cd0e8fad08786b8729b2cc0ed2b9aee6dbe42a67465a7ff98c399e2572b7",
+      "runtimeArtPath": "CardArt/Designs/d06e4b53-ba45-4f1b-9034-7a7d9773bceb",
+      "differences": {}
+    },
+    {
+      "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
+      "displayId": "MCC-020",
+      "designHash": "3ac01e73314016f32c1683992d8d62ec2393effebc385479b5294616c297d47a",
+      "executionHash": "55fb58905d1124410f000fa21090aa88757c6970778a86baf2338502075550b4",
+      "bundleHash": "fb9ec7900c574b00d8c0144b6ee0ee1e6f2054173167cb5228ea683c41f957bf",
+      "runtimeArtPath": "CardArt/Designs/7522e0e5-1fb6-4a32-914d-992aab4e3c62",
+      "differences": {}
+    }
+  ],
+  "unresolved": [
+    {
+      "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+      "displayId": "MCC-012-01",
+      "reason": "原生durability=0与已批准卡文/执行durability=1不一致；等待用户裁决，不使用逐UID覆盖"
+    }
+  ]
+}

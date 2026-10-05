@@ -4,12 +4,19 @@ import contract from "../card-design-contract.js";
 // Apply a declared editor operation by UID, not by mutable array position or display ID.
 export function validateWrite(previous, next, operation) {
   contract.validateDataset(previous); contract.validateDataset(next);
+  assert.equal(next.schemaVersion, previous.schemaVersion, "Legacy drafts cannot overwrite the current schema; export and explicitly migrate the draft first");
+  if (previous.schemaVersion === 5) {
+    assert.equal(next.executionSchemaVersion, previous.executionSchemaVersion, "Editor cannot change execution schema");
+    assert.deepEqual(next.shared, previous.shared, "Editor must preserve shared execution declarations");
+  }
   assert.ok(operation && ["edit", "create", "delete", "reorder", "import"].includes(operation.type), "Save requires an explicit identity operation");
   const oldCards = new Map(previous.cards.map((card) => [card.uid, card]));
   const newCards = new Map(next.cards.map((card) => [card.uid, card]));
   const added = [...newCards.keys()].filter((uid) => !oldCards.has(uid));
   const removed = [...oldCards.keys()].filter((uid) => !newCards.has(uid));
   const target = oldCards.get(operation.uid);
+  const references = contract.executionReferences(next, removed);
+  assert.equal(references.length, 0, `Deleted card is referenced at: ${references.join(", ")}`);
   if (operation.type === "create") {
     assert.deepEqual(added, [operation.uid], "Create must introduce exactly its declared fresh UID");
     assert.equal(removed.length, 0, "Create cannot remove existing identities");
