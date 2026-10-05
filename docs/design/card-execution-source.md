@@ -50,3 +50,10 @@ options 包含 `contentId, contentVersion, source, artPaths`。source 必须由�
 原始 Website 的 `card-electricity-revision` 用例漏记 `db210674` 的四卡调整。`revisions/2026-10-05-baseline-test-repair.json` 补齐精确 before/after，保留原断言强度，未改变生产设计。
 
 浏览器验收使用独立 `/tmp` 数据副本：新建卡、保存卡文、待复核提示、新建衍生卡、重载通过；持久化后两张新卡均 Planned 且无父卡执行标识，147张原执行内容及 shared 完全保留。浏览器下载事件捕获超时，完整导出往返由 Node 测试验证；不宣称浏览器下载验收通过。资源采用隔离副本的受限路径，因此本检查不代替 Presentation 视觉验收。
+
+2026-10-05 用户裁决已落实：MCC-012-01（蜂群无人机幻影）的原生 `durability` 从0改为1，
+与已有卡文和旧 Rules bundle 一致。通过现有 `designHash` API 重新绑定审阅，恢复 Implemented；
+没有新增原生字段覆盖，也没有修改其他卡牌玩法。迁移报告保留最初的差异和待决原因于
+`differences` / `resolutions.reason`，在 `resolutions` 记录裁决，当前 `unresolved` 为空。
+全部147个 bundle 与冻结 Rules 原 bundle 逐结构等价，共享 statuses 保持一致，正式源校验解封。
+这项迁移等价检查不代替 Unified 对最终候选的运行和游戏验收。

@@ -19,17 +19,15 @@ const oneCard = () => {
   const d = structuredClone(current); d.cards = [d.cards.find(c => c.rulesText === '' && c.parentUid === null)];
   return d;
 };
-test('schema5 maps all 147 stable identities and frozen execution bundles, with explicit unresolved inventory', () => {
+test('schema5 production maps all 147 reviewed identities and frozen execution bundles after the approved durability ruling', () => {
   contract.validateDataset(current);
   assert.equal(current.cards.length, 147);
   assert.deepEqual([...current.cards.map(c => c.uid)].sort(), evidence.entries.map(e => e.uid).sort());
-  const generated = toAuthoringDocument(current, { ...options, validate: false });
+  assert.deepEqual(evidence.unresolved, []);
+  validateProductionExecution(current);
+  const generated = toAuthoringDocument(current, options);
   for (const b of generated.cardBundles) {
     const entry = evidence.entries.find(e => e.uid === b.card.uid);
-    if (evidence.unresolved.some(e => e.uid === b.card.uid)) {
-      assert.equal(b.card.runtimeSupport, 'Planned');
-      continue;
-    }
     assert.equal(semanticHash(b), entry.bundleHash, b.card.displayId);
     const card = current.cards.find(c => c.uid === b.card.uid);
     assert.equal(designHash(card), entry.designHash, card.id);

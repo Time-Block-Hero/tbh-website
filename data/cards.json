@@ -20011,7 +20011,7 @@
       "attack": 1,
       "health": 1,
       "movement": 5,
-      "durability": 0,
+      "durability": 1,
       "rulesText": "耐久度：1",
       "arrows": [],
       "tribes": [
@@ -20028,8 +20028,8 @@
       "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
       "collectionKind": "Token",
       "execution": {
-        "runtimeSupport": "Planned",
-        "reviewedDesignHash": null,
+        "runtimeSupport": "Implemented",
+        "reviewedDesignHash": "2249863f02ecf053b6a4cdb05db654d5e9e5f7bd0d75fba6bce926d931bdad0a",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,

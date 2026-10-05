@@ -20034,7 +20034,7 @@
         "attack": 1,
         "health": 1,
         "movement": 5,
-        "durability": 0,
+        "durability": 1,
         "rulesText": "耐久度：1",
         "arrows": [],
         "tribes": [
@@ -20051,8 +20051,8 @@
         "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
         "collectionKind": "Token",
         "execution": {
-          "runtimeSupport": "Planned",
-          "reviewedDesignHash": null,
+          "runtimeSupport": "Implemented",
+          "reviewedDesignHash": "2249863f02ecf053b6a4cdb05db654d5e9e5f7bd0d75fba6bce926d931bdad0a",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -22363,7 +22363,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "bb1a770313526cdcf05843ae7497527bb31353c98a5b56a3fa08a02afdc1cb5a",
+    "cardsSha256": "bcc57306a33d72084e04bdeebd8280647cde6f0e7f7de48eec4f95f0214c8309",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -25821,8 +25821,8 @@
     {
       "uid": "21401534-7b13-41d1-a4c4-e52108726727",
       "execution": {
-        "runtimeSupport": "Planned",
-        "reviewedDesignHash": null,
+        "runtimeSupport": "Implemented",
+        "reviewedDesignHash": "2249863f02ecf053b6a4cdb05db654d5e9e5f7bd0d75fba6bce926d931bdad0a",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -25841,7 +25841,7 @@
         "continuousEffects": [],
         "plans": []
       },
-      "executionSha256": "00d5a87c6ef96ac3127aa7ecd51db60b9cb7dba01094e4e303f32772d161899c",
+      "executionSha256": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
       "displayId": "MCC-012-01",
       "name": "蜂群无人机幻影",
       "nameEn": "",
@@ -25852,7 +25852,7 @@
       "rarity": "Rare",
       "costResource": "Star",
       "costAmount": 2,
-      "durability": 0,
+      "durability": 1,
       "attack": 1,
       "health": 1,
       "movement": 5,

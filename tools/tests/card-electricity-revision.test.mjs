@@ -192,6 +192,16 @@ function currentApprovedDesign() {
       target[field] = structuredClone(delta.after);
     }
   }
+  const executionMigration = parse('docs/design/revisions/2026-10-05-execution-migration.json');
+  assert.deepEqual(executionMigration.unresolved, []);
+  assert.equal(executionMigration.resolutions.length, 1);
+  const durabilityRuling = executionMigration.resolutions[0];
+  assert.equal(durabilityRuling.status, 'resolved');
+  assert.equal(durabilityRuling.uid, '21401534-7b13-41d1-a4c4-e52108726727');
+  assert.deepEqual([durabilityRuling.field, durabilityRuling.before, durabilityRuling.after], ['durability', 0, 1]);
+  const phantom = dataset.cards.find(card => card.uid === durabilityRuling.uid);
+  assert.equal(phantom.durability, durabilityRuling.before);
+  phantom.durability = durabilityRuling.after;
   return dataset;
 }
 

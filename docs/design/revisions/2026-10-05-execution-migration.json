@@ -1355,7 +1355,7 @@
     {
       "uid": "21401534-7b13-41d1-a4c4-e52108726727",
       "displayId": "MCC-012-01",
-      "designHash": "4c782bb99059b185bfd02ea7c2ab38439681cfd46e0b775e5740c456b2090b3c",
+      "designHash": "2249863f02ecf053b6a4cdb05db654d5e9e5f7bd0d75fba6bce926d931bdad0a",
       "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
       "bundleHash": "83bb75a147749f81725df805a9f6eb33d7c0672b64b117771657a9a5061190b4",
       "runtimeArtPath": null,
@@ -1446,11 +1446,37 @@
       "differences": {}
     }
   ],
-  "unresolved": [
+  "unresolved": [],
+  "resolutions": [
     {
       "uid": "21401534-7b13-41d1-a4c4-e52108726727",
       "displayId": "MCC-012-01",
-      "reason": "原生durability=0与已批准卡文/执行durability=1不一致；等待用户裁决，不使用逐UID覆盖"
+      "reason": "原生durability=0与已批准卡文/执行durability=1不一致；等待用户裁决，不使用逐UID覆盖",
+      "status": "resolved",
+      "decidedOn": "2026-10-05",
+      "decision": "用户明确确认将 MCC-012-01 原生耐久度改为1，与现有卡文及旧执行内容一致。",
+      "field": "durability",
+      "before": 0,
+      "after": 1,
+      "beforeDesignHash": "4c782bb99059b185bfd02ea7c2ab38439681cfd46e0b775e5740c456b2090b3c",
+      "reviewedDesignHash": "2249863f02ecf053b6a4cdb05db654d5e9e5f7bd0d75fba6bce926d931bdad0a",
+      "bundleHash": "83bb75a147749f81725df805a9f6eb33d7c0672b64b117771657a9a5061190b4"
     }
-  ]
+  ],
+  "postDecisionVerification": {
+    "sourceCardsSha256": "bcc57306a33d72084e04bdeebd8280647cde6f0e7f7de48eec4f95f0214c8309",
+    "comparedRulesCommit": "a46014e674da86c47831a27b4dbbaa62f728bd5b",
+    "equivalentBundles": 147,
+    "sharedStatusesSha256": "484c6601cbd78f149d7ce55438a45d3190bae59dcdba8ea311efb6773b24a94c",
+    "priorWebsiteCommit": "7e37339478a6af585d3d8b87f6911c299b1ddb67",
+    "changedNativeFields": [
+      {
+        "uid": "21401534-7b13-41d1-a4c4-e52108726727",
+        "field": "durability",
+        "before": 0,
+        "after": 1
+      }
+    ],
+    "otherCardDefinitionsUnchanged": true
+  }
 }
