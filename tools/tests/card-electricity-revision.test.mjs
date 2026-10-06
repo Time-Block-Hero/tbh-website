@@ -182,17 +182,53 @@ function currentApprovedDesign() {
       target[field] = structuredClone(delta.after);
     }
   }
+  const finalBaseline = parse('docs/design/revisions/2026-10-05-baseline-test-repair.json');
+  assert.equal(finalBaseline.sourceCommit, 'db210674f1143f3b1b82ea7a7f05234158a20d61');
+  assert.equal(finalBaseline.changed.length, 4);
+  for (const entry of finalBaseline.changed) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    for (const [field, delta] of Object.entries(entry.fields)) {
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
+  const executionMigration = parse('docs/design/revisions/2026-10-05-execution-migration.json');
+  assert.deepEqual(executionMigration.unresolved, []);
+  assert.equal(executionMigration.resolutions.length, 1);
+  const durabilityRuling = executionMigration.resolutions[0];
+  assert.equal(durabilityRuling.status, 'resolved');
+  assert.equal(durabilityRuling.uid, '21401534-7b13-41d1-a4c4-e52108726727');
+  assert.deepEqual([durabilityRuling.field, durabilityRuling.before, durabilityRuling.after], ['durability', 0, 1]);
+  const phantom = dataset.cards.find(card => card.uid === durabilityRuling.uid);
+  assert.equal(phantom.durability, durabilityRuling.before);
+  phantom.durability = durabilityRuling.after;
+  const latestBalance = parse('docs/design/revisions/2026-10-06-balance147.json');
+  assert.equal(latestBalance.entries.length, 24);
+  for (const entry of latestBalance.entries) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.changes)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
   return dataset;
 }
 
 function assertCurrentDesign(dataset) {
   contract.validateDataset(dataset, { exportArtwork: true });
   const prepared = currentApprovedDesign();
-  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath']);
+  // Execution is independently checked against frozen bundle hashes in card-execution.test.mjs.
+  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath', 'execution']);
   const withoutArt = card => Object.fromEntries(Object.entries(card).filter(([key]) => !artFields.has(key)));
   assert.deepEqual(sorted(dataset.cards).map(withoutArt), sorted(prepared.cards).map(withoutArt));
   const withoutCardsOrArt = value => Object.fromEntries(Object.entries(value)
     .filter(([key]) => !['cards', 'artworkVariants', 'selectedArtworkIds'].includes(key)));
+  if (dataset.schemaVersion === 5) {
+    prepared.schemaVersion = 5; prepared.sourceSchemaVersion = 5;
+    prepared.executionSchemaVersion = 21; prepared.shared = { statuses: [{ id: 'Retain', lifetime: 'Permanent', removableBySilence: true, tags: ['Retain'] }, { id: 'DivineShield', lifetime: 'Permanent', removableBySilence: true, tags: ['DivineShield'] }] };
+  }
   assert.deepEqual(withoutCardsOrArt(dataset), withoutCardsOrArt(prepared));
 }
 

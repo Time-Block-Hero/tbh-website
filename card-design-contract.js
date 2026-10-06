@@ -29,7 +29,44 @@
       card.tags = (card.tags || []).filter((tag) => tag !== "InitialHero");
     }
     card.collectionKind = collectionFor(card);
+    card.execution = plannedExecution();
     return card;
+  }
+  const DESIGN_FIELDS = ["uid", "parentUid", "collectionKind", "cardType", "classId", "rarity", "collectable", "costResource", "costAmount", "attack", "health", "movement", "durability", "arrows", "tribes", "tags", "rulesText"];
+  function canonical(value) {
+    if (Array.isArray(value)) return value.map(canonical);
+    if (value && typeof value === "object") return Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])]));
+    return value;
+  }
+  function designMaterial(card) { return JSON.stringify(canonical(Object.fromEntries(DESIGN_FIELDS.map(field => [field, card[field] ?? null])))); }
+  async function designHash(card, cryptoProvider = globalThis.crypto) {
+    const bytes = new TextEncoder().encode(designMaterial(card));
+    return [...new Uint8Array(await cryptoProvider.subtle.digest("SHA-256", bytes))].map(byte => byte.toString(16).padStart(2, "0")).join("");
+  }
+  const EXECUTION_PROPERTIES = ["constructionTarget", "runtimeSupportNote", "upgradeToCardId", "upgradeToCardIds", "placeCost", "arrowRules", "quantitizedCardTags", "continuousEffectRefs", "grantableContinuousEffectRefs", "abilityRefs", "textValueBindings", "attackRange", "progressEffects"];
+  function plannedExecution() {
+    return { runtimeSupport: "Planned", reviewedDesignHash: null, properties: {}, keywordTags: [], arrowMode: "Permanent", abilities: [], continuousEffects: [], plans: [] };
+  }
+  function validateExecution(card) {
+    const execution = card.execution;
+    require(execution && ["Implemented", "Planned", "Unsupported"].includes(execution.runtimeSupport), `Missing or invalid execution: ${card.id}`);
+    for (const key of Object.keys(execution)) require(["runtimeSupport", "reviewedDesignHash", "properties", "keywordTags", "arrowMode", "abilities", "continuousEffects", "plans"].includes(key), `Unknown execution.${key}: ${card.id}`);
+    require(execution.reviewedDesignHash === null || /^[a-f0-9]{64}$/.test(execution.reviewedDesignHash), `Invalid reviewedDesignHash: ${card.id}`);
+    require(["Permanent", "OneTime"].includes(execution.arrowMode), `Invalid execution.arrowMode: ${card.id}`);
+    require(execution.properties && typeof execution.properties === "object" && !Array.isArray(execution.properties), `Invalid execution.properties: ${card.id}`);
+    for (const key of Object.keys(execution.properties)) require(EXECUTION_PROPERTIES.includes(key), `Forbidden execution.properties.${key}: ${card.id}; native design fields have a single owner`);
+    for (const field of ["abilities", "continuousEffects", "plans", "keywordTags"]) require(Array.isArray(execution[field]), `Invalid execution.${field}: ${card.id}`);
+    require(execution.keywordTags.every(tag => typeof tag === "string") && new Set(execution.keywordTags).size === execution.keywordTags.length, `Invalid execution.keywordTags: ${card.id}`);
+  }
+  function executionReferences(dataset, targetUids) {
+    const targets = new Set(targetUids), found = [];
+    function visit(value, location) {
+      if (typeof value === "string" && targets.has(value)) found.push(location);
+      else if (Array.isArray(value)) value.forEach((entry, index) => visit(entry, `${location}[${index}]`));
+      else if (value && typeof value === "object") for (const [key, entry] of Object.entries(value)) visit(entry, `${location}.${key}`);
+    }
+    for (const card of dataset.cards) if (!targets.has(card.uid)) visit(card.execution, `cards[${card.id}].execution`);
+    return found;
   }
   function mapSelection(selection, mapping) {
     const remap = (id) => mapping[id] || id;
@@ -51,7 +88,8 @@
     });
   }
   function validateDataset(dataset, { exportArtwork = false } = {}) {
-    require(dataset?.schemaVersion === 4 && Array.isArray(dataset.cards), "Expected card dataset schemaVersion 4");
+    require([4, 5].includes(dataset?.schemaVersion) && Array.isArray(dataset.cards), "Expected card dataset schemaVersion 4 or 5");
+    if (dataset.schemaVersion === 5) require(dataset.executionSchemaVersion === 21 && Array.isArray(dataset.shared?.statuses), "Expected executionSchemaVersion 21 and shared.statuses");
     const ids = new Set(), byUid = new Map();
     for (const card of dataset.cards) {
       require(card && UUID.test(card.uid), `Missing or invalid card UID: ${card?.id}`);
@@ -69,6 +107,7 @@
       for (const field of ["arrows", "tags"]) require(Array.isArray(card[field]) && card[field].every((value) => typeof value === "string"), `Invalid ${field}: ${card.id}`);
       require(card.arrows.every((arrow) => DIRECTIONS.includes(arrow)) && new Set(card.arrows).size === card.arrows.length, `Invalid arrows: ${card.id}`);
       require(card.tribes == null || Array.isArray(card.tribes) && card.tribes.every((value) => typeof value === "string"), `Invalid tribes: ${card.id}`);
+      if (dataset.schemaVersion === 5) validateExecution(card);
       ids.add(card.id); byUid.set(card.uid, card);
       if (exportArtwork) selectedArtwork(dataset, card);
     }
@@ -80,5 +119,5 @@
     }
     return dataset;
   }
-  return { UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
+  return { DESIGN_FIELDS, canonical, designMaterial, designHash, EXECUTION_PROPERTIES, plannedExecution, validateExecution, executionReferences, UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
 });

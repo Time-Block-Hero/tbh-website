@@ -4,6 +4,7 @@ import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import contract from "../card-design-contract.js";
+import { validateProductionExecution, executionHash } from "./card-execution.mjs";
 import { SOURCE_REVISION_PATH, validateSourceRevision } from "./card-design-source-revision.mjs";
 
 export const REPOSITORY = "https://github.com/Time-Block-Hero/tbh-website";
@@ -41,11 +42,13 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
 
 function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionBytes = null) {
   const dataset = contract.validateDataset(JSON.parse(cardsBytes), { exportArtwork: true });
+  if (dataset.schemaVersion === 5 && commit !== null) validateProductionExecution(dataset);
   const bridge = validateBridge(JSON.parse(bridgeBytes), dataset, revisionBytes ? { requireCompleteBaseline: false } : options);
   const revision = revisionBytes ? validateSourceRevision(revisionBytes, bridgeBytes, bridge, dataset,
     { requireInventory: options.requireCompleteBaseline !== false }) : null;
   return {
-    schemaVersion: 1,
+    schemaVersion: dataset.schemaVersion === 5 ? 2 : 1,
+    ...(dataset.schemaVersion === 5 ? { executionSchemaVersion: dataset.executionSchemaVersion, shared: structuredClone(dataset.shared), sourceDataset: structuredClone(dataset) } : {}),
     kind: "timeblock.card-designs",
     source: {
       repository: REPOSITORY,
@@ -58,6 +61,7 @@ function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionByte
     },
     cards: dataset.cards.map((card) => ({
       uid: card.uid,
+      ...(dataset.schemaVersion === 5 ? { execution: structuredClone(card.execution), executionSha256: executionHash(card.execution) } : {}),
       displayId: card.id,
       name: card.nameKey,
       nameEn: card.englishName,

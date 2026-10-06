@@ -1,0 +1,452 @@
+{
+  "schemaVersion": 1,
+  "baseWebsiteCommit": "5a9f720313fe8902eac8a3a84a2a71e52c683d25",
+  "rulesCommit": "2a16cef7c65197cd60eed2a41c64ac328a88242b",
+  "newRulesRequired": false,
+  "decisions": {
+    "shipFire": "抽到时向友方单位随机分配3点伤害，用户确认保留随机。",
+    "oracle": "从牌堆随机展示最多3张法术原卡，选择1张放置于自身左侧。"
+  },
+  "entries": [
+    {
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "displayId": "FNG-005",
+      "name": "宝藏星能石",
+      "changes": {
+        "costAmount": {
+          "before": 5,
+          "after": 4
+        },
+        "rulesText": {
+          "before": "入场：[快速] 获得4[⭐星能]。",
+          "after": "入场：[快速] 获得4星能。"
+        }
+      },
+      "previousDesignHash": "810adf7010701cd8916faa9f1c26efac7f8a09b0662c55a7098e4fe9e80088d6",
+      "previousExecutionHash": "174ab0ff9553f1cdfd25a5514aedcc122b09e479d1e23f8c1909567d4f5dbada",
+      "designHash": "b2a6fd73fbad9451e3a8b90e4f0a107ba396703e6afa58d5be650db1badc98c5",
+      "executionHash": "79f5377799d496df8b1ede5f3116a3569533fec914a34d27376020ab35bc7693",
+      "bundleHash": "70e59b4187665cfa66dc98136d48420e5d05faefb8a487aa0f86b16a4ddb3aeb"
+    },
+    {
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "displayId": "FNG-007",
+      "name": "胶囊防护罩",
+      "changes": {
+        "rulesText": {
+          "before": "入场：[快速] 令一个单位获得2护甲。",
+          "after": "入场：[快速] 令一个单位获得1护甲。"
+        }
+      },
+      "previousDesignHash": "5c03b6c397889c952dd8ff308a59392ce48fa23f21c15c04a05571f52b6451b2",
+      "previousExecutionHash": "a04ca46cb12231c63825cd0ee805a96f7f4bccc7fca02f426f7d48a51308c5f2",
+      "designHash": "8af8db6b638c818673e58a8bdbe34ae0c4bdab9ceb9dd3c5c486af9968f92d2c",
+      "executionHash": "37c58efab01579e6679fa9f426e4c54b49374dffd4adcb1525cb2936593e6a3c",
+      "bundleHash": "d8c29e3923ac69a9a22c0a77b5420a4a1b93431713901b0011bc4c999989a4be"
+    },
+    {
+      "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "displayId": "FNG-009",
+      "name": "星际司令麦哲伦",
+      "changes": {
+        "attack": {
+          "before": 6,
+          "after": 4
+        }
+      },
+      "previousDesignHash": "688f5e76075bad188383da4c20d8d0725f33f8797f7c13133405f53853043929",
+      "previousExecutionHash": "6ea18c94b0aa6b1babb48a76e4ebae8f4e730ff57237c91a07a868f889ab9b0a",
+      "designHash": "08d2d36d40246d3f56888dba479d205d3833a329374701ff4d37c8a61f1af6e5",
+      "executionHash": "6ea18c94b0aa6b1babb48a76e4ebae8f4e730ff57237c91a07a868f889ab9b0a",
+      "bundleHash": "9278dc9dd36df58d0c802bf76b26744b47d9ff1c98c67dd5627bf9c270743191"
+    },
+    {
+      "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124",
+      "displayId": "FNG-011",
+      "name": "放逐太空",
+      "changes": {
+        "costAmount": {
+          "before": 2,
+          "after": 3
+        }
+      },
+      "previousDesignHash": "fee985d9731c9f1051f71153155371e055d3ed3739a629f717febb7a9b59b6f6",
+      "previousExecutionHash": "f0f38d64b0bbb8c62d1709daf68782d54e0408a1c64cd9d236c99c98b0de4452",
+      "designHash": "a9f7a5989d92c76e2fe580744d39897ffb55ee9bc91461b9a070bc17b515af36",
+      "executionHash": "f0f38d64b0bbb8c62d1709daf68782d54e0408a1c64cd9d236c99c98b0de4452",
+      "bundleHash": "aecb479d687d7fb1b4f701b8ca309eefdcc62852376b9f12a0c62a6051a0e860"
+    },
+    {
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
+      "displayId": "FNG-012",
+      "name": "飞船失火！",
+      "changes": {
+        "costAmount": {
+          "before": 5,
+          "after": 3
+        },
+        "rulesText": {
+          "before": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。",
+          "after": "此卡被购买时放入对方的弃牌堆。\n抽到此卡时：将3点伤害随机分配到友方单位上。"
+        }
+      },
+      "previousDesignHash": "f7910c4bab3244e54c878a7890a09271858aad70d91101b24c007bfc678eafb2",
+      "previousExecutionHash": "7b65de9a0567406375aaab8336436243f443363c85b401c81d58fdad65d57834",
+      "designHash": "1967ba6560e8d6bbcf43c5d7ceadcea88a46b2daa266f32362062d5433feb16c",
+      "executionHash": "70777eb220ec1d5048f4007aaf26945119de39c976510c90e83d5d46afaa8960",
+      "bundleHash": "b9c1fc5d787c583788d3b9df279975596bf18d703a1319f75d34c322e317517a"
+    },
+    {
+      "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "displayId": "FNG-014",
+      "name": "天元防壁",
+      "changes": {
+        "costAmount": {
+          "before": 6,
+          "after": 7
+        },
+        "rulesText": {
+          "before": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+          "after": "每回合限两次，当敌方随从攻击时，无效其攻击。"
+        }
+      },
+      "previousDesignHash": "d81da4e80ebc65c68febf4bb1d374dea597e75f5caa053499505b5ccfeaebd07",
+      "previousExecutionHash": "0a7ed4eb5adf6f4c8b6edae83b9211d5ccf51dccd15d1b499bf4ae04f87d45f7",
+      "designHash": "3a75e082b41716c809841fd71940f7a249d93ba4f951bcd01016308b430fe61f",
+      "executionHash": "0eba6bbab0abf93c9d8a61aea9320aee00c95bd0b9fd2f614c41fc4194372d3f",
+      "bundleHash": "adb253b759bc830980b0f76267429bf4f50f3b31473da327fdd26f537b0701dd"
+    },
+    {
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "displayId": "FNG-015",
+      "name": "刺客-J",
+      "changes": {
+        "costAmount": {
+          "before": 5,
+          "after": 6
+        }
+      },
+      "previousDesignHash": "e711a6d985b8e2e9bfc512f7fef4ae3e07628610ec53b5b670c094d7b6e9c376",
+      "previousExecutionHash": "2d1e6e9cb186694962506d768b3edccdb4d4f2ca14d754a043b63063a644957a",
+      "designHash": "55e8a45a88bc79773646a6f02d58e888abf077aaf839ba075ae5da3443aa78c9",
+      "executionHash": "2d1e6e9cb186694962506d768b3edccdb4d4f2ca14d754a043b63063a644957a",
+      "bundleHash": "5515e4f8239378aea0a41c304f0f3428bf82d498d2f86a32b6dc9abd3a8f268f"
+    },
+    {
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "displayId": "FNG-018",
+      "name": "星能矿机",
+      "changes": {
+        "health": {
+          "before": 3,
+          "after": 2
+        }
+      },
+      "previousDesignHash": "186fe49b0968d349525d2c00453518b5c7eae923c87b7b014c523460555b976c",
+      "previousExecutionHash": "85d1460bbc951e2e391bf27e3e29b6fdeb570814a18538da5a7aff618740f328",
+      "designHash": "2e0ff047d36405673d6518885834b7425501a3221ad9e139d0f8d3397be9ae4d",
+      "executionHash": "85d1460bbc951e2e391bf27e3e29b6fdeb570814a18538da5a7aff618740f328",
+      "bundleHash": "97b6e0bb9cd265759785a4d2205a8d5feb0faaf1e2a2d4a5654bca033b4e1a16"
+    },
+    {
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "displayId": "FNG-020",
+      "name": "鲁莽的先锋",
+      "changes": {
+        "rulesText": {
+          "before": "发动：自身获得3点护甲。",
+          "after": "[一次性箭头] 发动：自身获得3点护甲。"
+        }
+      },
+      "previousDesignHash": "ff24a0e059a0491ea959a5e06155d5387415e027e76e4b30b580b225bdd6fde7",
+      "previousExecutionHash": "e03341a00bc9f42b0bc8d255b55ec3454c9133ad1d6226c9292d7724c11102a8",
+      "designHash": "fadf540f663b94ad821084613627dc3765455aeeab226a9fe561fbfadc0fbc6e",
+      "executionHash": "485987f12b76359a105335519810dd8f12941e87323ffaf7514f504b5404d568",
+      "bundleHash": "2acc696dd59149a5c6abf4365085c68e46723a918303f2f0b43c0a783745556e"
+    },
+    {
+      "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "displayId": "FNG-022",
+      "name": "疯狂的传送师-贾格",
+      "changes": {
+        "arrows": {
+          "before": [
+            "SW"
+          ],
+          "after": []
+        }
+      },
+      "previousDesignHash": "7659ba3cca5e355bc6e9621c0ad7e97d1269dafa4fc24063f7156aa7c7c9e06a",
+      "previousExecutionHash": "70fb9d24c756266c466942792885c680bc539608992f110c314033c54734ba86",
+      "designHash": "199f0aa9121fd35f2cf2e6ab799cd92da3117a51edd6de4b876c6125d754f71b",
+      "executionHash": "70fb9d24c756266c466942792885c680bc539608992f110c314033c54734ba86",
+      "bundleHash": "0679aa544c92ad6af1580adac72b68fd5ba0ae2f18b3c85a0f19debe2d017982"
+    },
+    {
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "displayId": "FNG-024",
+      "name": "轨道晶灵",
+      "changes": {
+        "attack": {
+          "before": 4,
+          "after": 3
+        },
+        "health": {
+          "before": 4,
+          "after": 3
+        }
+      },
+      "previousDesignHash": "1f0abdca9bab660bccad249a2292ade2a7f754feddcbf6619240e16bb61f4881",
+      "previousExecutionHash": "39761749d280666e82c9bef9deaf8ff71f18ea26a7e46d72441ca7e3091dd1b2",
+      "designHash": "9ac835dbef2d0a9d87ff589aa310af7dca0f691fef50e2ab07d85130f1457486",
+      "executionHash": "39761749d280666e82c9bef9deaf8ff71f18ea26a7e46d72441ca7e3091dd1b2",
+      "bundleHash": "1187afc852208d61792bee34b5996d97e915c8e2dc5d4ce7c0123999a11ecc80"
+    },
+    {
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "displayId": "FNG-025",
+      "name": "日炎枪手",
+      "changes": {
+        "rulesText": {
+          "before": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
+          "after": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
+        }
+      },
+      "previousDesignHash": "313781c3e54680628df9fd787708a5eaa6c5b990bc8fc72584340460493d78b4",
+      "previousExecutionHash": "eb35f85232240b2d69fd01cec478d80b35620030b88c00ff432e8c60774bc8bb",
+      "designHash": "bb6f35e03308969dda433031a5295563fff5d3d2fbc60f1b945e58e4ece16184",
+      "executionHash": "51939d7b1c1e57c8f5d99d02b423aca0063e2d067cbe9b10a61bf6a373486450",
+      "bundleHash": "d73fe8a09d23f764810943955008b36354991161a9174d9c1216909080d47c96"
+    },
+    {
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "displayId": "FNG-026",
+      "name": "谕晶",
+      "changes": {
+        "attack": {
+          "before": 2,
+          "after": 1
+        },
+        "health": {
+          "before": 8,
+          "after": 6
+        },
+        "movement": {
+          "before": 2,
+          "after": 1
+        }
+      },
+      "previousDesignHash": "7883b11a1a4310a714769725902b7bf3aebcfc5a9f7622fbcc0227c807fe5064",
+      "previousExecutionHash": "cfc18382e173a863bdb4ee24d30f33e2c9258ae54f016ae1044b202606d572f8",
+      "designHash": "9df72866d805ea48b6d393ee56315569545281acf9246b0f54ae8cf42721c31f",
+      "executionHash": "cfc18382e173a863bdb4ee24d30f33e2c9258ae54f016ae1044b202606d572f8",
+      "bundleHash": "4e88c44062b9fa5a3795fec79ea62ce6a70d633b3bcec19c11dae31ddc4d1585"
+    },
+    {
+      "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "displayId": "FNG-027",
+      "name": "星航恶兆-巨鳐",
+      "changes": {
+        "health": {
+          "before": 10,
+          "after": 8
+        }
+      },
+      "previousDesignHash": "25340f3890b407dd872d376564920c8bc23bb562135c01c27c693de6a4b76b38",
+      "previousExecutionHash": "22d338ee91fb05d96a72f066e75d77008ebc7b800a09a97448d9d828a04ca936",
+      "designHash": "82d9ae2e6f1455ac84e0ffd40bee12d033ef2399ca7793bc3d9abd74b20cc107",
+      "executionHash": "22d338ee91fb05d96a72f066e75d77008ebc7b800a09a97448d9d828a04ca936",
+      "bundleHash": "c0ad1b5df8c3d9ffa708b4a5f897d687d31ecbd2a50c43248422c9bc562b6c34"
+    },
+    {
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "displayId": "FNG-028",
+      "name": "「金扳手」工程师",
+      "changes": {
+        "health": {
+          "before": 4,
+          "after": 2
+        },
+        "rulesText": {
+          "before": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。",
+          "after": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。"
+        }
+      },
+      "previousDesignHash": "3272693d60c41844c6f2f2a662c711b44aa7d1fce20504512b32beb069ffe82a",
+      "previousExecutionHash": "53cc1e9a55ad1794d765d67c8d5d7d62a0cd851d56ee2abb86e8b7b18e6b8236",
+      "designHash": "768b56d65fbe5ccfb1d41797bb7b2b072595998a4c91c0ebfc9f4997d4358611",
+      "executionHash": "fd9b02127b695d2f8a48cd81a5671a368e9167e01d177cfbaf88161ae8dc6b87",
+      "bundleHash": "85acd1890f062dc071d48eaf93b2f1cbeed522564c1391ec0d27dcbf1669479a"
+    },
+    {
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "displayId": "FNG-029",
+      "name": "泰坦X-003综合型",
+      "changes": {
+        "attack": {
+          "before": 7,
+          "after": 5
+        },
+        "health": {
+          "before": 8,
+          "after": 7
+        },
+        "movement": {
+          "before": 5,
+          "after": 4
+        }
+      },
+      "previousDesignHash": "c64958c9d131e3ccbbaa4c08de62fdc02c9e72143ecd493edf40777c34284de1",
+      "previousExecutionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "designHash": "492aed3e86bc442a44758095160a36533b17e9d348b1d86e42f515472fb51033",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "a48bad9cb3237c7c190ecc58a022527ee4067d97c04e6159361250e9be90f091"
+    },
+    {
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "displayId": "FNG-030",
+      "name": "泰坦X-003强袭型",
+      "changes": {
+        "attack": {
+          "before": 8,
+          "after": 7
+        },
+        "health": {
+          "before": 5,
+          "after": 4
+        },
+        "movement": {
+          "before": 7,
+          "after": 6
+        }
+      },
+      "previousDesignHash": "19539d4763b92ddaa1be1f011d49f7d1a9f88591a8fbec7c4c579bd2657460a9",
+      "previousExecutionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "designHash": "35966516f18dd74079d563d59d75c4406ebdcbfe5cff3ac9de973d0df985753d",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "c254cc83e805a0deea949f55610db8e478ef7d2af1eb821f1bb224dc3b8b4ea7"
+    },
+    {
+      "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "displayId": "FNG-035",
+      "name": "精英豹人战士",
+      "changes": {
+        "health": {
+          "before": 3,
+          "after": 2
+        }
+      },
+      "previousDesignHash": "152d26d8520ac9e843c965d2df3151de09aa0a9c38d987cd727bb64dfb321a5d",
+      "previousExecutionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "designHash": "202f25f4254dd575d454c6e0b45c1ca94b0c38083320ddc3b89366e3872648f1",
+      "executionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "bundleHash": "cf96c142bb51b279bc8b658230238a1248830dc1b20fe514f058a892833246c0"
+    },
+    {
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "displayId": "FNG-038",
+      "name": "领域防护罩",
+      "changes": {
+        "rulesText": {
+          "before": "入场：[快速] 为友方随从分配6点护甲。",
+          "after": "入场：[快速] 为友方随从分配4点护甲。"
+        }
+      },
+      "previousDesignHash": "caddbed3a9585b93ea06847b42e434ef671a6383548471f279ccff3467db298f",
+      "previousExecutionHash": "0e1d8cee4e06e98324ac75bc0b71c2c96e8ba5bc4723ddd99951bf33b3a7a9e2",
+      "designHash": "3b38458086afea88f28fcf4f8c2ee698f7da0a58e98cd2f1399bb9479f96aaff",
+      "executionHash": "b78ee1b6648f2a46ea057dfc0219a427c8a2694b339c53ee2fba1730613310d6",
+      "bundleHash": "d1da9d9cb3e251e79797ad9734c548b430d076cef08ebbe08c3823e3a82eaa4c"
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "name": "护甲军需官",
+      "changes": {
+        "movement": {
+          "before": 3,
+          "after": 2
+        },
+        "arrows": {
+          "before": [
+            "SE"
+          ],
+          "after": []
+        }
+      },
+      "previousDesignHash": "2d4156c456496569a811ff954f73fe9e2cc9d15051b049df48e57a2f6a75dd3b",
+      "previousExecutionHash": "936951eb14c876b1ae8bc455306221bfa0eff80e9689cc8ab837f151653f05d3",
+      "designHash": "f15d293ceed19ba63a9cf9fe6d6a07566d5076197c6aed20bda2e7bfb94edc30",
+      "executionHash": "936951eb14c876b1ae8bc455306221bfa0eff80e9689cc8ab837f151653f05d3",
+      "bundleHash": "1cb352579401150d7f580b1b37f90899e856ec9584eaecdb0ae5b3f5edccf589"
+    },
+    {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "name": "战线曙光",
+      "changes": {
+        "rulesText": {
+          "before": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。",
+          "after": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。"
+        }
+      },
+      "previousDesignHash": "5fabba4c6ef33a5be72598784d97cd4f591334d152cb58d8092881a2834780b1",
+      "previousExecutionHash": "2e5a62f24e7dda59ab3380890c7ce4fa1caf69f8f490978d9ae23a0641ad15c2",
+      "designHash": "f8d598cdb93c2181750d207c92403c1640f885ca2fed0c91a69ad37bed7c8596",
+      "executionHash": "bc1fca03d4e1246552e8eb244b98b8a75569f9a8c210244c18aca637861a7b77",
+      "bundleHash": "8303c22eb205bafc11fedf58f7e96a69972cfc2f1e3e3e35fb359cc11de33c4c"
+    },
+    {
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-041",
+      "name": "撕裂时潮的潜兽",
+      "changes": {
+        "health": {
+          "before": 7,
+          "after": 5
+        },
+        "movement": {
+          "before": 4,
+          "after": 3
+        }
+      },
+      "previousDesignHash": "1be91db52ef6500619c2191d5c5a4ab097fddbb8b2e2308525ee15c46e30c870",
+      "previousExecutionHash": "20ce6da19ca5a62a167ed7ddcef1703eb795860554ce5261a0391ef5af1775da",
+      "designHash": "b75505ba003c329daa6a0f2fb0745d4589af1ca6eb51245b9def9a0a1053d721",
+      "executionHash": "20ce6da19ca5a62a167ed7ddcef1703eb795860554ce5261a0391ef5af1775da",
+      "bundleHash": "cde7789b51ee2fe33b5c9c5ac3086f743b8349628e9c5846a4e0fd46a8e8c6b9"
+    },
+    {
+      "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "displayId": "SC-018",
+      "name": "日轮飞星-索拉",
+      "changes": {
+        "movement": {
+          "before": 8,
+          "after": 6
+        }
+      },
+      "previousDesignHash": "65acda02ee755177ad25a6c7b39d0d1aaf65b50852278c37d8329a9dfa7c4317",
+      "previousExecutionHash": "a51115e901791e8622755ff5cc03a56f8ce29c97a0f176211aad61c0f6a2ea87",
+      "designHash": "d96d5187d8b5ace1394b0869f6d38c9f8239325599deb4c671b6d33f0ee4c3b4",
+      "executionHash": "a51115e901791e8622755ff5cc03a56f8ce29c97a0f176211aad61c0f6a2ea87",
+      "bundleHash": "e94de7458bed52796a58b069888d6ededea7a4ae8edc2de36f8322774f2f3576"
+    },
+    {
+      "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
+      "displayId": "MCC-020",
+      "name": "上位天使-神谕者",
+      "changes": {
+        "rulesText": {
+          "before": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。",
+          "after": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆发现1张法术牌，将其放置于自身⬅️方格子。"
+        }
+      },
+      "previousDesignHash": "3ac01e73314016f32c1683992d8d62ec2393effebc385479b5294616c297d47a",
+      "previousExecutionHash": "55fb58905d1124410f000fa21090aa88757c6970778a86baf2338502075550b4",
+      "designHash": "05e0d66222d5cbb033502c61f7b3e95134817f3bb5a447be7f8a33e875708f08",
+      "executionHash": "b3b90cddd873c7d321228ea3e3fb7e518c43da6a773698904bf3ba2d5b2aee0b",
+      "bundleHash": "ae429a550673589ec67eb2bf1a7518e0168c07cefe2f4c5708e80b8362532e37"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "db210674f1143f3b1b82ea7a7f05234158a20d61",
+  "reason": "补齐已批准四卡轻量调整的历史测试重建步骤；不修改生产设计。原基线测试失败4字段，本记录逐字段保留前后断言。",
+  "changed": [
+    {
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "displayId": "FNG-042",
+      "fields": {
+        "movement": {
+          "before": 4,
+          "after": 3
+        }
+      }
+    },
+    {
+      "uid": "60268ee4-2023-490d-86ba-a6476cead501",
+      "displayId": "SC-004",
+      "fields": {
+        "rulesText": {
+          "before": "[保留] [耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。",
+          "after": "[耐久度：2] 入场：[快速] 选择场上的一张法术，令其法术伤害+1。该卡牌每在手牌中保留一回合，这个数字额外+1。"
+        }
+      }
+    },
+    {
+      "uid": "b682e438-d931-4a93-8698-ae9320f150c4",
+      "displayId": "AI-012",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NE",
+            "E"
+          ],
+          "after": [
+            "NE"
+          ]
+        }
+      }
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "fields": {
+        "arrows": {
+          "before": [
+            "NW",
+            "W"
+          ],
+          "after": [
+            "NW"
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 
   const STORAGE_KEY = "tbh-formal-card-editor-v5";
   const designContract = globalThis.TbhCardDesign;
+  const LEGACY_DRAFT_KEY = "tbh-card-editor-legacy-schema-draft-v1";
   const RECOVERY_KEY = "tbh-card-editor-unsynced-recovery-v1";
   const DIRECTIONS = ["NW", "N", "NE", "W", "E", "SW", "S", "SE"];
   const TRIBES = ["机械", "人类", "反抗军", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵", "建筑"];
@@ -156,8 +157,18 @@
 
   function readLocalState(base) {
     try {
-      const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+      const raw = localStorage.getItem(STORAGE_KEY);
+      const saved = JSON.parse(raw);
+      if (saved && saved.schemaVersion !== base.schemaVersion) {
+        // Archive before any schema5 save can replace the old storage key.
+        // Keep the first archive; a different second draft must not be silently lost.
+        const archived = localStorage.getItem(LEGACY_DRAFT_KEY);
+        if (archived && archived !== raw) { projectSyncBlocked = true; return null; }
+        localStorage.setItem(LEGACY_DRAFT_KEY, raw);
+        return null;
+      }
       if (saved?.schemaVersion === base.schemaVersion && Array.isArray(saved.cards)) {
+        designContract.validateDataset(saved);
         saved.artworkVariants ||= {};
         saved.selectedArtworkIds ||= {};
         return saved;
@@ -793,7 +804,9 @@
     if (!saved) return;
     renderGallery();
     showCard(currentId);
-    setStatus("已保存并重新渲染", "saved");
+    const reviewed = !updated.execution || (updated.execution.runtimeSupport === "Implemented"
+      && updated.execution.reviewedDesignHash === await designContract.designHash(updated));
+    setStatus(reviewed ? "已保存并重新渲染" : "已保存草稿；卡牌执行待复核，不能用于正式构建", reviewed ? "saved" : "error");
   }
 
   function addDerivative() {
@@ -831,6 +844,8 @@
     const rootId = parentId(card.id);
     const deletedIds = derivative ? [card.id] : [card.id, ...derivativesOf(card.id).map((entry) => entry.id)];
     const deletedCards = dataset.cards.filter((entry) => deletedIds.includes(entry.id));
+    const references = designContract.executionReferences(dataset, deletedCards.map(entry => entry.uid));
+    if (references.length) { setStatus(`无法删除：执行引用位于 ${references.join("，")}`, "error"); return; }
     const artworkDeletes = [...new Set([
       ...deletedCards.map((entry) => entry.artworkKey),
       ...deletedIds.flatMap((id) => (dataset.artworkVariants?.[id] || [])
@@ -873,6 +888,10 @@
   }
 
   function exportJson() {
+    const legacy = localStorage.getItem(LEGACY_DRAFT_KEY);
+    if (legacy && window.confirm("存在旧版本草稿（未覆盖当前执行定义）。确定：导出旧草稿；取消：继续导出当前数据。")) {
+      downloadJson(JSON.parse(legacy), "legacy-cards-draft.json"); return;
+    }
     const recovery = localStorage.getItem(RECOVERY_KEY);
     if (recovery && window.confirm("存在上次未同步草稿。确定：导出该草稿；取消：导出当前卡牌。")) {
       downloadJson(JSON.parse(recovery).dataset, "unsynced-cards.json");
@@ -1143,6 +1162,7 @@
     else if (projectSyncAvailable) setStatus("已连接本地项目", "saved");
     else if (isDirectFile) setStatus("浏览器本地模式", "saved");
     else setStatus("已加载仓库 JSON", "saved");
+    if (localStorage.getItem(LEGACY_DRAFT_KEY)) setStatus("旧版本草稿已隔离保留，可用“导出 JSON”另存；未覆盖当前执行定义", "error");
     if (localStorage.getItem(RECOVERY_KEY)) setStatus("存在未同步恢复草稿，可用“导出 JSON”另存；当前加载的是项目数据", "error");
   }
 
