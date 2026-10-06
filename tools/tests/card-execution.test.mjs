@@ -13,21 +13,31 @@ const root = fileURLToPath(new URL('../../', import.meta.url));
 const read = p => JSON.parse(fs.readFileSync(new URL(`../../${p}`, import.meta.url)));
 const current = read('data/cards.json');
 const evidence = read('docs/design/revisions/2026-10-05-execution-migration.json');
+const balance = read('docs/design/revisions/2026-10-06-balance147.json');
 const options = { contentId: 'test', contentVersion: 'fixture', artPaths: Object.fromEntries(evidence.entries.map(e => [e.uid, e.runtimeArtPath])) };
 const revise = fn => { const copy = structuredClone(current); fn(copy); return copy; };
 const oneCard = () => {
   const d = structuredClone(current); d.cards = [d.cards.find(c => c.rulesText === '' && c.parentUid === null)];
   return d;
 };
-test('schema5 production maps all 147 reviewed identities and frozen execution bundles after the approved durability ruling', () => {
+test('schema5 production maps all 147 identities through the reviewed migration and balance revision', () => {
   contract.validateDataset(current);
   assert.equal(current.cards.length, 147);
   assert.deepEqual([...current.cards.map(c => c.uid)].sort(), evidence.entries.map(e => e.uid).sort());
   assert.deepEqual(evidence.unresolved, []);
   validateProductionExecution(current);
+  assert.equal(balance.entries.length, 24);
+  assert.equal(new Set(balance.entries.map(e => e.uid)).size, 24);
+  for (const revision of balance.entries) {
+    const original = evidence.entries.find(e => e.uid === revision.uid);
+    assert.ok(original, revision.uid);
+    assert.equal(revision.previousDesignHash, original.designHash, revision.displayId);
+    assert.equal(revision.previousExecutionHash, original.executionHash, revision.displayId);
+  }
   const generated = toAuthoringDocument(current, options);
   for (const b of generated.cardBundles) {
-    const entry = evidence.entries.find(e => e.uid === b.card.uid);
+    const entry = balance.entries.find(e => e.uid === b.card.uid)
+      ?? evidence.entries.find(e => e.uid === b.card.uid);
     assert.equal(semanticHash(b), entry.bundleHash, b.card.displayId);
     const card = current.cards.find(c => c.uid === b.card.uid);
     assert.equal(designHash(card), entry.designHash, card.id);

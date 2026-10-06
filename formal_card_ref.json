@@ -300,9 +300,9 @@
         "rarity": "Rare",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 5,
+        "costAmount": 4,
         "durability": 0,
-        "rulesText": "入场：[快速] 获得4[⭐星能]。",
+        "rulesText": "入场：[快速] 获得4星能。",
         "arrows": [
           "W"
         ],
@@ -317,7 +317,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "810adf7010701cd8916faa9f1c26efac7f8a09b0662c55a7098e4fe9e80088d6",
+          "reviewedDesignHash": "b2a6fd73fbad9451e3a8b90e4f0a107ba396703e6afa58d5be650db1badc98c5",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -395,7 +395,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "入场：[快速] 获得4[⭐星能]。",
+                "rawRulesText": "入场：[快速] 获得4星能。",
                 "sourceClauseIds": [
                   "clause-01"
                 ]
@@ -632,7 +632,7 @@
         "costResource": "Star",
         "costAmount": 0,
         "durability": 0,
-        "rulesText": "入场：[快速] 令一个单位获得2护甲。",
+        "rulesText": "入场：[快速] 令一个单位获得1护甲。",
         "arrows": [
           "S"
         ],
@@ -647,7 +647,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "5c03b6c397889c952dd8ff308a59392ce48fa23f21c15c04a05571f52b6451b2",
+          "reviewedDesignHash": "8af8db6b638c818673e58a8bdbe34ae0c4bdab9ceb9dd3c5c486af9968f92d2c",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -716,7 +716,7 @@
                         "call": {
                           "name": "EffectValue",
                           "args": [
-                            2
+                            1
                           ],
                           "metadata": {
                             "kind": "Armor"
@@ -728,7 +728,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "入场：[快速] 令一个单位获得2护甲。",
+                "rawRulesText": "入场：[快速] 令一个单位获得1护甲。",
                 "inputs": [
                   "target"
                 ]
@@ -767,7 +767,7 @@
                 "exports": [
                   "target"
                 ],
-                "rawRulesText": "入场：[快速] 令一个单位获得2护甲。"
+                "rawRulesText": "入场：[快速] 令一个单位获得1护甲。"
               }
             }
           ]
@@ -852,7 +852,7 @@
         "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Interstellar Commander Magellan is a tall, powerfully built adult man with swept-back white hair and a stern weathered face, wearing an iconic white fleet-command greatcoat over layered navy technical uniform, matte ceramic shoulder armor, gloves, gold navigation trim, and a long asymmetric command mantle. At the decisive moment aboard his flagship's panoramic command prow, he points one gloved hand toward the enemy formation while two fallen Space Soldiers reconstitute from cyan archive particles at his upper-left and upper-right flanks, answering his order from the discard. Use a dramatic tilted low-angle composition: Magellan's face, pointing gesture, white silhouette, and both returning soldiers dominate the upper square crop; the lower portrait extension reveals his vast neutral merchant-fleet turning beneath him across a star-filled battlefield, with converging ship trails reinforcing his command line. Singular Legendary storytelling, intentional asymmetry, exceptional material finish, premium industrial sci-fi anime rendering, crisp original facial design, white and navy against deep space, disciplined cyan resurrection light and warm gold rim light. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
         "artDescriptionNeedsPolish": false,
         "artRequest": 0,
-        "attack": 6,
+        "attack": 4,
         "health": 8,
         "movement": 4,
         "tribes": [
@@ -863,7 +863,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "688f5e76075bad188383da4c20d8d0725f33f8797f7c13133405f53853043929",
+          "reviewedDesignHash": "08d2d36d40246d3f56888dba479d205d3833a329374701ff4d37c8a61f1af6e5",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -1158,7 +1158,7 @@
         "rarity": "Epic",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 2,
+        "costAmount": 3,
         "durability": 0,
         "rulesText": "入场：[快速] 以移除一张手牌为成本，抽一张牌。",
         "arrows": [
@@ -1175,7 +1175,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "fee985d9731c9f1051f71153155371e055d3ed3739a629f717febb7a9b59b6f6",
+          "reviewedDesignHash": "a9f7a5989d92c76e2fe580744d39897ffb55ee9bc91461b9a070bc17b515af36",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -1318,9 +1318,9 @@
         "rarity": "Rare",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 5,
+        "costAmount": 3,
         "durability": 0,
-        "rulesText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。",
+        "rulesText": "此卡被购买时放入对方的弃牌堆。\n抽到此卡时：将3点伤害随机分配到友方单位上。",
         "arrows": [],
         "tags": [
           "Curse"
@@ -1335,15 +1335,13 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "f7910c4bab3244e54c878a7890a09271858aad70d91101b24c007bfc678eafb2",
+          "reviewedDesignHash": "1967ba6560e8d6bbcf43c5d7ceadcea88a46b2daa266f32362062d5433feb16c",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
             "upgradeToCardId": null,
             "upgradeToCardIds": [],
-            "placeCost": {
-              "requiredArrowCount": 2
-            },
+            "placeCost": null,
             "arrowRules": [],
             "quantitizedCardTags": [],
             "continuousEffectRefs": [
@@ -1355,8 +1353,8 @@
             "textValueBindings": [
               {
                 "id": "effect-value",
-                "anchor": "将5点伤害",
-                "token": "5",
+                "anchor": "将3点伤害",
+                "token": "3",
                 "sources": [
                   {
                     "kind": "EffectValue",
@@ -1406,17 +1404,7 @@
               "id": "11c4a471-c45c-4055-b1a7-a335f6833976:round",
               "lifetime": "WhileHostExists",
               "activeCondition": {
-                "type": "AllOf",
-                "conditions": [
-                  {
-                    "type": "PhaseIs",
-                    "phase": "RoundEnd"
-                  },
-                  {
-                    "type": "HostInZone",
-                    "zone": "Hand"
-                  }
-                ]
+                "type": "Always"
               },
               "affectedScope": {
                 "query": "Self",
@@ -1430,7 +1418,7 @@
                     "id": "11c4a471-c45c-4055-b1a7-a335f6833976:round:trigger",
                     "trigger": {
                       "type": "Passive",
-                      "eventKind": "PhaseStarted",
+                      "eventKind": "CardDrawn",
                       "subject": "Self",
                       "listenScope": "Self",
                       "priority": 0,
@@ -1469,7 +1457,7 @@
                         "call": {
                           "name": "EffectValue",
                           "args": [
-                            5
+                            3
                           ],
                           "metadata": {
                             "kind": "Damage"
@@ -1480,7 +1468,7 @@
                         "call": {
                           "name": "EffectValue",
                           "args": [
-                            5
+                            3
                           ],
                           "metadata": {
                             "kind": "Damage"
@@ -1504,7 +1492,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。",
+                "rawRulesText": "此卡被购买时放入对方的弃牌堆。\n抽到此卡时：将3点伤害随机分配到友方单位上。",
                 "sourceClauseIds": [
                   "clause-01",
                   "clause-02",
@@ -1858,9 +1846,9 @@
         "rarity": "Epic",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 6,
+        "costAmount": 7,
         "durability": 0,
-        "rulesText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+        "rulesText": "每回合限两次，当敌方随从攻击时，无效其攻击。",
         "arrows": [
           "S"
         ],
@@ -1875,7 +1863,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "d81da4e80ebc65c68febf4bb1d374dea597e75f5caa053499505b5ccfeaebd07",
+          "reviewedDesignHash": "3a75e082b41716c809841fd71940f7a249d93ba4f951bcd01016308b430fe61f",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -1902,7 +1890,7 @@
                 "eventKind": "EffectActivated",
                 "subject": "ThisTriggeredEffectInstance",
                 "window": "CurrentTurn",
-                "maximum": 3
+                "maximum": 2
               },
               "affectedScope": {
                 "query": "Self",
@@ -1949,7 +1937,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+                "rawRulesText": "每回合限两次，当敌方随从攻击时，无效其攻击。",
                 "sourceClauseIds": [
                   "clause-01"
                 ]
@@ -1967,7 +1955,7 @@
         "rarity": "Epic",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 5,
+        "costAmount": 6,
         "durability": 0,
         "rulesText": "入场：选定一个非英雄单位，将其消灭。",
         "arrows": [],
@@ -1990,7 +1978,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "e711a6d985b8e2e9bfc512f7fef4ae3e07628610ec53b5b670c094d7b6e9c376",
+          "reviewedDesignHash": "55e8a45a88bc79773646a6f02d58e888abf077aaf839ba075ae5da3443aa78c9",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -2456,7 +2444,7 @@
         "costResource": "Star",
         "costAmount": 0,
         "attack": 0,
-        "health": 3,
+        "health": 2,
         "movement": 1,
         "durability": 0,
         "rulesText": "回合结束时，你获得1星能。",
@@ -2475,7 +2463,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "186fe49b0968d349525d2c00453518b5c7eae923c87b7b014c523460555b976c",
+          "reviewedDesignHash": "2e0ff047d36405673d6518885834b7425501a3221ad9e139d0f8d3397be9ae4d",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -2766,7 +2754,7 @@
         "costResource": "Star",
         "costAmount": 5,
         "durability": 0,
-        "rulesText": "发动：自身获得3点护甲。",
+        "rulesText": "[一次性箭头] 发动：自身获得3点护甲。",
         "arrows": [
           "NE"
         ],
@@ -2787,14 +2775,20 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "ff24a0e059a0491ea959a5e06155d5387415e027e76e4b30b580b225bdd6fde7",
+          "reviewedDesignHash": "fadf540f663b94ad821084613627dc3765455aeeab226a9fe561fbfadc0fbc6e",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
             "upgradeToCardId": null,
             "upgradeToCardIds": [],
             "placeCost": null,
-            "arrowRules": [],
+            "arrowRules": [
+              {
+                "direction": "NE",
+                "kind": "Consumable",
+                "layers": 1
+              }
+            ],
             "quantitizedCardTags": [],
             "continuousEffectRefs": [],
             "grantableContinuousEffectRefs": [],
@@ -2803,7 +2797,7 @@
             ]
           },
           "keywordTags": [],
-          "arrowMode": "Permanent",
+          "arrowMode": "OneTime",
           "abilities": [
             {
               "id": "9e62707e-3614-45ea-8480-4d17d452cd2d:activate",
@@ -2850,7 +2844,7 @@
               "annotations": {
                 "semanticRole": "ActivatedAbilityBody",
                 "inputs": [],
-                "rawRulesText": "发动：自身获得3点护甲。"
+                "rawRulesText": "[一次性箭头] 发动：自身获得3点护甲。"
               }
             }
           ]
@@ -2947,9 +2941,7 @@
         "movement": 2,
         "durability": 0,
         "rulesText": "发动：瞬移到场上任意一个空格子上。",
-        "arrows": [
-          "SW"
-        ],
+        "arrows": [],
         "tribes": [],
         "tags": [],
         "artPath": "",
@@ -2962,7 +2954,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "7659ba3cca5e355bc6e9621c0ad7e97d1269dafa4fc24063f7156aa7c7c9e06a",
+          "reviewedDesignHash": "199f0aa9121fd35f2cf2e6ab799cd92da3117a51edd6de4b876c6125d754f71b",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3210,8 +3202,8 @@
         "collectable": true,
         "costResource": "Star",
         "costAmount": 4,
-        "attack": 4,
-        "health": 4,
+        "attack": 3,
+        "health": 3,
         "movement": 3,
         "durability": 0,
         "rulesText": "[攻击范围: 3]",
@@ -3230,7 +3222,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "1f0abdca9bab660bccad249a2292ade2a7f754feddcbf6619240e16bb61f4881",
+          "reviewedDesignHash": "9ac835dbef2d0a9d87ff589aa310af7dca0f691fef50e2ab07d85130f1457486",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3265,7 +3257,7 @@
         "health": 3,
         "movement": 2,
         "durability": 0,
-        "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
+        "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。",
         "arrows": [],
         "tribes": [
           "人类"
@@ -3281,7 +3273,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "313781c3e54680628df9fd787708a5eaa6c5b990bc8fc72584340460493d78b4",
+          "reviewedDesignHash": "bb6f35e03308969dda433031a5295563fff5d3d2fbc60f1b945e58e4ece16184",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3365,7 +3357,7 @@
                   "origin",
                   "ray"
                 ],
-                "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。"
+                "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
               }
             },
             {
@@ -3422,7 +3414,7 @@
                               "call": {
                                 "name": "EffectValue",
                                 "args": [
-                                  3
+                                  2
                                 ],
                                 "metadata": {
                                   "kind": "Damage"
@@ -3443,7 +3435,7 @@
                   "origin",
                   "ray"
                 ],
-                "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。"
+                "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
               }
             }
           ]
@@ -3459,9 +3451,9 @@
         "collectable": true,
         "costResource": "Star",
         "costAmount": 8,
-        "attack": 2,
-        "health": 8,
-        "movement": 2,
+        "attack": 1,
+        "health": 6,
+        "movement": 1,
         "durability": 0,
         "rulesText": "发动：从你的牌堆随机展示最多三张牌，选择一张，无视通常放置规则将其放置于自身⬆️方格子，并触发其入场效果。",
         "arrows": [
@@ -3479,7 +3471,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "7883b11a1a4310a714769725902b7bf3aebcfc5a9f7622fbcc0227c807fe5064",
+          "reviewedDesignHash": "9df72866d805ea48b6d393ee56315569545281acf9246b0f54ae8cf42721c31f",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3622,7 +3614,7 @@
         "costResource": "Star",
         "costAmount": 10,
         "attack": 4,
-        "health": 10,
+        "health": 8,
         "movement": 1,
         "durability": 0,
         "rulesText": "[传送移动]该单位以瞬移代替普通路线移动，消耗1行动点，移动至任意敌方单位相邻的合法格子。该单位每次完成移动后，对其3x3范围内的所有敌方目标造成4点伤害。",
@@ -3644,7 +3636,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "25340f3890b407dd872d376564920c8bc23bb562135c01c27c693de6a4b76b38",
+          "reviewedDesignHash": "82d9ae2e6f1455ac84e0ffd40bee12d033ef2399ca7793bc3d9abd74b20cc107",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3789,10 +3781,10 @@
         "costResource": "Star",
         "costAmount": 4,
         "attack": 2,
-        "health": 4,
+        "health": 2,
         "movement": 2,
         "durability": 0,
-        "rulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。",
+        "rulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。",
         "arrows": [
           "W"
         ],
@@ -3810,7 +3802,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "3272693d60c41844c6f2f2a662c711b44aa7d1fce20504512b32beb069ffe82a",
+          "reviewedDesignHash": "768b56d65fbe5ccfb1d41797bb7b2b072595998a4c91c0ebfc9f4997d4358611",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -3912,6 +3904,23 @@
                               }
                             }
                           }
+                        },
+                        {
+                          "target": "$target",
+                          "channel": "Stat",
+                          "stat": "Health",
+                          "operation": "Add",
+                          "value": {
+                            "call": {
+                              "name": "EffectValue",
+                              "args": [
+                                2
+                              ],
+                              "metadata": {
+                                "kind": "Attribute"
+                              }
+                            }
+                          }
                         }
                       ]
                     }
@@ -3919,7 +3928,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。",
+                "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。",
                 "inputs": [
                   "target"
                 ]
@@ -3968,7 +3977,7 @@
                 "exports": [
                   "target"
                 ],
-                "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。"
+                "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。"
               }
             }
           ]
@@ -3984,9 +3993,9 @@
         "collectable": true,
         "costResource": "Star",
         "costAmount": 7,
-        "attack": 7,
-        "health": 8,
-        "movement": 5,
+        "attack": 5,
+        "health": 7,
+        "movement": 4,
         "durability": 0,
         "rulesText": "",
         "arrows": [],
@@ -4004,7 +4013,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "c64958c9d131e3ccbbaa4c08de62fdc02c9e72143ecd493edf40777c34284de1",
+          "reviewedDesignHash": "492aed3e86bc442a44758095160a36533b17e9d348b1d86e42f515472fb51033",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -4034,9 +4043,9 @@
         "collectable": true,
         "costResource": "Star",
         "costAmount": 8,
-        "attack": 8,
-        "health": 5,
-        "movement": 7,
+        "attack": 7,
+        "health": 4,
+        "movement": 6,
         "durability": 0,
         "rulesText": "",
         "arrows": [],
@@ -4054,7 +4063,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "19539d4763b92ddaa1be1f011d49f7d1a9f88591a8fbec7c4c579bd2657460a9",
+          "reviewedDesignHash": "35966516f18dd74079d563d59d75c4406ebdcbfe5cff3ac9de973d0df985753d",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -4718,7 +4727,7 @@
         "costResource": "Star",
         "costAmount": 8,
         "attack": 8,
-        "health": 3,
+        "health": 2,
         "movement": 8,
         "durability": 0,
         "rulesText": "",
@@ -4737,7 +4746,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "152d26d8520ac9e843c965d2df3151de09aa0a9c38d987cd727bb64dfb321a5d",
+          "reviewedDesignHash": "202f25f4254dd575d454c6e0b45c1ca94b0c38083320ddc3b89366e3872648f1",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -4871,7 +4880,7 @@
         "costResource": "Star",
         "costAmount": 4,
         "durability": 0,
-        "rulesText": "入场：[快速] 为友方随从分配6点护甲。",
+        "rulesText": "入场：[快速] 为友方随从分配4点护甲。",
         "arrows": [
           "S"
         ],
@@ -4886,7 +4895,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "caddbed3a9585b93ea06847b42e434ef671a6383548471f279ccff3467db298f",
+          "reviewedDesignHash": "3b38458086afea88f28fcf4f8c2ee698f7da0a58e98cd2f1399bb9479f96aaff",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -5008,7 +5017,7 @@
                               "call": {
                                 "name": "EffectValue",
                                 "args": [
-                                  6
+                                  4
                                 ],
                                 "metadata": {
                                   "kind": "Armor"
@@ -5020,7 +5029,7 @@
                               "call": {
                                 "name": "EffectValue",
                                 "args": [
-                                  6
+                                  4
                                 ],
                                 "metadata": {
                                   "kind": "Armor"
@@ -5035,7 +5044,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "入场：[快速] 为友方随从分配6点护甲。",
+                "rawRulesText": "入场：[快速] 为友方随从分配4点护甲。",
                 "semanticRole": "ActivationPreparation",
                 "exports": [
                   "allocation"
@@ -5077,7 +5086,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "入场：[快速] 为友方随从分配6点护甲。",
+                "rawRulesText": "入场：[快速] 为友方随从分配4点护甲。",
                 "inputs": [
                   "allocation"
                 ]
@@ -5098,12 +5107,10 @@
         "costAmount": 6,
         "attack": 3,
         "health": 4,
-        "movement": 3,
+        "movement": 2,
         "durability": 0,
         "rulesText": "入场&时停阶段开始时：[快速] 为友方单位分配3点护甲。",
-        "arrows": [
-          "SE"
-        ],
+        "arrows": [],
         "tribes": [
           "人类"
         ],
@@ -5118,7 +5125,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "2d4156c456496569a811ff954f73fe9e2cc9d15051b049df48e57a2f6a75dd3b",
+          "reviewedDesignHash": "f15d293ceed19ba63a9cf9fe6d6a07566d5076197c6aed20bda2e7bfb94edc30",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -5507,7 +5514,7 @@
         "costResource": "Star",
         "costAmount": 9,
         "durability": 0,
-        "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。",
+        "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。",
         "arrows": [
           "N",
           "S"
@@ -5523,7 +5530,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "5fabba4c6ef33a5be72598784d97cd4f591334d152cb58d8092881a2834780b1",
+          "reviewedDesignHash": "f8d598cdb93c2181750d207c92403c1640f885ca2fed0c91a69ad37bed7c8596",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -5620,7 +5627,7 @@
                         "call": {
                           "name": "Min",
                           "args": [
-                            3,
+                            2,
                             {
                               "count": {
                                 "var": "available"
@@ -5633,7 +5640,7 @@
                         "call": {
                           "name": "Min",
                           "args": [
-                            3,
+                            2,
                             {
                               "count": {
                                 "var": "available"
@@ -5651,7 +5658,7 @@
                 "exports": [
                   "shields"
                 ],
-                "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。"
+                "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。"
               }
             },
             {
@@ -5737,7 +5744,7 @@
                 "inputs": [
                   "shields"
                 ],
-                "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。"
+                "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。"
               }
             }
           ]
@@ -5754,8 +5761,8 @@
         "costResource": "Star",
         "costAmount": 8,
         "attack": 3,
-        "health": 7,
-        "movement": 4,
+        "health": 5,
+        "movement": 3,
         "durability": 0,
         "rulesText": "发动：选择一张己方法术牌，重置其发动效果。",
         "arrows": [
@@ -5775,7 +5782,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "1be91db52ef6500619c2191d5c5a4ab097fddbb8b2e2308525ee15c46e30c870",
+          "reviewedDesignHash": "b75505ba003c329daa6a0f2fb0745d4589af1ca6eb51245b9def9a0a1053d721",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -13016,7 +13023,7 @@
         "costAmount": 7,
         "attack": 3,
         "health": 6,
-        "movement": 8,
+        "movement": 6,
         "durability": 0,
         "rulesText": "购买成功时：生成1张「阳炎爆裂拳」加入你的弃牌堆。入场：[快速] 抽取「阳炎爆裂拳」。",
         "arrows": [],
@@ -13034,7 +13041,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "65acda02ee755177ad25a6c7b39d0d1aaf65b50852278c37d8329a9dfa7c4317",
+          "reviewedDesignHash": "d96d5187d8b5ace1394b0869f6d38c9f8239325599deb4c671b6d33f0ee4c3b4",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -21060,7 +21067,7 @@
         "health": 7,
         "movement": 3,
         "durability": 0,
-        "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。",
+        "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆发现1张法术牌，将其放置于自身⬅️方格子。",
         "arrows": [],
         "tribes": [
           "机械"
@@ -21076,7 +21083,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "3ac01e73314016f32c1683992d8d62ec2393effebc385479b5294616c297d47a",
+          "reviewedDesignHash": "05e0d66222d5cbb033502c61f7b3e95134817f3bb5a447be7f8a33e875708f08",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -21132,9 +21139,9 @@
                   }
                 },
                 {
-                  "elementId": "select-chosen",
+                  "elementId": "discover-spell-sample",
                   "select": {
-                    "saveAs": "chosen",
+                    "saveAs": "sample",
                     "valueType": "Card",
                     "scope": {
                       "query": "DrawPile",
@@ -21143,6 +21150,37 @@
                           "field": "cardType",
                           "op": "Equals",
                           "value": "Spell"
+                        }
+                      ]
+                    },
+                    "policy": {
+                      "kind": "RandomSelect",
+                      "min": 1,
+                      "max": 3,
+                      "canCancel": false
+                    },
+                    "failurePolicy": "AbortPlan",
+                    "cancelPolicy": "AbortPlan"
+                  }
+                },
+                {
+                  "elementId": "select-chosen",
+                  "select": {
+                    "saveAs": "chosen",
+                    "valueType": "Card",
+                    "scope": {
+                      "query": "BoundCards",
+                      "variable": "sample",
+                      "filters": [
+                        {
+                          "field": "zone",
+                          "op": "Equals",
+                          "value": "DrawPile"
+                        },
+                        {
+                          "field": "controller",
+                          "op": "Equals",
+                          "value": "SourceController"
                         },
                         {
                           "field": "canEnterGrid",
@@ -21176,7 +21214,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。"
+                "rawRulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆发现1张法术牌，将其放置于自身⬅️方格子。"
               }
             }
           ]
@@ -22363,7 +22401,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "bcc57306a33d72084e04bdeebd8280647cde6f0e7f7de48eec4f95f0214c8309",
+    "cardsSha256": "8967a37ba93cb1e96bf456bd7a234400c30a21015ccb319ea863c7c562dcb279",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -24209,7 +24247,7 @@
       "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "d81da4e80ebc65c68febf4bb1d374dea597e75f5caa053499505b5ccfeaebd07",
+        "reviewedDesignHash": "3a75e082b41716c809841fd71940f7a249d93ba4f951bcd01016308b430fe61f",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -24236,7 +24274,7 @@
               "eventKind": "EffectActivated",
               "subject": "ThisTriggeredEffectInstance",
               "window": "CurrentTurn",
-              "maximum": 3
+              "maximum": 2
             },
             "affectedScope": {
               "query": "Self",
@@ -24283,7 +24321,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+              "rawRulesText": "每回合限两次，当敌方随从攻击时，无效其攻击。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -24291,7 +24329,7 @@
           }
         ]
       },
-      "executionSha256": "0a7ed4eb5adf6f4c8b6edae83b9211d5ccf51dccd15d1b499bf4ae04f87d45f7",
+      "executionSha256": "0eba6bbab0abf93c9d8a61aea9320aee00c95bd0b9fd2f614c41fc4194372d3f",
       "displayId": "FNG-014",
       "name": "天元防壁",
       "nameEn": "Tianyuan Bulwark",
@@ -24301,7 +24339,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 6,
+      "costAmount": 7,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -24311,7 +24349,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "每回合限三次，当敌方随从攻击时，无效其攻击。",
+      "rulesText": "每回合限两次，当敌方随从攻击时，无效其攻击。",
       "artwork": {
         "key": "tianyuan-bulwark",
         "selected": [
@@ -24566,15 +24604,13 @@
       "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "f7910c4bab3244e54c878a7890a09271858aad70d91101b24c007bfc678eafb2",
+        "reviewedDesignHash": "1967ba6560e8d6bbcf43c5d7ceadcea88a46b2daa266f32362062d5433feb16c",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
-          "placeCost": {
-            "requiredArrowCount": 2
-          },
+          "placeCost": null,
           "arrowRules": [],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
@@ -24586,8 +24622,8 @@
           "textValueBindings": [
             {
               "id": "effect-value",
-              "anchor": "将5点伤害",
-              "token": "5",
+              "anchor": "将3点伤害",
+              "token": "3",
               "sources": [
                 {
                   "kind": "EffectValue",
@@ -24637,17 +24673,7 @@
             "id": "11c4a471-c45c-4055-b1a7-a335f6833976:round",
             "lifetime": "WhileHostExists",
             "activeCondition": {
-              "type": "AllOf",
-              "conditions": [
-                {
-                  "type": "PhaseIs",
-                  "phase": "RoundEnd"
-                },
-                {
-                  "type": "HostInZone",
-                  "zone": "Hand"
-                }
-              ]
+              "type": "Always"
             },
             "affectedScope": {
               "query": "Self",
@@ -24661,7 +24687,7 @@
                   "id": "11c4a471-c45c-4055-b1a7-a335f6833976:round:trigger",
                   "trigger": {
                     "type": "Passive",
-                    "eventKind": "PhaseStarted",
+                    "eventKind": "CardDrawn",
                     "subject": "Self",
                     "listenScope": "Self",
                     "priority": 0,
@@ -24700,7 +24726,7 @@
                       "call": {
                         "name": "EffectValue",
                         "args": [
-                          5
+                          3
                         ],
                         "metadata": {
                           "kind": "Damage"
@@ -24711,7 +24737,7 @@
                       "call": {
                         "name": "EffectValue",
                         "args": [
-                          5
+                          3
                         ],
                         "metadata": {
                           "kind": "Damage"
@@ -24735,7 +24761,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。",
+              "rawRulesText": "此卡被购买时放入对方的弃牌堆。\n抽到此卡时：将3点伤害随机分配到友方单位上。",
               "sourceClauseIds": [
                 "clause-01",
                 "clause-02",
@@ -24745,7 +24771,7 @@
           }
         ]
       },
-      "executionSha256": "7b65de9a0567406375aaab8336436243f443363c85b401c81d58fdad65d57834",
+      "executionSha256": "70777eb220ec1d5048f4007aaf26945119de39c976510c90e83d5d46afaa8960",
       "displayId": "FNG-012",
       "name": "飞船失火！",
       "nameEn": "On Fire!!",
@@ -24755,7 +24781,7 @@
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 5,
+      "costAmount": 3,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -24765,7 +24791,7 @@
       "tags": [
         "Curse"
       ],
-      "rulesText": "[箭头需求: 2]\n此卡被购买时放入对方的弃牌堆。\n回合结束时，若此卡在你的手牌中，将5点伤害随机分配到己方单位上。",
+      "rulesText": "此卡被购买时放入对方的弃牌堆。\n抽到此卡时：将3点伤害随机分配到友方单位上。",
       "artwork": {
         "key": "on-fire",
         "selected": [
@@ -25553,7 +25579,7 @@
       "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "7659ba3cca5e355bc6e9621c0ad7e97d1269dafa4fc24063f7156aa7c7c9e06a",
+        "reviewedDesignHash": "199f0aa9121fd35f2cf2e6ab799cd92da3117a51edd6de4b876c6125d754f71b",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -25660,9 +25686,7 @@
       "attack": 4,
       "health": 5,
       "movement": 2,
-      "arrows": [
-        "SW"
-      ],
+      "arrows": [],
       "tribes": [],
       "tags": [],
       "rulesText": "发动：瞬移到场上任意一个空格子上。",
@@ -25680,7 +25704,7 @@
       "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "c64958c9d131e3ccbbaa4c08de62fdc02c9e72143ecd493edf40777c34284de1",
+        "reviewedDesignHash": "492aed3e86bc442a44758095160a36533b17e9d348b1d86e42f515472fb51033",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -25711,9 +25735,9 @@
       "costResource": "Star",
       "costAmount": 7,
       "durability": 0,
-      "attack": 7,
-      "health": 8,
-      "movement": 5,
+      "attack": 5,
+      "health": 7,
+      "movement": 4,
       "arrows": [],
       "tribes": [
         "机械"
@@ -26263,7 +26287,7 @@
       "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "19539d4763b92ddaa1be1f011d49f7d1a9f88591a8fbec7c4c579bd2657460a9",
+        "reviewedDesignHash": "35966516f18dd74079d563d59d75c4406ebdcbfe5cff3ac9de973d0df985753d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -26294,9 +26318,9 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "attack": 8,
-      "health": 5,
-      "movement": 7,
+      "attack": 7,
+      "health": 4,
+      "movement": 6,
       "arrows": [],
       "tribes": [
         "机械"
@@ -27940,7 +27964,7 @@
       "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "1be91db52ef6500619c2191d5c5a4ab097fddbb8b2e2308525ee15c46e30c870",
+        "reviewedDesignHash": "b75505ba003c329daa6a0f2fb0745d4589af1ca6eb51245b9def9a0a1053d721",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -28045,8 +28069,8 @@
       "costAmount": 8,
       "durability": 0,
       "attack": 3,
-      "health": 7,
-      "movement": 4,
+      "health": 5,
+      "movement": 3,
       "arrows": [
         "NE"
       ],
@@ -28671,7 +28695,7 @@
       "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "2d4156c456496569a811ff954f73fe9e2cc9d15051b049df48e57a2f6a75dd3b",
+        "reviewedDesignHash": "f15d293ceed19ba63a9cf9fe6d6a07566d5076197c6aed20bda2e7bfb94edc30",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -29062,10 +29086,8 @@
       "durability": 0,
       "attack": 3,
       "health": 4,
-      "movement": 3,
-      "arrows": [
-        "SE"
-      ],
+      "movement": 2,
+      "arrows": [],
       "tribes": [
         "人类"
       ],
@@ -29228,7 +29250,7 @@
       "uid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "65acda02ee755177ad25a6c7b39d0d1aaf65b50852278c37d8329a9dfa7c4317",
+        "reviewedDesignHash": "d96d5187d8b5ace1394b0869f6d38c9f8239325599deb4c671b6d33f0ee4c3b4",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -29367,7 +29389,7 @@
       "durability": 0,
       "attack": 3,
       "health": 6,
-      "movement": 8,
+      "movement": 6,
       "arrows": [],
       "tribes": [
         "人类"
@@ -30980,7 +31002,7 @@
       "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5c03b6c397889c952dd8ff308a59392ce48fa23f21c15c04a05571f52b6451b2",
+        "reviewedDesignHash": "8af8db6b638c818673e58a8bdbe34ae0c4bdab9ceb9dd3c5c486af9968f92d2c",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -31049,7 +31071,7 @@
                       "call": {
                         "name": "EffectValue",
                         "args": [
-                          2
+                          1
                         ],
                         "metadata": {
                           "kind": "Armor"
@@ -31061,7 +31083,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：[快速] 令一个单位获得2护甲。",
+              "rawRulesText": "入场：[快速] 令一个单位获得1护甲。",
               "inputs": [
                 "target"
               ]
@@ -31100,12 +31122,12 @@
               "exports": [
                 "target"
               ],
-              "rawRulesText": "入场：[快速] 令一个单位获得2护甲。"
+              "rawRulesText": "入场：[快速] 令一个单位获得1护甲。"
             }
           }
         ]
       },
-      "executionSha256": "a04ca46cb12231c63825cd0ee805a96f7f4bccc7fca02f426f7d48a51308c5f2",
+      "executionSha256": "37c58efab01579e6679fa9f426e4c54b49374dffd4adcb1525cb2936593e6a3c",
       "displayId": "FNG-007",
       "name": "胶囊防护罩",
       "nameEn": "Energy Shield",
@@ -31125,7 +31147,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 令一个单位获得2护甲。",
+      "rulesText": "入场：[快速] 令一个单位获得1护甲。",
       "artwork": {
         "key": "energy-shield",
         "selected": [
@@ -31618,7 +31640,7 @@
       "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "152d26d8520ac9e843c965d2df3151de09aa0a9c38d987cd727bb64dfb321a5d",
+        "reviewedDesignHash": "202f25f4254dd575d454c6e0b45c1ca94b0c38083320ddc3b89366e3872648f1",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -31650,7 +31672,7 @@
       "costAmount": 8,
       "durability": 0,
       "attack": 8,
-      "health": 3,
+      "health": 2,
       "movement": 8,
       "arrows": [],
       "tribes": [
@@ -32131,7 +32153,7 @@
       "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "3ac01e73314016f32c1683992d8d62ec2393effebc385479b5294616c297d47a",
+        "reviewedDesignHash": "05e0d66222d5cbb033502c61f7b3e95134817f3bb5a447be7f8a33e875708f08",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -32187,9 +32209,9 @@
                 }
               },
               {
-                "elementId": "select-chosen",
+                "elementId": "discover-spell-sample",
                 "select": {
-                  "saveAs": "chosen",
+                  "saveAs": "sample",
                   "valueType": "Card",
                   "scope": {
                     "query": "DrawPile",
@@ -32198,6 +32220,37 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Spell"
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "RandomSelect",
+                    "min": 1,
+                    "max": 3,
+                    "canCancel": false
+                  },
+                  "failurePolicy": "AbortPlan",
+                  "cancelPolicy": "AbortPlan"
+                }
+              },
+              {
+                "elementId": "select-chosen",
+                "select": {
+                  "saveAs": "chosen",
+                  "valueType": "Card",
+                  "scope": {
+                    "query": "BoundCards",
+                    "variable": "sample",
+                    "filters": [
+                      {
+                        "field": "zone",
+                        "op": "Equals",
+                        "value": "DrawPile"
+                      },
+                      {
+                        "field": "controller",
+                        "op": "Equals",
+                        "value": "SourceController"
                       },
                       {
                         "field": "canEnterGrid",
@@ -32231,12 +32284,12 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。"
+              "rawRulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆发现1张法术牌，将其放置于自身⬅️方格子。"
             }
           }
         ]
       },
-      "executionSha256": "55fb58905d1124410f000fa21090aa88757c6970778a86baf2338502075550b4",
+      "executionSha256": "b3b90cddd873c7d321228ea3e3fb7e518c43da6a773698904bf3ba2d5b2aee0b",
       "displayId": "MCC-020",
       "name": "上位天使-神谕者",
       "nameEn": "Upper Angel—Oracle",
@@ -32256,7 +32309,7 @@
         "机械"
       ],
       "tags": [],
-      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆选择1张法术牌，将其放置于自身⬅️方格子。",
+      "rulesText": "[循环进度：5] 计数：该随从移动的格数。完成：从你的牌堆发现1张法术牌，将其放置于自身⬅️方格子。",
       "artwork": {
         "key": "upper-angel-oracle",
         "selected": [
@@ -32271,7 +32324,7 @@
       "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "fee985d9731c9f1051f71153155371e055d3ed3739a629f717febb7a9b59b6f6",
+        "reviewedDesignHash": "a9f7a5989d92c76e2fe580744d39897ffb55ee9bc91461b9a070bc17b515af36",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -32414,7 +32467,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 3,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -32519,7 +32572,7 @@
       "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "810adf7010701cd8916faa9f1c26efac7f8a09b0662c55a7098e4fe9e80088d6",
+        "reviewedDesignHash": "b2a6fd73fbad9451e3a8b90e4f0a107ba396703e6afa58d5be650db1badc98c5",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -32597,7 +32650,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：[快速] 获得4[⭐星能]。",
+              "rawRulesText": "入场：[快速] 获得4星能。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -32605,7 +32658,7 @@
           }
         ]
       },
-      "executionSha256": "174ab0ff9553f1cdfd25a5514aedcc122b09e479d1e23f8c1909567d4f5dbada",
+      "executionSha256": "79f5377799d496df8b1ede5f3116a3569533fec914a34d27376020ab35bc7693",
       "displayId": "FNG-005",
       "name": "宝藏星能石",
       "nameEn": "Treasure Star Ore",
@@ -32615,7 +32668,7 @@
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
-      "costAmount": 5,
+      "costAmount": 4,
       "durability": 0,
       "attack": null,
       "health": null,
@@ -32625,7 +32678,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 获得4[⭐星能]。",
+      "rulesText": "入场：[快速] 获得4星能。",
       "artwork": {
         "key": "treasure-star-ore",
         "selected": [
@@ -33903,7 +33956,7 @@
       "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "e711a6d985b8e2e9bfc512f7fef4ae3e07628610ec53b5b670c094d7b6e9c376",
+        "reviewedDesignHash": "55e8a45a88bc79773646a6f02d58e888abf077aaf839ba075ae5da3443aa78c9",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -34032,7 +34085,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 5,
+      "costAmount": 6,
       "durability": 0,
       "attack": 3,
       "health": 2,
@@ -34434,7 +34487,7 @@
       "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "caddbed3a9585b93ea06847b42e434ef671a6383548471f279ccff3467db298f",
+        "reviewedDesignHash": "3b38458086afea88f28fcf4f8c2ee698f7da0a58e98cd2f1399bb9479f96aaff",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -34556,7 +34609,7 @@
                             "call": {
                               "name": "EffectValue",
                               "args": [
-                                6
+                                4
                               ],
                               "metadata": {
                                 "kind": "Armor"
@@ -34568,7 +34621,7 @@
                             "call": {
                               "name": "EffectValue",
                               "args": [
-                                6
+                                4
                               ],
                               "metadata": {
                                 "kind": "Armor"
@@ -34583,7 +34636,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：[快速] 为友方随从分配6点护甲。",
+              "rawRulesText": "入场：[快速] 为友方随从分配4点护甲。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "allocation"
@@ -34625,7 +34678,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：[快速] 为友方随从分配6点护甲。",
+              "rawRulesText": "入场：[快速] 为友方随从分配4点护甲。",
               "inputs": [
                 "allocation"
               ]
@@ -34633,7 +34686,7 @@
           }
         ]
       },
-      "executionSha256": "0e1d8cee4e06e98324ac75bc0b71c2c96e8ba5bc4723ddd99951bf33b3a7a9e2",
+      "executionSha256": "b78ee1b6648f2a46ea057dfc0219a427c8a2694b339c53ee2fba1730613310d6",
       "displayId": "FNG-038",
       "name": "领域防护罩",
       "nameEn": "Domain Shield",
@@ -34653,7 +34706,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 为友方随从分配6点护甲。",
+      "rulesText": "入场：[快速] 为友方随从分配4点护甲。",
       "artwork": {
         "key": "domain-shield",
         "selected": [
@@ -34668,14 +34721,20 @@
       "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "ff24a0e059a0491ea959a5e06155d5387415e027e76e4b30b580b225bdd6fde7",
+        "reviewedDesignHash": "fadf540f663b94ad821084613627dc3765455aeeab226a9fe561fbfadc0fbc6e",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
           "placeCost": null,
-          "arrowRules": [],
+          "arrowRules": [
+            {
+              "direction": "NE",
+              "kind": "Consumable",
+              "layers": 1
+            }
+          ],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [],
           "grantableContinuousEffectRefs": [],
@@ -34684,7 +34743,7 @@
           ]
         },
         "keywordTags": [],
-        "arrowMode": "Permanent",
+        "arrowMode": "OneTime",
         "abilities": [
           {
             "id": "9e62707e-3614-45ea-8480-4d17d452cd2d:activate",
@@ -34731,12 +34790,12 @@
             "annotations": {
               "semanticRole": "ActivatedAbilityBody",
               "inputs": [],
-              "rawRulesText": "发动：自身获得3点护甲。"
+              "rawRulesText": "[一次性箭头] 发动：自身获得3点护甲。"
             }
           }
         ]
       },
-      "executionSha256": "e03341a00bc9f42b0bc8d255b55ec3454c9133ad1d6226c9292d7724c11102a8",
+      "executionSha256": "485987f12b76359a105335519810dd8f12941e87323ffaf7514f504b5404d568",
       "displayId": "FNG-020",
       "name": "鲁莽的先锋",
       "nameEn": "Reckless Pioneer",
@@ -34758,7 +34817,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "发动：自身获得3点护甲。",
+      "rulesText": "[一次性箭头] 发动：自身获得3点护甲。",
       "artwork": {
         "key": "reckless-pioneer",
         "selected": [
@@ -37725,7 +37784,7 @@
       "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "313781c3e54680628df9fd787708a5eaa6c5b990bc8fc72584340460493d78b4",
+        "reviewedDesignHash": "bb6f35e03308969dda433031a5295563fff5d3d2fbc60f1b945e58e4ece16184",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -37809,7 +37868,7 @@
                 "origin",
                 "ray"
               ],
-              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。"
+              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
             }
           },
           {
@@ -37866,7 +37925,7 @@
                             "call": {
                               "name": "EffectValue",
                               "args": [
-                                3
+                                2
                               ],
                               "metadata": {
                                 "kind": "Damage"
@@ -37887,12 +37946,12 @@
                 "origin",
                 "ray"
               ],
-              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。"
+              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
             }
           }
         ]
       },
-      "executionSha256": "eb35f85232240b2d69fd01cec478d80b35620030b88c00ff432e8c60774bc8bb",
+      "executionSha256": "51939d7b1c1e57c8f5d99d02b423aca0063e2d067cbe9b10a61bf6a373486450",
       "displayId": "FNG-025",
       "name": "日炎枪手",
       "nameEn": "Sunflare Gunner",
@@ -37912,7 +37971,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成3点伤害。目标必须为敌方随从。",
+      "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。",
       "artwork": {
         "key": "sunflare-gunner",
         "selected": [
@@ -39114,7 +39173,7 @@
       "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "1f0abdca9bab660bccad249a2292ade2a7f754feddcbf6619240e16bb61f4881",
+        "reviewedDesignHash": "9ac835dbef2d0a9d87ff589aa310af7dca0f691fef50e2ab07d85130f1457486",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -39146,8 +39205,8 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "attack": 4,
-      "health": 4,
+      "attack": 3,
+      "health": 3,
       "movement": 3,
       "arrows": [],
       "tribes": [
@@ -39375,7 +39434,7 @@
       "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "186fe49b0968d349525d2c00453518b5c7eae923c87b7b014c523460555b976c",
+        "reviewedDesignHash": "2e0ff047d36405673d6518885834b7425501a3221ad9e139d0f8d3397be9ae4d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -39473,7 +39532,7 @@
       "costAmount": 0,
       "durability": 0,
       "attack": 0,
-      "health": 3,
+      "health": 2,
       "movement": 1,
       "arrows": [],
       "tribes": [
@@ -39495,7 +39554,7 @@
       "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "7883b11a1a4310a714769725902b7bf3aebcfc5a9f7622fbcc0227c807fe5064",
+        "reviewedDesignHash": "9df72866d805ea48b6d393ee56315569545281acf9246b0f54ae8cf42721c31f",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -39638,9 +39697,9 @@
       "costResource": "Star",
       "costAmount": 8,
       "durability": 0,
-      "attack": 2,
-      "health": 8,
-      "movement": 2,
+      "attack": 1,
+      "health": 6,
+      "movement": 1,
       "arrows": [
         "N"
       ],
@@ -41150,7 +41209,7 @@
       "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "688f5e76075bad188383da4c20d8d0725f33f8797f7c13133405f53853043929",
+        "reviewedDesignHash": "08d2d36d40246d3f56888dba479d205d3833a329374701ff4d37c8a61f1af6e5",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -41335,7 +41394,7 @@
       "costResource": "Star",
       "costAmount": 10,
       "durability": 0,
-      "attack": 6,
+      "attack": 4,
       "health": 8,
       "movement": 4,
       "arrows": [
@@ -41360,7 +41419,7 @@
       "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "25340f3890b407dd872d376564920c8bc23bb562135c01c27c693de6a4b76b38",
+        "reviewedDesignHash": "82d9ae2e6f1455ac84e0ffd40bee12d033ef2399ca7793bc3d9abd74b20cc107",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -41506,7 +41565,7 @@
       "costAmount": 10,
       "durability": 0,
       "attack": 4,
-      "health": 10,
+      "health": 8,
       "movement": 1,
       "arrows": [
         "W",
@@ -41531,7 +41590,7 @@
       "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5fabba4c6ef33a5be72598784d97cd4f591334d152cb58d8092881a2834780b1",
+        "reviewedDesignHash": "f8d598cdb93c2181750d207c92403c1640f885ca2fed0c91a69ad37bed7c8596",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -41628,7 +41687,7 @@
                       "call": {
                         "name": "Min",
                         "args": [
-                          3,
+                          2,
                           {
                             "count": {
                               "var": "available"
@@ -41641,7 +41700,7 @@
                       "call": {
                         "name": "Min",
                         "args": [
-                          3,
+                          2,
                           {
                             "count": {
                               "var": "available"
@@ -41659,7 +41718,7 @@
               "exports": [
                 "shields"
               ],
-              "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。"
+              "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。"
             }
           },
           {
@@ -41745,12 +41804,12 @@
               "inputs": [
                 "shields"
               ],
-              "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。"
+              "rawRulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。"
             }
           }
         ]
       },
-      "executionSha256": "2e5a62f24e7dda59ab3380890c7ce4fa1caf69f8f490978d9ae23a0641ad15c2",
+      "executionSha256": "bc1fca03d4e1246552e8eb244b98b8a75569f9a8c210244c18aca637861a7b77",
       "displayId": "FNG-040",
       "name": "战线曙光",
       "nameEn": "Dawn of the Frontline",
@@ -41771,7 +41830,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择3个友方随从，令其获得圣盾。",
+      "rulesText": "入场：[快速] 所有友方单位恢复2生命，选择2个友方随从，令其获得圣盾。",
       "artwork": {
         "key": "dawn-of-the-frontline",
         "selected": [
@@ -43512,7 +43571,7 @@
       "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "3272693d60c41844c6f2f2a662c711b44aa7d1fce20504512b32beb069ffe82a",
+        "reviewedDesignHash": "768b56d65fbe5ccfb1d41797bb7b2b072595998a4c91c0ebfc9f4997d4358611",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -43614,6 +43673,23 @@
                             }
                           }
                         }
+                      },
+                      {
+                        "target": "$target",
+                        "channel": "Stat",
+                        "stat": "Health",
+                        "operation": "Add",
+                        "value": {
+                          "call": {
+                            "name": "EffectValue",
+                            "args": [
+                              2
+                            ],
+                            "metadata": {
+                              "kind": "Attribute"
+                            }
+                          }
+                        }
                       }
                     ]
                   }
@@ -43621,7 +43697,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。",
+              "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。",
               "inputs": [
                 "target"
               ]
@@ -43670,12 +43746,12 @@
               "exports": [
                 "target"
               ],
-              "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。"
+              "rawRulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。"
             }
           }
         ]
       },
-      "executionSha256": "53cc1e9a55ad1794d765d67c8d5d7d62a0cd851d56ee2abb86e8b7b18e6b8236",
+      "executionSha256": "fd9b02127b695d2f8a48cd81a5671a368e9167e01d177cfbaf88161ae8dc6b87",
       "displayId": "FNG-028",
       "name": "「金扳手」工程师",
       "nameEn": "Gold Wrench Engineer",
@@ -43688,7 +43764,7 @@
       "costAmount": 4,
       "durability": 0,
       "attack": 2,
-      "health": 4,
+      "health": 2,
       "movement": 2,
       "arrows": [
         "W"
@@ -43697,7 +43773,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度。",
+      "rulesText": "[一次性箭头] 入场：令一个非英雄机械获得+2攻击&速度&生命。",
       "artwork": {
         "key": "gold-wrench-engineer",
         "selected": [

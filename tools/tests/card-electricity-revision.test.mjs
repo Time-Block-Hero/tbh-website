@@ -202,6 +202,17 @@ function currentApprovedDesign() {
   const phantom = dataset.cards.find(card => card.uid === durabilityRuling.uid);
   assert.equal(phantom.durability, durabilityRuling.before);
   phantom.durability = durabilityRuling.after;
+  const latestBalance = parse('docs/design/revisions/2026-10-06-balance147.json');
+  assert.equal(latestBalance.entries.length, 24);
+  for (const entry of latestBalance.entries) {
+    const target = dataset.cards.find(card => card.uid === entry.uid);
+    assert.ok(target, entry.uid);
+    for (const [field, delta] of Object.entries(entry.changes)) {
+      assert.ok(!['uid', 'parentUid', 'collectionKind'].includes(field));
+      assert.deepEqual(target[field], delta.before, entry.displayId + '/' + field);
+      target[field] = structuredClone(delta.after);
+    }
+  }
   return dataset;
 }
 
