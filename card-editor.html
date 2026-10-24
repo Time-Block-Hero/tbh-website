@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./site.css" />
     <link rel="stylesheet" href="./editor-theme.css" />
+    <link rel="stylesheet" href="./chibi-preview.css" />
     <script src="./card-editor-data.js" defer></script>
     <script src="./card-design-contract.js" defer></script>
+    <script src="./chibi-preview.js" defer></script>
     <script src="./card-editor.js" defer></script>
     <script src="./editor-page.js" defer></script>
   </head>
@@ -141,10 +143,11 @@
           <section class="hand-preview-stage">
             <div class="card-preview-tabs" role="tablist" aria-label="卡牌预览">
               <button id="cardPreviewTab" type="button" role="tab" aria-selected="true" aria-controls="cardHandPreview" data-preview-tab="card">卡面</button>
-              <button id="standeePreviewTab" type="button" role="tab" aria-selected="false" aria-controls="cardStandeePreview" tabindex="-1" data-preview-tab="standee">角色立绘</button>
+              <button id="chibiPreviewTab" type="button" role="tab" aria-selected="false" aria-controls="cardChibiPreview" tabindex="-1" data-preview-tab="chibi">Chibi 形象集</button>
+              <a href="./chibi-gallery.html" target="_blank" rel="noopener" class="chibi-gallery-link">查看合集 ↗</a>
             </div>
             <div id="cardHandPreview" class="hand-preview-host" role="tabpanel" aria-labelledby="cardPreviewTab"></div>
-            <div id="cardStandeePreview" class="standee-preview-host" role="tabpanel" aria-labelledby="standeePreviewTab" hidden></div>
+            <div id="cardChibiPreview" class="chibi-preview-host" role="tabpanel" aria-labelledby="chibiPreviewTab" hidden></div>
           </section>
           <aside class="formal-card-form-panel">
             <form id="cardEditorForm" class="formal-card-form" novalidate>

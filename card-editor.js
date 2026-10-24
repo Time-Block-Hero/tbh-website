@@ -27,7 +27,7 @@
   let initialized = false;
   let layout = null;
   let dataset = null;
-  let standees = { entries: [] };
+  let chibis = { entries: [] };
   let previewTab = "card";
   let collectableView = true;
   let currentId = null;
@@ -603,42 +603,25 @@
   function renderHand(card) {
     const host = $("#cardHandPreview");
     host.replaceChildren(createCardRender(card, "hand"));
-    renderStandee(card);
+    renderChibi(card);
   }
 
-  function renderStandee(card) {
-    const host = $("#cardStandeePreview");
-    const entry = standees.entries?.find((candidate) => candidate.definitionUid === card.uid);
-    host.replaceChildren();
-    const message = (text) => {
-      const empty = document.createElement("p");
-      empty.className = "standee-preview-empty";
-      empty.textContent = text;
-      host.replaceChildren(empty);
-    };
-    if (card.cardType !== "Minion") return message("此类型不使用角色立绘");
-    if (!entry || entry.src !== `./assets/card-standees/${card.uid}.png`) return message("这张卡牌尚未收录角色立绘");
-    const image = document.createElement("img");
-    image.src = entry.src;
-    image.alt = `${card.nameKey} · 角色立绘`;
-    image.addEventListener("error", () => {
-      if (host.contains(image)) message("角色立绘暂时无法加载，请检查图片文件");
-    });
-    const caption = document.createElement("p");
-    caption.className = "standee-preview-caption";
-    caption.textContent = `${card.nameKey} · 游戏立绘`;
-    host.append(image, caption);
+  function renderChibi(card) {
+    const host = $("#cardChibiPreview");
+    if (card.cardType !== "Minion") return globalThis.TbhChibiPreview.message(host, "此类型不使用单位 Chibi 形象集");
+    const entry = chibis.entries?.find((candidate) => candidate.uid === card.uid);
+    globalThis.TbhChibiPreview.mount(host, entry, card.nameKey);
   }
 
   function selectPreviewTab(tab) {
-    previewTab = tab === "standee" ? "standee" : "card";
+    previewTab = tab === "chibi" ? "chibi" : "card";
     for (const button of $$("[data-preview-tab]")) {
       const active = button.dataset.previewTab === previewTab;
       button.setAttribute("aria-selected", String(active));
       button.tabIndex = active ? 0 : -1;
     }
     $("#cardHandPreview").hidden = previewTab !== "card";
-    $("#cardStandeePreview").hidden = previewTab !== "standee";
+    $("#cardChibiPreview").hidden = previewTab !== "chibi";
   }
 
   function renderDerivativeRail() {
@@ -955,7 +938,7 @@
       button.addEventListener("keydown", (event) => {
         if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
         event.preventDefault();
-        const next = event.key === "Home" ? "card" : event.key === "End" ? "standee" : previewTab === "card" ? "standee" : "card";
+        const next = event.key === "Home" ? "card" : event.key === "End" ? "chibi" : previewTab === "card" ? "chibi" : "card";
         selectPreviewTab(next);
         $(`[data-preview-tab="${next}"]`).focus();
       });
@@ -1112,18 +1095,18 @@
     initialized = true;
     const fallback = window.__CARD_EDITOR_FALLBACK__ || {};
     const isDirectFile = window.location.protocol === "file:";
-    let [loadedLayout, baseDataset, loadedStandees] = isDirectFile
-      ? [structuredClone(fallback.layout), structuredClone(fallback.cards), structuredClone(fallback.standees || { entries: [] })]
+    let [loadedLayout, baseDataset, loadedChibis] = isDirectFile
+      ? [structuredClone(fallback.layout), structuredClone(fallback.cards), structuredClone(fallback.chibis || { entries: [] })]
       : await Promise.all([
           loadJson("./card_layout_ref/layout.json", fallback.layout),
           loadJson("./data/cards.json", fallback.cards),
-          loadJson("./data/card-standees.json", fallback.standees || { entries: [] }),
+          loadJson("./data/card-chibis.json", fallback.chibis || { entries: [] }),
         ]);
     if (!loadedLayout || !baseDataset) {
       throw new Error("本地卡牌数据未生成，请重新运行卡牌数据构建脚本");
     }
     layout = loadedLayout;
-    standees = loadedStandees;
+    chibis = loadedChibis;
     projectSyncAvailable = await detectProjectSync();
     if (projectSyncAvailable) {
       const response = await fetch("./api/cards/state", { cache: "no-store" });

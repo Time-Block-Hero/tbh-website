@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chibi 形象集 · Time Block Hero</title>
+    <link rel="stylesheet" href="./chibi-preview.css" />
+    <script src="./card-editor-data.js" defer></script>
+    <script src="./chibi-preview.js" defer></script>
+    <script src="./chibi-gallery.js" defer></script>
+  </head>
+  <body class="chibi-gallery-page">
+    <header class="chibi-gallery-header">
+      <a href="./card-editor.html">← 卡牌编辑器</a>
+      <h1>CHIBI / 单位形象集</h1>
+      <p id="chibiCoverage" role="status">正在读取素材索引…</p>
+    </header>
+    <main class="chibi-gallery-workspace">
+      <section class="chibi-library" aria-label="单位合集">
+        <div class="chibi-library-filters">
+          <input id="chibiSearch" type="search" placeholder="名称、编号或 UID" aria-label="搜索单位" />
+          <select id="chibiFaction" aria-label="职业筛选"><option value="">全部职业</option></select>
+          <select id="chibiAvailability" aria-label="素材状态"><option value="">全部状态</option><option value="ready">已有素材</option><option value="missing">待生成</option></select>
+        </div>
+        <div id="chibiGrid" class="chibi-library-grid"></div>
+      </section>
+      <section class="chibi-gallery-detail" aria-label="动作预览">
+        <div id="chibiGalleryPreview" class="chibi-preview-host"><p class="chibi-preview-empty">选择一个单位，查看动作与帧。</p></div>
+      </section>
+    </main>
+  </body>
+</html>

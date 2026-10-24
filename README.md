@@ -27,7 +27,7 @@ node tools/card-editor-server.mjs --port 4317
 
 编辑器当前支持：
 
-- 主列表使用 Board View，详情中央可切换「卡面 / 角色立绘」；切换页签保留未保存表单。随从、英雄、建筑及衍生单位显示各自立绘，法术与资源显示不适用。
+- 主列表使用 Board View，详情中央可切换「卡面 / Chibi 形象集」；切换页签保留未保存表单。随从、英雄、建筑及衍生单位按持久 UID 显示动作集；法术与资源显示不适用。独立 [Chibi 合集](chibi-gallery.html) 支持职业、名称和素材状态筛选。
 - 可收集与不可收集卡牌分开展示；衍生卡位于父卡详情页。
 - 添加、删除主卡和衍生卡；通过本地服务删除时同步删除对应实体卡图包。
 - 按编号模式拖拽卡牌并插入目标位置；保存后自动重新编号。
@@ -46,8 +46,10 @@ node tools/card-editor-server.mjs --port 4317
 | `card_layout_ref/layout.json` | Board View 与 Hand View 布局参数 |
 | `assets/card-template/` | 卡框、属性图标、箭头等模板资产 |
 | `assets/card-art/` | 正式卡牌插画及候选版本 |
-| `assets/card-standees/` | Assets 正式立绘的静态镜像，按持久 UID 命名 |
-| `data/card-standees.json` | 独立立绘索引，记录来源 Assets 提交和逐图 SHA-256 |
+| `assets/card-chibis/` | Presentation Chibi 的网站镜像，按持久 UID 命名 |
+| `data/card-chibis.json` | Chibi 索引、12 帧裁切、动作、来源提交、哈希与覆盖缺口 |
+| `assets/card-standees/` | 已退出展示入口的历史立绘镜像，保留追溯 |
+| `data/card-standees.json` | 历史立绘索引，保留来源记录 |
 | `formal_card_ref.json` | 包含执行段的 dirty 开发预览，不是正式发布源 |
 | `data/card-identity-migration.json` | 原137张设计的持久 UID 桥接与排除/空白/资源迁移策略 |
 | `ReferenceDocs/cards (1).json` | `data/cards.json` 的完整镜像；不要手工编辑 |
@@ -84,18 +86,20 @@ assets/card-art/space-soldier/space-soldier-01.png
 
 请通过本地编辑器修改已绑定插画的英文名，使 JSON 引用、目录名和文件名一起更新。卡牌编号会随设计顺序变化，因此不用于命名插画。
 
-## 游戏立绘同步
+## Chibi 形象集同步
 
-角色立绘独立于卡图与卡牌设计，由 `tbh-assets` 正式清单管理。本地服务、静态部署和直接打开 HTML 都使用本仓库的镜像文件，不依赖相邻仓库路径。
+运行时素材由 `tbh-presentation-ui/Runtime/VisualAssets/Chibi` 管理；网站只保存静态镜像，不修改原卡图、卡图选择、`artRequest` 或卡牌设计。每个单位有 12 帧透明 atlas：常规待机 3 帧、移动 3 帧、受击／攻击／效果各 1 帧、偶发彩蛋待机 3 帧。动作预览支持暂停、水平翻向、缩放和逐帧检查；常规待机可偶发播放一次彩蛋后返回。
 
 ```bash
-node tools/sync-card-standees.mjs --assets ../tbh-assets --commit <完整Assets提交SHA>
-node tools/sync-card-standees.mjs --assets ../tbh-assets --commit <同一SHA> --check
+node tools/sync-card-chibis.mjs --presentation ../tbh-presentation-ui --commit <完整Presentation提交SHA>
+node tools/sync-card-chibis.mjs --presentation ../tbh-presentation-ui --commit <同一SHA> --check
 ```
 
-先在 Assets checkout 准备对应提交的图片（包括 Git LFS 实体）。工具读取指定提交的 roster，按持久 UID 校验当前随从覆盖、路径、文件哈希、提交内 PNG/LFS 对象与尺寸，然后同步图片、索引和离线数据。它不会修改 `data/cards.json` 或正式卡图，也不会按名称、展示编号匹配。默认缺少任一单位立绘即失败；仅开发旧资产时可显式 `--allow-missing`，交付验证不用该参数。重复同步结果稳定。
+同步器读取指定提交的 `Runtime/VisualAssets/Chibi/roster.json`，验证持久 UID、完整 12 帧、PNG 尺寸、裁切边界、pivot、六个动作和 atlas/layout 的 SHA-256。普通 Git 文件直接读取指定提交；LFS 实体需要在 checkout 中准备，实体哈希必须匹配该提交的 LFS 指针。来源记录随镜像保留，离线备用数据与本地保存服务也保留索引。
 
-构建立绘索引后，`node tools/build-card-editor-fallback.mjs`、卡牌同步工具及本地保存服务都会保留它。新建但尚未生成立绘的单位显示明确空态；同步最新 Assets 后即可展示。界面只读，不提供立绘上传或选图。
+默认要求当前 `data/cards.json` 的所有 Minion（含英雄、建筑、不可收集及衍生单位）完整覆盖。生成中的开发批次可以显式 `--allow-missing`，界面会展示实际覆盖数量和待生成单位；完整交付验证不能用该参数。同步不删除历史文件，未登记的旧素材不会出现在新合集。新卡的名字或展示编号改变，不影响持久 UID 绑定。
+
+历史 `assets/card-standees/`、`data/card-standees.json` 和旧同步工具仅保留追溯，旧立绘已退出编辑器入口。退休的 `tbh-assets` 不是新的开发或生成源。
 
 ## 插画工作流
 
