@@ -1,6 +1,7 @@
 .chibi-preview-host { display:grid; grid-template-rows:minmax(220px,1fr) auto auto auto; width:100%; height:100%; min-height:0; background:#18283a; border:1px solid #39536b; border-radius:16px; overflow:hidden; }
 .chibi-preview-host[hidden] { display:none; }
 .chibi-viewport { min-height:0; overflow:hidden; background:repeating-conic-gradient(#20364a 0% 25%,#263d51 0% 50%) 0 / 26px 26px; }
+.chibi-viewport-light { background:repeating-conic-gradient(#e3e7e9 0% 25%,#fafbfc 0% 50%) 0 / 26px 26px; }
 .chibi-viewport canvas { display:block; width:100%; height:100%; object-fit:contain; }
 .chibi-toolbar { display:flex; flex-wrap:wrap; gap:8px; padding:12px; align-items:center; background:#18283a; }
 .chibi-toolbar button,.chibi-toolbar select { background:#30495f; border:1px solid #506d87; border-radius:8px; padding:7px 10px; color:#f3f8fb; font:inherit; font-size:12px; }
@@ -24,13 +25,13 @@
 .chibi-library-filters input,.chibi-library-filters select { background:#1c3043; color:#e5f0f6; border:1px solid #39536b; border-radius:8px; padding:10px; min-width:0; }
 .chibi-library-filters input { flex:1; }
 .chibi-library-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(134px,1fr)); gap:10px; overflow:auto; padding-right:6px; align-content:start; }
-.chibi-library-card { display:flex; flex-direction:column; align-items:center; gap:5px; border:1px solid #30495f; border-radius:12px; padding:12px 6px; background:#1c3043; color:#dfeef5; cursor:pointer; min-height:148px; font:inherit; }
+.chibi-library-card { display:flex; flex-direction:column; align-items:center; gap:5px; border:1px solid #30495f; border-radius:12px; padding:12px 6px; background:#1c3043; color:#dfeef5; cursor:pointer; min-height:184px; font:inherit; }
 .chibi-library-card:hover { background:#29455c; }
 .chibi-library-card[aria-pressed=true] { border-color:#8ee8ec; box-shadow:inset 0 0 0 1px #8ee8ec; background:#29455c; }
 .chibi-library-card strong { font-size:13px; text-align:center; }
 .chibi-library-card small { font-size:10px; color:#90afc3; }
 .chibi-library-card .chibi-available { color:#9ee4c8; }
-.chibi-thumbnail { width:76px; height:84px; position:relative; overflow:hidden; }
+.chibi-thumbnail { width:76px; height:84px; flex:0 0 84px; position:relative; overflow:hidden; }
 .chibi-thumbnail img { position:absolute; max-width:none; }
 .chibi-missing-icon { color:#536c82; font-size:38px; height:84px; display:grid; place-items:center; }
 .chibi-gallery-detail { min-height:0; }

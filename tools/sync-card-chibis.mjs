@@ -68,7 +68,9 @@ export function syncCardChibis({ presentation, commit, root = defaultRoot, allow
     const layoutSrc = `./assets/card-chibis/${entry.uid}/layout.json`;
     files.push({ destination: path.join(root, atlasSrc), bytes }, { destination: path.join(root, layoutSrc), bytes: layoutBytes });
     return { uid: entry.uid, atlasSrc, layoutSrc, atlasSha256: entry.atlasSha256, layoutSha256: entry.layoutSha256,
-      frameCount: 12, status: entry.status || "provisional", provenance: entry.provenance || null, layout };
+      frameCount: 12, status: entry.status || "provisional", bodyType: entry.bodyType || null,
+      height: entry.height ?? null, contentHeightRatio: entry.contentHeightRatio ?? null,
+      artworkFacesRight: entry.artworkFacesRight ?? null, provenance: entry.provenance || null, layout };
   }).sort((a, b) => a.uid.localeCompare(b.uid));
   const missing = [...units.keys()].filter((uid) => !seen.has(uid)).sort();
   if (missing.length && !allowMissing) throw new Error(`缺少 ${missing.length} 套 Chibi：${missing.join(", ")}`);

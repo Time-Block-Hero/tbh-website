@@ -24,7 +24,7 @@ function fixture(t) {
   const atlas = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+a4d8AAAAASUVORK5CYII=", "base64");
   const layout = { schemaVersion:1, sourceWidth:1, sourceHeight:1, columns:3, rows:4, frames:Array.from({ length:12 }, () => ({ rect:{ x:0,y:0,width:1,height:1 }, pivot:{ x:.5,y:0 } })), clips:Object.fromEntries(["idle","move","hit","attack","effect","rare"].map((n) => [n, { frames:[0,1,2], fps:8, loop:n === "idle" }])) };
   const layoutBytes = Buffer.from(JSON.stringify(layout));
-  const entry = { uid, atlasPath:`Runtime/VisualAssets/Chibi/Textures/${uid}/atlas.png`, layoutPath:`Runtime/VisualAssets/Chibi/Textures/${uid}/layout.json`, atlasSha256:hash(atlas), layoutSha256:hash(layoutBytes), frameCount:12, status:"provisional" };
+  const entry = { uid, atlasPath:`Runtime/VisualAssets/Chibi/Textures/${uid}/atlas.png`, layoutPath:`Runtime/VisualAssets/Chibi/Textures/${uid}/layout.json`, atlasSha256:hash(atlas), layoutSha256:hash(layoutBytes), frameCount:12, status:"provisional", bodyType:"humanoid", height:1.95, contentHeightRatio:.7, artworkFacesRight:true };
   fs.writeFileSync(path.join(presentation, entry.atlasPath), atlas); fs.writeFileSync(path.join(presentation, entry.layoutPath), layoutBytes);
   const writeRoster = (entries) => fs.writeFileSync(path.join(presentation, rosterPath), JSON.stringify({ schemaVersion:1,entries })); writeRoster([entry]);
   const git = (...args) => execFileSync("git", ["-C", presentation, ...args], { encoding:"utf8", stdio:["ignore","pipe","pipe"] }).trim(); git("init");
@@ -37,6 +37,8 @@ test("Chibi sync reads pinned Presentation content, mirrors atlas/layout and ret
   assert.equal(syncCardChibis(f).count, 1);
   const manifest = JSON.parse(fs.readFileSync(path.join(f.root, "data/card-chibis.json")));
   assert.equal(manifest.source.commit, f.commit); assert.equal(manifest.coverage.available, 1);
+  assert.equal(manifest.entries[0].bodyType, "humanoid"); assert.equal(manifest.entries[0].contentHeightRatio, .7);
+  assert.equal(manifest.entries[0].artworkFacesRight, true); assert.equal(manifest.entries[0].height, 1.95);
   f.writeRoster([]); fs.writeFileSync(path.join(f.presentation, f.entry.atlasPath), "dirty working file");
   assert.equal(syncCardChibis({ ...f,check:true }).count, 1); // Reads selected Git blob, not uncommitted work.
   assert.ok(fs.readFileSync(path.join(f.root,"data/cards.json")).equals(before));

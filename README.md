@@ -88,7 +88,7 @@ assets/card-art/space-soldier/space-soldier-01.png
 
 ## Chibi 形象集同步
 
-运行时素材由 `tbh-presentation-ui/Runtime/VisualAssets/Chibi` 管理；网站只保存静态镜像，不修改原卡图、卡图选择、`artRequest` 或卡牌设计。每个单位有 12 帧透明 atlas：常规待机 3 帧、移动 3 帧、受击／攻击／效果各 1 帧、偶发彩蛋待机 3 帧。动作预览支持暂停、水平翻向、缩放和逐帧检查；常规待机可偶发播放一次彩蛋后返回。
+运行时素材由 `tbh-presentation-ui/Runtime/VisualAssets/Chibi` 管理；网站只保存静态镜像，不修改原卡图、卡图选择、`artRequest` 或卡牌设计。当前收录全部 99 个随从定义（含英雄、建筑和衍生单位）的候选动作集，正式美术验收仍需人工审阅。每个单位有 12 帧透明 atlas：常规待机 3 帧、移动 3 帧、受击／攻击／效果各 1 帧、偶发彩蛋待机 3 帧。动作预览支持暂停、水平翻向、缩放、深浅透明背景和逐帧检查；常规待机可偶发播放一次彩蛋后返回。
 
 ```bash
 node tools/sync-card-chibis.mjs --presentation ../tbh-presentation-ui --commit <完整Presentation提交SHA>

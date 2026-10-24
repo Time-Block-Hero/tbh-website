@@ -39,6 +39,8 @@
     }
     const play = create("button", "暂停"); play.type = "button";
     const flip = create("button", "朝向 ←"); flip.type = "button";
+    const background = create("button", "浅色背景"); background.type = "button";
+    background.setAttribute("aria-pressed", "false");
     const rareLabel = create("label", null, "chibi-check");
     const automatic = create("input"); automatic.type = "checkbox"; automatic.checked = true;
     rareLabel.append(automatic, document.createTextNode("偶发彩蛋"));
@@ -48,7 +50,7 @@
     const scrubLabel = create("label", "逐帧 ");
     const scrub = create("input"); scrub.type = "range"; scrub.min = "0"; scrub.max = String(layout.frames.length - 1); scrub.step = "1"; scrub.value = "0"; scrub.setAttribute("aria-label", "动作帧");
     scrubLabel.append(scrub);
-    toolbar.append(select, play, flip, rareLabel, zoomLabel, scrubLabel);
+    toolbar.append(select, play, flip, background, rareLabel, zoomLabel, scrubLabel);
     const status = create("p", "", "chibi-preview-caption");
     const provenance = create("p", `${name} · ${entry.frameCount}/12 帧 · ${entry.status === "reviewed" ? "已审阅" : "候选，待审阅"}`, "chibi-provenance");
     host.append(viewport, toolbar, status, provenance);
@@ -65,7 +67,9 @@
       ctx.save(); ctx.translate(canvas.width / 2, canvas.height * .8); ctx.scale(facing, 1);
       ctx.drawImage(image, r.x, r.y, r.width, r.height, -r.width * pivot.x * scale, -r.height * (1 - pivot.y) * scale, r.width * scale, r.height * scale);
       ctx.restore(); scrub.value = String(index);
-      status.textContent = `${labels[clipName]} · 第 ${index + 1} / ${layout.frames.length} 帧 · ${clip().fps} fps`;
+      status.textContent = manual === null
+        ? `${labels[clipName]} · 第 ${index + 1} / ${layout.frames.length} 帧 · ${clip().fps} fps`
+        : `逐帧浏览 · 第 ${index + 1} / ${layout.frames.length} 帧`;
     }
     function setClip(name) { clipName = name; select.value = name; elapsed = 0; manual = null; }
     function tick(now) {
@@ -83,6 +87,11 @@
     select.addEventListener("change", () => { setClip(select.value); rareElapsed = 0; });
     play.addEventListener("click", () => { playing = !playing; manual = null; play.textContent = playing ? "暂停" : "播放"; });
     flip.addEventListener("click", () => { facing *= -1; flip.textContent = facing === 1 ? "朝向 ←" : "朝向 →"; });
+    background.addEventListener("click", () => {
+      const light = viewport.classList.toggle("chibi-viewport-light");
+      background.textContent = light ? "深色背景" : "浅色背景";
+      background.setAttribute("aria-pressed", String(light));
+    });
     scrub.addEventListener("input", () => { playing = false; manual = Number(scrub.value); play.textContent = "播放"; draw(manual); });
     image.addEventListener("error", () => { if (!disposed) message(host, "Chibi 图片无法加载，请检查镜像文件与来源提交。"); });
     image.src = entry.atlasSrc;
