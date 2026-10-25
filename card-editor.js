@@ -607,6 +607,8 @@
   }
 
   function renderChibi(card) {
+    const workbenchLink = $("#chibiWorkbenchLink");
+    if (workbenchLink) workbenchLink.href = `./chibi.html?unit=${encodeURIComponent(card.uid)}`;
     const host = $("#cardChibiPreview");
     if (card.cardType !== "Minion") return globalThis.TbhChibiPreview.message(host, "此类型不使用单位 Chibi 形象集");
     const entry = chibis.entries?.find((candidate) => candidate.uid === card.uid);
@@ -1145,6 +1147,9 @@
     else if (projectSyncAvailable) setStatus("已连接本地项目", "saved");
     else if (isDirectFile) setStatus("浏览器本地模式", "saved");
     else setStatus("已加载仓库 JSON", "saved");
+    const requestedUnit = new URLSearchParams(window.location.search || "").get("unit");
+    const requestedCard = dataset.cards.find(card => card.uid === requestedUnit);
+    if (requestedCard) showCard(requestedCard.id);
     if (localStorage.getItem(LEGACY_DRAFT_KEY)) setStatus("旧版本草稿已隔离保留，可用“导出 JSON”另存；未覆盖当前执行定义", "error");
     if (localStorage.getItem(RECOVERY_KEY)) setStatus("存在未同步恢复草稿，可用“导出 JSON”另存；当前加载的是项目数据", "error");
   }

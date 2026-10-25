@@ -78,15 +78,15 @@ test("preview uses Unity bottom-left source coordinates and bounded non-loop cli
 
 function editorHarness() {
   const node=()=>({hidden:false,attributes:{},dataset:{},setAttribute(k,v){this.attributes[k]=v;}});
-  const hand=node(),chibi=node(),tabs=["card","chibi"].map(name=>Object.assign(node(),{dataset:{previewTab:name}})),form={value:"尚未保存的卡文"};
-  const context={console,document:{createElement:()=>({getContext:()=>({})}),querySelector:s=>({"#cardHandPreview":hand,"#cardChibiPreview":chibi,"#cardEditorForm":form})[s],querySelectorAll:()=>tabs},TbhChibiPreview:{mount(host,entry,name){host.entry=entry;host.name=name;},message(host,text){host.message=text;}}};context.window=context;
+  const hand=node(),chibi=node(),link=node(),tabs=["card","chibi"].map(name=>Object.assign(node(),{dataset:{previewTab:name}})),form={value:"尚未保存的卡文"};
+  const context={console,document:{createElement:()=>({getContext:()=>({})}),querySelector:s=>({"#cardHandPreview":hand,"#cardChibiPreview":chibi,"#cardEditorForm":form,"#chibiWorkbenchLink":link})[s],querySelectorAll:()=>tabs},TbhChibiPreview:{mount(host,entry,name){host.entry=entry;host.name=name;},message(host,text){host.message=text;}}};context.window=context;
   const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =","  globalThis.chibiTest = {renderChibi,selectPreviewTab,load:v=>chibis=v};\n  window.initFormalCardEditor =");
-  vm.runInNewContext(script,context);return{...context.chibiTest,hand,chibi,tabs,form};
+  vm.runInNewContext(script,context);return{...context.chibiTest,hand,chibi,link,tabs,form};
 }
 
 test("editor Chibi lookup uses UID and tab switching preserves unsaved form",()=>{
   const h=editorHarness();h.load({entries:[{uid,atlasSrc:`./assets/card-chibis/${uid}/atlas.png`}]});
-  h.renderChibi({uid,id:"CHANGED-999",nameKey:"重命名",cardType:"Minion"});assert.equal(h.chibi.entry.uid,uid);
+  h.renderChibi({uid,id:"CHANGED-999",nameKey:"重命名",cardType:"Minion"});assert.equal(h.chibi.entry.uid,uid);assert.equal(h.link.href,`./chibi.html?unit=${uid}`);
   h.selectPreviewTab("chibi");assert.equal(h.hand.hidden,true);assert.equal(h.tabs[1].attributes["aria-selected"],"true");
   h.selectPreviewTab("card");assert.equal(h.form.value,"尚未保存的卡文");
   h.renderChibi({uid,cardType:"Spell"});assert.match(h.chibi.message,/此类型不使用/);
@@ -95,7 +95,7 @@ test("editor Chibi lookup uses UID and tab switching preserves unsaved form",()=
 
 test("direct-file editor initialization uses Chibi fallback without fetching",async()=>{
   const manifest={entries:[{uid}]},dataset=JSON.parse(fs.readFileSync(path.join(root,"data/cards.json")));
-  const context={console,structuredClone,document:{createElement:()=>({getContext:()=>({})})},localStorage:{getItem:()=>null},fetch:()=>{throw new Error("must not fetch");},location:{protocol:"file:"},__CARD_EDITOR_FALLBACK__:{cards:dataset,layout:{},chibis:manifest}};context.window=context;
+  const context={console,structuredClone,URLSearchParams,document:{createElement:()=>({getContext:()=>({})})},localStorage:{getItem:()=>null},fetch:()=>{throw new Error("must not fetch");},location:{protocol:"file:"},__CARD_EDITOR_FALLBACK__:{cards:dataset,layout:{},chibis:manifest}};context.window=context;
   const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =",`populateFactionInputs=()=>{};populateTribeInputs=()=>{};bindEvents=()=>{};renderGallery=()=>{};normalizeDatasetForCurrentRules=()=>false;loadLocalState=v=>v;readLocalState=()=>null;setStatus=()=>{};globalThis.offlineTest={initialize,getChibis:()=>chibis};\n  window.initFormalCardEditor =`);
   vm.runInNewContext(script,context);await context.offlineTest.initialize();assert.deepEqual(context.offlineTest.getChibis(),manifest);
 });

@@ -1,5 +1,6 @@
 import http from "node:http";
 import { buildEditorFallback } from "./card-editor-fallback.mjs";
+import { createChibiApi } from "./chibi-workbench-api.mjs";
 import { createHash } from "node:crypto";
 import { validateWrite } from "./card-design-write-contract.mjs";
 import designContract from "../card-design-contract.js";
@@ -282,8 +283,10 @@ function serveStatic(request, response, url) {
   else fs.createReadStream(target).pipe(response);
 }
 
+const chibiApi = createChibiApi(root, { sendJson, readBody });
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url || "/", `http://${host}:${server.address().port}`);
+  if (await chibiApi(request, response, url)) return;
   if (request.method === "GET" && url.pathname === "/api/cards/state") {
     const raw = fs.readFileSync(cardsPath);
     sendJson(response, 200, { dataset: JSON.parse(raw), cardsRevision: cardsRevision(raw) });
