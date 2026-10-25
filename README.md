@@ -101,6 +101,12 @@ node tools/sync-card-chibis.mjs --presentation ../tbh-presentation-ui --commit <
 
 历史 `assets/card-standees/`、`data/card-standees.json` 和旧同步工具仅保留追溯，旧立绘已退出编辑器入口。退休的 `tbh-assets` 不是新的开发或生成源。
 
+## Chibi 三维棋盘验收
+
+打开 [纸上群像](chibi-review.html)：每个单位站在 3×3 实体棋盘中心，旁边固定展示用户指定洛岚原图。可拖拽旋转、滚轮缩放、调整棋子高度，逐一查看待机 / 移动 / 受伤 / 攻击 / 发动效果与左右朝向。白纸边和投影由 WebGL 绘制，原稿像素不改色。无需 CDN 或新增 npm 依赖。
+
+新版候选与历史素材分开管理：`data/chibi-review.json` 明确记录待重绘 / 新稿候选 / 需修正 / 已审阅；待重绘单位仅借旧稿比较大小，不计入新稿完成数。[旧稿图集](chibi-gallery.html) 保留。制作交接和验收步骤见 [Chibi review](docs/design/chibi-review.md)。
+
 ## 插画工作流
 
 查看仍有生成需求的卡牌：
