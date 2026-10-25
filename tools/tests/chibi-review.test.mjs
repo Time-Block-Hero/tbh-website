@@ -47,3 +47,28 @@ test("candidate image corruption cannot silently pass as current art", () => {
   changed.baseline.atlasSha256 = "0".repeat(64);
   assert.throws(() => validateReview(changed, cards), /hash changed/);
 });
+test("shared source scale and golden-only isolation cannot disguise damaged candidates", () => {
+  const stretched = structuredClone(manifest);
+  stretched.baseline.layout.nominalCellHeight++;
+  assert.throws(() => validateReview(stretched, cards), /source-pixel scale/);
+  const masked = structuredClone(manifest);
+  const candidate = masked.entries.find(e => e.layout);
+  candidate.layout.frames[8].excludedRects = [{ x: 0, y: 0, width: 3, height: 3 }];
+  assert.throws(() => validateReview(masked, cards), /restricted/);
+  const outside = structuredClone(manifest);
+  outside.baseline.layout.frames[8].excludedRects = [{ x: 0, y: 0, width: 9999, height: 3 }];
+  assert.throws(() => validateReview(outside, cards), /isolation bounds/);
+});
+test("safe source gutters do not shrink the calibrated first-idle body", () => {
+  for (const entry of manifest.entries.filter(e => e.display)) {
+    const [left, top, right, bottom] = entry.analysis.frameMetrics[0].opaqueBoundsTopOrigin;
+    const scale = entry.display.heightInTiles / entry.layout.nominalCellHeight;
+    const visibleHeight = (bottom - top) * scale;
+    if (entry.display.profile === "humanoid") {
+      assert.ok(Math.abs(visibleHeight - entry.display.targetVisibleHeightInTiles) < .00001, entry.provenance.sourceCardId);
+    } else {
+      assert.ok((right - left) * scale <= .95001);
+      assert.ok(visibleHeight <= entry.display.targetVisibleHeightInTiles + .00001);
+    }
+  }
+});

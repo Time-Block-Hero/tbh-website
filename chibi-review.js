@@ -1,7 +1,7 @@
 (() => {
   "use strict";
   const labels={Neutral:"中立",SkyborneAlliance:"苍穹联合",SolarChurch:"太阳教会",AstraImperium:"星界帝国",MachineHeaven:"机械天国"};
-  const statusLabels={pending:"待重绘 · 当前显示旧稿","needs-fix":"新稿需修正 · 帧边界异常",generated:"新稿候选 · 待审阅",reviewed:"新稿 · 已审阅",golden:"洛岚 · 黄金基准"};
+  const statusLabels={pending:"待重绘 · 当前显示旧稿","needs-fix":"新稿需修正 · 见审稿说明",generated:"新稿候选 · 待审阅",reviewed:"新稿 · 已审阅",golden:"洛岚 · 黄金基准"};
   const actions={idle:"待机",move:"移动",hit:"受伤",attack:"攻击",effect:"发动效果"};
   function frameAt(clip,seconds){const step=Math.floor(Math.max(0,seconds)*clip.fps);return clip.frames[clip.loop?step%clip.frames.length:Math.min(step,clip.frames.length-1)];}
   function pickEntry(uid,manifest,legacy){if(uid===manifest.baseline.uid)return{...manifest.baseline,status:"golden"};const entry=manifest.entries.find(e=>e.uid===uid);if(entry?.status!=="pending"&&entry?.atlasSrc&&entry?.layout)return entry;const old=legacy.entries.find(e=>e.uid===uid);return old?{...old,status:"pending"}:null;}
@@ -21,9 +21,9 @@
     const clip=e=>e?.layout.clips?.[action]||e?.layout.clips?.idle;
     function updateFrame(){if(!entry)return;const a=clip(entry),b=clip(manifest.baseline);const duration=Math.max(1.6,a.frames.length/a.fps+.65),time=a.loop?elapsed:elapsed%duration;stage.elapsed=time;stage.frameIndices=[manual===null?frameAt(a,time):a.frames[Math.min(manual,a.frames.length-1)],manual===null?frameAt(b,time):b.frames[Math.min(manual,b.frames.length-1)]];const index=a.frames.indexOf(stage.frameIndices[0]);$("frame").max=String(a.frames.length-1);$("frame").value=String(index);$("frameInfo").textContent=`${index+1} / ${a.frames.length} 帧 · ${a.fps}fps`;}
     function setAction(next){action=next;stage.action=next;elapsed=0;manual=null;for(const b of $("actions").children)b.setAttribute("aria-pressed",String(b.dataset.action===next));updateFrame();}
-    async function select(card){const token=++generation;selected=card.uid;entry=entries.get(card.uid);setAction(action);$("unitName").replaceChildren(document.createTextNode(card.nameKey));const english=document.createElement("span");english.textContent=card.englishName;$("unitName").append(english);$("identity").textContent=`${labels[card.classId]} / ${card.id}`;$("status").dataset.status=entry?.status||"pending";$("status").textContent=statusLabels[entry?.status||"pending"];
+    async function select(card){const token=++generation;selected=card.uid;entry=entries.get(card.uid);stage.height=entry?.display?.heightInTiles||1.1;$("height").value="1";$("heightValue").textContent="1.00 ×";setAction(action);$("unitName").replaceChildren(document.createTextNode(card.nameKey));const english=document.createElement("span");english.textContent=card.englishName;$("unitName").append(english);$("identity").textContent=`${labels[card.classId]} / ${card.id}`;$("status").dataset.status=entry?.status||"pending";$("status").textContent=statusLabels[entry?.status||"pending"];
       $("activeLabel").textContent=`${card.nameKey} · ${entry?.status==="pending"?"旧稿对照":entry?.status==="golden"?"黄金基准":"本轮新稿"}`;
-      $("provenance").textContent=entry?.status==="pending"?"此单位尚未完成本轮重绘。画面显示旧稿，便于比较尺寸；不会计入新稿完成数。":`固定裁切 · ${entry?.layout.frames.length||0} 帧 · ${entry?.provenance?.note||"按洛岚黄金样式制作，等待美术审阅"}`;
+      $("provenance").textContent=entry?.status==="pending"?"此单位尚未完成本轮重绘。画面显示旧稿，便于比较尺寸；不会计入新稿完成数。":`固定裁切 · ${entry?.layout.frames.length||0} 帧 · ${entry?.qaNotes?.length ? entry.qaNotes.join(" ") : entry?.status === "needs-fix" ? "帧间存在透明间隔不足或边缘裁切，请先修正原稿。" : entry?.provenance?.note||"按洛岚黄金样式制作，等待美术审阅"}`;
       for(const b of $("unitList").children)b.setAttribute("aria-pressed",String(b.dataset.uid===selected));$("stageError").hidden=true;
       const url=new URL(location.href);url.searchParams.set("unit",card.id);history.replaceState(null,"",url);
       if(!entry){stage.actors[0]=null;stage.onError("这个单位没有可用素材，等待新稿导入。");return;}
@@ -41,14 +41,14 @@
     $("replay").addEventListener("click",()=>{elapsed=0;manual=null;playing=true;$("play").textContent="暂停";});
     $("flip").addEventListener("click",()=>{stage.facing*=-1;$("flip").textContent=stage.facing===1?"朝向 ←":"朝向 →";});
     $("frame").addEventListener("input",()=>{manual=Number($("frame").value);playing=false;$("play").textContent="播放";updateFrame();});
-    $("height").addEventListener("input",()=>{stage.height=Number($("height").value);$("heightValue").textContent=`${stage.height.toFixed(2)} 格`;});
+    $("height").addEventListener("input",()=>{const multiplier=Number($("height").value);stage.height=(entry?.display?.heightInTiles||1.1)*multiplier;$("heightValue").textContent=`${multiplier.toFixed(2)} ×`;});
     $("orientation").addEventListener("change",()=>{stage.orientation=$("orientation").value;});
     $("motion").addEventListener("change",()=>{stage.motion=$("motion").checked;});
     $("resetView").addEventListener("click",()=>stage.reset());
     $("compare").addEventListener("click",()=>{stage.compare=!stage.compare;$("compare").setAttribute("aria-pressed",String(stage.compare));$("baselineLabel").hidden=!stage.compare;$("baselineLabel").style.display=stage.compare?"":"none";stage.reset();});
     function tick(now){const dt=previous?Math.min(.1,(now-previous)/1000):0;previous=now;if(playing&&!document.hidden)elapsed+=dt*Number($("speed").value);if(!document.hidden){updateFrame();stage.render();}raf=requestAnimationFrame(tick);}raf=requestAnimationFrame(tick);
     addEventListener("pagehide",()=>{cancelAnimationFrame(raf);stage.dispose();},{once:true});
-    renderList();const requested=new URL(location.href).searchParams.get("unit");await select(units.find(c=>c.id===requested||c.uid===requested)||units.find(c=>c.uid===manifest.baseline.uid)||units[0]);
+    renderList();const requested=new URL(location.href).searchParams.get("unit");await select(units.find(c=>c.id===requested||c.uid===requested)||units.find(c=>entries.get(c.uid)?.status==="generated")||units.find(c=>c.uid===manifest.baseline.uid)||units[0]);
     globalThis.__CHIBI_REVIEW_STATE__={get selected(){return selected;},get action(){return action;},get counts(){return {...counts};},stage};
   }
   start().catch(e=>{$("coverage").textContent=`加载失败：${e.message}`;$("stageError").hidden=false;$("stageError").textContent=e.message;});

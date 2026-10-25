@@ -24,13 +24,26 @@ export function validateReview(manifest, cards, directory = root) {
     if (!bytes.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) || bytes[25] !== 6) throw new Error("Atlas must be native RGBA PNG");
     if (createHash("sha256").update(bytes).digest("hex") !== entry.atlasSha256) throw new Error("Atlas hash changed");
     const layout = entry.layout;
+    if (entry.display && (!['humanoid', 'wide'].includes(entry.display.profile) || entry.display.referenceFrame !== 0
+      || !Number.isFinite(entry.display.heightInTiles) || entry.display.heightInTiles < .25 || entry.display.heightInTiles > 3)) throw new Error("Invalid shared display scale");
     if (layout.sourceWidth !== bytes.readUInt32BE(16) || layout.sourceHeight !== bytes.readUInt32BE(20)) throw new Error("Atlas dimensions differ from layout");
+    if (layout.nominalCellWidth !== layout.sourceWidth / 3 || layout.nominalCellHeight !== layout.sourceHeight / 3) throw new Error("All frames must share the nominal source-pixel scale");
     if (layout.frames?.length !== 9 || entry.frameCount !== 9 || layout.columns !== 3 || layout.rows !== 3) throw new Error("Candidate must contain nine source frames");
     for (const frame of layout.frames) {
       const r = frame.rect, p = frame.pivot;
       if (!r || !p || ![r.x, r.y, r.width, r.height, p.x, p.y].every(Number.isFinite)
         || r.x < 0 || r.y < 0 || r.width <= 0 || r.height <= 0 || r.x + r.width > layout.sourceWidth || r.y + r.height > layout.sourceHeight
         || p.x < 0 || p.x > 1 || p.y < 0 || p.y > 1) throw new Error("Invalid frame bounds or foot pivot");
+      if (frame.excludedRects) {
+        // The supplied golden sheet has one confirmed detached sword tip from its adjacent attack pose.
+        // New candidates must instead regenerate overlapping art; masking must never hide a failed import.
+        if (entry !== manifest.baseline || !entry.provenance?.effectFrameIsolation || frame !== layout.frames[8]
+          || !Array.isArray(frame.excludedRects) || frame.excludedRects.length !== 1) throw new Error("Frame isolation is restricted to the documented golden reference");
+        for (const cut of frame.excludedRects) {
+          if (![cut.x, cut.y, cut.width, cut.height].every(Number.isFinite) || cut.x < 0 || cut.y < 0 || cut.width <= 0 || cut.height <= 0
+            || cut.x + cut.width > r.width || cut.y + cut.height > r.height) throw new Error("Invalid golden frame isolation bounds");
+        }
+      }
     }
     if (layout.clips.rare) throw new Error("Special idle is not part of this review set");
     for (const [name, expectedFrames] of Object.entries({ idle: [0, 1, 2], move: [3, 4, 5], hit: [6], attack: [7], effect: [8] })) {
