@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Chibi 形象集 · Time Block Hero</title>
+    <title>Chibi 历史试稿（已停用，非游戏素材）· Time Block Hero</title>
     <link rel="stylesheet" href="./chibi-preview.css" />
     <script src="./card-editor-data.js" defer></script>
     <script src="./chibi-preview.js" defer></script>
@@ -11,20 +11,21 @@
   </head>
   <body class="chibi-gallery-page">
     <header class="chibi-gallery-header">
-      <a href="./card-editor.html">← 卡牌编辑器</a> · <a href="./chibi.html">Chibi 人物工坊 ↗</a>
-      <h1>CHIBI / 单位形象集</h1>
-      <p id="chibiCoverage" role="status">正在读取素材索引…</p>
+      <a href="./card-editor.html">← 卡牌编辑器</a> · <a href="./chibi.html">正式 Chibi 人物工坊 ↗</a>
+      <h1>CHIBI / 历史试稿</h1>
+      <p><strong>已停用，非游戏素材。</strong>本页仅保留旧十二帧方案供历史对照；当前人物资产与参数请进入正式 Chibi 人物工坊。</p>
+      <p id="chibiCoverage" role="status">正在读取历史试稿索引…</p>
     </header>
     <main class="chibi-gallery-workspace">
       <section class="chibi-library" aria-label="单位合集">
         <div class="chibi-library-filters">
           <input id="chibiSearch" type="search" placeholder="名称、编号或 UID" aria-label="搜索单位" />
           <select id="chibiFaction" aria-label="职业筛选"><option value="">全部职业</option></select>
-          <select id="chibiAvailability" aria-label="素材状态"><option value="">全部状态</option><option value="ready">已有素材</option><option value="missing">待生成</option></select>
+          <select id="chibiAvailability" aria-label="历史试稿状态"><option value="">全部状态</option><option value="ready">已有旧稿</option><option value="missing">无历史记录</option></select>
         </div>
         <div id="chibiGrid" class="chibi-library-grid"></div>
       </section>
-      <section class="chibi-gallery-detail" aria-label="动作预览">
+      <section class="chibi-gallery-detail" aria-label="历史试稿动作预览">
         <div id="chibiGalleryPreview" class="chibi-preview-host"><p class="chibi-preview-empty">选择一个单位，查看动作与帧。</p></div>
       </section>
     </main>

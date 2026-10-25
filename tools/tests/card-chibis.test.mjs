@@ -77,25 +77,23 @@ test("preview uses Unity bottom-left source coordinates and bounded non-loop cli
 });
 
 function editorHarness() {
-  const node=()=>({hidden:false,attributes:{},dataset:{},setAttribute(k,v){this.attributes[k]=v;}});
-  const hand=node(),chibi=node(),link=node(),tabs=["card","chibi"].map(name=>Object.assign(node(),{dataset:{previewTab:name}})),form={value:"尚未保存的卡文"};
-  const context={console,document:{createElement:()=>({getContext:()=>({})}),querySelector:s=>({"#cardHandPreview":hand,"#cardChibiPreview":chibi,"#cardEditorForm":form,"#chibiWorkbenchLink":link})[s],querySelectorAll:()=>tabs},TbhChibiPreview:{mount(host,entry,name){host.entry=entry;host.name=name;},message(host,text){host.message=text;}}};context.window=context;
-  const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =","  globalThis.chibiTest = {renderChibi,selectPreviewTab,load:v=>chibis=v};\n  window.initFormalCardEditor =");
-  vm.runInNewContext(script,context);return{...context.chibiTest,hand,chibi,link,tabs,form};
+  const link={hidden:false},history={hidden:false},form={value:"尚未保存的卡文"};
+  const context={console,document:{createElement:()=>({getContext:()=>({})}),querySelector:s=>({"#chibiWorkbenchLink":link,"#chibiHistoryLink":history,"#cardEditorForm":form})[s]},TbhChibiPreview:{mount(){throw new Error("旧稿不应在卡牌页挂载");}}};context.window=context;
+  const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =","  globalThis.chibiTest = {renderChibi};\n  window.initFormalCardEditor =");
+  vm.runInNewContext(script,context);return{...context.chibiTest,link,history,form};
 }
 
-test("editor Chibi lookup uses UID and tab switching preserves unsaved form",()=>{
-  const h=editorHarness();h.load({entries:[{uid,atlasSrc:`./assets/card-chibis/${uid}/atlas.png`}]});
-  h.renderChibi({uid,id:"CHANGED-999",nameKey:"重命名",cardType:"Minion"});assert.equal(h.chibi.entry.uid,uid);assert.equal(h.link.href,`./chibi.html?unit=${uid}`);
-  h.selectPreviewTab("chibi");assert.equal(h.hand.hidden,true);assert.equal(h.tabs[1].attributes["aria-selected"],"true");
-  h.selectPreviewTab("card");assert.equal(h.form.value,"尚未保存的卡文");
-  h.renderChibi({uid,cardType:"Spell"});assert.match(h.chibi.message,/此类型不使用/);
-  h.renderChibi({uid:missingUid,cardType:"Minion"});assert.equal(h.chibi.entry,undefined);
+test("editor exposes only UID-scoped workshop/history links and never mounts old animation",()=>{
+  const h=editorHarness();h.renderChibi({uid,id:"CHANGED-999",nameKey:"重命名",cardType:"Minion"});
+  assert.equal(h.link.href,`./chibi.html?unit=${uid}`);assert.equal(h.history.href,`./chibi-gallery.html?unit=${uid}`);assert.equal(h.link.hidden,false);assert.equal(h.form.value,"尚未保存的卡文");
+  h.renderChibi({uid,cardType:"Spell"});assert.equal(h.link.hidden,true);assert.equal(h.history.hidden,true);
+  const html=fs.readFileSync(path.join(root,"card-editor.html"),"utf8");assert.match(html,/正式 Chibi 人物工坊/);assert.match(html,/历史试稿（已停用，非游戏素材）/);assert.doesNotMatch(html,/id="cardChibiPreview"|src=".\/chibi-preview.js"/);
+  const oldGallery=fs.readFileSync(path.join(root,"chibi-gallery.html"),"utf8");assert.match(oldGallery,/<title>Chibi 历史试稿（已停用，非游戏素材）/);assert.match(oldGallery,/<strong>已停用，非游戏素材。/);
 });
 
-test("direct-file editor initialization uses Chibi fallback without fetching",async()=>{
+test("direct-file editor initialization retains card fallback without fetching old Chibi",async()=>{
   const manifest={entries:[{uid}]},dataset=JSON.parse(fs.readFileSync(path.join(root,"data/cards.json")));
-  const context={console,structuredClone,URLSearchParams,document:{createElement:()=>({getContext:()=>({})})},localStorage:{getItem:()=>null},fetch:()=>{throw new Error("must not fetch");},location:{protocol:"file:"},__CARD_EDITOR_FALLBACK__:{cards:dataset,layout:{},chibis:manifest}};context.window=context;
-  const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =",`populateFactionInputs=()=>{};populateTribeInputs=()=>{};bindEvents=()=>{};renderGallery=()=>{};normalizeDatasetForCurrentRules=()=>false;loadLocalState=v=>v;readLocalState=()=>null;setStatus=()=>{};globalThis.offlineTest={initialize,getChibis:()=>chibis};\n  window.initFormalCardEditor =`);
-  vm.runInNewContext(script,context);await context.offlineTest.initialize();assert.deepEqual(context.offlineTest.getChibis(),manifest);
+  const context={console,structuredClone,URLSearchParams,document:{createElement:()=>({getContext:()=>({})})},localStorage:{getItem:()=>null},fetch:()=>{throw new Error("must not fetch");},location:{protocol:"file:",search:`?unit=${dataset.cards[0].uid}`},__CARD_EDITOR_FALLBACK__:{cards:dataset,layout:{},chibis:manifest}};context.window=context;
+  const script=fs.readFileSync(path.join(root,"card-editor.js"),"utf8").replace("  window.initFormalCardEditor =",`openEditor=id=>globalThis.openedCardId=id;populateFactionInputs=()=>{};populateTribeInputs=()=>{};bindEvents=()=>{};renderGallery=()=>{};normalizeDatasetForCurrentRules=()=>false;loadLocalState=v=>v;readLocalState=()=>null;setStatus=()=>{};globalThis.offlineTest={initialize,getDataset:()=>dataset};\n  window.initFormalCardEditor =`);
+  vm.runInNewContext(script,context);await context.offlineTest.initialize();assert.equal(context.offlineTest.getDataset().cards.length,dataset.cards.length);assert.equal(context.openedCardId,dataset.cards[0].id);
 });

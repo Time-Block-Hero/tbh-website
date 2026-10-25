@@ -14,7 +14,7 @@
     const entries = new Map(manifest.entries.map((e) => [e.uid, e]));
     let selected = null;
     const actualCount = units.filter((c) => entries.has(c.uid)).length;
-    $("chibiCoverage").textContent = `${actualCount} / ${units.length} 套已收录 · 每套 12 帧 · 常规待机 / 移动 / 受击 / 攻击 / 发动效果 / 彩蛋待机。${manifest.source ? ` 来源 Presentation ${manifest.source.commit.slice(0, 10)}` : " 等待同步首批素材。"}`;
+    $("chibiCoverage").textContent = `${actualCount} / ${units.length} 套历史试稿 · 已停用，非游戏素材 · 每套 12 帧 · 常规待机 / 移动 / 受击 / 攻击 / 发动效果 / 彩蛋待机。${manifest.source ? ` 来源 Presentation ${manifest.source.commit.slice(0, 10)}` : " 历史来源未记录。"}`;
     for (const [key, label] of Object.entries(labels)) { const option = document.createElement("option"); option.value = key; option.textContent = label; $("chibiFaction").append(option); }
     function select(card) {
       selected = card.uid;
@@ -37,12 +37,13 @@
         } else { thumb.className = "chibi-missing-icon"; thumb.textContent = "◇"; }
         const name = document.createElement("strong"); name.textContent = card.nameKey;
         const meta = document.createElement("small"); meta.textContent = `${card.id} · ${labels[card.classId] || card.classId}`;
-        const status = document.createElement("small"); status.textContent = entry ? "12 帧 · 候选" : "待生成"; if(entry) status.className="chibi-available";
+        const status = document.createElement("small"); status.textContent = entry ? "12 帧 · 历史试稿" : "无历史记录"; if(entry) status.className="chibi-available";
         button.append(thumb, name, meta, status); button.addEventListener("click", () => select(card)); $("chibiGrid").append(button);
       }
     }
     ["chibiSearch", "chibiFaction", "chibiAvailability"].forEach((id) => $(id).addEventListener("input", render));
     render();
-    const first = units.find((c) => entries.has(c.uid)); if (first) select(first);
+    const requested = new URLSearchParams(location.search).get("unit");
+    const first = units.find((c) => (c.uid === requested || c.id === requested) && entries.has(c.uid)) || units.find((c) => entries.has(c.uid)); if (first) select(first);
   } catch (error) { $("chibiCoverage").textContent = `合集加载失败：${error.message}`; }
 })();

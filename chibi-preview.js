@@ -24,7 +24,7 @@
     mounts.get(host)?.dispose();
     host.replaceChildren();
     if (!entry || !entry.layout?.frames || !entry.atlasSrc?.startsWith(`./assets/card-chibis/${entry.uid}/`)) {
-      message(host, "这张卡牌尚未收录 Chibi 形象集。新素材同步后会按持久 UID 自动出现。");
+      message(host, "这张卡牌没有旧十二帧试稿记录；当前素材请前往正式 Chibi 人物工坊。");
       return;
     }
     const layout = entry.layout;
@@ -52,7 +52,7 @@
     scrubLabel.append(scrub);
     toolbar.append(select, play, flip, background, rareLabel, zoomLabel, scrubLabel);
     const status = create("p", "", "chibi-preview-caption");
-    const provenance = create("p", `${name} · ${entry.frameCount}/12 帧 · ${entry.status === "reviewed" ? "已审阅" : "候选，待审阅"}`, "chibi-provenance");
+    const provenance = create("p", `${name} · ${entry.frameCount}/12 帧 · 历史试稿（已停用，非游戏素材）`, "chibi-provenance");
     host.append(viewport, toolbar, status, provenance);
     const image = new Image();
     let disposed = false, raf = 0, previous = 0, elapsed = 0, playing = true, facing = 1, manual = null, rareElapsed = 0;
