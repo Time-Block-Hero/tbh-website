@@ -1,0 +1,195 @@
+{
+  "schemaVersion": 1,
+  "id": "AI-020-01",
+  "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+  "englishName": "Revolution Day",
+  "status": "generated",
+  "approvalStatus": "pending-user-review",
+  "atlasSha256": "e0c0d82a8d083069e61c3e33c2b7b9d2cf7326ac2eb51a9faa471a7a338e882c",
+  "sourceImagePath": "/Users/jesusmicah/.codex/generated_images/01a16da4-554f-7f83-9ab3-efce1e75586b/exec-cd67deeb-e535-4f05-885b-2a44a00b2b6f.png",
+  "actualSize": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "generationMode": "built-in-imagegen",
+  "generatedAtUtc": "2026-10-25T22:41:12.137325+00:00",
+  "promptFile": "prompt.txt",
+  "additionalPromptFiles": [
+    "layout-refinement-prompt.txt"
+  ],
+  "sourceCardArt": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/.worktrees/chibi-review-website/assets/card-art/revolution-day/revolution-day-01.png",
+    "sha256": "3d0c87a98d55f2d98fe0b12724f3b6c5832684480483e976144fbf219e0f7161"
+  },
+  "styleReference": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/artifacts/chibi-gold-standard/luolan-gold-reference.png",
+    "sha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e",
+    "role": "2D chibi linework and quality only"
+  },
+  "previousAtlas": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/.worktrees/chibi-review-website/assets/chibi-review/ff153fcb-5387-455c-b673-ecf2d9ddfbc2/atlas.png",
+    "sha256": "8eed8db5c28c3992296642f64ae6b01cae479903780ee7ff4e7f2ce725b32e44",
+    "preserved": true
+  },
+  "sourceArtDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary derivative minion visually inseparable from Vera. Revolution Day is Vera's colossal dark-red and black humanoid siege titan, built around a long axial penetrator cannon, extremely mobile reinforced limbs, a severe helmet-like sensor crown, and a protected command cockpit in the upper torso. Depict the defining instant when its cannon discharges through the first enemy war machine with overwhelming force and the residual lance continues into a second target behind it, creating one unmistakable line of overpenetration across the battlefield. The titan's single-durability core is already splitting with critical white-red light, while a compact armored pilot-ejection chamber near the cockpit foreshadows Vera surviving the machine's destruction without competing with the main attack. Keep the titan's head, cannon, cockpit, and both impacts readable inside the upper square crop; extend the towering body, collapsing armor, cratered ground, and staggered enemy silhouettes downward. Singular machine-defining moment, extreme diagonal perspective, intentional depth, colossal scale cues, cinematic energy violence, exceptional black-steel and ceramic finish, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+  "alpha": {
+    "fullyTransparentFraction": 0.5903997161237151,
+    "nearOpaque240PlusFraction": 0.34295485705709833,
+    "nativeRGBA": true
+  },
+  "layoutAnalysis": {
+    "xCuts": [
+      0,
+      418,
+      866,
+      1254
+    ],
+    "rowXCuts": [
+      [
+        0,
+        418,
+        866,
+        1254
+      ],
+      [
+        0,
+        418,
+        866,
+        1254
+      ],
+      [
+        0,
+        418,
+        866,
+        1254
+      ]
+    ],
+    "yCutsTopOrigin": [
+      0,
+      418,
+      836,
+      1254
+    ],
+    "columnYCutsTopOrigin": null,
+    "partitionStrategy": "row-first",
+    "warnings": [],
+    "outerEdgeContacts": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "frameMetrics": [
+      {
+        "index": 0,
+        "opaqueBoundsTopOrigin": [
+          94,
+          68,
+          395,
+          377
+        ],
+        "visibleWidthInTiles": 0.792,
+        "visibleHeightInTiles": 0.813
+      },
+      {
+        "index": 1,
+        "opaqueBoundsTopOrigin": [
+          71,
+          67,
+          378,
+          377
+        ],
+        "visibleWidthInTiles": 0.808,
+        "visibleHeightInTiles": 0.816
+      },
+      {
+        "index": 2,
+        "opaqueBoundsTopOrigin": [
+          31,
+          67,
+          330,
+          378
+        ],
+        "visibleWidthInTiles": 0.787,
+        "visibleHeightInTiles": 0.818
+      },
+      {
+        "index": 3,
+        "opaqueBoundsTopOrigin": [
+          84,
+          40,
+          386,
+          374
+        ],
+        "visibleWidthInTiles": 0.795,
+        "visibleHeightInTiles": 0.879
+      },
+      {
+        "index": 4,
+        "opaqueBoundsTopOrigin": [
+          73,
+          42,
+          375,
+          358
+        ],
+        "visibleWidthInTiles": 0.795,
+        "visibleHeightInTiles": 0.832
+      },
+      {
+        "index": 5,
+        "opaqueBoundsTopOrigin": [
+          26,
+          45,
+          316,
+          374
+        ],
+        "visibleWidthInTiles": 0.763,
+        "visibleHeightInTiles": 0.866
+      },
+      {
+        "index": 6,
+        "opaqueBoundsTopOrigin": [
+          78,
+          23,
+          382,
+          336
+        ],
+        "visibleWidthInTiles": 0.8,
+        "visibleHeightInTiles": 0.824
+      },
+      {
+        "index": 7,
+        "opaqueBoundsTopOrigin": [
+          46,
+          22,
+          447,
+          336
+        ],
+        "visibleWidthInTiles": 1.055,
+        "visibleHeightInTiles": 0.826
+      },
+      {
+        "index": 8,
+        "opaqueBoundsTopOrigin": [
+          35,
+          12,
+          358,
+          335
+        ],
+        "visibleWidthInTiles": 0.85,
+        "visibleHeightInTiles": 0.85
+      }
+    ],
+    "pivotMethod": "opaque bottom contact; inspect/override pivots for airborne poses"
+  },
+  "visualReview": [
+    "酒红装甲亮度与肩胸体量提升；巨型贯穿炮具有更强识别度。",
+    "步态有左右伸腿与经过相位；仍需网页实际循环审阅。",
+    "驾驶舱/弹射舱仍融入上胸结构，缩略尺寸下可辨性需要用户确认。"
+  ],
+  "pixelEditsAfterGeneration": false,
+  "knownLimitations": [
+    "AI-generated pose continuity requires playback inspection; no user acceptance claimed."
+  ]
+}

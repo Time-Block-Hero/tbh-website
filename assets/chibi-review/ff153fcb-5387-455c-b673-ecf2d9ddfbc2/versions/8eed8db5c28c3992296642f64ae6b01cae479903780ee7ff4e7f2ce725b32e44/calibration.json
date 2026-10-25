@@ -1,0 +1,65 @@
+{
+  "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+  "atlasSha256": "8eed8db5c28c3992296642f64ae6b01cae479903780ee7ff4e7f2ce725b32e44",
+  "scale": 1.885309,
+  "offset": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "anchor": null,
+  "actions": {
+    "idle": {
+      "fps": 3,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "move": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "hit": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "attack": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "effect": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "frames": {},
+  "bodyKind": "humanoid",
+  "artworkFacesRight": true,
+  "prompt": {
+    "base": "Unit AI-020-01 / 「革命日」 / Revolution Day.\nUse the following card description ONLY for identity, species, costume and primary equipment. Disregard its portrait composition, scenery, cinematic viewpoint and pose:\nStandalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary derivative minion visually inseparable from Vera. Revolution Day is Vera's colossal dark-red and black humanoid siege titan, built around a long axial penetrator cannon, extremely mobile reinforced limbs, a severe helmet-like sensor crown, and a protected command cockpit in the upper torso. Depict the defining instant when its cannon discharges through the first enemy war machine with overwhelming force and the residual lance continues into a second target behind it, creating one unmistakable line of overpenetration across the battlefield. The titan's single-durability core is already splitting with critical white-red light, while a compact armored pilot-ejection chamber near the cockpit foreshadows Vera surviving the machine's destruction without competing with the main attack. Keep the titan's head, cannon, cockpit, and both impacts readable inside the upper square crop; extend the towering body, collapsing armor, cratered ground, and staggered enemy silhouettes downward. Singular machine-defining moment, extreme diagonal perspective, intentional depth, colossal scale cues, cinematic energy violence, exceptional black-steel and ceramic finish, premium industrial sci-fi anime rendering. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+    "notes": "Communicate high-tier presence through broad, decisive silhouette and defining equipment. The large on-board scale is configured separately; never shrink or enlarge individual animation frames.",
+    "actions": {}
+  },
+  "exportReady": true,
+  "sizeClass": "colossal",
+  "provenance": {
+    "source": "ACv9 accepted overall collection; ACv10 explicit calibration",
+    "individualHumanApproval": false,
+    "sourceBodyType": "mechanical-biped",
+    "generationPromptPath": "./assets/chibi-prompts/ff153fcb-5387-455c-b673-ecf2d9ddfbc2.txt",
+    "targetVisibleIdleHeightInTiles": 1.75
+  }
+}
