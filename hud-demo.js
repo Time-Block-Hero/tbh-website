@@ -225,12 +225,12 @@ async function closeModal() {
 function renderShopContent() {
   modal.replaceChildren(modalHeader('星港商会','THE INTERSTELLAR EXCHANGE','补给，为下一次出发。挑选一张卡牌，让它加入你的旅途。'));
   const tools=el('div','shop-tools'),balance=el('span','','可用星能 ');balance.append(el('strong','shop-balance',session.energy),document.createTextNode('✦'));
-  const refresh=el('button','refresh-button','↻  更换未购商品 · 1 ✦');refresh.disabled=Boolean(session.pending)||session.energy<1;
+  const refresh=el('button','refresh-button',session.refreshesRemaining ? '↻  刷新商品 · 免费 ×1' : '本轮刷新已用尽');refresh.disabled=Boolean(session.pending)||session.refreshesRemaining<1;
   refresh.addEventListener('click',async()=>{
     if(!refreshShop(session))return;
     renderShopContent();
     [...modal.querySelectorAll('.shop-slot')].forEach((n,i)=>animate(n,[{opacity:0,transform:'translateY(14px) rotateY(-5deg)'},{opacity:1,transform:'translateY(0) rotateY(0)'}],{duration:duration(380),delay:prefersReduced.matches?0:i*40}));
-    updateCounts();$('.refresh-button',modal)?.focus();notify('未购商品已更新；已购买的位置保持空置。');
+    updateCounts();$('.refresh-button',modal)?.focus();notify('未购商品重新陈列，空位已补货；已购卡牌留在弃牌堆。');
   });tools.append(balance,refresh);modal.append(tools);
   const grid=el('div','shop-grid');
   session.shop.forEach((card,index)=>{
@@ -258,7 +258,7 @@ function renderHelp() {
   const body=el('div','help-body'),dl=el('dl','');
   const rows=[['悬停 / Tab','手牌抬升放大，邻牌让位；单位和左侧记录展开详情。'],['拖放 / 双击','拖到场中或双击打出；松在其他位置会归位。Enter 也可打出聚焦牌。'],['弃牌','右键手牌，或拖到右下弃牌堆；Delete / Backspace 也可。'],['D / S','D 抽牌，S 打开商店；牌堆可点击展开检视。'],['Esc','取消拖放或尚未落定的飞行动画；关闭展开面板。'],['↺ 重置','恢复初始手牌、牌库、星能和商店，正在进行的事务也会取消。']];
   rows.forEach(([title,description])=>dl.append(el('dt','',title),el('dd','',description)));body.append(dl);
-  body.append(el('p','','这是一份交互视觉提案：抽牌、弃牌、购买展示真实区域方向；出牌以入场回执示意，不结算战斗规则。商店购买进入弃牌堆；演示刷新保留售空位置。'));
+  body.append(el('p','','这是一份交互视觉提案：抽牌、弃牌、购买展示真实区域方向；出牌以入场回执示意，不结算战斗规则。商店购买进入弃牌堆；刷新默认免费，每轮一次，并补充售空位置。'));
   const link=el('p','source-link','参考手牌焦点与空间层级：');const a=el('a','','Slay the Spire 2 · Mega Crit 官方 Steam 页面');a.href='https://store.steampowered.com/app/2868840/Slay_the_Spire_2/';a.target='_blank';a.rel='noreferrer';link.append(a);body.append(link);modal.append(body);
 }
 function resetDemo() {

@@ -22,23 +22,25 @@ test('purchase is atomic and enters discard rather than hand',()=>{
 });
 test('insufficient funds do not reserve or move a shop card',()=>{
  const s=createSession(cards);s.energy=2;
- assert.equal(begin(s,'buy',s.shop[0].instance),null);assert.equal(s.pending,null);assert.equal(s.shop.filter(Boolean).length,6);
+ assert.equal(begin(s,'buy',s.shop[0].instance),null);assert.equal(s.pending,null);assert.equal(s.shop.filter(Boolean).length,5);
 });
 test('reset invalidates in-flight callbacks even if sequence numbers repeat',()=>{
  const s=createSession(cards),tx=begin(s,'draw');resetSession(s,cards);
  const next=begin(s,'draw');assert.equal(tx.token,next.token);
  assert.equal(commit(s,tx),false);assert.equal(s.hand.length,6);assert.equal(commit(s,next),true);
 });
-test('refresh preserves sold slots, changes unbought offers and conserves inventory',()=>{
+test('free refresh replenishes sold slots without returning bought cards and conserves inventory',()=>{
  const s=createSession(cards),bought=s.shop[0],tx=begin(s,'buy',bought.instance);commit(s,tx);
  const previous=s.shop[1];assert.equal(refreshShop(s),true);
- assert.equal(s.shop[0],null);assert.notEqual(s.shop[1],previous);assert.equal(s.energy,14);
+ assert.ok(s.shop[0]);assert.notEqual(s.shop[1],previous);assert.equal(s.energy,15);
+ assert.equal(s.refreshesRemaining,0);assert.equal(s.shop.some(c=>c?.instance===bought.instance),false);
+ assert.equal(refreshShop(s),false);
  const all=[...s.hand,...s.deck,...s.discard,...s.field,...s.shop,...s.stock].filter(Boolean);
  assert.equal(all.length,32);assert.equal(new Set(all.map(c=>c.instance)).size,32);
 });
-test('refresh cannot race an in-flight purchase or spend below zero',()=>{
+test('refresh cannot race a purchase but needs no energy and is limited to once',()=>{
  const s=createSession(cards),tx=begin(s,'buy',s.shop[0].instance);
- assert.equal(refreshShop(s),false);cancel(s,tx);s.energy=0;assert.equal(refreshShop(s),false);
+ assert.equal(refreshShop(s),false);cancel(s,tx);s.energy=0;assert.equal(refreshShop(s),true);assert.equal(s.energy,0);assert.equal(refreshShop(s),false);
 });
 test('play and discard use separate presentation destinations',()=>{
  const s=createSession(cards),played=s.hand[0],discarded=s.hand[1];

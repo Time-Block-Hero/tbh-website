@@ -2,7 +2,7 @@
 export function createSession(cards) {
   const entries = cards.map((card, i) => ({ ...card, instance: `sample-${i}` }));
   return { hand: entries.slice(0, 6), deck: entries.slice(6, 15), discard: [], field: [],
-    shop: entries.slice(15, 21), stock: entries.slice(21), energy: 18, serial: 0, epoch: 0, pending: null };
+    shop: entries.slice(15, 20), stock: entries.slice(20), energy: 18, refreshesRemaining: 1, serial: 0, epoch: 0, pending: null };
 }
 export function begin(session, kind, id) {
   if (session.pending) return null;
@@ -30,14 +30,15 @@ export function commit(session, tx) {
   return true;
 }
 export function refreshShop(session) {
-  if (session.pending || session.energy < 1) return false;
-  // This visual study retains bought-out slots; remaining offers exchange with stock.
+  if (session.pending || session.refreshesRemaining < 1) return false;
+  // ECO-003: unbought offers return to stock; a free refresh also fills sold-out slots.
+  // Deterministic sample order makes animation comparisons repeatable; this is not game RNG.
   const offers = session.shop.filter(Boolean);
   const pool = [...session.stock, ...offers];
   let cursor = 0;
-  session.shop = session.shop.map(card => card ? pool[cursor++] : null);
+  session.shop = session.shop.map(() => pool[cursor++] || null);
   session.stock = pool.slice(cursor);
-  session.energy -= 1;
+  session.refreshesRemaining -= 1;
   return true;
 }
 export function resetSession(session, cards) {
