@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>单位铭牌 / FIELD NOTES — Time Block Hero</title>
+  <link rel="stylesheet" href="./anime-unit-hud.css">
+  <script src="./chibi-published-client.js" defer></script>
+  <script src="./chibi-review-renderer.js" defer></script>
+  <script src="./anime-unit-hud.js" defer></script>
+</head>
+<body data-skin="arcade">
+  <header class="page-header">
+    <a class="wordmark" href="./chibi.html"><span>TIME BLOCK HERO</span><span class="tiny">PRESENTATION STUDY / 03</span></a>
+    <div class="header-title"><p class="eyebrow">小一点的信息，大一点的性格。</p><h1>FIELD <em>NOTES</em><span>单位铭牌</span></h1></div>
+    <div class="edition"><span class="edition-mark">01—02</span><span>交互美术样片<br>非实战数值</span></div>
+  </header>
+  <main>
+    <div class="topline">
+      <div class="skin-switch" role="group" aria-label="铭牌方案"><button data-skin="arcade" aria-pressed="true"><b>A</b><span>街机 / 黑白硬边</span></button><button data-skin="sticker" aria-pressed="false"><b>B</b><span>贴纸 / 白底黑字</span></button></div>
+      <p class="topline-tip"><span class="small-cross">✦</span> 悬浮看详情 · 点击锁定展开</p>
+    </div>
+    <div class="study-layout">
+      <section class="scene-panel" aria-label="三维棋盘交互样片">
+        <div class="scene-topline"><span><i></i> LIVE / 3 × 3</span><span id="sourceTag">读取已发布素材…</span></div>
+        <div id="mainSurface" class="scene-surface">
+          <canvas id="mainStage" aria-label="可拖拽旋转和滚轮缩放的真实三维棋盘"></canvas>
+          <div id="mainHud" class="hud-anchor"></div>
+          <div id="mainFloat" class="damage-float" aria-hidden="true"></div>
+          <div id="stageError" class="stage-error" role="alert" hidden></div>
+          <div class="scene-caption"><p id="unitIdentity">SKYBORNE / SA-000</p><h2 id="unitName">洛岚</h2><span id="unitEnglish">LUOLAN</span></div>
+          <div class="scene-instruction"><span>拖拽旋转 / 滚轮缩放</span><button id="resetCamera" aria-label="复位镜头">↺</button></div>
+        </div>
+        <div class="scene-footer"><span id="stateLabel">常规状态</span><span id="liveAnnouncement" role="status" aria-live="polite">动作与属性变化均为展示演示</span><button id="flip">朝向 →</button></div>
+      </section>
+      <aside class="control-rail">
+        <div class="rail-heading"><span class="section-number">01</span><h2>看信息，也看角色。</h2></div>
+        <label class="unit-picker">角色 <select id="unitSelect" aria-label="选择已发布的真实角色"></select></label>
+        <div class="state-controls"><p class="control-label">状态测试 <span>DEMO</span></p><div id="stateButtons" class="state-buttons" role="group" aria-label="演示状态"><button data-state="normal" aria-pressed="true">常规</button><button data-state="selected" aria-pressed="false">选中</button><button data-state="hurt" aria-pressed="false">受伤 <small>−3</small></button><button data-state="low" aria-pressed="false">低血</button><button data-state="shield" aria-pressed="false">护甲 / 圣盾</button><button data-state="spent" aria-pressed="false">无行动</button></div></div>
+        <div class="detail-option"><label><input id="pinDetail" type="checkbox"><span>固定展开信息</span></label><label><input id="animate" type="checkbox" checked><span>角色低帧动作</span></label></div>
+        <div class="annotation"><div class="annotation-rule"></div><p><strong>首先，读懂局面。</strong><br>攻击与生命保持在第一层。<br>行动、护甲和技能，在需要时展开。</p><p class="small-note">基础攻击 / 生命 / 移动力取自卡表；受伤、护甲、圣盾、次数与可用效果是合成展示，不代表实际规则结算。</p></div>
+        <a id="workbenchLink" class="text-link" href="./chibi.html">在人物工坊中查看素材 <span>↗</span></a>
+      </aside>
+    </div>
+    <section class="lower-strip" aria-label="缩略视角与设计规格">
+      <div class="thumbnail-block"><div class="rail-heading"><span class="section-number">02</span><h2>缩小，仍然认得出来。</h2><span class="scale-stamp">32%</span></div><div class="thumbnail-viewport"><div id="miniSurface" class="mini-surface"><canvas id="miniStage" aria-label="真实三维场景的32%缩略视窗"></canvas><div id="miniHud" class="hud-anchor"></div></div></div></div>
+      <div class="readout-note"><p class="eyebrow">LESS CHROME / MORE CHARACTER</p><h3 id="schemeTitle">硬边，快读。<br>把颜色留给状态。</h3><p id="schemeDescription">黑白承担结构，青绿只表示生命。荧光黄是一枚可用效果的信号，而不是整张面板的背景。</p><div class="legend"><span><i class="legend-hp"></i>生命</span><span><i class="legend-ready"></i>可发动</span><span><i class="legend-shield"></i>圣盾</span><span><i class="legend-armor"></i>护甲</span></div></div>
+      <div class="interaction-note"><span class="section-number">→</span><p>悬浮 / 焦点<br><b>展开次级信息</b></p><p>点击铭牌<br><b>锁定 / 收起</b></p><p>点击黄色信号<br><b>播放发动演示</b></p><span class="micro-note">支持键盘与减少动态效果偏好。</span></div>
+    </section>
+  </main>
+  <footer class="page-footer"><span>TBH / ORIGINAL ART · VERIFIED PUBLISHED ASSETS</span><a href="https://zenless.hoyoverse.com/id-id/news/113604" target="_blank" rel="noreferrer">视觉语汇参考：绝区零官方页面 ↗</a><span>原创版式与图形，不使用官方 UI 资产</span></footer>
+  <svg class="symbol-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-attack" viewBox="0 0 24 24"><path d="M18 2l4 0 0 4-11 11-4-4zM5 12l7 7M3 21l5-5"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-8 10-8 10S4 17 4 12V6z"/><path d="M12 6v10M8 11l4-5 4 5"/></symbol>
+    <symbol id="icon-armor" viewBox="0 0 24 24"><path d="M5 3h5l2 3 2-3h5l3 6-4 2v10H6V11L2 9z"/></symbol>
+    <symbol id="icon-move" viewBox="0 0 24 24"><path d="M3 5h7l5 7-5 7H3l5-7zM14 5l5 7-5 7"/></symbol>
+    <symbol id="icon-ready" viewBox="0 0 24 24"><path d="M13 1L4 14h7l-1 9L21 9h-8z"/></symbol>
+  </defs></svg>
+</body>
+</html>
