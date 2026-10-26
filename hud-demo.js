@@ -11,6 +11,7 @@ const flightLayer = $('#flight-layer');
 const prefersReduced = matchMedia('(prefers-reduced-motion: reduce)');
 let session, cards = [], history, study, motion = 'flow', activeAnimation, drag, toastTimer, previousFocus, modalKind;
 let animations = new Set();
+let modalGeneration = 0, modalClosing = false;
 const factions = {Neutral:'中立',SkyborneAlliance:'猎空',SolarChurch:'烈阳',AstraImperium:'帝国',MachineHeaven:'天庭'};
 const selection = ['SA-015','SC-002','FNG-002','SA-001','SC-016','FNG-034','SA-003','SC-011','FNG-017','MCC-007','AI-006','SC-017','SA-019','MCC-012','FNG-026','AI-018','SC-003','SA-020','MCC-009','AI-020','FNG-029','SC-018','MCC-020','SA-018','AI-019','FNG-024','SC-021','SA-007','MCC-005','AI-017','SC-012','SA-017'];
 
@@ -99,6 +100,7 @@ function flightFrames(from,to,kind) {
   ];
 }
 async function transact(kind,id, suppliedSource) {
+  if (activeAnimation) { notify('请等待当前卡牌落定。'); return; }
   const tx = begin(session,kind,id);
   if (!tx) { notify(kind === 'draw' ? '牌库为空或手牌已满；可重置样片。' : '请等待当前卡牌落定。'); return; }
   setBusy();
@@ -114,6 +116,7 @@ async function transact(kind,id, suppliedSource) {
   try {
     await a.finished;
     if (!commit(session,tx)) return;
+    if (activeAnimation?.tx === tx) activeAnimation.committed = true;
     const action = kind === 'draw' ? '抽牌' : kind === 'buy' ? '购买' : kind === 'play' ? '打出' : '弃牌';
     history?.add({id:`${session.epoch}-${tx.token}`,name:tx.card.name,art:tx.card.art,kind:action,detail:kind === 'buy' ? `支付 ${tx.card.cost} 星能，进入弃牌堆。` : `${tx.card.name} · ${action}流转演示`});
     if (kind === 'play') {
@@ -186,7 +189,7 @@ async function returnDrag(d) {
 }
 function cancelDrag() {const d=drag;drag=null;theatre.classList.remove('drag-active');if(d)returnDrag(d);}
 async function cancelFlight() {
-  const active=activeAnimation;if(!active)return;
+  const active=activeAnimation;if(!active || active.committed || session.pending !== active.tx)return;
   if(active.cancelling)return;
   active.cancelling=true;active.a.pause();
   const now=active.ghost.getBoundingClientRect();
@@ -205,9 +208,10 @@ function modalHeader(title,eyebrow,description) {
   head.append(copy,close);return head;
 }
 function openModal(kind) {
-  if(session.pending){notify('卡牌落定后即可打开。');return;}
-  cancelDrag();previousFocus=document.activeElement;modalKind=kind;
-  overlay.hidden=false;modal.classList.remove('is-closing');
+  if(modalClosing)return;
+  if(session.pending || activeAnimation){notify('卡牌落定后即可打开。');return;}
+  cancelDrag();modalGeneration++;previousFocus=document.activeElement;modalKind=kind;
+  overlay.hidden=false;theatre.inert=true;modal.classList.remove('is-closing');
   if(kind==='shop')renderShopContent();else if(kind==='help')renderHelp();else renderCollection(kind);
   animate($('.overlay-backdrop'),[{opacity:0},{opacity:1}],{duration:duration(230)});
   animate(modal,[{opacity:0,transform:'translateY(24px) scale(.97)'},{opacity:1,transform:'translateY(0) scale(1)'}],{duration:duration(410)});
@@ -215,12 +219,15 @@ function openModal(kind) {
   modal.focus();
 }
 async function closeModal() {
-  if(overlay.hidden||modal.classList.contains('is-closing'))return;
-  if(session.pending){await cancelFlight();}
+  if(overlay.hidden||modalClosing)return;
+  modalClosing=true;const generation=modalGeneration;
   modal.classList.add('is-closing');
+  if(session.pending){await cancelFlight();}
+  if(generation!==modalGeneration)return;
   animate($('.overlay-backdrop'),[{opacity:1},{opacity:0}],{duration:duration(200)});
   await animate(modal,[{opacity:1,transform:'translateY(0) scale(1)'},{opacity:0,transform:'translateY(14px) scale(.985)'}],{duration:duration(200)}).finished.catch(()=>{});
-  overlay.hidden=true;modalKind=null;modal.classList.remove('is-closing');previousFocus?.focus();
+  if(generation!==modalGeneration)return;
+  overlay.hidden=true;theatre.inert=false;modalKind=null;modalClosing=false;modal.classList.remove('is-closing');previousFocus?.focus();
 }
 function renderShopContent() {
   modal.replaceChildren(modalHeader('星港商会','THE INTERSTELLAR EXCHANGE','补给，为下一次出发。挑选一张卡牌，让它加入你的旅途。'));
@@ -230,7 +237,7 @@ function renderShopContent() {
     if(!refreshShop(session))return;
     renderShopContent();
     [...modal.querySelectorAll('.shop-slot')].forEach((n,i)=>animate(n,[{opacity:0,transform:'translateY(14px) rotateY(-5deg)'},{opacity:1,transform:'translateY(0) rotateY(0)'}],{duration:duration(380),delay:prefersReduced.matches?0:i*40}));
-    updateCounts();$('.refresh-button',modal)?.focus();notify('未购商品重新陈列，空位已补货；已购卡牌留在弃牌堆。');
+    updateCounts();modal.focus();notify('未购商品重新陈列，空位已补货；已购卡牌留在弃牌堆。');
   });tools.append(balance,refresh);modal.append(tools);
   const grid=el('div','shop-grid');
   session.shop.forEach((card,index)=>{
@@ -245,7 +252,7 @@ function renderShopContent() {
   });
   modal.append(grid);
   const footer=el('div','shop-footer'),note=el('span','','购买成功后 → ');note.append(el('b','','弃牌堆'),document.createTextNode('  ·  商品不会立刻补回'));
-  const view=el('button','','检视弃牌堆 →');view.addEventListener('click',()=>{modalKind='discard';renderCollection('discard');});footer.append(note,view);modal.append(footer);
+  const view=el('button','','检视弃牌堆 →');view.addEventListener('click',()=>{modalKind='discard';renderCollection('discard');modal.focus();});footer.append(note,view);modal.append(footer);
 }
 function renderCollection(kind) {
   const isDeck=kind==='deck';const group=isDeck?session.deck:session.discard;
@@ -263,11 +270,12 @@ function renderHelp() {
 }
 function resetDemo() {
   if(!session)return;
+  modalGeneration++;modalClosing=false;modal.classList.remove('is-closing');
   if(drag){drag.ghost?.remove();drag=null;}
   for(const a of animations)a.cancel();animations.clear();
   activeAnimation=null;flightLayer.replaceChildren();theatre.classList.remove('drag-active');
   resetSession(session,cards);hand.replaceChildren();renderHand();history?.reset();study?.reset();
-  if(!overlay.hidden){overlay.hidden=true;modalKind=null;}
+  if(!overlay.hidden){overlay.hidden=true;theatre.inert=false;modalKind=null;}
   notify('新的幕间。所有卡牌已回到初始位置。');
 }
 function bindControls() {
@@ -286,7 +294,8 @@ function bindControls() {
       const stops=[...modal.querySelectorAll('button:not(:disabled),a[href],select')];
       if(!stops.length){e.preventDefault();return;}
       const first=stops[0],last=stops.at(-1);
-      if(e.shiftKey&&(document.activeElement===first||document.activeElement===modal)){e.preventDefault();last.focus();}
+      if(!modal.contains(document.activeElement)){e.preventDefault();(e.shiftKey?last:first).focus();}
+      else if(e.shiftKey&&(document.activeElement===first||document.activeElement===modal)){e.preventDefault();last.focus();}
       else if(!e.shiftKey&&(document.activeElement===last||document.activeElement===modal)){e.preventDefault();first.focus();}return;
     }
     if(!overlay.hidden||e.repeat||e.ctrlKey||e.metaKey||e.altKey||['SELECT','INPUT','TEXTAREA'].includes(e.target.tagName))return;

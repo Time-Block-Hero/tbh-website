@@ -4,3 +4,9 @@
 @media(max-height:800px){.topbar{height:66px}.chapter{top:88px}.chapter h1{font-size:20px;margin-top:8px}.chapter p{font-size:9px}.right-rail{top:91px}.hand-area{height:220px}.hand{bottom:60px;height:180px}.hand-card{width:134px;height:190px;left:-67px}.hand-card .card-info{left:10px;right:10px;bottom:10px}.hand-card .card-info h3{font-size:13px}.hand-card .card-info p{font-size:8px;-webkit-line-clamp:2}.hand-card .card-stats{margin-top:6px;font-size:10px}.hand-card .card-stats b{font-size:12px}.hand-card:hover,.hand-card:focus-visible{transform:translate(var(--x),-40px) rotate(0) scale(1.16)}#unit-study{top:154px;bottom:220px}#history-rail{top:177px}.pile{bottom:67px}.pile-back{width:51px;height:72px}.pile-caption{margin-top:10px}.draw-button{bottom:25px}.sample-note{bottom:7px}.play-zone{inset:190px 250px 250px}.chapter .eyebrow{font-size:8px}.energy-pill strong{font-size:22px}}
 
 .game-card.is-source{visibility:hidden}
+
+/* Reserve a single top row for shop and balance in compact game windows. */
+@media(max-width:1100px){
+ .right-rail{flex-direction:row;align-items:center;gap:12px}
+ .energy-pill{padding:0;gap:6px}.energy-pill small{display:none}
+}
