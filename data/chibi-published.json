@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "source": {
     "processingVersion": "chibi-alpha-bake-v1",
-    "websiteCommit": "5db00c666f0cb351b5fcf0ed129b7b6620da2cb8",
+    "websiteCommit": "ef9d90162db89399025f1341a8c8275902eafc05",
     "reviewManifestSha256": "97936d5a56da0eae67d34ff841bc44a6adc1f586d0933982828c2a3e655d055d",
-    "workbenchSha256": "d4566b8d6592bfdafd0f02731a8f009e645efa23d13ad232234053a7b90a7b1d",
+    "workbenchSha256": "5fe57b995ed6ebd3b5b2710b75f5022e7fd1b7d1fbaf116d602ced3ba64e4187",
     "goldenSha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e"
   },
   "units": [
@@ -17,7 +17,7 @@
       "atlasSha256": "f2c5efd9379a4958fd492058f1436bc1fece1d6e3d58e1193999454700dd1382",
       "bodyKind": "quadruped",
       "artworkFacesRight": true,
-      "heightInTiles": 1.054501,
+      "heightInTiles": 0.84,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -234,7 +234,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "f52dd70329a0bfe29aea9a6020363c30e5e0570d5d8035761546eb69d0f693e9"
+      "calibrationSha256": "00d9ca672cc161081b1e5fe43b92411f5c6443cf3ed301e9c5cdbffb4493a5db"
     },
     {
       "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
@@ -245,7 +245,7 @@
       "atlasSha256": "2e953633d4cee70a47fed0dc5188f8a4599577b90df09ed6dfaa5f0270d3bd39",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.064611,
+      "heightInTiles": 1.47,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -462,7 +462,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "deb76a6882601bedce24013b036d178b5b1118af937dec2f072fb14cc557b409"
+      "calibrationSha256": "a5f90ae4eaff1cfe03174398510eb524d139a3f5ce496c96348e3796b62d6690"
     },
     {
       "uid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
@@ -2297,10 +2297,10 @@
       "atlasSha256": "35a14dbf9cd6c7ca683afe2b3d18c24f936a2f0268820b8483d4e670c4ba8176",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.35529,
+      "heightInTiles": 1.72,
       "groundOffsetInTiles": {
         "x": 0,
-        "y": 0.07,
+        "y": 0.2,
         "z": 0
       },
       "layout": {
@@ -2316,8 +2316,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.7320574,
-              "y": 0.1291866
+              "x": 0.5940000000000001,
+              "y": 0.08815624999999994
             },
             "offsetInTiles": {
               "x": 0,
@@ -2514,7 +2514,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "00a92557a2e9a0e5f2502f26b69b900dbdecd590df797cd7cfc28ab5cdfc8ab2"
+      "calibrationSha256": "70aee8cca37d19d0c5c7e4cff5c29cefbce52b0150cb3f55df850df094e85438"
     },
     {
       "uid": "103f0af6-2a92-471e-be1a-e5fad6fa5735",
@@ -2753,7 +2753,7 @@
       "atlasSha256": "c7b4322e673d41cc705c0b2eda27e259c5ac71fa1a755e94dbc9e4d076ca2f72",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.892576,
+      "heightInTiles": 1.2,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -2970,7 +2970,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "2b2dbed06209b8f149853f5747064ddab1b9b4b6d44e12c0afe83ed53393c7c4"
+      "calibrationSha256": "7794319c2bc42c4b72a0e93fd6fc92dea21a296c67c0d1b9e665764b6374abe5"
     },
     {
       "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
@@ -3684,8 +3684,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.5944976,
-              "y": 0.0574163
+              "x": 0.62,
+              "y": 0.052156250000000015
             },
             "offsetInTiles": {
               "x": 0,
@@ -3882,7 +3882,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "97b12c9987b8da09edf77fa57007b5d87a828ae9d981d4f5076c486424500a8a"
+      "calibrationSha256": "8fea885798e91c958091c3c2709d6a27839cc359995cf302e867a9e0571105e6"
     },
     {
       "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
@@ -4805,7 +4805,7 @@
       "atlasSha256": "aeb81fca6d40577f416d7e613d4a636da6aa365ceb5586783ef571b4494e60aa",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.459259,
+      "heightInTiles": 1.7,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -5022,7 +5022,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "40e73b11de5cdca35b80b4eedae0ebf1049d55eebf40e1d4d348830c918ed520"
+      "calibrationSha256": "f0033249b9b6b0bb935aa4ac47ebf4ce9229cb62f28fd0c35ee761f2675d5a50"
     },
     {
       "uid": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e",
@@ -5945,7 +5945,7 @@
       "atlasSha256": "9dd785059b72717e51e52928912fcaf9a4b9743126803dcccfcf0e1850daa908",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.042257,
+      "heightInTiles": 1.65,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -5964,8 +5964,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.5885167,
-              "y": 0.0382775
+              "x": 0.5459999999999999,
+              "y": 0.04415625000000001
             },
             "offsetInTiles": {
               "x": 0,
@@ -6162,7 +6162,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "deeaedf8fefd33c61b0d208f87a8d8385fa826201648fe5d9efac11301eb585b"
+      "calibrationSha256": "7e3275b9e9516f2f70e697a249c57d0863ae686e551f41d0bd71bbaa91c21d39"
     },
     {
       "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
@@ -6629,7 +6629,7 @@
       "atlasSha256": "7c5a528ca5d75c244b4289fe4b72ecf2343f26155b8d296700f28ddc2bbc7fa7",
       "bodyKind": "quadruped",
       "artworkFacesRight": true,
-      "heightInTiles": 1.020823,
+      "heightInTiles": 1.42,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -6846,7 +6846,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "e46a5c858782ea2b80ad6c6ddbf3d10a3553a830b94da186d3a69e33514020c9"
+      "calibrationSha256": "c5f902e4733ee393a34eeae2a5823cff1865bd988920f1484ceb917e9311feb5"
     },
     {
       "uid": "385f1bae-5ade-411d-abd1-850d74944004",
@@ -7313,7 +7313,7 @@
       "atlasSha256": "5795b22bdaef0b7d3fa47cdb7f386f5941f7df668d1c89be04d9c23a01d9f3ec",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.245402,
+      "heightInTiles": 1,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -7530,7 +7530,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "78c095f0858fd49f3547686073b001e7f60a034e54116969dcdb5c72722204f0"
+      "calibrationSha256": "4802156c6c1a00f43f98356188144ea8185a60926dbe3a5f8b94a28ae0324ba6"
     },
     {
       "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
@@ -9137,7 +9137,7 @@
       "atlasSha256": "ebf018a09ed3159c6deb2097515b48df7a99bb8836c2f6eee9f2959a2c326f1b",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.143536,
+      "heightInTiles": 1.06,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -9354,7 +9354,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "59fea8fc5ad02735e506445b8eca5d3f3ee71311d9767ad2919457f3143b9894"
+      "calibrationSha256": "b6868e57d8ac3b358d50b60f6db70ca65910e9ade3d6d380f14c3e118385d6a3"
     },
     {
       "uid": "4eddea4a-df91-425d-bbdf-b216da8381d8",
@@ -9612,8 +9612,8 @@
               "height": 419
             },
             "pivot": {
-              "x": 0.6674641,
-              "y": 0.0023866
+              "x": 0.5781866028708134,
+              "y": 0.006156249999999974
             },
             "offsetInTiles": {
               "x": 0,
@@ -9810,7 +9810,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "ab562365d572c4ec37feb2d1dc9b9434ce354647971278b12c4f7398583f5bc2"
+      "calibrationSha256": "a16a66eff88724b25384ba203cec01cd22335a6b76e0ad3db11e826b9e9ca8f7"
     },
     {
       "uid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
@@ -10049,7 +10049,7 @@
       "atlasSha256": "17b9c0123c3b52f0ffa435a11762e6e9f3623d10e36a2285b2b7810060d4302b",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.593382,
+      "heightInTiles": 1.87,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -10266,7 +10266,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "3560fe73e9eb88342f2222c19d396db72113cecda92803a9c1204bcda7d8d535"
+      "calibrationSha256": "0d5985af8b8b8e88fccca3f4654ee79994cc510d11a451d2f272fd4c9bc0da36"
     },
     {
       "uid": "63699e58-6aa0-4012-b096-364a7cff20e7",
@@ -11645,7 +11645,7 @@
       "atlasSha256": "885a7ce53a60d644bed1e0f11fe81d033f9de0d11967d43b703fc385bb3b99eb",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.131593,
+      "heightInTiles": 1.29,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -11664,8 +11664,8 @@
               "height": 430
             },
             "pivot": {
-              "x": 0.4072289,
-              "y": 0.0069767
+              "x": 0.5331566265060241,
+              "y": 0.020156249999999987
             },
             "offsetInTiles": {
               "x": 0,
@@ -11862,7 +11862,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "0bc4f177976d59a02780a4828d0eaa9c2bc5235742e377b1b1aa575e140b5f15"
+      "calibrationSha256": "bd015594190fa9767df76abe35151744082042d868b6d01df410f643e374c730"
     },
     {
       "uid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
@@ -12785,7 +12785,7 @@
       "atlasSha256": "5b8e3f89b4ad20b3ed1975e06965969c9ddefd9c19b546b6dd262c5a848a9625",
       "bodyKind": "quadruped",
       "artworkFacesRight": true,
-      "heightInTiles": 1.5884,
+      "heightInTiles": 1.22,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -13002,7 +13002,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "8062e33f3b3805923f552f61dcc4a29b545c60ba564e0d61eb20b618a69c58cf"
+      "calibrationSha256": "2381c30b028798df93562a301d319fafca5af9f4006c4829bc4a18e576dc5113"
     },
     {
       "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
@@ -14153,7 +14153,7 @@
       "atlasSha256": "d463b29b9eaa2834178ed76bc7d88ca9b5435b45131f66f0948715d105d97be6",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 0.997739,
+      "heightInTiles": 1.36,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -14370,7 +14370,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "9f2b93f5c36360ab39554a0958ee0773a5259897a49777bfdacc718c76775d75"
+      "calibrationSha256": "b1dcfbdb250f6d2311dff2e6eb509aeddf1b4ae818f1243636e3dcbbf540f279"
     },
     {
       "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
@@ -14381,7 +14381,7 @@
       "atlasSha256": "edb46b5dbb1f32aebf6103fd2b86ef5cb89811ecd7df73e45b1f38fb3e26e399",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.404134,
+      "heightInTiles": 2,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -14598,7 +14598,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "1778991c6102863545025d759384a98946aef859bf117c7be42e57a8e648023b"
+      "calibrationSha256": "53633136c04602b414b89ccd5a9ae2a7590757ecfea79ebb376f04be4a3a508b"
     },
     {
       "uid": "acfbc239-3f00-48a8-ba1a-b264535c9c8f",
@@ -16680,8 +16680,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.5921053,
-              "y": 0.0550239
+              "x": 0.522,
+              "y": 0.05615624999999991
             },
             "offsetInTiles": {
               "x": 0,
@@ -16878,7 +16878,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "e84098f48c6eea2bedc98a91b98bf91f7367381f5397eb3fa9a1f9975163216c"
+      "calibrationSha256": "74696ab10dd3f92482c2edd2c3250ce67f7e00351fa510f12d2d8220a017a0f8"
     },
     {
       "uid": "c5972274-f51c-4859-ae8a-cd1f5739d941",
@@ -18257,7 +18257,7 @@
       "atlasSha256": "4a66f118e69d1f5681c853604d53ecc9e4363f9e5477d3a48cae7f387286fbca",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.64382,
+      "heightInTiles": 1.4,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -18474,7 +18474,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "9351c8b4598e7e30094c25a87b3993ffb195355eb2de8c41053dd25ed4e055e4"
+      "calibrationSha256": "a00be64752f37eb2e49b410bbed37501012c4c1982eecd882a65112762f97f31"
     },
     {
       "uid": "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405",
@@ -18732,8 +18732,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.3863636,
-              "y": 0.0478469
+              "x": 0.58,
+              "y": 0.052156250000000015
             },
             "offsetInTiles": {
               "x": 0,
@@ -18930,7 +18930,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "3251154f8bca0dff5b9bf7130f39121b347f10e43ef707dbfe2c4bdbe638ce65"
+      "calibrationSha256": "7e4c802cbab4dcacbca258469f95a383daa16129a114cb45b8e447a1951a6a78"
     },
     {
       "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
@@ -18941,7 +18941,7 @@
       "atlasSha256": "2a3751ceedd43232aef9fc139a586bbeef4a91a20dbde50fac329bba163ef539",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.174526,
+      "heightInTiles": 0.78,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -19158,7 +19158,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "fbeec8328400852f56ed4c27221201308d273f6e95754c459a347bbd8854cf12"
+      "calibrationSha256": "34c073e65cd66e6c01bf190f978ecc71387e82fa1bda9eb227fb1ea4ca0631d1"
     },
     {
       "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
@@ -19169,7 +19169,7 @@
       "atlasSha256": "6be2d32f23e664c2a378c17732c422db6f6202645afd7b2c7767999f072a1313",
       "bodyKind": "quadruped",
       "artworkFacesRight": true,
-      "heightInTiles": 1.14438,
+      "heightInTiles": 1,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -19386,7 +19386,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "e41002737910b6ec98965dd1d7a01544001fb19ed83804174c4aee2c71e93f55"
+      "calibrationSha256": "47c5076eb59ee3a237b958ea56b72530c94a416fbcd64590a28746a69169cde7"
     },
     {
       "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
@@ -19625,7 +19625,7 @@
       "atlasSha256": "60290563c72240d43330551b0d94419de9d50fbc642d39df0a79aefe7a8baa64",
       "bodyKind": "floating",
       "artworkFacesRight": true,
-      "heightInTiles": 1.704292,
+      "heightInTiles": 2.1,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0.07,
@@ -19842,7 +19842,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "81dabe1ae0de0045696c89ac248276b609725b4742d10a124c3f6e28afef8f8f"
+      "calibrationSha256": "f41275759a3eea32286bcd678675a48ad7069de6b3d2344f9b171285fe8ecdbd"
     },
     {
       "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
@@ -20547,7 +20547,7 @@
       "atlasSha256": "a58f70cf7cfa5a6b1476b7b3fcb5db05e4485bb4f3c17641fab3a490d6cd1818",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.045,
+      "heightInTiles": 1.75,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -20764,7 +20764,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "aad62622fdbd6fd4cccec8bfcf58e9ff7c3f5e5c5c0af4b635012821ef300aaa"
+      "calibrationSha256": "b35a70a186d4186e9026eb23920634fb0f5a1758e44f3af147053739bc5a5ce1"
     },
     {
       "uid": "f14f6fca-6862-441b-9254-8b3df5556389",
@@ -21231,7 +21231,7 @@
       "atlasSha256": "7cd9872f2d1f0a0aa0cfc09a67e4d86030055de4070d3a589dcdef1e028cf25b",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.087945,
+      "heightInTiles": 1.56,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -21250,8 +21250,8 @@
               "height": 418
             },
             "pivot": {
-              "x": 0.5547619,
-              "y": 0.0598086
+              "x": 0.5437904761904763,
+              "y": 0.06815624999999992
             },
             "offsetInTiles": {
               "x": 0,
@@ -21448,7 +21448,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "27cb945be3cf3c011293b91d87c5b53c6935c413f412b004d854727d5d87edc6"
+      "calibrationSha256": "3839b6adc4c0eac55fe79554380684d5ddef46c64ca85514886c8d472ea19c3a"
     },
     {
       "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
@@ -22143,7 +22143,7 @@
       "atlasSha256": "8f1cf1da6d45a6ced8a46a5c30b207260adaed34ec9486301af2b9995bf1c039",
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
-      "heightInTiles": 1.754656,
+      "heightInTiles": 1.89,
       "groundOffsetInTiles": {
         "x": 0,
         "y": 0,
@@ -22360,7 +22360,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "4cfb35eccba3f98acb6e3e67ddaf40efb21a14b300b2c1e065edede9fec8e397"
+      "calibrationSha256": "821cb5710f244d50175a9f0bf15bcb69c741e228fc840eb007e71f3122a4ee34"
     },
     {
       "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
