@@ -5,6 +5,7 @@ import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import contract from "../chibi-workbench-contract.js";
 import { validateReview } from "./validate-chibi-review.mjs";
+import { bakeAtlas, PROCESSING_VERSION } from "./chibi-alpha-bake.mjs";
 
 export const hash = bytes => createHash("sha256").update(bytes).digest("hex");
 export function compileBundle(root, requested = null) {
@@ -27,13 +28,14 @@ export function compileBundle(root, requested = null) {
     if (!/^[a-z0-9-]+$/.test(config.uid)) throw new Error("不安全的UID路径");
     const bytes = fs.readFileSync(path.resolve(root, art.atlasSrc));
     if (hash(bytes) !== art.atlasSha256) throw new Error("PNG与清单哈希不一致");
-    const unit = { uid: config.uid, cardId: card.id, name: card.nameKey, atlasPath, atlasSha256: art.atlasSha256, ...resolved };
+    const baked = bakeAtlas(bytes, resolved.layout);
+    const unit = { uid: config.uid, cardId: card.id, name: card.nameKey, atlasPath, sourceAtlasSha256: art.atlasSha256, atlasSha256: hash(baked.bytes), ...resolved, layout: baked.layout, processing: baked.processing };
     unit.calibrationSha256 = hash(contract.stableStringify(unit));
-    units.push(unit); images.push({ path: atlasPath, bytes });
+    units.push(unit); images.push({ path: atlasPath, bytes: baked.bytes, sourcePath: art.atlasSrc });
   }
   let websiteCommit = "uncommitted";
   try { websiteCommit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }).trim(); } catch {}
-  return { manifest: { schemaVersion: 1, source: { websiteCommit, reviewManifestSha256: hash(reviewBytes), workbenchSha256: hash(workbenchBytes), goldenSha256: review.baseline.atlasSha256 }, units }, images };
+  return { manifest: { schemaVersion: 2, source: { processingVersion: PROCESSING_VERSION, websiteCommit, reviewManifestSha256: hash(reviewBytes), workbenchSha256: hash(workbenchBytes), goldenSha256: review.baseline.atlasSha256 }, units }, images };
 }
 export function writeBundle(bundle, destination, overwrite = false) {
   const out = path.resolve(destination), parent = path.dirname(out);

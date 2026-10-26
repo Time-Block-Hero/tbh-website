@@ -20,6 +20,7 @@
     a=max(a,sampleFrame(v_uv+d*.707).a);a=max(a,sampleFrame(v_uv-d*.707).a);a=max(a,sampleFrame(v_uv+vec2(d.x,-d.y)*.707).a);a=max(a,sampleFrame(v_uv+vec2(-d.x,d.y)*.707).a);
     if(a<.025)discard;float grain=.982+.018*sin(gl_FragCoord.x*1.7+gl_FragCoord.y*2.3);vec3 paper=vec3(.98,.985,.97)*grain;
     gl_FragColor=vec4(mix(paper,raw.rgb,raw.a),a*v_color.a);}`;
+  const textureIdentity=entry=>`${entry?.verifyAtlasSha256?"verified":"author"}:${entry?.atlasSrc}?v=${entry?.atlasSha256||"legacy"}`;
   class PaperStage {
     constructor(canvas){
       this.canvas=canvas;this.gl=canvas.getContext("webgl",{alpha:false,antialias:true,preserveDrawingBuffer:false});if(!this.gl)throw new Error("此浏览器没有开启 WebGL，无法显示三维验收场景。");
@@ -39,11 +40,11 @@
     resize(){const r=this.canvas.getBoundingClientRect(),d=Math.min(devicePixelRatio||1,2);this.canvas.width=Math.max(1,Math.round(r.width*d));this.canvas.height=Math.max(1,Math.round(r.height*d));}
     async setActor(index,entry){
       const token={entry};this.actors[index]=token;if(!entry?.atlasSrc||!entry.layout)throw new Error("素材索引没有可用的图集或裁切信息");
-      const textureKey=`${entry.atlasSrc}?v=${entry.atlasSha256||"legacy"}`;let texture=this.textures.get(textureKey);
-      if(!texture){texture=new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{if(this.disposed)return reject(new Error("场景已关闭"));const gl=this.gl,t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);resolve(t);};image.onerror=()=>reject(new Error(`图片载入失败：${entry.atlasSrc}`));image.src=textureKey;});this.textures.set(textureKey,texture);}
+      const textureKey=textureIdentity(entry),imageUrl=`${entry.atlasSrc}?v=${entry.atlasSha256||"legacy"}`;let texture=this.textures.get(textureKey);
+      if(!texture){texture=new Promise((resolve,reject)=>{const image=new Image();image.onload=()=>{if(this.disposed)return reject(new Error("场景已关闭"));const gl=this.gl,t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL,true);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);resolve(t);};image.onerror=()=>reject(new Error(`图片载入失败：${entry.atlasSrc}`));if(entry.verifyAtlasSha256){globalThis.TbhChibiPublished.imageBytes(entry).then(bytes=>{const url=URL.createObjectURL(new Blob([bytes],{type:"image/png"}));image.addEventListener("load",()=>URL.revokeObjectURL(url),{once:true});image.addEventListener("error",()=>URL.revokeObjectURL(url),{once:true});image.src=url;}).catch(reject);}else image.src=imageUrl;});this.textures.set(textureKey,texture);}
       token.texture=await texture;
       // Avoid retaining all 99 GPU atlases while browsing the full roster.
-      if(this.textures.size>6){for(const [src,promise] of this.textures){if(this.actors.some(a=>`${a?.entry.atlasSrc}?v=${a?.entry.atlasSha256||"legacy"}`===src))continue;this.textures.delete(src);promise.then(t=>this.gl.deleteTexture(t)).catch(()=>{});if(this.textures.size<=4)break;}}
+      if(this.textures.size>6){for(const [src,promise] of this.textures){if(this.actors.some(a=>textureIdentity(a?.entry)===src))continue;this.textures.delete(src);promise.then(t=>this.gl.deleteTexture(t)).catch(()=>{});if(this.textures.size<=4)break;}}
     }
     quad(out,p0,p1,p2,p3,color,uv=[[0,0],[1,0],[1,1],[0,1]]){for(const i of [0,1,2,0,2,3])out.push(...[p0,p1,p2,p3][i],...color,...uv[i]);}
     box(out,x,y,z,w,h,d,color){const a=x-w/2,b=x+w/2,c=z-d/2,e=z+d/2;this.quad(out,[a,y,c],[a,y,e],[b,y,e],[b,y,c],[...color,1]);this.quad(out,[a,y-h,e],[a,y-h,c],[a,y,c],[a,y,e],[...mul(color,.66),1]);this.quad(out,[b,y-h,c],[b,y-h,e],[b,y,e],[b,y,c],[...mul(color,.8),1]);this.quad(out,[b,y-h,e],[a,y-h,e],[a,y,e],[b,y,e],[...mul(color,.74),1]);this.quad(out,[a,y-h,c],[b,y-h,c],[b,y,c],[a,y,c],[...mul(color,.57),1]);}

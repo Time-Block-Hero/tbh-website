@@ -282,3 +282,7 @@ git diff --check
 ## 版本记录
 
 详见 [CHANGELOG.md](CHANGELOG.md)。
+
+### 可直接导入游戏的 Chibi 发布素材
+
+`chibi.html` 默认展示游戏发布版，提供校验过哈希的透明 PNG 与本单位运行包下载；展开编辑后可调整原稿校准，保存和发布分开。运行包采用 schema 2，残片修补在发布时离线处理，原稿保留；Unity 消费同一份派生 PNG 与尺寸/锚点/动作配置。详见 [Chibi 工作台发布约定](docs/design/chibi-workbench.md)。

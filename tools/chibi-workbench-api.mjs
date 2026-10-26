@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import contract from "../chibi-workbench-contract.js";
+import { publishBundle } from "./publish-chibi-workbench.mjs";
 import { compileBundle, hash } from "./export-chibi-workbench.mjs";
 
 function sameLocalOrigin(request) {
@@ -39,7 +40,7 @@ export function createChibiApi(root, { sendJson, readBody }) {
         const state = read(); contract.validate(state.dataset, state.review, state.cards, { allowStale: true });
         sendJson(response, 200, { dataset: state.dataset, revision: state.revision, reviewRevision: state.reviewRevision, projectWrite: sameLocalOrigin(request) }); return true;
       }
-      if (request.method !== "POST" || !["/api/chibi/save", "/api/chibi/export"].includes(url.pathname)) { sendJson(response, 405, { error: "不支持的Chibi请求" }); return true; }
+      if (request.method !== "POST" || !["/api/chibi/save", "/api/chibi/export", "/api/chibi/publish"].includes(url.pathname)) { sendJson(response, 405, { error: "不支持的Chibi请求" }); return true; }
       if (!sameLocalOrigin(request) || request.headers["x-tbh-chibi"] !== "1" || !request.headers["content-type"]?.startsWith("application/json")) {
         sendJson(response, 403, { error: "仅接受本机同源Chibi工作台的JSON请求" }); return true;
       }
@@ -61,6 +62,7 @@ export function createChibiApi(root, { sendJson, readBody }) {
         if (body.baseRevision !== state.revision || body.reviewRevision !== state.reviewRevision) {
           const error = new Error("配置或素材已变化；未覆盖磁盘，请重新读取后合并草稿"); error.status = 409; throw error;
         }
+        if (url.pathname === "/api/chibi/publish") return { ok: true, published: publishBundle(root) };
         contract.validate(body.dataset, state.review, state.cards, { allowStale: true });
         const bytes = Buffer.from(JSON.stringify(body.dataset, null, 2) + "\n"), temp = `${file}.${randomUUID()}.tmp`;
         try { fs.writeFileSync(temp, bytes, { flag: "wx" }); fs.renameSync(temp, file); }
