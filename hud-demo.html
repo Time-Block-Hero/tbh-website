@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="dark"><title>幕间 — Time Block Hero 交互样片</title><link rel="stylesheet" href="hud-demo.css"><link rel="stylesheet" href="hud-demo-units.css"></head>
+<body><main id="theatre" class="theatre">
+  <div class="ambient" aria-hidden="true"><div class="orbital"></div><div class="orbital second"></div><div class="horizon"></div></div>
+  <header class="topbar"><a class="wordmark" href="index.html"><span class="mark">✦</span><span>TIME BLOCK HERO<small>幕间 · 星港</small></span></a><div class="session-label"><span class="live-dot"></span>交互样片 <b>01</b></div><div class="top-controls"><label class="motion-control">动效<select id="motion-mode" aria-label="动效节奏"><option value="flow">流畅 · 轻盈</option><option value="weight">沉稳 · 纸牌</option></select></label><button class="icon-button" id="reset-demo" aria-label="重置样片" title="重置样片">↺</button><button class="quiet-button" id="help-button">操作说明 <span>?</span></button></div></header>
+  <div class="chapter"><span class="eyebrow">STARPORT / 07</span><h1>星港泊位 <em>· 静谧之时</em></h1><p>悬停检视 · 拖动出牌</p></div>
+  <aside id="history-rail" aria-label="对局记录"></aside>
+  <div id="unit-study"></div>
+  <aside class="right-rail"><button id="open-shop" class="shop-trigger"><span class="shop-sigil">✧</span><span>星港商会<small>补给正在等待</small></span><span class="keyhint">S</span></button><div class="energy-pill"><span>✦</span><strong id="energy-value">18</strong><small>星能</small></div></aside>
+  <div id="play-zone" class="play-zone" aria-hidden="true"><span>松开 · 打出卡牌</span><div class="zone-orbit"></div></div>
+  <div id="play-flash" class="play-flash" aria-hidden="true"></div>
+  <div id="play-receipt" class="play-receipt" aria-live="polite"></div>
+  <footer class="hand-area">
+    <button id="deck-pile" class="pile pile-deck" aria-label="查看牌库"><span class="pile-back"><i>✦</i></span><span class="pile-caption">牌库 <strong id="deck-count">9</strong></span><span class="pile-subtitle">点击检视</span></button>
+    <button id="draw-card" class="draw-button">抽一张<span class="keyhint">D</span></button>
+    <div id="hand" class="hand" aria-label="手牌"></div><div class="hand-hint" id="hand-hint">拖到场中打出 · 右键弃牌 · 双击出牌</div>
+    <button id="discard-pile" class="pile pile-discard" aria-label="查看弃牌堆"><span class="pile-back"><i>◇</i></span><span class="pile-caption">弃牌 <strong id="discard-count">0</strong></span><span class="pile-subtitle">点击检视</span></button>
+  </footer>
+  <div class="sample-note">独立视觉样片 · 操作不影响游戏存档</div>
+  <div id="toast" role="status" class="toast"></div>
+</main>
+<div id="overlay" class="overlay" hidden><div id="overlay-backdrop" class="overlay-backdrop"></div><section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1"></section></div>
+<div id="flight-layer" aria-hidden="true"></div>
+<script type="module" src="hud-demo.js"></script>
+</body></html>
