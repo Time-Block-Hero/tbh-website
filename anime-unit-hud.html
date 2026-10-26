@@ -33,6 +33,7 @@
         <div class="scene-footer"><span id="stateLabel">常规状态</span><span id="liveAnnouncement" role="status" aria-live="polite">动作与属性变化均为展示演示</span><button id="flip">朝向 →</button></div>
       </section>
       <aside class="control-rail">
+        <div id="detailDock" class="readout-dock" hidden aria-label="当前角色展开信息"></div>
         <div class="rail-heading"><span class="section-number">01</span><h2>看信息，也看角色。</h2></div>
         <label class="unit-picker">角色 <select id="unitSelect" aria-label="选择已发布的真实角色"></select></label>
         <div class="state-controls"><p class="control-label">状态测试 <span>DEMO</span></p><div id="stateButtons" class="state-buttons" role="group" aria-label="演示状态"><button data-state="normal" aria-pressed="true">常规</button><button data-state="selected" aria-pressed="false">选中</button><button data-state="hurt" aria-pressed="false">受伤 <small>−3</small></button><button data-state="low" aria-pressed="false">低血</button><button data-state="shield" aria-pressed="false">护甲 / 圣盾</button><button data-state="spent" aria-pressed="false">无行动</button></div></div>

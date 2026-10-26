@@ -7,6 +7,7 @@
   const labels={normal:"常规状态",selected:"选中 / 详情展开",hurt:"受击演示",low:"低生命演示",shield:"护甲与圣盾演示",spent:"行动耗尽演示"};
   let manifest,cards,unit,art,state,main,mini,action="idle",elapsed=0,actionUntil=0,lastTime=0,token=0,raf=0;
   let pinned=false;
+  let anchorHeight=1.2, silhouetteHalfWidth=.6;
   class ReadoutStage extends globalThis.TbhPaperStage {
     board(vertices,offset,baseline){
       super.board(vertices,offset,baseline);
@@ -19,11 +20,11 @@
   }
   class Readout {
     constructor(host){
-      this.host=host;this.hovered=false;this.focused=false;
+      this.host=host;this.hovered=false;this.focused=false;this.revision=0;this.closeTimer=0;
       host.innerHTML=`<div class="unit-readout"><div class="status-shield">${icon("shield")}</div><button class="compact" aria-expanded="false" aria-label="展开角色数值"><span class="attack-block">${icon("attack")}<b class="attack-value">2</b></span><span class="hp-block"><b class="hp-value">20</b><span class="hp-max">/20</span><span class="hp-label">HP</span><span class="hp-track"><span class="hp-trail"></span><span class="hp-fill"></span></span></span></button><button class="ready-trigger" title="播放可发动效果演示" aria-label="播放可发动效果演示">${icon("ready")}</button><div class="readout-details"><div class="detail-name"><span></span><small></small></div><div class="defenses"><span class="defense armor">${icon("armor")}<b>0</b><small>护甲</small></span><span class="defense shield">${icon("shield")}<small>圣盾</small></span></div><div class="action-row movement">${icon("move")}<span>移动</span><span class="segments"></span><b></b></div><div class="action-row attack">${icon("attack")}<span>攻击</span><span class="segments"></span><b></b></div><div class="effect-row">${icon("ready")}<span class="effect-copy"><b></b><small></small></span></div></div></div>`;
       this.root=host.firstElementChild;this.button=this.root.querySelector(".compact");
-      this.root.addEventListener("pointerenter",()=>{this.hovered=true;this.disclosure();});
-      this.root.addEventListener("pointerleave",()=>{this.hovered=false;this.disclosure();});
+      this.root.addEventListener("pointerenter",()=>{clearTimeout(this.closeTimer);this.hovered=true;this.disclosure();});
+      this.root.addEventListener("pointerleave",()=>{this.closeTimer=setTimeout(()=>{this.hovered=false;this.disclosure();},120);});
       this.root.addEventListener("focusin",()=>{this.focused=true;this.disclosure();});
       this.root.addEventListener("focusout",event=>{if(!this.root.contains(event.relatedTarget)){this.focused=false;this.disclosure();}});
       this.button.addEventListener("click",()=>setPinned(!pinned));
@@ -33,6 +34,7 @@
     disclosure(){const open=this.hovered||this.focused||pinned||state?.selected;this.root.classList.toggle("open",Boolean(open));this.button.setAttribute("aria-expanded",String(Boolean(open)));}
     segments(row,count,total){const root=this.root.querySelector(`.${row} .segments`);root.replaceChildren();root.style.setProperty("--segment-count",Math.max(1,total));for(let i=0;i<total;i++){const p=document.createElement("i");p.className=i<count?"on":"";root.append(p);}this.root.querySelector(`.${row}>b`).textContent=`${count}/${total}`;}
     update(){
+      this.revision++;
       for(const [name,enabled]of Object.entries({ready:state.ready,selected:state.selected,low:state.mode==="low",shielded:state.shield,spent:state.mode==="spent"}))this.root.classList.toggle(name,enabled);
       this.root.querySelector(".attack-value").textContent=state.attack;
       this.root.querySelector(".hp-value").textContent=state.hp;
@@ -53,15 +55,40 @@
     }
     hit(){this.root.classList.remove("hurt");void this.root.offsetWidth;this.root.classList.add("hurt");}
     place(stage){
-      const f=art.layout.frames[stage.frameIndices[0]]||art.layout.frames[0],off=art.groundOffsetInTiles||{x:0,y:0,z:0};
-      const spriteHeight=f.rect.height*art.heightInTiles/art.layout.nominalCellHeight;
-      const high=spriteHeight*(1-f.pivot.y)+.085;
+      // Readout anchors belong to the entity root and a fixed authored height.
+      // Sprite frame bounds, per-frame pivots, recoil and leap offsets never move them.
+      const off=art.groundOffsetInTiles||{x:0,y:0,z:0},m=stage.matrix;if(!m)return;
       const up=[-Math.sin(stage.pitch)*Math.sin(stage.yaw),Math.cos(stage.pitch),-Math.sin(stage.pitch)*Math.cos(stage.yaw)];
-      const world=[off.x+up[0]*high,.027+off.y+up[1]*high,off.z+up[2]*high,1],m=stage.matrix;
-      if(!m)return;const p=[0,0,0,0];for(let r=0;r<4;r++)for(let c=0;c<4;c++)p[r]+=m[c*4+r]*world[c];
-      const w=stage.canvas.clientWidth,h=stage.canvas.clientHeight;
-      const x=Math.max(100,Math.min(w-100,(p[0]/p[3]*.5+.5)*w)),y=Math.max(72,Math.min(h-90,(.5-p[1]/p[3]*.5)*h));
-      this.host.style.left=`${x}px`;this.host.style.top=`${y}px`;this.root.classList.toggle("expand-down",y<this.root.querySelector(".readout-details").offsetHeight+46);
+      const right=[Math.cos(stage.yaw),0,-Math.sin(stage.yaw)];
+      const w=stage.canvas.clientWidth,h=stage.canvas.clientHeight,root=[off.x,.027+off.y,off.z];
+      const project=world=>{const p=[0,0,0,0];for(let r=0;r<4;r++)for(let c=0;c<4;c++)p[r]+=m[c*4+r]*(c===3?1:world[c]);return{x:(p[0]/p[3]*.5+.5)*w,y:(.5-p[1]/p[3]*.5)*h};};
+      const foot=project(root),head=project(root.map((v,i)=>v+up[i]*anchorHeight));
+      const side=project(root.map((v,i)=>v+right[i]*silhouetteHalfWidth));
+      const x=Math.max(100,Math.min(w-100,head.x)),y=Math.max(72,Math.min(h-90,head.y));
+      this.host.style.left=`${x}px`;this.host.style.top=`${y}px`;
+      const details=this.root.querySelector(".readout-details"),badgeWidth=this.root.offsetWidth,badgeHeight=this.button.offsetHeight;
+      const panelWidth=details.offsetWidth,panelHeight=details.offsetHeight,edge=14,topEdge=44,gap=9;
+      const badgeLeft=x-badgeWidth/2,badgeTop=y-badgeHeight,half=Math.max(badgeWidth/2,Math.abs(side.x-foot.x))+12;
+      const candidates=[
+        {kind:"above",left:x-panelWidth/2,top:badgeTop-panelHeight-gap},
+        {kind:"right",left:Math.max(x+badgeWidth/2,foot.x+half)+gap,top:Math.max(topEdge,Math.min(h-panelHeight-edge,badgeTop-panelHeight*.22))},
+        {kind:"left",left:Math.min(x-badgeWidth/2,foot.x-half)-panelWidth-gap,top:Math.max(topEdge,Math.min(h-panelHeight-edge,badgeTop-panelHeight*.22))}
+      ];
+      const fits=r=>r.left>=edge&&r.top>=topEdge&&r.left+panelWidth<=w-edge&&r.top+panelHeight<=h-edge;
+      const placement=candidates.find(fits);
+      const dock=this===views[0]?$("detailDock"):null;
+      this.root.classList.toggle("external-details",!placement);
+      if(dock){
+        const show=!placement&&this.root.classList.contains("open");dock.hidden=!show;
+        if(show){
+          dock.dataset.skin=document.body.dataset.skin;
+          if(dock.dataset.revision!==String(this.revision)){dock.replaceChildren(details.cloneNode(true));dock.dataset.revision=String(this.revision);}
+        }
+      }
+      if(placement){
+        this.root.dataset.detailPlacement=placement.kind;
+        details.style.left=`${placement.left-badgeLeft}px`;details.style.top=`${placement.top-badgeTop}px`;
+      }
       if(this===views[0]){$("mainFloat").style.left=`${x+100}px`;$("mainFloat").style.top=`${y+20}px`;}
     }
   }
@@ -92,7 +119,10 @@
   function activate(){if(!state?.ready)return;playAction("effect",1.2);views.forEach(v=>{v.root.classList.add("activating");setTimeout(()=>v.root.classList.remove("activating"),450);});$("liveAnnouncement").textContent="播放发动插画与跃起演示 · 未发送游戏指令";}
   async function choose(uid){
     const attempt=++token;unit=cards.find(c=>c.uid===uid);if(!unit)return;
-    art=publishedApi.entry(manifest,uid);$("stageError").hidden=true;$("unitName").textContent=unit.nameKey;$("unitEnglish").textContent=unit.englishName||"";$("unitIdentity").textContent=`${factionNames[unit.classId]||unit.classId} / ${unit.id}`;
+    art=publishedApi.entry(manifest,uid);
+    anchorHeight=art.heightInTiles+.1;
+    silhouetteHalfWidth=Math.max(...art.layout.frames.map(f=>{const scale=art.heightInTiles/art.layout.nominalCellHeight;return f.rect.width*scale*Math.max(f.pivot.x,1-f.pivot.x)+Math.abs(f.offsetInTiles?.x||0);}))+.15*art.heightInTiles;
+    $("stageError").hidden=true;$("unitName").textContent=unit.nameKey;$("unitEnglish").textContent=unit.englishName||"";$("unitIdentity").textContent=`${factionNames[unit.classId]||unit.classId} / ${unit.id}`;
     $("workbenchLink").href=`./chibi.html?unit=${encodeURIComponent(uid)}`;$("sourceTag").textContent=`PUBLISHED / ${art.heightInTiles.toFixed(2)} TILE`;
     const url=new URL(location.href);url.searchParams.set("unit",uid);history.replaceState(null,"",url);changeState("normal");
     try{await Promise.all([main.setActor(0,art),mini.setActor(0,art)]);if(attempt!==token)return;$("liveAnnouncement").textContent="已读取真实发布图集 · 属性变化仅供演示";}catch(e){if(attempt===token){$("stageError").textContent=e.message;$("stageError").hidden=false;}}
