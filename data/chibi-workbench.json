@@ -81,7 +81,7 @@
     {
       "uid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
       "atlasSha256": "f2c5efd9379a4958fd492058f1436bc1fece1d6e3d58e1193999454700dd1382",
-      "scale": 1.054501,
+      "scale": 0.84,
       "offset": {
         "x": 0,
         "y": 0,
@@ -209,7 +209,7 @@
     {
       "uid": "1529f937-224e-4d19-a272-0740e98b649e",
       "atlasSha256": "c7b4322e673d41cc705c0b2eda27e259c5ac71fa1a755e94dbc9e4d076ca2f72",
-      "scale": 1.892576,
+      "scale": 1.2,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -465,7 +465,7 @@
     {
       "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
       "atlasSha256": "6be2d32f23e664c2a378c17732c422db6f6202645afd7b2c7767999f072a1313",
-      "scale": 1.14438,
+      "scale": 1,
       "offset": {
         "x": 0,
         "y": 0,
@@ -969,7 +969,7 @@
     {
       "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
       "atlasSha256": "4a66f118e69d1f5681c853604d53ecc9e4363f9e5477d3a48cae7f387286fbca",
-      "scale": 1.64382,
+      "scale": 1.4,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -1091,7 +1091,7 @@
     {
       "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
       "atlasSha256": "60290563c72240d43330551b0d94419de9d50fbc642d39df0a79aefe7a8baa64",
-      "scale": 1.704292,
+      "scale": 2.1,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -1413,7 +1413,7 @@
     {
       "uid": "619301f9-72b0-4f86-a36c-e55046d138f5",
       "atlasSha256": "17b9c0123c3b52f0ffa435a11762e6e9f3623d10e36a2285b2b7810060d4302b",
-      "scale": 1.593382,
+      "scale": 1.87,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -3325,7 +3325,7 @@
     {
       "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
       "atlasSha256": "8f1cf1da6d45a6ced8a46a5c30b207260adaed34ec9486301af2b9995bf1c039",
-      "scale": 1.754656,
+      "scale": 1.89,
       "offset": {
         "x": 0,
         "y": 0,
@@ -3517,7 +3517,7 @@
     {
       "uid": "233e64f0-fc55-44a4-af3a-10222df336c4",
       "atlasSha256": "aeb81fca6d40577f416d7e613d4a636da6aa365ceb5586783ef571b4494e60aa",
-      "scale": 1.459259,
+      "scale": 1.7,
       "offset": {
         "x": 0,
         "y": 0,
@@ -3581,7 +3581,7 @@
     {
       "uid": "4c2033a5-fb41-4c96-b540-16572b690c70",
       "atlasSha256": "ebf018a09ed3159c6deb2097515b48df7a99bb8836c2f6eee9f2959a2c326f1b",
-      "scale": 1.143536,
+      "scale": 1.06,
       "offset": {
         "x": 0,
         "y": 0,
@@ -3773,7 +3773,7 @@
     {
       "uid": "3c14c875-f4ce-4545-88a7-aa57b0ae9b92",
       "atlasSha256": "5795b22bdaef0b7d3fa47cdb7f386f5941f7df668d1c89be04d9c23a01d9f3ec",
-      "scale": 1.245402,
+      "scale": 1,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4285,7 +4285,7 @@
     {
       "uid": "a60555e6-d405-47de-bdff-c84031d53448",
       "atlasSha256": "d463b29b9eaa2834178ed76bc7d88ca9b5435b45131f66f0948715d105d97be6",
-      "scale": 0.997739,
+      "scale": 1.36,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4605,10 +4605,10 @@
     {
       "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
       "atlasSha256": "35a14dbf9cd6c7ca683afe2b3d18c24f936a2f0268820b8483d4e670c4ba8176",
-      "scale": 1.35529,
+      "scale": 1.72,
       "offset": {
         "x": 0,
-        "y": 0.07,
+        "y": 0.2,
         "z": 0
       },
       "anchor": null,
@@ -4649,7 +4649,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.5940000000000001,
+            "y": 0.08815624999999994
+          }
+        }
+      },
       "bodyKind": "floating",
       "artworkFacesRight": true,
       "prompt": {
@@ -4669,7 +4676,7 @@
     {
       "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
       "atlasSha256": "7cd9872f2d1f0a0aa0cfc09a67e4d86030055de4070d3a589dcdef1e028cf25b",
-      "scale": 1.087945,
+      "scale": 1.56,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4713,7 +4720,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.5437904761904763,
+            "y": 0.06815624999999992
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -4733,7 +4747,7 @@
     {
       "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
       "atlasSha256": "a58f70cf7cfa5a6b1476b7b3fcb5db05e4485bb4f3c17641fab3a490d6cd1818",
-      "scale": 1.045,
+      "scale": 1.75,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4861,7 +4875,7 @@
     {
       "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
       "atlasSha256": "7c5a528ca5d75c244b4289fe4b72ecf2343f26155b8d296700f28ddc2bbc7fa7",
-      "scale": 1.020823,
+      "scale": 1.42,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5249,7 +5263,7 @@
     {
       "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
       "atlasSha256": "edb46b5dbb1f32aebf6103fd2b86ef5cb89811ecd7df73e45b1f38fb3e26e399",
-      "scale": 1.404134,
+      "scale": 2,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5313,7 +5327,7 @@
     {
       "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
       "atlasSha256": "2e953633d4cee70a47fed0dc5188f8a4599577b90df09ed6dfaa5f0270d3bd39",
-      "scale": 1.064611,
+      "scale": 1.47,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5485,7 +5499,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.58,
+            "y": 0.052156250000000015
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -5697,7 +5718,7 @@
     {
       "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
       "atlasSha256": "9dd785059b72717e51e52928912fcaf9a4b9743126803dcccfcf0e1850daa908",
-      "scale": 1.042257,
+      "scale": 1.65,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5741,7 +5762,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.5459999999999999,
+            "y": 0.04415625000000001
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -5933,7 +5961,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.522,
+            "y": 0.05615624999999991
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -5997,7 +6032,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.5781866028708134,
+            "y": 0.006156249999999974
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -6017,7 +6059,7 @@
     {
       "uid": "8f084b1a-e770-413d-800e-61165fc3b4d9",
       "atlasSha256": "5b8e3f89b4ad20b3ed1975e06965969c9ddefd9c19b546b6dd262c5a848a9625",
-      "scale": 1.5884,
+      "scale": 1.22,
       "offset": {
         "x": 0,
         "y": 0,
@@ -6273,7 +6315,7 @@
     {
       "uid": "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4",
       "atlasSha256": "2a3751ceedd43232aef9fc139a586bbeef4a91a20dbde50fac329bba163ef539",
-      "scale": 1.174526,
+      "scale": 0.78,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -6445,7 +6487,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.62,
+            "y": 0.052156250000000015
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -6465,7 +6514,7 @@
     {
       "uid": "7522e0e5-1fb6-4a32-914d-992aab4e3c62",
       "atlasSha256": "885a7ce53a60d644bed1e0f11fe81d033f9de0d11967d43b703fc385bb3b99eb",
-      "scale": 1.131593,
+      "scale": 1.29,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -6509,7 +6558,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.5331566265060241,
+            "y": 0.020156249999999987
+          }
+        }
+      },
       "bodyKind": "floating",
       "artworkFacesRight": true,
       "prompt": {
