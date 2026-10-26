@@ -84,7 +84,7 @@ export function mountUnitStudy(root, config = {}) {
   root.classList.add('hs-root');
   root.innerHTML = `<div class="hs-heading"><span class="hs-kicker">单位信息 · 悬浮查看</span><div class="hs-style-selector" role="group" aria-label="单位信息样式"><button data-style="jewel" class="is-active" aria-pressed="true">徽章</button><button data-style="line" aria-pressed="false">刻度</button><button data-style="plaque" aria-pressed="false">铭牌</button></div></div><div class="hs-stage" data-style="jewel"><div class="hs-stage-fit">${boardMarkup()}${UNITS.map(unitMarkup).join('')}</div></div><div class="hs-controls"><button class="hs-phase is-active" aria-pressed="true"><i></i><span>时停 · 光源开启</span></button><label class="hs-overlap"><input type="checkbox" checked> 叠加支持</label><button class="hs-consume">消耗一次性箭头</button><button class="hs-reset" title="重置演示" aria-label="重置箭头演示">↺</button></div><div class="hs-legend"><span style="--tone:${TONES.permanent}">永续</span><span style="--tone:${TONES.single}">一次性</span><span style="--tone:${TONES.restricted}">限定用途 · 示例</span><small>光只表达放置支持，不代表可移动。</small></div><span class="hs-status" role="status" aria-live="polite"></span>`;
   const stage = root.querySelector('.hs-stage');
-  const resize = new ResizeObserver(() => stage.style.setProperty('--stage-scale',Math.min(stage.clientWidth/900,stage.clientHeight/460)));
+  const resize = new ResizeObserver(() => {const scale=Math.min(stage.clientWidth/800,stage.clientHeight/380);stage.style.setProperty('--stage-scale',scale);stage.style.setProperty('--badge-scale',Math.max(1,1/scale));});
   resize.observe(stage);
   const state = {timeStop:true,overlap:true,singleRemaining:1};
   const listen=(element,type,listener)=>element.addEventListener(type,listener,{signal:abort.signal});

@@ -4,3 +4,23 @@
 .hs-stage{width:100%;aspect-ratio:auto;min-height:250px;flex:1}.hs-stage-fit{position:absolute;width:900px;height:460px;left:50%;top:50%;transform:translate(-50%,-50%) scale(var(--stage-scale, .8));transform-origin:center}.hs-controls{margin-top:0}.hs-unit-hit{width:170px;left:-85px;height:196px}.hs-portrait{width:170px;height:190px}.hs-unit-summary{bottom:172px;transform:none}.hs-unit-detail{bottom:209px}
 
 .hs-root>.hs-unit-detail{position:absolute;bottom:auto;left:auto;width:258px;z-index:25;box-sizing:border-box}.hs-root>.hs-unit-detail.is-visible{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}.hs-root>.hs-unit-detail .hs-detail-title strong{font-size:20px}.hs-root>.hs-unit-detail .hs-detail-stats{font-size:11px}.hs-root>.hs-unit-detail .hs-ability small{font-size:11px}.hs-root>.hs-unit-detail .hs-fixture-note{font-size:9px}.hs-root>.hs-unit-detail:after{left:-25px;top:0;bottom:0;right:auto;width:26px;height:auto}
+
+/* Small game windows keep information at screen-space size. */
+.hs-root{min-height:0}
+.hs-stage{min-height:160px}
+.hs-unit-summary{transform:scale(var(--badge-scale,1));font-size:12px;transform-origin:50% 50%;gap:6px}
+.hs-unit-summary .hs-attack,.hs-unit-summary .hs-action-pips{display:none}
+.hs-unit-summary .hs-stat small{font-size:10px}
+.hs-unit-summary .hs-heart{font-size:11px}
+.hr-thumb>span{opacity:0;transition:opacity .2s}
+.hr-thumb:hover>span,.hr-thumb:focus-visible>span{opacity:1}
+@media(max-height:780px){
+ .hs-heading{position:absolute;right:0;top:0;z-index:5;padding:0}
+ .hs-kicker{display:none}
+ .hs-stage{margin-top:0;margin-bottom:10px}
+ .hs-controls{gap:12px;margin-top:0;flex:none}
+ .hs-controls button,.hs-overlap{font-size:10px}
+ .hs-legend{margin:1px 0 0;flex:none}
+ .hs-legend small{display:none}
+ .hs-style-selector button{padding:6px 10px}
+}
