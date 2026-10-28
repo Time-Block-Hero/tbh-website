@@ -1,0 +1,65 @@
+{
+  "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+  "atlasSha256": "6e8fcb28941de363be2aca729934e8257949731cdd1a4d1e5db53b53cfb665b9",
+  "scale": 2.151471,
+  "offset": {
+    "x": 0,
+    "y": 0.07,
+    "z": 0
+  },
+  "anchor": null,
+  "actions": {
+    "idle": {
+      "fps": 3,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "move": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "hit": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "attack": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    },
+    "effect": {
+      "fps": 6,
+      "offset": {
+        "x": 0,
+        "y": 0
+      }
+    }
+  },
+  "frames": {},
+  "bodyKind": "floating",
+  "artworkFacesRight": true,
+  "prompt": {
+    "base": "Unit FNG-026 / 谕晶 / Oracle Crystal Spirit.\nUse the following card description ONLY for identity, species, costume and primary equipment. Disregard its portrait composition, scenery, cinematic viewpoint and pose:\nStandalone vertical game artwork for Time-Block Hero, portrait 5:8 composition. A high-order Oracle Crystal Spirit floats inside the immense living crystalline cavern of the crystal mother planet: a warm opalescent amber-and-rose tetrahedral consciousness core containing a softly swirling photon mind, surrounded by seven slender blade-like and plate-like crystals moving on interlocking inclined orbits. Their temporary alignment forms an abstract probability lens through which several faint possible scenes refract and one clear possibility resolves above the core, expressing its ability to discover and reveal an answer without literal cards or UI. Use an ambitious layered Epic composition, exceptional mineral detail, champagne-gold and pale-rose light, and vast crystalline strata pulsing like a planetary neural network; preserve the oracle and its decisive orbital alignment inside the upper square crop. Artwork only; no text, runes, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+    "notes": "Communicate high-tier presence through broad, decisive silhouette and defining equipment. The large on-board scale is configured separately; never shrink or enlarge individual animation frames.",
+    "actions": {}
+  },
+  "exportReady": true,
+  "sizeClass": "heavy",
+  "provenance": {
+    "source": "ACv9 accepted overall collection; ACv10 explicit calibration",
+    "individualHumanApproval": false,
+    "sourceBodyType": "floating-crystal",
+    "generationPromptPath": "./assets/chibi-prompts/d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d.txt",
+    "targetVisibleIdleHeightInTiles": 1.4
+  }
+}
