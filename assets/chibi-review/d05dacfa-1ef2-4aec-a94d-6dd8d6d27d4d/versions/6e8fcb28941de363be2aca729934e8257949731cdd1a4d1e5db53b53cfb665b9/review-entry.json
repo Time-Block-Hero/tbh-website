@@ -1,0 +1,326 @@
+{
+  "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+  "status": "generated",
+  "atlasSrc": "./assets/chibi-review/d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d/atlas.png",
+  "atlasSha256": "6e8fcb28941de363be2aca729934e8257949731cdd1a4d1e5db53b53cfb665b9",
+  "frameCount": 9,
+  "layout": {
+    "schemaVersion": 1,
+    "sourceWidth": 1254,
+    "sourceHeight": 1254,
+    "columns": 3,
+    "rows": 3,
+    "nominalCellWidth": 418.0,
+    "nominalCellHeight": 418.0,
+    "frames": [
+      {
+        "rect": {
+          "x": 0,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.638756,
+          "y": 0.0574163
+        }
+      },
+      {
+        "rect": {
+          "x": 418,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.6028708,
+          "y": 0.0502392
+        }
+      },
+      {
+        "rect": {
+          "x": 836,
+          "y": 836,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.6088517,
+          "y": 0.0478469
+        }
+      },
+      {
+        "rect": {
+          "x": 0,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.6818182,
+          "y": 0.15311
+        }
+      },
+      {
+        "rect": {
+          "x": 418,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.5562201,
+          "y": 0.1507177
+        }
+      },
+      {
+        "rect": {
+          "x": 836,
+          "y": 418,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.4521531,
+          "y": 0.1578947
+        }
+      },
+      {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.6913876,
+          "y": 0.2177033
+        }
+      },
+      {
+        "rect": {
+          "x": 418,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.4366029,
+          "y": 0.2751196
+        }
+      },
+      {
+        "rect": {
+          "x": 836,
+          "y": 0,
+          "width": 418,
+          "height": 418
+        },
+        "pivot": {
+          "x": 0.5011962,
+          "y": 0.2392344
+        }
+      }
+    ],
+    "clips": {
+      "idle": {
+        "frames": [
+          0,
+          1,
+          2
+        ],
+        "fps": 3,
+        "loop": true
+      },
+      "move": {
+        "frames": [
+          3,
+          4,
+          5
+        ],
+        "fps": 6,
+        "loop": true
+      },
+      "hit": {
+        "frames": [
+          6
+        ],
+        "fps": 6,
+        "loop": false
+      },
+      "attack": {
+        "frames": [
+          7
+        ],
+        "fps": 6,
+        "loop": false
+      },
+      "effect": {
+        "frames": [
+          8
+        ],
+        "fps": 6,
+        "loop": false
+      }
+    }
+  },
+  "analysis": {
+    "xCuts": [
+      0,
+      418,
+      836,
+      1254
+    ],
+    "rowXCuts": [
+      [
+        0,
+        418,
+        836,
+        1254
+      ],
+      [
+        0,
+        418,
+        836,
+        1254
+      ],
+      [
+        0,
+        418,
+        836,
+        1254
+      ]
+    ],
+    "yCutsTopOrigin": [
+      0,
+      418,
+      836,
+      1254
+    ],
+    "columnYCutsTopOrigin": null,
+    "partitionStrategy": "row-first",
+    "warnings": [],
+    "outerEdgeContacts": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "frameMetrics": [
+      {
+        "index": 0,
+        "opaqueBoundsTopOrigin": [
+          84,
+          122,
+          383,
+          394
+        ],
+        "visibleWidthInTiles": 0.787,
+        "visibleHeightInTiles": 0.716
+      },
+      {
+        "index": 1,
+        "opaqueBoundsTopOrigin": [
+          78,
+          125,
+          353,
+          397
+        ],
+        "visibleWidthInTiles": 0.724,
+        "visibleHeightInTiles": 0.716
+      },
+      {
+        "index": 2,
+        "opaqueBoundsTopOrigin": [
+          63,
+          125,
+          347,
+          398
+        ],
+        "visibleWidthInTiles": 0.747,
+        "visibleHeightInTiles": 0.718
+      },
+      {
+        "index": 3,
+        "opaqueBoundsTopOrigin": [
+          81,
+          85,
+          392,
+          354
+        ],
+        "visibleWidthInTiles": 0.818,
+        "visibleHeightInTiles": 0.708
+      },
+      {
+        "index": 4,
+        "opaqueBoundsTopOrigin": [
+          65,
+          81,
+          380,
+          355
+        ],
+        "visibleWidthInTiles": 0.829,
+        "visibleHeightInTiles": 0.721
+      },
+      {
+        "index": 5,
+        "opaqueBoundsTopOrigin": [
+          52,
+          102,
+          364,
+          352
+        ],
+        "visibleWidthInTiles": 0.821,
+        "visibleHeightInTiles": 0.658
+      },
+      {
+        "index": 6,
+        "opaqueBoundsTopOrigin": [
+          97,
+          57,
+          369,
+          327
+        ],
+        "visibleWidthInTiles": 0.716,
+        "visibleHeightInTiles": 0.711
+      },
+      {
+        "index": 7,
+        "opaqueBoundsTopOrigin": [
+          63,
+          80,
+          412,
+          303
+        ],
+        "visibleWidthInTiles": 0.918,
+        "visibleHeightInTiles": 0.587
+      },
+      {
+        "index": 8,
+        "opaqueBoundsTopOrigin": [
+          82,
+          40,
+          346,
+          318
+        ],
+        "visibleWidthInTiles": 0.695,
+        "visibleHeightInTiles": 0.732
+      }
+    ],
+    "pivotMethod": "opaque bottom contact; inspect/override pivots for airborne poses"
+  },
+  "qaNotes": [],
+  "provenance": {
+    "sourceCardId": "FNG-026",
+    "sourceArtId": "oracle-crystal-spirit-01",
+    "styleReferenceSha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e",
+    "note": "本轮按洛岚黄金参考重绘；原生透明图集，尚未完成美术审阅"
+  },
+  "display": {
+    "profile": "wide",
+    "heightInTiles": 1.328094,
+    "referenceFrame": 0,
+    "targetVisibleHeightInTiles": 1.036842,
+    "method": "first-idle body; one shared scale for all nine frames"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "sourceWidth": 1254,
+  "sourceHeight": 1254,
+  "columns": 3,
+  "rows": 3,
+  "nominalCellWidth": 418.0,
+  "nominalCellHeight": 418.0,
+  "frames": [
+    {
+      "rect": {
+        "x": 0,
+        "y": 816,
+        "width": 418,
+        "height": 438
+      },
+      "pivot": {
+        "x": 0.5574163,
+        "y": 0.0068493
+      }
+    },
+    {
+      "rect": {
+        "x": 418,
+        "y": 816,
+        "width": 428,
+        "height": 438
+      },
+      "pivot": {
+        "x": 0.5116822,
+        "y": 0.0022831
+      }
+    },
+    {
+      "rect": {
+        "x": 846,
+        "y": 816,
+        "width": 408,
+        "height": 438
+      },
+      "pivot": {
+        "x": 0.4546569,
+        "y": 0.0022831
+      }
+    },
+    {
+      "rect": {
+        "x": 0,
+        "y": 415,
+        "width": 418,
+        "height": 401
+      },
+      "pivot": {
+        "x": 0.6495215,
+        "y": 0.0049875
+      }
+    },
+    {
+      "rect": {
+        "x": 418,
+        "y": 415,
+        "width": 428,
+        "height": 401
+      },
+      "pivot": {
+        "x": 0.6261682,
+        "y": 0.0024938
+      }
+    },
+    {
+      "rect": {
+        "x": 846,
+        "y": 415,
+        "width": 408,
+        "height": 401
+      },
+      "pivot": {
+        "x": 0.6188725,
+        "y": 0.0049875
+      }
+    },
+    {
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 418,
+        "height": 415
+      },
+      "pivot": {
+        "x": 0.5430622,
+        "y": 0.139759
+      }
+    },
+    {
+      "rect": {
+        "x": 418,
+        "y": 0,
+        "width": 428,
+        "height": 415
+      },
+      "pivot": {
+        "x": 0.4731308,
+        "y": 0.1421687
+      }
+    },
+    {
+      "rect": {
+        "x": 846,
+        "y": 0,
+        "width": 408,
+        "height": 415
+      },
+      "pivot": {
+        "x": 0.5147059,
+        "y": 0.1421687
+      }
+    }
+  ],
+  "clips": {
+    "idle": {
+      "frames": [
+        0,
+        1,
+        2
+      ],
+      "fps": 3,
+      "loop": true
+    },
+    "move": {
+      "frames": [
+        3,
+        4,
+        5
+      ],
+      "fps": 6,
+      "loop": true
+    },
+    "hit": {
+      "frames": [
+        6
+      ],
+      "fps": 6,
+      "loop": false
+    },
+    "attack": {
+      "frames": [
+        7
+      ],
+      "fps": 6,
+      "loop": false
+    },
+    "effect": {
+      "frames": [
+        8
+      ],
+      "fps": 6,
+      "loop": false
+    }
+  }
+}

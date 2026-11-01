@@ -1,0 +1,403 @@
+{
+  "schemaVersion": 1,
+  "note": "展示尺度分类，不改变卡牌设计；从首待机图形测量一次，整套九帧共享scale。",
+  "wideTargetWidthInTiles": 0.95,
+  "profiles": {
+    "f14f6fca-6862-441b-9254-8b3df5556389": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-001"
+    },
+    "0166c132-1962-4fc7-9aa6-353ecdba8eab": {
+      "profile": "wide",
+      "sourceCardId": "FNG-002"
+    },
+    "094a41e6-d797-42ea-85ac-d44bd6049c47": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-003"
+    },
+    "1529f937-224e-4d19-a272-0740e98b649e": {
+      "profile": "wide",
+      "sourceCardId": "FNG-008"
+    },
+    "dd21e939-7227-4e9e-87ef-e020d66c80ca": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-009"
+    },
+    "3b4ba62f-c700-4411-8c51-a901df1cb57c": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-013"
+    },
+    "97538b9d-68f1-4a74-861c-3b6a517890ba": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-015"
+    },
+    "dadb0449-68f4-49d4-8fa5-bfb29099e3e0": {
+      "profile": "wide",
+      "sourceCardId": "FNG-017"
+    },
+    "cdacfc95-dbd2-41c6-bacb-ba32a3df7992": {
+      "profile": "wide",
+      "sourceCardId": "FNG-018"
+    },
+    "9e62707e-3614-45ea-8480-4d17d452cd2d": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-020"
+    },
+    "774620fa-d879-4c02-8c43-bde70f4c2bb3": {
+      "profile": "wide",
+      "sourceCardId": "FNG-021"
+    },
+    "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-022"
+    },
+    "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65": {
+      "profile": "wide",
+      "sourceCardId": "FNG-024"
+    },
+    "bf071411-bdf6-41bb-847f-0e836ffffa17": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-025"
+    },
+    "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d": {
+      "profile": "wide",
+      "sourceCardId": "FNG-026"
+    },
+    "df060f7e-59a2-4f3b-8a60-572fbed47dec": {
+      "profile": "wide",
+      "sourceCardId": "FNG-027"
+    },
+    "fe9569d6-b84c-4fe5-bcd4-03054d21ded5": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-028"
+    },
+    "1be158d1-50ba-4f53-a52f-08696554c091": {
+      "profile": "wide",
+      "sourceCardId": "FNG-029"
+    },
+    "2946ca82-3e15-40d8-93f8-55acfad43645": {
+      "profile": "wide",
+      "sourceCardId": "FNG-030"
+    },
+    "15ce0bd0-83ad-413b-9cc1-829390efaef4": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-031"
+    },
+    "619301f9-72b0-4f86-a36c-e55046d138f5": {
+      "profile": "wide",
+      "sourceCardId": "FNG-032"
+    },
+    "9818f4db-8848-4fc7-8c6e-79fadd38751f": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-033"
+    },
+    "6b3fbb6a-30bf-4385-9462-2677f99d6b53": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-035"
+    },
+    "fec9be8d-5655-413d-aaf2-e1a3027034c7": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-036"
+    },
+    "080140fa-2ebe-45ad-b64f-05f10904ac64": {
+      "profile": "wide",
+      "sourceCardId": "FNG-037"
+    },
+    "455cde9d-fbe7-4a12-94a9-df76ed1b2aca": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-039"
+    },
+    "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0": {
+      "profile": "wide",
+      "sourceCardId": "FNG-041"
+    },
+    "c6b00125-47ad-438e-b1b5-721fce7ccf49": {
+      "profile": "humanoid",
+      "sourceCardId": "FNG-042"
+    },
+    "068fe88a-04a3-4eb7-abb3-d0fea5c8f497": {
+      "profile": "wide",
+      "sourceCardId": "FNG-UN-001"
+    },
+    "b60225b4-f701-49cd-875a-ef77bb0eba0a": {
+      "profile": "wide",
+      "sourceCardId": "FNG-UN-002"
+    },
+    "3151edbb-b703-4171-9e8f-e6b54e7bb8da": {
+      "profile": "wide",
+      "sourceCardId": "FNG-UN-007"
+    },
+    "2a51f1cc-ab38-4d84-ba97-aca096943395": {
+      "profile": "wide",
+      "sourceCardId": "FNG-UN-008"
+    },
+    "e66c2fd5-ee14-4cb1-b55e-094324214830": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-000"
+    },
+    "ea18dc9c-79f3-46e5-8db8-8bf1211b6073": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-001"
+    },
+    "70f56934-997a-4eaa-b34b-1745d6ac06f7": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-002"
+    },
+    "ff002f60-4a64-4d42-96f1-ba163bb8e59c": {
+      "profile": "wide",
+      "sourceCardId": "SA-003"
+    },
+    "63699e58-6aa0-4012-b096-364a7cff20e7": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-004"
+    },
+    "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-004-01"
+    },
+    "d0adc8fd-8c03-47a6-ae6b-bff72b4a9405": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-007"
+    },
+    "bfa8414e-2d7e-4b70-b9c9-8a5fe5ae346f": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-009"
+    },
+    "c5972274-f51c-4859-ae8a-cd1f5739d941": {
+      "profile": "wide",
+      "sourceCardId": "SA-011-01"
+    },
+    "ca101a43-d6c8-4289-b967-947e7212b941": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-013"
+    },
+    "acfbc239-3f00-48a8-ba1a-b264535c9c8f": {
+      "profile": "wide",
+      "sourceCardId": "SA-014"
+    },
+    "385f1bae-5ade-411d-abd1-850d74944004": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-015"
+    },
+    "8e486b7d-4654-40fb-baf5-c52b38010dd4": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-016"
+    },
+    "4eddea4a-df91-425d-bbdf-b216da8381d8": {
+      "profile": "wide",
+      "sourceCardId": "SA-016-01"
+    },
+    "1a8e356b-c72a-4181-8aa1-f2426c52cc8f": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-017"
+    },
+    "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-018"
+    },
+    "0dde3972-5b69-4c3c-a17b-855656bf15cf": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-019"
+    },
+    "ff038236-2919-4bbc-9ca7-58c132b2c7fb": {
+      "profile": "humanoid",
+      "sourceCardId": "SA-020"
+    },
+    "b85a69b8-6241-45c9-a168-a10282390c44": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-000"
+    },
+    "a1edce46-f210-4215-ab59-f35a5173c50d": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-001"
+    },
+    "233e64f0-fc55-44a4-af3a-10222df336c4": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-003"
+    },
+    "4c2033a5-fb41-4c96-b540-16572b690c70": {
+      "profile": "wide",
+      "sourceCardId": "SC-005"
+    },
+    "69f1c181-ade4-485e-9923-e5949cda7f93": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-006"
+    },
+    "204a68df-1ff8-4d10-9309-aafbd90d6079": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-007"
+    },
+    "3c14c875-f4ce-4545-88a7-aa57b0ae9b92": {
+      "profile": "wide",
+      "sourceCardId": "SC-009"
+    },
+    "b5e0ec0b-e614-4862-9eff-bba73677708b": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-015"
+    },
+    "43b464d4-781c-4390-80eb-d926b7dea2d9": {
+      "profile": "wide",
+      "sourceCardId": "SC-016"
+    },
+    "4b42977a-a289-4520-8aec-8439b6edc5a3": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-018"
+    },
+    "103f0af6-2a92-471e-be1a-e5fad6fa5735": {
+      "profile": "humanoid",
+      "sourceCardId": "SC-021"
+    },
+    "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-000"
+    },
+    "15cbb572-6a6a-47f0-ae48-561df3be738c": {
+      "profile": "wide",
+      "sourceCardId": "AI-001"
+    },
+    "e1362804-dea0-49b5-9513-8c1317369f9e": {
+      "profile": "wide",
+      "sourceCardId": "AI-002"
+    },
+    "a60555e6-d405-47de-bdff-c84031d53448": {
+      "profile": "wide",
+      "sourceCardId": "AI-003"
+    },
+    "602b4a3a-0b69-4816-80a0-94a66bd61d1b": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-004"
+    },
+    "3e56ca22-efd1-4cd0-822f-beceb830e41d": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-005"
+    },
+    "0764d0f5-4050-49ab-924f-2485c4381e26": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-006"
+    },
+    "430888e7-5e44-4599-98d5-7a8c0824b40f": {
+      "profile": "wide",
+      "sourceCardId": "AI-007"
+    },
+    "0f329ffc-f031-448f-aaa0-4f4456f81298": {
+      "profile": "wide",
+      "sourceCardId": "AI-008"
+    },
+    "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4": {
+      "profile": "wide",
+      "sourceCardId": "AI-009"
+    },
+    "eae5f157-9d0f-41c4-a674-a989dc4007d5": {
+      "profile": "wide",
+      "sourceCardId": "AI-013"
+    },
+    "0be330dd-7d45-42a8-8235-ac57e8cf9572": {
+      "profile": "wide",
+      "sourceCardId": "AI-015"
+    },
+    "341ea244-575c-445b-b1a6-ea761c92145f": {
+      "profile": "wide",
+      "sourceCardId": "AI-016"
+    },
+    "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-017"
+    },
+    "0bd031d4-49d5-4720-b75b-58eb95690fb1": {
+      "profile": "wide",
+      "sourceCardId": "AI-018"
+    },
+    "3d1865c5-b2e7-4003-96d1-07223a482030": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-019"
+    },
+    "bdd6fa88-21f9-4eed-8248-00e550344739": {
+      "profile": "humanoid",
+      "sourceCardId": "AI-020"
+    },
+    "ff153fcb-5387-455c-b673-ecf2d9ddfbc2": {
+      "profile": "wide",
+      "sourceCardId": "AI-020-01"
+    },
+    "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5": {
+      "profile": "wide",
+      "sourceCardId": "AI-020-02"
+    },
+    "0580aac7-5301-43db-b2d9-1bc56b2e75b8": {
+      "profile": "wide",
+      "sourceCardId": "AI-021"
+    },
+    "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-000"
+    },
+    "d65e0578-98e4-46af-aeb2-134cae1a812b": {
+      "profile": "wide",
+      "sourceCardId": "MCC-001"
+    },
+    "84ae8db2-69df-4ffb-9010-16d3551eda58": {
+      "profile": "wide",
+      "sourceCardId": "MCC-002"
+    },
+    "7b3a2e75-79de-4c35-8bf1-29a4987c8187": {
+      "profile": "wide",
+      "sourceCardId": "MCC-003"
+    },
+    "faba227c-aad4-425d-b905-a7c62f14a94e": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-004"
+    },
+    "2d4d2da4-9358-485f-a2f5-be712ae86c9e": {
+      "profile": "wide",
+      "sourceCardId": "MCC-005"
+    },
+    "675083cf-30bf-49c8-b7bf-d18fe67fe493": {
+      "profile": "wide",
+      "sourceCardId": "MCC-006"
+    },
+    "731b9886-bc52-4778-b3ea-3ec7319b5d12": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-007"
+    },
+    "c1a2c9af-3f22-4f77-993c-c6e4b1732695": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-009"
+    },
+    "5121261f-8b88-4bb0-b882-717b44188f74": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-009-01"
+    },
+    "8f084b1a-e770-413d-800e-61165fc3b4d9": {
+      "profile": "wide",
+      "sourceCardId": "MCC-010"
+    },
+    "0c3119ed-d309-4a38-b760-1839d8bae416": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-011"
+    },
+    "274a5d57-9246-4b40-a51a-3bc473e7193b": {
+      "profile": "wide",
+      "sourceCardId": "MCC-012"
+    },
+    "21401534-7b13-41d1-a4c4-e52108726727": {
+      "profile": "wide",
+      "sourceCardId": "MCC-012-01"
+    },
+    "da873ed9-d6f2-4ab0-a01f-b0a39971a6b4": {
+      "profile": "wide",
+      "sourceCardId": "MCC-013"
+    },
+    "b6326476-ec83-478d-afcd-91b3cec23740": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-014"
+    },
+    "1b818098-53a5-4d54-8fb1-01bcdf9f4785": {
+      "profile": "wide",
+      "sourceCardId": "MCC-018"
+    },
+    "7522e0e5-1fb6-4a32-914d-992aab4e3c62": {
+      "profile": "humanoid",
+      "sourceCardId": "MCC-020"
+    }
+  }
+}

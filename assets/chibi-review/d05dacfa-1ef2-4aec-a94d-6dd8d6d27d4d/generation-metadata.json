@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "id": "FNG-026",
+  "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+  "englishName": "Oracle Crystal Spirit",
+  "status": "generated",
+  "approvalStatus": "pending-user-review",
+  "atlasSha256": "4a66f118e69d1f5681c853604d53ecc9e4363f9e5477d3a48cae7f387286fbca",
+  "sourceImagePath": "/Users/jesusmicah/.codex/generated_images/01a16da4-554f-7f83-9ab3-efce1e75586b/exec-4cc54316-c674-42cb-b735-a666149f2cf8.png",
+  "actualSize": [
+    1254,
+    1254
+  ],
+  "mode": "RGBA",
+  "generationMode": "built-in-imagegen",
+  "generatedAtUtc": "2026-10-25T22:41:11.753277+00:00",
+  "promptFile": "prompt.txt",
+  "additionalPromptFiles": [],
+  "sourceCardArt": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/.worktrees/chibi-review-website/assets/card-art/oracle-crystal-spirit/oracle-crystal-spirit-01.png",
+    "sha256": "1352d6376cf07a89d0b46448f9fd0b329d42de6be798ef35fd9380b655db1dd4"
+  },
+  "styleReference": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/artifacts/chibi-gold-standard/luolan-gold-reference.png",
+    "sha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e",
+    "role": "2D chibi linework and quality only"
+  },
+  "previousAtlas": {
+    "path": "/Users/jesusmicah/Documents/Time_Block_Hero/.worktrees/chibi-review-website/assets/chibi-review/d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d/atlas.png",
+    "sha256": "6e8fcb28941de363be2aca729934e8257949731cdd1a4d1e5db53b53cfb665b9",
+    "preserved": true
+  },
+  "sourceArtDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition. A high-order Oracle Crystal Spirit floats inside the immense living crystalline cavern of the crystal mother planet: a warm opalescent amber-and-rose tetrahedral consciousness core containing a softly swirling photon mind, surrounded by seven slender blade-like and plate-like crystals moving on interlocking inclined orbits. Their temporary alignment forms an abstract probability lens through which several faint possible scenes refract and one clear possibility resolves above the core, expressing its ability to discover and reveal an answer without literal cards or UI. Use an ambitious layered Epic composition, exceptional mineral detail, champagne-gold and pale-rose light, and vast crystalline strata pulsing like a planetary neural network; preserve the oracle and its decisive orbital alignment inside the upper square crop. Artwork only; no text, runes, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
+  "alpha": {
+    "fullyTransparentFraction": 0.5379372928478947,
+    "nearOpaque240PlusFraction": 0.2726096268654818,
+    "nativeRGBA": true
+  },
+  "layoutAnalysis": {
+    "xCuts": [
+      0,
+      418,
+      864,
+      1254
+    ],
+    "rowXCuts": [
+      [
+        0,
+        418,
+        864,
+        1254
+      ],
+      [
+        0,
+        418,
+        864,
+        1254
+      ],
+      [
+        0,
+        418,
+        864,
+        1254
+      ]
+    ],
+    "yCutsTopOrigin": [
+      0,
+      418,
+      820,
+      1254
+    ],
+    "columnYCutsTopOrigin": null,
+    "partitionStrategy": "row-first",
+    "warnings": [],
+    "outerEdgeContacts": {
+      "top": 0,
+      "bottom": 0,
+      "left": 0,
+      "right": 0
+    },
+    "frameMetrics": [
+      {
+        "index": 0,
+        "opaqueBoundsTopOrigin": [
+          39,
+          39,
+          386,
+          395
+        ],
+        "visibleWidthInTiles": 0.913,
+        "visibleHeightInTiles": 0.937
+      },
+      {
+        "index": 1,
+        "opaqueBoundsTopOrigin": [
+          43,
+          38,
+          378,
+          395
+        ],
+        "visibleWidthInTiles": 0.882,
+        "visibleHeightInTiles": 0.939
+      },
+      {
+        "index": 2,
+        "opaqueBoundsTopOrigin": [
+          18,
+          51,
+          349,
+          387
+        ],
+        "visibleWidthInTiles": 0.871,
+        "visibleHeightInTiles": 0.884
+      },
+      {
+        "index": 3,
+        "opaqueBoundsTopOrigin": [
+          38,
+          53,
+          408,
+          357
+        ],
+        "visibleWidthInTiles": 0.974,
+        "visibleHeightInTiles": 0.8
+      },
+      {
+        "index": 4,
+        "opaqueBoundsTopOrigin": [
+          32,
+          59,
+          413,
+          352
+        ],
+        "visibleWidthInTiles": 1.003,
+        "visibleHeightInTiles": 0.771
+      },
+      {
+        "index": 5,
+        "opaqueBoundsTopOrigin": [
+          14,
+          47,
+          363,
+          359
+        ],
+        "visibleWidthInTiles": 0.918,
+        "visibleHeightInTiles": 0.821
+      },
+      {
+        "index": 6,
+        "opaqueBoundsTopOrigin": [
+          62,
+          26,
+          380,
+          362
+        ],
+        "visibleWidthInTiles": 0.837,
+        "visibleHeightInTiles": 0.884
+      },
+      {
+        "index": 7,
+        "opaqueBoundsTopOrigin": [
+          18,
+          84,
+          444,
+          335
+        ],
+        "visibleWidthInTiles": 1.121,
+        "visibleHeightInTiles": 0.661
+      },
+      {
+        "index": 8,
+        "opaqueBoundsTopOrigin": [
+          7,
+          2,
+          375,
+          358
+        ],
+        "visibleWidthInTiles": 0.968,
+        "visibleHeightInTiles": 0.937
+      }
+    ],
+    "pivotMethod": "opaque bottom contact; inspect/override pivots for airborne poses"
+  },
+  "visualReview": [
+    "更宽、更分层的高阶晶刃轮廓；玫瑰琥珀核心与内部光子旋涡加强身份。",
+    "七片卫星晶刃按固定设计生成；转向帧存在透视遮挡，动态连续性仍待网页逐帧审阅。"
+  ],
+  "pixelEditsAfterGeneration": false,
+  "knownLimitations": [
+    "AI-generated pose continuity requires playback inspection; no user acceptance claimed."
+  ]
+}

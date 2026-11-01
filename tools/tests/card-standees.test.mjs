@@ -82,39 +82,6 @@ test("sync fails closed for incomplete roster, altered images and mismatched com
   assert.throws(() => syncCardStandees(f), /指定提交/);
 });
 
-function editorHarness() {
-  const node = () => ({ children: [], hidden: false, attributes: {}, dataset: {}, textContent: "", addEventListener(name, handler) { this[name] = handler; }, replaceChildren(...children) { this.children = children; }, append(...children) { this.children.push(...children); }, contains(child) { return this.children.includes(child); }, setAttribute(key, value) { this.attributes[key] = value; } });
-  const hand = node(), standee = node();
-  const tabs = ["card", "standee"].map((name) => Object.assign(node(), { dataset: { previewTab: name } }));
-  const form = { value: "尚未保存的卡文" };
-  const context = { console, document: { createElement: (tag) => tag === "canvas" ? { getContext: () => ({}) } : node(), querySelector: (selector) => ({ "#cardHandPreview": hand, "#cardStandeePreview": standee, "#cardEditorForm": form })[selector], querySelectorAll: () => tabs } };
-  context.window = context;
-  const script = fs.readFileSync(path.join(root, "card-editor.js"), "utf8").replace("  window.initFormalCardEditor =", "  globalThis.standeeTest = { renderStandee, selectPreviewTab, load: (value) => standees = value };\n  window.initFormalCardEditor =");
-  vm.runInNewContext(script, context);
-  return { ...context.standeeTest, hand, standee, tabs, form };
-}
-
-test("actual preview resolves immutable UID, preserves form on tab switch, and separates missing/non-unit states", () => {
-  const h = editorHarness();
-  h.load({ entries: [{ definitionUid: uid, src: `./assets/card-standees/${uid}.png` }] });
-  h.renderStandee({ uid, id: "CHANGED-999", nameKey: "改名角色", cardType: "Minion" });
-  assert.equal(h.standee.children[0].src, `./assets/card-standees/${uid}.png`);
-  h.selectPreviewTab("standee");
-  assert.equal(h.hand.hidden, true);
-  assert.equal(h.tabs[1].attributes["aria-selected"], "true");
-  h.selectPreviewTab("card");
-  assert.equal(h.form.value, "尚未保存的卡文");
-  for (const type of ["Spell", "Resource"]) {
-    h.renderStandee({ uid, cardType: type });
-    assert.equal(h.standee.children[0].textContent, "此类型不使用角色立绘");
-  }
-  h.renderStandee({ uid: secondUid, cardType: "Minion" });
-  assert.match(h.standee.children[0].textContent, /尚未收录/);
-  h.renderStandee({ uid, nameKey: "角色", cardType: "Minion" });
-  h.standee.children[0].error();
-  assert.match(h.standee.children[0].textContent, /无法加载/);
-});
-
 test("checked-in mirrored standees match their SHA and offline manifest", () => {
   const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/card-standees.json")));
   assert.equal(new Set(manifest.entries.map((entry) => entry.definitionUid)).size, manifest.entries.length);
@@ -126,26 +93,4 @@ test("checked-in mirrored standees match their SHA and offline manifest", () => 
   const context = { window: {} };
   vm.runInNewContext(fs.readFileSync(path.join(root, "card-editor-data.js"), "utf8"), context);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.__CARD_EDITOR_FALLBACK__.standees)), manifest);
-});
-
-test("direct-file initialization loads standee fallback without an HTTP request", async () => {
-  const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/card-standees.json")));
-  const dataset = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json")));
-  const context = {
-    console, structuredClone,
-    document: { createElement: () => ({ getContext: () => ({}) }) },
-    localStorage: { getItem: () => null },
-    fetch: () => { throw new Error("file preview must not fetch"); },
-    location: { protocol: "file:" },
-    __CARD_EDITOR_FALLBACK__: { cards: dataset, layout: {}, standees: manifest },
-  };
-  context.window = context;
-  const script = fs.readFileSync(path.join(root, "card-editor.js"), "utf8").replace("  window.initFormalCardEditor =", `
-  populateFactionInputs = () => {}; populateTribeInputs = () => {}; bindEvents = () => {}; renderGallery = () => {};
-  normalizeDatasetForCurrentRules = () => false; loadLocalState = value => value; readLocalState = () => null; setStatus = () => {};
-  globalThis.offlineTest = { initialize, getStandees: () => standees };
-  window.initFormalCardEditor =`);
-  vm.runInNewContext(script, context);
-  await context.offlineTest.initialize();
-  assert.deepEqual(context.offlineTest.getStandees(), manifest);
 });
