@@ -15787,9 +15787,7 @@
                               {
                                 "field": "cardInstanceId",
                                 "op": "Equals",
-                                "value": {
-                                  "var": "selectedCard"
-                                }
+                                "value": "$selectedCard"
                               }
                             ]
                           },
@@ -23158,7 +23156,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "cad8e147fed639611163c43927b497efe3732d55d4902510f41a2d1fb45833c9",
+    "cardsSha256": "f76c19cc0ee275bc6e7cae1b1a8dab480fcc843c73f4de2068d7d9d1178c79ef",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
@@ -31307,9 +31305,7 @@
                             {
                               "field": "cardInstanceId",
                               "op": "Equals",
-                              "value": {
-                                "var": "selectedCard"
-                              }
+                              "value": "$selectedCard"
                             }
                           ]
                         },
@@ -31385,7 +31381,7 @@
           }
         ]
       },
-      "executionSha256": "b52e5652df1977e016ee3b848f295a5098e174189d903abc3ea368327a1e5013",
+      "executionSha256": "a7964ba852d4f2b15e1c3f6b3ebeed8b579db024fd6c63ed94ea282c5e9ff003",
       "displayId": "AI-010",
       "name": "超载运转",
       "nameEn": "Overdrive Operation",

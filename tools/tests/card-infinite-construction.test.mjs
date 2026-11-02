@@ -123,7 +123,7 @@ test('overload chooses a real owned building and locks its new battlefield entry
   assert.deepEqual(prepare.steps[0].select.scope.filters, [{ field: 'cardType', op: 'Equals', value: 'Minion' }, { field: 'tribes', op: 'Contains', value: '建筑' }]);
   assert.equal(prepare.steps[1].select.scope.relation, 'Friendly');
   assert.equal(packages('AI-010', 'TransferCard')[0].destinationZone, 'Battlefield');
-  assert.ok(objects(c.execution.plans).some(x => x.field === 'cardInstanceId' && x.value.var === 'selectedCard'));
+  assert.ok(objects(c.execution.plans).some(x => x.field === 'cardInstanceId' && x.value === '$selectedCard'));
   assert.deepEqual(packages('AI-010', 'ScheduleBody'), [{ timing: 'EndOfNextRound', bodyPlanRef: c.uid + ':delayed-destruction:body' }]);
   assert.deepEqual(packages('AI-010', 'Destroy'), [{ target: '$placedEntity' }]);
   assert.deepEqual(packages('AI-010', 'GrantTriggeredEffect'), []);
