@@ -394,7 +394,7 @@
       "durability": 0,
       "rulesText": "入场：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。",
       "arrows": [
-        "E"
+        "S"
       ],
       "tags": [],
       "artPath": "CardArt/card_013",
@@ -407,7 +407,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "2844622bd15ed312a40634470e0cf50bc2489c2f6035817a24436913a5bfb272",
+        "reviewedDesignHash": "f6b9b958ea845fee40c0b95e61c8423a6ff75c89c0c932f421fd8ce198fd00af",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -611,7 +611,7 @@
       "durability": 0,
       "rulesText": "入场：[快速] 令一个单位获得1护甲。",
       "arrows": [
-        "S"
+        "E"
       ],
       "tags": [],
       "artPath": "CardArt/card_019",
@@ -624,7 +624,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "8af8db6b638c818673e58a8bdbe34ae0c4bdab9ceb9dd3c5c486af9968f92d2c",
+        "reviewedDesignHash": "01eea3c42ff1a47bd4bb95ae7b9ce46556162d907d8e1cbfe7fb35670e5f3f34",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -1139,7 +1139,7 @@
       "durability": 0,
       "rulesText": "入场：[快速] 以移除一张手牌为成本，抽一张牌。",
       "arrows": [
-        "W"
+        "NW"
       ],
       "tags": [],
       "artPath": "CardArt/card_023",
@@ -1152,7 +1152,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "a9f7a5989d92c76e2fe580744d39897ffb55ee9bc91461b9a070bc17b515af36",
+        "reviewedDesignHash": "eefe5d237dbcc3ea31ff497ebd49965c5997e4f3612b2cd70056418c77b4d0ff",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -2348,7 +2348,7 @@
       "health": 3,
       "movement": 4,
       "durability": 0,
-      "rulesText": "冲撞移动。",
+      "rulesText": "[冲撞移动]",
       "arrows": [],
       "tribes": [
         "奇兽"
@@ -2364,7 +2364,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5922d568e03a05b3798aa94952181100b05471868a91ccede1c91365af82d177",
+        "reviewedDesignHash": "d35d6d977f3493692f9c34ac99a8672ab4c134dc019666c585b6420b6e322ce0",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -2537,7 +2537,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+      "rulesText": "入场：在你的领土内随机选择最多3个完全空格，各生成1张「遗失的智慧」。",
       "arrows": [
         "NW"
       ],
@@ -2552,7 +2552,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "9b6463d6b245f49749bc61cd3f0c04090468eec86992bd58fea644a2408e84c2",
+        "reviewedDesignHash": "e4c756b5bdf842170cbb31c158fbadb75c2e09b49ea0a164c74c820ba5a6c46d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -2668,7 +2668,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+              "rawRulesText": "入场：在你的领土内随机选择最多3个完全空格，各生成1张「遗失的智慧」。",
               "sourceClauseIds": [
                 "clause-01"
               ],
@@ -2700,14 +2700,14 @@
                   "policy": {
                     "kind": "RandomSelect",
                     "min": 0,
-                    "max": 2,
+                    "max": 3,
                     "canCancel": false
                   }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+              "rawRulesText": "入场：在你的领土内随机选择最多3个完全空格，各生成1张「遗失的智慧」。",
               "sourceClauseIds": [
                 "clause-01"
               ],
@@ -3183,7 +3183,7 @@
       "health": 3,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[攻击范围: 3]",
+      "rulesText": "[攻击范围: 2]",
       "arrows": [],
       "tribes": [
         "晶灵"
@@ -3199,7 +3199,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "9ac835dbef2d0a9d87ff589aa310af7dca0f691fef50e2ab07d85130f1457486",
+        "reviewedDesignHash": "99d93fe62b7d6039fc1a1664f387da2f182c06a1c0994f8d4ec1869b9b1a8c07",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -3211,7 +3211,7 @@
           "continuousEffectRefs": [],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
-          "attackRange": 3
+          "attackRange": 2
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -3234,7 +3234,7 @@
       "health": 3,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。",
+      "rulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。目标必须为敌方随从。",
       "arrows": [],
       "tribes": [
         "人类"
@@ -3250,7 +3250,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "bb6f35e03308969dda433031a5295563fff5d3d2fbc60f1b945e58e4ece16184",
+        "reviewedDesignHash": "34e80dba7b3308a710822c8a7f518481b196c8d463362f8d962c49ca87f1580d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -3334,7 +3334,7 @@
                 "origin",
                 "ray"
               ],
-              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
+              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。目标必须为敌方随从。"
             }
           },
           {
@@ -3391,7 +3391,7 @@
                             "call": {
                               "name": "EffectValue",
                               "args": [
-                                2
+                                1
                               ],
                               "metadata": {
                                 "kind": "Damage"
@@ -3412,7 +3412,7 @@
                 "origin",
                 "ray"
               ],
-              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。"
+              "rawRulesText": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。目标必须为敌方随从。"
             }
           }
         ]
@@ -3974,7 +3974,7 @@
       "health": 7,
       "movement": 4,
       "durability": 0,
-      "rulesText": "",
+      "rulesText": "[圣盾]",
       "arrows": [],
       "tribes": [
         "机械"
@@ -3990,7 +3990,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "492aed3e86bc442a44758095160a36533b17e9d348b1d86e42f515472fb51033",
+        "reviewedDesignHash": "c5b973681cc077b663d7b7de0d59d0f8a18098e9f245e23b5d42724799ed6844",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -4003,7 +4003,9 @@
           "grantableContinuousEffectRefs": [],
           "abilityRefs": []
         },
-        "keywordTags": [],
+        "keywordTags": [
+          "DivineShield"
+        ],
         "arrowMode": "Permanent",
         "abilities": [],
         "continuousEffects": [],
@@ -4021,10 +4023,10 @@
       "costResource": "Star",
       "costAmount": 8,
       "attack": 7,
-      "health": 4,
-      "movement": 6,
+      "health": 6,
+      "movement": 12,
       "durability": 0,
-      "rulesText": "",
+      "rulesText": "[冲撞移动] 每回合可以进行两次攻击。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -4040,7 +4042,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "35966516f18dd74079d563d59d75c4406ebdcbfe5cff3ac9de973d0df985753d",
+        "reviewedDesignHash": "375092b9acb514099662c943594a3465cc9e8c9f55e8bf099affa2a292137b02",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -4049,14 +4051,42 @@
           "placeCost": null,
           "arrowRules": [],
           "quantitizedCardTags": [],
-          "continuousEffectRefs": [],
+          "continuousEffectRefs": [
+            "2946ca82-3e15-40d8-93f8-55acfad43645:rush"
+          ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": []
         },
-        "keywordTags": [],
+        "keywordTags": [
+          "Windfury"
+        ],
         "arrowMode": "Permanent",
         "abilities": [],
-        "continuousEffects": [],
+        "continuousEffects": [
+          {
+            "id": "2946ca82-3e15-40d8-93f8-55acfad43645:rush",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self"
+            },
+            "contributions": [
+              {
+                "contributionId": "2946ca82-3e15-40d8-93f8-55acfad43645:rush:movement",
+                "type": "MovementRule",
+                "rule": "RushMove",
+                "maxDistance": 2147483647,
+                "moveCost": 1,
+                "scope": {
+                  "replaceNormal": true
+                },
+                "authoringNote": "冲撞无额外格数上限：直到当前行动点耗尽、阻挡或棋盘边界；替代普通移动。"
+              }
+            ]
+          }
+        ],
         "plans": []
       }
     },
@@ -4225,7 +4255,7 @@
       "health": 5,
       "movement": 5,
       "durability": 0,
-      "rulesText": "[攻击范围: 4] 该单位攻击时，会先减少目标5点护甲。",
+      "rulesText": "[攻击范围: 4] 该单位攻击时，会先减少目标8点护甲。",
       "arrows": [],
       "tribes": [
         "晶灵"
@@ -4241,7 +4271,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "da67bde2e8ee9873077beb271eb8fc7fa4c68ef558b42ae82cb1e0a8583f768c",
+        "reviewedDesignHash": "ac785972263f54e91105c1992a5f102a54c0fcbaea552d9151550e68253bd8a2",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -4317,7 +4347,7 @@
                             "call": {
                               "name": "EffectValue",
                               "args": [
-                                5
+                                8
                               ],
                               "metadata": {
                                 "kind": "Armor"
@@ -4332,7 +4362,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[攻击范围: 4] 该单位攻击时，会先减少目标5点护甲。",
+              "rawRulesText": "[攻击范围: 4] 该单位攻击时，会先减少目标8点护甲。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -9611,10 +9641,8 @@
       "health": 4,
       "movement": 2,
       "durability": 0,
-      "rulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
-      "arrows": [
-        "N"
-      ],
+      "rulesText": "入场：在自身↗️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+      "arrows": [],
       "tribes": [
         "反抗军"
       ],
@@ -9629,7 +9657,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "399f287bb5ae1d153349824669c288d4c71eb87257ce8826663baf82c3e68f65",
+        "reviewedDesignHash": "a0a6f6395766075257f23d3592136fbb9c2c6b3ae64abf6c6d83ee9f80af5221",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -9727,7 +9755,7 @@
                     "query": "ControllerRelativeGrids",
                     "origin": "$source",
                     "directions": [
-                      "N"
+                      "NE"
                     ],
                     "filters": [
                       {
@@ -9771,7 +9799,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。"
+              "rawRulesText": "入场：在自身↗️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。"
             }
           },
           {
@@ -9857,7 +9885,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+              "rawRulesText": "入场：在自身↗️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
               "inputs": [
                 "grids"
               ]
@@ -9894,7 +9922,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+              "rawRulesText": "入场：在自身↗️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "grids"
@@ -10124,10 +10152,10 @@
       "costResource": "Star",
       "costAmount": 6,
       "attack": 2,
-      "health": 4,
+      "health": 6,
       "movement": 2,
       "durability": 0,
-      "rulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+      "rulesText": "发动：每回合限两次，令一个友方反抗军永久获得+1攻击&+1速度&-1生命。",
       "arrows": [
         "E"
       ],
@@ -10146,7 +10174,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "6c6c2635af70d7a18a213e5e7e2e22593161f9e6685ca4833d1cb93ffd4fee28",
+        "reviewedDesignHash": "cf5e7faece4dd15b46ecff125dbf478c4309ce06823e2ec087b1d47efd413490",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -10171,7 +10199,11 @@
               "TimeMove"
             ],
             "bodyPlanRef": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate:body",
-            "preparationPlanRef": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate:prepare"
+            "preparationPlanRef": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate:prepare",
+            "usage": {
+              "window": "Turn",
+              "maxActivations": 2
+            }
           }
         ],
         "continuousEffects": [],
@@ -10210,7 +10242,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+              "rawRulesText": "发动：每回合限两次，令一个友方反抗军永久获得+1攻击&+1速度&-1生命。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "target"
@@ -10222,58 +10254,40 @@
             "planId": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd:activate:body",
             "steps": [
               {
-                "elementId": "enhance",
+                "elementId": "permanent-card-adjustment",
                 "apply": {
-                  "package": "ModifierBatch",
-                  "args": {
-                    "items": [
-                      {
-                        "target": "$target",
-                        "stat": "Attack",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              3
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        }
-                      },
-                      {
-                        "target": "$target",
-                        "stat": "Move",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              3
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        }
-                      }
-                    ]
-                  }
-                }
-              },
-              {
-                "elementId": "remaining-durability",
-                "apply": {
-                  "package": "SetRemainingDurability",
+                  "package": "GrowCardBase",
                   "args": {
                     "target": "$target",
-                    "amount": 1
+                    "attack": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          1
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    },
+                    "movement": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          1
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    },
+                    "health": -1
                   }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+              "rawRulesText": "发动：每回合限两次，令一个友方反抗军永久获得+1攻击&+1速度&-1生命。",
               "semanticRole": "ActivatedAbilityBody",
               "inputs": [
                 "target"
@@ -10343,9 +10357,9 @@
       "collectable": true,
       "costResource": "Star",
       "costAmount": 7,
-      "attack": 4,
+      "attack": 3,
       "health": 5,
-      "movement": 5,
+      "movement": 4,
       "durability": 0,
       "rulesText": "每回合可以攻击两次。本随从主动攻击并造成伤害后，自身获得等量护甲。",
       "arrows": [],
@@ -10364,7 +10378,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "3e7f9a97b829da97bcf8e5f97a118e41a1b4837a1f8d566d535238b1d782bcb0",
+        "reviewedDesignHash": "db5c48d96903cc2e1acc60aa2a9d2fe7522038f82baa5a19ea9ec455c689259f",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -10598,9 +10612,9 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 2,
+      "costAmount": 3,
       "durability": 0,
-      "rulesText": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
+      "rulesText": "入场：对全场随从造成1点伤害。若此牌的有效保留回合数至少为1，改为仅对敌方随从。",
       "arrows": [
         "S"
       ],
@@ -10615,7 +10629,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "1ef06df39b2006245453dfb0e3925768cffdf23dc0f3f5206fe683f3acbb7f65",
+        "reviewedDesignHash": "0e3627c9b113e7c2bc2f9b0808e6bd98f8f53dfeaddf020279fe9a2a1a601c4d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -10638,13 +10652,13 @@
                 {
                   "kind": "EffectValue",
                   "sourceId": "07563f0e-c7d5-4448-a351-fa618dfd924c:entry:body",
-                  "elementId": "rain-damage-First",
+                  "elementId": "rain-damage-Retained",
                   "path": "/apply/args/amount"
                 },
                 {
                   "kind": "EffectValue",
                   "sourceId": "07563f0e-c7d5-4448-a351-fa618dfd924c:entry:body",
-                  "elementId": "rain-damage-Extra",
+                  "elementId": "rain-damage-Unretained",
                   "path": "/apply/args/amount"
                 }
               ]
@@ -10692,52 +10706,7 @@
             "planId": "07563f0e-c7d5-4448-a351-fa618dfd924c:entry:body",
             "steps": [
               {
-                "elementId": "select-units-First",
-                "select": {
-                  "saveAs": "unitsFirst",
-                  "valueType": "Entity",
-                  "scope": {
-                    "query": "BattlefieldEntities",
-                    "filters": [
-                      {
-                        "field": "cardType",
-                        "op": "Equals",
-                        "value": "Minion"
-                      }
-                    ]
-                  },
-                  "policy": {
-                    "kind": "All",
-                    "min": 0,
-                    "max": 98
-                  }
-                }
-              },
-              {
-                "elementId": "rain-damage-First",
-                "apply": {
-                  "package": "DamageBatch",
-                  "args": {
-                    "targets": [
-                      "$unitsFirst"
-                    ],
-                    "amount": {
-                      "call": {
-                        "name": "EffectValue",
-                        "args": [
-                          1
-                        ],
-                        "metadata": {
-                          "kind": "Damage"
-                        }
-                      }
-                    },
-                    "damageType": "Spell"
-                  }
-                }
-              },
-              {
-                "elementId": "retained-extra-hit",
+                "elementId": "retained-target-scope",
                 "if": {
                   "condition": {
                     "greater": [
@@ -10752,9 +10721,57 @@
                   },
                   "then": [
                     {
-                      "elementId": "select-units-Extra",
+                      "elementId": "select-units-Retained",
                       "select": {
-                        "saveAs": "unitsExtra",
+                        "saveAs": "unitsRetained",
+                        "valueType": "Entity",
+                        "scope": {
+                          "query": "EnemyEntities",
+                          "filters": [
+                            {
+                              "field": "cardType",
+                              "op": "Equals",
+                              "value": "Minion"
+                            }
+                          ]
+                        },
+                        "policy": {
+                          "kind": "All",
+                          "min": 0,
+                          "max": 98,
+                          "canCancel": false
+                        }
+                      }
+                    },
+                    {
+                      "elementId": "rain-damage-Retained",
+                      "apply": {
+                        "package": "DamageBatch",
+                        "args": {
+                          "targets": [
+                            "$unitsRetained"
+                          ],
+                          "amount": {
+                            "call": {
+                              "name": "EffectValue",
+                              "args": [
+                                1
+                              ],
+                              "metadata": {
+                                "kind": "Damage"
+                              }
+                            }
+                          },
+                          "damageType": "Spell"
+                        }
+                      }
+                    }
+                  ],
+                  "else": [
+                    {
+                      "elementId": "select-units-Unretained",
+                      "select": {
+                        "saveAs": "unitsUnretained",
                         "valueType": "Entity",
                         "scope": {
                           "query": "BattlefieldEntities",
@@ -10769,17 +10786,18 @@
                         "policy": {
                           "kind": "All",
                           "min": 0,
-                          "max": 98
+                          "max": 98,
+                          "canCancel": false
                         }
                       }
                     },
                     {
-                      "elementId": "rain-damage-Extra",
+                      "elementId": "rain-damage-Unretained",
                       "apply": {
                         "package": "DamageBatch",
                         "args": {
                           "targets": [
-                            "$unitsExtra"
+                            "$unitsUnretained"
                           ],
                           "amount": {
                             "call": {
@@ -10801,7 +10819,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
+              "rawRulesText": "入场：对全场随从造成1点伤害。若此牌的有效保留回合数至少为1，改为仅对敌方随从。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -12276,7 +12294,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+      "rulesText": "发动：选择一个友方随从，对其和任意一个敌方随从造成4点伤害。",
       "arrows": [
         "S"
       ],
@@ -12291,7 +12309,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "ea19607252ed87d64bad8d3e297dd393dbbb47cb95babbe447965833b528f1d1",
+        "reviewedDesignHash": "e8c1a4298dae54b540d2aa6f79bc0d20276366a7c3d8dc694ca4c74a84c9bc19",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -12308,7 +12326,7 @@
           "textValueBindings": [
             {
               "id": "effect-value",
-              "anchor": "各造成4点伤害",
+              "anchor": "造成4点伤害",
               "token": "4",
               "sources": [
                 {
@@ -12366,7 +12384,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+              "rawRulesText": "发动：选择一个友方随从，对其和任意一个敌方随从造成4点伤害。",
               "sourceClauseIds": [
                 "clause-01"
               ],
@@ -12435,7 +12453,7 @@
                 "friendly",
                 "enemy"
               ],
-              "rawRulesText": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。"
+              "rawRulesText": "发动：选择一个友方随从，对其和任意一个敌方随从造成4点伤害。"
             }
           }
         ]
@@ -14167,9 +14185,9 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "光环：为3x3范围内的友方单位提供1点电能。",
+      "rulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。",
       "arrows": [
-        "NW"
+        "NE"
       ],
       "tags": [
         "Building"
@@ -14190,7 +14208,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "4d857b78f70fc36eb0724598a930fc71ec4b62fa73ca5300fd7b9cdf0be6a865",
+        "reviewedDesignHash": "12b1944015b77d6a02e77293693ae19fff1d5fed6baa1e8ca63eb365a831bf84",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -14200,7 +14218,8 @@
           "arrowRules": [],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
-            "15cbb572-6a6a-47f0-ae48-561df3be738c:power-aura"
+            "15cbb572-6a6a-47f0-ae48-561df3be738c:entry",
+            "15cbb572-6a6a-47f0-ae48-561df3be738c:round"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": []
@@ -14210,40 +14229,211 @@
         "abilities": [],
         "continuousEffects": [
           {
-            "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:power-aura",
+            "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:entry",
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "Always"
             },
             "affectedScope": {
-              "query": "Rectangular",
-              "width": 3,
-              "height": 3,
-              "excludeHost": false,
-              "filters": [
-                {
-                  "field": "controller",
-                  "op": "Equals",
-                  "value": "HostController"
-                },
-                {
-                  "field": "cardType",
-                  "op": "Equals",
-                  "value": "Minion"
-                }
-              ]
+              "query": "Self",
+              "host": "Host"
             },
             "contributions": [
               {
-                "type": "ElectricityModifier",
-                "contributionId": "15cbb572-6a6a-47f0-ae48-561df3be738c:power-aura:electricity",
-                "operation": "Add",
-                "value": 1
+                "type": "TriggeredEffect",
+                "contributionId": "15cbb572-6a6a-47f0-ae48-561df3be738c:entry:contribution",
+                "triggeredEffect": {
+                  "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:entry:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "CardPlaced",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "15cbb572-6a6a-47f0-ae48-561df3be738c:entry:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
+          },
+          {
+            "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:round",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "PhaseIs",
+              "phase": "RoundStart"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "15cbb572-6a6a-47f0-ae48-561df3be738c:round:contribution",
+                "triggeredEffect": {
+                  "id": "15cbb572-6a6a-47f0-ae48-561df3be738c:round:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "PhaseStarted",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "15cbb572-6a6a-47f0-ae48-561df3be738c:round:body",
+                  "executionTiming": "Slow"
+                }
               }
             ]
           }
         ],
-        "plans": []
+        "plans": [
+          {
+            "planVersion": 1,
+            "planId": "15cbb572-6a6a-47f0-ae48-561df3be738c:entry:body",
+            "steps": [
+              {
+                "elementId": "choose-construction-targets",
+                "select": {
+                  "saveAs": "targets",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "Rectangular",
+                    "width": 3,
+                    "height": 3,
+                    "filters": [
+                      {
+                        "field": "controller",
+                        "op": "Equals",
+                        "value": "SourceController"
+                      },
+                      {
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
+                      },
+                      {
+                        "field": "isSelf",
+                        "op": "Equals",
+                        "value": false
+                      },
+                      {
+                        "field": "isConstructible",
+                        "op": "Equals",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 98,
+                    "canCancel": false
+                  }
+                }
+              },
+              {
+                "elementId": "provide-construction",
+                "apply": {
+                  "package": "ModifyUnitAttribute",
+                  "args": {
+                    "target": "$targets",
+                    "attribute": "FixedConstructionValue",
+                    "operation": "Add",
+                    "amount": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          1
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "15cbb572-6a6a-47f0-ae48-561df3be738c:round:body",
+            "steps": [
+              {
+                "elementId": "choose-construction-targets",
+                "select": {
+                  "saveAs": "targets",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "Rectangular",
+                    "width": 3,
+                    "height": 3,
+                    "filters": [
+                      {
+                        "field": "controller",
+                        "op": "Equals",
+                        "value": "SourceController"
+                      },
+                      {
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
+                      },
+                      {
+                        "field": "isSelf",
+                        "op": "Equals",
+                        "value": false
+                      },
+                      {
+                        "field": "isConstructible",
+                        "op": "Equals",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 98,
+                    "canCancel": false
+                  }
+                }
+              },
+              {
+                "elementId": "provide-construction",
+                "apply": {
+                  "package": "ModifyUnitAttribute",
+                  "args": {
+                    "target": "$targets",
+                    "attribute": "FixedConstructionValue",
+                    "operation": "Add",
+                    "amount": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          1
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
+            }
+          }
+        ]
       }
     },
     {
@@ -14260,7 +14450,7 @@
       "health": 4,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：2，可建造] 回合开始时，你获得2点星能（受电能加成）。",
+      "rulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -14276,7 +14466,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5ef583f1dc9cf192b8db0c937c7e4cba2c619613ed1cd81dc45f624c991ee8f7",
+        "reviewedDesignHash": "721d1c5bdba968eb25705fbc8bb8e81e684a2c218c4e59997908c248c807e1be",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -14288,14 +14478,15 @@
           "arrowRules": [],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
-            "e1362804-dea0-49b5-9513-8c1317369f9e:round"
+            "e1362804-dea0-49b5-9513-8c1317369f9e:round",
+            "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：2",
+              "anchor": "可无限建造：2",
               "token": "2",
               "sources": [
                 {
@@ -14317,7 +14508,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -14352,6 +14545,36 @@
                 }
               }
             ]
+          },
+          {
+            "id": "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
           }
         ],
         "plans": [
@@ -14371,8 +14594,7 @@
                           2
                         ],
                         "metadata": {
-                          "kind": "Star",
-                          "electricity": true
+                          "kind": "Star"
                         }
                       }
                     },
@@ -14382,10 +14604,33 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：2，可建造] 回合开始时，你获得2点星能（受电能加成）。",
+              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。",
               "sourceClauseIds": [
                 "clause-01"
               ]
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "e1362804-dea0-49b5-9513-8c1317369f9e:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "increase-output",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "Value",
+                    "rule": "EffectProvidedValue",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。"
             }
           }
         ]
@@ -14402,7 +14647,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "[箭头需求：2，可建造] 该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
+      "rulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次额外建造完毕该卡箭头层数+1。",
       "arrows": [
         "NW",
         "NE"
@@ -14426,7 +14671,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "9f81ae6db9cfeb50011335133852ab358b2c9fc62743784843625d54adb35963",
+        "reviewedDesignHash": "05bf6e87aab125844f6fc7946fd183a9f2c5546430ce1de8a5cdda7fd5e09c36",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -14439,14 +14684,14 @@
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
             "a60555e6-d405-47de-bdff-c84031d53448:arrow-restriction",
-            "a60555e6-d405-47de-bdff-c84031d53448:electricity-benefit"
+            "a60555e6-d405-47de-bdff-c84031d53448:construction-reward"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：2",
+              "anchor": "可无限建造：2",
               "token": "2",
               "sources": [
                 {
@@ -14455,7 +14700,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -14490,7 +14737,7 @@
             ]
           },
           {
-            "id": "a60555e6-d405-47de-bdff-c84031d53448:electricity-benefit",
+            "id": "a60555e6-d405-47de-bdff-c84031d53448:construction-reward",
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "Always"
@@ -14501,19 +14748,50 @@
             },
             "contributions": [
               {
-                "type": "ArrowLayerModifier",
-                "contributionId": "a60555e6-d405-47de-bdff-c84031d53448:electricity-benefit:arrows",
-                "stat": "LitDirections",
-                "operation": "Add",
-                "value": 0,
-                "valueSource": {
-                  "kind": "AffectedElectricity"
+                "type": "TriggeredEffect",
+                "contributionId": "a60555e6-d405-47de-bdff-c84031d53448:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "a60555e6-d405-47de-bdff-c84031d53448:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "a60555e6-d405-47de-bdff-c84031d53448:construction-reward:body",
+                  "executionTiming": "Slow"
                 }
               }
             ]
           }
         ],
-        "plans": []
+        "plans": [
+          {
+            "planVersion": 1,
+            "planId": "a60555e6-d405-47de-bdff-c84031d53448:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "increase-arrow-layers",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "ArrowLayer",
+                    "rule": "LitDirections",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次额外建造完毕该卡箭头层数+1。"
+            }
+          }
+        ]
       }
     },
     {
@@ -14529,7 +14807,8 @@
       "durability": 0,
       "rulesText": "该单位的箭头只能用于放置或建造建筑随从。",
       "arrows": [
-        "NW"
+        "NW",
+        "N"
       ],
       "tags": [
         "Building"
@@ -14550,7 +14829,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "d4b19d5aee9b52a30fde6e00b8a9f59e094f930b24d2f615cc27b2d3e3d88252",
+        "reviewedDesignHash": "cfa982f62897878bf772f56d09e26ed4aa919504e5a5bab86340bd782cd80c16",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -14612,7 +14891,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "发动成本：献祭自己，移入你的弃牌堆。效果：为一个相邻的、尚未完成建造的友方随从增加2点已固定建造值。",
+      "rulesText": "发动成本：献祭自己。效果：为一个相邻的建造中的友方随从增加2点已固定建造值。",
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_060",
@@ -14631,7 +14910,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "d5e9125e2638cc1965ce979e3862332ebacd159e372ae3e4f3f60c39d23b73ed",
+        "reviewedDesignHash": "483791eac3e3559424d16b3419105bab499c91c99ef97ec4b6b5acd12397da4a",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -14710,7 +14989,7 @@
                         "value": "Minion"
                       },
                       {
-                        "field": "isUnderConstruction",
+                        "field": "isConstructible",
                         "op": "Equals",
                         "value": true
                       }
@@ -14797,7 +15076,7 @@
               "inputs": [
                 "target"
               ],
-              "rawRulesText": "发动成本：献祭自己，移入你的弃牌堆。效果：为一个相邻的、尚未完成建造的友方随从增加2点已固定建造值。"
+              "rawRulesText": "发动成本：献祭自己。效果：为一个相邻的建造中的友方随从增加2点已固定建造值。"
             }
           }
         ]
@@ -14814,7 +15093,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "[箭头需求: 2, 可建造]",
+      "rulesText": "[可建造：2]",
       "arrows": [
         "NW",
         "SE"
@@ -14836,7 +15115,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "c677145165f313749a85aa17ba2dc567fab07bc8a08d7c6b29e0670738dbf871",
+        "reviewedDesignHash": "65db4f3c0d5b8b1ef81b537d72e146160dbb47f36c8cc27c0005c32c95fc3d41",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -14853,7 +15132,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求: 2",
+              "anchor": "可建造：2",
               "token": "2",
               "sources": [
                 {
@@ -14862,7 +15141,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -14882,7 +15162,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "[箭头需求：4，可建造] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+      "rulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次额外建造完毕该卡箭头层数+1。",
       "arrows": [
         "N",
         "W",
@@ -14907,9 +15187,9 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "b872730949e18351ceab5f377e1b638f8e00fb182e4f3994a74c8af7ec6090aa",
+        "reviewedDesignHash": "a31dbe7c6829c3f947499a110d021bc951e2dec33dfde1057251d89ff39444dd",
         "properties": {
-          "constructionTarget": 4,
+          "constructionTarget": 2,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
@@ -14920,16 +15200,16 @@
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
             "430888e7-5e44-4599-98d5-7a8c0824b40f:arrow-restriction",
-            "430888e7-5e44-4599-98d5-7a8c0824b40f:electricity-benefit",
-            "430888e7-5e44-4599-98d5-7a8c0824b40f:ignore-blockers"
+            "430888e7-5e44-4599-98d5-7a8c0824b40f:ignore-blockers",
+            "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：4",
-              "token": "4",
+              "anchor": "可无限建造：2",
+              "token": "2",
               "sources": [
                 {
                   "kind": "ConstructionTarget",
@@ -14937,7 +15217,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -14962,35 +15244,12 @@
                 },
                 "targetFilters": [
                   {
-                    "field": "isUnderConstruction",
+                    "field": "isConstructible",
                     "op": "Equals",
                     "value": "true"
                   }
                 ],
                 "contributionId": "430888e7-5e44-4599-98d5-7a8c0824b40f:arrow-restriction:contribution"
-              }
-            ]
-          },
-          {
-            "id": "430888e7-5e44-4599-98d5-7a8c0824b40f:electricity-benefit",
-            "lifetime": "WhileHostInBattlefield",
-            "activeCondition": {
-              "type": "Always"
-            },
-            "affectedScope": {
-              "query": "Self",
-              "host": "Host"
-            },
-            "contributions": [
-              {
-                "type": "ArrowLayerModifier",
-                "contributionId": "430888e7-5e44-4599-98d5-7a8c0824b40f:electricity-benefit:arrows",
-                "stat": "LitDirections",
-                "operation": "Add",
-                "value": 0,
-                "valueSource": {
-                  "kind": "AffectedElectricity"
-                }
               }
             ]
           },
@@ -15010,9 +15269,63 @@
                 "rule": "IgnoreCardBlockers"
               }
             ]
+          },
+          {
+            "id": "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
           }
         ],
-        "plans": []
+        "plans": [
+          {
+            "planVersion": 1,
+            "planId": "430888e7-5e44-4599-98d5-7a8c0824b40f:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "increase-arrow-layers",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "ArrowLayer",
+                    "rule": "LitDirections",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次额外建造完毕该卡箭头层数+1。"
+            }
+          }
+        ]
       }
     },
     {
@@ -15026,7 +15339,7 @@
       "costResource": "Star",
       "costAmount": 6,
       "durability": 0,
-      "rulesText": "[箭头需求: 5, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+      "rulesText": "[可建造：5] 该单位移动时可以忽略卡牌的阻挡。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -15045,7 +15358,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "e7241d8c93d1e6b734420ebfdbf6608cbc907223a135de3f6a4b197570aa1c46",
+        "reviewedDesignHash": "71340519c033c921d86fd933cf316b945b9b9e3d05273e8da24bf68500cc4665",
         "properties": {
           "constructionTarget": 5,
           "runtimeSupportNote": null,
@@ -15064,7 +15377,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求: 5",
+              "anchor": "可建造：5",
               "token": "5",
               "sources": [
                 {
@@ -15073,7 +15386,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -15114,7 +15428,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+      "rulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。",
       "arrows": [
         "SW",
         "SE"
@@ -15133,9 +15447,9 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "ce4a85155cbeb7c22e7f73f85210c52f8f478a23aae32507248c88467db6dffa",
+        "reviewedDesignHash": "7dcea937695136e6d2bd99b1e5c147cc7ec9596293c4efe7acab5393a7ebe8a7",
         "properties": {
-          "constructionTarget": 6,
+          "constructionTarget": 8,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
@@ -15144,38 +15458,17 @@
           },
           "arrowRules": [],
           "quantitizedCardTags": [],
-          "continuousEffectRefs": [],
+          "continuousEffectRefs": [
+            "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry",
+            "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward"
+          ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
-          "progressEffects": [
-            {
-              "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:progress",
-              "originalTarget": 4,
-              "mode": "Repeat",
-              "eventKind": "PhaseStarted",
-              "countMode": "Occurrences",
-              "relation": "Any",
-              "completionBodyPlanRef": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:progress:body",
-              "phase": "RoundEnd",
-              "electricity": true
-            }
-          ],
           "textValueBindings": [
             {
-              "id": "round-progress",
-              "anchor": "进度+1",
-              "token": "1",
-              "sources": [
-                {
-                  "kind": "Progress",
-                  "sourceId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:progress"
-                }
-              ]
-            },
-            {
               "id": "construction-target",
-              "anchor": "箭头需求：6",
-              "token": "6",
+              "anchor": "可无限建造：8",
+              "token": "8",
               "sources": [
                 {
                   "kind": "ConstructionTarget",
@@ -15183,16 +15476,79 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
         "abilities": [],
-        "continuousEffects": [],
+        "continuousEffects": [
+          {
+            "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry:contribution",
+                "triggeredEffect": {
+                  "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "CardPlaced",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
+          },
+          {
+            "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
+          }
+        ],
         "plans": [
           {
             "planVersion": 1,
-            "planId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:progress:body",
+            "planId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry:body",
             "steps": [
               {
                 "elementId": "reduce-all-construction-goals",
@@ -15209,7 +15565,29 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。"
+              "rawRulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。"
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "reduce-all-construction-goals",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "channel": "RuleParameter",
+                    "rule": "ConstructionTarget",
+                    "operation": "Subtract",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。"
             }
           }
         ]
@@ -15226,7 +15604,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。",
+      "rulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
       "arrows": [
         "NW"
       ],
@@ -15241,7 +15619,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "11aa6610676c3ac1a16c8d3ccb20d4497c23fdd29bf2b66540784424cefc420c",
+        "reviewedDesignHash": "9eab4b48665c824636907f44b408bfe9597b0ef072054cd05013565c717e3f24",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -15254,21 +15632,6 @@
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [
             "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate"
-          ],
-          "textValueBindings": [
-            {
-              "id": "overload-damage",
-              "anchor": "受到4点伤害",
-              "token": "4",
-              "sources": [
-                {
-                  "kind": "EffectValue",
-                  "sourceId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:overload:body",
-                  "elementId": "overload-damage",
-                  "path": "/apply/args/amount"
-                }
-              ]
-            }
           ]
         },
         "keywordTags": [],
@@ -15292,54 +15655,19 @@
         "plans": [
           {
             "planVersion": 1,
-            "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate:body",
-            "steps": [
-              {
-                "elementId": "electricity",
-                "apply": {
-                  "package": "AddModifier",
-                  "args": {
-                    "target": "$target",
-                    "channel": "Electricity",
-                    "rule": "EffectiveElectricity",
-                    "operation": "Add",
-                    "value": 3,
-                    "lifetime": "Permanent"
-                  }
-                }
-              },
-              {
-                "elementId": "grant-overload-damage",
-                "apply": {
-                  "package": "GrantTriggeredEffect",
-                  "args": {
-                    "target": "$target",
-                    "id": "573781a0-235c-40aa-bff0-6a5e2c7fd942:overload",
-                    "eventKind": "PhaseStarted",
-                    "phase": "RoundEnd",
-                    "bodyPlanRef": "573781a0-235c-40aa-bff0-6a5e2c7fd942:overload:body"
-                  }
-                }
-              }
-            ],
-            "annotations": {
-              "rawRulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。",
-              "inputs": [
-                "target"
-              ]
-            }
-          },
-          {
-            "planVersion": 1,
             "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate:prepare",
             "steps": [
               {
-                "elementId": "choose-target",
+                "elementId": "choose-building",
                 "select": {
-                  "saveAs": "target",
-                  "valueType": "Entity",
+                  "saveAs": "building",
+                  "valueType": "Card",
                   "scope": {
-                    "query": "FriendlyEntities",
+                    "query": "OwnedZones",
+                    "zones": [
+                      "DrawPile",
+                      "DiscardPile"
+                    ],
                     "filters": [
                       {
                         "field": "cardType",
@@ -15358,46 +15686,158 @@
                     "min": 1,
                     "max": 1,
                     "canCancel": false
-                  }
+                  },
+                  "failurePolicy": "AbortPlan",
+                  "cancelPolicy": "AbortPlan"
+                }
+              },
+              {
+                "elementId": "choose-destination",
+                "select": {
+                  "saveAs": "destination",
+                  "valueType": "Grid",
+                  "scope": {
+                    "query": "TerritoryGrids",
+                    "relation": "Friendly",
+                    "filters": [
+                      {
+                        "field": "canSummonCard",
+                        "op": "Equals",
+                        "value": "$building"
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "PlayerSelect",
+                    "min": 1,
+                    "max": 1,
+                    "canCancel": false
+                  },
+                  "failurePolicy": "AbortPlan",
+                  "cancelPolicy": "AbortPlan"
                 }
               }
             ],
             "annotations": {
+              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
               "semanticRole": "ActivationPreparation",
               "exports": [
-                "target"
-              ],
-              "rawRulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。"
+                "building",
+                "destination"
+              ]
             }
           },
           {
             "planVersion": 1,
-            "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:overload:body",
+            "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate:body",
             "steps": [
               {
-                "elementId": "overload-damage",
+                "elementId": "place-selected-building",
                 "apply": {
-                  "package": "Damage",
+                  "package": "TransferCard",
                   "args": {
-                    "target": "Source",
-                    "amount": {
-                      "call": {
-                        "name": "EffectValue",
-                        "args": [
-                          4
-                        ],
-                        "metadata": {
-                          "kind": "Damage"
+                    "card": "$building",
+                    "requiredSourceOwner": "SourceController",
+                    "destinationOwner": "SourceController",
+                    "destinationZone": "Battlefield",
+                    "destinationGrid": "$destination"
+                  },
+                  "failurePolicy": "AbortPlan"
+                }
+              },
+              {
+                "elementId": "bind-new-building-entry",
+                "forEach": {
+                  "values": {
+                    "var": "building"
+                  },
+                  "as": "selectedCard",
+                  "body": [
+                    {
+                      "elementId": "find-placed-entity",
+                      "select": {
+                        "saveAs": "placedEntity",
+                        "valueType": "Entity",
+                        "scope": {
+                          "query": "BattlefieldEntities",
+                          "filters": [
+                            {
+                              "field": "cardInstanceId",
+                              "op": "Equals",
+                              "value": {
+                                "var": "selectedCard"
+                              }
+                            }
+                          ]
+                        },
+                        "policy": {
+                          "kind": "All",
+                          "min": 0,
+                          "max": 1,
+                          "canCancel": false
                         }
                       }
                     },
-                    "damageType": "Effect"
+                    {
+                      "elementId": "schedule-if-still-in-play",
+                      "if": {
+                        "condition": {
+                          "greater": [
+                            {
+                              "count": {
+                                "var": "placedEntity"
+                              }
+                            },
+                            0
+                          ]
+                        },
+                        "then": [
+                          {
+                            "elementId": "schedule-next-round-destruction",
+                            "apply": {
+                              "package": "ScheduleBody",
+                              "args": {
+                                "timing": "EndOfNextRound",
+                                "bodyPlanRef": "573781a0-235c-40aa-bff0-6a5e2c7fd942:delayed-destruction:body"
+                              }
+                            }
+                          }
+                        ],
+                        "else": []
+                      }
+                    }
+                  ]
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
+              "semanticRole": "ActivatedAbilityBody",
+              "inputs": [
+                "building",
+                "destination"
+              ]
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:delayed-destruction:body",
+            "steps": [
+              {
+                "elementId": "destroy-original-building-entry",
+                "apply": {
+                  "package": "Destroy",
+                  "args": {
+                    "target": "$placedEntity"
                   }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。"
+              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
+              "inputs": [
+                "placedEntity"
+              ]
             }
           }
         ]
@@ -15412,11 +15852,11 @@
       "rarity": "Rare",
       "collectable": true,
       "costResource": "Star",
-      "costAmount": 6,
+      "costAmount": 5,
       "durability": 0,
-      "rulesText": "入场：[快速] 你的所有建筑获得3护甲。",
+      "rulesText": "入场：[快速] 你的所有建筑获得2护甲。",
       "arrows": [
-        "N",
+        "NW",
         "NE"
       ],
       "tags": [],
@@ -15430,7 +15870,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "920f5b4011017cbf2ff66084b67ca99448496484d7a7fcd0e0ad433f3de24711",
+        "reviewedDesignHash": "6350a6217cad842c0dfb07e1e6b31f171cfe67d2234f69a85dc02094d04cc583",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -15524,7 +15964,7 @@
                       "call": {
                         "name": "EffectValue",
                         "args": [
-                          3
+                          2
                         ],
                         "metadata": {
                           "kind": "Armor"
@@ -15536,7 +15976,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场：[快速] 你的所有建筑获得3护甲。",
+              "rawRulesText": "入场：[快速] 你的所有建筑获得2护甲。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -15914,7 +16354,7 @@
       "health": 8,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：5，可建造] 光环：为该单位5x5范围内所有友方单位提供3点电能。",
+      "rulesText": "[可建造：5] 入场&回合开始时：为5x5范围内的友方单位提供3点建造进度。",
       "arrows": [
         "NW",
         "SE"
@@ -15933,7 +16373,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "cc3ad7e69cd7ddcb28e6e5ed06a071e5e4c732b4ba88426921314c9790c30694",
+        "reviewedDesignHash": "ee2976e1886b419bc2eb3fc5596ee9634cfb8b25cbf2f7f6da5a2160be1f9bbb",
         "properties": {
           "constructionTarget": 5,
           "runtimeSupportNote": null,
@@ -15945,14 +16385,15 @@
           "arrowRules": [],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
-            "eae5f157-9d0f-41c4-a674-a989dc4007d5:power-aura"
+            "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry",
+            "eae5f157-9d0f-41c4-a674-a989dc4007d5:round"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：5",
+              "anchor": "可建造：5",
               "token": "5",
               "sources": [
                 {
@@ -15961,47 +16402,219 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
         "abilities": [],
         "continuousEffects": [
           {
-            "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:power-aura",
+            "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry",
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "Always"
             },
             "affectedScope": {
-              "query": "Rectangular",
-              "width": 5,
-              "height": 5,
-              "excludeHost": false,
-              "filters": [
-                {
-                  "field": "controller",
-                  "op": "Equals",
-                  "value": "HostController"
-                },
-                {
-                  "field": "cardType",
-                  "op": "Equals",
-                  "value": "Minion"
-                }
-              ]
+              "query": "Self",
+              "host": "Host"
             },
             "contributions": [
               {
-                "type": "ElectricityModifier",
-                "contributionId": "eae5f157-9d0f-41c4-a674-a989dc4007d5:power-aura:electricity",
-                "operation": "Add",
-                "value": 3
+                "type": "TriggeredEffect",
+                "contributionId": "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry:contribution",
+                "triggeredEffect": {
+                  "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "CardPlaced",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
+          },
+          {
+            "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:round",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "PhaseIs",
+              "phase": "RoundStart"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "eae5f157-9d0f-41c4-a674-a989dc4007d5:round:contribution",
+                "triggeredEffect": {
+                  "id": "eae5f157-9d0f-41c4-a674-a989dc4007d5:round:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "PhaseStarted",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "eae5f157-9d0f-41c4-a674-a989dc4007d5:round:body",
+                  "executionTiming": "Slow"
+                }
               }
             ]
           }
         ],
-        "plans": []
+        "plans": [
+          {
+            "planVersion": 1,
+            "planId": "eae5f157-9d0f-41c4-a674-a989dc4007d5:entry:body",
+            "steps": [
+              {
+                "elementId": "choose-construction-targets",
+                "select": {
+                  "saveAs": "targets",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "Rectangular",
+                    "width": 5,
+                    "height": 5,
+                    "filters": [
+                      {
+                        "field": "controller",
+                        "op": "Equals",
+                        "value": "SourceController"
+                      },
+                      {
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
+                      },
+                      {
+                        "field": "isSelf",
+                        "op": "Equals",
+                        "value": false
+                      },
+                      {
+                        "field": "isConstructible",
+                        "op": "Equals",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 98,
+                    "canCancel": false
+                  }
+                }
+              },
+              {
+                "elementId": "provide-construction",
+                "apply": {
+                  "package": "ModifyUnitAttribute",
+                  "args": {
+                    "target": "$targets",
+                    "attribute": "FixedConstructionValue",
+                    "operation": "Add",
+                    "amount": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          3
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可建造：5] 入场&回合开始时：为5x5范围内的友方单位提供3点建造进度。"
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "eae5f157-9d0f-41c4-a674-a989dc4007d5:round:body",
+            "steps": [
+              {
+                "elementId": "choose-construction-targets",
+                "select": {
+                  "saveAs": "targets",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "Rectangular",
+                    "width": 5,
+                    "height": 5,
+                    "filters": [
+                      {
+                        "field": "controller",
+                        "op": "Equals",
+                        "value": "SourceController"
+                      },
+                      {
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
+                      },
+                      {
+                        "field": "isSelf",
+                        "op": "Equals",
+                        "value": false
+                      },
+                      {
+                        "field": "isConstructible",
+                        "op": "Equals",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 98,
+                    "canCancel": false
+                  }
+                }
+              },
+              {
+                "elementId": "provide-construction",
+                "apply": {
+                  "package": "ModifyUnitAttribute",
+                  "args": {
+                    "target": "$targets",
+                    "attribute": "FixedConstructionValue",
+                    "operation": "Add",
+                    "amount": {
+                      "call": {
+                        "name": "EffectValue",
+                        "args": [
+                          3
+                        ],
+                        "metadata": {
+                          "kind": "Attribute"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可建造：5] 入场&回合开始时：为5x5范围内的友方单位提供3点建造进度。"
+            }
+          }
+        ]
       }
     },
     {
@@ -16082,7 +16695,7 @@
                         "value": "Minion"
                       },
                       {
-                        "field": "isUnderConstruction",
+                        "field": "isConstructible",
                         "op": "Equals",
                         "value": true
                       }
@@ -16164,7 +16777,7 @@
       "health": 4,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[箭头需求：4，可建造] 该随从每回合可至多攻击三次。[攻击范围：4] 本随从的攻击力和攻击范围受电能加成。",
+      "rulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次额外建造完毕，其攻击力和攻击范围额外+1。",
       "arrows": [
         "S"
       ],
@@ -16183,9 +16796,9 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "3da0704f2fa088459e994654f2c5144b9052c6e6e925fe19f276d865edc55bfc",
+        "reviewedDesignHash": "8d44fb19e837c4e8cc7db9ab2169dd919a4c137ac3f7d94666c8e69e1c963314",
         "properties": {
-          "constructionTarget": 4,
+          "constructionTarget": 3,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
@@ -16200,16 +16813,16 @@
             }
           ],
           "continuousEffectRefs": [
-            "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit"
+            "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
-          "attackRange": 4,
+          "attackRange": 3,
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：4",
-              "token": "4",
+              "anchor": "可无限建造：3",
+              "token": "3",
               "sources": [
                 {
                   "kind": "ConstructionTarget",
@@ -16219,24 +16832,25 @@
             },
             {
               "id": "attack-range",
-              "anchor": "攻击范围：4",
-              "token": "4",
+              "anchor": "攻击范围：3",
+              "token": "3",
               "sources": [
                 {
-                  "kind": "Stat",
-                  "sourceId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit",
-                  "elementId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit:AttackRange"
+                  "kind": "NativeStat",
+                  "sourceId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:stat:AttackRange"
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
         "abilities": [],
         "continuousEffects": [
           {
-            "id": "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit",
+            "id": "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward",
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "Always"
@@ -16247,31 +16861,64 @@
             },
             "contributions": [
               {
-                "type": "StatModifier",
-                "contributionId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit:Attack",
-                "stat": "Attack",
-                "modifierLayer": "Modifier",
-                "operation": "Add",
-                "value": 0,
-                "valueSource": {
-                  "kind": "AffectedElectricity"
-                }
-              },
-              {
-                "type": "StatModifier",
-                "contributionId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:electricity-benefit:AttackRange",
-                "stat": "AttackRange",
-                "modifierLayer": "Modifier",
-                "operation": "Add",
-                "value": 0,
-                "valueSource": {
-                  "kind": "AffectedElectricity"
+                "type": "TriggeredEffect",
+                "contributionId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward:body",
+                  "executionTiming": "Slow"
                 }
               }
             ]
           }
         ],
-        "plans": []
+        "plans": [
+          {
+            "planVersion": 1,
+            "planId": "0be330dd-7d45-42a8-8235-ac57e8cf9572:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "increase-attack",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "Stat",
+                    "rule": "Attack",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              },
+              {
+                "elementId": "increase-range",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "Stat",
+                    "rule": "AttackRange",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次额外建造完毕，其攻击力和攻击范围额外+1。"
+            }
+          }
+        ]
       }
     },
     {
@@ -16288,9 +16935,10 @@
       "health": 10,
       "movement": 2,
       "durability": 0,
-      "rulesText": "[箭头需求：4, 可建造] 你每个回合开始时额外抽一张牌。",
+      "rulesText": "[可建造：4] 你每个回合开始时额外抽一张牌。",
       "arrows": [
-        "SW"
+        "SW",
+        "S"
       ],
       "tribes": [
         "奇兽"
@@ -16306,7 +16954,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "69a620e4bd54555d0489a209bdec950d74aef4961fe0ea0656d7a23addcc88f3",
+        "reviewedDesignHash": "2512cd20b12eefe0593f51652deb25f296a7f999caff1ccec9cc4a971cae6d1f",
         "properties": {
           "constructionTarget": 4,
           "runtimeSupportNote": null,
@@ -16325,7 +16973,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：4",
+              "anchor": "可建造：4",
               "token": "4",
               "sources": [
                 {
@@ -16334,7 +16982,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -16397,7 +17046,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：4, 可建造] 你每个回合开始时额外抽一张牌。",
+              "rawRulesText": "[可建造：4] 你每个回合开始时额外抽一张牌。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -16420,7 +17069,7 @@
       "health": 5,
       "movement": 3,
       "durability": 0,
-      "rulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。",
+      "rulesText": "[可建造：3] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。",
       "arrows": [
         "S",
         "SE"
@@ -16439,7 +17088,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "4aee45480d823113d5fc78579505c42b85f677c8edae85d134c18f02767e2c2b",
+        "reviewedDesignHash": "27224ee0625896e28d51f8216e1cef2ef78085f3efaef0fbeec669a449eeeab5",
         "properties": {
           "constructionTarget": 3,
           "runtimeSupportNote": null,
@@ -16458,7 +17107,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求: 3",
+              "anchor": "可建造：3",
               "token": "3",
               "sources": [
                 {
@@ -16467,7 +17116,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -16552,7 +17202,7 @@
                 "building",
                 "landing"
               ],
-              "rawRulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
+              "rawRulesText": "[可建造：3] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
             }
           },
           {
@@ -16579,7 +17229,7 @@
                 "building",
                 "landing"
               ],
-              "rawRulesText": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
+              "rawRulesText": "[可建造：3] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
             }
           }
         ]
@@ -16595,11 +17245,11 @@
       "collectable": true,
       "costResource": "Star",
       "costAmount": 6,
-      "attack": 8,
-      "health": 10,
+      "attack": 7,
+      "health": 7,
       "movement": 7,
       "durability": 0,
-      "rulesText": "[箭头需求: 5, 可建造]",
+      "rulesText": "[可建造：5] [护甲：5]",
       "arrows": [],
       "tribes": [
         "机械"
@@ -16615,7 +17265,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "3143fbf407800703f133068d4b07593f6287df130a0f59cae129fb4df9f8225d",
+        "reviewedDesignHash": "dbf78a5fe653c2c55a436056be864daccf6f93418b46d65a023387a16fdc98fd",
         "properties": {
           "constructionTarget": 5,
           "runtimeSupportNote": null,
@@ -16632,7 +17282,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求: 5",
+              "anchor": "可建造：5",
               "token": "5",
               "sources": [
                 {
@@ -16641,7 +17291,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1,
+          "initialArmor": 5
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -16664,7 +17316,7 @@
       "health": 10,
       "movement": 8,
       "durability": 0,
-      "rulesText": "[箭头需求：7，可建造] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。",
+      "rulesText": "[可建造：7] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。",
       "arrows": [],
       "tribes": [
         "机械",
@@ -16681,7 +17333,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "fad3b92c5421d653d11de35d11e3175f851e496eb868b62713872ffb89ef95d2",
+        "reviewedDesignHash": "e89662508ea3e52fc63f5fa6f3f48a7713e28da2af16873a8ed9777ab0ab12e8",
         "properties": {
           "constructionTarget": 7,
           "runtimeSupportNote": null,
@@ -16700,7 +17352,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：7",
+              "anchor": "可建造：7",
               "token": "7",
               "sources": [
                 {
@@ -16709,7 +17361,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -16770,7 +17423,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：7，可建造] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。"
+              "rawRulesText": "[可建造：7] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。"
             }
           }
         ]
@@ -17084,8 +17737,8 @@
       "costResource": "Star",
       "costAmount": 10,
       "attack": 10,
-      "health": 12,
-      "movement": 10,
+      "health": 10,
+      "movement": 8,
       "durability": 1,
       "rulesText": "入场：对3x3范围内的敌方单位造成3点伤害。该单位攻击后，会将溢出的伤害传导给目标相邻格子上的敌方单位。该单位即将离开场上时，改为转化为维拉。",
       "arrows": [
@@ -17106,7 +17759,7 @@
       "collectionKind": "Token",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "e95967144c3793412b2a0c8b0d1f42fa0640e210e25c3b9ea6bf79b75ac6ca7a",
+        "reviewedDesignHash": "703574fdea8c68b0b0d0e5f3fafce6a970b1ad0d2f1eb84b845d71486f92c4a5",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -17389,7 +18042,7 @@
       "health": 12,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+      "rulesText": "[可建造：9] 建造中可发动：若己方场上没有维拉，移除此卡将维拉置入手牌。",
       "arrows": [],
       "tribes": [
         "机械"
@@ -17405,7 +18058,7 @@
       "collectionKind": "Token",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "4b0501130bf8ca9c98d9b506e1e8b697263494d5c76899e6465584e9d55aa54e",
+        "reviewedDesignHash": "16edde2828a70910952b98e45bbd9e90370c0a3d7463521940a755164b8a059a",
         "properties": {
           "constructionTarget": 9,
           "runtimeSupportNote": null,
@@ -17425,7 +18078,7 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求：9",
+              "anchor": "可建造：9",
               "token": "9",
               "sources": [
                 {
@@ -17434,7 +18087,8 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -17447,7 +18101,8 @@
             ],
             "bodyPlanRef": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5:activate:body",
             "costPlanRef": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5:activate:cost",
-            "preparationPlanRef": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5:activate:prepare"
+            "preparationPlanRef": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5:activate:prepare",
+            "allowWhileUnderConstruction": true
           }
         ],
         "continuousEffects": [],
@@ -17475,7 +18130,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+              "rawRulesText": "[可建造：9] 建造中可发动：若己方场上没有维拉，移除此卡将维拉置入手牌。",
               "semanticRole": "CostPlan",
               "inputs": [
                 "selfCard"
@@ -17499,7 +18154,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+              "rawRulesText": "[可建造：9] 建造中可发动：若己方场上没有维拉，移除此卡将维拉置入手牌。",
               "semanticRole": "ActivatedAbilityBody"
             }
           },
@@ -17508,25 +18163,73 @@
             "planId": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5:activate:prepare",
             "steps": [
               {
-                "elementId": "select-self",
-                "select": {
+                "elementId": "initialize-self-cost",
+                "let": {
                   "saveAs": "selfCard",
-                  "valueType": "Card",
+                  "value": null
+                }
+              },
+              {
+                "elementId": "find-friendly-pilot",
+                "select": {
+                  "saveAs": "pilots",
+                  "valueType": "Entity",
                   "scope": {
-                    "query": "FriendlyBattlefieldCards",
+                    "query": "FriendlyEntities",
                     "filters": [
                       {
-                        "field": "isSelf",
+                        "field": "cardId",
                         "op": "Equals",
-                        "value": true
+                        "value": "bdd6fa88-21f9-4eed-8248-00e550344739"
                       }
                     ]
                   },
                   "policy": {
                     "kind": "All",
-                    "min": 1,
-                    "max": 1
+                    "min": 0,
+                    "max": 98,
+                    "canCancel": false
                   }
+                }
+              },
+              {
+                "elementId": "permit-self-cost-only-without-pilot",
+                "if": {
+                  "condition": {
+                    "equals": [
+                      {
+                        "count": {
+                          "var": "pilots"
+                        }
+                      },
+                      0
+                    ]
+                  },
+                  "then": [
+                    {
+                      "elementId": "select-self",
+                      "select": {
+                        "saveAs": "selfCard",
+                        "valueType": "Card",
+                        "scope": {
+                          "query": "FriendlyBattlefieldCards",
+                          "filters": [
+                            {
+                              "field": "isSelf",
+                              "op": "Equals",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "policy": {
+                          "kind": "All",
+                          "min": 1,
+                          "max": 1
+                        }
+                      }
+                    }
+                  ],
+                  "else": []
                 }
               }
             ],
@@ -17535,7 +18238,7 @@
               "exports": [
                 "selfCard"
               ],
-              "rawRulesText": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。"
+              "rawRulesText": "[可建造：9] 建造中可发动：若己方场上没有维拉，移除此卡将维拉置入手牌。"
             }
           }
         ]
@@ -17555,7 +18258,7 @@
       "health": 6,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+      "rulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
       "arrows": [
         "NE"
       ],
@@ -17573,7 +18276,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "87554b49fee8b81adb478e17f761b87358aa1aee27192967d33b34d7f2eb72cd",
+        "reviewedDesignHash": "448f83ffb42e48a2abd0d0f3ab1b7a3e960074b0be5a9c3ffd4c93a38b2d7fe0",
         "properties": {
           "constructionTarget": 4,
           "runtimeSupportNote": null,
@@ -17586,14 +18289,15 @@
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
             "0580aac7-5301-43db-b2d9-1bc56b2e75b8:entry",
-            "0580aac7-5301-43db-b2d9-1bc56b2e75b8:time-stop-start"
+            "0580aac7-5301-43db-b2d9-1bc56b2e75b8:time-stop-start",
+            "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": [],
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "箭头需求: 4",
+              "anchor": "可无限建造：4",
               "token": "4",
               "sources": [
                 {
@@ -17621,7 +18325,9 @@
                 }
               ]
             }
-          ]
+          ],
+          "constructionRepeat": true,
+          "constructionMinimumTarget": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -17685,6 +18391,36 @@
                 }
               }
             ]
+          },
+          {
+            "id": "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward",
+            "lifetime": "WhileHostInBattlefield",
+            "activeCondition": {
+              "type": "Always"
+            },
+            "affectedScope": {
+              "query": "Self",
+              "host": "Host"
+            },
+            "contributions": [
+              {
+                "type": "TriggeredEffect",
+                "contributionId": "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward:contribution",
+                "triggeredEffect": {
+                  "id": "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward:trigger",
+                  "trigger": {
+                    "type": "Passive",
+                    "eventKind": "ConstructionRepeated",
+                    "subject": "Self",
+                    "listenScope": "Self",
+                    "priority": 0,
+                    "filters": []
+                  },
+                  "bodyPlanRef": "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward:body",
+                  "executionTiming": "Slow"
+                }
+              }
+            ]
           }
         ],
         "plans": [
@@ -17717,7 +18453,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "targets"
@@ -17743,8 +18479,7 @@
                           4
                         ],
                         "metadata": {
-                          "kind": "Armor",
-                          "electricity": true
+                          "kind": "Armor"
                         }
                       }
                     }
@@ -17753,7 +18488,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
               "inputs": [
                 "targets"
               ]
@@ -17788,7 +18523,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "targets"
@@ -17814,8 +18549,7 @@
                           4
                         ],
                         "metadata": {
-                          "kind": "Armor",
-                          "electricity": true
+                          "kind": "Armor"
                         }
                       }
                     }
@@ -17824,10 +18558,33 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
               "inputs": [
                 "targets"
               ]
+            }
+          },
+          {
+            "planVersion": 1,
+            "planId": "0580aac7-5301-43db-b2d9-1bc56b2e75b8:construction-reward:body",
+            "steps": [
+              {
+                "elementId": "increase-armor-output",
+                "apply": {
+                  "package": "AddModifier",
+                  "args": {
+                    "target": "Source",
+                    "channel": "Value",
+                    "rule": "EffectProvidedValue",
+                    "operation": "Add",
+                    "value": 1,
+                    "lifetime": "Permanent"
+                  }
+                }
+              }
+            ],
+            "annotations": {
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。"
             }
           }
         ]
