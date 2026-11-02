@@ -14,6 +14,7 @@ const read = p => JSON.parse(fs.readFileSync(new URL(`../../${p}`, import.meta.u
 const current = read('data/cards.json');
 const evidence = read('docs/design/revisions/2026-10-05-execution-migration.json');
 const balance = read('docs/design/revisions/2026-10-06-balance147.json');
+const construction = read('docs/design/revisions/2026-11-02-infinite-construction.json');
 const options = { contentId: 'test', contentVersion: 'fixture', artPaths: Object.fromEntries(evidence.entries.map(e => [e.uid, e.runtimeArtPath])) };
 const revise = fn => { const copy = structuredClone(current); fn(copy); return copy; };
 const oneCard = () => {
@@ -34,9 +35,17 @@ test('schema5 production maps all 147 identities through the reviewed migration 
     assert.equal(revision.previousDesignHash, original.designHash, revision.displayId);
     assert.equal(revision.previousExecutionHash, original.executionHash, revision.displayId);
   }
+  assert.equal(construction.entries.length, 36);
+  assert.equal(new Set(construction.entries.map(e => e.uid)).size, 36);
+  for (const revision of construction.entries) {
+    const previous = balance.entries.find(e => e.uid === revision.uid) ?? evidence.entries.find(e => e.uid === revision.uid);
+    assert.equal(revision.previousDesignHash, previous.designHash, revision.displayId);
+    assert.equal(revision.previousExecutionHash, previous.executionHash, revision.displayId);
+  }
   const generated = toAuthoringDocument(current, options);
   for (const b of generated.cardBundles) {
-    const entry = balance.entries.find(e => e.uid === b.card.uid)
+    const entry = construction.entries.find(e => e.uid === b.card.uid)
+      ?? balance.entries.find(e => e.uid === b.card.uid)
       ?? evidence.entries.find(e => e.uid === b.card.uid);
     assert.equal(semanticHash(b), entry.bundleHash, b.card.displayId);
     const card = current.cards.find(c => c.uid === b.card.uid);

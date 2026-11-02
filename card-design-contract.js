@@ -43,7 +43,7 @@
     const bytes = new TextEncoder().encode(designMaterial(card));
     return [...new Uint8Array(await cryptoProvider.subtle.digest("SHA-256", bytes))].map(byte => byte.toString(16).padStart(2, "0")).join("");
   }
-  const EXECUTION_PROPERTIES = ["constructionTarget", "runtimeSupportNote", "upgradeToCardId", "upgradeToCardIds", "placeCost", "arrowRules", "quantitizedCardTags", "continuousEffectRefs", "grantableContinuousEffectRefs", "abilityRefs", "textValueBindings", "attackRange", "progressEffects"];
+  const EXECUTION_PROPERTIES = ["constructionTarget", "constructionRepeat", "constructionMinimumTarget", "initialArmor", "runtimeSupportNote", "upgradeToCardId", "upgradeToCardIds", "placeCost", "arrowRules", "quantitizedCardTags", "continuousEffectRefs", "grantableContinuousEffectRefs", "abilityRefs", "textValueBindings", "attackRange", "progressEffects"];
   function plannedExecution() {
     return { runtimeSupport: "Planned", reviewedDesignHash: null, properties: {}, keywordTags: [], arrowMode: "Permanent", abilities: [], continuousEffects: [], plans: [] };
   }
