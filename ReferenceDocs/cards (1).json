@@ -7629,10 +7629,11 @@
       "rarity": "Legendary",
       "collectable": false,
       "costResource": "Star",
-      "costAmount": 0,
+      "costAmount": 10,
       "durability": 0,
-      "rulesText": "该卡可被放置于非己方领土内。免湮灭。这张牌被移除时，将其洗回牌库，并抽1张牌。",
+      "rulesText": "当友方随从被移除时：获得其效果以及一半的属性（向上取整）。",
       "arrows": [
+        "NW",
         "NE"
       ],
       "tags": [],
@@ -7641,9 +7642,9 @@
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary derivative minion. Preserve the established intimate low three-quarter composition of Rift-Reborn Drake: a lost sixteen-to-seventeen-year-old boy fills the upper portrait, looking down in bewildered fear at his own raised hand and ruptured torso inside a damaged frontier-vessel corridor. Retain his youthful angular face, tousled ash-brown hair, gray-green deep-set eyes, slim adolescent frame, deep forest-green expedition-captain coat, dark oxblood-red lining, high collar, map-case straps, and worn brass-like fasteners. Keep the same dramatic foreshortening, recognizable facial identity, hand positions, corridor background, and close-to-medium framing; do not use a distant long shot.\n\nAdd severe but identity-preserving Hollow-Null contradiction. A perfectly lightless causal void has removed part of one cheek, the edge of the nose, and the lower rim of one eye socket; several fragments of the same youthful face occupy slightly incompatible positions, while one intact eye and most of the expression remain recognizable. The facial damage must look like reality missing, not a scar, burn, black makeup, skull exposure, disease, or a clean half-face division. Around the existing missing torso and across both shoulders, arms, waist, and one thigh, show many mutually incompatible material states: wet dark-red biological tissue, pale tendons, displaced ribs and fragments of an older hand; matte cracked ivory ceramic shell plates and splinters; corroded pistons, gears, black cable bundles and ship fasteners; surviving green coat seams and oxblood fabric strips. One biological hand is present while its ceramic forearm lags in another position; a piston joint intersects a living shoulder as both grow and erode; ribs pass through ceramic shell and disconnected fingers skip intermediate motion. Make biological, ceramic, and mechanical fragments visibly distinct and abundant without forming stable cybernetics, armor, or a designed monster anatomy.\n\nUse controlled cold cyan-white edge light to reveal the causal gaps and material differences while keeping his face readable, with charcoal industrial shadows and restrained deep green and oxblood-red accents. Premium industrial sci-fi anime rendering, crisp adolescent facial drawing, hybrid cel-and-painterly surfaces, exceptional Legendary material finish. The causal void must read as absolute missing reality, never black skin, smoke, liquid shadow, or a glowing portal. Avoid a long shot, heroic pose, muscular adult, beard, clean human/monster split, stable biological mutation, tidy cyborg design, generic zombie, readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
       "artDescriptionNeedsPolish": false,
       "artRequest": 0,
-      "attack": 3,
-      "health": 3,
-      "movement": 3,
+      "attack": 1,
+      "health": 1,
+      "movement": 1,
       "tribes": [
         "反抗军",
         "空亡体"
@@ -7653,7 +7654,7 @@
       "collectionKind": "Token",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "1a707ef0008de09c5ec1b47a1289f41fa03cd12c259d8fb05b5127845d2c5dd6",
+        "reviewedDesignHash": "cae83d0e1d26eb67e94caf5b849990cf471469c6f79d9d9cc28a8c0862b54b80",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -7663,51 +7664,43 @@
           "arrowRules": [],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
-            "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:self-territory",
-            "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed"
+            "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed"
           ],
           "grantableContinuousEffectRefs": [],
           "abilityRefs": []
         },
-        "keywordTags": [
-          "AnnihilationImmune"
-        ],
+        "keywordTags": [],
         "arrowMode": "Permanent",
         "abilities": [],
         "continuousEffects": [
           {
-            "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:self-territory",
-            "lifetime": "WhileHostExists",
+            "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed",
+            "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "Always"
             },
             "affectedScope": {
-              "query": "Self"
-            },
-            "contributions": [
-              {
-                "type": "PlacementRule",
-                "contributionId": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:self-territory:contribution",
-                "rule": "AllowSelfNonTerritory"
-              }
-            ]
-          },
-          {
-            "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed",
-            "lifetime": "WhileHostExists",
-            "activeCondition": {
-              "type": "Always"
-            },
-            "affectedScope": {
-              "query": "Self",
-              "host": "Host"
+              "query": "Cards",
+              "excludeHost": true,
+              "filters": [
+                {
+                  "field": "controller",
+                  "op": "Equals",
+                  "value": "HostController"
+                },
+                {
+                  "field": "cardType",
+                  "op": "Equals",
+                  "value": "Minion"
+                }
+              ]
             },
             "contributions": [
               {
                 "type": "TriggeredEffect",
-                "contributionId": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed:contribution",
+                "contributionId": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed:contribution",
                 "triggeredEffect": {
-                  "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed:trigger",
+                  "id": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed:trigger",
                   "trigger": {
                     "type": "Passive",
                     "eventKind": "CardRemoved",
@@ -7717,7 +7710,7 @@
                     "priority": 0,
                     "filters": []
                   },
-                  "bodyPlanRef": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed:body",
+                  "bodyPlanRef": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed:body",
                   "executionTiming": "Slow"
                 }
               }
@@ -7727,44 +7720,87 @@
         "plans": [
           {
             "planVersion": 1,
-            "planId": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:removed:body",
+            "planId": "243f34e6-2e5f-4ce3-8a7e-843d7d84bf9e:inherit-removed:body",
             "steps": [
               {
-                "elementId": "shuffle-removed-card",
+                "elementId": "inherit-removed-effects",
                 "apply": {
-                  "package": "TransferCard",
+                  "package": "CopyCardEffects",
                   "args": {
-                    "card": "$event.card",
-                    "requiredSourceZone": "Void",
-                    "destinationOwner": "SourceController",
-                    "destinationZone": "DrawPile",
-                    "destinationPosition": "Shuffle"
+                    "target": "$continuousHost",
+                    "source": "$event.card",
+                    "snapshotEvent": "$event.id",
+                    "filter": "All"
                   }
                 }
               },
               {
-                "elementId": "draw",
+                "elementId": "inherit-half-attributes",
                 "apply": {
-                  "package": "DrawCards",
+                  "package": "ModifierBatch",
                   "args": {
-                    "player": "SourceController",
-                    "amount": {
-                      "call": {
-                        "name": "EffectValue",
-                        "args": [
-                          1
-                        ],
-                        "metadata": {
-                          "kind": "Draw"
+                    "items": [
+                      {
+                        "target": "$continuousHost",
+                        "channel": "Stat",
+                        "stat": "Attack",
+                        "operation": "Add",
+                        "value": {
+                          "call": {
+                            "name": "CeilDiv",
+                            "args": [
+                              {
+                                "var": "event.previousAttack"
+                              },
+                              2
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "target": "$continuousHost",
+                        "channel": "Stat",
+                        "stat": "Health",
+                        "operation": "Add",
+                        "value": {
+                          "call": {
+                            "name": "CeilDiv",
+                            "args": [
+                              {
+                                "var": "event.previousMaxHealth"
+                              },
+                              2
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "target": "$continuousHost",
+                        "channel": "Stat",
+                        "stat": "Move",
+                        "operation": "Add",
+                        "value": {
+                          "call": {
+                            "name": "CeilDiv",
+                            "args": [
+                              {
+                                "var": "event.previousMovement"
+                              },
+                              2
+                            ]
+                          }
                         }
                       }
-                    }
+                    ]
                   }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "该卡可被放置于非己方领土内。免湮灭。这张牌被移除时，将其洗回牌库，并抽1张牌。"
+              "rawRulesText": "当友方随从被移除时：获得其效果以及一半的属性（向上取整）。",
+              "inputs": [
+                "continuousHost"
+              ]
             }
           }
         ]
@@ -8728,7 +8764,7 @@
       "rulesText": "当此卡被移除时：随机选择对方领土的两个空格子，为对方召唤两只「食锈螯兽」。",
       "arrows": [
         "N",
-        "W"
+        "E"
       ],
       "tags": [],
       "artPath": "",
@@ -8741,7 +8777,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "7f327fe1dd0768ea5e192f45a9e1451f347dc312d0993b2722561985e0ece10c",
+        "reviewedDesignHash": "0d68898a5fcd9cf80583bb3d63018eb137af26a0707d9953bcdbca7ff1a13cbc",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -9421,7 +9457,7 @@
       "durability": 0,
       "rulesText": "发动成本：移除1张手牌。效果：你在下回合额外抽2张牌。",
       "arrows": [
-        "SW"
+        "SE"
       ],
       "tribes": [
         "建筑"
@@ -9437,7 +9473,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "bb559889b89588b78442d463a948056873d1902730cbfdf09de040f11d5071aa",
+        "reviewedDesignHash": "0136b361801282d3c1dcdc0b8d34273ca1c1ed1579b3b45c5998f572f9021b8e",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -14185,7 +14221,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。",
+      "rulesText": "[一次性箭头] 入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。",
       "arrows": [
         "NE"
       ],
@@ -14208,14 +14244,20 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "12b1944015b77d6a02e77293693ae19fff1d5fed6baa1e8ca63eb365a831bf84",
+        "reviewedDesignHash": "89487b7d7b604f6cc1eb2b881b10e356f272cb423e772b1d52c76e9bd25dc892",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
           "placeCost": null,
-          "arrowRules": [],
+          "arrowRules": [
+            {
+              "direction": "NE",
+              "kind": "Consumable",
+              "layers": 1
+            }
+          ],
           "quantitizedCardTags": [],
           "continuousEffectRefs": [
             "15cbb572-6a6a-47f0-ae48-561df3be738c:entry",
@@ -14225,7 +14267,7 @@
           "abilityRefs": []
         },
         "keywordTags": [],
-        "arrowMode": "Permanent",
+        "arrowMode": "OneTime",
         "abilities": [],
         "continuousEffects": [
           {
@@ -14359,7 +14401,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
+              "rawRulesText": "[一次性箭头] 入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
             }
           },
           {
@@ -14430,7 +14472,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
+              "rawRulesText": "[一次性箭头] 入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
             }
           }
         ]
@@ -14450,7 +14492,7 @@
       "health": 4,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。",
+      "rulesText": "[可无限建造：2] 回合开始时，你获得2点星能，每次建造完毕额外获得1点。",
       "arrows": [],
       "tribes": [
         "建筑"
@@ -14466,7 +14508,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "721d1c5bdba968eb25705fbc8bb8e81e684a2c218c4e59997908c248c807e1be",
+        "reviewedDesignHash": "5a71cdce6fd5bcf51755cdc097d77e64f65962fb6b3bc4356857c84551417a44",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -14604,7 +14646,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。",
+              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能，每次建造完毕额外获得1点。",
               "sourceClauseIds": [
                 "clause-01"
               ]
@@ -14630,7 +14672,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。"
+              "rawRulesText": "[可无限建造：2] 回合开始时，你获得2点星能，每次建造完毕额外获得1点。"
             }
           }
         ]
@@ -14647,7 +14689,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次额外建造完毕该卡箭头层数+1。",
+      "rulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次建造完毕该卡箭头层数+1。",
       "arrows": [
         "NW",
         "NE"
@@ -14671,7 +14713,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "05bf6e87aab125844f6fc7946fd183a9f2c5546430ce1de8a5cdda7fd5e09c36",
+        "reviewedDesignHash": "cb8b13050b5f6a85a6288fbf81c16ae3846562d80f93d1e2ba3aa8653ed69f60",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -14788,7 +14830,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次额外建造完毕该卡箭头层数+1。"
+              "rawRulesText": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次建造完毕该卡箭头层数+1。"
             }
           }
         ]
@@ -15162,7 +15204,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次额外建造完毕该卡箭头层数+1。",
+      "rulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次建造完毕该卡箭头层数+1。",
       "arrows": [
         "N",
         "W",
@@ -15187,7 +15229,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "a31dbe7c6829c3f947499a110d021bc951e2dec33dfde1057251d89ff39444dd",
+        "reviewedDesignHash": "6b0113844bde8d7098308fae6cd24719c513a271e88694d71f60015ab3388248",
         "properties": {
           "constructionTarget": 2,
           "runtimeSupportNote": null,
@@ -15322,7 +15364,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次额外建造完毕该卡箭头层数+1。"
+              "rawRulesText": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次建造完毕该卡箭头层数+1。"
             }
           }
         ]
@@ -15428,7 +15470,7 @@
       "health": 5,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。",
+      "rulesText": "[可无限建造：6] 入场&每次建造完毕：本局对战的剩余时间内，当你放置可建造随从时，为其额外提供1点初始建造点。",
       "arrows": [
         "SW",
         "SE"
@@ -15447,9 +15489,9 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "7dcea937695136e6d2bd99b1e5c147cc7ec9596293c4efe7acab5393a7ebe8a7",
+        "reviewedDesignHash": "f38d72b74469076081fc3583ef04a9d61e82a9f1779c138ed26413b24783468f",
         "properties": {
-          "constructionTarget": 8,
+          "constructionTarget": 6,
           "runtimeSupportNote": null,
           "upgradeToCardId": null,
           "upgradeToCardIds": [],
@@ -15467,8 +15509,8 @@
           "textValueBindings": [
             {
               "id": "construction-target",
-              "anchor": "可无限建造：8",
-              "token": "8",
+              "anchor": "可无限建造：6",
+              "token": "6",
               "sources": [
                 {
                   "kind": "ConstructionTarget",
@@ -15551,13 +15593,13 @@
             "planId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:entry:body",
             "steps": [
               {
-                "elementId": "reduce-all-construction-goals",
+                "elementId": "increase-initial-construction",
                 "apply": {
                   "package": "AddModifier",
                   "args": {
                     "channel": "RuleParameter",
-                    "rule": "ConstructionTarget",
-                    "operation": "Subtract",
+                    "rule": "InitialConstructionValue",
+                    "operation": "Add",
                     "value": 1,
                     "lifetime": "Permanent"
                   }
@@ -15565,7 +15607,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。"
+              "rawRulesText": "[可无限建造：6] 入场&每次建造完毕：本局对战的剩余时间内，当你放置可建造随从时，为其额外提供1点初始建造点。"
             }
           },
           {
@@ -15573,13 +15615,13 @@
             "planId": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4:construction-reward:body",
             "steps": [
               {
-                "elementId": "reduce-all-construction-goals",
+                "elementId": "increase-initial-construction",
                 "apply": {
                   "package": "AddModifier",
                   "args": {
                     "channel": "RuleParameter",
-                    "rule": "ConstructionTarget",
-                    "operation": "Subtract",
+                    "rule": "InitialConstructionValue",
+                    "operation": "Add",
                     "value": 1,
                     "lifetime": "Permanent"
                   }
@@ -15587,7 +15629,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。"
+              "rawRulesText": "[可无限建造：6] 入场&每次建造完毕：本局对战的剩余时间内，当你放置可建造随从时，为其额外提供1点初始建造点。"
             }
           }
         ]
@@ -15604,7 +15646,7 @@
       "costResource": "Star",
       "costAmount": 5,
       "durability": 0,
-      "rulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
+      "rulesText": "发动：选择至多两个场上的友方建造中的随从，令其立即完成建造，然后对其造成等同于剩余点数的伤害。",
       "arrows": [
         "NW"
       ],
@@ -15619,7 +15661,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "9eab4b48665c824636907f44b408bfe9597b0ef072054cd05013565c717e3f24",
+        "reviewedDesignHash": "0c29ec681d7e9f63f59a1f65d02b3094bd88e58b4708867a0ec5fafb531fa1bd",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -15658,16 +15700,12 @@
             "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate:prepare",
             "steps": [
               {
-                "elementId": "choose-building",
+                "elementId": "choose-constructible-targets",
                 "select": {
-                  "saveAs": "building",
-                  "valueType": "Card",
+                  "saveAs": "targets",
+                  "valueType": "Entity",
                   "scope": {
-                    "query": "OwnedZones",
-                    "zones": [
-                      "DrawPile",
-                      "DiscardPile"
-                    ],
+                    "query": "FriendlyEntities",
                     "filters": [
                       {
                         "field": "cardType",
@@ -15675,56 +15713,27 @@
                         "value": "Minion"
                       },
                       {
-                        "field": "tribes",
-                        "op": "Contains",
-                        "value": "建筑"
-                      }
-                    ]
-                  },
-                  "policy": {
-                    "kind": "PlayerSelect",
-                    "min": 1,
-                    "max": 1,
-                    "canCancel": false
-                  },
-                  "failurePolicy": "AbortPlan",
-                  "cancelPolicy": "AbortPlan"
-                }
-              },
-              {
-                "elementId": "choose-destination",
-                "select": {
-                  "saveAs": "destination",
-                  "valueType": "Grid",
-                  "scope": {
-                    "query": "TerritoryGrids",
-                    "relation": "Friendly",
-                    "filters": [
-                      {
-                        "field": "canSummonCard",
+                        "field": "isConstructible",
                         "op": "Equals",
-                        "value": "$building"
+                        "value": true
                       }
                     ]
                   },
                   "policy": {
                     "kind": "PlayerSelect",
-                    "min": 1,
-                    "max": 1,
+                    "min": 0,
+                    "max": 2,
                     "canCancel": false
-                  },
-                  "failurePolicy": "AbortPlan",
-                  "cancelPolicy": "AbortPlan"
+                  }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
               "semanticRole": "ActivationPreparation",
               "exports": [
-                "building",
-                "destination"
-              ]
+                "targets"
+              ],
+              "rawRulesText": "发动：选择至多两个场上的友方建造中的随从，令其立即完成建造，然后对其造成等同于剩余点数的伤害。"
             }
           },
           {
@@ -15732,110 +15741,70 @@
             "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:activate:body",
             "steps": [
               {
-                "elementId": "place-selected-building",
-                "apply": {
-                  "package": "TransferCard",
-                  "args": {
-                    "card": "$building",
-                    "requiredSourceOwner": "SourceController",
-                    "destinationOwner": "SourceController",
-                    "destinationZone": "Battlefield",
-                    "destinationGrid": "$destination"
-                  },
-                  "failurePolicy": "AbortPlan"
+                "elementId": "snapshot-construction-gaps",
+                "let": {
+                  "saveAs": "gaps",
+                  "value": {
+                    "call": {
+                      "name": "ConstructionRemainingAllocation",
+                      "args": [
+                        {
+                          "var": "targets"
+                        }
+                      ]
+                    }
+                  }
                 }
               },
               {
-                "elementId": "bind-new-building-entry",
-                "forEach": {
-                  "values": {
-                    "var": "building"
-                  },
-                  "as": "selectedCard",
-                  "body": [
-                    {
-                      "elementId": "find-placed-entity",
-                      "select": {
-                        "saveAs": "placedEntity",
-                        "valueType": "Entity",
-                        "scope": {
-                          "query": "BattlefieldEntities",
-                          "filters": [
-                            {
-                              "field": "cardInstanceId",
-                              "op": "Equals",
-                              "value": "$selectedCard"
-                            }
-                          ]
-                        },
-                        "policy": {
-                          "kind": "All",
-                          "min": 0,
-                          "max": 1,
-                          "canCancel": false
+                "elementId": "complete-selected-rounds",
+                "apply": {
+                  "package": "ModifyUnitAttribute",
+                  "args": {
+                    "target": "$gaps",
+                    "attribute": "FixedConstructionValue",
+                    "operation": "Add",
+                    "amount": 1
+                  }
+                }
+              },
+              {
+                "elementId": "apply-damage-modifiers",
+                "let": {
+                  "saveAs": "damageGaps",
+                  "value": {
+                    "call": {
+                      "name": "EffectValueAllocation",
+                      "args": [
+                        {
+                          "var": "gaps"
                         }
-                      }
-                    },
-                    {
-                      "elementId": "schedule-if-still-in-play",
-                      "if": {
-                        "condition": {
-                          "greater": [
-                            {
-                              "count": {
-                                "var": "placedEntity"
-                              }
-                            },
-                            0
-                          ]
-                        },
-                        "then": [
-                          {
-                            "elementId": "schedule-next-round-destruction",
-                            "apply": {
-                              "package": "ScheduleBody",
-                              "args": {
-                                "timing": "EndOfNextRound",
-                                "bodyPlanRef": "573781a0-235c-40aa-bff0-6a5e2c7fd942:delayed-destruction:body"
-                              }
-                            }
-                          }
-                        ],
-                        "else": []
+                      ],
+                      "metadata": {
+                        "kind": "Damage"
                       }
                     }
-                  ]
+                  }
                 }
-              }
-            ],
-            "annotations": {
-              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
-              "semanticRole": "ActivatedAbilityBody",
-              "inputs": [
-                "building",
-                "destination"
-              ]
-            }
-          },
-          {
-            "planVersion": 1,
-            "planId": "573781a0-235c-40aa-bff0-6a5e2c7fd942:delayed-destruction:body",
-            "steps": [
+              },
               {
-                "elementId": "destroy-original-building-entry",
+                "elementId": "damage-by-saved-gaps",
                 "apply": {
-                  "package": "Destroy",
+                  "package": "DamageBatch",
                   "args": {
-                    "target": "$placedEntity"
+                    "allocation": "$damageGaps",
+                    "amount": 1,
+                    "damageType": "Effect"
                   }
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。",
+              "semanticRole": "ActivatedAbilityBody",
               "inputs": [
-                "placedEntity"
-              ]
+                "targets"
+              ],
+              "rawRulesText": "发动：选择至多两个场上的友方建造中的随从，令其立即完成建造，然后对其造成等同于剩余点数的伤害。"
             }
           }
         ]
@@ -16775,7 +16744,7 @@
       "health": 4,
       "movement": 1,
       "durability": 0,
-      "rulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次额外建造完毕，其攻击力和攻击范围额外+1。",
+      "rulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次建造完毕，其攻击力和攻击范围额外+1。",
       "arrows": [
         "S"
       ],
@@ -16794,7 +16763,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "8d44fb19e837c4e8cc7db9ab2169dd919a4c137ac3f7d94666c8e69e1c963314",
+        "reviewedDesignHash": "47546a02eb3d1d8500f98e6d4f5178e7f8e909b171c4993843d805b65e1d50c0",
         "properties": {
           "constructionTarget": 3,
           "runtimeSupportNote": null,
@@ -16913,7 +16882,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次额外建造完毕，其攻击力和攻击范围额外+1。"
+              "rawRulesText": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次建造完毕，其攻击力和攻击范围额外+1。"
             }
           }
         ]
@@ -18256,7 +18225,7 @@
       "health": 6,
       "movement": 0,
       "durability": 0,
-      "rulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
+      "rulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。",
       "arrows": [
         "NE"
       ],
@@ -18274,7 +18243,7 @@
       "collectionKind": "Collectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "448f83ffb42e48a2abd0d0f3ab1b7a3e960074b0be5a9c3ffd4c93a38b2d7fe0",
+        "reviewedDesignHash": "63597220b2f54680ac0819f0ff2fded92e5bb7e5438e68f7ac7cdd95f6beedc5",
         "properties": {
           "constructionTarget": 4,
           "runtimeSupportNote": null,
@@ -18451,7 +18420,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "targets"
@@ -18486,7 +18455,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。",
               "inputs": [
                 "targets"
               ]
@@ -18521,7 +18490,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。",
               "semanticRole": "ActivationPreparation",
               "exports": [
                 "targets"
@@ -18556,7 +18525,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。",
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。",
               "inputs": [
                 "targets"
               ]
@@ -18582,7 +18551,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。"
+              "rawRulesText": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次建造完毕，该数值+1。"
             }
           }
         ]

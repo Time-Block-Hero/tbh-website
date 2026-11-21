@@ -30,7 +30,7 @@ test('six repeat constructors separate first entry from extra completion rewards
   for (const id of repeatIds) {
     assert.equal(triggers(id).filter(t => t.eventKind === 'ConstructionRepeated').length, 1, id);
     assert.equal(triggers(id).filter(t => t.eventKind === 'ConstructionCompleted').length, 0, id);
-    assert.match(card(id).rulesText, /每次额外建造完毕/);
+    assert.match(card(id).rulesText, /每次(?:额外)?建造完毕/);
   }
   for (const c of dataset.cards.filter(c => c.execution.properties.constructionTarget != null)) {
     assert.equal(c.execution.properties.constructionMinimumTarget, 1, c.id);
@@ -56,13 +56,13 @@ test('shield starts at four, keeps quick entry and time-stop armor, and grows on
   assert.equal(ts.find(x => x.trigger.eventKind === 'PhaseStarted').executionTiming, 'Quick');
 });
 
-test('academy has target eight and permanent player reductions from entry and additional construction', () => {
-  assert.equal(card('AI-009').execution.properties.constructionTarget, 8);
+test('academy has target six and permanent initial construction from entry and additional construction', () => {
+  assert.equal(card('AI-009').execution.properties.constructionTarget, 6);
   assert.equal(card('AI-009').execution.properties.progressEffects, undefined);
   assert.deepEqual(triggers('AI-009').map(t => t.eventKind), ['CardPlaced', 'ConstructionRepeated']);
   const reductions = packages('AI-009', 'AddModifier');
   assert.equal(reductions.length, 2);
-  for (const r of reductions) assert.deepEqual(r, { channel: 'RuleParameter', rule: 'ConstructionTarget', operation: 'Subtract', value: 1, lifetime: 'Permanent' });
+  for (const r of reductions) assert.deepEqual(r, { channel: 'RuleParameter', rule: 'InitialConstructionValue', operation: 'Add', value: 1, lifetime: 'Permanent' });
 });
 
 test('tower starts at range three and construction three, while factories add only lit arrow layers', () => {
@@ -117,16 +117,40 @@ test('Augustus permits construction activation but exposes its self cost only wh
   assert.deepEqual(packages('AI-020-02', 'CreateCard').map(x => [x.cardId, x.destinationZone]), [[card('AI-020').uid, 'Hand']]);
 });
 
-test('overload chooses a real owned building and locks its new battlefield entry for next-round destruction', () => {
+test('overload completes up to two friendly construction cycles using saved per-target gaps', () => {
   const c = card('AI-010'); const prepare = c.execution.plans.find(p => p.planId.endsWith(':prepare'));
-  assert.deepEqual(prepare.steps[0].select.scope.zones, ['DrawPile', 'DiscardPile']);
-  assert.deepEqual(prepare.steps[0].select.scope.filters, [{ field: 'cardType', op: 'Equals', value: 'Minion' }, { field: 'tribes', op: 'Contains', value: '建筑' }]);
-  assert.equal(prepare.steps[1].select.scope.relation, 'Friendly');
-  assert.equal(packages('AI-010', 'TransferCard')[0].destinationZone, 'Battlefield');
-  assert.ok(objects(c.execution.plans).some(x => x.field === 'cardInstanceId' && x.value === '$selectedCard'));
-  assert.deepEqual(packages('AI-010', 'ScheduleBody'), [{ timing: 'EndOfNextRound', bodyPlanRef: c.uid + ':delayed-destruction:body' }]);
-  assert.deepEqual(packages('AI-010', 'Destroy'), [{ target: '$placedEntity' }]);
-  assert.deepEqual(packages('AI-010', 'GrantTriggeredEffect'), []);
+  assert.equal(prepare.steps[0].select.scope.query, 'FriendlyEntities');
+  assert.deepEqual(prepare.steps[0].select.scope.filters, [{ field: 'cardType', op: 'Equals', value: 'Minion' }, { field: 'isConstructible', op: 'Equals', value: true }]);
+  assert.deepEqual(prepare.steps[0].select.policy, {kind:'PlayerSelect',min:0,max:2,canCancel:false});
+  const body=c.execution.plans.find(p=>p.planId.endsWith(':body'));
+  assert.equal(body.steps[0].let.value.call.name, 'ConstructionRemainingAllocation');
+  assert.deepEqual(packages('AI-010', 'ModifyUnitAttribute'), [{target:'$gaps',attribute:'FixedConstructionValue',operation:'Add',amount:1}]);
+  assert.equal(packages('AI-010', 'DamageBatch').length,1);
+  assert.deepEqual(packages('AI-010', 'ScheduleBody'), []);
+  assert.deepEqual(packages('AI-010', 'TransferCard'), []);
+});
+
+test('rift drake inherits complete effect snapshots and rounded effective stats without old immortality', () => {
+  const c=card('SA-004-01');
+  assert.deepEqual([c.costAmount,c.attack,c.health,c.movement],[10,1,1,1]);
+  assert.deepEqual(c.execution.keywordTags,[]);
+  assert.deepEqual(packages(c.id,'TransferCard'),[]);
+  assert.deepEqual(packages(c.id,'CopyCardEffects'),[{target:'$continuousHost',source:'$event.card',snapshotEvent:'$event.id',filter:'All'}]);
+  const effect=c.execution.continuousEffects[0];
+  assert.equal(effect.lifetime,'WhileHostInBattlefield');
+  assert.equal(effect.affectedScope.query,'Cards');
+  assert.equal(effect.affectedScope.excludeHost,true);
+  assert.equal(triggers(c.id)[0].eventKind,'CardRemoved');
+  const stats=packages(c.id,'ModifierBatch')[0].items;
+  assert.deepEqual(stats.map(x=>x.stat),['Attack','Health','Move']);
+  assert.deepEqual(stats.map(x=>x.value.call.args),[[{var:'event.previousAttack'},2],[{var:'event.previousMaxHealth'},2],[{var:'event.previousMovement'},2]]);
+});
+
+test('new directional edits and one-time power station arrows preserve design directions', () => {
+  assert.deepEqual(card('SA-011').arrows,['N','E']);
+  assert.deepEqual(card('SA-014').arrows,['SE']);
+  assert.equal(card('AI-001').execution.arrowMode,'OneTime');
+  assert.deepEqual(card('AI-001').execution.properties.arrowRules,[{direction:'NE',kind:'Consumable',layers:1}]);
 });
 
 test('other changed cards retain their confirmed targeting, keyword and numeric semantics', () => {
