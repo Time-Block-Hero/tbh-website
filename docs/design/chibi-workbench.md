@@ -1,6 +1,8 @@
 # Chibi 人物工坊
 
-`chibi.html` 是人物动作与显示参数的正式编辑入口。首页导航、人物档案和卡牌编辑器均可进入；卡牌与工坊按持久 UID 互相定位。旧 `chibi-review.html` 保留查询参数后转到工坊，`chibi-gallery.html` 保留旧稿回看，页头与入口均明确标注“历史试稿（已停用，非游戏素材）”。卡牌详情只提供两个带 UID 的链接，不加载旧十二帧图集或后台动画。
+`chibi.html` 是人物动作与显示参数的正式编辑入口。首页导航、人物档案和卡牌编辑器均可进入；卡牌与工坊按持久 UID 互相定位。卡牌详情的「卡面 / Chibi」切换保留未保存表单，仅在 Chibi 页签打开时加载已发布素材；关闭详情或切回卡面释放动画和图形资源。预览使用同一份 `data/chibi-published.json`、九帧五动作与 SHA 校验，不回退到旧图集。法术与资源没有人物预览。
+
+旧图库页面、旧静态立绘、十二帧试稿与未引用的历史版本已移除；当前九帧原稿、校准文件和生成来源仍用于编辑及确定性发布。
 
 ## 使用
 
@@ -84,7 +86,7 @@ node tools/publish-chibi-workbench.mjs --check
 ## 验证
 
 ```sh
-node --test tools/tests/chibi-workbench.test.mjs tools/tests/chibi-alpha-bake.test.mjs tools/tests/card-chibis.test.mjs
+node --test tools/tests/chibi-workbench.test.mjs tools/tests/chibi-alpha-bake.test.mjs tools/tests/published-chibi-preview.test.mjs tools/tests/card-chibis.test.mjs
 npm test
 node --check chibi-workbench.js
 node --check chibi-review-renderer.js

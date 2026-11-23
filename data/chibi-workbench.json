@@ -209,7 +209,7 @@
     {
       "uid": "1529f937-224e-4d19-a272-0740e98b649e",
       "atlasSha256": "c7b4322e673d41cc705c0b2eda27e259c5ac71fa1a755e94dbc9e4d076ca2f72",
-      "scale": 1.2,
+      "scale": 1.01,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -585,7 +585,7 @@
     {
       "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
       "atlasSha256": "4f922c72491fd330773adc5094f27ff1ee880b4c5a01e7cbf2c3f1ce2f6a1705",
-      "scale": 1.134571,
+      "scale": 1.04,
       "offset": {
         "x": 0,
         "y": 0,
@@ -969,7 +969,7 @@
     {
       "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
       "atlasSha256": "4a66f118e69d1f5681c853604d53ecc9e4363f9e5477d3a48cae7f387286fbca",
-      "scale": 1.4,
+      "scale": 1.08,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -1016,20 +1016,20 @@
       "frames": {
         "0": {
           "anchor": {
-            "x": 0.5117907,
-            "y": 0.0550239
+            "x": 0.53,
+            "y": 0.04423437500000005
           }
         },
         "1": {
           "anchor": {
-            "x": 0.4781128,
-            "y": 0.0550239
+            "x": 0.4868789237668162,
+            "y": 0.04423437500000005
           }
         },
         "2": {
           "anchor": {
-            "x": 0.4758255,
-            "y": 0.0741627
+            "x": 0.5192923076923076,
+            "y": 0.03423437500000004
           }
         },
         "3": {
@@ -1091,7 +1091,7 @@
     {
       "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
       "atlasSha256": "60290563c72240d43330551b0d94419de9d50fbc642d39df0a79aefe7a8baa64",
-      "scale": 2.1,
+      "scale": 1.78,
       "offset": {
         "x": 0,
         "y": 0.07,
@@ -1155,7 +1155,7 @@
     {
       "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
       "atlasSha256": "4c4c0d2538f9424a52d8c52376a44d7f80f93af7e94b14309b3470de60704064",
-      "scale": 1.605185,
+      "scale": 1.37,
       "offset": {
         "x": 0,
         "y": 0,
@@ -1219,7 +1219,7 @@
     {
       "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
       "atlasSha256": "57f81a5c96d2bfa1d8b41dd63f52d2b8e61e8c9906797b1cd27b8d5293899802",
-      "scale": 1.859202,
+      "scale": 1.38,
       "offset": {
         "x": 0,
         "y": 0,
@@ -1284,7 +1284,7 @@
     {
       "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
       "atlasSha256": "416462f93fe3892c5ea721da0b55e0d2853edc5444506f553a35bdb47cc99612",
-      "scale": 2.430233,
+      "scale": 1.72,
       "offset": {
         "x": 0,
         "y": 0,
@@ -2473,7 +2473,26 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {
+          "anchor": {
+            "x": 0.52,
+            "y": 0.03423437500000004
+          }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.5,
+            "y": 0.03823437499999993
+          }
+        },
+        "2": {
+          "anchor": {
+            "x": 0.45399999999999996,
+            "y": 0.03623437499999993
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -3907,7 +3926,10 @@
         "y": 0.07,
         "z": 0
       },
-      "anchor": null,
+      "anchor": {
+        "x": 0.5533854,
+        "y": 0.1291866
+      },
       "actions": {
         "idle": {
           "fps": 3,
@@ -3945,7 +3967,9 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "2": {}
+      },
       "bodyKind": "floating",
       "artworkFacesRight": true,
       "prompt": {
@@ -4157,7 +4181,7 @@
     {
       "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
       "atlasSha256": "3e88387a829e283d394181087ad764427eeb5d073820dff05b471eb96f42d9f4",
-      "scale": 1.106128,
+      "scale": 1,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4221,7 +4245,7 @@
     {
       "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
       "atlasSha256": "286f55f265c92bc71233519b8c03a39a0f9e52a1406e9376b421933f50f42711",
-      "scale": 1.096961,
+      "scale": 1.01,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4285,13 +4309,16 @@
     {
       "uid": "a60555e6-d405-47de-bdff-c84031d53448",
       "atlasSha256": "d463b29b9eaa2834178ed76bc7d88ca9b5435b45131f66f0948715d105d97be6",
-      "scale": 1.36,
+      "scale": 1.04,
       "offset": {
         "x": 0,
         "y": 0,
         "z": 0
       },
-      "anchor": null,
+      "anchor": {
+        "x": 0.47200000000000003,
+        "y": 0.052234375000000055
+      },
       "actions": {
         "idle": {
           "fps": 3,
@@ -4329,7 +4356,16 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {},
+        "1": {},
+        "2": {
+          "anchor": {
+            "x": 0.47200000000000003,
+            "y": 0.052234375000000055
+          }
+        }
+      },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
       "prompt": {
@@ -4547,71 +4583,10 @@
         "y": 0.07,
         "z": 0
       },
-      "anchor": null,
-      "actions": {
-        "idle": {
-          "fps": 3,
-          "offset": {
-            "x": 0,
-            "y": 0
-          }
-        },
-        "move": {
-          "fps": 6,
-          "offset": {
-            "x": 0,
-            "y": 0
-          }
-        },
-        "hit": {
-          "fps": 6,
-          "offset": {
-            "x": 0,
-            "y": 0
-          }
-        },
-        "attack": {
-          "fps": 6,
-          "offset": {
-            "x": 0,
-            "y": 0
-          }
-        },
-        "effect": {
-          "fps": 6,
-          "offset": {
-            "x": 0,
-            "y": 0
-          }
-        }
+      "anchor": {
+        "x": 0.512,
+        "y": 0.17623437499999994
       },
-      "frames": {},
-      "bodyKind": "floating",
-      "artworkFacesRight": true,
-      "prompt": {
-        "base": "Unit AI-007 / 工程无人机 / Engineering Drone.\nUse the following card description ONLY for identity, species, costume and primary equipment. Disregard its portrait composition, scenery, cinematic viewpoint and pose:\nRare Astra Imperium MEDIUM-SIZED general-purpose autonomous flying construction assistant, a substantial work vehicle rather than a small drone or humanoid robot. The broad central fuselage is the size of a delivery truck, about four meters long, with total lift-unit span around seven meters. Four powerful enclosed vector-thrust lift nacelles support a heavy rectangular crimson-and-gunmetal modular hull with a clearly readable underside cargo bay, cable winch, tool racks and standardized replacement modules. Four robust non-humanoid articulated construction booms perform different useful jobs: one hoists a thick wall panel larger than an adult person, one stabilizes a structural beam, one welds a joint, and one plugs a heavy conduit into an unfinished allied machine. The assistant hovers only a few meters above an industrial construction apron. Two adult helmeted engineers stand on an adjacent gantry at the SAME DEPTH as the drone, each less than half the central hull height, to provide honest unmistakable scale. Arrange the complete wide body, four lift units, large lifted panel and at least one full-height human scale figure within the upper square. Modest low three-quarter side view, no extreme fisheye or miniature city illusion. All limbs are mechanical cranes and tools, not hands or legs. General-purpose utility roles must be obvious; no guns, missiles, cockpit pilot or combat-fighter silhouette. Lower portrait extends through scaffolds, power spools and the construction apron. Controlled warm weld light and cold lift exhaust, crisp anime mecha illustration with visible contour drawing and simple hard cel-shadows, no photoreal microtexture. Standalone vertical card illustration, portrait 5:8. Keep the main machine, decisive action and scale references readable in the upper square crop, with safe margins. Premium Industrial Sci-Fi Anime style with strong hand-drawn contour lines, deliberate cel-shaped value groups and designed highlights, painterly smoke and atmosphere. Matte dark-red ceramic and gunmetal industrial materials; original sci-fi equipment, no photorealism or glossy 3D render. Artwork only; no text, logos, watermarks, card frame, border, arrows, stat icons or other UI.",
-        "notes": "",
-        "actions": {}
-      },
-      "exportReady": true,
-      "sizeClass": "floating",
-      "provenance": {
-        "source": "ACv9 accepted overall collection; ACv10 explicit calibration",
-        "individualHumanApproval": false,
-        "sourceBodyType": "flying-drone",
-        "generationPromptPath": "./assets/chibi-prompts/430888e7-5e44-4599-98d5-7a8c0824b40f.txt"
-      }
-    },
-    {
-      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
-      "atlasSha256": "35a14dbf9cd6c7ca683afe2b3d18c24f936a2f0268820b8483d4e670c4ba8176",
-      "scale": 1.72,
-      "offset": {
-        "x": 0,
-        "y": 0.2,
-        "z": 0
-      },
-      "anchor": null,
       "actions": {
         "idle": {
           "fps": 3,
@@ -4650,12 +4625,77 @@
         }
       },
       "frames": {
-        "0": {
-          "anchor": {
-            "x": 0.5940000000000001,
-            "y": 0.08815624999999994
+        "0": {},
+        "1": {}
+      },
+      "bodyKind": "floating",
+      "artworkFacesRight": true,
+      "prompt": {
+        "base": "Unit AI-007 / 工程无人机 / Engineering Drone.\nUse the following card description ONLY for identity, species, costume and primary equipment. Disregard its portrait composition, scenery, cinematic viewpoint and pose:\nRare Astra Imperium MEDIUM-SIZED general-purpose autonomous flying construction assistant, a substantial work vehicle rather than a small drone or humanoid robot. The broad central fuselage is the size of a delivery truck, about four meters long, with total lift-unit span around seven meters. Four powerful enclosed vector-thrust lift nacelles support a heavy rectangular crimson-and-gunmetal modular hull with a clearly readable underside cargo bay, cable winch, tool racks and standardized replacement modules. Four robust non-humanoid articulated construction booms perform different useful jobs: one hoists a thick wall panel larger than an adult person, one stabilizes a structural beam, one welds a joint, and one plugs a heavy conduit into an unfinished allied machine. The assistant hovers only a few meters above an industrial construction apron. Two adult helmeted engineers stand on an adjacent gantry at the SAME DEPTH as the drone, each less than half the central hull height, to provide honest unmistakable scale. Arrange the complete wide body, four lift units, large lifted panel and at least one full-height human scale figure within the upper square. Modest low three-quarter side view, no extreme fisheye or miniature city illusion. All limbs are mechanical cranes and tools, not hands or legs. General-purpose utility roles must be obvious; no guns, missiles, cockpit pilot or combat-fighter silhouette. Lower portrait extends through scaffolds, power spools and the construction apron. Controlled warm weld light and cold lift exhaust, crisp anime mecha illustration with visible contour drawing and simple hard cel-shadows, no photoreal microtexture. Standalone vertical card illustration, portrait 5:8. Keep the main machine, decisive action and scale references readable in the upper square crop, with safe margins. Premium Industrial Sci-Fi Anime style with strong hand-drawn contour lines, deliberate cel-shaped value groups and designed highlights, painterly smoke and atmosphere. Matte dark-red ceramic and gunmetal industrial materials; original sci-fi equipment, no photorealism or glossy 3D render. Artwork only; no text, logos, watermarks, card frame, border, arrows, stat icons or other UI.",
+        "notes": "",
+        "actions": {}
+      },
+      "exportReady": true,
+      "sizeClass": "floating",
+      "provenance": {
+        "source": "ACv9 accepted overall collection; ACv10 explicit calibration",
+        "individualHumanApproval": false,
+        "sourceBodyType": "flying-drone",
+        "generationPromptPath": "./assets/chibi-prompts/430888e7-5e44-4599-98d5-7a8c0824b40f.txt"
+      }
+    },
+    {
+      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "atlasSha256": "35a14dbf9cd6c7ca683afe2b3d18c24f936a2f0268820b8483d4e670c4ba8176",
+      "scale": 1.44,
+      "offset": {
+        "x": 0,
+        "y": 0.2,
+        "z": 0
+      },
+      "anchor": {
+        "x": 0.522,
+        "y": 0.120234375
+      },
+      "actions": {
+        "idle": {
+          "fps": 3,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "move": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "hit": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "attack": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "effect": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
           }
         }
+      },
+      "frames": {
+        "0": {}
       },
       "bodyKind": "floating",
       "artworkFacesRight": true,
@@ -4676,13 +4716,16 @@
     {
       "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
       "atlasSha256": "7cd9872f2d1f0a0aa0cfc09a67e4d86030055de4070d3a589dcdef1e028cf25b",
-      "scale": 1.56,
+      "scale": 1.3,
       "offset": {
         "x": 0,
         "y": 0,
         "z": 0
       },
-      "anchor": null,
+      "anchor": {
+        "x": 0.502,
+        "y": 0.06423437500000007
+      },
       "actions": {
         "idle": {
           "fps": 3,
@@ -4723,10 +4766,17 @@
       "frames": {
         "0": {
           "anchor": {
-            "x": 0.5437904761904763,
-            "y": 0.06815624999999992
+            "x": 0.5418000000000001,
+            "y": 0.06423437500000007
           }
-        }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.516076923076923,
+            "y": 0.06623437499999996
+          }
+        },
+        "2": {}
       },
       "bodyKind": "humanoid",
       "artworkFacesRight": true,
@@ -4747,7 +4797,7 @@
     {
       "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
       "atlasSha256": "a58f70cf7cfa5a6b1476b7b3fcb5db05e4485bb4f3c17641fab3a490d6cd1818",
-      "scale": 1.75,
+      "scale": 1.2,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4811,7 +4861,7 @@
     {
       "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
       "atlasSha256": "c3be427b779a641590ec527703ab9a412f98ed77cf0d028d4d17df9cd3bae7e8",
-      "scale": 1.647909,
+      "scale": 1.34,
       "offset": {
         "x": 0,
         "y": 0,
@@ -4875,7 +4925,7 @@
     {
       "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
       "atlasSha256": "7c5a528ca5d75c244b4289fe4b72ecf2343f26155b8d296700f28ddc2bbc7fa7",
-      "scale": 1.42,
+      "scale": 1.16,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5003,7 +5053,7 @@
     {
       "uid": "0bd031d4-49d5-4720-b75b-58eb95690fb1",
       "atlasSha256": "3cfc792dafa1867c01d5838bfa9c4b32bdb78b5675a4a9528bc32bebf81988af",
-      "scale": 1.845869,
+      "scale": 1.3,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5068,7 +5118,7 @@
     {
       "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
       "atlasSha256": "64cf1655abc8f5fe97311a687e78acb74fb84ca464207fbace10d960cb0b37bb",
-      "scale": 2.020074,
+      "scale": 1.58,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5196,7 +5246,7 @@
     {
       "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
       "atlasSha256": "e0c0d82a8d083069e61c3e33c2b7b9d2cf7326ac2eb51a9faa471a7a338e882c",
-      "scale": 2.367314,
+      "scale": 1.55,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5263,7 +5313,7 @@
     {
       "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
       "atlasSha256": "edb46b5dbb1f32aebf6103fd2b86ef5cb89811ecd7df73e45b1f38fb3e26e399",
-      "scale": 2,
+      "scale": 1.26,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5327,7 +5377,7 @@
     {
       "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
       "atlasSha256": "2e953633d4cee70a47fed0dc5188f8a4599577b90df09ed6dfaa5f0270d3bd39",
-      "scale": 1.47,
+      "scale": 1.22,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5502,8 +5552,8 @@
       "frames": {
         "0": {
           "anchor": {
-            "x": 0.58,
-            "y": 0.052156250000000015
+            "x": 0.5559999999999999,
+            "y": 0.05623437499999995
           }
         }
       },
@@ -5718,7 +5768,7 @@
     {
       "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
       "atlasSha256": "9dd785059b72717e51e52928912fcaf9a4b9743126803dcccfcf0e1850daa908",
-      "scale": 1.65,
+      "scale": 1.31,
       "offset": {
         "x": 0,
         "y": 0,
@@ -5765,8 +5815,20 @@
       "frames": {
         "0": {
           "anchor": {
-            "x": 0.5459999999999999,
-            "y": 0.04415625000000001
+            "x": 0.5840000000000001,
+            "y": 0.04623437499999994
+          }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.5225945945945947,
+            "y": 0.06623437499999996
+          }
+        },
+        "2": {
+          "anchor": {
+            "x": 0.5170612244897959,
+            "y": 0.06023437499999995
           }
         }
       },
@@ -5967,6 +6029,18 @@
             "x": 0.522,
             "y": 0.05615624999999991
           }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.518,
+            "y": 0.05823437499999995
+          }
+        },
+        "2": {
+          "anchor": {
+            "x": 0.5159999999999999,
+            "y": 0.05623437499999995
+          }
         }
       },
       "bodyKind": "humanoid",
@@ -6038,6 +6112,18 @@
             "x": 0.5781866028708134,
             "y": 0.006156249999999974
           }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.5180430622009569,
+            "y": 0.008234375000000016
+          }
+        },
+        "2": {
+          "anchor": {
+            "x": 0.4418612440191388,
+            "y": 0.010234375000000018
+          }
         }
       },
       "bodyKind": "humanoid",
@@ -6065,7 +6151,10 @@
         "y": 0,
         "z": 0
       },
-      "anchor": null,
+      "anchor": {
+        "x": 0.5840000000000001,
+        "y": 0.17023437500000005
+      },
       "actions": {
         "idle": {
           "fps": 3,
@@ -6103,7 +6192,9 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "0": {}
+      },
       "bodyKind": "quadruped",
       "artworkFacesRight": true,
       "prompt": {
@@ -6359,7 +6450,14 @@
           }
         }
       },
-      "frames": {},
+      "frames": {
+        "2": {
+          "anchor": {
+            "x": 0.43823746701846966,
+            "y": 0.03623437499999993
+          }
+        }
+      },
       "bodyKind": "floating",
       "artworkFacesRight": true,
       "prompt": {
@@ -6563,6 +6661,18 @@
           "anchor": {
             "x": 0.5331566265060241,
             "y": 0.020156249999999987
+          }
+        },
+        "1": {
+          "anchor": {
+            "x": 0.5081710213776722,
+            "y": 0.010234375000000018
+          }
+        },
+        "2": {
+          "anchor": {
+            "x": 0.5534928229665073,
+            "y": 0.008234375000000016
           }
         }
       },
