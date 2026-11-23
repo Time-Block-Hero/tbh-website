@@ -25,3 +25,7 @@
 ## 交付与边界
 
 独立Website PR，未自动合并或部署。与卡牌改版PR #31都修改生成文件 `card-editor-data.js`；合并产生冲突时以保留后的 `data/cards.json` 运行 `node tools/build-card-editor-fallback.mjs` 重建，禁止以旧生成文件覆盖新卡牌源。
+
+最终本地编辑器界面：
+
+![卡牌详情 Chibi 预览](card-editor-chibi.jpg)
