@@ -1,0 +1,11 @@
+.card-preview-tabs { flex-wrap:wrap; align-items:center; }
+.chibi-workbench-link { color:var(--portal-accent,#d5dc9d); padding:8px; font-size:12px; text-decoration:none; }
+.chibi-workbench-link:focus-visible { outline:2px solid var(--portal-accent,#d5dc9d); outline-offset:2px; }
+.published-chibi-host { width:100%; height:100%; min-height:0; display:grid; grid-template-rows:minmax(160px,1fr) auto auto; overflow:hidden; border:1px solid var(--editor-border,#526047); background:#151c17; }
+.published-chibi-host[hidden] { display:none; }
+.published-chibi-viewport { min-height:0; overflow:hidden; }
+.published-chibi-viewport canvas { display:block; width:100%; height:100%; touch-action:none; }
+.published-chibi-controls { display:flex; align-items:center; flex-wrap:wrap; gap:6px; padding:10px; }
+.published-chibi-controls button,.published-chibi-controls select { min-width:0; background:#293124; border:1px solid #59634c; color:#edf0e6; padding:8px; font:inherit; font-size:12px; cursor:pointer; }
+.published-chibi-controls :focus-visible { outline:2px solid var(--portal-accent,#d5dc9d); outline-offset:2px; }
+.published-chibi-status { margin:0; padding:10px; font-size:12px; color:#c5cfbd; line-height:1.6; text-align:center; }
