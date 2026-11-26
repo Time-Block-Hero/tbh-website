@@ -21,7 +21,7 @@
 | `shared.statuses` | 通用内存编译文档的 `statuses` 数组 |
 | 美术 | 调用方提供当前 Presentation 绑定的 `artPaths[uid]`，无绑定为 null 以走既有默认图；禁止读取网站旧 artPath |
 
-`properties` 白名单：`constructionTarget, runtimeSupportNote, upgradeToCardId, upgradeToCardIds, placeCost, arrowRules, quantitizedCardTags, continuousEffectRefs, grantableContinuousEffectRefs, abilityRefs, textValueBindings, attackRange, progressEffects`。未知字段拒绝，数值属性无通用覆盖入口。
+`properties` 白名单：`constructionTarget, constructionRepeat, constructionMinimumTarget, initialArmor, runtimeSupportNote, upgradeToCardId, upgradeToCardIds, placeCost, arrowRules, quantitizedCardTags, continuousEffectRefs, grantableContinuousEffectRefs, abilityRefs, textValueBindings, attackRange, progressEffects`。未知字段拒绝，数值属性无通用覆盖入口。
 
 一次性迁移来源为 Website `a198c4b0c21886501adbabeba22eda4ed019600f` 与 Rules `a46014e674da86c47831a27b4dbbaa62f728bd5b`。逐卡 UID、原 bundle 规范摘要、原生差异、设计/执行摘要见 `revisions/2026-10-05-execution-migration.json`。英雄词汇、一次性箭头及六张卡的附加原生关键词均作为显式通用映射处理，无逐 UID 运行时分支。
 

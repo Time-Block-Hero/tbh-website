@@ -1,0 +1,674 @@
+{
+  "schemaVersion": 1,
+  "baseWebsiteCommit": "ea0ea8c697f48a87ef1e4aa26c0297046cb9170b",
+  "sourceDesignerSha256": "d2aff53175df74157ec87a4f386b0d2134204a1e7b45b906101352aa0e2dc07e",
+  "newRulesRequired": true,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/160",
+  "decisions": {
+    "construction": "首次仅解锁并入场，后续ConstructionRepeated给予奖励；每次清空，每箭头每回合不能重复供点。",
+    "academy": "目标8，入场及额外建造完成给予整局全局建造目标减免，最低1且含自身。",
+    "armor": "原生护甲进入战场即有，建造期有效，耗尽不自动恢复。",
+    "overload": "下回合末消灭放置建筑的同次在场身份，未完工与法术离场不阻止。",
+    "permanent": "尼克斯每回合两次永久+1攻击+1速度-1生命。",
+    "support": "工程师的智慧仅同步施工资格筛选，设计字段不变。"
+  },
+  "entries": [
+    {
+      "uid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "displayId": "FNG-006",
+      "name": "普通的子弹",
+      "changes": {
+        "arrows": {
+          "before": [
+            "E"
+          ],
+          "after": [
+            "S"
+          ]
+        }
+      },
+      "previousDesignHash": "2844622bd15ed312a40634470e0cf50bc2489c2f6035817a24436913a5bfb272",
+      "previousExecutionHash": "3e4f1df9f58b92354998f2ff96743ace2d3eaf17c20a81aa26c6a1ce356af71c",
+      "designHash": "f6b9b958ea845fee40c0b95e61c8423a6ff75c89c0c932f421fd8ce198fd00af",
+      "executionHash": "3e4f1df9f58b92354998f2ff96743ace2d3eaf17c20a81aa26c6a1ce356af71c",
+      "bundleHash": "920888a6d6246efbb346f35322af9284b312ac2be7d1b127e06010f4874de4f4"
+    },
+    {
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "displayId": "FNG-007",
+      "name": "胶囊防护罩",
+      "changes": {
+        "arrows": {
+          "before": [
+            "S"
+          ],
+          "after": [
+            "E"
+          ]
+        }
+      },
+      "previousDesignHash": "8af8db6b638c818673e58a8bdbe34ae0c4bdab9ceb9dd3c5c486af9968f92d2c",
+      "previousExecutionHash": "37c58efab01579e6679fa9f426e4c54b49374dffd4adcb1525cb2936593e6a3c",
+      "designHash": "01eea3c42ff1a47bd4bb95ae7b9ce46556162d907d8e1cbfe7fb35670e5f3f34",
+      "executionHash": "37c58efab01579e6679fa9f426e4c54b49374dffd4adcb1525cb2936593e6a3c",
+      "bundleHash": "1c4da2c405f4bca81bf91c01a9d1ad3341a7a1a4ef8ac3dc6b8c07fb1e5a3b35"
+    },
+    {
+      "uid": "76c85923-76d9-4465-b8bd-a2a3a0301124",
+      "displayId": "FNG-011",
+      "name": "放逐太空",
+      "changes": {
+        "arrows": {
+          "before": [
+            "W"
+          ],
+          "after": [
+            "NW"
+          ]
+        }
+      },
+      "previousDesignHash": "a9f7a5989d92c76e2fe580744d39897ffb55ee9bc91461b9a070bc17b515af36",
+      "previousExecutionHash": "f0f38d64b0bbb8c62d1709daf68782d54e0408a1c64cd9d236c99c98b0de4452",
+      "designHash": "eefe5d237dbcc3ea31ff497ebd49965c5997e4f3612b2cd70056418c77b4d0ff",
+      "executionHash": "f0f38d64b0bbb8c62d1709daf68782d54e0408a1c64cd9d236c99c98b0de4452",
+      "bundleHash": "3068583762124d45df894d36e9fb1a30478ea71f4c535ad6ef37c607e11129e4"
+    },
+    {
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "displayId": "FNG-017",
+      "name": "幼崽噗噜兽",
+      "changes": {
+        "rulesText": {
+          "before": "冲撞移动。",
+          "after": "[冲撞移动]"
+        }
+      },
+      "previousDesignHash": "5922d568e03a05b3798aa94952181100b05471868a91ccede1c91365af82d177",
+      "previousExecutionHash": "1f120856c83cd8e2a9732385d5de37c9b9492e19dc3c91899b07ad50df02996e",
+      "designHash": "d35d6d977f3493692f9c34ac99a8672ab4c134dc019666c585b6420b6e322ce0",
+      "executionHash": "1f120856c83cd8e2a9732385d5de37c9b9492e19dc3c91899b07ad50df02996e",
+      "bundleHash": "1bbc4da49c2b4696734cc5de90998a0db8def6b9b0c2dfc040507c217247aef0"
+    },
+    {
+      "uid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "displayId": "FNG-019",
+      "name": "矿石扫描",
+      "changes": {
+        "rulesText": {
+          "before": "入场：在你的领土内随机选择最多2个完全空格，各生成1张「遗失的智慧」。",
+          "after": "入场：在你的领土内随机选择最多3个完全空格，各生成1张「遗失的智慧」。"
+        }
+      },
+      "previousDesignHash": "9b6463d6b245f49749bc61cd3f0c04090468eec86992bd58fea644a2408e84c2",
+      "previousExecutionHash": "a78ccb842bdac68ce09f24aaa944ce2f8622fa85fab155f4993153c648d07ced",
+      "designHash": "e4c756b5bdf842170cbb31c158fbadb75c2e09b49ea0a164c74c820ba5a6c46d",
+      "executionHash": "8615aa84bdf56732b038e737dbf525a54f6ad12f0ba8b8c705a37eda2b770af2",
+      "bundleHash": "cf5d83fc12953b53ef93a4cd7158ab120ef3b26cc6bfeb68388a01222c461250"
+    },
+    {
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "displayId": "FNG-024",
+      "name": "轨道晶灵",
+      "changes": {
+        "rulesText": {
+          "before": "[攻击范围: 3]",
+          "after": "[攻击范围: 2]"
+        }
+      },
+      "previousDesignHash": "9ac835dbef2d0a9d87ff589aa310af7dca0f691fef50e2ab07d85130f1457486",
+      "previousExecutionHash": "39761749d280666e82c9bef9deaf8ff71f18ea26a7e46d72441ca7e3091dd1b2",
+      "designHash": "99d93fe62b7d6039fc1a1664f387da2f182c06a1c0994f8d4ec1869b9b1a8c07",
+      "executionHash": "72f0adc6c1c7fcb7631db66d801bdc38749624d8217adaffd63d48e9b9578748",
+      "bundleHash": "c1be6db130e974baa830be5e6f424c952090ecd1063223b5df2e2720f54f8fb3"
+    },
+    {
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "displayId": "FNG-025",
+      "name": "日炎枪手",
+      "changes": {
+        "rulesText": {
+          "before": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成2点伤害。目标必须为敌方随从。",
+          "after": "发动：选择一个方向，以该方向上第一个随从为目标，对其造成1点伤害。目标必须为敌方随从。"
+        }
+      },
+      "previousDesignHash": "bb6f35e03308969dda433031a5295563fff5d3d2fbc60f1b945e58e4ece16184",
+      "previousExecutionHash": "51939d7b1c1e57c8f5d99d02b423aca0063e2d067cbe9b10a61bf6a373486450",
+      "designHash": "34e80dba7b3308a710822c8a7f518481b196c8d463362f8d962c49ca87f1580d",
+      "executionHash": "b02526793d094421f1672029312b756acae505b547e751738fa416078d807168",
+      "bundleHash": "0b3826936585eca87cffbae768cc527f3909883f17b92c3c956dd2b4d3f77a7a"
+    },
+    {
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "displayId": "FNG-029",
+      "name": "泰坦X-003综合型",
+      "changes": {
+        "rulesText": {
+          "before": "",
+          "after": "[圣盾]"
+        }
+      },
+      "previousDesignHash": "492aed3e86bc442a44758095160a36533b17e9d348b1d86e42f515472fb51033",
+      "previousExecutionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "designHash": "c5b973681cc077b663d7b7de0d59d0f8a18098e9f245e23b5d42724799ed6844",
+      "executionHash": "cb7ac3e334e17b133258b98e1e65e96e9e0641207f111d2c45f8af55422d00de",
+      "bundleHash": "c7584912330a653d7aa9e37072a419e40894ee3f20d07c3380bab0b1dc295d7d"
+    },
+    {
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "displayId": "FNG-030",
+      "name": "泰坦X-003强袭型",
+      "changes": {
+        "health": {
+          "before": 4,
+          "after": 6
+        },
+        "movement": {
+          "before": 6,
+          "after": 12
+        },
+        "rulesText": {
+          "before": "",
+          "after": "[冲撞移动] 每回合可以进行两次攻击。"
+        }
+      },
+      "previousDesignHash": "35966516f18dd74079d563d59d75c4406ebdcbfe5cff3ac9de973d0df985753d",
+      "previousExecutionHash": "3794f9d19971d5bf93a31cac5c69b20d13ff31b91ba34e1394509445ebbbc412",
+      "designHash": "375092b9acb514099662c943594a3465cc9e8c9f55e8bf099affa2a292137b02",
+      "executionHash": "bffbe274ab12a97e7a77a604231b104afe7d1c85752814add4ed33516b686537",
+      "bundleHash": "409ad1e5437720be4b036ea01f73fd21bd524544e99b810d4d27e941606fb245"
+    },
+    {
+      "uid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "displayId": "FNG-032",
+      "name": "震荡晶核",
+      "changes": {
+        "rulesText": {
+          "before": "[攻击范围: 4] 该单位攻击时，会先减少目标5点护甲。",
+          "after": "[攻击范围: 4] 该单位攻击时，会先减少目标8点护甲。"
+        }
+      },
+      "previousDesignHash": "da67bde2e8ee9873077beb271eb8fc7fa4c68ef558b42ae82cb1e0a8583f768c",
+      "previousExecutionHash": "9d0999c28df033aef4240c72c067346fe1700ab88d1a0179e9e3c50c33e05376",
+      "designHash": "ac785972263f54e91105c1992a5f102a54c0fcbaea552d9151550e68253bd8a2",
+      "executionHash": "018ccc44b8f05c25131f50401c8154f33307000ba5d6722c535986ec28f6c2d8",
+      "bundleHash": "9eaa7c4164a73a9a4c39f4604d48a2f2b3c65c7e1c186c65166280711ee6dfed"
+    },
+    {
+      "uid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "displayId": "SA-016",
+      "name": "军团驯兽师",
+      "changes": {
+        "rulesText": {
+          "before": "入场：在自身⬆️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。",
+          "after": "入场：在自身↗️方格子召唤1只「苍空猎犬」。此卡被移除时：[慢速] 在敌方领土的合法格中随机召唤最多2只「苍空猎犬」。"
+        },
+        "arrows": {
+          "before": [
+            "N"
+          ],
+          "after": []
+        }
+      },
+      "previousDesignHash": "399f287bb5ae1d153349824669c288d4c71eb87257ce8826663baf82c3e68f65",
+      "previousExecutionHash": "049a1b6a0cc4f4ccc5c6b0b265cd8f5d066b1a1637a2d79b069c74bde88e0f01",
+      "designHash": "a0a6f6395766075257f23d3592136fbb9c2c6b3ae64abf6c6d83ee9f80af5221",
+      "executionHash": "5f0b2e57039960133ad8025329cf81e4cc6d7c71afb31c34c3dcc166c716193c",
+      "bundleHash": "0dc7da145c592059c79720c0af73a672b289f23fac37d356ecb46528f64eaa7d"
+    },
+    {
+      "uid": "2ec612a0-7c68-45a6-aaeb-d58c1f01c7dd",
+      "displayId": "SA-018",
+      "name": "义体医师尼克斯",
+      "changes": {
+        "health": {
+          "before": 4,
+          "after": 6
+        },
+        "rulesText": {
+          "before": "发动：令一个友方反抗军获得＋3攻击、＋3速度，并将其剩余耐久设为1。",
+          "after": "发动：每回合限两次，令一个友方反抗军永久获得+1攻击&+1速度&-1生命。"
+        }
+      },
+      "previousDesignHash": "6c6c2635af70d7a18a213e5e7e2e22593161f9e6685ca4833d1cb93ffd4fee28",
+      "previousExecutionHash": "f7d0ff2c6f6f9866bff93752a030e06c65d748ef8429bbab2c1a228387a74adc",
+      "designHash": "cf5e7faece4dd15b46ecff125dbf478c4309ce06823e2ec087b1d47efd413490",
+      "executionHash": "02b3ef45d30b93ae9536c230a4562f3a850847768628d0d5115b66dc748b84b9",
+      "bundleHash": "d1868ed2b792add06e34ba31a94bac5b437f6c36774283240807ba811d449bef"
+    },
+    {
+      "uid": "ff038236-2919-4bbc-9ca7-58c132b2c7fb",
+      "displayId": "SA-020",
+      "name": "大将狐尼克",
+      "changes": {
+        "attack": {
+          "before": 4,
+          "after": 3
+        },
+        "movement": {
+          "before": 5,
+          "after": 4
+        }
+      },
+      "previousDesignHash": "3e7f9a97b829da97bcf8e5f97a118e41a1b4837a1f8d566d535238b1d782bcb0",
+      "previousExecutionHash": "dcd6e4285da4a897fe2bdddcb675b647c643b25908166db934f750d0a8c73086",
+      "designHash": "db5c48d96903cc2e1acc60aa2a9d2fe7522038f82baa5a19ea9ec455c689259f",
+      "executionHash": "dcd6e4285da4a897fe2bdddcb675b647c643b25908166db934f750d0a8c73086",
+      "bundleHash": "82772f2b2f8d2666898e0b5f946cbe3660c158b78408180cadcbb9326aa28a70"
+    },
+    {
+      "uid": "07563f0e-c7d5-4448-a351-fa618dfd924c",
+      "displayId": "SC-002",
+      "name": "太阳雨",
+      "changes": {
+        "costAmount": {
+          "before": 2,
+          "after": 3
+        },
+        "rulesText": {
+          "before": "入场：对全场单位造成1点伤害。若此牌的有效保留回合数至少为1，额外触发一次。",
+          "after": "入场：对全场随从造成1点伤害。若此牌的有效保留回合数至少为1，改为仅对敌方随从。"
+        }
+      },
+      "previousDesignHash": "1ef06df39b2006245453dfb0e3925768cffdf23dc0f3f5206fe683f3acbb7f65",
+      "previousExecutionHash": "f9d8f5966301c7acc53dad233a537f775075e94f14e0059a53ea8035479fc1ae",
+      "designHash": "0e3627c9b113e7c2bc2f9b0808e6bd98f8f53dfeaddf020279fe9a2a1a601c4d",
+      "executionHash": "57d84f3364910e2949c1460894ace8151096491da20eea37cbdab91783e6ad20",
+      "bundleHash": "19cd4ec59b8d3acd5e202fdfa3d6f22f413ba87fb27fe6941153198fd01b26fd"
+    },
+    {
+      "uid": "c3f625a9-6093-4a21-ba51-fe7c864f7cef",
+      "displayId": "SC-013",
+      "name": "俱焚烈焰",
+      "changes": {
+        "rulesText": {
+          "before": "发动：选择一个友方随从和一个敌方随从，对它们各造成4点伤害。",
+          "after": "发动：选择一个友方随从，对其和任意一个敌方随从造成4点伤害。"
+        }
+      },
+      "previousDesignHash": "ea19607252ed87d64bad8d3e297dd393dbbb47cb95babbe447965833b528f1d1",
+      "previousExecutionHash": "921931bb364aa0f0a8eeeab9998765f2b0e4d9950ba56a0ba8fb7ecb7dde96c6",
+      "designHash": "e8c1a4298dae54b540d2aa6f79bc0d20276366a7c3d8dc694ca4c74a84c9bc19",
+      "executionHash": "12fc2b243c575c2dbdfb15de59ce5bf1e274af8f6468330d51849e6bce4ea467",
+      "bundleHash": "1e964581d0e94d165c2c6a819e3689639ed8a490e8b9fddbe558773adc127195"
+    },
+    {
+      "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
+      "displayId": "AI-001",
+      "name": "发电站",
+      "changes": {
+        "rulesText": {
+          "before": "光环：为3x3范围内的友方单位提供1点电能。",
+          "after": "入场&回合开始时：为3x3范围内的友方单位提供1点建造进度。"
+        },
+        "arrows": {
+          "before": [
+            "NW"
+          ],
+          "after": [
+            "NE"
+          ]
+        }
+      },
+      "previousDesignHash": "4d857b78f70fc36eb0724598a930fc71ec4b62fa73ca5300fd7b9cdf0be6a865",
+      "previousExecutionHash": "949716040ecc14bcdfdece43a8c82d5d94718e79b848e79d59d73b06877a6c2c",
+      "designHash": "12b1944015b77d6a02e77293693ae19fff1d5fed6baa1e8ca63eb365a831bf84",
+      "executionHash": "da12444295a22da167f2d65110d0221cc7d142b5c1f704d5e8131af275895053",
+      "bundleHash": "eb85660ab5f27f300698afc80bbd5df2c3dd0552e5af3f92923c922fcea16395"
+    },
+    {
+      "uid": "e1362804-dea0-49b5-9513-8c1317369f9e",
+      "displayId": "AI-002",
+      "name": "星能采矿场",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：2，可建造] 回合开始时，你获得2点星能（受电能加成）。",
+          "after": "[可无限建造：2] 回合开始时，你获得2点星能；每次额外建造完毕，此产量+1。"
+        }
+      },
+      "previousDesignHash": "5ef583f1dc9cf192b8db0c937c7e4cba2c619613ed1cd81dc45f624c991ee8f7",
+      "previousExecutionHash": "ef2926870395705179bd2bb2518adf161492292ae3ce35692c27695fa144ef77",
+      "designHash": "721d1c5bdba968eb25705fbc8bb8e81e684a2c218c4e59997908c248c807e1be",
+      "executionHash": "492bede9fb1dd728a08b62aab6f94d54866467f72c34d3561e802dc643da2566",
+      "bundleHash": "40a760b0d2f3b963ad0a4081ae2667ff5437bdeb398634b198c174da977bd4d5"
+    },
+    {
+      "uid": "a60555e6-d405-47de-bdff-c84031d53448",
+      "displayId": "AI-003",
+      "name": "帝国军工厂",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：2，可建造] 该单位的箭头只能用于放置或建造非建筑的随从，其箭头层数受到电能加成。",
+          "after": "[可无限建造：2] 该单位的箭头只能用于放置或建造非建筑的随从，每次额外建造完毕该卡箭头层数+1。"
+        }
+      },
+      "previousDesignHash": "9f81ae6db9cfeb50011335133852ab358b2c9fc62743784843625d54adb35963",
+      "previousExecutionHash": "f515daefe6c4eb69921ef88047a9774177effbe80cb749add65395e3d3677a2a",
+      "designHash": "05bf6e87aab125844f6fc7946fd183a9f2c5546430ce1de8a5cdda7fd5e09c36",
+      "executionHash": "e0bd59d2db31c02a592f0c1da4f0449f9f124c710b11ce435450fdccb4c8b6d2",
+      "bundleHash": "453be70fa4bc8184e689fd222f015d7cd3187acfadc4b6a34fc2fcd416d890f4"
+    },
+    {
+      "uid": "602b4a3a-0b69-4816-80a0-94a66bd61d1b",
+      "displayId": "AI-004",
+      "name": "帝国基建小队",
+      "changes": {
+        "arrows": {
+          "before": [
+            "NW"
+          ],
+          "after": [
+            "NW",
+            "N"
+          ]
+        }
+      },
+      "previousDesignHash": "d4b19d5aee9b52a30fde6e00b8a9f59e094f930b24d2f615cc27b2d3e3d88252",
+      "previousExecutionHash": "25a02d1bc9515255ba8e01519edd6b2a29ee4e8b6e560528208e10b91d884e8b",
+      "designHash": "cfa982f62897878bf772f56d09e26ed4aa919504e5a5bab86340bd782cd80c16",
+      "executionHash": "25a02d1bc9515255ba8e01519edd6b2a29ee4e8b6e560528208e10b91d884e8b",
+      "bundleHash": "d40f93dca76d6e8fbd28ca4d291845ac66fd0cc58bbdf00121e853dfdb28ec3b"
+    },
+    {
+      "uid": "3e56ca22-efd1-4cd0-822f-beceb830e41d",
+      "displayId": "AI-005",
+      "name": "帝国征召兵",
+      "changes": {
+        "rulesText": {
+          "before": "发动成本：献祭自己，移入你的弃牌堆。效果：为一个相邻的、尚未完成建造的友方随从增加2点已固定建造值。",
+          "after": "发动成本：献祭自己。效果：为一个相邻的建造中的友方随从增加2点已固定建造值。"
+        }
+      },
+      "previousDesignHash": "d5e9125e2638cc1965ce979e3862332ebacd159e372ae3e4f3f60c39d23b73ed",
+      "previousExecutionHash": "3d1b3acdeec2ced9b35c1f266ed45fa561be2357cfb131a63c77510627577514",
+      "designHash": "483791eac3e3559424d16b3419105bab499c91c99ef97ec4b6b5acd12397da4a",
+      "executionHash": "4018a77141d6c70b3fd4469df765d3cde166de92b320e68de3ce0da7ed685626",
+      "bundleHash": "5f7f7c38dc4272db6c7b8fa39e72825f45001a4e5b8780a6a8e14b175eeb9ca6"
+    },
+    {
+      "uid": "0764d0f5-4050-49ab-924f-2485c4381e26",
+      "displayId": "AI-006",
+      "name": "帝国特种兵",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求: 2, 可建造]",
+          "after": "[可建造：2]"
+        }
+      },
+      "previousDesignHash": "c677145165f313749a85aa17ba2dc567fab07bc8a08d7c6b29e0670738dbf871",
+      "previousExecutionHash": "adfc98599d2563616016eee91324546969601499ece48d14b674530425134e5a",
+      "designHash": "65db4f3c0d5b8b1ef81b537d72e146160dbb47f36c8cc27c0005c32c95fc3d41",
+      "executionHash": "0c0403e4dfaee6609b8608398b368f78265435d630b71e08bc7e8cbf80368ca7",
+      "bundleHash": "c0d9330ac03cb829a140a89692b2de6f48303a6c31784693140c048db39d1a02"
+    },
+    {
+      "uid": "430888e7-5e44-4599-98d5-7a8c0824b40f",
+      "displayId": "AI-007",
+      "name": "工程无人机",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：4，可建造] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造未完成的单位，其箭头层数受电能加成。",
+          "after": "[可无限建造：2] 该单位移动时可以忽略卡牌的阻挡。该单位的箭头只能用于建造中的单位，每次额外建造完毕该卡箭头层数+1。"
+        }
+      },
+      "previousDesignHash": "b872730949e18351ceab5f377e1b638f8e00fb182e4f3994a74c8af7ec6090aa",
+      "previousExecutionHash": "2e5c5e4dc8b22d0dd056e7e5aceb34c52ae37c63b20fd2c51d00fbf3ea5633d7",
+      "designHash": "a31dbe7c6829c3f947499a110d021bc951e2dec33dfde1057251d89ff39444dd",
+      "executionHash": "07f6041f54814dc5592155a85b5bce62ba303d04547a7b7449444adad33dc320",
+      "bundleHash": "25f591cc7c4304b328606b506b645236c3bb377461acf7f7fb653fa21c5d4a03"
+    },
+    {
+      "uid": "0f329ffc-f031-448f-aaa0-4f4456f81298",
+      "displayId": "AI-008",
+      "name": "海燕",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求: 5, 可建造] 该单位移动时可以忽略卡牌的阻挡。",
+          "after": "[可建造：5] 该单位移动时可以忽略卡牌的阻挡。"
+        }
+      },
+      "previousDesignHash": "e7241d8c93d1e6b734420ebfdbf6608cbc907223a135de3f6a4b197570aa1c46",
+      "previousExecutionHash": "28243c6e5c5b221eb9501bf2dd6e3b3efa76a614b914d6c895a3317e995d14df",
+      "designHash": "71340519c033c921d86fd933cf316b945b9b9e3d05273e8da24bf68500cc4665",
+      "executionHash": "1a3f5d0f1e902cdd4a5a6c5ed00f8df37a8e47e5ea65bb9932352c96037ffecc",
+      "bundleHash": "cc9168ae51b85c3a6185a3ab46a585885a37235da477244b318c708131001a0e"
+    },
+    {
+      "uid": "fb5f4fc9-e46b-4f07-97bd-6a469c323cc4",
+      "displayId": "AI-009",
+      "name": "泰拉理工学院",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：6，可建造] [循环进度：4] 计数：每个回合结束时，进度+1（受电能加成）。完成：[全局光环] 本局对战剩余时间内，你所有可建造随从的建造目标值减少一点。",
+          "after": "[可无限建造：8] 入场&每次额外建造完毕：本局对战的剩余时间内，你所有可建造随从的建造目标值减少1点（但不会少于1点）。"
+        }
+      },
+      "previousDesignHash": "ce4a85155cbeb7c22e7f73f85210c52f8f478a23aae32507248c88467db6dffa",
+      "previousExecutionHash": "24effc1700d78fe1319719e7e0c03a9219f4393f258d43a3e832bccbacaab398",
+      "designHash": "7dcea937695136e6d2bd99b1e5c147cc7ec9596293c4efe7acab5393a7ebe8a7",
+      "executionHash": "1748d2da089319c0e1975345b8cba80e95809169fde8db0b774e0c89a71dc503",
+      "bundleHash": "ba6c95e9a38e6d0070b48f0ea8d1461a65574f3eafa6e91aef0431812916c836"
+    },
+    {
+      "uid": "573781a0-235c-40aa-bff0-6a5e2c7fd942",
+      "displayId": "AI-010",
+      "name": "超载运转",
+      "changes": {
+        "rulesText": {
+          "before": "发动：为一个友方建筑提供3点电能以及“每个回合结束时，受到4点伤害”。",
+          "after": "发动：从牌堆/弃牌堆选择一张建筑随从，将其放置于己方场上的任意位置，其下回合结束时会被破坏。"
+        }
+      },
+      "previousDesignHash": "11aa6610676c3ac1a16c8d3ccb20d4497c23fdd29bf2b66540784424cefc420c",
+      "previousExecutionHash": "48b99e8397d77baf236d3e5144091395d4e51415cd9830dfa0cdb1affe391f54",
+      "designHash": "9eab4b48665c824636907f44b408bfe9597b0ef072054cd05013565c717e3f24",
+      "executionHash": "a7964ba852d4f2b15e1c3f6b3ebeed8b579db024fd6c63ed94ea282c5e9ff003",
+      "bundleHash": "e67c11b454c857f38eabffd6e26a38c9a70f21a86980cd4f1f68c04d592a2983"
+    },
+    {
+      "uid": "d993d1a2-2258-4e2f-9e61-eee4abb1dca6",
+      "displayId": "AI-011",
+      "name": "城市防护罩",
+      "changes": {
+        "costAmount": {
+          "before": 6,
+          "after": 5
+        },
+        "rulesText": {
+          "before": "入场：[快速] 你的所有建筑获得3护甲。",
+          "after": "入场：[快速] 你的所有建筑获得2护甲。"
+        },
+        "arrows": {
+          "before": [
+            "N",
+            "NE"
+          ],
+          "after": [
+            "NW",
+            "NE"
+          ]
+        }
+      },
+      "previousDesignHash": "920f5b4011017cbf2ff66084b67ca99448496484d7a7fcd0e0ad433f3de24711",
+      "previousExecutionHash": "c6a0e3157bd98064acd4a00ba631a9e7460857ce9cb1ecdffa3ea15da7309496",
+      "designHash": "6350a6217cad842c0dfb07e1e6b31f171cfe67d2234f69a85dc02094d04cc583",
+      "executionHash": "47dd7d68dde9dac39f644fb3948b75fcd8fa23ac02035c01a1807c20a6c3d633",
+      "bundleHash": "113f33b3818b482275e9ea36aa6f9fbd3a488947cb14eeb5cba06ab88033246c"
+    },
+    {
+      "uid": "eae5f157-9d0f-41c4-a674-a989dc4007d5",
+      "displayId": "AI-013",
+      "name": "超级核电站",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：5，可建造] 光环：为该单位5x5范围内所有友方单位提供3点电能。",
+          "after": "[可建造：5] 入场&回合开始时：为5x5范围内的友方单位提供3点建造进度。"
+        }
+      },
+      "previousDesignHash": "cc3ad7e69cd7ddcb28e6e5ed06a071e5e4c732b4ba88426921314c9790c30694",
+      "previousExecutionHash": "c43076c11a8249958fc302dab8ebf445e735c00e442518ef1768d8982c62d63a",
+      "designHash": "ee2976e1886b419bc2eb3fc5596ee9634cfb8b25cbf2f7f6da5a2160be1f9bbb",
+      "executionHash": "80d8c860b7060df348b10d21de965c9a0609bf7b65cd849c69d5eb60e7fe799d",
+      "bundleHash": "b0f0cbd25839c611497cbcb8cfc62abd63c5b3d9c8bc51b51ad80e7080863985"
+    },
+    {
+      "uid": "4f4645bc-0e60-4d70-8a89-ff73afffee70",
+      "displayId": "AI-014",
+      "name": "工程师的智慧",
+      "changes": {},
+      "previousDesignHash": "0101c0182861a0b1243d027e3e41d1341a434076f56f762196bfb18a6c69fca6",
+      "previousExecutionHash": "c6a3b71d47bbb415b5384956d2b6ba7b6596795c1d605dffe4c7e2f99f4ebb5d",
+      "designHash": "0101c0182861a0b1243d027e3e41d1341a434076f56f762196bfb18a6c69fca6",
+      "executionHash": "a31a3d89875611f89045934f2a445ef901b8998931067251f74bd1a35b051001",
+      "bundleHash": "78cff25f8d8cf33e123c15d5acb7d91a90b8848d5c4e1a9e06b107553ead4433"
+    },
+    {
+      "uid": "0be330dd-7d45-42a8-8235-ac57e8cf9572",
+      "displayId": "AI-015",
+      "name": "晶灵哨塔",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：4，可建造] 该随从每回合可至多攻击三次。[攻击范围：4] 本随从的攻击力和攻击范围受电能加成。",
+          "after": "[可无限建造：3] [攻击范围：3] 该随从每回合可至多攻击三次。每次额外建造完毕，其攻击力和攻击范围额外+1。"
+        }
+      },
+      "previousDesignHash": "3da0704f2fa088459e994654f2c5144b9052c6e6e925fe19f276d865edc55bfc",
+      "previousExecutionHash": "5db554c5efa419287d2bd74ab91e9b336c5122c6fcce609907fcb474b3cdb63f",
+      "designHash": "8d44fb19e837c4e8cc7db9ab2169dd919a4c137ac3f7d94666c8e69e1c963314",
+      "executionHash": "5757729fef319edd62b9bd049f9278a04660e5650b83190cbfa997c630ea8754",
+      "bundleHash": "d95b4eca711b4bcab3fe444fd81eae31c6d69cf8d50885fe5e08796a85071b05"
+    },
+    {
+      "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
+      "displayId": "AI-016",
+      "name": "重型军用驮兽",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：4, 可建造] 你每个回合开始时额外抽一张牌。",
+          "after": "[可建造：4] 你每个回合开始时额外抽一张牌。"
+        },
+        "arrows": {
+          "before": [
+            "SW"
+          ],
+          "after": [
+            "SW",
+            "S"
+          ]
+        }
+      },
+      "previousDesignHash": "69a620e4bd54555d0489a209bdec950d74aef4961fe0ea0656d7a23addcc88f3",
+      "previousExecutionHash": "fd529f3874e278cae05a65e1442ccdbdf8b1f2d4430b34795e4a1876442483be",
+      "designHash": "2512cd20b12eefe0593f51652deb25f296a7f999caff1ccec9cc4a971cae6d1f",
+      "executionHash": "7a68fc89eaf10c455790c465d56aecc8e8ae79fa8ad4f28fbc705f842362b882",
+      "bundleHash": "dd7dc53574dcb0ae1a67eb86683d7f4b830d947cbfd68c6d04dc569d8f3094df"
+    },
+    {
+      "uid": "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7",
+      "displayId": "AI-017",
+      "name": "城市规划师-薇",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求: 3, 可建造] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。",
+          "after": "[可建造：3] 发动：每回合限两次，选择一个友方建筑，将其瞬移到其距离4以内的一个空格子上。"
+        }
+      },
+      "previousDesignHash": "4aee45480d823113d5fc78579505c42b85f677c8edae85d134c18f02767e2c2b",
+      "previousExecutionHash": "0a27c42ab07a49d9194714af170e45b02dcc2d69c96ef5ed88bb444a9a4896a0",
+      "designHash": "27224ee0625896e28d51f8216e1cef2ef78085f3efaef0fbeec669a449eeeab5",
+      "executionHash": "1868b8121a573cdff460aac8741576322e8ab888a399c4846a73b13e313bb836",
+      "bundleHash": "83bf8b67b54a8529a6652746b583e87ee02c69e60a02d1f6f11a19baa5be57e1"
+    },
+    {
+      "uid": "0bd031d4-49d5-4720-b75b-58eb95690fb1",
+      "displayId": "AI-018",
+      "name": "爱国者泰坦-A005",
+      "changes": {
+        "attack": {
+          "before": 8,
+          "after": 7
+        },
+        "health": {
+          "before": 10,
+          "after": 7
+        },
+        "rulesText": {
+          "before": "[箭头需求: 5, 可建造]",
+          "after": "[可建造：5] [护甲：5]"
+        }
+      },
+      "previousDesignHash": "3143fbf407800703f133068d4b07593f6287df130a0f59cae129fb4df9f8225d",
+      "previousExecutionHash": "ef52f32d6365b142d813a666ac69361e6146b2199add963be30a6299b1ed5403",
+      "designHash": "dbf78a5fe653c2c55a436056be864daccf6f93418b46d65a023387a16fdc98fd",
+      "executionHash": "bb1ec2641f972a556ada77b90a3dfd18b38d5a5d70696ed2d00d44b01a751fc0",
+      "bundleHash": "6542c5dac95bd48d97e3ae93e1110102a49e5295d7c4377d830f365ad8d9511f"
+    },
+    {
+      "uid": "3d1865c5-b2e7-4003-96d1-07223a482030",
+      "displayId": "AI-019",
+      "name": "骄傲铁驭-布兰特",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：7，可建造] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。",
+          "after": "[可建造：7] 该单位击杀一个随从后，本回合可额外进行一次普通攻击。"
+        }
+      },
+      "previousDesignHash": "fad3b92c5421d653d11de35d11e3175f851e496eb868b62713872ffb89ef95d2",
+      "previousExecutionHash": "ff5f50f8f9457583e0da8f17d78c4b97819026eb8b9a6527f4f3c4a6d29b22e4",
+      "designHash": "e89662508ea3e52fc63f5fa6f3f48a7713e28da2af16873a8ed9777ab0ab12e8",
+      "executionHash": "d2cdaef66a2c5981e00751cbc13a7c95cf210112e0f5c5b9700185235e33ba83",
+      "bundleHash": "2cfa9e3f27e4068e4e435b601d834eda005de599d464de2f71172bc52d9aee39"
+    },
+    {
+      "uid": "ff153fcb-5387-455c-b673-ecf2d9ddfbc2",
+      "displayId": "AI-020-01",
+      "name": "「革命日」",
+      "changes": {
+        "health": {
+          "before": 12,
+          "after": 10
+        },
+        "movement": {
+          "before": 10,
+          "after": 8
+        }
+      },
+      "previousDesignHash": "e95967144c3793412b2a0c8b0d1f42fa0640e210e25c3b9ea6bf79b75ac6ca7a",
+      "previousExecutionHash": "3cbb64c9f02c41d725acbbabf1f701e926ca883a3dd16cd053a1b51e59593041",
+      "designHash": "703574fdea8c68b0b0d0e5f3fafce6a970b1ad0d2f1eb84b845d71486f92c4a5",
+      "executionHash": "3cbb64c9f02c41d725acbbabf1f701e926ca883a3dd16cd053a1b51e59593041",
+      "bundleHash": "4b6cdc523b09792266cacb74432604968bb9d1316bb83b096fbd5716f6f0b0e5"
+    },
+    {
+      "uid": "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5",
+      "displayId": "AI-020-02",
+      "name": "奥古斯都计划",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求：9/可建造] 发动代价：移除此卡。效果：将维拉加入手牌。",
+          "after": "[可建造：9] 建造中可发动：若己方场上没有维拉，移除此卡将维拉置入手牌。"
+        }
+      },
+      "previousDesignHash": "4b0501130bf8ca9c98d9b506e1e8b697263494d5c76899e6465584e9d55aa54e",
+      "previousExecutionHash": "ee3c46239b9dcc39eddac93abc5ac6cb1f5ee53c97452a19d311abff7c1a20c3",
+      "designHash": "16edde2828a70910952b98e45bbd9e90370c0a3d7463521940a755164b8a059a",
+      "executionHash": "9f8d970d4a2ff546c2f28d0cb02a602dcbaa9eebbd524d0b085093fc9022452c",
+      "bundleHash": "55e7c6e9f32b4702a08adc07e8d842f33597e1b402c270539f8fd9b7e560dabb"
+    },
+    {
+      "uid": "0580aac7-5301-43db-b2d9-1bc56b2e75b8",
+      "displayId": "AI-021",
+      "name": "帝国之盾",
+      "changes": {
+        "rulesText": {
+          "before": "[箭头需求: 4，可建造] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲（受电能加成）。",
+          "after": "[可无限建造：4] 入场&时停阶段开始时：[快速] 选择两个己方随从，令其获得4护甲，每次额外建造完毕，该数值+1。"
+        }
+      },
+      "previousDesignHash": "87554b49fee8b81adb478e17f761b87358aa1aee27192967d33b34d7f2eb72cd",
+      "previousExecutionHash": "f34ff824e97a3175f4e9505866ac818838339f92de5d4f54c66ea8a61d209fc8",
+      "designHash": "448f83ffb42e48a2abd0d0f3ab1b7a3e960074b0be5a9c3ffd4c93a38b2d7fe0",
+      "executionHash": "b989c3baa6d28564552275b8d0294e1e65979672b39f487f5eecb0520a19b915",
+      "bundleHash": "4a10a8fb97fed3d3c9c2c8e258d5efc56e3b715844bc8f2251c63dc8c79dec03"
+    }
+  ]
+}
