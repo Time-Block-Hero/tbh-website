@@ -263,7 +263,8 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
   assert.equal((await post(source)).status, 200);
   const fallbackContext = { window: {} };
   vm.runInNewContext(fs.readFileSync(path.join(dir, "card-editor-data.js"), "utf8"), fallbackContext);
-  assert.deepEqual(JSON.parse(JSON.stringify(fallbackContext.window.__CARD_EDITOR_FALLBACK__.standees)), standees);
+  assert.equal(fallbackContext.window.__CARD_EDITOR_FALLBACK__.standees, undefined);
+  assert.equal(fallbackContext.window.__CARD_EDITOR_FALLBACK__.chibis, undefined);
   const reopened = await (await fetch(`${url}/data/cards.json`)).json();
   assert.deepEqual(reopened.cards.filter((card) => card.cardType === "Resource"), source.cards.filter((card) => card.cardType === "Resource"));
   const saved = fs.readFileSync(path.join(dir, "data/cards.json"), "utf8");

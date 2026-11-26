@@ -542,22 +542,7 @@
   box-shadow: inset 0 -2px var(--portal-accent);
 }
 .editor-page .card-preview-tabs button:focus-visible { outline: 2px solid var(--portal-accent); }
-.editor-page .hand-preview-host[hidden],
-.editor-page .standee-preview-host[hidden] { display: none; }
-.editor-page .standee-preview-host {
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  place-items: center;
-  background: repeating-conic-gradient(#20271d 0% 25%, #252d22 0% 50%) 0 / 24px 24px;
-  border: 1px solid var(--editor-border);
-  overflow: hidden;
-}
-.editor-page .standee-preview-host img { width: 100%; height: 100%; min-height: 0; object-fit: contain; padding: 16px; box-sizing: border-box; }
-.editor-page .standee-preview-caption { align-self: end; margin: 0; padding: 10px; width: 100%; box-sizing: border-box; text-align: center; color: #c1cbb8; background: #141b13e8; font-size: 12px; }
-.editor-page .standee-preview-empty { grid-row: 1 / -1; padding: 24px; text-align: center; color: #b7c1ad; line-height: 1.8; }
+.editor-page .hand-preview-host[hidden] { display: none; }
 @media (max-width: 600px) {
   .editor-page .card-preview-tabs button { padding: 9px 12px; }
   .editor-page .hand-preview-stage { gap: 10px; padding: 10px; }

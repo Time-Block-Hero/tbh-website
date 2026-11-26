@@ -29,6 +29,9 @@
   let dataset = null;
   let collectableView = true;
   let currentId = null;
+  let previewMode = "card";
+  let chibiPreview = null;
+  let chibiPreviewUid = null;
   let pendingArtworkVariants = null;
   let pendingSelectedArtworkId = null;
   let pendingArtworkKey = "";
@@ -604,15 +607,39 @@
     renderChibi(card);
   }
 
+  function disposeChibiPreview() {
+    chibiPreview?.dispose();
+    chibiPreview = null;
+    chibiPreviewUid = null;
+  }
+
   function renderChibi(card) {
     const isUnit = card.cardType === "Minion";
-    const query = `?unit=${encodeURIComponent(card.uid)}`;
-    for (const [selector, page] of [["#chibiWorkbenchLink", "chibi.html"], ["#chibiHistoryLink", "chibi-gallery.html"]]) {
-      const link = $(selector);
-      if (!link) continue;
-      link.hidden = !isUnit;
-      link.href = `./${page}${query}`;
+    const link = $("#chibiWorkbenchLink");
+    link.hidden = !isUnit;
+    link.href = `./chibi.html?unit=${encodeURIComponent(card.uid)}`;
+    const tab = $("#chibiPreviewTab");
+    tab.hidden = !isUnit;
+    if (!isUnit) previewMode = "card";
+    const showChibi = previewMode === "chibi" && isUnit;
+    $("#cardHandPreview").hidden = showChibi;
+    $("#cardChibiPreview").hidden = !showChibi;
+    for (const [selector, selected] of [["#cardPreviewTab", !showChibi], ["#chibiPreviewTab", showChibi]]) {
+      const button = $(selector);
+      button.setAttribute("aria-selected", String(selected));
+      button.tabIndex = selected ? 0 : -1;
     }
+    if (!showChibi) disposeChibiPreview();
+    else if (chibiPreviewUid !== card.uid) {
+      disposeChibiPreview();
+      chibiPreviewUid = card.uid;
+      chibiPreview = globalThis.TbhPublishedChibiPreview.mount($("#cardChibiPreview"), { uid: card.uid, name: card.nameKey });
+    }
+  }
+
+  function selectPreview(mode) {
+    previewMode = mode;
+    renderChibi(readForm());
   }
 
   function renderDerivativeRail() {
@@ -650,6 +677,8 @@
   }
 
   function closeEditor() {
+    disposeChibiPreview();
+    previewMode = "card";
     $("#cardEditorOverlay").style.display = "none";
     document.body.style.overflow = "";
     currentId = null;
@@ -924,6 +953,19 @@
   }
 
   function bindEvents() {
+    for (const [selector, mode] of [["#cardPreviewTab", "card"], ["#chibiPreviewTab", "chibi"]]) {
+      $(selector).addEventListener("click", () => selectPreview(mode));
+      $(selector).addEventListener("keydown", event => {
+        if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+        event.preventDefault();
+        const next = event.key === "Home" ? "card" : event.key === "End" ? "chibi" : mode === "card" ? "chibi" : "card";
+        const target = $(next === "card" ? "#cardPreviewTab" : "#chibiPreviewTab");
+        if (target.hidden) return;
+        selectPreview(next);
+        target.focus();
+      });
+    }
+    window.addEventListener("pagehide", disposeChibiPreview);
     $("#collectabilityToggle").addEventListener("click", (event) => {
       const button = event.target.closest("button[data-collectable]");
       if (!button) return;
