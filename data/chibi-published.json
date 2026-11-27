@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "source": {
     "processingVersion": "chibi-alpha-bake-v1",
-    "websiteCommit": "a7a237d05c3158dca8ca9457ad0b10d83a7c4aa6",
+    "websiteCommit": "d074f437f1f4dc4beaa4e3d62313f2a85c8f373a",
     "reviewManifestSha256": "068e33ab292fa324e1ee5107f22bf61784ab4f73e06704cd1b75768ab3f521c7",
     "workbenchSha256": "f1b6989a535dac52d93e84606b12f53c32aec2330a01a5528446c66318f5f3d7",
     "goldenSha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e"
