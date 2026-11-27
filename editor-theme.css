@@ -547,3 +547,50 @@
   .editor-page .card-preview-tabs button { padding: 9px 12px; }
   .editor-page .hand-preview-stage { gap: 10px; padding: 10px; }
 }
+
+/* Card authoring variants and the next-playtest selection are independent. */
+.card-version-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 10px 0;
+}
+.card-version-tabs button, .upgrade-empty-state button, .unsaved-changes-actions button {
+  border: 1px solid rgba(153, 179, 197, .3);
+  border-radius: 8px;
+  padding: 9px 16px;
+  color: #dce6ee;
+  background: #17232e;
+  cursor: pointer;
+  font: inherit;
+}
+.card-version-tabs button[aria-pressed="true"] { border-color: #7ed7ee; color: #b7f1ff; background: #203746; }
+#upgradeVersionTab[aria-pressed="true"] { border-color: #e5bb64; color: #ffe0a3; background: #42361e; }
+#cardVersionStatus { color: #c1b397; font-size: 12px; }
+.upgrade-empty-state { width: 100%; padding: 40px 24px; border: 1px dashed #8c774e; border-radius: 12px; color: #d8d0bc; text-align: center; }
+.upgrade-empty-state strong { display: block; color: #ffdda0; font-size: 20px; }
+.upgrade-empty-state p { margin: 16px 0 24px; line-height: 1.7; }
+.formal-card-render.is-upgraded { outline: 2px solid #dfb65e; outline-offset: 2px; box-shadow: 0 0 22px #e5b95830; }
+.card-upgrade-badge { position: absolute; top: 2%; right: 3%; z-index: 100; background: #513a17; color: #ffe3a8; border: 1px solid #e5bb64; border-radius: 4px; padding: 3px 8px; font-size: 13px; pointer-events: none; }
+.card-playtest-badge { display: block; padding: 5px 8px; margin-top: 7px; border-radius: 5px; background: #252c34; color: #aeb9c5; font-size: 11px; }
+.card-playtest-badge.is-ready { background: #183d31; color: #9ae3b9; }
+.formal-card-form .playtest-ready-toggle { display: flex; align-items: center; gap: 10px; padding: 12px; background: #19372c; border: 1px solid #3d7058; border-radius: 8px; }
+.formal-card-form .playtest-ready-toggle input { width: 18px; height: 18px; margin: 0; accent-color: #87dbab; }
+.playtest-ready-help { margin: -4px 0 6px; color: #aab8c5; font-size: 12px; line-height: 1.5; }
+.formal-card-form.is-event .card-non-event-only { display: none; }
+.unsaved-changes-overlay { position: fixed; inset: 0; z-index: 12000; display: grid; place-items: center; padding: 20px; background: #050b13cc; }
+.unsaved-changes-panel { width: min(560px, 100%); padding: 28px; color: #e1eaf1; background: #131f2b; border: 1px solid #4e6378; border-radius: 14px; box-shadow: 0 20px 90px #0008; }
+.unsaved-changes-panel p { line-height: 1.7; color: #b4c5d4; }
+.unsaved-changes-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; margin-top: 24px; }
+#unsavedSaveBtn { border-color: #81cba4; color: #bde8d0; }
+.card-version-tabs[hidden], .upgrade-empty-state[hidden], .unsaved-changes-overlay[hidden], #cardEditorForm[hidden], .card-preview-tabs[hidden], .formal-card-actions button[hidden], #derivativeAddBtn[hidden] { display: none !important; }
+@media (max-width: 700px) {
+  .card-version-tabs { justify-content: center; }
+  .unsaved-changes-actions button { flex: 1 1 140px; }
+  .formal-card-toolbar .collectability-toggle { flex-wrap: wrap; }
+}
+.formal-card-editor-shell.is-saving .formal-card-editor-body,
+.formal-card-editor-shell.is-saving #cardEditorClose { pointer-events: none; }
+.formal-card-editor-shell.is-saving { cursor: progress; }

@@ -27,7 +27,13 @@
   let initialized = false;
   let layout = null;
   let dataset = null;
-  let collectableView = true;
+  let browseCategory = "collectible";
+  let unconfiguredUpgrade = false;
+  const formDrafts = new Map();
+  let loadedFormSnapshot = null;
+  let savingAllDrafts = false;
+  let artworkUploadInProgress = false;
+  let savingCard = false;
   let currentId = null;
   let previewMode = "card";
   let chibiPreview = null;
@@ -50,15 +56,18 @@
 
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const cardByUid = (uid) => dataset?.cards.find((card) => card.uid === uid);
+  const baseCard = (card) => card?.upgradeOfUid ? cardByUid(card.upgradeOfUid) : card;
+  const categoryOf = (card) => card?.cardType === "Event" ? "event" : card?.collectable ? "collectible" : "noncollectible";
   const isDerivative = (id) => Boolean(cardById(id)?.parentUid);
   const parentId = (id) => {
-    const card = cardById(id);
-    return card?.parentUid ? dataset.cards.find((entry) => entry.uid === card.parentUid)?.id : id;
+    const card = baseCard(cardById(id));
+    return card?.parentUid ? dataset.cards.find((entry) => entry.uid === card.parentUid)?.id : card?.id || id;
   };
   const cardById = (id) => dataset?.cards.find((card) => card.id === id);
   const derivativesOf = (id) => dataset.cards.filter((card) => parentId(card.id) === parentId(id) && isDerivative(card.id));
   const isHero = (card) => card?.collectionKind === "Hero";
-  const sameCardGroup = (a, b) => a?.classId === b?.classId && Boolean(a?.collectable) === Boolean(b?.collectable);
+  const sameCardGroup = (a, b) => a?.classId === b?.classId && categoryOf(a) === categoryOf(b);
 
   function artworkKeyFromEnglishName(englishName) {
     return String(englishName || "")
@@ -78,9 +87,9 @@
     return Number(id.match(/-(\d{3})$/)?.[1] || 0);
   }
 
-  function rootsInGroup(classId, collectable) {
+  function rootsInGroup(classId, collectable, event = false) {
     return dataset.cards
-      .filter((card) => !isDerivative(card.id) && card.classId === classId && Boolean(card.collectable) === Boolean(collectable))
+      .filter((card) => !isDerivative(card.id) && !card.upgradeOfUid && card.classId === classId && Boolean(card.collectable) === Boolean(collectable) && (card.cardType === "Event") === event)
       .sort((a, b) => {
         if (isHero(a) !== isHero(b)) return isHero(a) ? -1 : 1;
         return rootSequence(a.id) - rootSequence(b.id) || a.id.localeCompare(b.id, "en", { numeric: true });
@@ -113,6 +122,12 @@
       if (newParentId) cardMapping[card.id] = `${newParentId}-${card.id.split("-").at(-1)}`;
     }
 
+    for (const card of dataset.cards) {
+      if (!card.upgradeOfUid) continue;
+      const base = cardByUid(card.upgradeOfUid);
+      cardMapping[card.id] = `${cardMapping[base.id] || base.id}-UP`;
+    }
+
     const variantIdMapping = {};
     const remappedVariants = {};
     for (const [oldCardId, variants] of Object.entries(dataset.artworkVariants || {})) {
@@ -131,6 +146,11 @@
       remappedSelected[cardMapping[oldCardId] || oldCardId] = designContract.mapSelection(variantId, variantIdMapping);
     }
 
+    for (const draft of formDrafts.values()) {
+      draft.card.id = cardMapping[draft.card.id] || draft.card.id;
+      draft.variants = draft.variants.map(variant => ({ ...variant, id: variantIdMapping[variant.id] || variant.id }));
+      draft.selected = designContract.mapSelection(draft.selected, variantIdMapping);
+    }
     for (const card of dataset.cards) card.id = cardMapping[card.id] || card.id;
     dataset.artworkVariants = remappedVariants;
     dataset.selectedArtworkIds = remappedSelected;
@@ -141,7 +161,7 @@
 
   function renumberRootOrder(orderedRoots) {
     if (!orderedRoots.length) return {};
-    const { classId, collectable } = orderedRoots[0];
+    const { classId, collectable, cardType } = orderedRoots[0];
     const faction = FACTIONS[classId] || FACTIONS.Neutral;
     const heroes = collectable ? orderedRoots.filter(isHero) : [];
     const regular = orderedRoots.filter((card) => !isHero(card));
@@ -150,7 +170,7 @@
     let regularOrder = 0;
     canonicalOrder.forEach((card) => {
       const number = isHero(card) ? "000" : String(++regularOrder).padStart(3, "0");
-      rootMapping[card.id] = collectable ? `${faction.prefix}-${number}` : `${faction.prefix}-UN-${number}`;
+      rootMapping[card.id] = cardType === "Event" ? `${faction.prefix}-EV-${number}` : collectable ? `${faction.prefix}-${number}` : `${faction.prefix}-UN-${number}`;
     });
     remapCardIds(rootMapping);
     return rootMapping;
@@ -267,7 +287,7 @@
         dataset = structuredClone(projectConfirmedDataset);
         renderGallery();
         const selected = dataset.cards.find((card) => card.uid === selectedUid);
-        if (selected) showCard(selected.id);
+        if (selected) showCard(selected.id, { capture: false });
         else closeEditor();
       }
       setStatus(`${error.message || "项目保存失败"}。${recoveryMessage}`, "error");
@@ -329,7 +349,8 @@
     const selectedId = card.id === currentId && pendingArtworkVariants
       ? pendingSelectedArtworkId
       : dataset.selectedArtworkIds?.[card.id];
-    return variants.find((variant) => variant.id === (Array.isArray(selectedId) ? selectedId[0] : selectedId))?.src || variants[0]?.src || "";
+    const own = variants.find((variant) => variant.id === (Array.isArray(selectedId) ? selectedId[0] : selectedId))?.src || variants[0]?.src;
+    return own || (card.upgradeOfUid ? artworkFor(cardByUid(card.upgradeOfUid)) : "");
   }
 
   function fittedCardNameSize(text, preferredSize, availableWidth, minimumSize = Math.max(22, preferredSize * 0.42)) {
@@ -348,6 +369,7 @@
     const render = document.createElement("div");
     render.className = `formal-card-render formal-card-render-${view}`;
     render.dataset.rarity = card.rarity || "Common";
+    render.classList.toggle("is-upgraded", Boolean(card.upgradeOfUid));
     render.style.aspectRatio = `${canvas.width} / ${canvas.height}`;
     render.style.setProperty("--faction-color", (FACTIONS[card.classId] || FACTIONS.Neutral).color);
 
@@ -402,6 +424,12 @@
       designerCost.setAttribute("aria-label", `费用 ${card.costAmount ?? 0}`);
       render.append(designerCost);
     }
+    if (card.upgradeOfUid) {
+      const badge = document.createElement("span");
+      badge.className = "card-upgrade-badge";
+      badge.textContent = "升级版";
+      render.append(badge);
+    }
     return render;
   }
 
@@ -416,9 +444,11 @@
     const faction = $("#cardFactionFilter")?.value || "all";
     const type = $("#cardTypeFilter")?.value || "all";
     const sortMode = $("#cardViewSort")?.value || "id";
+    const playtest = $("#cardPlaytestFilter")?.value || "all";
     return dataset.cards
-      .filter((card) => !isDerivative(card.id))
-      .filter((card) => Boolean(card.collectable) === collectableView)
+      .filter((card) => !isDerivative(card.id) && !card.upgradeOfUid)
+      .filter((card) => categoryOf(card) === browseCategory)
+      .filter((card) => playtest === "all" || String(Boolean(card.playtestReady)) === playtest)
       .filter((card) => faction === "all" || card.classId === faction)
       .filter((card) => type === "all" || card.cardType === type)
       .filter((card) => !query || `${card.nameKey} ${card.englishName} ${card.id}`.toLowerCase().includes(query))
@@ -445,6 +475,10 @@
       item.draggable = canReorder && !isHero(card);
       item.setAttribute("aria-label", `${card.nameKey} · ${card.id}`);
       item.append(createCardRender(card, "board"));
+      const readyBadge = document.createElement("span");
+      readyBadge.className = `card-playtest-badge${card.playtestReady ? " is-ready" : ""}`;
+      readyBadge.textContent = card.playtestReady ? "已纳入试玩" : "暂不纳入";
+      item.append(readyBadge);
       if (canReorder && !isHero(card)) {
         const dragHandle = document.createElement("span");
         dragHandle.className = "formal-card-drag-handle";
@@ -466,10 +500,12 @@
       id: temporaryId,
       nameKey: "新卡牌",
       englishName: "",
-      cardType: "Minion",
+      cardType: browseCategory === "event" ? "Event" : "Minion",
       classId,
       rarity: "Common",
-      collectable: collectableView,
+      collectable: browseCategory === "collectible",
+      upgradeOfUid: null,
+      playtestReady: false,
       costResource: "Star",
       costAmount: 0,
       attack: 0,
@@ -486,9 +522,12 @@
       artDescriptionNeedsPolish: true,
       artRequest: 1,
     };
+    if (card.cardType === "Event") {
+      delete card.attack; delete card.health; delete card.movement; delete card.tribes;
+    }
     designContract.assignNewIdentity(card);
     dataset.cards.push(card);
-    const mapping = renumberRootOrder([...rootsInGroup(classId, collectableView).filter((entry) => entry !== card), card]);
+    const mapping = renumberRootOrder([...rootsInGroup(classId, card.collectable, card.cardType === "Event").filter((entry) => entry !== card), card]);
     const newId = mapping[temporaryId];
     persist({ operation: { type: "create", uid: card.uid } });
     renderGallery();
@@ -500,7 +539,7 @@
     const target = cardById(targetId);
     if (!dragged || !target || isDerivative(dragged.id) || isDerivative(target.id) || !sameCardGroup(dragged, target)) return false;
     if (isHero(dragged) || isHero(target)) return false;
-    const ordered = rootsInGroup(dragged.classId, dragged.collectable);
+    const ordered = rootsInGroup(dragged.classId, dragged.collectable, dragged.cardType === "Event");
     const draggedIndex = ordered.indexOf(dragged);
     if (draggedIndex < 0 || !ordered.includes(target) || dragged === target) return false;
     const before = ordered.map((card) => card.id).join("|");
@@ -522,7 +561,7 @@
       const field = form.elements.namedItem(key);
       if (!field) continue;
       if (key === "collectable") field.value = String(Boolean(value));
-      else if (key === "artDescriptionNeedsPolish") field.checked = Boolean(value);
+      else if (key === "artDescriptionNeedsPolish" || key === "playtestReady") field.checked = Boolean(value);
       else field.value = value ?? "";
     }
     $$("#tribeSelector button").forEach((button) => {
@@ -530,12 +569,18 @@
       button.classList.toggle("active", selected);
       button.setAttribute("aria-pressed", String(Boolean(selected)));
     });
+    form.elements.namedItem("playtestReady").checked = Boolean(card.playtestReady);
+    const hasUpgrade = dataset.cards.some(entry => entry.upgradeOfUid === card.uid);
+    form.elements.namedItem("cardType").disabled = Boolean(card.upgradeOfUid || card.cardType === "Event" || hasUpgrade);
+    for (const option of form.elements.namedItem("cardType").options || []) option.disabled = (option.value === "Event") !== (card.cardType === "Event");
+    form.elements.namedItem("classId").disabled = Boolean(card.parentUid || card.upgradeOfUid);
+    form.elements.namedItem("collectable").disabled = Boolean(card.parentUid || card.upgradeOfUid || card.cardType === "Event" || isHero(card));
     syncCardTypeFields();
     $$("#arrowsCompass button").forEach((button) => button.classList.toggle("active", card.arrows?.includes(button.dataset.dir)));
     $("#cardEditorTitle").textContent = `${card.nameKey} · ${card.id}`;
     const deleteButton = $("#cardEditorDelete");
     deleteButton.style.display = isHero(card) ? "none" : "";
-    deleteButton.textContent = isDerivative(card.id) ? "删除衍生卡" : "删除主卡";
+    deleteButton.textContent = card.upgradeOfUid ? "删除升级版" : isDerivative(card.id) ? "删除衍生卡" : "删除主卡";
     pendingArtworkVariants = structuredClone(dataset.artworkVariants?.[card.id] || []);
     pendingSelectedArtworkId = dataset.selectedArtworkIds?.[card.id] || pendingArtworkVariants[0]?.id || null;
     pendingArtworkKey = card.artworkKey || "";
@@ -548,11 +593,11 @@
     list.replaceChildren();
     $("#artworkVariantSummary").textContent = variants.length
       ? `${variants.length} 张 · 已选 ${pendingSelectedArtworkId || "无"}`
-      : "暂无插画";
+      : cardById(currentId)?.upgradeOfUid ? "沿用原版插画" : "暂无插画";
     if (!variants.length) {
       const empty = document.createElement("div");
       empty.className = "artwork-variant-empty";
-      empty.textContent = "仍使用占位画面；添加或批量生成的插画会显示在这里。";
+      empty.textContent = cardById(currentId)?.upgradeOfUid ? "当前沿用原版插画。添加独立插画后仅应用于此升级版。" : "仍使用占位画面；添加或批量生成的插画会显示在这里。";
       list.append(empty);
       return;
     }
@@ -617,7 +662,8 @@
     const isUnit = card.cardType === "Minion";
     const link = $("#chibiWorkbenchLink");
     link.hidden = !isUnit;
-    link.href = `./chibi.html?unit=${encodeURIComponent(card.uid)}`;
+    const chibiUid = card.upgradeOfUid || card.uid;
+    link.href = `./chibi.html?unit=${encodeURIComponent(chibiUid)}`;
     const tab = $("#chibiPreviewTab");
     tab.hidden = !isUnit;
     if (!isUnit) previewMode = "card";
@@ -630,10 +676,10 @@
       button.tabIndex = selected ? 0 : -1;
     }
     if (!showChibi) disposeChibiPreview();
-    else if (chibiPreviewUid !== card.uid) {
+    else if (chibiPreviewUid !== chibiUid) {
       disposeChibiPreview();
-      chibiPreviewUid = card.uid;
-      chibiPreview = globalThis.TbhPublishedChibiPreview.mount($("#cardChibiPreview"), { uid: card.uid, name: card.nameKey });
+      chibiPreviewUid = chibiUid;
+      chibiPreview = globalThis.TbhPublishedChibiPreview.mount($("#cardChibiPreview"), { uid: chibiUid, name: card.nameKey });
     }
   }
 
@@ -650,7 +696,7 @@
     for (const card of related) {
       const button = document.createElement("button");
       button.type = "button";
-      button.className = `derivative-card-button${card.id === currentId ? " active" : ""}`;
+      button.className = `derivative-card-button${card.uid === baseCard(cardById(currentId))?.uid ? " active" : ""}`;
       button.dataset.cardId = card.id;
       button.append(createCardRender(card, "board"));
       const label = document.createElement("span");
@@ -660,12 +706,83 @@
     }
   }
 
-  function showCard(id) {
+  function snapshotForm() {
+    return { card: readForm(), variants: structuredClone(pendingArtworkVariants || []), selected: structuredClone(pendingSelectedArtworkId), artworkKey: pendingArtworkKey };
+  }
+
+  function stashCurrentForm() {
+    if (!currentId || unconfiguredUpgrade || !loadedFormSnapshot || !cardById(currentId) || cardById(currentId).uid !== loadedFormSnapshot.card.uid) return;
+    const snapshot = snapshotForm();
+    if (JSON.stringify(snapshot) === JSON.stringify(loadedFormSnapshot)) formDrafts.delete(snapshot.card.uid);
+    else formDrafts.set(snapshot.card.uid, snapshot);
+  }
+
+  function renderVersionTabs() {
+    const current = cardById(currentId), base = baseCard(current);
+    const upgrade = current?.upgradeOfUid || unconfiguredUpgrade;
+    $("#cardVersionTabs").hidden = base?.cardType === "Event";
+    $("#originalVersionTab").setAttribute("aria-pressed", String(!upgrade));
+    $("#upgradeVersionTab").setAttribute("aria-pressed", String(Boolean(upgrade)));
+    $("#cardVersionStatus").textContent = unconfiguredUpgrade ? "未配置" : upgrade ? "升级版" : "原版";
+    $("#upgradeEmptyState").hidden = !unconfiguredUpgrade;
+    $("#cardEditorForm").hidden = unconfiguredUpgrade;
+    $("#cardEditorSave").hidden = unconfiguredUpgrade;
+    $("#cardEditorDelete").hidden = unconfiguredUpgrade;
+    $("#derivativeAddBtn").hidden = base?.cardType === "Event";
+    $(".card-preview-tabs").hidden = unconfiguredUpgrade;
+    if (unconfiguredUpgrade) {
+      $("#cardHandPreview").hidden = true;
+      $("#cardChibiPreview").hidden = true;
+      disposeChibiPreview();
+    }
+    $("#cardEditorSave").textContent = current?.upgradeOfUid ? "保存升级版" : "保存当前卡牌";
+  }
+
+  function selectVersion(upgrade) {
+    if (savingCard) return;
+    if (artworkUploadInProgress) { setStatus("请等待插画处理完成后切换形态", "error"); return; }
+    const base = baseCard(cardById(currentId));
+    if (!base || base.cardType === "Event") return;
+    stashCurrentForm();
+    const version = upgrade ? dataset.cards.find(card => card.upgradeOfUid === base.uid) : base;
+    if (version) showCard(version.id);
+    else {
+      showCard(base.id);
+      unconfiguredUpgrade = true;
+      renderVersionTabs();
+    }
+  }
+
+  async function createUpgradeDesign() {
+    const base = baseCard(cardById(currentId));
+    if (!base || base.cardType === "Event" || dataset.cards.some(card => card.upgradeOfUid === base.uid)) return;
+    if (!confirmBrowserDraftOverwrite()) return;
+    const upgrade = designContract.createUpgrade(base);
+    dataset.cards.push(upgrade);
+    const saved = await persist({ operation: { type: "create", uid: upgrade.uid } });
+    if (saved) showCard(upgrade.id);
+  }
+
+  function showCard(id, { capture = true } = {}) {
+    if (savingCard && capture) return;
+    if (artworkUploadInProgress) { setStatus("请等待插画处理完成后切换卡牌", "error"); return; }
+    if (capture) stashCurrentForm();
     const card = cardById(id);
     if (!card) return;
     currentId = id;
+    unconfiguredUpgrade = false;
     fillForm(card);
-    renderHand(card);
+    loadedFormSnapshot = snapshotForm();
+    const draft = formDrafts.get(card.uid);
+    if (draft) {
+      fillForm({ ...draft.card, id: card.id, classId: card.classId, parentUid: card.parentUid, upgradeOfUid: card.upgradeOfUid });
+      pendingArtworkVariants = structuredClone(draft.variants);
+      pendingSelectedArtworkId = structuredClone(draft.selected);
+      pendingArtworkKey = draft.artworkKey;
+      renderArtworkVariantList();
+    }
+    renderHand(readForm());
+    renderVersionTabs();
     renderDerivativeRail();
     setStatus(projectSyncAvailable ? "本地项目模式" : "浏览器本地编辑", "");
   }
@@ -676,12 +793,41 @@
     showCard(id);
   }
 
-  function closeEditor() {
+  function closeEditor(force = false) {
+    if (savingCard) return;
+    if (artworkUploadInProgress) { setStatus("请等待插画处理完成后关闭", "error"); return; }
+    if (force !== true) {
+      stashCurrentForm();
+      if (formDrafts.size) {
+        $("#unsavedChangesMessage").textContent = `${formDrafts.size} 个卡牌形态有未保存的修改。可以保存全部后关闭，或继续编辑。`;
+        $("#unsavedChangesDialog").hidden = false;
+        $("#unsavedCancelBtn").focus();
+        return;
+      }
+    }
+    formDrafts.clear();
+    loadedFormSnapshot = null;
     disposeChibiPreview();
     previewMode = "card";
     $("#cardEditorOverlay").style.display = "none";
     document.body.style.overflow = "";
     currentId = null;
+    unconfiguredUpgrade = false;
+  }
+
+  async function saveAllAndClose() {
+    if (savingAllDrafts) return;
+    savingAllDrafts = true;
+    $("#unsavedChangesDialog").hidden = true;
+    try {
+      for (const uid of [...formDrafts.keys()]) {
+        const card = cardByUid(uid);
+        if (!card) { formDrafts.delete(uid); continue; }
+        showCard(card.id);
+        if (!await saveCard()) return;
+      }
+      closeEditor(true);
+    } finally { savingAllDrafts = false; }
   }
 
   function renamePendingArtwork(oldKey, newKey) {
@@ -717,9 +863,10 @@
       cardType,
       rarity: form.elements.namedItem("rarity").value,
       classId: form.elements.namedItem("classId").value,
-      collectable: form.elements.namedItem("collectable").value === "true",
+      collectable: cardType === "Event" || original?.upgradeOfUid || original?.parentUid ? false : form.elements.namedItem("collectable").value === "true",
+      playtestReady: Boolean(form.elements.namedItem("playtestReady")?.checked),
       costAmount: number("costAmount"),
-      arrows: $$("#arrowsCompass button.active").map((button) => button.dataset.dir),
+      arrows: cardType === "Event" ? [] : $$("#arrowsCompass button.active").map((button) => button.dataset.dir),
       rulesText: form.elements.namedItem("rulesText").value.trim(),
       artDescription: form.elements.namedItem("artDescription").value.trim(),
       artDescriptionNeedsPolish: form.elements.namedItem("artDescriptionNeedsPolish").checked,
@@ -742,8 +889,29 @@
   }
 
   async function saveCard() {
+    if (savingCard) return false;
+    const before = structuredClone(dataset);
+    savingCard = true;
+    $(".formal-card-editor-shell")?.classList.add("is-saving");
+    try {
+      return await saveCurrentCard();
+    } catch (error) {
+      dataset = before;
+      renderGallery();
+      setStatus(`未保存：${error.message}`, "error");
+      return false;
+    } finally {
+      savingCard = false;
+      $(".formal-card-editor-shell")?.classList.remove("is-saving");
+    }
+  }
+
+  async function saveCurrentCard() {
+    if (artworkUploadInProgress) { setStatus("请等待插画处理完成后保存", "error"); return false; }
+    if (unconfiguredUpgrade) return false;
     const original = cardById(currentId);
-    const originalGroup = { classId: original.classId, collectable: Boolean(original.collectable) };
+    if (!original) return false;
+    const originalGroup = { classId: original.classId, collectable: Boolean(original.collectable), event: original.cardType === "Event" };
     const updated = readForm();
     if (!updated.nameKey) {
       setStatus("请填写中文名", "error");
@@ -775,6 +943,12 @@
       else pendingArtworkKey = newArtworkKey;
       updated.artworkKey = newArtworkKey;
     }
+    if (updated.upgradeOfUid) {
+      const base = cardByUid(updated.upgradeOfUid);
+      updated.classId = base.classId;
+      updated.cardType = base.cardType;
+      updated.collectable = false;
+    }
     if (isDerivative(updated.id)) {
       const parent = cardById(parentId(updated.id));
       updated.classId = parent?.classId || original.classId;
@@ -791,32 +965,37 @@
       delete dataset.artworkVariants[currentId];
       delete dataset.selectedArtworkIds[currentId];
     }
-    if (!isDerivative(updated.id) && (updated.classId !== originalGroup.classId || Boolean(updated.collectable) !== originalGroup.collectable)) {
+    if (!isDerivative(updated.id) && !updated.upgradeOfUid && (updated.classId !== originalGroup.classId || Boolean(updated.collectable) !== originalGroup.collectable)) {
       for (const derivative of derivativesOf(updated.id)) {
         derivative.classId = updated.classId;
         derivative.collectable = false;
       }
+      for (const upgrade of dataset.cards.filter(entry => entry.upgradeOfUid)) {
+        upgrade.classId = cardByUid(upgrade.upgradeOfUid).classId;
+      }
       const temporaryId = `MOVE-${Date.now()}`;
       remapCardIds({ [updated.id]: temporaryId });
-      renumberRootOrder(rootsInGroup(originalGroup.classId, originalGroup.collectable));
+      renumberRootOrder(rootsInGroup(originalGroup.classId, originalGroup.collectable, originalGroup.event));
       const moved = cardById(currentId);
-      const destination = rootsInGroup(updated.classId, updated.collectable).filter((card) => card !== moved);
+      const destination = rootsInGroup(updated.classId, updated.collectable, updated.cardType === "Event").filter((card) => card !== moved);
       renumberRootOrder([...destination, moved]);
     }
     const saved = await persist({ artworkRename, operation: { type: "edit", uid: updated.uid } });
     if (!saved) return;
     renderGallery();
-    showCard(currentId);
+    formDrafts.delete(updated.uid);
+    showCard(currentId, { capture: false });
     const reviewed = !updated.execution || (updated.execution.runtimeSupport === "Implemented"
       && updated.execution.reviewedDesignHash === await designContract.designHash(updated));
     setStatus(reviewed ? "已保存并重新渲染" : "已保存草稿；卡牌执行待复核，不能用于正式构建", reviewed ? "saved" : "error");
+    return true;
   }
 
   function addDerivative() {
     if (!confirmBrowserDraftOverwrite()) return;
     const rootId = parentId(currentId);
     const root = cardById(rootId);
-    if (!root) return;
+    if (!root || root.cardType === "Event") return;
     const used = new Set(derivativesOf(rootId).map((card) => Number(card.id.split("-").at(-1))));
     let order = 1;
     while (used.has(order)) order += 1;
@@ -845,7 +1024,8 @@
     if (!card || isHero(card)) return;
     const derivative = isDerivative(card.id);
     const rootId = parentId(card.id);
-    const deletedIds = derivative ? [card.id] : [card.id, ...derivativesOf(card.id).map((entry) => entry.id)];
+    const deletedUids = new Set(designContract.deletionUids(dataset, card.uid));
+    const deletedIds = dataset.cards.filter(entry => deletedUids.has(entry.uid)).map(entry => entry.id);
     const deletedCards = dataset.cards.filter((entry) => deletedIds.includes(entry.id));
     const references = designContract.executionReferences(dataset, deletedCards.map(entry => entry.uid));
     if (references.length) { setStatus(`无法删除：执行引用位于 ${references.join("，")}`, "error"); return; }
@@ -863,9 +1043,11 @@
         ? `\n同时会永久删除 ${artworkDeletes.length} 个卡图包：\n${artworkDeletes.join("\n")}`
         : "\n当前为浏览器草稿模式，不会删除仓库中的实体卡图包。"
       : "";
-    const detail = derivative
+    const detail = card.upgradeOfUid
+      ? `确定删除升级版「${card.nameKey}」(${card.id})？原版将保留。${artworkDetail}`
+      : derivative
       ? `确定删除衍生卡「${card.nameKey}」(${card.id})？${artworkDetail}`
-      : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张衍生卡。` : ""}${artworkDetail}`;
+      : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张关联衍生卡/升级版：${deletedCards.filter(entry => entry.uid !== card.uid).map(entry => entry.id).join("、")}。` : ""}${artworkDetail}`;
     if (!window.confirm(detail)) return;
     if (!confirmBrowserDraftOverwrite()) return;
     dataset.cards = dataset.cards.filter((entry) => !deletedIds.includes(entry.id));
@@ -873,11 +1055,14 @@
       delete dataset.artworkVariants[id];
       delete dataset.selectedArtworkIds[id];
     }
-    if (!derivative) renumberRootOrder(rootsInGroup(card.classId, card.collectable));
+    if (!derivative && !card.upgradeOfUid) renumberRootOrder(rootsInGroup(card.classId, card.collectable, card.cardType === "Event"));
     const saved = await persist({ artworkDeletes: projectSyncAvailable ? artworkDeletes : [], operation: { type: "delete", uid: card.uid } });
     if (!saved) return;
     renderGallery();
-    if (derivative) showCard(rootId);
+    for (const uid of deletedUids) formDrafts.delete(uid);
+    loadedFormSnapshot = null;
+    if (card.upgradeOfUid) showCard(cardByUid(card.upgradeOfUid).id, { capture: false });
+    else if (derivative) showCard(rootId, { capture: false });
     else closeEditor();
   }
 
@@ -924,6 +1109,8 @@
   function syncCardTypeFields() {
     const form = $("#cardEditorForm");
     const isSpell = form.elements.namedItem("cardType").value !== "Minion";
+    const isEvent = form.elements.namedItem("cardType").value === "Event";
+    form.classList.toggle("is-event", isEvent);
     form.classList.toggle("is-spell", isSpell);
     $$(".card-unit-only input, .card-unit-only button", form).forEach((control) => {
       control.disabled = isSpell;
@@ -966,14 +1153,28 @@
       });
     }
     window.addEventListener("pagehide", disposeChibiPreview);
+    window.addEventListener("beforeunload", event => {
+      stashCurrentForm();
+      if (formDrafts.size) { event.preventDefault(); event.returnValue = ""; }
+    });
+    $("#originalVersionTab").addEventListener("click", () => selectVersion(false));
+    $("#upgradeVersionTab").addEventListener("click", () => selectVersion(true));
+    $("#createUpgradeBtn").addEventListener("click", createUpgradeDesign);
+    $("#unsavedCancelBtn").addEventListener("click", () => { $("#unsavedChangesDialog").hidden = true; });
+    $("#unsavedDiscardBtn").addEventListener("click", () => { $("#unsavedChangesDialog").hidden = true; closeEditor(true); });
+    $("#unsavedSaveBtn").addEventListener("click", saveAllAndClose);
+    $("#cardEditorForm").addEventListener("submit", event => { event.preventDefault(); saveCard(); });
     $("#collectabilityToggle").addEventListener("click", (event) => {
-      const button = event.target.closest("button[data-collectable]");
+      const button = event.target.closest("button[data-category]");
       if (!button) return;
-      collectableView = button.dataset.collectable === "true";
+      browseCategory = button.dataset.category;
+      $("#cardTypeFilter").value = "all";
+      $("#cardTypeFilter").disabled = browseCategory === "event";
+      $("#cardCreateBtn").textContent = browseCategory === "event" ? "＋ 添加事件" : "＋ 添加卡牌";
       $$("#collectabilityToggle button").forEach((node) => node.classList.toggle("active", node === button));
       renderGallery();
     });
-    ["#cardSearch", "#cardFactionFilter", "#cardTypeFilter", "#cardViewSort"].forEach((selector) => {
+    ["#cardSearch", "#cardFactionFilter", "#cardTypeFilter", "#cardViewSort", "#cardPlaytestFilter"].forEach((selector) => {
       $(selector).addEventListener(selector === "#cardSearch" ? "input" : "change", renderGallery);
     });
     $("#cardCenterGrid").addEventListener("click", (event) => {
@@ -1058,6 +1259,7 @@
       }
       pendingArtworkKey = artworkKey;
       setStatus(`正在处理 ${files.length} 张图像…`);
+      artworkUploadInProgress = true;
       try {
         for (const file of files) {
           const src = await compressArtwork(file);
@@ -1073,6 +1275,7 @@
         console.error(error);
         setStatus("图像处理失败", "error");
       } finally {
+        artworkUploadInProgress = false;
         event.target.value = "";
       }
     });
@@ -1098,6 +1301,7 @@
       if (event.target === event.currentTarget) closeEditor();
     });
     document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !$("#unsavedChangesDialog").hidden) { $("#unsavedChangesDialog").hidden = true; return; }
       if (event.key === "Escape" && $("#cardEditorOverlay").style.display !== "none") closeEditor();
     });
   }
