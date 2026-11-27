@@ -50,10 +50,11 @@
               id="collectabilityToggle"
               aria-label="切换卡牌收集状态"
             >
-              <button class="active" type="button" data-collectable="true">
+              <button class="active" type="button" data-category="collectible">
                 可收集
               </button>
-              <button type="button" data-collectable="false">不可收集</button>
+              <button type="button" data-category="noncollectible">不可收集</button>
+              <button type="button" data-category="event">事件</button>
             </div>
             <input
               type="search"
@@ -77,6 +78,12 @@
               <option value="Minion">随从</option>
               <option value="Spell">法术</option>
               <option value="Resource">资源</option>
+              <option value="Event">事件</option>
+            </select>
+            <select id="cardPlaytestFilter" class="card-sort-select" aria-label="试玩状态筛选">
+              <option value="all">全部试玩状态</option>
+              <option value="true">已纳入下次试玩</option>
+              <option value="false">暂不纳入试玩</option>
             </select>
             <select
               id="cardViewSort"
@@ -143,6 +150,16 @@
             <div id="derivativeRail" class="derivative-rail"></div>
           </aside>
           <section class="hand-preview-stage">
+            <nav id="cardVersionTabs" class="card-version-tabs" aria-label="卡牌形态">
+              <button id="originalVersionTab" type="button" aria-pressed="true">原版</button>
+              <button id="upgradeVersionTab" type="button" aria-pressed="false">升级版</button>
+              <span id="cardVersionStatus" role="status"></span>
+            </nav>
+            <div id="upgradeEmptyState" class="upgrade-empty-state" hidden>
+              <strong>升级版未配置</strong>
+              <p>以已保存的原版设计为起点，独立编辑升级效果。试玩选择随原版，无需重复勾选。</p>
+              <button id="createUpgradeBtn" type="button">创建升级版设计</button>
+            </div>
             <nav class="card-preview-tabs" aria-label="卡面与人物素材">
               <div role="tablist" aria-label="预览内容">
                 <button id="cardPreviewTab" type="button" role="tab" aria-selected="true" aria-controls="cardHandPreview">卡面</button>
@@ -156,6 +173,9 @@
           <aside class="formal-card-form-panel">
             <form id="cardEditorForm" class="formal-card-form" novalidate>
               <label>编号<input name="id" readonly /></label>
+              <label id="playtestReadyToggle" class="playtest-ready-toggle"><input type="checkbox" name="playtestReady" /><span>纳入下次试玩</span></label>
+              <p id="playtestReadyInherited" hidden></p>
+              <p id="playtestReadyHelp" class="playtest-ready-help">勾选后，原版与已配置的升级版一起纳入下次试玩。</p>
               <div class="formal-form-row">
                 <label>中文名<input name="nameKey" required /></label
                 ><label>英文名<input name="englishName" /></label>
@@ -166,6 +186,7 @@
                     <option value="Minion">随从</option>
                     <option value="Spell">法术</option>
                     <option value="Resource">资源</option>
+              <option value="Event">事件</option>
                   </select></label
                 ><label
                   >稀有度<select name="rarity">
@@ -201,7 +222,7 @@
                 <legend>种族（可多选）</legend>
                 <div class="tribe-selector" id="tribeSelector"></div>
               </fieldset>
-              <fieldset>
+              <fieldset class="card-non-event-only">
                 <legend>箭头方向</legend>
                 <div class="formal-arrow-grid" id="arrowsCompass">
                   <button type="button" data-dir="NW">↖</button
@@ -289,6 +310,17 @@
       </div>
     </div>
 
+    <div id="unsavedChangesDialog" class="unsaved-changes-overlay" role="dialog" aria-modal="true" aria-labelledby="unsavedChangesTitle" hidden>
+      <section class="unsaved-changes-panel">
+        <h3 id="unsavedChangesTitle">还有未保存的修改</h3>
+        <p id="unsavedChangesMessage"></p>
+        <div class="unsaved-changes-actions">
+          <button id="unsavedCancelBtn" type="button">继续编辑</button>
+          <button id="unsavedDiscardBtn" type="button">放弃修改并关闭</button>
+          <button id="unsavedSaveBtn" type="button">保存全部并关闭</button>
+        </div>
+      </section>
+    </div>
     <footer class="portal-footer">
       <a href="./index.html">TIME-BLOCK HERO</a
       ><span>游戏设定集 / 规则 Wiki / 卡牌编辑器</span

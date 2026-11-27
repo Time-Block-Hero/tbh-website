@@ -80,6 +80,17 @@ function validateDataset(dataset) {
       artworkKeys.set(card.artworkKey, card.id);
     }
   }
+  // Upgrade artwork is inherited by reference, never by copying ownership. Validate
+  // explicit selections even when a malformed client omitted its variants entry.
+  for (const [cardId, selected] of Object.entries(dataset.selectedArtworkIds || {})) {
+    if (!cardIds.has(cardId)) throw new Error(`插画关联的卡牌不存在：${cardId}`);
+    const variants = dataset.artworkVariants?.[cardId] || [];
+    const selectedIds = selected == null ? [] : Array.isArray(selected) ? selected : [selected];
+    if (new Set(selectedIds).size !== selectedIds.length) throw new Error(`正式插画重复：${cardId}`);
+    for (const selectedId of selectedIds) {
+      if (!variants.some(variant => variant.id === selectedId)) throw new Error(`正式插画不存在：${cardId}/${selectedId}`);
+    }
+  }
   for (const [cardId, variants] of Object.entries(dataset.artworkVariants || {})) {
     if (!cardIds.has(cardId) || !Array.isArray(variants)) throw new Error(`插画关联的卡牌不存在：${cardId}`);
     const ids = new Set();
@@ -198,6 +209,7 @@ function writeProject(dataset, artworkRename, artworkDeletes, operation, baseRev
   const oldFallbackText = fs.readFileSync(fallbackPath, "utf8");
   if (baseRevision !== cardsRevision(oldCardsText)) throw new Error("卡牌源已变化，请重新加载后保存；未覆盖现有数据");
   const previousDataset = JSON.parse(oldCardsText);
+  designContract.normalizePlaytestReady(dataset);
   validateWrite(previousDataset, dataset, operation);
   const deleteKeys = validateArtworkDeletes(dataset, previousDataset, artworkDeletes);
   if (artworkRename?.oldKey || artworkRename?.newKey) {

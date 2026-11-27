@@ -6,7 +6,7 @@
 })(globalThis, function () {
   "use strict";
   const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/;
-  const TYPES = ["Minion", "Spell", "Resource"];
+  const TYPES = ["Minion", "Spell", "Resource", "Event"];
   const COLLECTIONS = ["Collectible", "Hero", "Token", "NonCollectible"];
   const DIRECTIONS = ["NW", "N", "NE", "W", "E", "SW", "S", "SE"];
   function require(condition, message) {
@@ -17,6 +17,7 @@
     return cryptoProvider.randomUUID();
   }
   function collectionFor(card) {
+    if (card.upgradeOfUid || card.cardType === "Event") return "NonCollectible";
     if (card.parentUid) return "Token";
     if (card.tags?.includes("InitialHero")) return "Hero";
     return card.collectable ? "Collectible" : "NonCollectible";
@@ -24,7 +25,9 @@
   function assignNewIdentity(card, parentUid = null, cryptoProvider = globalThis.crypto) {
     card.uid = newIdentity(cryptoProvider);
     card.parentUid = parentUid;
-    if (parentUid) {
+    card.upgradeOfUid = null;
+    card.playtestReady = false;
+    if (parentUid || card.cardType === "Event") {
       card.collectable = false;
       card.tags = (card.tags || []).filter((tag) => tag !== "InitialHero");
     }
@@ -32,13 +35,88 @@
     card.execution = plannedExecution();
     return card;
   }
+  function playtestOriginal(dataset, cardOrUid) {
+    const uid = typeof cardOrUid === "string" ? cardOrUid : cardOrUid?.uid;
+    const card = dataset.cards.find(entry => entry.uid === uid);
+    require(card, `Missing playtest card UID: ${uid}`);
+    const original = card.upgradeOfUid ? dataset.cards.find(entry => entry.uid === card.upgradeOfUid) : card;
+    require(original && !original.upgradeOfUid, `Missing or nested playtest original: ${card.id}`);
+    return original;
+  }
+  // An upgrade's stored flag is a compatibility mirror, never a second vote.
+  // A derivative is an original of its own pair; parentUid does not bind flags.
+  function effectivePlaytestReady(dataset, cardOrUid) {
+    return playtestOriginal(dataset, cardOrUid).playtestReady === true;
+  }
+  function setPlaytestReady(dataset, cardOrUid, value) {
+    require(typeof value === "boolean", "playtestReady must be boolean");
+    const original = playtestOriginal(dataset, cardOrUid);
+    let changed = false;
+    for (const card of dataset.cards) if (card.uid === original.uid || card.upgradeOfUid === original.uid) {
+      if (card.playtestReady !== value) { card.playtestReady = value; changed = true; }
+    }
+    return changed;
+  }
+  function normalizePlaytestReady(dataset) {
+    if (dataset.schemaVersion !== 6) return false;
+    let changed = false;
+    for (const card of dataset.cards) if (card.upgradeOfUid) {
+      const value = effectivePlaytestReady(dataset, card);
+      if (card.playtestReady !== value) { card.playtestReady = value; changed = true; }
+    }
+    return changed;
+  }
+  function createUpgrade(base, cryptoProvider = globalThis.crypto) {
+    require(base && UUID.test(base.uid) && base.cardType !== "Event" && !base.upgradeOfUid, "Only non-event original cards can have an upgrade");
+    const card = assignNewIdentity(structuredClone(base), null, cryptoProvider);
+    card.id = `${base.id}-UP`;
+    card.upgradeOfUid = base.uid;
+    card.playtestReady = base.playtestReady === true;
+    card.collectable = false;
+    card.tags = card.tags.filter(tag => tag !== "InitialHero");
+    card.collectionKind = collectionFor(card);
+    card.englishName = base.englishName ? `${base.englishName} Upgraded` : "";
+    card.artworkKey = null;
+    delete card.artPath;
+    card.artRequest = 0;
+    return card;
+  }
+  function migrateDataset(dataset) {
+    validateDataset(dataset);
+    require([5, 6].includes(dataset.schemaVersion), "Migrate schema 4 execution definitions to schema 5 before upgrading the design dataset");
+    const next = structuredClone(dataset);
+    if (next.schemaVersion === 5) {
+      next.schemaVersion = 6;
+      next.sourceSchemaVersion = 6;
+      for (const card of next.cards) { card.upgradeOfUid = null; card.playtestReady = false; }
+    }
+    normalizePlaytestReady(next);
+    return validateDataset(next);
+  }
+  function deletionUids(dataset, uid) {
+    const removed = new Set([uid]);
+    require(dataset.cards.some(card => card.uid === uid), "Delete target UID does not exist");
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const card of dataset.cards) if (!removed.has(card.uid) && (removed.has(card.parentUid) || removed.has(card.upgradeOfUid))) {
+        removed.add(card.uid); changed = true;
+      }
+    }
+    return [...removed];
+  }
   const DESIGN_FIELDS = ["uid", "parentUid", "collectionKind", "cardType", "classId", "rarity", "collectable", "costResource", "costAmount", "attack", "health", "movement", "durability", "arrows", "tribes", "tags", "rulesText"];
   function canonical(value) {
     if (Array.isArray(value)) return value.map(canonical);
     if (value && typeof value === "object") return Object.fromEntries(Object.keys(value).sort().map(key => [key, canonical(value[key])]));
     return value;
   }
-  function designMaterial(card) { return JSON.stringify(canonical(Object.fromEntries(DESIGN_FIELDS.map(field => [field, card[field] ?? null])))); }
+  function designMaterial(card) {
+    const fields = Object.fromEntries(DESIGN_FIELDS.map(field => [field, card[field] ?? null]));
+    // Keep approved legacy design hashes stable. Readiness is editorial, not gameplay.
+    if (card.upgradeOfUid) fields.upgradeOfUid = card.upgradeOfUid;
+    return JSON.stringify(canonical(fields));
+  }
   async function designHash(card, cryptoProvider = globalThis.crypto) {
     const bytes = new TextEncoder().encode(designMaterial(card));
     return [...new Uint8Array(await cryptoProvider.subtle.digest("SHA-256", bytes))].map(byte => byte.toString(16).padStart(2, "0")).join("");
@@ -66,6 +144,7 @@
       else if (value && typeof value === "object") for (const [key, entry] of Object.entries(value)) visit(entry, `${location}.${key}`);
     }
     for (const card of dataset.cards) if (!targets.has(card.uid)) visit(card.execution, `cards[${card.id}].execution`);
+    visit(dataset.shared, "shared");
     return found;
   }
   function mapSelection(selection, mapping) {
@@ -74,6 +153,11 @@
   }
   function selectedArtwork(dataset, card) {
     const raw = dataset.selectedArtworkIds?.[card.id];
+    if (card.upgradeOfUid && raw == null && !(dataset.artworkVariants?.[card.id]?.length)) {
+      const base = dataset.cards.find(entry => entry.uid === card.upgradeOfUid);
+      require(base && !base.upgradeOfUid, `Missing or nested upgrade artwork source: ${card.id}`);
+      return selectedArtwork(dataset, base);
+    }
     const ids = raw == null || raw === "" ? [] : Array.isArray(raw) ? raw : [raw];
     require(new Set(ids).size === ids.length, `Duplicate selected artwork: ${card.id}`);
     const variants = dataset.artworkVariants?.[card.id] || [];
@@ -88,17 +172,25 @@
     });
   }
   function validateDataset(dataset, { exportArtwork = false } = {}) {
-    require([4, 5].includes(dataset?.schemaVersion) && Array.isArray(dataset.cards), "Expected card dataset schemaVersion 4 or 5");
-    if (dataset.schemaVersion === 5) require(dataset.executionSchemaVersion === 21 && Array.isArray(dataset.shared?.statuses), "Expected executionSchemaVersion 21 and shared.statuses");
+    require([4, 5, 6].includes(dataset?.schemaVersion) && Array.isArray(dataset.cards), "Expected card dataset schemaVersion 4, 5 or 6");
+    if (dataset.schemaVersion >= 5) require(dataset.executionSchemaVersion === 21 && Array.isArray(dataset.shared?.statuses), "Expected executionSchemaVersion 21 and shared.statuses");
     const ids = new Set(), byUid = new Map();
     for (const card of dataset.cards) {
       require(card && UUID.test(card.uid), `Missing or invalid card UID: ${card?.id}`);
       require(!byUid.has(card.uid), `Duplicate card UID: ${card.uid}`);
       require(typeof card.id === "string" && card.id.length > 0 && !ids.has(card.id), `Missing or duplicate display ID: ${card.id}`);
+      if (dataset.schemaVersion === 6) {
+        require(typeof card.playtestReady === "boolean", `Invalid playtestReady: ${card.id}`);
+        require(card.upgradeOfUid === null || UUID.test(card.upgradeOfUid), `Invalid upgrade UID: ${card.id}`);
+      } else {
+        require(card.cardType !== "Event" && !card.upgradeOfUid, `Event and upgrade definitions require schemaVersion 6: ${card.id}`);
+      }
       require(TYPES.includes(card.cardType), `Invalid card type: ${card.id}/${card.cardType}`);
       require(COLLECTIONS.includes(card.collectionKind), `Invalid collection kind: ${card.id}`);
       require(card.parentUid === null || UUID.test(card.parentUid), `Invalid parent UID: ${card.id}`);
       require(typeof card.collectable === "boolean" && card.collectionKind === collectionFor(card), `Inconsistent collection kind: ${card.id}`);
+      if (card.cardType === "Event") require(!card.collectable && !card.parentUid && !card.upgradeOfUid && !card.tags?.includes("InitialHero"), `Event cannot be collectible, a hero, a derivative or an upgrade: ${card.id}`);
+      if (card.upgradeOfUid) require(!card.parentUid && !card.collectable && !card.tags?.includes("InitialHero"), `Upgrade cannot be a derivative, a hero or collectible: ${card.id}`);
       require(card.collectionKind !== "Hero" || card.cardType === "Minion", `Hero must be a minion: ${card.id}`);
       require(card.collectionKind !== "Token" || !card.collectable && !card.tags?.includes("InitialHero"), `Token cannot be a hero or collectible: ${card.id}`);
       for (const field of ["nameKey", "englishName", "classId", "rarity", "costResource", "rulesText"]) require(typeof card[field] === "string", `Invalid ${field}: ${card.id}`);
@@ -107,17 +199,25 @@
       for (const field of ["arrows", "tags"]) require(Array.isArray(card[field]) && card[field].every((value) => typeof value === "string"), `Invalid ${field}: ${card.id}`);
       require(card.arrows.every((arrow) => DIRECTIONS.includes(arrow)) && new Set(card.arrows).size === card.arrows.length, `Invalid arrows: ${card.id}`);
       require(card.tribes == null || Array.isArray(card.tribes) && card.tribes.every((value) => typeof value === "string"), `Invalid tribes: ${card.id}`);
-      if (dataset.schemaVersion === 5) validateExecution(card);
+      if (dataset.schemaVersion >= 5) validateExecution(card);
       ids.add(card.id); byUid.set(card.uid, card);
       if (exportArtwork) selectedArtwork(dataset, card);
     }
+    const upgraded = new Set();
     for (const card of dataset.cards) {
+      if (card.upgradeOfUid) {
+        const base = byUid.get(card.upgradeOfUid);
+        require(base && base.uid !== card.uid && !base.upgradeOfUid && base.cardType !== "Event", `Missing, self, nested or event upgrade source: ${card.id}`);
+        require(!upgraded.has(base.uid), `Duplicate upgrade for card: ${base.id}`);
+        require(base.classId === card.classId && base.cardType === card.cardType, `Upgrade faction/type mismatch: ${card.id}`);
+        upgraded.add(base.uid);
+      }
       if (!card.parentUid) continue;
       const parent = byUid.get(card.parentUid);
-      require(parent && parent.uid !== card.uid && parent.parentUid === null, `Missing, self, or nested parent: ${card.id}`);
+      require(parent && parent.uid !== card.uid && parent.parentUid === null && !parent.upgradeOfUid && parent.cardType !== "Event", `Missing, self, or nested parent: ${card.id}`);
       require(parent.classId === card.classId, `Parent faction mismatch: ${card.id}`);
     }
     return dataset;
   }
-  return { DESIGN_FIELDS, canonical, designMaterial, designHash, EXECUTION_PROPERTIES, plannedExecution, validateExecution, executionReferences, UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
+  return { effectivePlaytestReady, setPlaytestReady, normalizePlaytestReady, createUpgrade, migrateDataset, deletionUids, DESIGN_FIELDS, canonical, designMaterial, designHash, EXECUTION_PROPERTIES, plannedExecution, validateExecution, executionReferences, UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
 });

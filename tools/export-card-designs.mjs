@@ -41,14 +41,22 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
 }
 
 function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionBytes = null) {
-  const dataset = contract.validateDataset(JSON.parse(cardsBytes), { exportArtwork: true });
-  if (dataset.schemaVersion === 5 && commit !== null) validateProductionExecution(dataset);
-  const bridge = validateBridge(JSON.parse(bridgeBytes), dataset, revisionBytes ? { requireCompleteBaseline: false } : options);
+  const fullDataset = contract.validateDataset(JSON.parse(cardsBytes));
+  contract.normalizePlaytestReady(fullDataset);
+  const isPlaytest = fullDataset.schemaVersion === 6;
+  const formal = commit !== null;
+  if (isPlaytest && formal) require(revisionBytes !== null, 'Schema6 formal export requires an approved source revision with a trusted identity bridge hash');
+  const dataset = formal && fullDataset.schemaVersion >= 5 ? validateProductionExecution(fullDataset) : fullDataset;
+  // Formal artwork belongs to the selected collection. An unrelated unready
+  // card may still contain an editor upload awaiting a production asset path.
+  contract.validateDataset(dataset, { exportArtwork: true });
+  const bridge = validateBridge(JSON.parse(bridgeBytes), dataset,
+    revisionBytes || isPlaytest ? { requireCompleteBaseline: false } : options);
   const revision = revisionBytes ? validateSourceRevision(revisionBytes, bridgeBytes, bridge, dataset,
-    { requireInventory: options.requireCompleteBaseline !== false }) : null;
+    { requireInventory: isPlaytest ? formal : options.requireCompleteBaseline !== false, allowSubset: isPlaytest && formal }) : null;
   return {
-    schemaVersion: dataset.schemaVersion === 5 ? 2 : 1,
-    ...(dataset.schemaVersion === 5 ? { executionSchemaVersion: dataset.executionSchemaVersion, shared: structuredClone(dataset.shared), sourceDataset: structuredClone(dataset) } : {}),
+    schemaVersion: isPlaytest ? 3 : dataset.schemaVersion === 5 ? 2 : 1,
+    ...(dataset.schemaVersion >= 5 ? { executionSchemaVersion: dataset.executionSchemaVersion, shared: structuredClone(dataset.shared), sourceDataset: structuredClone(dataset) } : {}),
     kind: "timeblock.card-designs",
     source: {
       repository: REPOSITORY,
@@ -58,16 +66,18 @@ function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionByte
       ...(revision ? { sourceRevisionPath: SOURCE_REVISION_PATH, sourceRevisionId: revision.revisionId, sourceRevisionSha256: revision.sha256 } : {}),
       datasetSchemaVersion: dataset.schemaVersion,
       dirty: commit === null,
+      ...(isPlaytest ? { selection: formal ? "playtest-ready" : "all-designs" } : {}),
     },
     cards: dataset.cards.map((card) => ({
       uid: card.uid,
-      ...(dataset.schemaVersion === 5 ? { execution: structuredClone(card.execution), executionSha256: executionHash(card.execution) } : {}),
+      ...(dataset.schemaVersion >= 5 ? { execution: structuredClone(card.execution), executionSha256: executionHash(card.execution) } : {}),
       displayId: card.id,
       name: card.nameKey,
       nameEn: card.englishName,
       cardType: card.cardType,
       collectionKind: card.collectionKind,
       parentUid: card.parentUid,
+      ...(isPlaytest ? { upgradeOfUid: card.upgradeOfUid, playtestReady: card.playtestReady } : {}),
       classId: card.classId,
       rarity: card.rarity,
       costResource: card.costResource,

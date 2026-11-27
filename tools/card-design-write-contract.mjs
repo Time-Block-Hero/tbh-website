@@ -4,8 +4,16 @@ import contract from "../card-design-contract.js";
 // Apply a declared editor operation by UID, not by mutable array position or display ID.
 export function validateWrite(previous, next, operation) {
   contract.validateDataset(previous); contract.validateDataset(next);
+  // Loading an older schema6 draft may repair mirror flags across several pairs.
+  // Compare against the canonical previous state so those repairs do not grant
+  // permission to edit any unrelated authoritative flag or gameplay field.
+  previous = structuredClone(previous);
+  contract.normalizePlaytestReady(previous);
+  if (next.schemaVersion === 6) for (const card of next.cards) {
+    assert.equal(card.playtestReady, contract.effectivePlaytestReady(next, card), `Upgrade readiness must follow its original: ${card.id}`);
+  }
   assert.equal(next.schemaVersion, previous.schemaVersion, "Legacy drafts cannot overwrite the current schema; export and explicitly migrate the draft first");
-  if (previous.schemaVersion === 5) {
+  if (previous.schemaVersion >= 5) {
     assert.equal(next.executionSchemaVersion, previous.executionSchemaVersion, "Editor cannot change execution schema");
     assert.deepEqual(next.shared, previous.shared, "Editor must preserve shared execution declarations");
   }
@@ -22,7 +30,7 @@ export function validateWrite(previous, next, operation) {
     assert.equal(removed.length, 0, "Create cannot remove existing identities");
   } else if (operation.type === "delete") {
     assert.ok(target, "Delete target UID does not exist");
-    const expected = [target.uid, ...previous.cards.filter((card) => card.parentUid === target.uid).map((card) => card.uid)].sort();
+    const expected = contract.deletionUids(previous, target.uid).sort();
     assert.deepEqual(removed.sort(), expected, "Delete must remove only its addressed card and children");
     assert.equal(added.length, 0, "Delete cannot add identities");
   } else {
@@ -35,6 +43,7 @@ export function validateWrite(previous, next, operation) {
     const after = newCards.get(uid);
     if (!after) continue;
     assert.equal(after.parentUid, before.parentUid, "Existing parent UID cannot be reassigned");
+    assert.equal(after.upgradeOfUid, before.upgradeOfUid, "Existing upgrade UID cannot be reassigned");
     if (operation.type === "import") {
       assert.equal(after.id, before.id, "Browser-draft import cannot change identity/display associations; apply reorders in the editor");
       continue;
@@ -42,7 +51,17 @@ export function validateWrite(previous, next, operation) {
     if (operation.type === "edit" && uid === operation.uid) continue;
     const expected = { ...before }; const actual = { ...after };
     delete expected.id; delete actual.id;
-    if (operation.type === "edit" && before.parentUid === operation.uid) expected.classId = newCards.get(operation.uid).classId;
+    if (operation.type === "edit") {
+      const descendantUids = contract.deletionUids(previous, operation.uid);
+      if (descendantUids.includes(uid)) expected.classId = newCards.get(operation.uid).classId;
+      if (before.upgradeOfUid === operation.uid) expected.cardType = newCards.get(operation.uid).cardType;
+      // Only an original-card edit may change its authoritative choice and
+      // propagate it to the upgrade mirror. Editing an upgrade grants no write
+      // permission to the original, even if the request changes both flags.
+      if (next.schemaVersion === 6 && !target.upgradeOfUid && before.upgradeOfUid === target.uid) {
+        expected.playtestReady = newCards.get(target.uid).playtestReady;
+      }
+    }
     assert.deepEqual(actual, expected, `Operation changed an unaddressed identity: ${uid}`);
     assert.deepEqual(art(next, after), art(previous, before), `Operation changed artwork of an unaddressed identity: ${uid}`);
   }

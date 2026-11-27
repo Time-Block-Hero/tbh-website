@@ -9,12 +9,41 @@ export function executionHash(execution) {
   const { reviewedDesignHash, ...definition } = execution;
   return semanticHash(definition);
 }
-export function validateProductionExecution(dataset) {
+// Selection is mandatory for schema6 production paths; design previews never call this.
+export function selectPlaytestDataset(dataset) {
   contract.validateDataset(dataset);
-  if (dataset.schemaVersion !== 5) throw new Error('Production execution requires schemaVersion 5');
+  if (dataset.schemaVersion !== 6) return dataset;
+  // Never mutate source bytes or let a stale upgrade mirror admit/exclude a pair.
+  dataset = structuredClone(dataset);
+  contract.normalizePlaytestReady(dataset);
+  const cards = dataset.cards.filter(card => contract.effectivePlaytestReady(dataset, card));
+  if (!cards.length) throw new Error('No cards are marked playtestReady=true (没有纳入下次试玩的卡牌)');
+  const selected = new Set(cards.map(card => card.uid));
+  function requireSelected(uid, location) {
+    if (uid && !selected.has(uid)) throw new Error(`${location}: required card ${uid} is not included in this playtest; mark it ready explicitly or revise the dependency`);
+  }
+  for (const card of cards) {
+    requireSelected(card.parentUid, `${card.id}.parentUid`);
+    requireSelected(card.upgradeOfUid, `${card.id}.upgradeOfUid`);
+  }
+  const ids = new Set(cards.map(card => card.id));
+  const selectedMap = map => Object.fromEntries(Object.entries(map || {}).filter(([id]) => ids.has(id)));
+  return { ...structuredClone(dataset), cards: structuredClone(cards),
+    artworkVariants: structuredClone(selectedMap(dataset.artworkVariants)),
+    selectedArtworkIds: structuredClone(selectedMap(dataset.selectedArtworkIds)) };
+}
+export function validateProductionExecution(input) {
+  const dataset = selectPlaytestDataset(input);
+  if (![5, 6].includes(dataset.schemaVersion)) throw new Error('Production execution requires schemaVersion 5 or 6');
   const uids = new Set(dataset.cards.map(card => card.uid));
   const definitions = new Set();
+  function references(value, location) {
+    if (typeof value === 'string' && contract.UUID.test(value) && !uids.has(value)) throw new Error(`${location}: dangling card UID ${value}`);
+    if (Array.isArray(value)) value.forEach((item, i) => references(item, `${location}[${i}]`));
+    else if (value && typeof value === 'object') for (const [key, item] of Object.entries(value)) references(item, `${location}.${key}`);
+  }
   for (const card of dataset.cards) {
+    if (card.cardType === 'Event') throw new Error(`${card.id}: Event is a design-only type until the game content adapter and runtime support are implemented`);
     const e = card.execution;
     if (e.arrowMode === 'OneTime' && JSON.stringify([...(e.properties.arrowRules || [])].filter(rule => rule.kind === 'Consumable').map(rule => rule.direction).sort()) !== JSON.stringify([...card.arrows].sort())) throw new Error(`${card.id}.execution.properties.arrowRules: OneTime directions must match design arrows`);
     if (e.runtimeSupport !== 'Implemented') throw new Error(`${card.id}.execution.runtimeSupport: not Implemented`);
@@ -26,17 +55,15 @@ export function validateProductionExecution(dataset) {
         definitions.add(id);
       }
     }
-    function references(value, location) {
-      if (typeof value === 'string' && contract.UUID.test(value) && !uids.has(value)) throw new Error(`${location}: dangling card UID ${value}`);
-      if (Array.isArray(value)) value.forEach((item, i) => references(item, `${location}[${i}]`));
-      else if (value && typeof value === 'object') for (const [key, item] of Object.entries(value)) references(item, `${location}.${key}`);
-    }
     references(e, `cards[${card.id}].execution`);
   }
+  if (dataset.schemaVersion === 6) references(dataset.shared.statuses, "shared.statuses");
+  return dataset;
 }
-export function toAuthoringDocument(dataset, { contentId, contentVersion, source = {}, artPaths = {}, validate = true } = {}) {
-  contract.validateDataset(dataset);
-  if (validate) validateProductionExecution(dataset);
+export function toAuthoringDocument(input, { contentId, contentVersion, source = {}, artPaths = {}, validate = true } = {}) {
+  // Even internal callers that skip effect validation cannot bypass selection.
+  const dataset = validate ? validateProductionExecution(input) : selectPlaytestDataset(input);
+  if (dataset.schemaVersion === 6 && dataset.cards.some(card => card.upgradeOfUid || card.cardType === 'Event')) throw new Error('Upgrade variants and Event cards require a new game content adapter; schema21 executable export is not supported yet');
   if (!contentId || !contentVersion) throw new Error('Explicit contentId and contentVersion are required');
   return {
     authoringVersion: 1, schemaVersion: dataset.executionSchemaVersion, contentId, contentVersion, source,

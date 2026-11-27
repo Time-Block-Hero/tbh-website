@@ -1,6 +1,6 @@
 {
-  "schemaVersion": 5,
-  "sourceSchemaVersion": 5,
+  "schemaVersion": 6,
+  "sourceSchemaVersion": 6,
   "source": "data/cards.json",
   "cards": [
     {
@@ -51,7 +51,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-002",
@@ -103,7 +105,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-003",
@@ -153,7 +157,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-004",
@@ -266,7 +272,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-005",
@@ -379,7 +387,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-006",
@@ -596,7 +606,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-007",
@@ -748,7 +760,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-008",
@@ -806,7 +820,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-009",
@@ -1012,7 +1028,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-010",
@@ -1124,7 +1142,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-011",
@@ -1284,7 +1304,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-012",
@@ -1478,7 +1500,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-013",
@@ -1812,7 +1836,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-014",
@@ -1921,7 +1947,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-015",
@@ -2073,7 +2101,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-016",
@@ -2332,7 +2362,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-017",
@@ -2408,7 +2440,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-018",
@@ -2524,7 +2558,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-019",
@@ -2718,7 +2754,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-020",
@@ -2825,7 +2863,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-021",
@@ -2901,7 +2941,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-022",
@@ -3022,7 +3064,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-023",
@@ -3167,7 +3211,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-024",
@@ -3218,7 +3264,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-025",
@@ -3416,7 +3464,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-026",
@@ -3578,7 +3628,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-027",
@@ -3745,7 +3797,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-028",
@@ -3958,7 +4012,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-029",
@@ -4010,7 +4066,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-030",
@@ -4088,7 +4146,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-031",
@@ -4239,7 +4299,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-032",
@@ -4369,7 +4431,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-033",
@@ -4557,7 +4621,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-034",
@@ -4721,7 +4787,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-035",
@@ -4771,7 +4839,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-036",
@@ -4822,7 +4892,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-037",
@@ -4874,7 +4946,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-038",
@@ -5100,7 +5174,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-039",
@@ -5508,7 +5584,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-040",
@@ -5755,7 +5833,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-041",
@@ -5880,7 +5960,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-042",
@@ -5932,7 +6014,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-001",
@@ -6046,7 +6130,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-002",
@@ -6160,7 +6246,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-003",
@@ -6268,7 +6356,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-004",
@@ -6401,7 +6491,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-005",
@@ -6559,7 +6651,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-006",
@@ -6668,7 +6762,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-007",
@@ -6782,7 +6878,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-008",
@@ -6888,7 +6986,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "FNG-UN-009",
@@ -7009,7 +7109,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-000",
@@ -7166,7 +7268,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-001",
@@ -7351,7 +7455,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-002",
@@ -7421,7 +7527,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-003",
@@ -7510,7 +7618,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-004",
@@ -7618,7 +7728,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-004-01",
@@ -7804,7 +7916,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-005",
@@ -7949,7 +8063,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-006",
@@ -8084,7 +8200,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-007",
@@ -8229,7 +8347,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-008",
@@ -8417,7 +8537,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-009",
@@ -8570,7 +8692,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-010",
@@ -8748,7 +8872,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-011",
@@ -8887,7 +9013,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-011-01",
@@ -9095,7 +9223,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-012",
@@ -9361,7 +9491,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-013",
@@ -9439,7 +9571,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-014",
@@ -9610,7 +9744,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-015",
@@ -9661,7 +9797,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-016",
@@ -9966,7 +10104,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-016-01",
@@ -10040,7 +10180,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-017",
@@ -10175,7 +10317,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-018",
@@ -10331,7 +10475,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-019",
@@ -10381,7 +10527,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SA-020",
@@ -10493,7 +10641,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-000",
@@ -10566,7 +10716,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-001",
@@ -10637,7 +10789,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-002",
@@ -10862,7 +11016,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-003",
@@ -10945,7 +11101,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-004",
@@ -11101,7 +11259,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-005",
@@ -11253,7 +11413,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-006",
@@ -11488,7 +11650,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-007",
@@ -11572,7 +11736,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-008",
@@ -11717,7 +11883,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-009",
@@ -11799,7 +11967,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-010",
@@ -11972,7 +12142,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-011",
@@ -12131,7 +12303,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-012",
@@ -12317,7 +12491,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-013",
@@ -12493,7 +12669,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-014",
@@ -12627,7 +12805,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-015",
@@ -12754,7 +12934,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-016",
@@ -12900,7 +13082,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-017",
@@ -13040,7 +13224,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-018",
@@ -13196,7 +13382,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-018-01",
@@ -13400,7 +13588,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-019",
@@ -13447,7 +13637,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-020",
@@ -13679,7 +13871,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-021",
@@ -13915,7 +14109,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "SC-022",
@@ -14086,7 +14282,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-000",
@@ -14208,7 +14406,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-001",
@@ -14476,7 +14676,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-002",
@@ -14676,7 +14878,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-003",
@@ -14834,7 +15038,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-004",
@@ -14920,7 +15126,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-005",
@@ -15122,7 +15330,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-006",
@@ -15191,7 +15401,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-007",
@@ -15368,7 +15580,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-008",
@@ -15454,7 +15668,9 @@
           }
         ],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-009",
@@ -15633,7 +15849,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-010",
@@ -15808,7 +16026,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-011",
@@ -15950,7 +16170,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-012",
@@ -16305,7 +16527,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-013",
@@ -16582,7 +16806,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-014",
@@ -16728,7 +16954,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-015",
@@ -16886,7 +17114,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-016",
@@ -17020,7 +17250,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-017",
@@ -17200,7 +17432,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-018",
@@ -17267,7 +17501,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-019",
@@ -17394,7 +17630,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-020",
@@ -17691,7 +17929,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-020-01",
@@ -17993,7 +18233,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-020-02",
@@ -18209,7 +18451,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-021",
@@ -18555,7 +18799,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "AI-022",
@@ -19007,7 +19253,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-000",
@@ -19127,7 +19375,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-001",
@@ -19256,7 +19506,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-002",
@@ -19350,7 +19602,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-003",
@@ -19434,7 +19688,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-004",
@@ -19559,7 +19815,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-005",
@@ -19677,7 +19935,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-006",
@@ -19800,7 +20060,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-007",
@@ -19893,7 +20155,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-008",
@@ -19994,7 +20258,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-009",
@@ -20173,7 +20439,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-009-01",
@@ -20284,7 +20552,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-010",
@@ -20442,7 +20712,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-011",
@@ -20581,7 +20853,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-012",
@@ -20727,7 +21001,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-012-01",
@@ -20778,7 +21054,9 @@
         "abilities": [],
         "continuousEffects": [],
         "plans": []
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-013",
@@ -20883,7 +21161,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-014",
@@ -21014,7 +21294,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-015",
@@ -21147,7 +21429,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-016",
@@ -21295,7 +21579,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-017",
@@ -21460,7 +21746,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-018",
@@ -21554,7 +21842,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-019",
@@ -21752,7 +22042,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     },
     {
       "id": "MCC-020",
@@ -21919,7 +22211,9 @@
             }
           }
         ]
-      }
+      },
+      "upgradeOfUid": null,
+      "playtestReady": false
     }
   ],
   "artworkVariants": {

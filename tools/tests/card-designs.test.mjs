@@ -64,7 +64,7 @@ function editorHarness() {
   const context = { console: { ...console, error: () => {} }, structuredClone, crypto: webcrypto, TbhCardDesign: contract,
     localStorage: { getItem: (key) => memory.get(key) ?? null, setItem: (key, value) => memory.set(key, value) },
     fetch: async () => ({ ok: false, status: 400, json: async () => ({ error: "revision conflict" }) }),
-    document: { createElement: () => ({ getContext: () => ({}) }), querySelector: (selector) => selector === "#cardEditorForm" ? form : selector.endsWith("SaveStatus") ? status : { value: "Neutral" }, querySelectorAll: () => [] } };
+    document: { createElement: () => ({ getContext: () => ({}) }), querySelector: (selector) => selector === "#cardEditorForm" ? form : selector.endsWith("SaveStatus") ? status : { value: "Neutral", classList: { toggle() {} } }, querySelectorAll: () => [] } };
   context.window = context;
   vm.createContext(context);
   let script = fs.readFileSync(path.join(root, "card-editor.js"), "utf8");
@@ -81,7 +81,7 @@ function editorHarness() {
   return { api: context.editorTest, memory, status, form: (values) => formValues = values };
 }
 
-test("actual editor reorder, rename, new-card and derivative paths preserve identity semantics", () => {
+test("actual editor reorder, rename, new-card and derivative paths preserve identity semantics", async () => {
   const { api, form } = editorHarness();
   const dataset = structuredClone(source);
   api.load(dataset);
@@ -94,10 +94,10 @@ test("actual editor reorder, rename, new-card and derivative paths preserve iden
   const renamed = api.readForm();
   assert.equal(renamed.uid, card.uid);
   assert.equal(renamed.nameKey, "新显示名");
-  api.addMainCard();
+  await api.addMainCard();
   assert.equal(new Set(dataset.cards.map((card) => card.uid)).size, 138);
   api.select(card.id);
-  api.addDerivative();
+  await api.addDerivative();
   const token = dataset.cards.at(-1);
   assert.equal(token.parentUid, card.uid);
   assert.notEqual(token.uid, card.uid);
@@ -292,7 +292,7 @@ test("HTTP save and reopen preserve Resource/UID and reject malformed datasets a
 });
 
 
-test("actual editor schema5 draft isolation and form paths retain execution without inheriting identities", () => {
+test("actual editor schema5 draft isolation and form paths retain execution without inheriting identities", async () => {
   const current = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json")));
   const { api, memory, form } = editorHarness();
   const legacy = JSON.stringify(source);
@@ -305,7 +305,7 @@ test("actual editor schema5 draft isolation and form paths retain execution with
   api.load(structuredClone(current)); const original = api.get().cards[0]; api.select(original.id);
   form({ nameKey: original.nameKey, englishName: original.englishName, cardType: original.cardType, rarity: original.rarity, classId: original.classId, collectable: String(original.collectable) });
   assert.deepEqual(api.readForm().execution, original.execution);
-  api.addDerivative();
+  await api.addDerivative();
   const derivative = api.get().cards.at(-1);
   assert.deepEqual(JSON.parse(JSON.stringify(derivative.execution)), contract.plannedExecution());
   assert.equal(derivative.parentUid, original.uid);

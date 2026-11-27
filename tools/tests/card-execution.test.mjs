@@ -20,14 +20,14 @@ const options = { contentId: 'test', contentVersion: 'fixture', artPaths: Object
 const revise = fn => { const copy = structuredClone(current); fn(copy); return copy; };
 const oneCard = () => {
   const d = structuredClone(current); d.cards = [d.cards.find(c => c.rulesText === '' && c.parentUid === null)];
+  d.cards[0].playtestReady = true;
   return d;
 };
-test('schema5 production maps all 147 identities through the reviewed migration and balance revision', () => {
+test('historical execution of all 147 identities remains unchanged after editor metadata migration', () => {
   contract.validateDataset(current);
   assert.equal(current.cards.length, 147);
   assert.deepEqual([...current.cards.map(c => c.uid)].sort(), evidence.entries.map(e => e.uid).sort());
   assert.deepEqual(evidence.unresolved, []);
-  validateProductionExecution(current);
   assert.equal(balance.entries.length, 24);
   assert.equal(new Set(balance.entries.map(e => e.uid)).size, 24);
   for (const revision of balance.entries) {
@@ -43,7 +43,13 @@ test('schema5 production maps all 147 identities through the reviewed migration 
     assert.equal(revision.previousDesignHash, previous.designHash, revision.displayId);
     assert.equal(revision.previousExecutionHash, previous.executionHash, revision.displayId);
   }
-  const generated = toAuthoringDocument(current, options);
+  // This assertion certifies historical execution, independent of the new
+  // playtest selection. The actual schema6 selection has dedicated export tests.
+  const legacy = structuredClone(current);
+  legacy.schemaVersion = 5; legacy.sourceSchemaVersion = 5;
+  for (const card of legacy.cards) { delete card.upgradeOfUid; delete card.playtestReady; }
+  validateProductionExecution(legacy);
+  const generated = toAuthoringDocument(legacy, options);
   assert.equal(inheritance.entries.length, 11);
   for (const revision of inheritance.entries) {
     const previous = construction.entries.find(e => e.uid === revision.uid)
