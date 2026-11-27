@@ -34,7 +34,9 @@ function harness(cards) {
     renderArtworkVariantList = () => {}; renderHand = () => {}; renderDerivativeRail = () => {}; renderVersionTabs = () => {}; renderGallery = () => {};
     persist = async () => true;
     globalThis.editor = { load(value) { dataset = value; }, showCard, selectVersion, closeEditor, saveCard, readForm, filteredCards, remapCardIds, artworkFor,
-      category(value) { browseCategory = value; }, getCurrent: () => currentId, drafts: () => formDrafts, isEmpty: () => unconfiguredUpgrade };
+      category(value) { browseCategory = value; }, getCurrent: () => currentId, getDataset: () => dataset, setPersist(fn) { persist = fn; },
+      setArt(variants, selected) { pendingArtworkVariants = variants; pendingSelectedArtworkId = selected; },
+      getArt: () => ({ variants: pendingArtworkVariants, selected: pendingSelectedArtworkId }), drafts: () => formDrafts, isEmpty: () => unconfiguredUpgrade };
   window.initFormalCardEditor =`);
   vm.runInNewContext(script, context); context.editor.load(data);
   return { api: context.editor, fields, element, data, form };
@@ -45,12 +47,15 @@ test("version switches preserve independent text/readiness drafts; save affects 
   const h = harness([base, upgrade]);
   h.api.showCard(base.id);
   h.fields.get("rulesText").value = "原版未保存修改";
+  h.api.setArt([{id:"unsaved-art", src:"data:image/png;base64,AAAA"}], "unsaved-art");
   h.fields.get("playtestReady").checked = true;
   h.api.selectVersion(true);
   h.fields.get("rulesText").value = "升级版未保存修改";
   assert.equal(h.fields.get("playtestReady").checked, false);
   h.api.selectVersion(false);
   assert.equal(h.fields.get("rulesText").value, "原版未保存修改");
+  assert.equal(h.api.getArt().selected, "unsaved-art");
+  assert.equal(h.api.getArt().variants[0].src, "data:image/png;base64,AAAA");
   assert.equal(h.fields.get("playtestReady").checked, true);
   h.api.selectVersion(true);
   assert.equal(h.fields.get("rulesText").value, "升级版未保存修改");
@@ -115,4 +120,15 @@ test("upgrade preview references original artwork until independent artwork is s
   assert.equal(h.api.artworkFor(upgrade), "base.png");
   h.data.artworkVariants[upgrade.id] = [{ id: "gold-01", src: "gold.png" }];
   assert.equal(h.api.artworkFor(upgrade), "gold.png"); assert.equal(h.api.artworkFor(base), "base.png");
+});
+
+
+test("save validation errors roll back dataset changes and retain the editable form", async () => {
+  const base = card("FNG-001"), h = harness([base]);
+  h.api.showCard(base.id); h.fields.get("rulesText").value = "尚未保存的效果";
+  h.api.setPersist(async () => { throw new Error("Invalid costAmount"); });
+  assert.equal(await h.api.saveCard(), false);
+  assert.equal(h.api.getDataset().cards[0].rulesText, base.rulesText);
+  assert.equal(h.fields.get("rulesText").value, "尚未保存的效果");
+  assert.match(h.element("#cardSaveStatus").textContent, /未保存.*Invalid costAmount/);
 });

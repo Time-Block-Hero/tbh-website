@@ -1043,11 +1043,12 @@
         ? `\n同时会永久删除 ${artworkDeletes.length} 个卡图包：\n${artworkDeletes.join("\n")}`
         : "\n当前为浏览器草稿模式，不会删除仓库中的实体卡图包。"
       : "";
+    const relatedDetail = deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张关联衍生卡/升级版：${deletedCards.filter(entry => entry.uid !== card.uid).map(entry => entry.id).join("、")}。` : "";
     const detail = card.upgradeOfUid
       ? `确定删除升级版「${card.nameKey}」(${card.id})？原版将保留。${artworkDetail}`
       : derivative
-      ? `确定删除衍生卡「${card.nameKey}」(${card.id})？${artworkDetail}`
-      : `确定删除主卡「${card.nameKey}」(${card.id})？${deletedIds.length > 1 ? `\n同时会删除 ${deletedIds.length - 1} 张关联衍生卡/升级版：${deletedCards.filter(entry => entry.uid !== card.uid).map(entry => entry.id).join("、")}。` : ""}${artworkDetail}`;
+      ? `确定删除衍生卡「${card.nameKey}」(${card.id})？${relatedDetail}${artworkDetail}`
+      : `确定删除主卡「${card.nameKey}」(${card.id})？${relatedDetail}${artworkDetail}`;
     if (!window.confirm(detail)) return;
     if (!confirmBrowserDraftOverwrite()) return;
     dataset.cards = dataset.cards.filter((entry) => !deletedIds.includes(entry.id));
