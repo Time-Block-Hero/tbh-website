@@ -33,6 +33,9 @@ test('schema22 upgrade links, hero exclusions, disruption exclusion and costless
   if(c.collectionKind==='Hero'||c.cardType==='Event')assert.equal(c.canTriple,false);
   if(c.cardType==='Event'){assert.equal(c.costAmount,0);assert.equal(c.collectable,false);}
  }
+ assert.equal(cards.filter(c=>c.collectionKind==='Hero').length,8);
+ assert.equal(cards.filter(c=>c.collectionKind==='Hero'&&!c.upgradeOfUid).length,4);
+ for(const id of ['FNG-UN-002','FNG-UN-002-UP'])assert.equal(cards.find(c=>c.displayId===id).selfCellSupport,1);
  const fire=cards.find(c=>c.displayId==='FNG-012');assert.equal(fire.canTriple,false);assert.equal(fire.tripleUpgradeUid,null);
  const dog=cards.find(c=>c.displayId==='FNG-002-UP');assert.deepEqual(dog.arrows,[]);assert.ok(dog.arrowRules.every(r=>r.layers===2&&r.kind==='Permanent'));
  assert.deepEqual(cards.filter(c=>c.eventUnique).map(c=>c.displayId).sort(),['FNG-EV-008','FNG-EV-026']);
@@ -48,11 +51,13 @@ test('reviewed balance changes alter actual Plan amounts and quotas, not only re
  assert.equal(applies('FNG-015-UP','ScheduleBody').length,0);
  assert.deepEqual(applies('FNG-032-UP','ModifyUnitAttribute').map(a=>[a.operation,a.amount]),[['Set',0]]);
  assert.equal(byId.get('FNG-041-UP').execution.abilities[0].usage.maxActivations,2);
+ for(const id of ['FNG-028','FNG-028-UP'])assert.deepEqual(applies(id,'ModifierBatch')[0].items.map(i=>i.stat),['Attack','Move','Health']);
 });
 test('cargo grants refresh instead of slots, scanner produces correct form, fruit restores allowance',()=>{
  for(const [id,n]of[['FNG-021',1],['FNG-021-UP',2]]){
   assert.deepEqual(applies(id,'ShopService'),[{operation:'GrantRefresh',amount:n}]);
   assert.ok(!nodes(byId.get(id).execution).some(n=>n.type==='ShopSlot'));
+  assert.equal(byId.get(id).execution.continuousEffects[0].activeCondition.phase,'Shop');
  }
  assert.equal(applies('FNG-019-UP','CreateCard')[0].cardId,byId.get('FNG-UN-001-UP').uid);
  for(const [id,n]of[['FNG-UN-003',2],['FNG-UN-003-UP',3]]){

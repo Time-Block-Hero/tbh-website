@@ -66,6 +66,7 @@ export function toAuthoringDocument(input, { contentId, contentVersion, source =
   const dataset = validate ? validateProductionExecution(input) : selectPlaytestDataset(input);
   if (dataset.cards.some(card => card.upgradeOfUid || card.cardType === 'Event') && dataset.executionSchemaVersion < 22) throw new Error('Upgrade variants and Event cards require schema22');
   const upgrades = new Map(dataset.cards.filter(card => card.upgradeOfUid).map(card => [card.upgradeOfUid, card.uid]));
+  const heroes = new Set(dataset.cards.filter(card => card.collectionKind === 'Hero').map(card => card.uid));
   if (!contentId || !contentVersion) throw new Error('Explicit contentId and contentVersion are required');
   return {
     authoringVersion: 1, schemaVersion: dataset.executionSchemaVersion, contentId, contentVersion, source,
@@ -79,7 +80,7 @@ export function toAuthoringDocument(input, { contentId, contentVersion, source =
         movement: card.cardType === 'Minion' ? card.movement : 0,
         tribes: card.cardType === 'Minion' ? [...(card.tribes || [])] : [],
         artPath: Object.hasOwn(artPaths, card.uid) ? artPaths[card.uid] : null, runtimeSupport: e.runtimeSupport });
-      if (card.collectionKind === 'Hero') native.collectable = false;
+      if (card.collectionKind === 'Hero' || heroes.has(card.upgradeOfUid)) { native.collectionKind = 'Hero'; native.collectable = false; }
       if (native.costResource === 'Hero') native.costResource = 'Star';
       native.tags = [...new Set([...card.tags, ...e.keywordTags])];
       if (dataset.executionSchemaVersion >= 22) {

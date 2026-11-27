@@ -966,7 +966,7 @@
     {
       "id": "FNG-006",
       "nameKey": "宝藏星能石",
-      "englishName": "",
+      "englishName": "Treasure Star Ore",
       "cardType": "Spell",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -982,10 +982,10 @@
       ],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "treasure-star-ore",
+      "artDescription": "Epic artwork. An enormous angular cyan star-energy crystal nested in an open heavy industrial extraction cradle inside a derelict ore vault; segmented containment clamps catch its light, smaller ore fragments and deep mining gantries establish scale, low three-quarter view and dramatic rim light. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "ff1bbeff-7e7b-4715-99ff-a9f8814359f1",
       "parentUid": null,
       "collectionKind": "Collectible",
@@ -5484,7 +5484,7 @@
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "PhaseIs",
-              "phase": "Purchase"
+              "phase": "Shop"
             },
             "affectedScope": {
               "query": "Self",
@@ -5583,7 +5583,7 @@
             "lifetime": "WhileHostInBattlefield",
             "activeCondition": {
               "type": "PhaseIs",
-              "phase": "Purchase"
+              "phase": "Shop"
             },
             "affectedScope": {
               "query": "Self",
@@ -11732,7 +11732,7 @@
     {
       "id": "FNG-043",
       "nameKey": "家园卫士",
-      "englishName": "",
+      "englishName": "Homeland Defender",
       "cardType": "Minion",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -11750,10 +11750,10 @@
       "tribes": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "homeland-defender",
+      "artDescription": "Rare artwork. One original adult human male settlement guard with short dark hair, a readable determined anime face, charcoal ceramic infantry armor over slate technical fabric, amber shoulder accents and a compact coil carbine held ready across his chest. He plants his feet beside a reinforced colony barricade, protecting the illuminated residential airlock behind him. Clear sturdy full-body silhouette, no shield, no animal traits, no existing faction emblem; three-quarter camera slightly below eye level. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
       "parentUid": null,
       "collectionKind": "Collectible",
@@ -12137,7 +12137,7 @@
     {
       "id": "FNG-EV-001",
       "nameKey": "星之予I",
-      "englishName": "",
+      "englishName": "Gift of Stars I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -12151,10 +12151,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "gift-of-stars-i",
+      "artDescription": "Common artwork. A pair of small cyan energy motes streams from an opened star-crystal cartridge into a compact industrial power receiver on a ship workbench. One clear transfer action, crisp drawn contours, limited blue-grey machinery and warm amber indicator accents. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "8ead8093-b6b8-410e-8205-eb63d84e8510",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -12350,7 +12350,7 @@
     {
       "id": "FNG-EV-002",
       "nameKey": "星之予II",
-      "englishName": "",
+      "englishName": "Gift of Stars II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -12364,10 +12364,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "gift-of-stars-ii",
+      "artDescription": "Rare artwork. A gloved starship technician guides a bright cyan energy stream from a crystal reservoir into two interlocking power couplers at a cargo dock. Show the stream bridging the couplers as the focal action, hands and mechanisms uppermost, layered ribbed bulkheads behind. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "e18883e3-aef2-40f7-8536-a16f327aab2c",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -12488,7 +12488,8 @@
             "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c:pickup"
           ],
           "grantableContinuousEffectRefs": [],
-          "abilityRefs": []
+          "abilityRefs": [],
+          "selfCellSupport": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -12603,7 +12604,8 @@
           "upgradeToCardIds": [],
           "continuousEffectRefs": [],
           "abilityRefs": [],
-          "arrowRules": []
+          "arrowRules": [],
+          "selfCellSupport": 1
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -12617,7 +12619,7 @@
     {
       "id": "FNG-UN-003",
       "nameKey": "美味的野果",
-      "englishName": "",
+      "englishName": "Savory Wildberries",
       "cardType": "Resource",
       "classId": "Neutral",
       "rarity": "Common",
@@ -12629,10 +12631,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_051",
-      "artworkKey": "",
-      "artDescription": "拾取：该怪物回复 2 点生命，并立即获得 2 步额外移动。",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "savory-wildberries",
+      "artDescription": "Common artwork. A small cluster of ripe orange-red alien berries on a leathery dark-green vine beside a discarded engineered field ration tin on an orbital greenhouse floor. One picked berry splits to reveal luminous juice; clean illustrated botanical contours, simple clear silhouette, cool metal and warm fruit contrast. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -12748,7 +12750,7 @@
     {
       "id": "FNG-EV-003",
       "nameKey": "星之予III",
-      "englishName": "",
+      "englishName": "Gift of Stars III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -12762,10 +12764,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "gift-of-stars-iii",
+      "artDescription": "Epic artwork. Several massive shipboard energy conduits converge into a suspended cyan star-energy core above a loading gantry; technicians become small silhouettes below, angular industrial struts frame a brilliant controlled power surge. Epic vertical depth and strong perspective, readable main transfer process. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "18a4ed18-36fe-42cb-8b04-3f605b45cd3d",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -12982,7 +12984,7 @@
     {
       "id": "FNG-EV-004",
       "nameKey": "星之予IV",
-      "englishName": "",
+      "englishName": "Gift of Stars IV",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -12996,10 +12998,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "gift-of-stars-iv",
+      "artDescription": "Legendary artwork. At the decisive instant of a fleet harbor coming alive, vast cyan star-energy streams converge from docked vessels into a single colossal collection tower. View upward from a dark service gantry, brilliant central convergence in the upper square, tiny starships and cables establish monumental industrial scale; cool navy metal, white-cyan light, restrained amber windows. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "3e9dea48-ea0a-43ad-b8fd-a40b866fdf57",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -13086,7 +13088,7 @@
     {
       "id": "FNG-UN-004",
       "nameKey": "癫癫果实",
-      "englishName": "",
+      "englishName": "Frenzy Fruit",
       "cardType": "Resource",
       "classId": "Neutral",
       "rarity": "Common",
@@ -13098,10 +13100,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_052",
-      "artworkKey": "",
-      "artDescription": "拾取：该怪物获得 +1 攻击 / +1 速度，但受到 1 点伤害。",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "frenzy-fruit",
+      "artDescription": "Common artwork. A single jagged purple-red alien fruit freshly cracked open on a scratched field sampler tray, vivid electric yellow pulp visibly fizzing and a few dark seeds spilling out. Sharp anime contour design and angular cel highlights; compact technical tray and a restrained shipboard botany setting, energetic but not supernatural. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -13405,7 +13407,7 @@
     {
       "id": "FNG-UN-005",
       "nameKey": "护甲碎片",
-      "englishName": "",
+      "englishName": "Armor Shard",
       "cardType": "Resource",
       "classId": "Neutral",
       "rarity": "Common",
@@ -13417,10 +13419,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_053",
-      "artworkKey": "",
-      "artDescription": "拾取：获得 1 点护甲。",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "armor-shard",
+      "artDescription": "Common artwork. One salvaged off-white ceramic armor plate with a charcoal composite underside, two functional mounting clips and chipped amber edge paint, resting upright in a mechanic’s gloved palm above a steel repair bench. Clear industrial construction, bold outline, a few restrained sparks far behind, economical composition. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -13516,7 +13518,7 @@
     {
       "id": "FNG-EV-005",
       "nameKey": "黑色星期五 I",
-      "englishName": "",
+      "englishName": "Black Friday I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -13530,10 +13532,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "black-friday-i",
+      "artDescription": "Common artwork. A mechanical shop clerk slides open a compact shipping drawer toward an anonymous customer’s gloved hand, revealing neatly secured spare starship equipment. A single warm welcoming transaction under a small industrial canopy; no labels, numbers, price tags or floating cards. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "ceb7e757-9a7a-4ca2-b287-d9a908d24fb6",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -13719,7 +13721,7 @@
     {
       "id": "FNG-EV-006",
       "nameKey": "黑色星期五 II",
-      "englishName": "",
+      "englishName": "Black Friday II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -13733,10 +13735,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "black-friday-ii",
+      "artDescription": "Rare artwork. Two adjacent armored supply cabinets unfold at once in a bustling spaceport market, a vendor gestures toward newly accessible coils, tools and sealed capsules; foreground latch and gloved hands lead into the offered goods, richer layered storefront depth, slate metal with warm amber lights. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "f43c1179-c606-4876-892f-991f24c881db",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -13812,7 +13814,7 @@
     {
       "id": "FNG-UN-006",
       "nameKey": "亚空间之门",
-      "englishName": "",
+      "englishName": "Subspace Gate",
       "cardType": "Spell",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -13826,10 +13828,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "subspace-gate",
+      "artDescription": "Legendary artwork. A stable vertical space fissure opens inside an industrial ship compartment. A circular segmented mechanical containment frame fixes the thin cyan-white opening; the ordinary deck continues on both sides while beyond the seam a distant starfield bends into depth. Iconic moment of controlled impossible passage, strong asymmetrical low angle, a small unmarked technician silhouette for scale; no magic runes or medieval portal. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "1d356afd-21ee-4bec-9d40-fe289ee89af2",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -14140,7 +14142,7 @@
     {
       "id": "FNG-EV-007",
       "nameKey": "黑色星期五 III",
-      "englishName": "",
+      "englishName": "Black Friday III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -14154,10 +14156,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "black-friday-iii",
+      "artDescription": "Epic artwork. A full industrial orbital marketplace opens its interlocked supply shutters in a sweeping wave, multiple gantries and cargo shelves illuminated from near to far; an anonymous merchant throws one lever in the foreground. Epic diagonal perspective, energetic public trading scene, amber light cutting cool navy machinery. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "f9b996dd-a425-44cd-b9d2-e9507f46fb20",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -14233,7 +14235,7 @@
     {
       "id": "FNG-EV-008",
       "nameKey": "突破自我",
-      "englishName": "",
+      "englishName": "Breakthrough",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -14247,10 +14249,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "breakthrough",
+      "artDescription": "Rare artwork. An anonymous human expedition leader steps from a maintenance cradle as modular armor panels lock into a more advanced configuration around their shoulders and arms. Readable anime face, confident raised posture, crisp ceramic armor edges and a ring of mechanical service arms; rare transformative moment, no crowns or magic. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "d9c97499-7382-49de-b277-80633c541fbb",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -14555,7 +14557,7 @@
     {
       "id": "FNG-EV-009",
       "nameKey": "强身健体 I",
-      "englishName": "",
+      "englishName": "Conditioning I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -14569,10 +14571,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "conditioning-i",
+      "artDescription": "Common artwork. An anonymous short-haired human recruit braces a forearm against a shipboard resistance-training device while a soft cyan medical beam traces their silhouette. One clean action, visible effort on an anime face, utilitarian exercise harness and understated industrial infirmary. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "a886c5bc-e4f2-4f37-9f8e-6ab7d3163d36",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -14677,7 +14679,7 @@
     {
       "id": "FNG-EV-010",
       "nameKey": "强身健体 II",
-      "englishName": "",
+      "englishName": "Conditioning II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -14691,10 +14693,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "conditioning-ii",
+      "artDescription": "Rare artwork. An anonymous armored human recruit finishes a controlled exosuit strength exercise as two servo supports disengage from the shoulders. Confident anime expression, firm planted stance, layered training-bay equipment and subtle cyan diagnostic light without readable screens. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "d5611e4b-7f60-40cb-babe-0401a06655fa",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -14908,7 +14910,7 @@
     {
       "id": "FNG-EV-011",
       "nameKey": "强身健体 III",
-      "englishName": "",
+      "englishName": "Conditioning III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -14922,10 +14924,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "conditioning-iii",
+      "artDescription": "Epic artwork. An anonymous trained soldier rises from a heavy conditioning rig with reinforced exosuit joints powering up in a synchronized arc; dramatic three-quarter low camera, steel floor plates and articulated medical machinery receding into shadow, intense but controlled cyan illumination. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "e62eecf3-40ec-44c5-b4eb-11b002a4d872",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15031,7 +15033,7 @@
     {
       "id": "FNG-EV-012",
       "nameKey": "超凡蜕变",
-      "englishName": "",
+      "englishName": "Transcendent Metamorphosis",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -15045,10 +15047,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "transcendent-metamorphosis",
+      "artDescription": "Legendary artwork. A single anonymous human minion completes a full-body technological enhancement in an industrial transformation chamber. All service arms withdraw simultaneously as reinforced ceramic armor locks and cyan energy channels settle into a calm coherent glow. A decisive forward step, clear expressive anime face and powerful unified silhouette, low cinematic angle and deep chamber perspective, no mystical wings or symbols. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "ad3f2441-3a3d-4427-b5cb-0964eb64d21b",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15155,7 +15157,7 @@
     {
       "id": "FNG-EV-013",
       "nameKey": "火箭推进 I",
-      "englishName": "",
+      "englishName": "Rocket Propulsion I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -15169,10 +15171,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "rocket-propulsion-i",
+      "artDescription": "Common artwork. A compact booster fitted to a soldier’s technical boot ignites with a short controlled amber jet, lifting the boot clear of a metal deck. The boot and directed propulsion are the clear focus; crisp anime contour lines and cel flame shapes, simple cool shipboard background. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "62e1b531-f9f8-44b2-87b0-56c705cf2f74",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15277,7 +15279,7 @@
     {
       "id": "FNG-EV-014",
       "nameKey": "火箭推进 II",
-      "englishName": "",
+      "englishName": "Rocket Propulsion II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -15291,10 +15293,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "rocket-propulsion-ii",
+      "artDescription": "Rare artwork. An anonymous armored courier makes a short leap across a maintenance gap using paired compact waist thrusters; a clean arcing trajectory implied by posture and exhaust, mechanical catwalks beneath, readable anime face and layered technical clothing, cyan-grey scene with restrained orange thrust. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "5aa0fa68-0a7f-4baf-881e-47f4584ec034",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15399,7 +15401,7 @@
     {
       "id": "FNG-EV-015",
       "nameKey": "火箭推进 III",
-      "englishName": "",
+      "englishName": "Rocket Propulsion III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -15413,10 +15415,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "rocket-propulsion-iii",
+      "artDescription": "Epic artwork. An anonymous sci-fi scout accelerates between tall orbital service pylons with a powerful modular flight pack, torso and focused anime face dominating the upper crop while the exhaust trail dives into deep vertical space. Dramatic perspective, clear functional thruster construction and angular cel-shaped amber exhaust. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "8e7ccd51-3b89-43a6-80fa-6b279a43b237",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15521,7 +15523,7 @@
     {
       "id": "FNG-EV-016",
       "nameKey": "银河商道 I",
-      "englishName": "",
+      "englishName": "Galactic Trade Route I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -15535,10 +15537,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "galactic-trade-route-i",
+      "artDescription": "Common artwork. A small cargo shuttle glides through an opening industrial dock gate while a foreground automated crane readies a sealed container. One readable arrival and exchange, slate hull and warm amber guide lights, crisp hand-drawn sci-fi silhouettes. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "e4ebcb4d-46f4-4f71-938e-991d683946d7",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15614,7 +15616,7 @@
     {
       "id": "FNG-EV-017",
       "nameKey": "银河商道 II",
-      "englishName": "",
+      "englishName": "Galactic Trade Route II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -15628,10 +15630,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "galactic-trade-route-ii",
+      "artDescription": "Rare artwork. A coordinated trio of unmarked cargo shuttles approaches an orbital transfer hub with articulated docking bridges; a foreground container moves on a rail toward the next ship. Readable flow of supplies, designed hull panels, cool deep-space backdrop and warm port lighting. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "f5c462d3-72ef-4681-9a72-153606f7992f",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15707,7 +15709,7 @@
     {
       "id": "FNG-EV-018",
       "nameKey": "银河商道 III",
-      "englishName": "",
+      "englishName": "Galactic Trade Route III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -15721,10 +15723,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "galactic-trade-route-iii",
+      "artDescription": "Epic artwork. Several converging shipping routes arrive at an immense multi-level orbital trading station, cargo shuttles and moving gantries form layered depth around one luminous central dock. Epic high oblique perspective, deliberate cel silhouettes and strong industrial scale, no diagram lines or map UI. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "91522169-f0ca-44ab-913a-32ab928fcf1b",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15800,7 +15802,7 @@
     {
       "id": "FNG-EV-019",
       "nameKey": "零售商之夜",
-      "englishName": "",
+      "englishName": "Retailers Night",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -15814,10 +15816,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "retailers-night",
+      "artDescription": "Common artwork. A compact night-market stall aboard a station opens shallow drawers of small practical tools, low-power cartridges and repair capsules; an anonymous customer inspects a simple component beneath one amber lamp. Modest goods and intimate scale, clean anime drawing, no prices or lettering. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "2dc5bf17-996e-4b08-b2ce-ee1b293f4f62",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -15903,7 +15905,7 @@
     {
       "id": "FNG-EV-020",
       "nameKey": "奢侈品之夜",
-      "englishName": "",
+      "englishName": "Luxury Night",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -15917,10 +15919,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "luxury-night",
+      "artDescription": "Rare artwork. An exclusive starport showroom reveals a single imposing high-end armored technology module inside a brushed-metal display cradle, two tall sealed equipment cabinets behind it. Calm rare precision, midnight navy and restrained champagne highlights, drawn anime material edges rather than glossy product photography. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "d51e55e0-9165-4007-b4ff-ba0f2ef9c219",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16006,7 +16008,7 @@
     {
       "id": "FNG-EV-021",
       "nameKey": "至尊黑金卡",
-      "englishName": "",
+      "englishName": "Supreme Black Gold Pass",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -16020,10 +16022,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "supreme-black-gold-pass",
+      "artDescription": "Legendary artwork. A black-and-gold unlettered access credential in a gloved hand unlocks an entire row of colossal armored cargo vaults simultaneously. Foreground credential sharply drawn and upper-crop safe, opening doors cascade into deep perspective with warm gold light and cool slate machinery. A singular moment of unrestricted access, no money, printed symbols or branded marks. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "f8b2caa5-486f-43fb-8edb-eb26793a1244",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16108,7 +16110,7 @@
     {
       "id": "FNG-EV-022",
       "nameKey": "星海点灯 I",
-      "englishName": "",
+      "englishName": "Starlane Lantern I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -16122,10 +16124,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "starlane-lantern-i",
+      "artDescription": "Common artwork. A technician clips one disposable cyan signal flare to a dark maintenance junction, its single directed beam illuminating a nearby docking guide. Clear installation action, functional lamp cartridge and gloved fingers, intimate industrial space, no graphic arrows. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "f68f43ba-287a-4062-8bab-2aac6bc2a777",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16230,7 +16232,7 @@
     {
       "id": "FNG-EV-023",
       "nameKey": "星海点灯 II",
-      "englishName": "",
+      "englishName": "Starlane Lantern II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -16244,10 +16246,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "starlane-lantern-ii",
+      "artDescription": "Rare artwork. A durable power-fed navigation lamp locks onto a starship gantry and begins projecting a steady cyan guide beam down a previously dark docking approach. Show the lamp’s cable connection and the opening path together, rare layered depth, crisp engineered surfaces. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "ae3aea5c-b5c5-4fcf-8af6-3aafbab0eea6",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16352,7 +16354,7 @@
     {
       "id": "FNG-EV-024",
       "nameKey": "星海点灯 III",
-      "englishName": "",
+      "englishName": "Starlane Lantern III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -16366,10 +16368,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "starlane-lantern-iii",
+      "artDescription": "Epic artwork. Twin powerful navigation beacons activate on branching orbital gantries, their controlled cyan beams reveal two diverging safe approach corridors. One central power junction ties the machinery together; epic layered station depth and dramatic cel light shapes, no drawn arrows or interface overlays. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "c9c59ee2-4230-40c6-9a59-0f23ed62a698",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16491,7 +16493,7 @@
     {
       "id": "FNG-EV-025",
       "nameKey": "长明-星海点灯",
-      "englishName": "",
+      "englishName": "Everlight Starlane Lantern",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -16505,10 +16507,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "everlight-starlane-lantern",
+      "artDescription": "Legendary artwork. A permanent self-sustaining navigation power installation reaches stable operation and lights a long route through an otherwise dark industrial orbital harbor. One iconic central luminous reactor-lantern in the upper crop, its continuous power conduits branch into distant practical guide lights. Monumental quiet confidence, deep cinematic perspective, engineered rings and coolant fins, no magic flame. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "ad8238ae-fe70-4526-a978-f0907f933d34",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16612,7 +16614,7 @@
     {
       "id": "FNG-EV-026",
       "nameKey": "星空奇遇",
-      "englishName": "",
+      "englishName": "Stellar Encounter",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -16626,10 +16628,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "stellar-encounter",
+      "artDescription": "Epic artwork. An anonymous salvage crew rounds an industrial cargo bulkhead and discovers a compact stabilized spatial gateway suspended inside a shipping frame; a bright narrow view of distant stars appears where a wall should be. The surprised silhouettes remain secondary to the discovery, epic cool cyan light and layered mechanical depth. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "193040b4-77e0-410b-b19e-4d06f280784a",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16706,7 +16708,7 @@
     {
       "id": "FNG-EV-027",
       "nameKey": "战略大师 I",
-      "englishName": "",
+      "englishName": "Master Strategist I",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Common",
@@ -16720,10 +16722,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "master-strategist-i",
+      "artDescription": "Common artwork. A gloved commander moves two small physical starship deployment pieces across a scratched tabletop terrain model; the hand and two chosen pieces are clearly framed from above at a slight angle. Simple unlettered mechanical planning tools, crisp cel shading, cool ambient light and one amber task lamp. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "68896fec-dc48-4207-9cd2-a1884bfabb6b",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16798,7 +16800,7 @@
     {
       "id": "FNG-EV-028",
       "nameKey": "战略大师 II",
-      "englishName": "",
+      "englishName": "Master Strategist II",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Rare",
@@ -16812,10 +16814,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "master-strategist-ii",
+      "artDescription": "Rare artwork. An anonymous tactical officer aligns four physical deployment markers beside an industrial tabletop model while another hand opens a supply-case latch. Rare layered overhead composition, expressive partial anime profile, slate armor cuffs and precise orange accent lights, no text or holographic UI. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "8fe52927-b733-43ee-b2e2-2d933b0a41d7",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -16890,7 +16892,7 @@
     {
       "id": "FNG-EV-029",
       "nameKey": "战略大师 III",
-      "englishName": "",
+      "englishName": "Master Strategist III",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Epic",
@@ -16904,10 +16906,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "master-strategist-iii",
+      "artDescription": "Epic artwork. From high over a military planning table, an anonymous commander commits two principal deployment groups into a miniature orbital battlefield, each path represented by physical terrain channels and moving model transports rather than graphic arrows. Epic depth from foreground gloved hand to distant busy command bay. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "dfb6156a-61d5-4929-83ab-951c0acb1288",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -17086,7 +17088,7 @@
     {
       "id": "FNG-EV-030",
       "nameKey": "战略大师 IV",
-      "englishName": "",
+      "englishName": "Master Strategist IV",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -17100,10 +17102,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "master-strategist-iv",
+      "artDescription": "Legendary artwork. A dramatic overhead view captures the decisive four-route deployment on a large physical tactical table. Four distinct groups of unmarked miniature mechanized forces move into four sculpted terrain corridors as a commander’s gloved hands complete the final arrangement. Strong asymmetrical focal hierarchy, sophisticated industrial command-room materials, cinematic amber and cyan light, no writing, mapscreen UI or arrows. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "47fc19e5-2954-4473-a4e1-b037a171631c",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -17282,7 +17284,7 @@
     {
       "id": "FNG-EV-031",
       "nameKey": "决战时刻",
-      "englishName": "",
+      "englishName": "Decisive Moment",
       "cardType": "Event",
       "classId": "Neutral",
       "rarity": "Legendary",
@@ -17296,10 +17298,10 @@
       "arrows": [],
       "tags": [],
       "artPath": "",
-      "artworkKey": "",
-      "artDescription": "",
-      "artDescriptionNeedsPolish": true,
-      "artRequest": 1,
+      "artworkKey": "decisive-moment",
+      "artDescription": "Legendary artwork. A formidable neutrino bomb in an industrial containment casing slides from a protected magazine onto an orbital deployment rail at the instant its locking clamps release. The warhead and opening rail dominate the upper square, a distant planet and tiny gantries establish immense stakes below. Legendary decisive mechanical motion, navy ceramic shell with restrained cyan seams, dramatic hard rim light and crisp anime cel illustration, no explosion or text. Standalone Time-Block Hero card illustration, portrait 5:8 composition. Keep the principal subject and decisive action in the upper square crop with generous edge clearance; lower extension carries environmental depth. Premium industrial sci-fi ANIME illustration: authored contour lines, expressive anime faces where applicable, clear cel-shaped shadow and highlight groups, painterly atmosphere, matte ceramic/composite/metal and functional technology. Not photography, PBR, glossy 3D, generic fantasy or chibi. Artwork only: no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+      "artDescriptionNeedsPolish": false,
+      "artRequest": 0,
       "uid": "4ed672eb-2423-4d97-b2fc-9f2bede70afc",
       "parentUid": null,
       "collectionKind": "NonCollectible",
@@ -33946,6 +33948,228 @@
         "id": "photonic-shield-operative-01",
         "src": "./assets/card-art/photonic-shield-operative/photonic-shield-operative-01.png"
       }
+    ],
+    "FNG-043": [
+      {
+        "id": "homeland-defender-01",
+        "src": "./assets/card-art/homeland-defender/homeland-defender-01.png"
+      }
+    ],
+    "FNG-006": [
+      {
+        "id": "treasure-star-ore-01",
+        "src": "./assets/card-art/treasure-star-ore/treasure-star-ore-01.png"
+      }
+    ],
+    "FNG-EV-001": [
+      {
+        "id": "gift-of-stars-i-01",
+        "src": "./assets/card-art/gift-of-stars-i/gift-of-stars-i-01.png"
+      }
+    ],
+    "FNG-EV-002": [
+      {
+        "id": "gift-of-stars-ii-01",
+        "src": "./assets/card-art/gift-of-stars-ii/gift-of-stars-ii-01.png"
+      }
+    ],
+    "FNG-UN-003": [
+      {
+        "id": "savory-wildberries-01",
+        "src": "./assets/card-art/savory-wildberries/savory-wildberries-01.png"
+      }
+    ],
+    "FNG-EV-003": [
+      {
+        "id": "gift-of-stars-iii-01",
+        "src": "./assets/card-art/gift-of-stars-iii/gift-of-stars-iii-01.png"
+      }
+    ],
+    "FNG-EV-004": [
+      {
+        "id": "gift-of-stars-iv-01",
+        "src": "./assets/card-art/gift-of-stars-iv/gift-of-stars-iv-01.png"
+      }
+    ],
+    "FNG-UN-004": [
+      {
+        "id": "frenzy-fruit-01",
+        "src": "./assets/card-art/frenzy-fruit/frenzy-fruit-01.png"
+      }
+    ],
+    "FNG-UN-005": [
+      {
+        "id": "armor-shard-01",
+        "src": "./assets/card-art/armor-shard/armor-shard-01.png"
+      }
+    ],
+    "FNG-EV-005": [
+      {
+        "id": "black-friday-i-01",
+        "src": "./assets/card-art/black-friday-i/black-friday-i-01.png"
+      }
+    ],
+    "FNG-EV-006": [
+      {
+        "id": "black-friday-ii-01",
+        "src": "./assets/card-art/black-friday-ii/black-friday-ii-01.png"
+      }
+    ],
+    "FNG-UN-006": [
+      {
+        "id": "subspace-gate-01",
+        "src": "./assets/card-art/subspace-gate/subspace-gate-01.png"
+      }
+    ],
+    "FNG-EV-007": [
+      {
+        "id": "black-friday-iii-01",
+        "src": "./assets/card-art/black-friday-iii/black-friday-iii-01.png"
+      }
+    ],
+    "FNG-EV-008": [
+      {
+        "id": "breakthrough-01",
+        "src": "./assets/card-art/breakthrough/breakthrough-01.png"
+      }
+    ],
+    "FNG-EV-009": [
+      {
+        "id": "conditioning-i-01",
+        "src": "./assets/card-art/conditioning-i/conditioning-i-01.png"
+      }
+    ],
+    "FNG-EV-010": [
+      {
+        "id": "conditioning-ii-01",
+        "src": "./assets/card-art/conditioning-ii/conditioning-ii-01.png"
+      }
+    ],
+    "FNG-EV-011": [
+      {
+        "id": "conditioning-iii-01",
+        "src": "./assets/card-art/conditioning-iii/conditioning-iii-01.png"
+      }
+    ],
+    "FNG-EV-012": [
+      {
+        "id": "transcendent-metamorphosis-01",
+        "src": "./assets/card-art/transcendent-metamorphosis/transcendent-metamorphosis-01.png"
+      }
+    ],
+    "FNG-EV-013": [
+      {
+        "id": "rocket-propulsion-i-01",
+        "src": "./assets/card-art/rocket-propulsion-i/rocket-propulsion-i-01.png"
+      }
+    ],
+    "FNG-EV-014": [
+      {
+        "id": "rocket-propulsion-ii-01",
+        "src": "./assets/card-art/rocket-propulsion-ii/rocket-propulsion-ii-01.png"
+      }
+    ],
+    "FNG-EV-015": [
+      {
+        "id": "rocket-propulsion-iii-01",
+        "src": "./assets/card-art/rocket-propulsion-iii/rocket-propulsion-iii-01.png"
+      }
+    ],
+    "FNG-EV-016": [
+      {
+        "id": "galactic-trade-route-i-01",
+        "src": "./assets/card-art/galactic-trade-route-i/galactic-trade-route-i-01.png"
+      }
+    ],
+    "FNG-EV-017": [
+      {
+        "id": "galactic-trade-route-ii-01",
+        "src": "./assets/card-art/galactic-trade-route-ii/galactic-trade-route-ii-01.png"
+      }
+    ],
+    "FNG-EV-018": [
+      {
+        "id": "galactic-trade-route-iii-01",
+        "src": "./assets/card-art/galactic-trade-route-iii/galactic-trade-route-iii-01.png"
+      }
+    ],
+    "FNG-EV-019": [
+      {
+        "id": "retailers-night-01",
+        "src": "./assets/card-art/retailers-night/retailers-night-01.png"
+      }
+    ],
+    "FNG-EV-020": [
+      {
+        "id": "luxury-night-01",
+        "src": "./assets/card-art/luxury-night/luxury-night-01.png"
+      }
+    ],
+    "FNG-EV-021": [
+      {
+        "id": "supreme-black-gold-pass-01",
+        "src": "./assets/card-art/supreme-black-gold-pass/supreme-black-gold-pass-01.png"
+      }
+    ],
+    "FNG-EV-022": [
+      {
+        "id": "starlane-lantern-i-01",
+        "src": "./assets/card-art/starlane-lantern-i/starlane-lantern-i-01.png"
+      }
+    ],
+    "FNG-EV-023": [
+      {
+        "id": "starlane-lantern-ii-01",
+        "src": "./assets/card-art/starlane-lantern-ii/starlane-lantern-ii-01.png"
+      }
+    ],
+    "FNG-EV-024": [
+      {
+        "id": "starlane-lantern-iii-01",
+        "src": "./assets/card-art/starlane-lantern-iii/starlane-lantern-iii-01.png"
+      }
+    ],
+    "FNG-EV-025": [
+      {
+        "id": "everlight-starlane-lantern-01",
+        "src": "./assets/card-art/everlight-starlane-lantern/everlight-starlane-lantern-01.png"
+      }
+    ],
+    "FNG-EV-026": [
+      {
+        "id": "stellar-encounter-01",
+        "src": "./assets/card-art/stellar-encounter/stellar-encounter-01.png"
+      }
+    ],
+    "FNG-EV-027": [
+      {
+        "id": "master-strategist-i-01",
+        "src": "./assets/card-art/master-strategist-i/master-strategist-i-01.png"
+      }
+    ],
+    "FNG-EV-028": [
+      {
+        "id": "master-strategist-ii-01",
+        "src": "./assets/card-art/master-strategist-ii/master-strategist-ii-01.png"
+      }
+    ],
+    "FNG-EV-029": [
+      {
+        "id": "master-strategist-iii-01",
+        "src": "./assets/card-art/master-strategist-iii/master-strategist-iii-01.png"
+      }
+    ],
+    "FNG-EV-030": [
+      {
+        "id": "master-strategist-iv-01",
+        "src": "./assets/card-art/master-strategist-iv/master-strategist-iv-01.png"
+      }
+    ],
+    "FNG-EV-031": [
+      {
+        "id": "decisive-moment-01",
+        "src": "./assets/card-art/decisive-moment/decisive-moment-01.png"
+      }
     ]
   },
   "selectedArtworkIds": {
@@ -34089,7 +34313,44 @@
     "AI-022": "operation-osprey-02",
     "FNG-041": "chronotide-riftsurf-diver-01",
     "SC-022": "master-corona-shot-04",
-    "FNG-042": "photonic-shield-operative-01"
+    "FNG-042": "photonic-shield-operative-01",
+    "FNG-043": "homeland-defender-01",
+    "FNG-006": "treasure-star-ore-01",
+    "FNG-EV-001": "gift-of-stars-i-01",
+    "FNG-EV-002": "gift-of-stars-ii-01",
+    "FNG-UN-003": "savory-wildberries-01",
+    "FNG-EV-003": "gift-of-stars-iii-01",
+    "FNG-EV-004": "gift-of-stars-iv-01",
+    "FNG-UN-004": "frenzy-fruit-01",
+    "FNG-UN-005": "armor-shard-01",
+    "FNG-EV-005": "black-friday-i-01",
+    "FNG-EV-006": "black-friday-ii-01",
+    "FNG-UN-006": "subspace-gate-01",
+    "FNG-EV-007": "black-friday-iii-01",
+    "FNG-EV-008": "breakthrough-01",
+    "FNG-EV-009": "conditioning-i-01",
+    "FNG-EV-010": "conditioning-ii-01",
+    "FNG-EV-011": "conditioning-iii-01",
+    "FNG-EV-012": "transcendent-metamorphosis-01",
+    "FNG-EV-013": "rocket-propulsion-i-01",
+    "FNG-EV-014": "rocket-propulsion-ii-01",
+    "FNG-EV-015": "rocket-propulsion-iii-01",
+    "FNG-EV-016": "galactic-trade-route-i-01",
+    "FNG-EV-017": "galactic-trade-route-ii-01",
+    "FNG-EV-018": "galactic-trade-route-iii-01",
+    "FNG-EV-019": "retailers-night-01",
+    "FNG-EV-020": "luxury-night-01",
+    "FNG-EV-021": "supreme-black-gold-pass-01",
+    "FNG-EV-022": "starlane-lantern-i-01",
+    "FNG-EV-023": "starlane-lantern-ii-01",
+    "FNG-EV-024": "starlane-lantern-iii-01",
+    "FNG-EV-025": "everlight-starlane-lantern-01",
+    "FNG-EV-026": "stellar-encounter-01",
+    "FNG-EV-027": "master-strategist-i-01",
+    "FNG-EV-028": "master-strategist-ii-01",
+    "FNG-EV-029": "master-strategist-iii-01",
+    "FNG-EV-030": "master-strategist-iv-01",
+    "FNG-EV-031": "decisive-moment-01"
   },
   "customRaces": [
     "机械",

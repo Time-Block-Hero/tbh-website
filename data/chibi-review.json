@@ -20419,6 +20419,325 @@
       }
     },
     {
+      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "status": "generated",
+      "atlasSrc": "./assets/chibi-review/a212685b-0c59-46bb-85bb-bf7e43d2b3c2/atlas.png",
+      "atlasSha256": "6e76410d08946018cfa1f24d2a8be2cd87ea32b3ba841145c8960ef1a69e247d",
+      "frameCount": 9,
+      "layout": {
+        "schemaVersion": 1,
+        "sourceWidth": 1254,
+        "sourceHeight": 1254,
+        "columns": 3,
+        "rows": 3,
+        "nominalCellWidth": 418.0,
+        "nominalCellHeight": 418.0,
+        "frames": [
+          {
+            "rect": {
+              "x": 0,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5526316,
+              "y": 0.0406699
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4916268,
+              "y": 0.0430622
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4294258,
+              "y": 0.0430622
+            }
+          },
+          {
+            "rect": {
+              "x": 0,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.527512,
+              "y": 0.0454545
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.437799,
+              "y": 0.0382775
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5849282,
+              "y": 0.0454545
+            }
+          },
+          {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5143541,
+              "y": 0.0717703
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4007177,
+              "y": 0.0717703
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4748804,
+              "y": 0.069378
+            }
+          }
+        ],
+        "clips": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2
+            ],
+            "fps": 3,
+            "loop": true
+          },
+          "move": {
+            "frames": [
+              3,
+              4,
+              5
+            ],
+            "fps": 6,
+            "loop": true
+          },
+          "hit": {
+            "frames": [
+              6
+            ],
+            "fps": 6,
+            "loop": false
+          },
+          "attack": {
+            "frames": [
+              7
+            ],
+            "fps": 6,
+            "loop": false
+          },
+          "effect": {
+            "frames": [
+              8
+            ],
+            "fps": 6,
+            "loop": false
+          }
+        }
+      },
+      "analysis": {
+        "xCuts": [
+          0,
+          418,
+          836,
+          1254
+        ],
+        "rowXCuts": [
+          [
+            0,
+            418,
+            836,
+            1254
+          ],
+          [
+            0,
+            418,
+            836,
+            1254
+          ],
+          [
+            0,
+            418,
+            836,
+            1254
+          ]
+        ],
+        "yCutsTopOrigin": [
+          0,
+          418,
+          836,
+          1254
+        ],
+        "columnYCutsTopOrigin": null,
+        "partitionStrategy": "row-first",
+        "warnings": [],
+        "outerEdgeContacts": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "frameMetrics": [
+          {
+            "index": 0,
+            "opaqueBoundsTopOrigin": [
+              125,
+              25,
+              349,
+              401
+            ],
+            "visibleWidthInTiles": 0.589,
+            "visibleHeightInTiles": 0.989
+          },
+          {
+            "index": 1,
+            "opaqueBoundsTopOrigin": [
+              99,
+              25,
+              323,
+              400
+            ],
+            "visibleWidthInTiles": 0.589,
+            "visibleHeightInTiles": 0.987
+          },
+          {
+            "index": 2,
+            "opaqueBoundsTopOrigin": [
+              72,
+              26,
+              298,
+              400
+            ],
+            "visibleWidthInTiles": 0.595,
+            "visibleHeightInTiles": 0.984
+          },
+          {
+            "index": 3,
+            "opaqueBoundsTopOrigin": [
+              111,
+              26,
+              345,
+              399
+            ],
+            "visibleWidthInTiles": 0.616,
+            "visibleHeightInTiles": 0.982
+          },
+          {
+            "index": 4,
+            "opaqueBoundsTopOrigin": [
+              107,
+              28,
+              320,
+              402
+            ],
+            "visibleWidthInTiles": 0.561,
+            "visibleHeightInTiles": 0.984
+          },
+          {
+            "index": 5,
+            "opaqueBoundsTopOrigin": [
+              93,
+              30,
+              314,
+              399
+            ],
+            "visibleWidthInTiles": 0.582,
+            "visibleHeightInTiles": 0.971
+          },
+          {
+            "index": 6,
+            "opaqueBoundsTopOrigin": [
+              118,
+              35,
+              344,
+              388
+            ],
+            "visibleWidthInTiles": 0.595,
+            "visibleHeightInTiles": 0.929
+          },
+          {
+            "index": 7,
+            "opaqueBoundsTopOrigin": [
+              62,
+              34,
+              390,
+              388
+            ],
+            "visibleWidthInTiles": 0.863,
+            "visibleHeightInTiles": 0.932
+          },
+          {
+            "index": 8,
+            "opaqueBoundsTopOrigin": [
+              91,
+              25,
+              347,
+              389
+            ],
+            "visibleWidthInTiles": 0.674,
+            "visibleHeightInTiles": 0.958
+          }
+        ],
+        "pivotMethod": "opaque bottom contact; inspect/override pivots for airborne poses"
+      },
+      "qaNotes": [],
+      "provenance": {
+        "sourceCardId": "FNG-043",
+        "sourceArtId": "homeland-defender-01",
+        "styleReferenceSha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e",
+        "note": "本轮授权新制；agent已视检九帧身份、动作和透明间隔，用户美术验收仍待进行。"
+      }
+    },
+    {
       "uid": "a60555e6-d405-47de-bdff-c84031d53448",
       "status": "generated",
       "atlasSrc": "./assets/chibi-review/a60555e6-d405-47de-bdff-c84031d53448/atlas.png",
@@ -32156,19 +32475,6 @@
         "referenceFrame": 0,
         "targetVisibleHeightInTiles": 1.036842,
         "method": "first-idle body; one shared scale for all nine frames"
-      }
-    },
-    {
-      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
-      "status": "pending",
-      "atlasSrc": null,
-      "layout": null,
-      "qaNotes": [
-        "本轮新随从，待制作与验收；升级形态复用本体。"
-      ],
-      "provenance": {
-        "sourceCardId": "FNG-043",
-        "note": "本轮内容改版新增，不能以占位图伪称已完成。"
       }
     }
   ]

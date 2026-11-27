@@ -6691,6 +6691,69 @@
         "sourceBodyType": "floating-humanoid",
         "generationPromptPath": "./assets/chibi-prompts/7522e0e5-1fb6-4a32-914d-992aab4e3c62.txt"
       }
+    },
+    {
+      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "atlasSha256": "6e76410d08946018cfa1f24d2a8be2cd87ea32b3ba841145c8960ef1a69e247d",
+      "scale": 1.1,
+      "offset": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "anchor": null,
+      "actions": {
+        "idle": {
+          "fps": 3,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "move": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "hit": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "attack": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        "effect": {
+          "fps": 6,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      },
+      "frames": {},
+      "bodyKind": "humanoid",
+      "artworkFacesRight": true,
+      "prompt": {
+        "base": "Homeland Defender: human male, short black hair, slate armor, amber lights, compact coil carbine. Identity comes from homeland-defender-01; proportions from the Luolan golden atlas.",
+        "notes": "Generated nine-frame native RGBA; agent visually checked identity, five actions, and transparent separation. User acceptance remains pending.",
+        "actions": {}
+      },
+      "exportReady": true,
+      "sizeClass": "standard",
+      "provenance": {
+        "source": "Issue177 approved overhaul art task",
+        "individualHumanApproval": false,
+        "generationPromptPath": "./docs/design/artwork/2026-11-27/FNG-043-chibi-prompt.txt"
+      }
     }
   ],
   "provenance": {

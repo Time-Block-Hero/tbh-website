@@ -14,7 +14,7 @@
     let published=null;try{published=await load("./data/chibi-published.json");}catch{}
     let previewSource=published?"published":"author";$("previewSource").value=previewSource;
     C.validate(data,review,cards,{allowStale:true});
-    const units=cards.cards.filter(c=>c.cardType==="Minion"),arts=new Map(C.sources(review).map(e=>[e.uid,e])),stage=new globalThis.TbhPaperStage($("stage"));
+    const units=cards.cards.filter(c=>c.cardType==="Minion"&&!c.upgradeOfUid),arts=new Map(C.sources(review).map(e=>[e.uid,e])),stage=new globalThis.TbhPaperStage($("stage"));
     let selected,art,config,entry,action="idle",elapsed=0,playing=true,manual=null,previous=0,frame=0,lastFrame=-1,image=null,imageBox=null,selectionToken=0;
     stage.onError=message=>{$("stageError").hidden=false;$("stageError").textContent=message;};
     const status=message=>{$("saveStatus").textContent=message;};
@@ -101,7 +101,7 @@
     $("exportConfig").onclick=()=>download(data,"chibi-workbench.json");$("importConfig").onchange=async event=>{try{const file=event.target.files[0];if(!file)return;if(file.size>4*1024*1024)throw new Error("配置文件超过4MB");const next=JSON.parse(await file.text());C.validate(next,review,cards,{allowStale:true});data=next;config=cfg(selected.uid);changed();controls();renderList();status("配置已导入草稿；检查后点击保存");}catch(e){status(`导入失败：${e.message}`);}finally{event.target.value="";}};
     $("exportManifest").onclick=()=>runtimeExport("manifest",false);$("exportBundle").onclick=()=>runtimeExport("bundle",true);
     let recovery=null;try{recovery=JSON.parse(localStorage.getItem(DRAFT));}catch{}$("recoverDraft").hidden=!recovery;$("recoverDraft").onclick=()=>{try{C.validate(recovery.dataset,review,cards,{allowStale:true});data=clone(recovery.dataset);const recovered=C.recoveryContext(recovery,revision,reviewRevision),conflict=recovered.conflict;revision=recovered.revision;reviewRevision=recovered.reviewRevision;config=cfg(selected.uid);changed();controls();renderList();status(conflict?"草稿基于旧磁盘版本；导出配置以合并，保存不会覆盖新版本":"已恢复未保存草稿；检查后保存");}catch(e){status(e.message);}};
-    const requested=new URL(location.href).searchParams.get("unit");await select(units.find(c=>c.uid===requested||c.id===requested)||units[0]);status(writable?"已连接本地项目 · 显式保存配置":"静态预览 · 可导入/导出配置，未连接磁盘保存");
+    const requested=new URL(location.href).searchParams.get("unit"),requestedCard=cards.cards.find(c=>c.uid===requested||c.id===requested),resolvedUid=requestedCard?.upgradeOfUid||requestedCard?.uid;await select(units.find(c=>c.uid===resolvedUid)||units[0]);status(writable?"已连接本地项目 · 显式保存配置":"静态预览 · 可导入/导出配置，未连接磁盘保存");
     let raf;function tick(now){const dt=previous?Math.min(.1,(now-previous)/1000):0;previous=now;if(playing&&!document.hidden)elapsed+=dt*Number($("speed").value);if(!document.hidden){updateFrame();stage.render();}raf=requestAnimationFrame(tick);}raf=requestAnimationFrame(tick);addEventListener("pagehide",()=>{cancelAnimationFrame(raf);stage.dispose();},{once:true});addEventListener("beforeunload",e=>{if(dirty){remember();e.preventDefault();e.returnValue="";}});
   }
   start().catch(e=>{$("coverage").textContent=`无法载入：${e.message}`;$("stageError").hidden=false;$("stageError").textContent=e.message;});

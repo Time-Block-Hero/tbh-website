@@ -53,3 +53,12 @@ test("revert after an old draft restores the saved disk revisions and allows the
  let submitted;Object.assign(context,{writable:true,saving:false,$:()=>({disabled:false}),C:{validate(){},stableStringify:JSON.stringify},remember(){},review:{},cards:{},fetch:async(url,options)=>{submitted=JSON.parse(options.body);return{ok:true,json:async()=>({revision:"next-config",reviewRevision:"current-art"})};}});
  const saveSource=source.slice(source.indexOf("async function save(){"),source.indexOf("async function runtimeExport("));await vm.runInNewContext(saveSource+"save()",context);assert.equal(submitted.baseRevision,"current-config");assert.equal(submitted.reviewRevision,"current-art");assert.equal(context.savedRevision,"next-config");assert.equal(context.savedReviewRevision,"current-art");
 });
+
+test("upgrade identities reuse base Chibi and do not require duplicate calibration",t=>{
+ const f=fixture(t);
+ const cards=JSON.parse(fs.readFileSync(path.join(f.dir,"data/cards.json")));
+ cards.cards.push({uid:"example-upgrade",id:"TEST-UP",nameKey:"测试升级",cardType:"Minion",upgradeOfUid:"example"});
+ fs.writeFileSync(path.join(f.dir,"data/cards.json"),JSON.stringify(cards));
+ assert.equal(compileBundle(f.dir).manifest.units.length,2);
+ assert.throws(()=>compileBundle(f.dir,["example-upgrade"]),/未知导出UID/);
+});
