@@ -16,7 +16,7 @@ const canonical = (value) => Array.isArray(value) ? value.map(canonical)
     : value;
 const hash = (bytes) => createHash("sha256").update(bytes).digest("hex");
 
-export function validateSourceRevision(bytes, bridgeBytes, bridge, dataset, { requireInventory = true } = {}) {
+export function validateSourceRevision(bytes, bridgeBytes, bridge, dataset, { requireInventory = true, allowSubset = false } = {}) {
   const revision = JSON.parse(bytes);
   require(revision?.schemaVersion === 1 && APPROVED_REVISIONS.has(revision.revisionId), "Unsupported source revision");
   require(hash(JSON.stringify(canonical(revision))) === APPROVED_REVISIONS.get(revision.revisionId), "Source revision differs from the approved identity/policy record");
@@ -35,7 +35,7 @@ export function validateSourceRevision(bytes, bridgeBytes, bridge, dataset, { re
   require([...admitted].every((uid) => expected.has(uid)), "Admitted source revision identity missing");
   if (requireInventory) {
     const actual = new Set(dataset.cards.map((card) => card.uid));
-    require([...expected].every((uid) => actual.has(uid)), "Source revision expected UID missing from dataset (undeclared deletion or identity change)");
+    if (!allowSubset) require([...expected].every((uid) => actual.has(uid)), "Source revision expected UID missing from dataset (undeclared deletion or identity change)");
     require([...actual].every((uid) => expected.has(uid)), "Dataset UID outside approved source revision (undeclared addition or retired identity)");
   }
   return {

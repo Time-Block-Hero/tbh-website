@@ -1,8 +1,18 @@
-# 卡牌执行单一源（schema 5）
+# 卡牌执行单一源（schema 5/6）
 
 中央任务：[Unified #123](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/123)，父任务 #61。
 
 `data/cards.json` 是唯一手工维护的卡牌设计和执行定义。`executionSchemaVersion=21` 复用 Rules 当前语言，不创建另一套 DSL。`shared.statuses` 保存生产共享状态；每卡 `execution.abilities / continuousEffects / plans` 直接保存现有 schema21 数组，保持标识与顺序。
+
+## schema 6 设计与执行边界
+
+[Website #166 对应任务](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/166) 增加每形态独立的 `playtestReady` 和 `upgradeOfUid`，不升级执行语言。试玩标记为人工设计纳入选择，不参与设计语义摘要；空升级关系也不改变历史摘要，非空升级关系纳入语义摘要。现有卡全部初始化 false，原有 execution/shared 原样保留。
+
+`validateProductionExecution` 和 `toAuthoringDocument` 对 schema 6 都先执行相同的试玩筛选：仅 true 卡参与执行输出，空集合报错。不会因为未选中的卡尚为 Planned 而阻止其他有效卡；但所选卡引用未纳入的卡（包括升级/衍生关系和共享状态引用）会报错，不自动扩大集合。即便测试调用 `validate:false`，也不能绕过选择及未适配的新形态类型边界。命令行仍禁止关闭执行校验。
+
+事件卡和升级形态先供 Website 编辑，当前 schema21 运行时适配未在本任务实现。Event 正式执行验证明确失败；`toAuthoringDocument` 对升级形态及 Event 明确报需要新的游戏内容适配，避免丢弃升级关系后输出看似正常的旧运行时卡牌。普通已批准身份的 true 卡仍按原字段映射。Unity 与来源库存的整合为后续工作。
+
+schema 6 的设计导出使用 envelope 3，正式 `source.selection="playtest-ready"`、dirty `source.selection="all-designs"`。正式 sourceDataset 同样只含所选卡，dirty 完整保留设计库。历史 schema5 的 envelope2 和全量执行映射保持不变。
 
 ## 权威字段与映射
 
