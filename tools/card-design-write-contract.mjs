@@ -55,9 +55,11 @@ export function validateWrite(previous, next, operation) {
       const descendantUids = contract.deletionUids(previous, operation.uid);
       if (descendantUids.includes(uid)) expected.classId = newCards.get(operation.uid).classId;
       if (before.upgradeOfUid === operation.uid) expected.cardType = newCards.get(operation.uid).cardType;
-      const pairUid = target.upgradeOfUid || target.uid;
-      if (next.schemaVersion === 6 && (uid === pairUid || before.upgradeOfUid === pairUid)) {
-        expected.playtestReady = newCards.get(pairUid).playtestReady;
+      // Only an original-card edit may change its authoritative choice and
+      // propagate it to the upgrade mirror. Editing an upgrade grants no write
+      // permission to the original, even if the request changes both flags.
+      if (next.schemaVersion === 6 && !target.upgradeOfUid && before.upgradeOfUid === target.uid) {
+        expected.playtestReady = newCards.get(target.uid).playtestReady;
       }
     }
     assert.deepEqual(actual, expected, `Operation changed an unaddressed identity: ${uid}`);

@@ -155,7 +155,8 @@ test("UID-based deletion removes upgrade descendants but deleting an upgrade lea
 test("writes permit pair readiness synchronization but preserve relationship identity and shared declarations", () => {
   const dataset = fixture(), upgrade = addUpgrade(dataset), next = structuredClone(dataset);
   contract.setPlaytestReady(next, upgrade, true);
-  validateWrite(dataset, next, { type: "edit", uid: upgrade.uid });
+  validateWrite(dataset, next, { type: "edit", uid: dataset.cards[0].uid });
+  assert.throws(() => validateWrite(dataset, next, { type: "edit", uid: upgrade.uid }), /unaddressed/);
   next.cards[0].rulesText = "unaddressed original text";
   assert.throws(() => validateWrite(dataset, next, { type: "edit", uid: upgrade.uid }), /unaddressed/);
   const changed = structuredClone(dataset); changed.shared.statuses.push({ id: "new" });
@@ -206,7 +207,12 @@ test("HTTP schema6 create/save/reopen and upgrade deletion preserve original art
   const dataset = structuredClone(original), upgrade = addUpgrade(dataset);
   assert.equal((await post(dataset, { type: "create", uid: upgrade.uid })).status, 200);
   const oldRevision = revision;
-  contract.setPlaytestReady(dataset, upgrade, true); upgrade.rulesText = "升级版已修改";
+  const beforeUnauthorized = fs.readFileSync(path.join(dir, "data/cards.json"), "utf8");
+  contract.setPlaytestReady(dataset, upgrade, true);
+  assert.equal((await post(dataset, { type: "edit", uid: upgrade.uid })).status, 400);
+  assert.equal(fs.readFileSync(path.join(dir, "data/cards.json"), "utf8"), beforeUnauthorized);
+  assert.equal((await post(dataset, { type: "edit", uid: dataset.cards[0].uid })).status, 200);
+  upgrade.rulesText = "升级版已修改";
   assert.equal((await post(dataset, { type: "edit", uid: upgrade.uid })).status, 200);
   let reopened = (await (await fetch(`${url}/api/cards/state`)).json()).dataset;
   assert.equal(reopened.cards[1].playtestReady, true); assert.equal(reopened.cards[0].playtestReady, true);

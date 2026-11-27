@@ -65,20 +65,36 @@ test("new upgrade follows current original selection and still owns fresh Planne
   assert.notEqual(upgrade.uid, base.uid);
 });
 
-for (const side of [0, 1]) {
-  test(`saving ${side === 0 ? "original" : "upgrade"} permits only pair flag synchronization on its peer`, () => {
-    const previous = fixture(), next = structuredClone(previous), target = next.cards[side];
-    target.rulesText = "edited selected side";
-    contract.setPlaytestReady(next, target, true);
-    validateWrite(previous, next, { type: "edit", uid: target.uid });
-    const peer = side === 0 ? next.cards[1] : next.cards[0];
-    peer.rulesText = "must not overwrite peer draft";
-    assert.throws(() => validateWrite(previous, next, { type: "edit", uid: target.uid }), /unaddressed/);
-    peer.rulesText = previous.cards[side === 0 ? 1 : 0].rulesText;
-    next.cards[2].playtestReady = true;
-    assert.throws(() => validateWrite(previous, next, { type: "edit", uid: target.uid }), /unaddressed/);
-  });
-}
+test("saving original permits only its upgrade mirror flag synchronization", () => {
+  const previous = fixture(), next = structuredClone(previous), target = next.cards[0];
+  target.rulesText = "edited original";
+  contract.setPlaytestReady(next, target, true);
+  validateWrite(previous, next, { type: "edit", uid: target.uid });
+  next.cards[1].rulesText = "must not overwrite upgrade draft";
+  assert.throws(() => validateWrite(previous, next, { type: "edit", uid: target.uid }), /unaddressed/);
+  next.cards[1].rulesText = previous.cards[1].rulesText;
+  next.cards[2].playtestReady = true;
+  assert.throws(() => validateWrite(previous, next, { type: "edit", uid: target.uid }), /unaddressed/);
+});
+
+test("saving upgrade text cannot change the original choice even when both flags are synchronized", () => {
+  const previous = fixture(), next = structuredClone(previous), target = next.cards[1];
+  target.rulesText = "edited upgrade";
+  validateWrite(previous, next, { type: "edit", uid: target.uid });
+  contract.setPlaytestReady(next, target, true);
+  assert.throws(() => validateWrite(previous, next, { type: "edit", uid: target.uid }), /unaddressed/);
+});
+
+test("upgrade text edit may repair its old mirror while preserving the original authority", () => {
+  const previous = fixture(); previous.cards[0].playtestReady = true;
+  const next = structuredClone(previous); contract.normalizePlaytestReady(next);
+  next.cards[1].rulesText = "edited upgrade on already included original";
+  validateWrite(previous, next, { type: "edit", uid: next.cards[1].uid });
+  assert.equal(next.cards[0].playtestReady, true);
+  assert.equal(next.cards[1].playtestReady, true);
+  contract.setPlaytestReady(next, next.cards[1], false);
+  assert.throws(() => validateWrite(previous, next, { type: "edit", uid: next.cards[1].uid }), /unaddressed/);
+});
 
 test("saving an old inconsistent schema6 dataset can repair all derived mirrors without altering authoritative flags", () => {
   const previous = fixture(); previous.cards[0].playtestReady = true; previous.cards[4].playtestReady = true;
