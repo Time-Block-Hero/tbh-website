@@ -288,7 +288,7 @@
         renderGallery();
         const selected = dataset.cards.find((card) => card.uid === selectedUid);
         if (selected) showCard(selected.id, { capture: false });
-        else closeEditor();
+        else closeEditor(false, true);
       }
       setStatus(`${error.message || "项目保存失败"}。${recoveryMessage}`, "error");
       return false;
@@ -491,7 +491,9 @@
     $("#cardCountLabel").textContent = canReorder ? `${cards.length} 张` : `${cards.length} 张 · 仅视图排序`;
   }
 
-  function addMainCard() {
+  function addMainCard() { return runEditorMutation(createMainCard); }
+
+  async function createMainCard() {
     if (!confirmBrowserDraftOverwrite()) return;
     const selectedFaction = $("#cardFactionFilter").value;
     const classId = selectedFaction === "all" ? "Neutral" : selectedFaction;
@@ -529,12 +531,15 @@
     dataset.cards.push(card);
     const mapping = renumberRootOrder([...rootsInGroup(classId, card.collectable, card.cardType === "Event").filter((entry) => entry !== card), card]);
     const newId = mapping[temporaryId];
-    persist({ operation: { type: "create", uid: card.uid } });
+    const saved = await persist({ operation: { type: "create", uid: card.uid } });
+    if (!saved) return false;
     renderGallery();
-    openEditor(newId);
+    openEditor(newId, { capture: false });
+    return true;
   }
 
   function moveMainCardToPosition(draggedId, targetId, insertSide) {
+    if (savingCard || artworkUploadInProgress) return false;
     const dragged = cardById(draggedId);
     const target = cardById(targetId);
     if (!dragged || !target || isDerivative(dragged.id) || isDerivative(target.id) || !sameCardGroup(dragged, target)) return false;
@@ -548,9 +553,14 @@
     ordered.splice(targetIndex + (insertSide === "after" ? 1 : 0), 0, dragged);
     if (before === ordered.map((card) => card.id).join("|")) return false;
     if (!confirmBrowserDraftOverwrite()) return false;
-    renumberRootOrder(ordered);
-    persist();
-    renderGallery();
+    runEditorMutation(async () => {
+      renumberRootOrder(ordered);
+      const saved = await persist();
+      if (!saved) return false;
+      renderGallery();
+      if (currentId) showCard(currentId, { capture: false });
+      return true;
+    });
     return true;
   }
 
@@ -684,6 +694,7 @@
   }
 
   function selectPreview(mode) {
+    if (savingCard) return;
     previewMode = mode;
     renderChibi(readForm());
   }
@@ -755,14 +766,17 @@
     }
   }
 
-  async function createUpgradeDesign() {
+  function createUpgradeDesign() { return runEditorMutation(createUpgradeCard); }
+
+  async function createUpgradeCard() {
     const base = baseCard(cardById(currentId));
     if (!base || base.cardType === "Event" || dataset.cards.some(card => card.upgradeOfUid === base.uid)) return;
     if (!confirmBrowserDraftOverwrite()) return;
     const upgrade = designContract.createUpgrade(base);
     dataset.cards.push(upgrade);
     const saved = await persist({ operation: { type: "create", uid: upgrade.uid } });
-    if (saved) showCard(upgrade.id);
+    if (saved) showCard(upgrade.id, { capture: false });
+    return saved;
   }
 
   function showCard(id, { capture = true } = {}) {
@@ -789,14 +803,15 @@
     setStatus(projectSyncAvailable ? "本地项目模式" : "浏览器本地编辑", "");
   }
 
-  function openEditor(id) {
+  function openEditor(id, { capture = true } = {}) {
+    if (savingCard && capture) return;
     $("#cardEditorOverlay").style.display = "flex";
     document.body.style.overflow = "hidden";
-    showCard(id);
+    showCard(id, { capture });
   }
 
-  function closeEditor(force = false) {
-    if (savingCard) return;
+  function closeEditor(force = false, fromMutation = false) {
+    if (savingCard && !fromMutation) return;
     if (artworkUploadInProgress) { setStatus("请等待插画处理完成后关闭", "error"); return; }
     if (force !== true) {
       stashCurrentForm();
@@ -890,22 +905,47 @@
     return card;
   }
 
-  async function saveCard() {
-    if (savingCard) return false;
+  function saveCard() { return runEditorMutation(saveCurrentCard); }
+
+  // All writes share this lock: mutable display IDs may be reused during deletion
+  // or renumbering, so no second action may read a form until the first finishes.
+  async function runEditorMutation(action) {
+    if (savingCard || artworkUploadInProgress) return false;
     stashCurrentForm();
     const before = structuredClone(dataset);
+    const selectedUid = cardById(currentId)?.uid;
     savingCard = true;
-    $(".formal-card-editor-shell")?.classList.add("is-saving");
+    setMutationBusy(true);
     try {
-      return await saveCurrentCard();
+      const result = await action();
+      if (result === false && JSON.stringify(dataset) !== JSON.stringify(before)) {
+        const status = $("#cardSaveStatus");
+        const message = status?.textContent, state = status?.dataset.state;
+        dataset = before;
+        renderGallery();
+        const selected = cardByUid(selectedUid);
+        if (selected) showCard(selected.id, { capture: false });
+        setStatus(message || "未保存；已恢复修改前的数据", state || "error");
+      }
+      return result;
     } catch (error) {
       dataset = before;
       renderGallery();
+      const selected = cardByUid(selectedUid);
+      if (selected) showCard(selected.id, { capture: false });
       setStatus(`未保存：${error.message}`, "error");
       return false;
     } finally {
       savingCard = false;
-      $(".formal-card-editor-shell")?.classList.remove("is-saving");
+      setMutationBusy(false);
+    }
+  }
+
+  function setMutationBusy(busy) {
+    $(".formal-card-editor-shell")?.classList.toggle("is-saving", busy);
+    for (const selector of [".formal-card-editor-shell", ".formal-card-toolbar", "#cardCenterGrid"]) {
+      const element = $(selector);
+      if (element) element.inert = busy;
     }
   }
 
@@ -984,7 +1024,7 @@
       renumberRootOrder([...destination, moved]);
     }
     const saved = await persist({ artworkRename, operation: { type: "edit", uid: updated.uid } });
-    if (!saved) return;
+    if (!saved) return false;
     renderGallery();
     formDrafts.delete(updated.uid);
     showCard(currentId, { capture: false });
@@ -994,8 +1034,9 @@
     return true;
   }
 
-  function addDerivative() {
-    if (savingCard || artworkUploadInProgress) return;
+  function addDerivative() { return runEditorMutation(createDerivativeCard); }
+
+  async function createDerivativeCard() {
     if (!confirmBrowserDraftOverwrite()) return;
     const rootId = parentId(currentId);
     const root = cardById(rootId);
@@ -1019,12 +1060,14 @@
     derivative.artworkKey = "";
     derivative.artPath = "";
     dataset.cards.push(derivative);
-    persist({ operation: { type: "create", uid: derivative.uid } });
-    showCard(id);
+    const saved = await persist({ operation: { type: "create", uid: derivative.uid } });
+    if (saved) showCard(id, { capture: false });
+    return saved;
   }
 
-  async function deleteCurrentCard() {
-    if (savingCard || artworkUploadInProgress) return;
+  function deleteCurrentCard() { return runEditorMutation(deleteSelectedCard); }
+
+  async function deleteSelectedCard() {
     const card = cardById(currentId);
     if (!card || isHero(card)) return;
     const derivative = isDerivative(card.id);
@@ -1063,13 +1106,14 @@
     }
     if (!derivative && !card.upgradeOfUid) renumberRootOrder(rootsInGroup(card.classId, card.collectable, card.cardType === "Event"));
     const saved = await persist({ artworkDeletes: projectSyncAvailable ? artworkDeletes : [], operation: { type: "delete", uid: card.uid } });
-    if (!saved) return;
+    if (!saved) return false;
     renderGallery();
     for (const uid of deletedUids) formDrafts.delete(uid);
     loadedFormSnapshot = null;
     if (card.upgradeOfUid) showCard(cardByUid(card.upgradeOfUid).id, { capture: false });
     else if (derivative) showCard(rootId, { capture: false });
-    else closeEditor();
+    else closeEditor(false, true);
+    return true;
   }
 
   function downloadJson(value, filename) {
@@ -1161,7 +1205,7 @@
     window.addEventListener("pagehide", disposeChibiPreview);
     window.addEventListener("beforeunload", event => {
       stashCurrentForm();
-      if (formDrafts.size) { event.preventDefault(); event.returnValue = ""; }
+      if (formDrafts.size || savingCard) { event.preventDefault(); event.returnValue = ""; }
     });
     $("#originalVersionTab").addEventListener("click", () => selectVersion(false));
     $("#upgradeVersionTab").addEventListener("click", () => selectVersion(true));
@@ -1172,7 +1216,7 @@
     $("#cardEditorForm").addEventListener("submit", event => { event.preventDefault(); saveCard(); });
     $("#collectabilityToggle").addEventListener("click", (event) => {
       const button = event.target.closest("button[data-category]");
-      if (!button) return;
+      if (!button || savingCard) return;
       browseCategory = button.dataset.category;
       $("#cardTypeFilter").value = "all";
       $("#cardTypeFilter").disabled = browseCategory === "event";
@@ -1248,6 +1292,7 @@
     $("#cardExportJsonBtn").addEventListener("click", exportJson);
     $("#cardCreateBtn").addEventListener("click", addMainCard);
     $("#cardArtUpload").addEventListener("change", async (event) => {
+      if (savingCard) { event.target.value = ""; return; }
       const files = [...event.target.files];
       if (!files.length) return;
       const draft = readForm();

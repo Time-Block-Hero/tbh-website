@@ -34,6 +34,7 @@ function harness(cards) {
     renderArtworkVariantList = () => {}; renderHand = () => {}; renderDerivativeRail = () => {}; renderVersionTabs = () => {}; renderGallery = () => {};
     persist = async () => true;
     globalThis.editor = { load(value) { dataset = value; }, showCard, selectVersion, closeEditor, saveCard, readForm, filteredCards, remapCardIds, artworkFor,
+      deleteCurrentCard, addMainCard, addDerivative, createUpgradeDesign, moveMainCardToPosition, busy: () => savingCard,
       category(value) { browseCategory = value; }, getCurrent: () => currentId, getDataset: () => dataset, setPersist(fn) { persist = fn; },
       setArt(variants, selected) { pendingArtworkVariants = variants; pendingSelectedArtworkId = selected; },
       getArt: () => ({ variants: pendingArtworkVariants, selected: pendingSelectedArtworkId }), drafts: () => formDrafts, isEmpty: () => unconfiguredUpgrade };
@@ -133,3 +134,77 @@ test("save validation errors roll back dataset changes and retain the editable f
   assert.equal(h.api.drafts().get(base.uid).card.rulesText, "尚未保存的效果");
   assert.match(h.element("#cardSaveStatus").textContent, /未保存.*Invalid costAmount/);
 });
+
+
+function deferred() {
+  let resolve, reject;
+  const promise = new Promise((yes, no) => { resolve = yes; reject = no; });
+  return { promise, resolve, reject };
+}
+
+test("deletion locks reused display IDs until persistence finishes: stale form cannot overwrite the next UID", async () => {
+  const a = card("FNG-001", { nameKey: "卡牌 A", rulesText: "A 的效果" });
+  const b = card("FNG-002", { nameKey: "卡牌 B", rulesText: "B 的效果" });
+  const c = card("FNG-003", { nameKey: "卡牌 C", rulesText: "C 的效果" });
+  const h = harness([a, b, c]), gate = deferred(), writes = [];
+  h.api.showCard(a.id);
+  h.api.setPersist(options => { writes.push(options.operation.type); return gate.promise; });
+  const deletion = h.api.deleteCurrentCard();
+  assert.equal(h.api.busy(), true);
+  assert.equal(h.api.getDataset().cards.find(entry => entry.uid === b.uid).id, "FNG-001");
+  assert.equal(h.fields.get("nameKey").value, "卡牌 A");
+  assert.equal(h.element(".formal-card-editor-shell").inert, true);
+  assert.equal(h.element(".formal-card-toolbar").inert, true);
+  assert.equal(h.element("#cardCenterGrid").inert, true);
+  assert.equal(await h.api.saveCard(), false);
+  h.api.showCard(c.id); h.api.selectVersion(true); h.api.closeEditor();
+  assert.equal(h.fields.get("nameKey").value, "卡牌 A");
+  assert.equal(h.api.isEmpty(), false);
+  assert.equal(await h.api.deleteCurrentCard(), false);
+  assert.equal(await h.api.addMainCard(), false);
+  assert.equal(await h.api.addDerivative(), false);
+  assert.equal(await h.api.createUpgradeDesign(), false);
+  assert.equal(h.api.moveMainCardToPosition(b.id, c.id, "after"), false);
+  assert.deepEqual(writes, ["delete"]);
+  gate.resolve(true); assert.equal(await deletion, true);
+  assert.equal(h.api.busy(), false); assert.equal(h.element(".formal-card-editor-shell").inert, false);
+  assert.equal(h.api.getCurrent(), null);
+  const remaining = h.api.getDataset().cards.find(entry => entry.uid === b.uid);
+  assert.equal(remaining.nameKey, "卡牌 B"); assert.equal(remaining.rulesText, "B 的效果");
+});
+
+for (const failureMode of ["throw", "false"]) {
+ test(`failed deletion (${failureMode}) restores identities and unlocks the editor with the original draft intact`, async () => {
+  const a = card("FNG-001", { nameKey: "A" }), b = card("FNG-002", { nameKey: "B" });
+  const h = harness([a, b]), gate = deferred();
+  h.api.showCard(a.id); h.fields.get("rulesText").value = "A 尚未保存";
+  h.api.setPersist(() => gate.promise);
+  const deletion = h.api.deleteCurrentCard();
+  if (failureMode === "throw") gate.reject(new Error("save failed"));
+  else gate.resolve(false);
+  assert.equal(await deletion, false); assert.equal(h.api.busy(), false);
+  assert.equal(h.api.getDataset().cards.find(entry => entry.uid === b.uid).id, "FNG-002");
+  assert.equal(h.api.getCurrent(), "FNG-001"); assert.equal(h.fields.get("rulesText").value, "A 尚未保存");
+  assert.equal(h.element(".formal-card-editor-shell").inert, false);
+  h.api.showCard("FNG-002"); assert.equal(h.fields.get("nameKey").value, "B");
+ });
+}
+
+for (const action of ["addMainCard", "addDerivative", "createUpgradeDesign", "reorder"]) {
+  test(`${action} also holds the shared lock through its asynchronous write`, async () => {
+    const a = card("FNG-001", { nameKey: "A" }), b = card("FNG-002", { nameKey: "B" });
+    const h = harness([a, b]), gate = deferred(), writes = [];
+    h.api.showCard(a.id); h.api.setPersist(options => { writes.push(options?.operation?.type || "reorder"); return gate.promise; });
+    const mutation = action === "reorder" ? h.api.moveMainCardToPosition(a.id, b.id, "after") : h.api[action]();
+    assert.equal(h.api.busy(), true);
+    assert.equal(await h.api.saveCard(), false); assert.equal(await h.api.addMainCard(), false);
+    h.api.showCard(b.id); assert.equal(h.fields.get("nameKey").value, "A");
+    assert.equal(writes.length, 1);
+    gate.resolve(true);
+    if (action !== "reorder") assert.equal(await mutation, true);
+    else { await gate.promise; await Promise.resolve(); await Promise.resolve(); }
+    assert.equal(h.api.busy(), false);
+    assert.equal(h.element(".formal-card-editor-shell").inert, false);
+    assert.equal(h.api.getDataset().cards.find(entry => entry.uid === b.uid).nameKey, "B");
+  });
+}
