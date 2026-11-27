@@ -594,3 +594,18 @@
 .formal-card-editor-shell.is-saving .formal-card-editor-body,
 .formal-card-editor-shell.is-saving #cardEditorClose { pointer-events: none; }
 .formal-card-editor-shell.is-saving { cursor: progress; }
+
+/* Explicit preview rows prevent the added version navigation from displacing the card. */
+.editor-page .hand-preview-stage { grid-template-rows: auto auto minmax(0, 1fr); }
+.editor-page .card-version-tabs { grid-row: 1; grid-column: 1; }
+.editor-page .card-preview-tabs { grid-row: 2; grid-column: 1; }
+.editor-page .hand-preview-host,
+.editor-page #cardChibiPreview { grid-row: 3; grid-column: 1; min-height: 0; }
+.editor-page .hand-preview-stage.is-event-preview,
+.editor-page .hand-preview-stage.is-upgrade-empty { grid-template-rows: auto minmax(0, 1fr); }
+.editor-page .is-event-preview .card-preview-tabs { grid-row: 1; }
+.editor-page .is-event-preview .hand-preview-host,
+.editor-page .is-event-preview #cardChibiPreview { grid-row: 2; }
+.editor-page .upgrade-empty-state { grid-row: 2; grid-column: 1; max-height: 100%; overflow: auto; box-sizing: border-box; }
+.editor-page .formal-card-form .playtest-ready-toggle { flex-direction: row; align-items: center; }
+.editor-page .formal-card-form .playtest-ready-toggle input { flex: 0 0 18px; width: 18px; height: 18px; min-height: 18px; padding: 0; }

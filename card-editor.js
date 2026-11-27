@@ -720,6 +720,8 @@
   function renderVersionTabs() {
     const current = cardById(currentId), base = baseCard(current);
     const upgrade = current?.upgradeOfUid || unconfiguredUpgrade;
+    $(".hand-preview-stage").classList.toggle("is-event-preview", base?.cardType === "Event");
+    $(".hand-preview-stage").classList.toggle("is-upgrade-empty", unconfiguredUpgrade);
     $("#cardVersionTabs").hidden = base?.cardType === "Event";
     $("#originalVersionTab").setAttribute("aria-pressed", String(!upgrade));
     $("#upgradeVersionTab").setAttribute("aria-pressed", String(Boolean(upgrade)));
