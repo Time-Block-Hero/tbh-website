@@ -14567,7 +14567,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+1生命值。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+1生命值。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -14580,7 +14580,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "2119d824b6e71c1d3167830648e4221def328dd9176af1195f7679e41ddc375b",
+        "reviewedDesignHash": "466bb9439a00327845bdd60d974769c901f29ab5e2d5c19817d65b099ca41cd6",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -14647,6 +14647,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -14670,7 +14675,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+1生命值。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+1生命值。"
             }
           }
         ]
@@ -14689,7 +14694,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+2攻击力&+2生命值。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+2攻击力&+2生命值。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -14702,7 +14707,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "9c5b9663cd38a9d2b378da7aa96afe3c9eed579fdaef7b3c4e0a0bb7e0b5a6d2",
+        "reviewedDesignHash": "721bcdd3bd1a09673204bd008f9d582dfc1e71e6601ef89f308b2436333b6ecd",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -14769,6 +14774,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -14793,7 +14803,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+2攻击力&+2生命值。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+2攻击力&+2生命值。"
             }
           }
         ]
@@ -14920,7 +14930,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+3攻击力&+3生命值。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+3攻击力&+3生命值。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -14933,7 +14943,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "b131c57670f97f9eef44c2597321e9c5ee3bdb03aa42536c358d6e69c9513f8a",
+        "reviewedDesignHash": "f33dd696f408ff85cc419d579dd39bc151cb199571df2dc50aee551fb96856b8",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -15000,6 +15010,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -15024,7 +15039,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+3攻击力&+3生命值。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+3攻击力&+3生命值。"
             }
           }
         ]
@@ -15043,7 +15058,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+4全属性。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+4全属性。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -15056,7 +15071,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "e67e818068101388a4f383bbea772d9d5212bbc5637bef39d2db6f67ae1da54c",
+        "reviewedDesignHash": "a968212f770e55b19db7ba015a50191c62e0c1c95df1760e9475e888c2c5d015",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -15123,6 +15138,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -15148,7 +15168,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+4全属性。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+4全属性。"
             }
           }
         ]
@@ -15167,7 +15187,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+1移动力。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+1移动力。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -15180,7 +15200,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "19294034e153facfe6278e2d069c078dbadc8491c97f9ca4de4639f6f131569b",
+        "reviewedDesignHash": "5e9ccadb7f17ae907ec0c22035090bae38d3b442731c381415ffc98c68e12520",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -15247,6 +15267,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -15270,7 +15295,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+1移动力。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+1移动力。"
             }
           }
         ]
@@ -15289,7 +15314,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+2移动力。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+2移动力。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -15302,7 +15327,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "f8202e77835a961412850fc0c1a1b83d6e9e8ff594a39dbf74c28a3cb1df0215",
+        "reviewedDesignHash": "843523250e24a9d357bf946c7f65cf4b2a7725514f375de09fb73c5d2eb9d856",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -15369,6 +15394,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -15392,7 +15422,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+2移动力。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+2移动力。"
             }
           }
         ]
@@ -15411,7 +15441,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "选择套牌中的一个随从，令其永久获得+4移动力。",
+      "rulesText": "选择套牌中的一个非英雄随从，令其永久获得+4移动力。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -15424,7 +15454,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "4affdd74e335b30e331bdd3908cbb153a0c37f7fed5268a1abbfe7cf7f642549",
+        "reviewedDesignHash": "438dcfac9e4408c396a528ae0ae7427a90efffbbe7f560325a244dfbf5d888ea",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -15491,6 +15521,11 @@
                         "field": "cardType",
                         "op": "Equals",
                         "value": "Minion"
+                      },
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
                   },
@@ -15514,7 +15549,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一个随从，令其永久获得+4移动力。"
+              "rawRulesText": "选择套牌中的一个非英雄随从，令其永久获得+4移动力。"
             }
           }
         ]
@@ -16120,7 +16155,7 @@
       "costResource": "Star",
       "costAmount": 1,
       "durability": 0,
-      "rulesText": "选择套牌中的一张卡牌，为其永久点亮一个一次性箭头。",
+      "rulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮一个一次性箭头。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -16133,7 +16168,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "888922ea21879dd0aae2aead739e342e377344ec447422b841d04afb63649250",
+        "reviewedDesignHash": "ab20e0ca61561f3f0cbd1cf4120d3355a993b796fc5c00f2bb122e818ea77709",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -16194,6 +16229,13 @@
                       "DiscardPile",
                       "Hand",
                       "Battlefield"
+                    ],
+                    "filters": [
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
+                      }
                     ]
                   },
                   "policy": {
@@ -16223,7 +16265,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一张卡牌，为其永久点亮一个一次性箭头。"
+              "rawRulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮一个一次性箭头。"
             }
           }
         ]
@@ -16242,7 +16284,7 @@
       "costResource": "Star",
       "costAmount": 2,
       "durability": 0,
-      "rulesText": "选择套牌中的一张卡牌，为其永久点亮一个箭头。",
+      "rulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮一个箭头。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -16255,7 +16297,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "004b5b2bba2ab69cbe9985c1b7af4a14b9b455bc55f18e188f02ce13af7452c8",
+        "reviewedDesignHash": "c6fa168558c457cd583f746837a50f9b0391485865698d1d5b8e924570912389",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -16316,6 +16358,13 @@
                       "DiscardPile",
                       "Hand",
                       "Battlefield"
+                    ],
+                    "filters": [
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
+                      }
                     ]
                   },
                   "policy": {
@@ -16345,7 +16394,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一张卡牌，为其永久点亮一个箭头。"
+              "rawRulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮一个箭头。"
             }
           }
         ]
@@ -16364,7 +16413,7 @@
       "costResource": "Star",
       "costAmount": 3,
       "durability": 0,
-      "rulesText": "选择套牌中的一张卡牌，为其永久点亮两个箭头。",
+      "rulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮两个箭头。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -16377,7 +16426,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "43e01b5d947a188c4ce21e056bbe8cef2310985a9508d17d71abb72d4d104fb8",
+        "reviewedDesignHash": "1b4fef38cec24c141cea95a38409441632ef53360848983d568fdbcd3339f7d7",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -16438,6 +16487,13 @@
                       "DiscardPile",
                       "Hand",
                       "Battlefield"
+                    ],
+                    "filters": [
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
+                      }
                     ]
                   },
                   "policy": {
@@ -16484,7 +16540,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择套牌中的一张卡牌，为其永久点亮两个箭头。"
+              "rawRulesText": "选择套牌中的一张非英雄卡牌，为其永久点亮两个箭头。"
             }
           }
         ]
@@ -16503,7 +16559,7 @@
       "costResource": "Star",
       "costAmount": 4,
       "durability": 0,
-      "rulesText": "选择己方套牌中的一张卡牌，令其永久获得「箭头需求：0」。",
+      "rulesText": "选择己方套牌中的一张非英雄卡牌，令其永久获得「箭头需求：0」。",
       "arrows": [],
       "tags": [],
       "artPath": "",
@@ -16516,7 +16572,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5d7f0ed0c12a61bc993008e0eb4c2835c609f8752ca240609f30e0e4975e7cec",
+        "reviewedDesignHash": "dae5bc5ce155a7db6f9fc3b37be026c87d66fc10705fb404c05f02e26aee9a73",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -16577,6 +16633,13 @@
                       "DiscardPile",
                       "Hand",
                       "Battlefield"
+                    ],
+                    "filters": [
+                      {
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
+                      }
                     ]
                   },
                   "policy": {
@@ -16605,7 +16668,7 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "选择己方套牌中的一张卡牌，令其永久获得「箭头需求：0」。"
+              "rawRulesText": "选择己方套牌中的一张非英雄卡牌，令其永久获得「箭头需求：0」。"
             }
           }
         ]

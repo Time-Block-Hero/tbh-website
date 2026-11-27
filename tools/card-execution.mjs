@@ -87,7 +87,7 @@ export function toAuthoringDocument(input, { contentId, contentVersion, source =
       if (dataset.executionSchemaVersion >= 22) {
         native.upgradeOfUid = card.upgradeOfUid || null;
         native.tripleUpgradeUid = upgrades.get(card.uid) || null;
-        native.canTriple = !!native.tripleUpgradeUid && card.collectionKind !== 'Hero' && e.properties.canTriple !== false;
+        native.canTriple = !!native.tripleUpgradeUid && card.cardType !== 'Resource' && card.collectionKind !== 'Hero' && e.properties.canTriple !== false;
         native.eventUnique = card.cardType === 'Event' && e.properties.eventUnique === true;
         if (card.cardType === 'Event') { native.costResource = 'Star'; native.costAmount = 0; native.collectable = false; }
       }
