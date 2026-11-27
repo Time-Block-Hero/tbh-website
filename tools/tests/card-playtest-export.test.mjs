@@ -66,6 +66,25 @@ test('schema6 formal export selects ready identities and never embeds excluded d
   assert.deepEqual(exportCommittedDesigns(dir, sha), result);
 });
 
+test('schema6 formal export binds approved original and upgrade identities despite a stale false mirror', t => {
+  const dataset = fixtureDataset(), original = ready(base(dataset));
+  // Reuse another approved synthetic identity: adding an unapproved UID remains
+  // forbidden by the separate source-revision tests.
+  const upgrade = dataset.cards.find(card => card.uid !== original.uid && !card.parentUid && card.cardType === original.cardType && card.classId === original.classId);
+  upgrade.id = `${original.id}-UP`; upgrade.upgradeOfUid = original.uid;
+  upgrade.collectable = false; upgrade.collectionKind = 'NonCollectible'; upgrade.tags = upgrade.tags.filter(tag => tag !== 'InitialHero');
+  ready(upgrade); upgrade.playtestReady = false;
+  dataset.cards = [original, upgrade];
+  const dir = writeFixture(t, dataset), result = exportCommittedDesigns(dir, commit(dir));
+  assert.deepEqual(new Set(result.cards.map(card => card.uid)), new Set([original.uid, upgrade.uid]));
+  assert.ok(result.cards.every(card => card.playtestReady));
+  assert.ok(result.sourceDataset.cards.every(card => card.playtestReady));
+  assert.equal(upgrade.playtestReady, false);
+  assert.equal(result.source.cardsSha256, sha256(fs.readFileSync(path.join(dir, 'data/cards.json'))));
+  const preview = exportDirtyDesigns(dir);
+  assert.ok(preview.sourceDataset.cards.every(card => card.playtestReady));
+});
+
 test('schema6 dirty preview retains new and unready designs and cannot be confused with formal output', t => {
   const dataset = fixtureDataset();
   const added = structuredClone(base(dataset));
@@ -103,7 +122,7 @@ test('execution and shared status references cannot silently pull unready cards 
   assert.throws(() => validateProductionExecution(dataset), /shared.statuses.*dangling card UID/);
 });
 
-test('upgrade and derivative relationships require explicit complete selections', () => {
+test('upgrades follow original readiness while derivative parent dependencies remain explicit', () => {
   const dataset = fixtureDataset(), original = ready(base(dataset));
   const upgrade = structuredClone(original);
   upgrade.uid = randomUUID(); upgrade.id = `${original.id}-UP`;
@@ -111,9 +130,12 @@ test('upgrade and derivative relationships require explicit complete selections'
   upgrade.collectable = false; upgrade.tags = upgrade.tags.filter(tag => tag !== 'InitialHero');
   upgrade.collectionKind = 'NonCollectible'; upgrade.playtestReady = false;
   dataset.cards.push(upgrade);
-  assert.throws(() => selectPlaytestDataset(dataset), /upgrade: required card/);
+  const selected = selectPlaytestDataset(dataset);
+  assert.equal(selected.cards.length, 2);
+  assert.ok(selected.cards.every(card => card.playtestReady));
+  assert.equal(upgrade.playtestReady, false, 'selection must not mutate source mirror flags');
   ready(upgrade); original.playtestReady = false;
-  assert.throws(() => selectPlaytestDataset(dataset), /upgradeOfUid: required card/);
+  assert.throws(() => selectPlaytestDataset(dataset), /No cards are marked/);
   original.playtestReady = true;
   assert.equal(selectPlaytestDataset(dataset).cards.length, 2);
   assert.throws(() => toAuthoringDocument(dataset, options), /require a new game content adapter/);

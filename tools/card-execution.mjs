@@ -13,7 +13,10 @@ export function executionHash(execution) {
 export function selectPlaytestDataset(dataset) {
   contract.validateDataset(dataset);
   if (dataset.schemaVersion !== 6) return dataset;
-  const cards = dataset.cards.filter(card => card.playtestReady === true);
+  // Never mutate source bytes or let a stale upgrade mirror admit/exclude a pair.
+  dataset = structuredClone(dataset);
+  contract.normalizePlaytestReady(dataset);
+  const cards = dataset.cards.filter(card => contract.effectivePlaytestReady(dataset, card));
   if (!cards.length) throw new Error('No cards are marked playtestReady=true (没有纳入下次试玩的卡牌)');
   const selected = new Set(cards.map(card => card.uid));
   function requireSelected(uid, location) {
@@ -22,9 +25,6 @@ export function selectPlaytestDataset(dataset) {
   for (const card of cards) {
     requireSelected(card.parentUid, `${card.id}.parentUid`);
     requireSelected(card.upgradeOfUid, `${card.id}.upgradeOfUid`);
-    for (const upgrade of dataset.cards.filter(candidate => candidate.upgradeOfUid === card.uid)) {
-      requireSelected(upgrade.uid, `${card.id}.upgrade`);
-    }
   }
   const ids = new Set(cards.map(card => card.id));
   const selectedMap = map => Object.fromEntries(Object.entries(map || {}).filter(([id]) => ids.has(id)));

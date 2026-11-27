@@ -42,6 +42,7 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
 
 function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionBytes = null) {
   const fullDataset = contract.validateDataset(JSON.parse(cardsBytes));
+  contract.normalizePlaytestReady(fullDataset);
   const isPlaytest = fullDataset.schemaVersion === 6;
   const formal = commit !== null;
   if (isPlaytest && formal) require(revisionBytes !== null, 'Schema6 formal export requires an approved source revision with a trusted identity bridge hash');

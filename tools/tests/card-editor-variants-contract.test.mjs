@@ -67,7 +67,7 @@ test("migration requires separate new output and never overwrites source or outp
   assert.throws(() => migrateFile(input, output), /EEXIST/);
 });
 
-test("upgrades of originals and derivatives have fresh identity, independent flags and Planned execution", () => {
+test("upgrades of originals and derivatives have fresh identity, shared pair flags and Planned execution", () => {
   const dataset = fixture(), original = dataset.cards[0];
   original.playtestReady = true; original.execution.abilities.push({ id: "must-not-copy" });
   const upgrade = addUpgrade(dataset), token = addToken(dataset), tokenUpgrade = addUpgrade(dataset, token);
@@ -77,7 +77,7 @@ test("upgrades of originals and derivatives have fresh identity, independent fla
   assert.equal(tokenUpgrade.upgradeOfUid, token.uid);
   assert.equal(upgrade.parentUid, null); assert.equal(tokenUpgrade.parentUid, null);
   assert.notEqual(upgrade.uid, original.uid);
-  assert.equal(upgrade.playtestReady, false);
+  assert.equal(upgrade.playtestReady, true);
   assert.equal(upgrade.collectable, false);
   assert.equal(tokenUpgrade.collectionKind, "NonCollectible");
   assert.deepEqual(upgrade.execution, contract.plannedExecution());
@@ -152,11 +152,11 @@ test("UID-based deletion removes upgrade descendants but deleting an upgrade lea
   assert.throws(() => validateWrite(dataset, incomplete, { type: "delete", uid: token.uid }));
 });
 
-test("writes preserve independent readiness, relationship identity and shared declarations", () => {
+test("writes permit pair readiness synchronization but preserve relationship identity and shared declarations", () => {
   const dataset = fixture(), upgrade = addUpgrade(dataset), next = structuredClone(dataset);
-  next.cards[1].playtestReady = true;
+  contract.setPlaytestReady(next, upgrade, true);
   validateWrite(dataset, next, { type: "edit", uid: upgrade.uid });
-  next.cards[0].playtestReady = true;
+  next.cards[0].rulesText = "unaddressed original text";
   assert.throws(() => validateWrite(dataset, next, { type: "edit", uid: upgrade.uid }), /unaddressed/);
   const changed = structuredClone(dataset); changed.shared.statuses.push({ id: "new" });
   assert.throws(() => validateWrite(dataset, changed, { type: "edit", uid: upgrade.uid }), /shared/);
@@ -176,7 +176,7 @@ test("root faction propagation reaches derivative upgrades without allowing othe
   const next = structuredClone(dataset); next.cards.forEach(c => c.classId = "Fungal");
   validateWrite(dataset, next, { type: "edit", uid: dataset.cards[0].uid });
   next.cards[3].playtestReady = true;
-  assert.throws(() => validateWrite(dataset, next, { type: "edit", uid: dataset.cards[0].uid }), /unaddressed/);
+  assert.throws(() => validateWrite(dataset, next, { type: "edit", uid: dataset.cards[0].uid }), /readiness|unaddressed/);
 });
 
 test("HTTP schema6 create/save/reopen and upgrade deletion preserve original artwork and reject stale writes", async t => {
@@ -206,10 +206,19 @@ test("HTTP schema6 create/save/reopen and upgrade deletion preserve original art
   const dataset = structuredClone(original), upgrade = addUpgrade(dataset);
   assert.equal((await post(dataset, { type: "create", uid: upgrade.uid })).status, 200);
   const oldRevision = revision;
-  upgrade.playtestReady = true; upgrade.rulesText = "升级版已修改";
+  contract.setPlaytestReady(dataset, upgrade, true); upgrade.rulesText = "升级版已修改";
   assert.equal((await post(dataset, { type: "edit", uid: upgrade.uid })).status, 200);
   let reopened = (await (await fetch(`${url}/api/cards/state`)).json()).dataset;
-  assert.equal(reopened.cards[1].playtestReady, true); assert.equal(reopened.cards[0].playtestReady, false);
+  assert.equal(reopened.cards[1].playtestReady, true); assert.equal(reopened.cards[0].playtestReady, true);
+  // A stale mirror from an old client is canonicalized from the original.
+  dataset.cards[0].playtestReady = false;
+  assert.equal(dataset.cards[1].playtestReady, true);
+  assert.equal((await post(dataset, { type: "edit", uid: dataset.cards[0].uid })).status, 200);
+  reopened = (await (await fetch(`${url}/api/cards/state`)).json()).dataset;
+  assert.deepEqual(reopened.cards.map(card => card.playtestReady), [false, false]);
+  contract.normalizePlaytestReady(dataset);
+  const unrelated = structuredClone(dataset); unrelated.cards[0].rulesText = "unauthorized peer edit";
+  assert.equal((await post(unrelated, { type: "edit", uid: upgrade.uid })).status, 400);
   const saved = fs.readFileSync(path.join(dir, "data/cards.json"), "utf8");
   assert.equal((await post(dataset, { type: "edit", uid: upgrade.uid }, {}, oldRevision)).status, 400);
   assert.equal(fs.readFileSync(path.join(dir, "data/cards.json"), "utf8"), saved);

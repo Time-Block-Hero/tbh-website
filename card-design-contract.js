@@ -35,11 +35,43 @@
     card.execution = plannedExecution();
     return card;
   }
+  function playtestOriginal(dataset, cardOrUid) {
+    const uid = typeof cardOrUid === "string" ? cardOrUid : cardOrUid?.uid;
+    const card = dataset.cards.find(entry => entry.uid === uid);
+    require(card, `Missing playtest card UID: ${uid}`);
+    const original = card.upgradeOfUid ? dataset.cards.find(entry => entry.uid === card.upgradeOfUid) : card;
+    require(original && !original.upgradeOfUid, `Missing or nested playtest original: ${card.id}`);
+    return original;
+  }
+  // An upgrade's stored flag is a compatibility mirror, never a second vote.
+  // A derivative is an original of its own pair; parentUid does not bind flags.
+  function effectivePlaytestReady(dataset, cardOrUid) {
+    return playtestOriginal(dataset, cardOrUid).playtestReady === true;
+  }
+  function setPlaytestReady(dataset, cardOrUid, value) {
+    require(typeof value === "boolean", "playtestReady must be boolean");
+    const original = playtestOriginal(dataset, cardOrUid);
+    let changed = false;
+    for (const card of dataset.cards) if (card.uid === original.uid || card.upgradeOfUid === original.uid) {
+      if (card.playtestReady !== value) { card.playtestReady = value; changed = true; }
+    }
+    return changed;
+  }
+  function normalizePlaytestReady(dataset) {
+    if (dataset.schemaVersion !== 6) return false;
+    let changed = false;
+    for (const card of dataset.cards) if (card.upgradeOfUid) {
+      const value = effectivePlaytestReady(dataset, card);
+      if (card.playtestReady !== value) { card.playtestReady = value; changed = true; }
+    }
+    return changed;
+  }
   function createUpgrade(base, cryptoProvider = globalThis.crypto) {
     require(base && UUID.test(base.uid) && base.cardType !== "Event" && !base.upgradeOfUid, "Only non-event original cards can have an upgrade");
     const card = assignNewIdentity(structuredClone(base), null, cryptoProvider);
     card.id = `${base.id}-UP`;
     card.upgradeOfUid = base.uid;
+    card.playtestReady = base.playtestReady === true;
     card.collectable = false;
     card.tags = card.tags.filter(tag => tag !== "InitialHero");
     card.collectionKind = collectionFor(card);
@@ -58,6 +90,7 @@
       next.sourceSchemaVersion = 6;
       for (const card of next.cards) { card.upgradeOfUid = null; card.playtestReady = false; }
     }
+    normalizePlaytestReady(next);
     return validateDataset(next);
   }
   function deletionUids(dataset, uid) {
@@ -186,5 +219,5 @@
     }
     return dataset;
   }
-  return { createUpgrade, migrateDataset, deletionUids, DESIGN_FIELDS, canonical, designMaterial, designHash, EXECUTION_PROPERTIES, plannedExecution, validateExecution, executionReferences, UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
+  return { effectivePlaytestReady, setPlaytestReady, normalizePlaytestReady, createUpgrade, migrateDataset, deletionUids, DESIGN_FIELDS, canonical, designMaterial, designHash, EXECUTION_PROPERTIES, plannedExecution, validateExecution, executionReferences, UUID, TYPES, COLLECTIONS, newIdentity, collectionFor, assignNewIdentity, mapSelection, selectedArtwork, validateDataset };
 });

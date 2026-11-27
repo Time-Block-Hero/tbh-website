@@ -4,19 +4,21 @@
 
 ## 当前编辑与试玩选择（schema 6）
 
-[Website 编辑任务 #166](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/166) 将设计库升级为 schema 6，保留 executionSchemaVersion 21。每条卡牌形态定义新增 `playtestReady: boolean` 和 `upgradeOfUid: UUID|null`。现有卡迁移后全部为 false；原版、升级版、衍生卡和事件各自独立设置。可收集、不可收集卡（含衍生卡）可以拥有升级版；事件是独立 `Event` 类型、不可收集且无升级形态。
+[Website 编辑任务 #166](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/166) 将设计库升级为 schema 6，保留 executionSchemaVersion 21。每条卡牌形态定义保留 `playtestReady: boolean` 和 `upgradeOfUid: UUID|null`。现有卡初次迁移后全部为 false。**后续用户修正：原版与其升级版共用一个试玩选择，原版字段为权威；升级版字段是兼容镜像，不是独立开关。** 衍生卡与它自己的升级版形成独立一组，不随母卡联动；事件独立设置。可收集、不可收集卡（含衍生卡）可以拥有升级版；事件是独立 `Event` 类型、不可收集且无升级形态。
 
-`playtestReady=true` 表示设计人员已完成本轮修改并选择纳入下次试玩，不代表执行效果已实现。Website 始终保留所有设计，取消勾选不删除卡牌。修改卡文不会自动切换这个人工标记；执行审阅摘要仍独立检测语义变化。
+`playtestReady=true` 表示设计人员已完成本轮修改并选择纳入下次试玩，不代表执行效果已实现。Website 始终保留所有设计，取消勾选不删除卡牌。选择原版会同时纳入已配置升级版，取消原版会同时排除两种形态；原版已选中时新建的升级版立即继承该选择，但仍保持 Planned 执行状态。修改卡文不会自动切换这个人工标记；执行审阅摘要仍独立检测语义变化。
 
 同一导出命令按源提交的 schema 区分合同：
 
-- **schema 6 正式导出**：envelope `schemaVersion: 3`，`source.selection: "playtest-ready"`。仅 true 卡进入 `cards` 和 `sourceDataset.cards`，其插画索引也按所选卡过滤；原始整份源文件的 SHA-256 仍记录在 `source.cardsSha256`。没有选中卡时明确报错，不产出可误用的空游戏内容。
+- **schema 6 正式导出**：envelope `schemaVersion: 3`，`source.selection: "playtest-ready"`。按原版的权威选择成组纳入原版及已配置升级版，事件和无升级版的卡按自身选择纳入；只有有效选择为 true 的卡进入 `cards` 和 `sourceDataset.cards`，输出中的升级版镜像字段统一与原版一致，其插画索引也按所选卡过滤；原始整份源文件的 SHA-256 仍记录在 `source.cardsSha256`。没有选中卡时明确报错，不产出可误用的空游戏内容。
 - **schema 6 dirty 预览**：envelope 3，`source.selection: "all-designs"`、commit=null、dirty=true。保留全部设计及标记，允许新增未实现/未批准身份，用于网站预览和设计同步，不能正式导入游戏。
 - **历史 schema 4/5**：维持原 envelope 1/2、全量库存和历史身份审阅行为，不应用后来新增的试玩筛选。
 
+旧 schema 6 加载或显式迁移时，通过 `normalizePlaytestReady(dataset)` 将升级版镜像同步为原版值；不修改原版选择，不因升级旧值为 true 而反向勾选原版。`effectivePlaytestReady(dataset, cardOrUid)` 查询权威值，`setPlaytestReady(dataset, cardOrUid, value)` 只更新同一原版/升级组。编辑器只在原版提供共用开关，升级页展示跟随状态。服务端保存继续验证原始 revision 与 UID 操作，允许配对卡的镜像标记同步，不放宽其他卡牌字段的写入权限。归一化不改变设计语义摘要或执行复核状态。
+
 每张 schema 6 导出卡附带 `upgradeOfUid`、`playtestReady`，但 Website 本轮不修改 Unity 消费者。旧消费者必须明确适配 envelope 3 和新内容合同，不能把导出成功当作游戏导入已完成。
 
-正式导出对**所选集合**检查 Implemented、设计审阅摘要、执行标识和引用。未选中卡自身的 Planned 状态不会阻断无关选中卡。所选卡的 `parentUid`、`upgradeOfUid`、已配置升级产物以及执行/共享状态中的卡牌 UID 都必须在集合中；缺失时列出位置和 UID，阻止导出，不自动勾选或偷偷带入 false 卡。所有关系仍按整个设计库进行结构验证；正式插画路径只检查所选集合，未纳入卡的临时上传不会阻断无关的正式卡。
+正式导出对**所选集合**检查 Implemented、设计审阅摘要、执行标识和引用。未选中卡自身的 Planned 状态不会阻断无关选中卡。所选卡的 `parentUid`、`upgradeOfUid` 以及执行/共享状态中的卡牌 UID 都必须在集合中；缺失时列出位置和 UID，阻止导出。原版/升级版之间按共用选择明确纳入，不因旧升级镜像为 false 阻断，也不能凭升级镜像 true 越过原版 false。其他卡牌依赖不自动扩大选择范围。所有关系仍按整个设计库进行结构验证；正式插画路径只检查所选集合，未纳入卡的临时上传不会阻断无关的正式卡。
 
 schema 6 正式导出必须提供已批准的来源修订，以其受信摘要验证 bridge 原始字节；缺失修订时不能退回仅凭 bridge 自报 UID 准入。批准的来源修订继续核验原始 bridge、修订摘要和每个选中 UID 的身份许可。schema 6 允许从批准库存中选择子集，不要求把全部旧卡纳入；未批准的新升级/事件身份不能仅凭 true 或改写清单获得正式准入。新的来源清单与 Unity 内容整合留待后续任务。Event 在当前执行适配器中明确报未实现支持；升级关系可保存在设计数据中，但 schema21 可执行文档导出会明确拒绝升级形态，直到对应运行时适配完成。
 

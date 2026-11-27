@@ -209,6 +209,7 @@ function writeProject(dataset, artworkRename, artworkDeletes, operation, baseRev
   const oldFallbackText = fs.readFileSync(fallbackPath, "utf8");
   if (baseRevision !== cardsRevision(oldCardsText)) throw new Error("卡牌源已变化，请重新加载后保存；未覆盖现有数据");
   const previousDataset = JSON.parse(oldCardsText);
+  designContract.normalizePlaytestReady(dataset);
   validateWrite(previousDataset, dataset, operation);
   const deleteKeys = validateArtworkDeletes(dataset, previousDataset, artworkDeletes);
   if (artworkRename?.oldKey || artworkRename?.newKey) {

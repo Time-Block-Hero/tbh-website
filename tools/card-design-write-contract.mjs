@@ -4,6 +4,14 @@ import contract from "../card-design-contract.js";
 // Apply a declared editor operation by UID, not by mutable array position or display ID.
 export function validateWrite(previous, next, operation) {
   contract.validateDataset(previous); contract.validateDataset(next);
+  // Loading an older schema6 draft may repair mirror flags across several pairs.
+  // Compare against the canonical previous state so those repairs do not grant
+  // permission to edit any unrelated authoritative flag or gameplay field.
+  previous = structuredClone(previous);
+  contract.normalizePlaytestReady(previous);
+  if (next.schemaVersion === 6) for (const card of next.cards) {
+    assert.equal(card.playtestReady, contract.effectivePlaytestReady(next, card), `Upgrade readiness must follow its original: ${card.id}`);
+  }
   assert.equal(next.schemaVersion, previous.schemaVersion, "Legacy drafts cannot overwrite the current schema; export and explicitly migrate the draft first");
   if (previous.schemaVersion >= 5) {
     assert.equal(next.executionSchemaVersion, previous.executionSchemaVersion, "Editor cannot change execution schema");
@@ -47,6 +55,10 @@ export function validateWrite(previous, next, operation) {
       const descendantUids = contract.deletionUids(previous, operation.uid);
       if (descendantUids.includes(uid)) expected.classId = newCards.get(operation.uid).classId;
       if (before.upgradeOfUid === operation.uid) expected.cardType = newCards.get(operation.uid).cardType;
+      const pairUid = target.upgradeOfUid || target.uid;
+      if (next.schemaVersion === 6 && (uid === pairUid || before.upgradeOfUid === pairUid)) {
+        expected.playtestReady = newCards.get(pairUid).playtestReady;
+      }
     }
     assert.deepEqual(actual, expected, `Operation changed an unaddressed identity: ${uid}`);
     assert.deepEqual(art(next, after), art(previous, before), `Operation changed artwork of an unaddressed identity: ${uid}`);
