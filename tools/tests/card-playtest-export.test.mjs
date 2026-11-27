@@ -142,3 +142,36 @@ test('legacy schema5 execution still exports its full collection without readine
   assert.equal(selectPlaytestDataset(dataset), dataset);
   assert.equal(toAuthoringDocument(dataset, options).cardBundles.length, dataset.cards.length);
 });
+
+
+test('unready uploaded artwork cannot block unrelated formal selection, but selected uploads still fail', t => {
+  const dataset = fixtureDataset(), selected = ready(base(dataset));
+  const draft = dataset.cards.find(card => card.uid !== selected.uid && !card.parentUid);
+  dataset.artworkVariants[draft.id] = [{ id: 'upload-draft', src: 'data:image/png;base64,aW1hZ2U=' }];
+  dataset.selectedArtworkIds[draft.id] = ['upload-draft'];
+  const dir = writeFixture(t, dataset), result = exportCommittedDesigns(dir, commit(dir));
+  assert.deepEqual(result.cards.map(card => card.uid), [selected.uid]);
+  assert.equal(Object.hasOwn(result.sourceDataset.artworkVariants, draft.id), false);
+  assert.equal(Object.hasOwn(result.sourceDataset.selectedArtworkIds, draft.id), false);
+  selected.playtestReady = false;
+  ready(draft);
+  const selectedDir = writeFixture(t, dataset);
+  assert.throws(() => exportCommittedDesigns(selectedDir, commit(selectedDir)), /Invalid selected artwork path/);
+});
+
+test('schema6 cannot trust an altered identity bridge when an approved revision is absent', t => {
+  const dataset = fixtureDataset(), selected = ready(base(dataset));
+  const originalUid = selected.uid;
+  selected.uid = randomUUID();
+  selected.execution.reviewedDesignHash = designHash(selected);
+  dataset.cards = [selected];
+  const dir = writeFixture(t, dataset);
+  const bridgePath = path.join(dir, 'data/card-identity-migration.json');
+  const bridge = JSON.parse(fs.readFileSync(bridgePath));
+  const identity = bridge.cards.find(card => card.uid === originalUid);
+  assert.ok(identity, 'fixture must replace a baseline identity');
+  identity.uid = selected.uid;
+  fs.writeFileSync(bridgePath, JSON.stringify(bridge));
+  fs.unlinkSync(path.join(dir, 'data/card-design-source-revision.json'));
+  assert.throws(() => exportCommittedDesigns(dir, commit(dir)), /requires an approved source revision/);
+});

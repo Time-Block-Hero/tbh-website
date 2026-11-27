@@ -41,18 +41,18 @@ export function validateBridge(bridge, dataset, { requireCompleteBaseline = true
 }
 
 function buildExport(cardsBytes, bridgeBytes, commit, options = {}, revisionBytes = null) {
-  const fullDataset = contract.validateDataset(JSON.parse(cardsBytes), { exportArtwork: true });
+  const fullDataset = contract.validateDataset(JSON.parse(cardsBytes));
   const isPlaytest = fullDataset.schemaVersion === 6;
   const formal = commit !== null;
+  if (isPlaytest && formal) require(revisionBytes !== null, 'Schema6 formal export requires an approved source revision with a trusted identity bridge hash');
   const dataset = formal && fullDataset.schemaVersion >= 5 ? validateProductionExecution(fullDataset) : fullDataset;
+  // Formal artwork belongs to the selected collection. An unrelated unready
+  // card may still contain an editor upload awaiting a production asset path.
+  contract.validateDataset(dataset, { exportArtwork: true });
   const bridge = validateBridge(JSON.parse(bridgeBytes), dataset,
     revisionBytes || isPlaytest ? { requireCompleteBaseline: false } : options);
   const revision = revisionBytes ? validateSourceRevision(revisionBytes, bridgeBytes, bridge, dataset,
     { requireInventory: isPlaytest ? formal : options.requireCompleteBaseline !== false, allowSubset: isPlaytest && formal }) : null;
-  if (isPlaytest && formal && !revision) {
-    const approved = new Set(bridge.cards.map(card => card.uid));
-    require(dataset.cards.every(card => approved.has(card.uid)), 'Selected UID outside approved identity bridge; an explicit source revision is required');
-  }
   return {
     schemaVersion: isPlaytest ? 3 : dataset.schemaVersion === 5 ? 2 : 1,
     ...(dataset.schemaVersion >= 5 ? { executionSchemaVersion: dataset.executionSchemaVersion, shared: structuredClone(dataset.shared), sourceDataset: structuredClone(dataset) } : {}),
