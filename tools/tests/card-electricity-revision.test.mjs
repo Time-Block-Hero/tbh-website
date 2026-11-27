@@ -242,13 +242,13 @@ function assertCurrentDesign(dataset) {
   contract.validateDataset(dataset, { exportArtwork: true });
   const prepared = currentApprovedDesign();
   // Execution is independently checked against frozen bundle hashes in card-execution.test.mjs.
-  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath', 'execution']);
+  const artFields = new Set(['artDescription', 'artDescriptionNeedsPolish', 'artRequest', 'artPath', 'execution', 'upgradeOfUid', 'playtestReady']);
   const withoutArt = card => Object.fromEntries(Object.entries(card).filter(([key]) => !artFields.has(key)));
   assert.deepEqual(sorted(dataset.cards).map(withoutArt), sorted(prepared.cards).map(withoutArt));
   const withoutCardsOrArt = value => Object.fromEntries(Object.entries(value)
     .filter(([key]) => !['cards', 'artworkVariants', 'selectedArtworkIds'].includes(key)));
-  if (dataset.schemaVersion === 5) {
-    prepared.schemaVersion = 5; prepared.sourceSchemaVersion = 5;
+  if (dataset.schemaVersion >= 5) {
+    prepared.schemaVersion = dataset.schemaVersion; prepared.sourceSchemaVersion = dataset.schemaVersion;
     prepared.executionSchemaVersion = 21; prepared.shared = { statuses: [{ id: 'Retain', lifetime: 'Permanent', removableBySilence: true, tags: ['Retain'] }, { id: 'DivineShield', lifetime: 'Permanent', removableBySilence: true, tags: ['DivineShield'] }] };
   }
   assert.deepEqual(withoutCardsOrArt(dataset), withoutCardsOrArt(prepared));

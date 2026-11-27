@@ -14,7 +14,11 @@ const repeatIds = ['AI-002', 'AI-003', 'AI-007', 'AI-009', 'AI-015', 'AI-021'];
 
 test('production preserves 147 identities and no electricity remains in live card execution', () => {
   assert.equal(dataset.cards.length, 147);
-  validateProductionExecution(dataset);
+  // Verify the retained execution definitions without changing the author's
+  // actual all-false selection for the next playtest.
+  const executionFixture = structuredClone(dataset);
+  for (const c of executionFixture.cards) c.playtestReady = true;
+  validateProductionExecution(executionFixture);
   for (const c of dataset.cards) {
     assert.doesNotMatch(c.rulesText, /电力|电能/, c.id);
     assert.doesNotMatch(JSON.stringify(c.execution), /electricity|电力|电能/i, c.id);

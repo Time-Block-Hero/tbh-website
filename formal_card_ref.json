@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "executionSchemaVersion": 21,
   "shared": {
     "statuses": [
@@ -22,8 +22,8 @@
     ]
   },
   "sourceDataset": {
-    "schemaVersion": 5,
-    "sourceSchemaVersion": 5,
+    "schemaVersion": 6,
+    "sourceSchemaVersion": 6,
     "source": "data/cards.json",
     "cards": [
       {
@@ -74,7 +74,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-002",
@@ -126,7 +128,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-003",
@@ -176,7 +180,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-004",
@@ -289,7 +295,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-005",
@@ -402,7 +410,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-006",
@@ -619,7 +629,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-007",
@@ -771,7 +783,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-008",
@@ -829,7 +843,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-009",
@@ -1035,7 +1051,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-010",
@@ -1147,7 +1165,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-011",
@@ -1307,7 +1327,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-012",
@@ -1501,7 +1523,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-013",
@@ -1835,7 +1859,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-014",
@@ -1944,7 +1970,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-015",
@@ -2096,7 +2124,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-016",
@@ -2355,7 +2385,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-017",
@@ -2431,7 +2463,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-018",
@@ -2547,7 +2581,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-019",
@@ -2741,7 +2777,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-020",
@@ -2848,7 +2886,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-021",
@@ -2924,7 +2964,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-022",
@@ -3045,7 +3087,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-023",
@@ -3190,7 +3234,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-024",
@@ -3241,7 +3287,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-025",
@@ -3439,7 +3487,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-026",
@@ -3601,7 +3651,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-027",
@@ -3768,7 +3820,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-028",
@@ -3981,7 +4035,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-029",
@@ -4033,7 +4089,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-030",
@@ -4111,7 +4169,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-031",
@@ -4262,7 +4322,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-032",
@@ -4392,7 +4454,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-033",
@@ -4580,7 +4644,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-034",
@@ -4744,7 +4810,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-035",
@@ -4794,7 +4862,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-036",
@@ -4845,7 +4915,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-037",
@@ -4897,7 +4969,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-038",
@@ -5123,7 +5197,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-039",
@@ -5531,7 +5607,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-040",
@@ -5778,7 +5856,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-041",
@@ -5903,7 +5983,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-042",
@@ -5955,7 +6037,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-001",
@@ -6069,7 +6153,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-002",
@@ -6183,7 +6269,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-003",
@@ -6291,7 +6379,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-004",
@@ -6424,7 +6514,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-005",
@@ -6582,7 +6674,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-006",
@@ -6691,7 +6785,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-007",
@@ -6805,7 +6901,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-008",
@@ -6911,7 +7009,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "FNG-UN-009",
@@ -7032,7 +7132,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-000",
@@ -7189,7 +7291,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-001",
@@ -7374,7 +7478,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-002",
@@ -7444,7 +7550,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-003",
@@ -7533,7 +7641,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-004",
@@ -7641,7 +7751,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-004-01",
@@ -7827,7 +7939,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-005",
@@ -7972,7 +8086,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-006",
@@ -8107,7 +8223,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-007",
@@ -8252,7 +8370,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-008",
@@ -8440,7 +8560,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-009",
@@ -8593,7 +8715,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-010",
@@ -8771,7 +8895,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-011",
@@ -8910,7 +9036,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-011-01",
@@ -9118,7 +9246,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-012",
@@ -9384,7 +9514,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-013",
@@ -9462,7 +9594,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-014",
@@ -9633,7 +9767,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-015",
@@ -9684,7 +9820,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-016",
@@ -9989,7 +10127,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-016-01",
@@ -10063,7 +10203,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-017",
@@ -10198,7 +10340,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-018",
@@ -10354,7 +10498,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-019",
@@ -10404,7 +10550,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SA-020",
@@ -10516,7 +10664,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-000",
@@ -10589,7 +10739,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-001",
@@ -10660,7 +10812,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-002",
@@ -10885,7 +11039,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-003",
@@ -10968,7 +11124,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-004",
@@ -11124,7 +11282,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-005",
@@ -11276,7 +11436,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-006",
@@ -11511,7 +11673,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-007",
@@ -11595,7 +11759,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-008",
@@ -11740,7 +11906,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-009",
@@ -11822,7 +11990,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-010",
@@ -11995,7 +12165,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-011",
@@ -12154,7 +12326,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-012",
@@ -12340,7 +12514,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-013",
@@ -12516,7 +12692,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-014",
@@ -12650,7 +12828,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-015",
@@ -12777,7 +12957,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-016",
@@ -12923,7 +13105,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-017",
@@ -13063,7 +13247,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-018",
@@ -13219,7 +13405,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-018-01",
@@ -13423,7 +13611,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-019",
@@ -13470,7 +13660,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-020",
@@ -13702,7 +13894,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-021",
@@ -13938,7 +14132,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "SC-022",
@@ -14109,7 +14305,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-000",
@@ -14231,7 +14429,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-001",
@@ -14499,7 +14699,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-002",
@@ -14699,7 +14901,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-003",
@@ -14857,7 +15061,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-004",
@@ -14943,7 +15149,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-005",
@@ -15145,7 +15353,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-006",
@@ -15214,7 +15424,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-007",
@@ -15391,7 +15603,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-008",
@@ -15477,7 +15691,9 @@
             }
           ],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-009",
@@ -15656,7 +15872,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-010",
@@ -15831,7 +16049,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-011",
@@ -15973,7 +16193,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-012",
@@ -16328,7 +16550,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-013",
@@ -16605,7 +16829,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-014",
@@ -16751,7 +16977,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-015",
@@ -16909,7 +17137,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-016",
@@ -17043,7 +17273,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-017",
@@ -17223,7 +17455,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-018",
@@ -17290,7 +17524,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-019",
@@ -17417,7 +17653,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-020",
@@ -17714,7 +17952,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-020-01",
@@ -18016,7 +18256,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-020-02",
@@ -18232,7 +18474,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-021",
@@ -18578,7 +18822,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "AI-022",
@@ -19030,7 +19276,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-000",
@@ -19150,7 +19398,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-001",
@@ -19279,7 +19529,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-002",
@@ -19373,7 +19625,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-003",
@@ -19457,7 +19711,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-004",
@@ -19582,7 +19838,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-005",
@@ -19700,7 +19958,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-006",
@@ -19823,7 +20083,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-007",
@@ -19916,7 +20178,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-008",
@@ -20017,7 +20281,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-009",
@@ -20196,7 +20462,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-009-01",
@@ -20307,7 +20575,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-010",
@@ -20465,7 +20735,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-011",
@@ -20604,7 +20876,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-012",
@@ -20750,7 +21024,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-012-01",
@@ -20801,7 +21077,9 @@
           "abilities": [],
           "continuousEffects": [],
           "plans": []
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-013",
@@ -20906,7 +21184,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-014",
@@ -21037,7 +21317,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-015",
@@ -21170,7 +21452,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-016",
@@ -21318,7 +21602,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-017",
@@ -21483,7 +21769,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-018",
@@ -21577,7 +21865,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-019",
@@ -21775,7 +22065,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       },
       {
         "id": "MCC-020",
@@ -21942,7 +22234,9 @@
               }
             }
           ]
-        }
+        },
+        "upgradeOfUid": null,
+        "playtestReady": false
       }
     ],
     "artworkVariants": {
@@ -23125,13 +23419,14 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "7e150b907364cea9feb456182ada403f5c62f23fab78f5585c1beecec75561a4",
+    "cardsSha256": "70a289f5cebb1923789c16d4d4be96bd892d34c4ea8b1d93745ab1eef63cb6fb",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue114-20261001-playtest147",
     "sourceRevisionSha256": "0bb5247b73ad09b237fc8c6b6e577d7096d96a97ccaf8d10a2a3b57d76dc8b97",
-    "datasetSchemaVersion": 5,
-    "dirty": true
+    "datasetSchemaVersion": 6,
+    "dirty": true,
+    "selection": "all-designs"
   },
   "cards": [
     {
@@ -23164,6 +23459,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -23514,6 +23811,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -23657,6 +23956,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Common",
       "costResource": "Star",
@@ -23775,6 +24076,8 @@
       "cardType": "Minion",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -24008,6 +24311,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24078,6 +24383,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24135,6 +24442,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24349,6 +24658,8 @@
       "cardType": "Spell",
       "collectionKind": "Token",
       "parentUid": "4b42977a-a289-4520-8aec-8439b6edc5a3",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -24403,6 +24714,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24521,6 +24834,8 @@
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -24590,6 +24905,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24749,6 +25066,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24893,6 +25212,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -24949,6 +25270,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Common",
       "costResource": "Star",
@@ -25039,6 +25362,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -25156,6 +25481,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -25396,6 +25723,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
@@ -25598,6 +25927,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -25658,6 +25989,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -25885,6 +26218,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -26153,6 +26488,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Common",
       "costResource": "Star",
@@ -26310,6 +26647,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -26448,6 +26787,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -26548,6 +26889,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -26676,6 +27019,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -26730,6 +27075,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -26818,6 +27165,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -26872,6 +27221,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "274a5d57-9246-4b40-a51a-3bc473e7193b",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -26953,6 +27304,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -27141,6 +27494,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "63699e58-6aa0-4012-b096-364a7cff20e7",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -27294,6 +27649,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -27377,6 +27734,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -27487,6 +27846,8 @@
       "cardType": "Minion",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -27604,6 +27965,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -27766,6 +28129,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Epic",
       "costResource": "Star",
@@ -27887,6 +28252,8 @@
       "cardType": "Minion",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -28017,6 +28384,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -28172,6 +28541,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -28228,6 +28599,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -28564,6 +28937,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -28650,6 +29025,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -28782,6 +29159,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -28989,6 +29368,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Common",
       "costResource": "Star",
@@ -29116,6 +29497,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -29293,6 +29676,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -29455,6 +29840,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -29605,6 +29992,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -29752,6 +30141,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
@@ -30165,6 +30556,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -30306,6 +30699,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -30468,6 +30863,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -30624,6 +31021,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -30699,6 +31098,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "8e486b7d-4654-40fb-baf5-c52b38010dd4",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -30856,6 +31257,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -30968,6 +31371,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "c1a2c9af-3f22-4f77-993c-c6e4b1732695",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -31143,6 +31548,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -31326,6 +31733,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -31490,6 +31899,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Common",
       "costResource": "Star",
@@ -31575,6 +31986,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Common",
       "costResource": "Star",
@@ -31714,6 +32127,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -31867,6 +32282,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
@@ -32048,6 +32465,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Common",
       "costResource": "Star",
@@ -32208,6 +32627,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -32318,6 +32739,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -32447,6 +32870,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -32684,6 +33109,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -32740,6 +33167,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -32849,6 +33278,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Epic",
       "costResource": "Star",
@@ -33028,6 +33459,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -33102,6 +33535,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Common",
       "costResource": "Star",
@@ -33198,6 +33633,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -33370,6 +33807,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Epic",
       "costResource": "Star",
@@ -33538,6 +33977,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -33618,6 +34059,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -33739,6 +34182,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -33905,6 +34350,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -33994,6 +34441,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Epic",
       "costResource": "Star",
@@ -34091,6 +34540,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -34223,6 +34674,8 @@
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -34417,6 +34870,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -34536,6 +34991,8 @@
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -34838,6 +35295,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -35000,6 +35459,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -35154,6 +35615,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -35348,6 +35811,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -35529,6 +35994,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -35766,6 +36233,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -35875,6 +36344,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -35952,6 +36423,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Common",
       "costResource": "Star",
@@ -36095,6 +36568,8 @@
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -36328,6 +36803,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -36485,6 +36962,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -36710,6 +37189,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -36883,6 +37364,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -37057,6 +37540,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -37180,6 +37665,8 @@
       "cardType": "Minion",
       "collectionKind": "Hero",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Legendary",
       "costResource": "Hero",
@@ -37330,6 +37817,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -37462,6 +37951,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -37580,6 +38071,8 @@
       "cardType": "Minion",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -37710,6 +38203,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -38073,6 +38568,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -38148,6 +38645,8 @@
       "cardType": "Minion",
       "collectionKind": "Hero",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Legendary",
       "costResource": "Hero",
@@ -38417,6 +38916,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -38609,6 +39110,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
@@ -38910,6 +39413,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -39114,6 +39619,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -39271,6 +39778,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -39452,6 +39961,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -39575,6 +40086,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -39759,6 +40272,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -39971,6 +40486,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "b47616d4-bdca-43f4-97f4-d0649b48ba8d",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -40027,6 +40544,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -40301,6 +40820,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -40356,6 +40877,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -40436,6 +40959,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Epic",
       "costResource": "Star",
@@ -40558,6 +41083,8 @@
       "cardType": "Minion",
       "collectionKind": "Hero",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Legendary",
       "costResource": "Hero",
@@ -40682,6 +41209,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -40848,6 +41377,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -41053,6 +41584,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Epic",
       "costResource": "Star",
@@ -41201,6 +41734,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Epic",
       "costResource": "Star",
@@ -41405,6 +41940,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -41537,6 +42074,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -41687,6 +42226,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -41795,6 +42336,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Common",
       "costResource": "Star",
@@ -42256,6 +42799,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -42337,6 +42882,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -42545,6 +43092,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -42715,6 +43264,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -42972,6 +43523,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -43158,6 +43711,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -43363,6 +43918,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Rare",
       "costResource": "Star",
@@ -43505,6 +44062,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Epic",
       "costResource": "Star",
@@ -43673,6 +44232,8 @@
       "cardType": "Resource",
       "collectionKind": "NonCollectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -43823,6 +44384,8 @@
       "cardType": "Minion",
       "collectionKind": "Hero",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Legendary",
       "costResource": "Hero",
@@ -43881,6 +44444,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SolarChurch",
       "rarity": "Rare",
       "costResource": "Star",
@@ -44071,6 +44636,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Common",
       "costResource": "Star",
@@ -44349,6 +44916,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Epic",
       "costResource": "Star",
@@ -44472,6 +45041,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -44625,6 +45196,8 @@
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Rare",
       "costResource": "Star",
@@ -44679,6 +45252,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Common",
       "costResource": "Star",
@@ -44806,6 +45381,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "MachineHeaven",
       "rarity": "Rare",
       "costResource": "Star",
@@ -44988,6 +45565,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Legendary",
       "costResource": "Star",
@@ -45206,6 +45785,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Rare",
       "costResource": "Star",
@@ -45262,6 +45843,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
@@ -45353,6 +45936,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Epic",
       "costResource": "Star",
@@ -45471,6 +46056,8 @@
       "cardType": "Minion",
       "collectionKind": "Collectible",
       "parentUid": null,
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "SkyborneAlliance",
       "rarity": "Epic",
       "costResource": "Star",
@@ -45775,6 +46362,8 @@
       "cardType": "Minion",
       "collectionKind": "Token",
       "parentUid": "bdd6fa88-21f9-4eed-8248-00e550344739",
+      "upgradeOfUid": null,
+      "playtestReady": false,
       "classId": "AstraImperium",
       "rarity": "Legendary",
       "costResource": "Star",

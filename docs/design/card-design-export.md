@@ -4,7 +4,7 @@
 
 ## 当前编辑与试玩选择（schema 6）
 
-[Website 编辑任务 #166](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/166) 将设计库升级为 schema 6，保留 executionSchemaVersion 21。每个卡牌实例新增 `playtestReady: boolean` 和 `upgradeOfUid: UUID|null`。现有卡迁移后全部为 false；原版、升级版、衍生卡和事件各自独立设置。可收集、不可收集卡（含衍生卡）可以拥有升级版；事件是独立 `Event` 类型、不可收集且无升级形态。
+[Website 编辑任务 #166](https://github.com/Time-Block-Hero/time-block-hero-unified/issues/166) 将设计库升级为 schema 6，保留 executionSchemaVersion 21。每条卡牌形态定义新增 `playtestReady: boolean` 和 `upgradeOfUid: UUID|null`。现有卡迁移后全部为 false；原版、升级版、衍生卡和事件各自独立设置。可收集、不可收集卡（含衍生卡）可以拥有升级版；事件是独立 `Event` 类型、不可收集且无升级形态。
 
 `playtestReady=true` 表示设计人员已完成本轮修改并选择纳入下次试玩，不代表执行效果已实现。Website 始终保留所有设计，取消勾选不删除卡牌。修改卡文不会自动切换这个人工标记；执行审阅摘要仍独立检测语义变化。
 
