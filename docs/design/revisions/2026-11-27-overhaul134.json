@@ -1,0 +1,1220 @@
+{
+  "schemaVersion": 1,
+  "issue": "https://github.com/Time-Block-Hero/time-block-hero-unified/issues/173",
+  "sourceBaselineCommit": "59c5bce",
+  "executionSchemaVersion": 22,
+  "designPreservation": "All 232 non-execution card fields equal the user-edited source baseline.",
+  "validation": "Website selection/review contract and Rules Python compiler passed; authoritative C# settlement and integrated acceptance tracked by parent issue.",
+  "selectedCount": 134,
+  "originalCount": 52,
+  "upgradeCount": 51,
+  "eventCount": 31,
+  "entries": [
+    {
+      "uid": "f14f6fca-6862-441b-9254-8b3df5556389",
+      "displayId": "FNG-001",
+      "name": "星际佣兵",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "24c70d4d94c3807e5d953ea59cdce71d19ca54dd4a4c8366b6822b8eac34cd6e",
+      "previousExecutionHash": "eadca42049b047b147760c78890d33979215ea88ec489bde6b6c6a9ad4b127b9",
+      "executionHash": "eadca42049b047b147760c78890d33979215ea88ec489bde6b6c6a9ad4b127b9"
+    },
+    {
+      "uid": "27518a43-d84a-4853-a6aa-b6c310e5726f",
+      "displayId": "FNG-001-UP",
+      "name": "星际佣兵",
+      "upgradeOfUid": "f14f6fca-6862-441b-9254-8b3df5556389",
+      "reviewedDesignHash": "3772eddc9aed691ed83aff44cd5becba463e879e179ca4c9a7d4a3e1de9bbdce",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "729949181aeb3d30554242da26bcfd07b91d82cf0c4e5e74163a93da9f5197f9"
+    },
+    {
+      "uid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "displayId": "FNG-002",
+      "name": "萌萌机械狗",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "31b005b58ab74aa3fcf8bde01d4455270dd49897e9d2b428f4ba6d47830a266c",
+      "previousExecutionHash": "f88d5bc1a5a6c54e7554704abdc873035cef43818e7e6047e574780159d1ce1e",
+      "executionHash": "a4660ab8135f4a2f77c59203807e6fcf8070a400199bf390e5a1c54e6c603c2e"
+    },
+    {
+      "uid": "c1032302-69f7-45be-8b84-43e574c8aad5",
+      "displayId": "FNG-002-UP",
+      "name": "萌萌机械狗",
+      "upgradeOfUid": "0166c132-1962-4fc7-9aa6-353ecdba8eab",
+      "reviewedDesignHash": "e51bb982d998245ed9f0f41508b934626aed780ead19a68a2c7e394979bfe8da",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "c2f6df0148312b35f30314b37b84e669ccdae4223949eab3cd1effe0857ff248"
+    },
+    {
+      "uid": "094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "displayId": "FNG-003",
+      "name": "太空临时工",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "440cb33b469c2b004a13970d2b3e9e8c898ba6f699218f90a9e65eba59daacc3",
+      "previousExecutionHash": "2bab17cefcfe5c3f0faf6718adab832555d4bf5a74856638e91a5f2ac0020cb3",
+      "executionHash": "73e6636790dc9577a62912ebcae44e2b20a0897f08fc3e869fe1cfc4a6858517"
+    },
+    {
+      "uid": "c947361e-ecec-496e-8c82-9c6b76ff809b",
+      "displayId": "FNG-003-UP",
+      "name": "太空临时工",
+      "upgradeOfUid": "094a41e6-d797-42ea-85ac-d44bd6049c47",
+      "reviewedDesignHash": "07cbae0643cee55ec339edbbc2bfb167396f1825c246ebcb889bb6079c6a26cf",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ca9c7bf1deafa96a217fe39806377da0808e737b26137716180652e4595a0e87"
+    },
+    {
+      "uid": "c285d915-f68b-4827-9c39-c4911895e360",
+      "displayId": "FNG-004",
+      "name": "星能石",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "34ae1f593e0116708dcbb92e21a0ed268720133d597d327a1010b1d7e2b0d027",
+      "previousExecutionHash": "cd709058c46e921d36229fc06c668ec729d54effc532efe449c77fbff780c45f",
+      "executionHash": "a28d4bd33ef635951a0092b8d31e46983e380decb35c2f27be7b3c6fc64b77d5"
+    },
+    {
+      "uid": "b9b6fad0-1e89-4537-8ad6-dfa656bd3ae7",
+      "displayId": "FNG-004-UP",
+      "name": "星能石",
+      "upgradeOfUid": "c285d915-f68b-4827-9c39-c4911895e360",
+      "reviewedDesignHash": "42e72c47e6aab489d30013208dcc57b7e41e58dd14821c02f0654091632f2624",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "8f1f24e182ead1f7b95386263c54ea17f0266074d9e39367ea6f99f2a9795d91"
+    },
+    {
+      "uid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "displayId": "FNG-005",
+      "name": "稀有星能石",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "b2a6fd73fbad9451e3a8b90e4f0a107ba396703e6afa58d5be650db1badc98c5",
+      "previousExecutionHash": "561c003429c0cd1636c7777c93b8905a6c27d0f182ee76815c92125796c62de9",
+      "executionHash": "561c003429c0cd1636c7777c93b8905a6c27d0f182ee76815c92125796c62de9"
+    },
+    {
+      "uid": "c3a59ae1-2a52-4b59-86fb-75c278045dcc",
+      "displayId": "FNG-005-UP",
+      "name": "稀有星能石",
+      "upgradeOfUid": "788f870d-9238-41c3-9e98-b2d2fb05cab2",
+      "reviewedDesignHash": "f5ab27934914157091aeec44961d47ff03910d1540a777c8ca05d482d0b6226e",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "e8182437177332270dc5348b0c55699e5e8e705aa2aea40ba10bf5d8ba495176"
+    },
+    {
+      "uid": "ff1bbeff-7e7b-4715-99ff-a9f8814359f1",
+      "displayId": "FNG-006",
+      "name": "宝藏星能石",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "4a07a756f1e8d15e73f5463417cb7d65962a2114fc4282f59d41dc54d14e9239",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "3b157968dfc2c1cba3c883ad26a452428eb0066423815234e548d78293600aff"
+    },
+    {
+      "uid": "793190df-3f0c-47d3-ba3d-d918f11badd8",
+      "displayId": "FNG-006-UP",
+      "name": "宝藏星能石",
+      "upgradeOfUid": "ff1bbeff-7e7b-4715-99ff-a9f8814359f1",
+      "reviewedDesignHash": "e92c2b568dc4df06980b04a6eb469a202caa093845189f48245e77e25f1d6cb3",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "bb10f0f295276c6ea6ce4b8f6457ba1ed26c9bbbd2d19fba4ab5b70713c08b31"
+    },
+    {
+      "uid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "displayId": "FNG-007",
+      "name": "普通的子弹",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "f6b9b958ea845fee40c0b95e61c8423a6ff75c89c0c932f421fd8ce198fd00af",
+      "previousExecutionHash": "13f9bf65801e077583178b72c71245258f555a26ce0be33dd8a998051cbe6a41",
+      "executionHash": "13f9bf65801e077583178b72c71245258f555a26ce0be33dd8a998051cbe6a41"
+    },
+    {
+      "uid": "55107dce-7e80-46bf-89b9-a339eb051f7d",
+      "displayId": "FNG-007-UP",
+      "name": "普通的子弹",
+      "upgradeOfUid": "158a6e85-9ab8-420d-9a1e-7a924bf04c79",
+      "reviewedDesignHash": "a11ae6cdac8d58158ebc3e2357e91cc89490dacd073e7c5d08b2e7d28d1dc789",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "dff0afa03e3566a43e248bd6c4f9d3a8caeef07b39fe02e0b574713967bb64f2"
+    },
+    {
+      "uid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "displayId": "FNG-008",
+      "name": "胶囊防护罩",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "01eea3c42ff1a47bd4bb95ae7b9ce46556162d907d8e1cbfe7fb35670e5f3f34",
+      "previousExecutionHash": "a6e9076e78bf9cfc2a515dec9511c6e245df60e994b5713efbf8834fec3e111a",
+      "executionHash": "a6e9076e78bf9cfc2a515dec9511c6e245df60e994b5713efbf8834fec3e111a"
+    },
+    {
+      "uid": "785a20ae-1c6f-4876-8bf2-7df3d436645a",
+      "displayId": "FNG-008-UP",
+      "name": "胶囊防护罩",
+      "upgradeOfUid": "631f5e35-9d09-4221-b994-d2ac011560a6",
+      "reviewedDesignHash": "1d8837ea77386753721e4cef2767146e558ccea8a86e355ef2c228702d6d4e9b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "33d854b6510e2e6bb5366a2d3bca3e895895348e88a829d87988c51d70246c3c"
+    },
+    {
+      "uid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "displayId": "FNG-009",
+      "name": "探机",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "f6badb4facf5cfa00aab9c8813332a9ab9c2a6df41a707d1845e660d4578e352",
+      "previousExecutionHash": "0d00bae487d2f5ebfb58b966ce1745fb2581038fb36fd42630a08ac5d636eca5",
+      "executionHash": "0d00bae487d2f5ebfb58b966ce1745fb2581038fb36fd42630a08ac5d636eca5"
+    },
+    {
+      "uid": "73bf55c7-795a-4f24-a2dd-7f1924e0fcfb",
+      "displayId": "FNG-009-UP",
+      "name": "探机",
+      "upgradeOfUid": "1529f937-224e-4d19-a272-0740e98b649e",
+      "reviewedDesignHash": "677ca6bc7cc542c26c460cdf2434ef195cb53180cb0912ec21e4a8126baf9f6f",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "cf6a4221b3f374c3dabe4fb105b84ee07de0e9f62aeea6f4a852e7a4e729f504"
+    },
+    {
+      "uid": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+      "displayId": "FNG-011",
+      "name": "商人的智慧",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "bc04bbf4256b01f8eb655c6860901cd7ea6a088a23bf0a4520d032d075618ed7",
+      "previousExecutionHash": "b41f9bdc9e9f897053c49030db11bd960c3bd94e0b788cdd050e282aac1e8b24",
+      "executionHash": "0204483f406a81c1f47be9de2f6c4d8106499372e579a424e5f7d15c3c33a0d6"
+    },
+    {
+      "uid": "9e7a1fdc-e866-4dbc-b225-a72f5f431ac0",
+      "displayId": "FNG-011-UP",
+      "name": "商人的智慧",
+      "upgradeOfUid": "ebeba9c4-ca7f-4f5d-813b-a3b144772e97",
+      "reviewedDesignHash": "c8c4a6ecdddf51fbe9038bbedc966938dbc5109ea17d52d9b6e7e04e24cbb38e",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ad089df6a71e8a67693e632b86b7ef02db622d66ab727eced7e5c993162c84ab"
+    },
+    {
+      "uid": "11c4a471-c45c-4055-b1a7-a335f6833976",
+      "displayId": "FNG-012",
+      "name": "飞船失火！",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "152cd75e7a2d488e4b4838b26f734932c443a1db51eeb26fa5771491320a3738",
+      "previousExecutionHash": "6d32567634b65aa835bf31cf4b13f4f93a431aae264e3bab4d9b27edd65c185f",
+      "executionHash": "95aa63e1f62dab586681fa06ac633c69b60fc1785f2100907ea74d64ebda795a"
+    },
+    {
+      "uid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "displayId": "FNG-013",
+      "name": "科学纪元驱魔师",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "0e387c94c8dc1d2236cfd117a5edcf4cbdeb6e37f4a0c33aa64f8b02eca8ebcf",
+      "previousExecutionHash": "35b0d3702a271f100557e443c1393aad2c86019c263cf264fc6950171ade58a9",
+      "executionHash": "677e32d6ccbd9b009a96122f822a5476cbdb8c46972150dd52c0ba57daed6710"
+    },
+    {
+      "uid": "fca9f475-1780-48a6-842e-78f7c8b0efaf",
+      "displayId": "FNG-013-UP",
+      "name": "科学纪元驱魔师",
+      "upgradeOfUid": "3b4ba62f-c700-4411-8c51-a901df1cb57c",
+      "reviewedDesignHash": "83ca03bc7d4a61b75781efa22ac07f5f724f69c5fffca0c753ede2c2ec7da114",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "189554488a4d82cf68bc463754e29587905b468368c81902bfb7644f250cf6bc"
+    },
+    {
+      "uid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "displayId": "FNG-014",
+      "name": "天元防壁",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "ddc737ae5aae6e4bc4cd8571febabee503566ecb12009d38a9fdb74a77c977f3",
+      "previousExecutionHash": "b4eccd391ef0e5e08f1e593117b5f3336dd52855089cf0b43f14a84460dbb95c",
+      "executionHash": "3bcdb263eb95391894bcb4396f1947b5ad93fd6213904ea107533853affe10c8"
+    },
+    {
+      "uid": "37516551-30e2-46d9-9e16-74d4e48c9fcf",
+      "displayId": "FNG-014-UP",
+      "name": "天元防壁",
+      "upgradeOfUid": "0f892f9f-1ef4-4c5b-9a9a-1eeba1b34454",
+      "reviewedDesignHash": "3ef2ac102b749c9ed0b592a0187378a920f70a82519f851a086c0d99e9ea9e7f",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "09e351609bab77d826803d736b2793769fd92ad3d0a6bd703826ac3889c8a44f"
+    },
+    {
+      "uid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "displayId": "FNG-015",
+      "name": "刺客-J",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "5a8a51cfc5c8b5e9ab364444b8c4510fb8751e77a2370cb2b932b3503b139636",
+      "previousExecutionHash": "52f0dea424d5d51af1b5634a4e91da04aeb39f1742ed1105dff332d36ea5a06e",
+      "executionHash": "359a34420273564ec62a91c8786f933eb00d296e2b0734f190e14ab24c1a189e"
+    },
+    {
+      "uid": "f8933c68-37ce-4ae5-b3a2-de47524fc5ce",
+      "displayId": "FNG-015-UP",
+      "name": "刺客-J",
+      "upgradeOfUid": "97538b9d-68f1-4a74-861c-3b6a517890ba",
+      "reviewedDesignHash": "d6dec9fc5d76f5a655a577e1a1a8949fe8781a62e7778749cdc453171da99f62",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5c265893c7676cb93ca04d6ca116c0b5fc025e291d5be052ad973bfbda5d58ae"
+    },
+    {
+      "uid": "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "displayId": "FNG-016",
+      "name": "预判投弹",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "7ac6f69e686411be3e37c61768358f0d610fd3a81db3cedfb5644346580d5a65",
+      "previousExecutionHash": "d058996bec7177d14cae3eed345d50a57bb5b10a18a0b616fc11c3258be02177",
+      "executionHash": "d058996bec7177d14cae3eed345d50a57bb5b10a18a0b616fc11c3258be02177"
+    },
+    {
+      "uid": "179aa8bc-7618-4c45-bf5d-905055a2ec4d",
+      "displayId": "FNG-016-UP",
+      "name": "预判投弹",
+      "upgradeOfUid": "ba9f57db-5a99-4893-a37d-492aaf23c59b",
+      "reviewedDesignHash": "57c53e5ef9428fd5f3e60d237e0c2382d7e264b6f91ebd55aedeb410517d43e6",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "2b15a747944361370bb1bb93199bd8420780b2f30719cc5cbf18cd636d42875f"
+    },
+    {
+      "uid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "displayId": "FNG-017",
+      "name": "幼崽噗噜兽",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "d35d6d977f3493692f9c34ac99a8672ab4c134dc019666c585b6420b6e322ce0",
+      "previousExecutionHash": "469e4e4b28c054a9552d4d59220f7fefddd035cf8357e26065068ff05c8b8c4e",
+      "executionHash": "469e4e4b28c054a9552d4d59220f7fefddd035cf8357e26065068ff05c8b8c4e"
+    },
+    {
+      "uid": "d0c3c198-03a0-4ed3-b76b-5c4e5b442219",
+      "displayId": "FNG-017-UP",
+      "name": "幼崽噗噜兽",
+      "upgradeOfUid": "dadb0449-68f4-49d4-8fa5-bfb29099e3e0",
+      "reviewedDesignHash": "695ee65bddc9f701380dd57deca4ef38eefd1f9e29da1bab3fd1180f8c16b212",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "b6c0df34874e3e2caced7d444c11cd77bb2b7aa7b8f160cd5a416fa1de8894a8"
+    },
+    {
+      "uid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "displayId": "FNG-018",
+      "name": "星能矿机",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2e0ff047d36405673d6518885834b7425501a3221ad9e139d0f8d3397be9ae4d",
+      "previousExecutionHash": "042597eff0ec5dd6ef76bebb75f78314b821735e9c1a9014ff05563a7c9aad64",
+      "executionHash": "042597eff0ec5dd6ef76bebb75f78314b821735e9c1a9014ff05563a7c9aad64"
+    },
+    {
+      "uid": "5dfe5487-c255-435f-a243-75b937f1892b",
+      "displayId": "FNG-018-UP",
+      "name": "星能矿机",
+      "upgradeOfUid": "cdacfc95-dbd2-41c6-bacb-ba32a3df7992",
+      "reviewedDesignHash": "00962917952b39019cecb2c17abb35de822101b65d880ca4039548db48a91e7c",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "9d4fd667d9abb7b05ea8efe15f1ab585d68ddadecc90b1005e4e5361cdfc6b14"
+    },
+    {
+      "uid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "displayId": "FNG-019",
+      "name": "矿石扫描",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "7859d95783564c744cb8da88646ced7ef3885dad958a62e3c1e1118d682149d0",
+      "previousExecutionHash": "e9180e8729b3b44c67d64ebbd1eba6e51b2f7b7d1f691376d71ec0146d992f2b",
+      "executionHash": "8ff4d7052ba7b11ff245c4c56f82aa8719145cad1fa228059aeb90a6e5d01851"
+    },
+    {
+      "uid": "a3963260-514a-4ea9-a5a9-65fb307d6b2f",
+      "displayId": "FNG-019-UP",
+      "name": "矿石扫描",
+      "upgradeOfUid": "d289c150-36c5-4e96-8f5d-97bc2c81a2ad",
+      "reviewedDesignHash": "1eece7b4db2de4796d0ce5945f3846d37e4e0c8b11afff17b4d9c84fd7c318ea",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "8ab6e838c38e7f3ce66a1c12b3e4787bf15fd5bd1622382e46d664874bc4cee6"
+    },
+    {
+      "uid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "displayId": "FNG-020",
+      "name": "鲁莽的先锋",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "9d1e155ae77e36e1bcfd826dfc69423686cd2c232e4ef337ea32d0d835c46d78",
+      "previousExecutionHash": "c2f00fa1aa1332bc416e601656ebdaf79f56a6d1fc1f16b8529a5be13df81cde",
+      "executionHash": "91f2578ed7c75af49e49922388126a342b716011dfdd3d0cd952881ec8bb8b86"
+    },
+    {
+      "uid": "717e9ec4-7ae9-445f-ac0e-674afc21c58b",
+      "displayId": "FNG-020-UP",
+      "name": "鲁莽的先锋",
+      "upgradeOfUid": "9e62707e-3614-45ea-8480-4d17d452cd2d",
+      "reviewedDesignHash": "315a62f376f0ce44efacda2a8a9b526a5c56c61384cfc36dee4c2b5ec5135185",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "e1f8715b4bfa640d01f8f73e3573cbaf3bc7730ed6a3203d84dbf976e2d59fe9"
+    },
+    {
+      "uid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "displayId": "FNG-021",
+      "name": "货运噗噜兽",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "9d0bfe16180a53afcf4b0ae9810444a4372e00a6715c8c5372daa8145fe39d7c",
+      "previousExecutionHash": "f06841754581689a5b15c84f63e84980b390418912fc080889e5ad21d4c69060",
+      "executionHash": "8c9eba97be0e33534907d7a88ecc44311afd4fec0f3b3c50ed4f44f914207106"
+    },
+    {
+      "uid": "0bd5e5be-fb41-48b4-80a0-f839e50afcad",
+      "displayId": "FNG-021-UP",
+      "name": "货运噗噜兽",
+      "upgradeOfUid": "774620fa-d879-4c02-8c43-bde70f4c2bb3",
+      "reviewedDesignHash": "ef5d6e12741292ce380a29afbc99554983d61b51595d379f929a95b1482fa9e6",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "fec044c075e9f418b86327b2ee2c836e092624194189c806252ecf1edc3e3a21"
+    },
+    {
+      "uid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "displayId": "FNG-022",
+      "name": "疯狂的传送师-贾格",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "7708b92b8aab4abea13fa4518ba47826a152da143a4229e0fa51c93b62c88c8b",
+      "previousExecutionHash": "0c8722991a1ea2b831e88db2bd74921e4d3e140170c2aa071c61341a2656fe1b",
+      "executionHash": "fca3acb9b00bfb93fbe025d96b9bb2ac4313eff39f6c10556afef26c53802e79"
+    },
+    {
+      "uid": "997bad49-2e66-4b2b-8e86-28393df69564",
+      "displayId": "FNG-022-UP",
+      "name": "疯狂的传送师-贾格",
+      "upgradeOfUid": "1bcd6c06-a63a-47ba-a9a5-62ef42c480e9",
+      "reviewedDesignHash": "e3f6853755dc3cc4dfdd9095a371403361bed5ea2481b28b3573efc49ed7c93d",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "d544bfb2283dd61991fa05504730d7c73d2efa0719d69453d8b48a780e6e0a56"
+    },
+    {
+      "uid": "353fe62e-a917-4f71-933c-c2de12eec7e1",
+      "displayId": "FNG-023",
+      "name": "中微子爆弹",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "15572ca71c308f955111e5e0f38d44e98dba3dec93ffb0e2b5fbceef9cfa2174",
+      "previousExecutionHash": "a04bc3ea75a62f546721c229f67e3ab3a89aa3bd376825936309bb163c60cf9a",
+      "executionHash": "10f55b0669837fd9f73beb09d6fe7c53536b574d7be78ca27f8d8a0ced629d3c"
+    },
+    {
+      "uid": "b29cafc7-cc54-4cf5-a769-5ec5d441aa1e",
+      "displayId": "FNG-023-UP",
+      "name": "中微子爆弹",
+      "upgradeOfUid": "353fe62e-a917-4f71-933c-c2de12eec7e1",
+      "reviewedDesignHash": "2f3f1738efc7a75bcb4ccdbd62bdb9406ecc153dc8855c2557adea466d749e2d",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "4367502fa1aac61a1d6d7709655b17ccf6b22b7796a153cb661f3c4a7466ad20"
+    },
+    {
+      "uid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "displayId": "FNG-024",
+      "name": "轨道晶灵",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "3c9df74726177c9c451cdc4f614b1de26f201a804ed27b6efad15ce8130d2c73",
+      "previousExecutionHash": "8ab5ba6516085d21afcf5fffab19fd1f25a45ff33c021aa5dc8ad2e8237bc2b4",
+      "executionHash": "2ea513a4414aca49c672507753a0f501a68c2777d7471aff2b8e9c295b2262b4"
+    },
+    {
+      "uid": "d0037578-8ab8-4a10-bbc8-4ecd27e6389d",
+      "displayId": "FNG-024-UP",
+      "name": "轨道晶灵",
+      "upgradeOfUid": "c96fb3f1-9d06-4bac-88f7-2bf4a66a2f65",
+      "reviewedDesignHash": "a1a51387588552a5849e46ba24d592a42420932481460ecb454eec9e802c2025",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "07aebdbb09bbfa10c777cbc919de8738a0601e6eb8944b421bd411b1ca563356"
+    },
+    {
+      "uid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "displayId": "FNG-025",
+      "name": "日炎枪手",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "cc8d8ccff987cdcb5ec0a57ee570d50c9adf0d816148e30ec31b86d3a591162f",
+      "previousExecutionHash": "e49ca97ecaf59eb0a1734e03a6bf454af5bb634e6b946b2d3fd5f41d14a1c3f4",
+      "executionHash": "94217355789562a932e17b1e0935caf9949b2f7a884eb3c72da131eeebf40cbb"
+    },
+    {
+      "uid": "49526b0a-3c1a-4506-88f2-e929808e79c6",
+      "displayId": "FNG-025-UP",
+      "name": "日炎枪手",
+      "upgradeOfUid": "bf071411-bdf6-41bb-847f-0e836ffffa17",
+      "reviewedDesignHash": "b932e013c8e80211eec099067662efcf5b11b87540631dc9662a854ca7801450",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "cd27d436876a938a08402d57fb09f8768895359d33eeccb99d1fe638fca73835"
+    },
+    {
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "displayId": "FNG-026",
+      "name": "谕晶",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "0d23043a5ef1ed6837fb49731af87739bb006105ac7ba1a3a2b71303b92f19c2",
+      "previousExecutionHash": "bae35a8527433b3fe08b3173dda588ba6ae1fc4d1ec7376e1243dc68a2862112",
+      "executionHash": "da91eb92e482e30e9fa318853a565ed48e9094feab4bcebced7b2b4b678ac31f"
+    },
+    {
+      "uid": "eaa0b099-8c83-41bd-8f35-9e7d572bc9d8",
+      "displayId": "FNG-026-UP",
+      "name": "谕晶",
+      "upgradeOfUid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "reviewedDesignHash": "5cf6dd732aaa0306dd53dd0b108611d48d67b1d00fe0b1e21130fc16f7d25f69",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "fd3fb45be87d76f591196b8c3c36a35d27eea4287a88dd0a30531e0346c10f17"
+    },
+    {
+      "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "displayId": "FNG-027",
+      "name": "星航恶兆-巨鳐",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "4d5076f53299d18bea4cb025b4de787725d058f3c32e7bd82feae591d476d37d",
+      "previousExecutionHash": "2e2ce31aea6b44818d7827881cbd869df426a1118430c957ff60f3bbbd582445",
+      "executionHash": "cf883114476b868415acb71bccdba3b5005213188d59bb42cea6b327f854096f"
+    },
+    {
+      "uid": "4b40f3a6-24d7-4386-93fa-10f488e9df8c",
+      "displayId": "FNG-027-UP",
+      "name": "星航恶兆-巨鳐",
+      "upgradeOfUid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
+      "reviewedDesignHash": "ddfeb094354eaed677cee50413a99df4dbb8c08abe1312bd96333ded9e97bbdb",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "0a0996b0147c8929bcdcc024581dc13c8750a4b1dd558327e27ac4d191ede541"
+    },
+    {
+      "uid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "displayId": "FNG-028",
+      "name": "「金扳手」工程师",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "0285193d993ee34c777617cfbf9dd88bcf6d7aa1f3e78a8063bfbf757a948fcc",
+      "previousExecutionHash": "7f6925733cf6f0ce8d8e3dcea16fab584e380010e7ede3e7a2c783528e57c247",
+      "executionHash": "d0730f4f9e96f553cb31cf601d73b5e917be5113a2af6ed6d1a9f7b6caaa2190"
+    },
+    {
+      "uid": "225d6de7-b416-479c-9268-e36699168649",
+      "displayId": "FNG-028-UP",
+      "name": "「金扳手」工程师",
+      "upgradeOfUid": "fe9569d6-b84c-4fe5-bcd4-03054d21ded5",
+      "reviewedDesignHash": "054a84ed39646ab38939f0c7960fa54d7e676fc883f487f657ea513f6f7260b4",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "88c0fc7bfb9c4320be1ab8b28806516e617184a3cbe5d4f45dbfceed488bc461"
+    },
+    {
+      "uid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "displayId": "FNG-029",
+      "name": "泰坦X-003综合型",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "a4c2ff3aa05cb8e72978c1732e6037b805b2ff7a525229ddea1ea3d4ec51d337",
+      "previousExecutionHash": "0e86e0720b0fb7b2fc3aabd4a2bdeb018ff4812ac370acfe562c10a96e350ff7",
+      "executionHash": "7f30d452dc66693a49b5fda3dd2217dfa35c8b340ed2931d1d1038aa59d699eb"
+    },
+    {
+      "uid": "a93abcee-b375-41c4-bf98-6332518d3796",
+      "displayId": "FNG-029-UP",
+      "name": "泰坦X-003综合型",
+      "upgradeOfUid": "1be158d1-50ba-4f53-a52f-08696554c091",
+      "reviewedDesignHash": "87554e6a59b9465c1e2612216e77e96376e479466386cdae3003acef06605373",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "503b51af0b972ddb7eefffc972f39694b822f69ece94b2090829d8bed2d2bd51"
+    },
+    {
+      "uid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "displayId": "FNG-030",
+      "name": "泰坦X-003强袭型",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2350539397a4c0fca39ea1194012d5559a02855695a2fba12b0c74aa0ec7943f",
+      "previousExecutionHash": "bf59ef954ddb1260230b5c909e835047dd148050ebfe684347ab5730fc62b8ef",
+      "executionHash": "f9a319124893a94abb8b751780fdb968b073cb1f286d24e751e7426761b17d8b"
+    },
+    {
+      "uid": "ae23ad98-6005-4ae1-9174-064ad8c0db46",
+      "displayId": "FNG-030-UP",
+      "name": "泰坦X-003强袭型",
+      "upgradeOfUid": "2946ca82-3e15-40d8-93f8-55acfad43645",
+      "reviewedDesignHash": "62772d5dbd516463d4b4457ebbd74b74f9806665a4e2708781f69c56fc0420aa",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "2cb1f92f9eef2cc250e3f31567193a6be511cecbd290b21f97272551497a4573"
+    },
+    {
+      "uid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "displayId": "FNG-031",
+      "name": "造物之森疗愈师",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "6b0414f694276a7fa2581055a3b57a11a0c8e4b3e8ac3555ff7d989c99daaffe",
+      "previousExecutionHash": "c71ed6f3e17807f6dd1f9ecf7eca02c0f947f13d565cccce5ca6d2daaa9ff2f7",
+      "executionHash": "fd3a48576977d422e3028a3c7943cf1efa4536e840a69bd74d76c4ea4d3dd82f"
+    },
+    {
+      "uid": "2fe2a799-7add-4d00-bc41-b3c61792e7c4",
+      "displayId": "FNG-031-UP",
+      "name": "造物之森疗愈师",
+      "upgradeOfUid": "15ce0bd0-83ad-413b-9cc1-829390efaef4",
+      "reviewedDesignHash": "13d4171b0547c5ef93ee54da9ac9d5b44edeeb058b60ee1fd318a05aa4db23b7",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "b2c9cd24ac93e0e65e6203851a926a0d44d5d628964cb5d9d0be6631f2a3f7e1"
+    },
+    {
+      "uid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "displayId": "FNG-032",
+      "name": "震荡晶核",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "19df9f32e98dcaa833132a6d2c3fa680e3a9784a179ffe8c779c18d69301ea23",
+      "previousExecutionHash": "18b19d8b808840f32085b32f61438afeb3c7d6b6866a72b43ebb9e29f87e7aec",
+      "executionHash": "cd52451226c9e5b00bc4c7e3c84c92d4588af97cd504e0dfe126d70edb8d6bbf"
+    },
+    {
+      "uid": "16cfac2a-e12e-4909-b8e6-e1668e279964",
+      "displayId": "FNG-032-UP",
+      "name": "震荡晶核",
+      "upgradeOfUid": "619301f9-72b0-4f86-a36c-e55046d138f5",
+      "reviewedDesignHash": "bddb67101f09fae323d64fb38c6840687cf727b5063d59e0cbc24669a241191a",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "cdd316c307eb7c35391aaac658406068d28eb3898beec7693656291f46ddfb7b"
+    },
+    {
+      "uid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "displayId": "FNG-033",
+      "name": "黑市护甲贩",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "693426c28199ecbe0e1baaa89e4a6dbabbd521e7a31668219a8c5ce0b47dd50a",
+      "previousExecutionHash": "a92513962826c0d4b13df1a236c35cc945b37741994c4948b5a558e22330ea2f",
+      "executionHash": "81322b599df405ca7277e57a712ed8dcb0e4845c09d02927ff4e217fdfaf090a"
+    },
+    {
+      "uid": "31a39860-2008-4581-ada7-1c3de8c8d583",
+      "displayId": "FNG-033-UP",
+      "name": "黑市护甲贩",
+      "upgradeOfUid": "9818f4db-8848-4fc7-8c6e-79fadd38751f",
+      "reviewedDesignHash": "a2430ea6fe0f5e56d75bcd920b1720323a9f5ce85978f10ead36924ce32c2190",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "b8402e329f3ccfd7d9835a57fac129cec685037d06db72d168963e42d9c18642"
+    },
+    {
+      "uid": "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "displayId": "FNG-034",
+      "name": "轨道轰炸",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "9f03a98acf05813be4fa345b3611d9dc8795b2a8b7c8869c7303da33a8ab2d7f",
+      "previousExecutionHash": "5ecf373ac9fdb5d101461e64f905993691f4906eada33ed1fd089275a5cdf3c4",
+      "executionHash": "5ecf373ac9fdb5d101461e64f905993691f4906eada33ed1fd089275a5cdf3c4"
+    },
+    {
+      "uid": "bb527e34-62c6-4fa5-abaf-83be062a01c1",
+      "displayId": "FNG-034-UP",
+      "name": "轨道轰炸",
+      "upgradeOfUid": "5401f9a3-9ab5-4882-b89b-e72a52b23651",
+      "reviewedDesignHash": "6245d1f2e5dc4f8372187b9a0b6bf78c645e88ecd7ea4b8440169d5cb8cb9610",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "2f2f08106c9fb86324894734e91a36c3ed629222b702f1eb83e77c2d3d450568"
+    },
+    {
+      "uid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "displayId": "FNG-035",
+      "name": "精英豹人战士",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "1b799f1033b9c549deb9720f7b16039e6db33c54c9a9961d3e6ecbed7fa5719d",
+      "previousExecutionHash": "24db2f2bfc31e758aafb0934e41ac2b052eb59d2c90b0caea04bbc08f93ef1a5",
+      "executionHash": "100e99afde814713d0706676d8c00448d9b6dc1967323a6971e671156fc92dbe"
+    },
+    {
+      "uid": "f360b05a-5be4-4586-8004-34793dc51b67",
+      "displayId": "FNG-035-UP",
+      "name": "精英豹人战士",
+      "upgradeOfUid": "6b3fbb6a-30bf-4385-9462-2677f99d6b53",
+      "reviewedDesignHash": "5f71f51cc745bc5228af95b6573faf21a07ea72eb24460082ce57f8d0a19d0b7",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6829fae1e28e4763bcc53215c753382b2caa42177981eecb43ea02d65ccd1362"
+    },
+    {
+      "uid": "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "displayId": "FNG-036",
+      "name": "「百事通」蒂芙尼",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "6134cf203539aba018de94d14854e1550da8a160b80a70dc18e72afa6fb11b67",
+      "previousExecutionHash": "669fde0f3aa5cebc197a17572d087d9deb3a61a7610d4bfcf22b8483dbf86bb1",
+      "executionHash": "1fe4aa968981135f255d27ef99c65040773204a0969ebe1cdc7e0640f36be48d"
+    },
+    {
+      "uid": "b822de11-e01a-42ff-8dc0-03744202c05b",
+      "displayId": "FNG-036-UP",
+      "name": "「百事通」蒂芙尼",
+      "upgradeOfUid": "fec9be8d-5655-413d-aaf2-e1a3027034c7",
+      "reviewedDesignHash": "6ef0a9d6ba9f81dff669f9498cb0b3afce5d4c217ad5c3a2ba4a65a187997202",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6ed49f3a5216c851eea9b0973ac2e88993990da18d29ccb12893cd0837c04029"
+    },
+    {
+      "uid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "displayId": "FNG-037",
+      "name": "迷你卫星",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "5419f07ce27f004e9eea19788d87194c85708906e3c3ff3fd0aa6a249f364ed7",
+      "previousExecutionHash": "9f0c525ddbc28d32a09314af5dead9cbf2e9585d30ab9ef01e949ca21d5b4e71",
+      "executionHash": "9f0c525ddbc28d32a09314af5dead9cbf2e9585d30ab9ef01e949ca21d5b4e71"
+    },
+    {
+      "uid": "d61bdf24-ee18-455a-8b75-f06f737e0d63",
+      "displayId": "FNG-037-UP",
+      "name": "迷你卫星",
+      "upgradeOfUid": "080140fa-2ebe-45ad-b64f-05f10904ac64",
+      "reviewedDesignHash": "c8c1d34b3ead59721235550a457ffaa532ca8758ed32bec79b403cbf054ee835",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "3d1eaffa4015d6c6d0b730bfd236187902a66d988a89ef5a4cec49c2d3cf64f1"
+    },
+    {
+      "uid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "displayId": "FNG-038",
+      "name": "领域防护罩",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "3b38458086afea88f28fcf4f8c2ee698f7da0a58e98cd2f1399bb9479f96aaff",
+      "previousExecutionHash": "93601a08c4b57a3aeadebd71fc73c8808d47f93d9f2e36cd8fb1a4f1938ced63",
+      "executionHash": "93601a08c4b57a3aeadebd71fc73c8808d47f93d9f2e36cd8fb1a4f1938ced63"
+    },
+    {
+      "uid": "a292ef5b-2dad-4c95-af9a-7819a31491e9",
+      "displayId": "FNG-038-UP",
+      "name": "领域防护罩",
+      "upgradeOfUid": "9e4b95f3-d09c-4577-a05d-b8e5612d2d5e",
+      "reviewedDesignHash": "6863316ea78cb6daf5fced6669d4fa457f225b5c0189df06f5bb70ad0dc2b4e8",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ff6951533a9426be92ea7f2671471f53af70037d087a343cf54a2de2c261f6b0"
+    },
+    {
+      "uid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "displayId": "FNG-039",
+      "name": "护甲军需官",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "24a5e6ec174b7f390a9d05c5038984182ed6fce467edcbf8b5c7f0ce2e72c56f",
+      "previousExecutionHash": "ded659822b5f0df7ebf38b5a67607c47194b1b19caa6629f4f8cdebb53f9f9be",
+      "executionHash": "e2ff4a463051c2e42da673475a7129e4e8def6be3bc6454555a63d445e542d39"
+    },
+    {
+      "uid": "3c93df63-a19c-4e99-9794-8a01f62bba32",
+      "displayId": "FNG-039-UP",
+      "name": "护甲军需官",
+      "upgradeOfUid": "455cde9d-fbe7-4a12-94a9-df76ed1b2aca",
+      "reviewedDesignHash": "d89baa75665ed35d12708cd3d2c599e709a84edfea05cfd3c506f624a16f5a2c",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "3209ee76e34cba3fc562997a55db9eace170522abfb06eeb5912ee669aeab88b"
+    },
+    {
+      "uid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "displayId": "FNG-040",
+      "name": "战线曙光",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "7f3387ce997259eba0a4e1fa0eee13c42a9a33bd19e38b9beffe8ebca87a18f3",
+      "previousExecutionHash": "84a4dc1eaa0d8fea66990c38a5b15b77b1f8c1e3e4c9c7b0ed1fc25f58c54767",
+      "executionHash": "00fd177f8e0618b0b0ed9209c35ffabb84909615322b11e069a3a7ecf61478cc"
+    },
+    {
+      "uid": "0793b8f6-6215-4d72-a1c1-d43d0e4aa0d6",
+      "displayId": "FNG-040-UP",
+      "name": "战线曙光",
+      "upgradeOfUid": "df4f769d-486c-4233-a0ca-f1827c7521c4",
+      "reviewedDesignHash": "132cc97d05bd253b996a91342488db4fb48f1c4d594daaa80c9417e0d2a4fafb",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6cd8c0c1fd0735302b2b66dc09a2505854ef7da82c2441f1ce6403898359a3f7"
+    },
+    {
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-041",
+      "name": "撕裂时潮的潜兽",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "f5b0465fed6764ef01168bd39ad05a9eacc3bceb0b1cc6a5ec8a4849ec778f7b",
+      "previousExecutionHash": "49f6dc9bd61463382b534b8aa30c984b721a76a833a47a88efd56f55f574c54a",
+      "executionHash": "0ebada421d686e8d51258b096d90cbb794c861b05547a37c480279c092c6e3b0"
+    },
+    {
+      "uid": "150b28b4-62e2-4e84-9008-ffbd5dce8318",
+      "displayId": "FNG-041-UP",
+      "name": "撕裂时潮的潜兽",
+      "upgradeOfUid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "reviewedDesignHash": "de0c7e6d7f8181ca2f0ed694290c3a54f35642698f1fda131bd9f2da7206569a",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "500e0837a1e0b35c634a2508cb309a4ddfafff8685bb1a4f3fe68b92f60d4621"
+    },
+    {
+      "uid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "displayId": "FNG-042",
+      "name": "光能盾特工",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "aa7475b9606b0911bedde295dcb94e730b59babc0b28172fce830e494ddcbec5",
+      "previousExecutionHash": "a0dc732fdfcc9f0c9733447c2eb7cdc71f5527c650ddd797d26d7fab55a146eb",
+      "executionHash": "495fa5989724622dacbea5f6632493f894e5f00686fbcae1d06fa96716db190e"
+    },
+    {
+      "uid": "c8263afd-8053-44eb-b6c1-88372e632933",
+      "displayId": "FNG-042-UP",
+      "name": "光能盾特工",
+      "upgradeOfUid": "c6b00125-47ad-438e-b1b5-721fce7ccf49",
+      "reviewedDesignHash": "003c653b7dac6f115e34441d657664845fed71d4c2ba835140cea84a8463714f",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "792ea8b47c54d379dc501134b722b66be2062ea55e81a8968464673e556b6126"
+    },
+    {
+      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "displayId": "FNG-043",
+      "name": "家园卫士",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "e3b97c338655aad74e6fa13e5dfef207ae660fff3817ea981bfddf1e31488a33",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6fde2e6127043ab01c3fdea6c11524a503cfbf498f6bc923aa766f4fdcfc9562"
+    },
+    {
+      "uid": "b02f29d1-05c3-4102-a7a7-db83fdd21b8a",
+      "displayId": "FNG-043-UP",
+      "name": "家园卫士",
+      "upgradeOfUid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "reviewedDesignHash": "905d5733daf05e23cbf20f4dea4af182381254e1ddac56d7ac642136e76cdc2e",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6457144082bf40f512979080b187af319730c32cfc25cc514fcc438e0aa91f2a"
+    },
+    {
+      "uid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "displayId": "FNG-UN-001",
+      "name": "遗失的智慧",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "23dbc603b64492951966336260f2a162fa9c76b7bffd1bd89ae8ff32a856d230",
+      "previousExecutionHash": "17b93ffb9c7a3ed0d9bd6d058165aca442451fb1f9f144abeb8ba5d7ca94bb54",
+      "executionHash": "b181dab24371bd4c1396b220a12d38cac96458056ece9319f627dc720835b0c1"
+    },
+    {
+      "uid": "8ead8093-b6b8-410e-8205-eb63d84e8510",
+      "displayId": "FNG-EV-001",
+      "name": "星之予I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "5a0862919b0c1d9c8851da7dea2e74baeaa32f83786631306699c66a873b5d96",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "84548d2c80585cc629ccb5e4025d58dd0c377ae8c97deb22edf816a43f1f9701"
+    },
+    {
+      "uid": "2a9ae6c4-8a4a-4862-9cca-0f5113b27d18",
+      "displayId": "FNG-UN-001-UP",
+      "name": "遗失的智慧",
+      "upgradeOfUid": "094e7c7a-25de-48b2-8df1-b2c47f5b90ea",
+      "reviewedDesignHash": "37078da818f4cc95bd54302b6b0f888fbf2f32b7813980b666094c3feffc82ee",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ac0a6d8e1a435fafffac2479b0498911e6f14b8c38daf6db3feb252db49f3f9a"
+    },
+    {
+      "uid": "e18883e3-aef2-40f7-8536-a16f327aab2c",
+      "displayId": "FNG-EV-002",
+      "name": "星之予II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "c3640bf43234ce8a06e669e80654fb49a3565f2b922720659340d25f16d352c5",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5ba419796813baea6c75e1a19f25ab7b96270ac0024f9b7bdbcb68de3089313b"
+    },
+    {
+      "uid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "displayId": "FNG-UN-002",
+      "name": "虚空神的赦免",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "6181ceff34a0665e71c084094b75ca16fc965b09369cfe763847146739c63376",
+      "previousExecutionHash": "08c41da1e925866e7e4c43d1bb280b00dfa415400edcdc00b6de479e55df0537",
+      "executionHash": "08c41da1e925866e7e4c43d1bb280b00dfa415400edcdc00b6de479e55df0537"
+    },
+    {
+      "uid": "032a44b1-bc3c-474a-b326-c6e4681e6f55",
+      "displayId": "FNG-UN-002-UP",
+      "name": "虚空神的赦免",
+      "upgradeOfUid": "85fa412a-ca02-420f-8d4a-1f5f6b4cc56c",
+      "reviewedDesignHash": "1ee823fec746e39150c18a856d082aebc076410a23c86f7f820bcd33c0f447b3",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "95c303ee1c97943a4fb875cdc2ab66fdcff13a3f626892aadd5521ab8345f3b5"
+    },
+    {
+      "uid": "a463123c-664c-427e-b079-c60d79dd60c9",
+      "displayId": "FNG-UN-003",
+      "name": "美味的野果",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "0f3cb54032b05f1938a0346bac198aac5da97417062b8a4b0e7e8e7d3e9f5eb4",
+      "previousExecutionHash": "06b2381412f865d4673eec808791d70b5693382fc3c0624d526fe372c6236064",
+      "executionHash": "8f1ffdef2b14ee097203205ed5dd4cdc03c7cca31a1e05d687123603a5f9516c"
+    },
+    {
+      "uid": "18a4ed18-36fe-42cb-8b04-3f605b45cd3d",
+      "displayId": "FNG-EV-003",
+      "name": "星之予III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2ac2c89d4398beb46a8a82428f3232ff3bb8f8668b25742549de3aba22e61280",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ab6f6a8ed6c58dda558358ce8bf23d899bea9c6103056baa44cc48b67e93bf67"
+    },
+    {
+      "uid": "6dcfd207-d3f1-443e-a460-6b35e00fc161",
+      "displayId": "FNG-UN-003-UP",
+      "name": "美味的野果",
+      "upgradeOfUid": "a463123c-664c-427e-b079-c60d79dd60c9",
+      "reviewedDesignHash": "7b2c99a8eba349f48aae67cb80a2cb8641caf758c65feecc06539f28f3ed8237",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "bf7ee51b3b316e8bc93b8cceafe11841430d928cc1f7c748ee8d31f68338192f"
+    },
+    {
+      "uid": "3e9dea48-ea0a-43ad-b8fd-a40b866fdf57",
+      "displayId": "FNG-EV-004",
+      "name": "星之予IV",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "1d091608ae1e1145819ae4fd6e28ef720bb65ed63b384c02a7f1a44303949238",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "e58374ad8fdfac5263a5d15d3d0d8ec9c7488dde2e341debb0a21b6e36370f64"
+    },
+    {
+      "uid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+      "displayId": "FNG-UN-004",
+      "name": "癫癫果实",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "e8ca8acd5fda0adc030bdda53fbd505a0fdf9eff184ae7dc7aa062bdc5777719",
+      "previousExecutionHash": "66c6e698a6fecd08576056223eecd6f3ea95bdfe8a24395eaf43277fce1d2ce0",
+      "executionHash": "336d87460caa34c6f87110f09f624089720dd25db1ebafff955b0961a0353b53"
+    },
+    {
+      "uid": "739172b2-66e4-46ef-af13-50283e67dfea",
+      "displayId": "FNG-UN-004-UP",
+      "name": "癫癫果实",
+      "upgradeOfUid": "e5082c65-fe7d-41db-b934-5ba6a0990a6b",
+      "reviewedDesignHash": "2616b7f07ccf437d8d0f7edf4461ef78210fcfade3b06a834bc052c2b9e7f34e",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "8bd8173b10f1d78e13d8cf9409c6e601b550696680f87136c5f6cbd541b11341"
+    },
+    {
+      "uid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+      "displayId": "FNG-UN-005",
+      "name": "护甲碎片",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "8c1e7d24fb13868dbb0f432be6d8037dea5a3a33e1e20b017198cf08bad7a2a6",
+      "previousExecutionHash": "e423b75301affaaea0146abae1c19246a7987e3da5dc6c9d3a089657d151068d",
+      "executionHash": "e423b75301affaaea0146abae1c19246a7987e3da5dc6c9d3a089657d151068d"
+    },
+    {
+      "uid": "ceb7e757-9a7a-4ca2-b287-d9a908d24fb6",
+      "displayId": "FNG-EV-005",
+      "name": "黑色星期五 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "04dcb705929e9aba76c50e188d81537d81a2c56532f04fb6aa1473b40837db5a",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "045494d527dafb20eca8e29a1aa47669e7f1b66a0ee5d06132b7dc1f6750ce5d"
+    },
+    {
+      "uid": "dc2a605a-e88c-46e5-b1c9-622f574bc533",
+      "displayId": "FNG-UN-005-UP",
+      "name": "护甲碎片",
+      "upgradeOfUid": "8d3f7d7a-acc7-43b5-9407-188f2d33bce5",
+      "reviewedDesignHash": "1ae5d8fd47add72a5156d351d917ca198b40fd74473c993e9eb677a13a5219b4",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5f620234f3e083b02d0c066c8aaeef8ced41c9a3e7cc9c8099b1f60ba0393e6b"
+    },
+    {
+      "uid": "f43c1179-c606-4876-892f-991f24c881db",
+      "displayId": "FNG-EV-006",
+      "name": "黑色星期五 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "1ec70fde38c9bc34a9c897bad14ecdc424c698be67f03f24cf910fc27a794bb3",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "1bc5cc6cc835a002fd08e1a362a98dab9ede8a2e085873a1df534225383dd181"
+    },
+    {
+      "uid": "1d356afd-21ee-4bec-9d40-fe289ee89af2",
+      "displayId": "FNG-UN-006",
+      "name": "亚空间之门",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "71132f490d2632f9d24c8cd75d3bb5e2a03144842e34a8a096f6af07698233a6",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "05f5ea056e60fd741956c2b6741e8af28cb138b2c0a13ffed8e21d8d86af30d4"
+    },
+    {
+      "uid": "5147bedf-c5a1-455a-ba17-f0e00fe9c394",
+      "displayId": "FNG-UN-006-UP",
+      "name": "亚空间之门",
+      "upgradeOfUid": "1d356afd-21ee-4bec-9d40-fe289ee89af2",
+      "reviewedDesignHash": "8009edaa54929cd92d5c58641fd034a6fb4727dbeeaa1a2d505c22138b8b51db",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "0b6e36670a56ce8e5394729e21cfca5c9d834461f72a47b5276893646e96667a"
+    },
+    {
+      "uid": "f9b996dd-a425-44cd-b9d2-e9507f46fb20",
+      "displayId": "FNG-EV-007",
+      "name": "黑色星期五 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "52d1f3e7be554e492ea5632713da2fe29cc8a84f209a8a941cf15d850aba4f8b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "f5f12ae2598ee31fcd93b6a091cefd69a07cf305c338125d185c810b0defff27"
+    },
+    {
+      "uid": "d9c97499-7382-49de-b277-80633c541fbb",
+      "displayId": "FNG-EV-008",
+      "name": "突破自我",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "65dc32d65088c947005be22d9b8f7d5352b93cddd19288ec84fbda1a42a6942d",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "0296b31da394e5fb6840267926d0268e533b4209e59bb48117d8980f93c7d1f0"
+    },
+    {
+      "uid": "a886c5bc-e4f2-4f37-9f8e-6ab7d3163d36",
+      "displayId": "FNG-EV-009",
+      "name": "强身健体 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2119d824b6e71c1d3167830648e4221def328dd9176af1195f7679e41ddc375b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "8142c68c7de0ed66000cd7e847604628a970dfc603a1abb665d79d2619256c45"
+    },
+    {
+      "uid": "d5611e4b-7f60-40cb-babe-0401a06655fa",
+      "displayId": "FNG-EV-010",
+      "name": "强身健体 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "9c5b9663cd38a9d2b378da7aa96afe3c9eed579fdaef7b3c4e0a0bb7e0b5a6d2",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "a376347ee96f4c8572f27743fc81b3699357c5e30f3d9e5957674552ff4e5af2"
+    },
+    {
+      "uid": "e62eecf3-40ec-44c5-b4eb-11b002a4d872",
+      "displayId": "FNG-EV-011",
+      "name": "强身健体 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "b131c57670f97f9eef44c2597321e9c5ee3bdb03aa42536c358d6e69c9513f8a",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "7ab7ba403d98c4d2e5b1948cbb5d7457c318620bff08af0ce4f990cf07050f4b"
+    },
+    {
+      "uid": "ad3f2441-3a3d-4427-b5cb-0964eb64d21b",
+      "displayId": "FNG-EV-012",
+      "name": "超凡蜕变",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "e67e818068101388a4f383bbea772d9d5212bbc5637bef39d2db6f67ae1da54c",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "40025dbc7cdaab53fc6e85fab6517ed0ee46e1ef2bc4a7cc5d007d66f6b5d320"
+    },
+    {
+      "uid": "62e1b531-f9f8-44b2-87b0-56c705cf2f74",
+      "displayId": "FNG-EV-013",
+      "name": "火箭推进 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "19294034e153facfe6278e2d069c078dbadc8491c97f9ca4de4639f6f131569b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "0b65dc3bd9a2cce4b5667e0bc9f145eb9c0db5efe4263bcd9437a6171408ff8a"
+    },
+    {
+      "uid": "5aa0fa68-0a7f-4baf-881e-47f4584ec034",
+      "displayId": "FNG-EV-014",
+      "name": "火箭推进 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "f8202e77835a961412850fc0c1a1b83d6e9e8ff594a39dbf74c28a3cb1df0215",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5ccf603a4e9bf70b6d2824ecb751e4df607ada02ba053435567bce55325abb41"
+    },
+    {
+      "uid": "8e7ccd51-3b89-43a6-80fa-6b279a43b237",
+      "displayId": "FNG-EV-015",
+      "name": "火箭推进 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "4affdd74e335b30e331bdd3908cbb153a0c37f7fed5268a1abbfe7cf7f642549",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5ca1bb105df6a481d09a6bd696f935002d99b785e1f37de41d35d288f4dafa66"
+    },
+    {
+      "uid": "e4ebcb4d-46f4-4f71-938e-991d683946d7",
+      "displayId": "FNG-EV-016",
+      "name": "银河商道 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "af5aba1722c8dc121c53a8ab2e56682fcf01cd11bc591844ef531255800ab655",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "300dbe6f9ac39171ecb8af4c4c5cf95f14f2fcc46479b6999ca10e02ac520bbe"
+    },
+    {
+      "uid": "f5c462d3-72ef-4681-9a72-153606f7992f",
+      "displayId": "FNG-EV-017",
+      "name": "银河商道 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2027faa3418d1af527e40373e7202d4db8f19f0d9b28311a5149c3df2223560f",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "2fc5edb374e9715d6d64a7de91124a8cb22002421a5b836c32b984c1b47e6c76"
+    },
+    {
+      "uid": "91522169-f0ca-44ab-913a-32ab928fcf1b",
+      "displayId": "FNG-EV-018",
+      "name": "银河商道 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "bff5bcb72cde140fd465f5fb224684fe2cb6f533ec4e0f4f075e2a2caab3f361",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "bfec45c5ce7de54ccad45a232bf89f606f11319f25175bbfd95b0f3c4eceaee9"
+    },
+    {
+      "uid": "2dc5bf17-996e-4b08-b2ce-ee1b293f4f62",
+      "displayId": "FNG-EV-019",
+      "name": "零售商之夜",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "ebded8ae305b4bf0c74fc9fe9d75497ed2c574950d292f22bb89268a36d196bb",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "c99a000290caf15c9c9f65da6f109c2e6f25df5b29893cc2fca886647e7cb1d6"
+    },
+    {
+      "uid": "d51e55e0-9165-4007-b4ff-ba0f2ef9c219",
+      "displayId": "FNG-EV-020",
+      "name": "奢侈品之夜",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "0d0f146a34bb393b5cbedfa447e53aaba569fd0bbb20524fc52c573121ddaf1c",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "a2038f31d496ed310c5cf76223921b64611022d2603a63bae6c1a603392dcb26"
+    },
+    {
+      "uid": "f8b2caa5-486f-43fb-8edb-eb26793a1244",
+      "displayId": "FNG-EV-021",
+      "name": "至尊黑金卡",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "5f5cb0248a8a1010bbdbeec2b6346cb423bdc76d6b5cec073527c15ae97ed0ca",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "8ae7bed9c59994cae1e2ea192340a37fc36d886a8ce023bd88a2c6173b9c58ad"
+    },
+    {
+      "uid": "f68f43ba-287a-4062-8bab-2aac6bc2a777",
+      "displayId": "FNG-EV-022",
+      "name": "星海点灯 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "888922ea21879dd0aae2aead739e342e377344ec447422b841d04afb63649250",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "e5c81739020eee459c2d0e7ed46ad79b16a8451d13c2c4fc1704dc9cd5716cf6"
+    },
+    {
+      "uid": "ae3aea5c-b5c5-4fcf-8af6-3aafbab0eea6",
+      "displayId": "FNG-EV-023",
+      "name": "星海点灯 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "004b5b2bba2ab69cbe9985c1b7af4a14b9b455bc55f18e188f02ce13af7452c8",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "7072a2df56d19f8e6ba151daf0be2e0c984d766802e94085a12684e928e4bb4f"
+    },
+    {
+      "uid": "c9c59ee2-4230-40c6-9a59-0f23ed62a698",
+      "displayId": "FNG-EV-024",
+      "name": "星海点灯 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "43e01b5d947a188c4ce21e056bbe8cef2310985a9508d17d71abb72d4d104fb8",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "56c944fca66a5153e15b9d7b6fee96bdccb69ea9640490d874f659e3b8bea6a8"
+    },
+    {
+      "uid": "ad8238ae-fe70-4526-a978-f0907f933d34",
+      "displayId": "FNG-EV-025",
+      "name": "长明-星海点灯",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "5d7f0ed0c12a61bc993008e0eb4c2835c609f8752ca240609f30e0e4975e7cec",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "ca10a7e255ac8ad3c336219a2583c6da247034c8c946b2e76b96351181f6588d"
+    },
+    {
+      "uid": "193040b4-77e0-410b-b19e-4d06f280784a",
+      "displayId": "FNG-EV-026",
+      "name": "星空奇遇",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "fdbfb26c0f0427f5e31f1c4d2737ed0da551202475d9142ad51a8a9b6bad639b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "69faab6b43674068c36263a7b289223a16f2ad650b4ae1cef2dae2e8b8da65bf"
+    },
+    {
+      "uid": "68896fec-dc48-4207-9cd2-a1884bfabb6b",
+      "displayId": "FNG-EV-027",
+      "name": "战略大师 I",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "c9df35b0a49813bbc1870b4d10994e48e244ef98256ac571b65293f3395af3b2",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "70e29ad5cb931a3e20f7c1914346a86a77ea21a9cf12b693f618971d2ef3c258"
+    },
+    {
+      "uid": "8fe52927-b733-43ee-b2e2-2d933b0a41d7",
+      "displayId": "FNG-EV-028",
+      "name": "战略大师 II",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "cb73e4610fc01080d267e202a7e966834df11b572830e479fe6cc6ff20e2ad44",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "1cf5a046bdd3abaf3062b43e0d509573da4a0c5c38e004740dd98b62e25cde7b"
+    },
+    {
+      "uid": "dfb6156a-61d5-4929-83ab-951c0acb1288",
+      "displayId": "FNG-EV-029",
+      "name": "战略大师 III",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "07ea8b1b0a9a3d9bb6a0260a8b699196c700a154ba3754530dd55e0b8c9f4c0b",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "6f01d0f37f215b1313983aa1672061ee410b3c73103ff4fc0631994c070b999c"
+    },
+    {
+      "uid": "47fc19e5-2954-4473-a4e1-b037a171631c",
+      "displayId": "FNG-EV-030",
+      "name": "战略大师 IV",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "c801e268f9d550b43429cc1a177da76beba684f0befb222ca30c5383b35e12ce",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "9bafaeb325ab4511d14d2d162d77f50e160aba5135c510d441751d027b29d0f6"
+    },
+    {
+      "uid": "4ed672eb-2423-4d97-b2fc-9f2bede70afc",
+      "displayId": "FNG-EV-031",
+      "name": "决战时刻",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "a138337bd85322809d1ae2167741b62f07258db733f9afb3cf5c82a385e1e7c3",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "0a59adb2cca1d728ea2f51ef0d37cfe60516d5226de9b173edb101d648bc205b"
+    },
+    {
+      "uid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "displayId": "SA-000",
+      "name": "洛岚",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "27338617e73fb998c79f6cdedcf36d9255952461df20e50e71f6f307a9687190",
+      "previousExecutionHash": "173adba1877604ce3ad2aeacd306b47007ad786dd9a4766c5c5fa9b7ddf0cd9f",
+      "executionHash": "31abf2323c44b63c3b611b1b2e758a68dc7a855042a2e9282670e90e158a19eb"
+    },
+    {
+      "uid": "e76d3fa9-25b8-4f46-8147-cea3188daa1c",
+      "displayId": "SA-000-UP",
+      "name": "洛岚",
+      "upgradeOfUid": "e66c2fd5-ee14-4cb1-b55e-094324214830",
+      "reviewedDesignHash": "5c5c7670150a3e316680fb0b9c78da15c4eaca659f2cb89a9f340b1fffd5a8ca",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "59df60dfcfcf2a2656a78ec28d81443fb6bdf10fbbbcce250d2c438d9052f2e6"
+    },
+    {
+      "uid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "displayId": "SC-000",
+      "name": "诺亚",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "2bc0b3f19b68a833a6ef17b34b52d74dcadce4a53b527a02a0bc590bbf069716",
+      "previousExecutionHash": "95ac67fead4fac47a3c36645a9a66d59c66afc240156a649aeb4a8fe41385d37",
+      "executionHash": "95ac67fead4fac47a3c36645a9a66d59c66afc240156a649aeb4a8fe41385d37"
+    },
+    {
+      "uid": "0b0ef004-f4e2-44cc-bd87-6666b344eeea",
+      "displayId": "SC-000-UP",
+      "name": "诺亚",
+      "upgradeOfUid": "b85a69b8-6241-45c9-a168-a10282390c44",
+      "reviewedDesignHash": "24b0a2c1fbc49cf980f567319de0ed77205a8072894eb6647689fc9e4e6ef9b4",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "88282f846635da483847609d777bc91542cc359502a6730503e6307a65634211"
+    },
+    {
+      "uid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "displayId": "AI-000",
+      "name": "皇子阿列斯塔",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "a894c606b8b11c3e4224715fc1a0b801845b0903b0ae2ae6ea631cfad8f2bf5c",
+      "previousExecutionHash": "fc530f3b11d5d81ac10995774e1b623833731a3fca371eda48a6e1c0f0159ba6",
+      "executionHash": "fc530f3b11d5d81ac10995774e1b623833731a3fca371eda48a6e1c0f0159ba6"
+    },
+    {
+      "uid": "db2f048c-88f2-40d4-9fa9-c02ef7f28772",
+      "displayId": "AI-000-UP",
+      "name": "皇子阿列斯塔",
+      "upgradeOfUid": "ad7d76b3-f0b8-4f66-a9d8-0bc7fca036b1",
+      "reviewedDesignHash": "d691cbcf03ca62131d1ddafcbe37622fe1be9eab9025a0a0c309a9bf60e95439",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "5fb53e4dd4193f40757b975b6e437a79fb5e2d1cc1ea6bd53f87904183741a69"
+    },
+    {
+      "uid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "displayId": "MCC-000",
+      "name": "米拉-10K",
+      "upgradeOfUid": null,
+      "reviewedDesignHash": "7784deb74cc88db492b25cf698f1d59133229e31c2c6688cbd97969cfe97ba18",
+      "previousExecutionHash": "d323c44c0fcedb24387d260cece0d4d1fd530b6c2ed0c8e055aa2153a784af03",
+      "executionHash": "d323c44c0fcedb24387d260cece0d4d1fd530b6c2ed0c8e055aa2153a784af03"
+    },
+    {
+      "uid": "3fef2f12-41d8-48ec-8e7e-ff4526c77811",
+      "displayId": "MCC-000-UP",
+      "name": "米拉-10K",
+      "upgradeOfUid": "caaf4d44-6a11-4b8a-a040-d77ce6f4ae84",
+      "reviewedDesignHash": "8ccf80a4c91e1b6bb539e0188c3a366b748317177de7f5f77abd780a16efbe67",
+      "previousExecutionHash": "5a039f2ee37d3f4a41397aeb28b9784d44bb02883e279f1a8a7c946170b705e9",
+      "executionHash": "95b18047c35e58d65728554d071b4d5bd1f9de91aedaea62f366c6a59bc39b5b"
+    }
+  ]
+}

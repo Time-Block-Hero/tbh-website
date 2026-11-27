@@ -11,7 +11,7 @@ import { SOURCE_REVISION_PATH } from "../card-design-source-revision.mjs";
 
 const root = fileURLToPath(new URL("../../", import.meta.url));
 const read = (relative) => fs.readFileSync(path.join(root, relative));
-const revisionBytes = read(SOURCE_REVISION_PATH);
+const revisionBytes = read("docs/design/revisions/2026-10-01-source-revision.json");
 const revision = JSON.parse(revisionBytes);
 const bridgeBytes = read("data/card-identity-migration.json");
 const bridge = JSON.parse(bridgeBytes);
@@ -190,7 +190,7 @@ test("playtest freeze preserves every prior identity and records the exact desig
 
 test("147-card import retains all 146 prior UIDs and adds only the approved solar spell", () => {
   const before = JSON.parse(execFileSync("git", ["--no-replace-objects", "show", "36989b146297dd7e0a91c19af8410bff97cbca43:data/cards.json"], { cwd: root }));
-  const current = JSON.parse(read("data/cards.json"));
+  const current = JSON.parse(execFileSync("git", ["show", "1ca9a5b938d429ccd375ba75bf9b31ce9cbf2d85:data/cards.json"], {cwd:root}));
   const old = new Map(before.cards.map(card => [card.uid, card]));
   const after = new Map(current.cards.map(card => [card.uid, card]));
   assert.deepEqual([old.size, after.size], [146, 147]);

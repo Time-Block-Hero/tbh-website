@@ -121,7 +121,7 @@
     const bytes = new TextEncoder().encode(designMaterial(card));
     return [...new Uint8Array(await cryptoProvider.subtle.digest("SHA-256", bytes))].map(byte => byte.toString(16).padStart(2, "0")).join("");
   }
-  const EXECUTION_PROPERTIES = ["constructionTarget", "constructionRepeat", "constructionMinimumTarget", "initialArmor", "runtimeSupportNote", "upgradeToCardId", "upgradeToCardIds", "placeCost", "arrowRules", "quantitizedCardTags", "continuousEffectRefs", "grantableContinuousEffectRefs", "abilityRefs", "textValueBindings", "attackRange", "progressEffects"];
+  const EXECUTION_PROPERTIES = ["constructionTarget", "constructionRepeat", "constructionMinimumTarget", "initialArmor", "runtimeSupportNote", "upgradeToCardId", "upgradeToCardIds", "placeCost", "arrowRules", "quantitizedCardTags", "continuousEffectRefs", "grantableContinuousEffectRefs", "abilityRefs", "textValueBindings", "attackRange", "progressEffects", "canTriple", "eventUnique"];
   function plannedExecution() {
     return { runtimeSupport: "Planned", reviewedDesignHash: null, properties: {}, keywordTags: [], arrowMode: "Permanent", abilities: [], continuousEffects: [], plans: [] };
   }
@@ -173,7 +173,7 @@
   }
   function validateDataset(dataset, { exportArtwork = false } = {}) {
     require([4, 5, 6].includes(dataset?.schemaVersion) && Array.isArray(dataset.cards), "Expected card dataset schemaVersion 4, 5 or 6");
-    if (dataset.schemaVersion >= 5) require(dataset.executionSchemaVersion === 21 && Array.isArray(dataset.shared?.statuses), "Expected executionSchemaVersion 21 and shared.statuses");
+    if (dataset.schemaVersion >= 5) require([21, 22].includes(dataset.executionSchemaVersion) && Array.isArray(dataset.shared?.statuses), "Expected executionSchemaVersion 21 or 22 and shared.statuses");
     const ids = new Set(), byUid = new Map();
     for (const card of dataset.cards) {
       require(card && UUID.test(card.uid), `Missing or invalid card UID: ${card?.id}`);

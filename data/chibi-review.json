@@ -32157,6 +32157,19 @@
         "targetVisibleHeightInTiles": 1.036842,
         "method": "first-idle body; one shared scale for all nine frames"
       }
+    },
+    {
+      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "status": "pending",
+      "atlasSrc": null,
+      "layout": null,
+      "qaNotes": [
+        "本轮新随从，待制作与验收；升级形态复用本体。"
+      ],
+      "provenance": {
+        "sourceCardId": "FNG-043",
+        "note": "本轮内容改版新增，不能以占位图伪称已完成。"
+      }
     }
   ]
 }

@@ -18,6 +18,7 @@ const options = { contentId: 'playtest-fixture', contentVersion: '1' };
 function fixtureDataset() {
   const dataset = structuredClone(source);
   dataset.schemaVersion = 6;
+  dataset.cards = dataset.cards.filter(card => !card.upgradeOfUid && card.cardType !== "Event");
   dataset.artworkVariants = {};
   dataset.selectedArtworkIds = {};
   dataset.shared = { statuses: [] };
@@ -138,28 +139,33 @@ test('upgrades follow original readiness while derivative parent dependencies re
   assert.throws(() => selectPlaytestDataset(dataset), /No cards are marked/);
   original.playtestReady = true;
   assert.equal(selectPlaytestDataset(dataset).cards.length, 2);
-  assert.throws(() => toAuthoringDocument(dataset, options), /require a new game content adapter/);
+  assert.equal(toAuthoringDocument(dataset, options).cardBundles.length, 2);
   // Selection remains enforced even when a synthetic caller skips effect validation.
-  assert.throws(() => toAuthoringDocument(dataset, { ...options, validate: false }), /require a new game content adapter/);
+  assert.equal(toAuthoringDocument(dataset, { ...options, validate: false }).cardBundles.length, 2);
   const derivative = dataset.cards.find(card => card.parentUid);
   dataset.cards.forEach(card => card.playtestReady = false);
   ready(derivative);
   assert.throws(() => selectPlaytestDataset(dataset), /parentUid: required card/);
 });
 
-test('events remain editable drafts and explicitly fail executable export until runtime support exists', () => {
+test('reviewed schema22 events export without costs while schema21 remains rejected', () => {
   const dataset = fixtureDataset(), event = ready(base(dataset));
   event.cardType = 'Event'; event.collectable = false; event.collectionKind = 'NonCollectible';
   event.tags = []; event.parentUid = null; event.execution.reviewedDesignHash = designHash(event);
   // Remove derivatives of the former fixture base; events are not derivative parents.
   dataset.cards = [event];
-  assert.throws(() => validateProductionExecution(dataset), /Event is a design-only type/);
-  assert.throws(() => toAuthoringDocument(dataset, { ...options, validate: false }), /require a new game content adapter/);
+  const result = toAuthoringDocument(dataset, options);
+  assert.equal(result.cardBundles[0].card.costAmount, 0);
+  assert.equal(result.cardBundles[0].card.canTriple, false);
+  dataset.executionSchemaVersion = 21;
+  assert.throws(() => validateProductionExecution(dataset), /requires schema22/);
 });
 
 test('legacy schema5 execution still exports its full collection without readiness metadata', () => {
   const dataset = structuredClone(source);
-  dataset.schemaVersion = 5;
+  dataset.cards = [structuredClone(source.cards.find(c => c.rulesText === '' && !c.upgradeOfUid))];
+  dataset.shared = {statuses: []};
+  dataset.schemaVersion = 5; dataset.executionSchemaVersion = 21;
   for (const card of dataset.cards) { delete card.upgradeOfUid; delete card.playtestReady; }
   assert.equal(selectPlaytestDataset(dataset), dataset);
   assert.equal(toAuthoringDocument(dataset, options).cardBundles.length, dataset.cards.length);

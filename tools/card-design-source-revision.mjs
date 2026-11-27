@@ -4,6 +4,7 @@ export const SOURCE_REVISION_PATH = "data/card-design-source-revision.json";
 // Reviewed identity/policy revisions are allowlisted independently of the source
 // being exported. Editing a declaration alone must never authorize a deletion.
 const APPROVED_REVISIONS = new Map([
+  ["issue167-20261127-overhaul232", "bb05e367185d3f6be0b447f7b8e2aa11164eb2f1cead17396c9842d25e3d22a0"],
   ["issue114-20261001-playtest147", "3eeaf9080506fad007322bba22af0bd675750ca30cefcb507a7de4a1364e73a3"],
   ["issue114-20261001", "ba92779ba5629c0b6877ce548c110f33db06f6bcf4fc1e4e5e3d1c6c264ddf7b"],
   ["issue100-20260930", "8bcae30230c94e544f9b8309c6aac5c0239a5f391758e2879ff51ba3b03d3e96"],

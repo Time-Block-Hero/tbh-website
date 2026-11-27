@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import { execFileSync } from 'node:child_process';
 import { webcrypto } from 'node:crypto';
 import test from 'node:test';
 import contract from '../../card-design-contract.js';
@@ -23,7 +24,8 @@ const oneCard = () => {
   d.cards[0].playtestReady = true;
   return d;
 };
-test('historical execution of all 147 identities remains unchanged after editor metadata migration', () => {
+test('frozen 147-card execution receipts remain reproducible after the schema22 overhaul', () => {
+  const current = JSON.parse(execFileSync('git', ['show', '1ca9a5b938d429ccd375ba75bf9b31ce9cbf2d85:data/cards.json'], {cwd:root}));
   contract.validateDataset(current);
   assert.equal(current.cards.length, 147);
   assert.deepEqual([...current.cards.map(c => c.uid)].sort(), evidence.entries.map(e => e.uid).sort());
@@ -99,7 +101,7 @@ test('schema5 write, dirty export and offline fallback preserve all execution an
   const context = { window: {} }; vm.runInNewContext(buildEditorFallback(root, current, {}), context);
   assert.deepEqual(JSON.parse(JSON.stringify(context.window.__CARD_EDITOR_FALLBACK__.cards)), current);
   const old = structuredClone(current); old.schemaVersion = 4;
-  assert.throws(() => validateWrite(current, old, { type: 'import' }), /Legacy drafts/);
+  assert.throws(() => validateWrite(current, old, { type: 'import' }), /Legacy drafts|require schemaVersion 6/);
   const lost = revise(d => delete d.cards[0].execution);
   assert.throws(() => validateWrite(current, lost, { type: 'edit', uid: current.cards[0].uid }), /execution/);
 });

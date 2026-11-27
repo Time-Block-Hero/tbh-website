@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 export const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 export function validateReview(manifest, cards, directory = root) {
-  const expected = new Set(cards.cards.filter(c => c.cardType === "Minion").map(c => c.uid));
+  const expected = new Set(cards.cards.filter(c => c.cardType === "Minion" && !c.upgradeOfUid).map(c => c.uid));
   const seen = new Set();
   if (manifest.schemaVersion !== 1 || !manifest.baseline || !Array.isArray(manifest.entries)) throw new Error("Unsupported review manifest");
   if (manifest.baseline.status !== "golden") throw new Error("The original golden reference must remain explicitly identified");
