@@ -157,7 +157,7 @@
             </nav>
             <div id="upgradeEmptyState" class="upgrade-empty-state" hidden>
               <strong>升级版未配置</strong>
-              <p>以已保存的原版设计为起点，独立编辑升级效果。新形态默认暂不纳入试玩。</p>
+              <p>以已保存的原版设计为起点，独立编辑升级效果。试玩选择随原版，无需重复勾选。</p>
               <button id="createUpgradeBtn" type="button">创建升级版设计</button>
             </div>
             <nav class="card-preview-tabs" aria-label="卡面与人物素材">
@@ -173,8 +173,9 @@
           <aside class="formal-card-form-panel">
             <form id="cardEditorForm" class="formal-card-form" novalidate>
               <label>编号<input name="id" readonly /></label>
-              <label class="playtest-ready-toggle"><input type="checkbox" name="playtestReady" /><span>纳入下次试玩</span></label>
-              <p class="playtest-ready-help">勾选表示本形态修改完毕；未勾选的设计仍保留在网站。</p>
+              <label id="playtestReadyToggle" class="playtest-ready-toggle"><input type="checkbox" name="playtestReady" /><span>纳入下次试玩</span></label>
+              <p id="playtestReadyInherited" hidden></p>
+              <p id="playtestReadyHelp" class="playtest-ready-help">勾选后，原版与已配置的升级版一起纳入下次试玩。</p>
               <div class="formal-form-row">
                 <label>中文名<input name="nameKey" required /></label
                 ><label>英文名<input name="englishName" /></label>

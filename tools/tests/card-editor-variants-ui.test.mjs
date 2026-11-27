@@ -43,7 +43,7 @@ function harness(cards) {
   return { api: context.editor, fields, element, data, form };
 }
 
-test("version switches preserve independent text/readiness drafts; save affects only the selected version", async () => {
+test("version switches preserve text and original readiness drafts without committing them when saving upgrade text", async () => {
   const base = card("FNG-001"), upgrade = card("FNG-001-UP", { upgradeOfUid: base.uid, collectable: false, collectionKind: "NonCollectible" });
   const h = harness([base, upgrade]);
   h.api.showCard(base.id);
@@ -53,6 +53,9 @@ test("version switches preserve independent text/readiness drafts; save affects 
   h.api.selectVersion(true);
   h.fields.get("rulesText").value = "升级版未保存修改";
   assert.equal(h.fields.get("playtestReady").checked, false);
+  assert.equal(h.fields.get("playtestReady").disabled, true);
+  assert.equal(h.element("#playtestReadyToggle").hidden, true);
+  assert.match(h.element("#playtestReadyInherited").textContent, /原版开关尚未保存/);
   h.api.selectVersion(false);
   assert.equal(h.fields.get("rulesText").value, "原版未保存修改");
   assert.equal(h.api.getArt().selected, "unsaved-art");
@@ -64,8 +67,59 @@ test("version switches preserve independent text/readiness drafts; save affects 
   assert.equal(h.data.cards.find(c => c.uid === upgrade.uid).rulesText, "升级版未保存修改");
   assert.notEqual(h.data.cards.find(c => c.uid === base.uid).rulesText, "原版未保存修改");
   assert.equal(h.api.drafts().size, 1);
+  assert.equal(h.data.cards.find(c => c.uid === base.uid).playtestReady, false);
+  assert.equal(h.data.cards.find(c => c.uid === upgrade.uid).playtestReady, false);
   h.api.selectVersion(false);
   assert.equal(h.fields.get("rulesText").value, "原版未保存修改");
+  assert.equal(h.fields.get("playtestReady").checked, true);
+});
+
+test("saving the original toggles both forms; an older upgrade text draft cannot undo the shared selection", async () => {
+  const base = card("FNG-001"), upgrade = card("FNG-001-UP", { upgradeOfUid: base.uid, collectable: false, collectionKind: "NonCollectible" });
+  const h = harness([base, upgrade]);
+  h.api.showCard(upgrade.id); h.fields.get("rulesText").value = "升级版草稿";
+  h.api.selectVersion(false); h.fields.get("playtestReady").checked = true;
+  assert.equal(await h.api.saveCard(), true);
+  assert.ok(h.data.cards.every(c => c.playtestReady));
+  h.api.selectVersion(true);
+  assert.equal(h.fields.get("rulesText").value, "升级版草稿");
+  assert.match(h.element("#playtestReadyInherited").textContent, /随原版纳入/);
+  assert.equal(await h.api.saveCard(), true);
+  assert.ok(h.data.cards.every(c => c.playtestReady));
+  h.api.selectVersion(false); h.fields.get("playtestReady").checked = false;
+  assert.equal(await h.api.saveCard(), true);
+  assert.ok(h.data.cards.every(c => !c.playtestReady));
+  h.api.selectVersion(true); assert.match(h.element("#playtestReadyInherited").textContent, /暂不纳入/);
+});
+
+test("derivative pairs and events keep their own selection independent from the parent pair", async () => {
+  const base = card("FNG-001", { playtestReady: true });
+  const token = card("FNG-001-01", { parentUid: base.uid, collectable: false, collectionKind: "Token" });
+  const upgrade = card("FNG-001-01-UP", { upgradeOfUid: token.uid, collectable: false, collectionKind: "NonCollectible" });
+  const event = card("FNG-EV-001", { cardType: "Event", collectable: false, collectionKind: "NonCollectible", arrows: [] });
+  const h = harness([base, token, upgrade, event]);
+  h.api.showCard(token.id); h.fields.get("playtestReady").checked = true;
+  assert.equal(await h.api.saveCard(), true);
+  assert.equal(h.data.cards.find(c => c.uid === upgrade.uid).playtestReady, true);
+  assert.equal(event.playtestReady, false);
+  h.api.showCard(event.id);
+  assert.equal(h.element("#playtestReadyToggle").hidden, false);
+  assert.equal(h.fields.get("playtestReady").disabled, false);
+  assert.match(h.element("#playtestReadyHelp").textContent, /此事件/);
+  h.fields.get("playtestReady").checked = true;
+  assert.equal(await h.api.saveCard(), true);
+  h.api.showCard(base.id); h.fields.get("playtestReady").checked = false;
+  assert.equal(await h.api.saveCard(), true);
+  assert.ok(h.data.cards.filter(c => c.uid !== base.uid).every(c => c.playtestReady));
+});
+
+test("failed pair selection save restores both persisted flags and retains the original checkbox draft", async () => {
+  const base = card("FNG-001"), upgrade = card("FNG-001-UP", { upgradeOfUid: base.uid, collectable: false, collectionKind: "NonCollectible" });
+  const h = harness([base, upgrade]);
+  h.api.showCard(base.id); h.fields.get("playtestReady").checked = true;
+  h.api.setPersist(async () => { throw new Error("revision conflict"); });
+  assert.equal(await h.api.saveCard(), false);
+  assert.ok(h.api.getDataset().cards.every(c => !c.playtestReady));
   assert.equal(h.fields.get("playtestReady").checked, true);
 });
 

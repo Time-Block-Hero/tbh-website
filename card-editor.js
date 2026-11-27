@@ -6,7 +6,7 @@
   const LEGACY_DRAFT_KEY = "tbh-card-editor-legacy-schema-draft-v1";
   const RECOVERY_KEY = "tbh-card-editor-unsynced-recovery-v1";
   const DIRECTIONS = ["NW", "N", "NE", "W", "E", "SW", "S", "SE"];
-  const TRIBES = ["机械", "人类", "反抗军", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵", "建筑"];
+  const TRIBES = ["机械", "人类", "反抗军", "军队", "奇兽", "空亡体", "星云体", "兽裔(Avatar)", "晶灵", "建筑"];
   const TRIBE_ALIASES = {
     Mech: "机械",
     Human: "人类",
@@ -224,10 +224,10 @@
   }
 
   function normalizeDatasetForCurrentRules() {
-    // Schema 4 is already explicit. Loading must never repair identities, card text,
-    // candidate art, or selected variants by guessing from names/display numbers.
+    // Preserve identities and design content; only upgrade readiness is derived
+    // from its original card under the shared playtest-selection contract.
     designContract.validateDataset(dataset);
-    return false;
+    return designContract.normalizePlaytestReady(dataset);
   }
 
   async function detectProjectSync() {
@@ -579,7 +579,19 @@
       button.classList.toggle("active", selected);
       button.setAttribute("aria-pressed", String(Boolean(selected)));
     });
-    form.elements.namedItem("playtestReady").checked = Boolean(card.playtestReady);
+    const isUpgrade = Boolean(card.upgradeOfUid);
+    const ready = isUpgrade ? designContract.effectivePlaytestReady(dataset, card) : Boolean(card.playtestReady);
+    form.elements.namedItem("playtestReady").checked = ready;
+    form.elements.namedItem("playtestReady").disabled = isUpgrade;
+    $("#playtestReadyToggle").hidden = isUpgrade;
+    $("#playtestReadyInherited").hidden = !isUpgrade;
+    const baseDraft = isUpgrade && formDrafts.get(card.upgradeOfUid);
+    $("#playtestReadyInherited").textContent = baseDraft && baseDraft.card.playtestReady !== ready
+      ? `随原版${baseDraft.card.playtestReady ? "纳入" : "暂不纳入"}试玩（原版开关尚未保存）`
+      : ready ? "随原版纳入下次试玩" : "随原版暂不纳入试玩";
+    $("#playtestReadyHelp").textContent = isUpgrade
+      ? "试玩选择与原版绑定，在原版页面统一修改。"
+      : card.cardType === "Event" ? "勾选后将此事件纳入下次试玩。" : "勾选后，原版与已配置的升级版一起纳入下次试玩。";
     const hasUpgrade = dataset.cards.some(entry => entry.upgradeOfUid === card.uid);
     form.elements.namedItem("cardType").disabled = Boolean(card.upgradeOfUid || card.cardType === "Event" || hasUpgrade);
     for (const option of form.elements.namedItem("cardType").options || []) option.disabled = (option.value === "Event") !== (card.cardType === "Event");
@@ -881,7 +893,7 @@
       rarity: form.elements.namedItem("rarity").value,
       classId: form.elements.namedItem("classId").value,
       collectable: cardType === "Event" || original?.upgradeOfUid || original?.parentUid ? false : form.elements.namedItem("collectable").value === "true",
-      playtestReady: Boolean(form.elements.namedItem("playtestReady")?.checked),
+      playtestReady: original?.upgradeOfUid ? designContract.effectivePlaytestReady(dataset, original) : Boolean(form.elements.namedItem("playtestReady")?.checked),
       costAmount: number("costAmount"),
       arrows: cardType === "Event" ? [] : $$("#arrowsCompass button.active").map((button) => button.dataset.dir),
       rulesText: form.elements.namedItem("rulesText").value.trim(),
@@ -999,6 +1011,7 @@
     }
     if (!confirmBrowserDraftOverwrite()) return;
     dataset.cards[dataset.cards.findIndex((card) => card.id === currentId)] = updated;
+    designContract.setPlaytestReady(dataset, updated, updated.playtestReady);
     dataset.artworkVariants ||= {};
     dataset.selectedArtworkIds ||= {};
     if (pendingArtworkVariants?.length) {

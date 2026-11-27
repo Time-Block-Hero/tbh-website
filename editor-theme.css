@@ -578,6 +578,8 @@
 .card-playtest-badge.is-ready { background: #183d31; color: #9ae3b9; }
 .formal-card-form .playtest-ready-toggle { display: flex; align-items: center; gap: 10px; padding: 12px; background: #19372c; border: 1px solid #3d7058; border-radius: 8px; }
 .formal-card-form .playtest-ready-toggle input { width: 18px; height: 18px; margin: 0; accent-color: #87dbab; }
+.formal-card-form #playtestReadyToggle[hidden], .formal-card-form #playtestReadyInherited[hidden] { display: none !important; }
+.formal-card-form #playtestReadyInherited { color: #a8ddb8; padding: 10px 0; }
 .playtest-ready-help { margin: -4px 0 6px; color: #aab8c5; font-size: 12px; line-height: 1.5; }
 .formal-card-form.is-event .card-non-event-only { display: none; }
 .unsaved-changes-overlay { position: fixed; inset: 0; z-index: 12000; display: grid; place-items: center; padding: 20px; background: #050b13cc; }
