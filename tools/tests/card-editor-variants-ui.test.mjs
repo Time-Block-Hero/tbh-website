@@ -130,5 +130,6 @@ test("save validation errors roll back dataset changes and retain the editable f
   assert.equal(await h.api.saveCard(), false);
   assert.equal(h.api.getDataset().cards[0].rulesText, base.rulesText);
   assert.equal(h.fields.get("rulesText").value, "尚未保存的效果");
+  assert.equal(h.api.drafts().get(base.uid).card.rulesText, "尚未保存的效果");
   assert.match(h.element("#cardSaveStatus").textContent, /未保存.*Invalid costAmount/);
 });

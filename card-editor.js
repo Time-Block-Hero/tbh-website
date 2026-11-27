@@ -892,6 +892,7 @@
 
   async function saveCard() {
     if (savingCard) return false;
+    stashCurrentForm();
     const before = structuredClone(dataset);
     savingCard = true;
     $(".formal-card-editor-shell")?.classList.add("is-saving");
@@ -994,6 +995,7 @@
   }
 
   function addDerivative() {
+    if (savingCard || artworkUploadInProgress) return;
     if (!confirmBrowserDraftOverwrite()) return;
     const rootId = parentId(currentId);
     const root = cardById(rootId);
@@ -1022,6 +1024,7 @@
   }
 
   async function deleteCurrentCard() {
+    if (savingCard || artworkUploadInProgress) return;
     const card = cardById(currentId);
     if (!card || isHero(card)) return;
     const derivative = isDerivative(card.id);
