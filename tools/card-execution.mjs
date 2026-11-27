@@ -1,6 +1,7 @@
 // Source-format adapter only. The Rules schema22 compiler owns the executable language.
 import { createHash } from 'node:crypto';
 import contract from '../card-design-contract.js';
+import { plansWithSemanticRoles } from './card-plan-roles.mjs';
 export const DESIGN_FIELDS = contract.DESIGN_FIELDS;
 export const canonical = contract.canonical;
 export const semanticHash = value => createHash('sha256').update(JSON.stringify(canonical(value))).digest('hex');
@@ -92,7 +93,7 @@ export function toAuthoringDocument(input, { contentId, contentVersion, source =
       }
       if (e.arrowMode === 'OneTime') native.arrows = [];
       else native.arrows = native.arrows.filter(direction => !(e.properties.arrowRules || []).some(rule => rule.kind === 'Permanent' && rule.direction === direction));
-      return { card: { ...structuredClone(e.properties), ...native }, abilities: structuredClone(e.abilities), continuousEffects: structuredClone(e.continuousEffects), plans: structuredClone(e.plans) };
+      return { card: { ...structuredClone(e.properties), ...native }, abilities: structuredClone(e.abilities), continuousEffects: structuredClone(e.continuousEffects), plans: dataset.executionSchemaVersion >= 22 ? plansWithSemanticRoles(e) : structuredClone(e.plans) };
     }),
   };
 }
