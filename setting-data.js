@@ -197,7 +197,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Luolan",
           "classId": "SkyborneAlliance",
           "cardType": "Minion",
-          "rulesText": "发动：每回合限一次，将你的一个反抗军移动1格。",
+          "rulesText": "发动：将你的一个反抗军移动1格。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary hero. Luolan, the red-haired frontline commander of the Skyborne Alliance, stands on the rebuilt command bridge of a mobile frontier fleet-city during an Imperial pursuit, wearing a deep forest-green industrial command coat over modular charcoal armor, dark oxblood-red resistance insignia, and an illegal green chrono-cybernetic eye. At the decisive moment she drives one gloved hand across a scarred mechanical navigation table, redirecting a nearby resistance squad through a newly opened breach while the fleet pivots around her order. Use a bold three-quarter low angle with Luolan's face, luminous eye, commanding gesture, and the moving squad readable inside the upper square crop; extend the lower portrait into welded deck plates, exposed cables, colony lights, and asymmetrical silhouettes of patched expedition ships. Premium industrial sci-fi anime rendering, confident defiance, cinematic green-red rim light, dense matte metal and worn technical fabric, exceptional authored material finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "luolan-01",
           "cover": "./assets/card-art/luolan/luolan-01.png"
@@ -736,7 +736,7 @@ window.__SETTING_DATA__ = {
         "en": "The Skyborne Alliance’s red-haired frontline commander wears a glowing green chrono-cybernetic eye. A forest-green command coat, charcoal modular armor and oxblood insignia define her presence aboard a rebuilt command bridge."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary hero. Luolan, the red-haired frontline commander of the Skyborne Alliance, stands on the rebuilt command bridge of a mobile frontier fleet-city during an Imperial pursuit, wearing a deep forest-green industrial command coat over modular charcoal armor, dark oxblood-red resistance insignia, and an illegal green chrono-cybernetic eye. At the decisive moment she drives one gloved hand across a scarred mechanical navigation table, redirecting a nearby resistance squad through a newly opened breach while the fleet pivots around her order. Use a bold three-quarter low angle with Luolan's face, luminous eye, commanding gesture, and the moving squad readable inside the upper square crop; extend the lower portrait into welded deck plates, exposed cables, colony lights, and asymmetrical silhouettes of patched expedition ships. Premium industrial sci-fi anime rendering, confident defiance, cinematic green-red rim light, dense matte metal and worn technical fabric, exceptional authored material finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "发动：每回合限一次，将你的一个反抗军移动1格。",
+      "rulesText": "发动：将你的一个反抗军移动1格。",
       "cover": "./assets/card-art/luolan/luolan-01.png",
       "sourceArtworkKeys": [
         "luolan"
@@ -750,7 +750,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Luolan",
           "classId": "SkyborneAlliance",
           "cardType": "Minion",
-          "rulesText": "发动：每回合限一次，将你的一个反抗军移动1格。",
+          "rulesText": "发动：将你的一个反抗军移动1格。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary hero. Luolan, the red-haired frontline commander of the Skyborne Alliance, stands on the rebuilt command bridge of a mobile frontier fleet-city during an Imperial pursuit, wearing a deep forest-green industrial command coat over modular charcoal armor, dark oxblood-red resistance insignia, and an illegal green chrono-cybernetic eye. At the decisive moment she drives one gloved hand across a scarred mechanical navigation table, redirecting a nearby resistance squad through a newly opened breach while the fleet pivots around her order. Use a bold three-quarter low angle with Luolan's face, luminous eye, commanding gesture, and the moving squad readable inside the upper square crop; extend the lower portrait into welded deck plates, exposed cables, colony lights, and asymmetrical silhouettes of patched expedition ships. Premium industrial sci-fi anime rendering, confident defiance, cinematic green-red rim light, dense matte metal and worn technical fabric, exceptional authored material finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "luolan-01",
           "cover": "./assets/card-art/luolan/luolan-01.png"
@@ -1045,7 +1045,7 @@ window.__SETTING_DATA__ = {
       "identityNameIncludes": "麦哲伦",
       "sources": [
         {
-          "cardId": "FNG-009",
+          "cardId": "FNG-010",
           "artworkKey": "interstellar-commander-magellan",
           "name": "星际司令麦哲伦",
           "englishName": "Interstellar Commander Magellan",
@@ -1085,7 +1085,7 @@ window.__SETTING_DATA__ = {
         "en": "A lean adult assassin in dark mirrored sunglasses and an asymmetric charcoal tactical coat. Fitted technical armor, a compact suppressed sidearm and a cyan coordinate beacon define Assassin J’s equipment."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Assassin J, a lean adult killer in dark mirrored sunglasses, stands as the single dominant subject on a rain-slick industrial station roof, wearing a long asymmetric charcoal tactical coat, fitted technical armor, gloves, harnesses, and a compact suppressed sidearm. He has already placed a small cyan coordinate beacon on a distant armored target; a delayed vertical targeting line is beginning to converge around that figure while J turns away with cold certainty. Keep J's face, sunglasses, weapon, beacon gesture, and the doomed target relationship readable inside the upper square crop; use bold perspective, rain, receding gantries and restrained red warning light for layered environmental storytelling. Premium industrial sci-fi anime rendering with crisp facial design, tactile matte materials and cinematic finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "入场：选定一个非英雄单位，将其消灭。",
+      "rulesText": "入场：选定一个非英雄单位，在本回合结束时，将其消灭。",
       "cover": "./assets/card-art/delayed-coordinate-cannon/delayed-coordinate-cannon-01.png",
       "sourceArtworkKeys": [
         "delayed-coordinate-cannon"
@@ -1099,7 +1099,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Delayed Coordinate Cannon",
           "classId": "Neutral",
           "cardType": "Minion",
-          "rulesText": "入场：选定一个非英雄单位，将其消灭。",
+          "rulesText": "入场：选定一个非英雄单位，在本回合结束时，将其消灭。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. Assassin J, a lean adult killer in dark mirrored sunglasses, stands as the single dominant subject on a rain-slick industrial station roof, wearing a long asymmetric charcoal tactical coat, fitted technical armor, gloves, harnesses, and a compact suppressed sidearm. He has already placed a small cyan coordinate beacon on a distant armored target; a delayed vertical targeting line is beginning to converge around that figure while J turns away with cold certainty. Keep J's face, sunglasses, weapon, beacon gesture, and the doomed target relationship readable inside the upper square crop; use bold perspective, rain, receding gantries and restrained red warning light for layered environmental storytelling. Premium industrial sci-fi anime rendering with crisp facial design, tactile matte materials and cinematic finish. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "delayed-coordinate-cannon-01",
           "cover": "./assets/card-art/delayed-coordinate-cannon/delayed-coordinate-cannon-01.png"
@@ -1181,7 +1181,7 @@ window.__SETTING_DATA__ = {
         "en": "Tiffany is an energetic pink rabbit Avatar with a fully rabbit-shaped head, long ears, teal eyes and rose-pink fur. A cropped courier jacket, utility shorts and a messenger pouch suit her agile silhouette."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. “Know-It-All” Tiffany is a petite, energetic young adult pink rabbit Avatar and the unmistakable central subject, joyfully leaping between suspended walkways in the bustling Galactic Merchant Guild. She has a complete anthropomorphic furry rabbit form rather than a human face with animal ears: a clearly nonhuman rabbit cranial silhouette and small muzzle, soft pink nose, enormous expressive ears, bright teal anime-furry eyes, coherent full-body rose-pink fur with cream markings, paw-like hands and feet, powerful digitigrade legs, and a round tail. Her bold subcultural streetwear includes a practical midriff-baring cropped courier jacket and athletic top, high-waisted utility shorts, colorful straps, small information canisters, anatomy-tailored footwear, and a compact messenger pouch. She twists lightly through the air while tossing a useful data prism toward a bewildered newcomer; merchants of several species wave to her from layered stalls and bridges, showing that she knows everyone without stealing focus. Use an ambitious diagonal upward composition with her face, ears, airborne gesture, data prism, and readable rabbit silhouette secured inside the upper square crop; use the lower portrait extension for receding bridges, market lights, banners without writing, and friends below. Epic motion, airy depth, joyful personality, lively cyan-magenta accents against warm industrial metal, cinematic sunlight shafts and premium industrial sci-fi anime rendering. Keep the presentation playful and fashionable rather than sexualized. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "",
+      "rulesText": "[一次性箭头]",
       "cover": "./assets/card-art/know-it-all-tiffany/know-it-all-tiffany-01.png",
       "sourceArtworkKeys": [
         "know-it-all-tiffany"
@@ -1195,7 +1195,7 @@ window.__SETTING_DATA__ = {
           "englishName": "Know-It-All Tiffany",
           "classId": "Neutral",
           "cardType": "Minion",
-          "rulesText": "",
+          "rulesText": "[一次性箭头]",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Epic minion. “Know-It-All” Tiffany is a petite, energetic young adult pink rabbit Avatar and the unmistakable central subject, joyfully leaping between suspended walkways in the bustling Galactic Merchant Guild. She has a complete anthropomorphic furry rabbit form rather than a human face with animal ears: a clearly nonhuman rabbit cranial silhouette and small muzzle, soft pink nose, enormous expressive ears, bright teal anime-furry eyes, coherent full-body rose-pink fur with cream markings, paw-like hands and feet, powerful digitigrade legs, and a round tail. Her bold subcultural streetwear includes a practical midriff-baring cropped courier jacket and athletic top, high-waisted utility shorts, colorful straps, small information canisters, anatomy-tailored footwear, and a compact messenger pouch. She twists lightly through the air while tossing a useful data prism toward a bewildered newcomer; merchants of several species wave to her from layered stalls and bridges, showing that she knows everyone without stealing focus. Use an ambitious diagonal upward composition with her face, ears, airborne gesture, data prism, and readable rabbit silhouette secured inside the upper square crop; use the lower portrait extension for receding bridges, market lights, banners without writing, and friends below. Epic motion, airy depth, joyful personality, lively cyan-magenta accents against warm industrial metal, cinematic sunlight shafts and premium industrial sci-fi anime rendering. Keep the presentation playful and fashionable rather than sexualized. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "know-it-all-tiffany-01",
           "cover": "./assets/card-art/know-it-all-tiffany/know-it-all-tiffany-01.png"

@@ -45,7 +45,7 @@ status: draft
 
 ```mermaid
 flowchart TD
-  refresh["回合开始：刷新行动额度与每回合次数"] --> draw["双方抽牌并完成相关结算"]
+  refresh["回合开始：额度与箭头刷新、施工；商店刷新余额＋1"] --> draw["双方抽牌并完成相关结算"]
   draw --> relief["检查无格救济，生成赦免并完成后续"]
   relief --> cells["确定双方领土的完全空格"]
   cells --> select["第 1 回合各选最多 4 格；此后各选最多 2 格"]
