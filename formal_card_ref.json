@@ -5948,7 +5948,7 @@
         "collectable": false,
         "costResource": "Star",
         "costAmount": 10,
-        "durability": 1,
+        "durability": 3,
         "rulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]",
         "arrows": [
           "NE",
@@ -5964,7 +5964,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
+          "reviewedDesignHash": "e0c2417e4435124f1ba553ca76214a6e979aea9e548d3c310463418242d2507f",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -35453,7 +35453,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "44955f8aefaac11e3d26ea416640f2fe742d0296831094cc2fff7804d7dbd73e",
+    "cardsSha256": "894137c50a02ae0b4bd2a381cf458f397b16fbc75b5f0dfa152e4c0954755750",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue167-20261128-playtest139",
@@ -57460,7 +57460,7 @@
       "uid": "b29cafc7-cc54-4cf5-a769-5ec5d441aa1e",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
+        "reviewedDesignHash": "e0c2417e4435124f1ba553ca76214a6e979aea9e548d3c310463418242d2507f",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -57591,7 +57591,7 @@
       "rarity": "Epic",
       "costResource": "Star",
       "costAmount": 10,
-      "durability": 1,
+      "durability": 3,
       "attack": null,
       "health": null,
       "movement": null,

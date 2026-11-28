@@ -41,7 +41,7 @@
       "displayId": "FNG-021-UP",
       "name": "中微子爆弹",
       "previousDesignHash": "2f3f1738efc7a75bcb4ccdbd62bdb9406ecc153dc8855c2557adea466d749e2d",
-      "designHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
+      "designHash": "e0c2417e4435124f1ba553ca76214a6e979aea9e548d3c310463418242d2507f",
       "previousExecutionHash": "f24feac9b748a9fd0db54751abfcc098b65f6251d471c8a60e71c93f43557d0f",
       "executionHash": "8c20c9c49f8ff56ccb60d77e3f478f2d5d8d2a8485a52cdeef4e26e33a2e7dcf",
       "changes": [
@@ -49,6 +49,12 @@
           "field": "rulesText",
           "before": "发动：对一个单位造成12点伤害。[耐久度: 3]",
           "after": "发动：对一个单位造成14点伤害。[耐久度: 3]"
+        },
+        {
+          "field": "durability",
+          "before": 1,
+          "after": 3,
+          "reason": "修复旧数据与原有及本轮卡文「耐久度: 3」的不一致。"
         }
       ]
     },

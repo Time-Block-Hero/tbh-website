@@ -5925,7 +5925,7 @@
       "collectable": false,
       "costResource": "Star",
       "costAmount": 10,
-      "durability": 1,
+      "durability": 3,
       "rulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]",
       "arrows": [
         "NE",
@@ -5941,7 +5941,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
+        "reviewedDesignHash": "e0c2417e4435124f1ba553ca76214a6e979aea9e548d3c310463418242d2507f",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
