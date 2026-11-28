@@ -29,7 +29,7 @@
     if (data.schemaVersion !== 1 || !Array.isArray(data.entries)) fail("不支持的工作台格式");
     keys(data.defaults, ["prompt"], "defaults");
     prompts(data.defaults.prompt, ["style", "negative", "actions"], "defaults.prompt");
-    const expected = new Set(cards.cards.filter(c => c.cardType === "Minion").map(c => c.uid));
+    const expected = new Set(cards.cards.filter(c => c.cardType === "Minion" && !c.upgradeOfUid).map(c => c.uid));
     const arts = new Map(sources(review).map(e => [e.uid, e])), seen = new Set(), stale = [];
     for (const e of data.entries) {
       keys(e, ["uid", "atlasSha256", "scale", "offset", "anchor", "actions", "frames", "prompt", "exportReady", "sizeClass", "bodyKind", "artworkFacesRight", "provenance", "updatedAt"], "单位配置");

@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-28",
+  "styleTemplate": "artifact-template-industrial-sci-fi-anime",
+  "legendaryDirectionApproval": "用户确认：幸运陨石IV双核回收；辉煌辐射生物单位强化。",
+  "assets": [
+    {
+      "cardId": "FNG-042",
+      "englishName": "Galactic Expedition",
+      "path": "assets/card-art/galactic-expedition/galactic-expedition-01.png",
+      "sha256": "5925f2a719cc797d222326a7d145ff70c6180bec1eb219ad29bf6a74401dcdce",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    },
+    {
+      "cardId": "FNG-EV-032",
+      "englishName": "Lucky Meteor I",
+      "path": "assets/card-art/lucky-meteor-i/lucky-meteor-i-01.png",
+      "sha256": "4c4fc639ec277c19a4caadb3a4adab5ad4ba13c20ea4dc242a6e7877542003a0",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    },
+    {
+      "cardId": "FNG-EV-033",
+      "englishName": "Lucky Meteor II",
+      "path": "assets/card-art/lucky-meteor-ii/lucky-meteor-ii-01.png",
+      "sha256": "218bc5cf63037e030effbe421752138f600bdb5d08275ae53b601481f5d3805e",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    },
+    {
+      "cardId": "FNG-EV-034",
+      "englishName": "Lucky Meteor III",
+      "path": "assets/card-art/lucky-meteor-iii/lucky-meteor-iii-01.png",
+      "sha256": "9b5bd35af5ba9c7d45c9ff71dbb71d66d066da84b899e4333ebe5b9292b7bbbd",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    },
+    {
+      "cardId": "FNG-EV-035",
+      "englishName": "Lucky Meteor IV",
+      "path": "assets/card-art/lucky-meteor-iv/lucky-meteor-iv-01.png",
+      "sha256": "4b926999d617cce8d0e8600093f3549bb98077d6768d2f99f9d6ac5059e5d08f",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    },
+    {
+      "cardId": "FNG-EV-037",
+      "englishName": "Glorious Radiation",
+      "path": "assets/card-art/glorious-radiation/glorious-radiation-01.png",
+      "sha256": "53d3e5da86e3f9d6b8988a31246d07ac53402aa1bac062016d36a5edaa44927d",
+      "tool": "built-in image_gen",
+      "styleReviewed": true
+    }
+  ]
+}

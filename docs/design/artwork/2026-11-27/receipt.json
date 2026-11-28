@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "tool": "image_gen.imagegen",
+  "styleReference": "Industrial Sci-Fi Anime retained reference.png",
+  "identityControl": "Reference controls style only. Explicit exclusion of reference white-haired animal-eared girl, knight helmets and crossbows; new human casts or machinery-only scenes selected per brief.",
+  "illustrations": [
+    {
+      "id": "FNG-043",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-dae9a0ef-f78a-43c5-9a92-38aa268071f6.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-043-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-006",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-a1b9981b-21b7-4704-ab0a-2d62ba050625.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-006-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-001",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-1ec8c090-632e-4c28-8f7d-3adfabb7ef62.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-001-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-002",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-8fb02d14-fd5e-44ab-8785-8e445140a00d.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-002-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-UN-003",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-ca91ea4f-8823-43df-a673-6d88aa1fdcce.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-UN-003-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-003",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-64a2cedb-bd24-43e6-a623-96ef4e2fae86.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-003-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-004",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-02c84f32-ea93-46ef-8de5-53e4135e212c.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-004-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-UN-004",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-8cd367fc-3b26-4024-bd87-ceba5c8100d9.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-UN-004-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-UN-005",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-28b5f0e4-f804-4be1-bcc8-5627044091be.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-UN-005-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-005",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-d04e49d1-14ed-4904-aa1e-be60f55a10f1.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-005-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-006",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-ac246039-05ae-4f95-a451-b92a7e6da413.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-006-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-UN-006",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-1840e86c-0ee7-4ad9-addc-1b25cdb54e12.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-UN-006-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-007",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-f1d4ac12-1e5e-4bc5-a887-faf3d8417a61.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-007-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-008",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-09823246-0957-4bf4-a6a8-4a86e1b271f4.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-008-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-009",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-4ca521b4-e3f1-4a8b-95da-5e30eb257f43.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-009-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-010",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-3dd69fd2-9259-41a8-99aa-afc9735fd479.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-010-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-011",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-ed714ba2-001a-4869-ad78-f37f6ab7383f.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-011-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-012",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-788fb52d-7f8a-49c0-8115-5d6a1f2010ac.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-012-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-013",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-95e128d2-479b-4916-92e9-cede8a953a2f.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-013-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-014",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-4ada7313-fdc2-41f1-933b-84d447fdbf6f.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-014-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-015",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-6e340628-d337-454c-ae7a-e5053188cb04.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-015-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-016",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-d6d3c422-66d5-43ee-a506-c30e63671da3.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-016-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-017",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-44ab3569-5501-4d39-9ea7-ff6183d90c8a.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-017-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-018",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-2838240b-3349-4eab-80ae-a5b9fd87d064.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-018-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-019",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-aad5a77e-e65e-4991-99e5-6681aae7c503.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-019-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-020",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-d91ab838-2a14-43ff-bde8-1eb79303453f.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-020-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-021",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-fd3fe343-4407-4b44-93cb-f312537a42e0.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-021-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-022",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-17b3f044-9e87-449a-9ef6-c006d97f4850.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-022-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-023",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-9fa76c22-d44a-4f6f-a3b5-a44e7889bca3.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-023-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-024",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-03b6f69f-a165-4fe3-9c9b-08ef585efbb8.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-024-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-025",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-4e2cb7ba-c26d-476e-acb8-694a26d53be4.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-025-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-026",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-b84b1c5a-e7a6-4e50-80aa-73ddc11ccaf9.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-026-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-027",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-4d351d7d-0e41-4cb2-b00e-b906c9e2852e.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-027-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-028",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-ac70d041-f3a8-4322-b0ba-eebaf3488d4b.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-028-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-029",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-223566ba-9d6d-4370-b285-4828b33ce95a.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-029-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-030",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-9c096fa4-e96d-44d5-b560-a31cc9b6eba1.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-030-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    },
+    {
+      "id": "FNG-EV-031",
+      "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-bf856843-1426-4aed-86db-ea39db50451a.png",
+      "promptPath": "docs/design/artwork/2026-11-27/FNG-EV-031-prompt.txt",
+      "agentVisualReview": "passed: anime contour/cel grouping, industrial sci-fi identity, upper-crop legibility",
+      "userAcceptance": "pending"
+    }
+  ],
+  "chibi": {
+    "id": "FNG-043",
+    "sourceFile": "/Users/jesusmicah/.codex/generated_images/01a21cc8-6e8d-7d12-a375-887d90cfbea0/exec-a3f0dfbc-e70d-4fb7-b80e-9f87782ee5b3.png",
+    "styleReference": "Luolan golden atlas",
+    "identityReference": "homeland-defender-01",
+    "agentVisualReview": "nine distinct poses, preserved identity and scale, five actions",
+    "layoutValidation": "native RGBA, 1254x1254, zero crossing and outer-edge contacts",
+    "userAcceptance": "pending"
+  }
+}

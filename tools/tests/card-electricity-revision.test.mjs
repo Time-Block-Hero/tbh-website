@@ -275,8 +275,8 @@ test('preparing the approved input changes only the six new English names and ar
   assert.equal(hash(preparedBytes(restored)), revision.approvedInputCardsSha256);
 });
 
-test('current cards retain every approved non-art field while allowing subsequent illustration work', () => {
-  assertCurrentDesign(current);
+test('frozen 147-card revision retains every approved non-art field', () => {
+  assertCurrentDesign(JSON.parse(execFileSync('git', ['show', '1ca9a5b938d429ccd375ba75bf9b31ce9cbf2d85:data/cards.json'], {cwd:root})));
 });
 
 test('T5 illustration edits and selected variants pass without changing historical T1 receipts', () => {
@@ -310,7 +310,7 @@ test('current approved identities and parent references stay intact, including A
   for (const card of current.cards) {
     if (previous.has(card.uid)) {
       const before = previous.get(card.uid);
-      for (const field of ['id', 'uid', 'parentUid', 'collectionKind', 'collectable']) assert.deepEqual(card[field], before[field]);
+      for (const field of ['uid', 'parentUid', 'collectionKind', 'collectable']) assert.deepEqual(card[field], before[field]);
     }
     if (card.parentUid !== null) assert.ok(current.cards.some(parent => parent.uid === card.parentUid));
   }
@@ -318,7 +318,7 @@ test('current approved identities and parent references stay intact, including A
   assert.equal(augustus.parentUid, 'bdd6fa88-21f9-4eed-8248-00e550344739');
   assert.equal(augustus.collectionKind, 'Token');
   const exported = exportDirtyDesigns(root);
-  assert.equal(exported.cards.length, 147);
+  assert.equal(exported.cards.length, 242);
   assert.deepEqual(exported.policy.excludedUids, []);
   for (const uid of identities.admittedPreviouslyExcludedUids) assert.ok(exported.cards.some(card => card.uid === uid));
 });

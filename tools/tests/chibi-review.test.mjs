@@ -8,7 +8,7 @@ const manifest = JSON.parse(fs.readFileSync(path.join(root, "data/chibi-review.j
 const cards = JSON.parse(fs.readFileSync(path.join(root, "data/cards.json")));
 test("current review roster covers all units and verifies native image hashes", () => {
   const result = validateReview(manifest, cards);
-  assert.equal(result.units, cards.cards.filter(c => c.cardType === "Minion").length);
+  assert.equal(result.units, cards.cards.filter(c => c.cardType === "Minion" && !c.upgradeOfUid).length);
   assert.equal(result.counts.golden, 1);
 });
 test("duplicate identities and malformed source dimensions fail acceptance", () => {

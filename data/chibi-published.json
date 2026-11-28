@@ -2,9 +2,9 @@
   "schemaVersion": 2,
   "source": {
     "processingVersion": "chibi-alpha-bake-v1",
-    "websiteCommit": "4445046ff7c68ab41a4e15d7c6ee348b3d9f9d70",
-    "reviewManifestSha256": "97936d5a56da0eae67d34ff841bc44a6adc1f586d0933982828c2a3e655d055d",
-    "workbenchSha256": "f2d7167c82fbc483021526a62483ead7068a954553e305155cd0567ed6ea8a7c",
+    "websiteCommit": "d074f437f1f4dc4beaa4e3d62313f2a85c8f373a",
+    "reviewManifestSha256": "068e33ab292fa324e1ee5107f22bf61784ab4f73e06704cd1b75768ab3f521c7",
+    "workbenchSha256": "f1b6989a535dac52d93e84606b12f53c32aec2330a01a5528446c66318f5f3d7",
     "goldenSha256": "2e75c2188a734691bd43a27a776baad9b0ba8bdac93bbb335c6ca90ed3d1660e"
   },
   "units": [
@@ -466,7 +466,7 @@
     },
     {
       "uid": "068fe88a-04a3-4eb7-abb3-d0fea5c8f497",
-      "cardId": "FNG-UN-001",
+      "cardId": "FNG-UN-007",
       "name": "迷离的空亡体",
       "atlasPath": "atlases/068fe88a-04a3-4eb7-abb3-d0fea5c8f497.png",
       "sourceAtlasSha256": "86f3abf70ff6e704ffead12279f0e9d703c9cfd6965b184476b1074ce02614e2",
@@ -690,7 +690,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "6813c10472eb643d75f2fe2f342baae24ab497028521a57252188af47c0075ae"
+      "calibrationSha256": "3498104ca9ccb5a7ce5138574d8699072dee8483d920833e70e231114277a3eb"
     },
     {
       "uid": "0764d0f5-4050-49ab-924f-2485c4381e26",
@@ -2746,7 +2746,7 @@
     },
     {
       "uid": "1529f937-224e-4d19-a272-0740e98b649e",
-      "cardId": "FNG-008",
+      "cardId": "FNG-009",
       "name": "探机",
       "atlasPath": "atlases/1529f937-224e-4d19-a272-0740e98b649e.png",
       "sourceAtlasSha256": "c7b4322e673d41cc705c0b2eda27e259c5ac71fa1a755e94dbc9e4d076ca2f72",
@@ -2970,7 +2970,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "5d91105b9108d54a96861ee8275137fd523c16ab6851537976fb3e50a9f0c0bd"
+      "calibrationSha256": "ed62a801c7e52e2aecd3c9687f35e3b9184667c0f2a3cf74578f91a39e718f64"
     },
     {
       "uid": "15cbb572-6a6a-47f0-ae48-561df3be738c",
@@ -5710,7 +5710,7 @@
     },
     {
       "uid": "2a51f1cc-ab38-4d84-ba97-aca096943395",
-      "cardId": "FNG-UN-008",
+      "cardId": "FNG-UN-010",
       "name": "空亡时主",
       "atlasPath": "atlases/2a51f1cc-ab38-4d84-ba97-aca096943395.png",
       "sourceAtlasSha256": "78c2d9490d170a47846cd8c4900025f707928c440e5f2eb1da82151b0362de02",
@@ -5934,7 +5934,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "f50facc58e842d7b90e91d7cca2ae4b2cab16b3259036611d2cf110418bfdfd8"
+      "calibrationSha256": "4d1804eb4b33462fb921ee962b86b8e107f192add22ab861721dfd7f5215f657"
     },
     {
       "uid": "2d4d2da4-9358-485f-a2f5-be712ae86c9e",
@@ -6394,7 +6394,7 @@
     },
     {
       "uid": "3151edbb-b703-4171-9e8f-e6b54e7bb8da",
-      "cardId": "FNG-UN-007",
+      "cardId": "FNG-UN-009",
       "name": "咆哮型空亡体",
       "atlasPath": "atlases/3151edbb-b703-4171-9e8f-e6b54e7bb8da.png",
       "sourceAtlasSha256": "56247c4018ac00f702e0f370fec4f7b357749de0552e13cd9acf730bc2984d7b",
@@ -6618,7 +6618,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "9f9182917b955611da0f88615a1a2978ba0ecd8d06e6e58d6051cdaca9d81742"
+      "calibrationSha256": "05a2254670d5afe9e5acd4d8b0d90e764b447e9aa853f11be98d941f80dcbbcd"
     },
     {
       "uid": "341ea244-575c-445b-b1a6-ea761c92145f",
@@ -14145,6 +14145,234 @@
       "calibrationSha256": "154e074ad07bec0fc318b715bcc9c4be635c87b4473ad323bf8663de0a5d6c89"
     },
     {
+      "uid": "a212685b-0c59-46bb-85bb-bf7e43d2b3c2",
+      "cardId": "FNG-043",
+      "name": "家园卫士",
+      "atlasPath": "atlases/a212685b-0c59-46bb-85bb-bf7e43d2b3c2.png",
+      "sourceAtlasSha256": "6e76410d08946018cfa1f24d2a8be2cd87ea32b3ba841145c8960ef1a69e247d",
+      "atlasSha256": "6e76410d08946018cfa1f24d2a8be2cd87ea32b3ba841145c8960ef1a69e247d",
+      "bodyKind": "humanoid",
+      "artworkFacesRight": true,
+      "heightInTiles": 1.1,
+      "groundOffsetInTiles": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "layout": {
+        "sourceWidth": 1254,
+        "sourceHeight": 1254,
+        "nominalCellHeight": 418,
+        "frames": [
+          {
+            "rect": {
+              "x": 0,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5526316,
+              "y": 0.0406699
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4916268,
+              "y": 0.0430622
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 836,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4294258,
+              "y": 0.0430622
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 0,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.527512,
+              "y": 0.0454545
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.437799,
+              "y": 0.0382775
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 418,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5849282,
+              "y": 0.0454545
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.5143541,
+              "y": 0.0717703
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 418,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4007177,
+              "y": 0.0717703
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          },
+          {
+            "rect": {
+              "x": 836,
+              "y": 0,
+              "width": 418,
+              "height": 418
+            },
+            "pivot": {
+              "x": 0.4748804,
+              "y": 0.069378
+            },
+            "offsetInTiles": {
+              "x": 0,
+              "y": 0
+            }
+          }
+        ],
+        "clips": {
+          "idle": {
+            "frames": [
+              0,
+              1,
+              2
+            ],
+            "fps": 3,
+            "loop": true
+          },
+          "move": {
+            "frames": [
+              3,
+              4,
+              5
+            ],
+            "fps": 6,
+            "loop": true
+          },
+          "hit": {
+            "frames": [
+              6
+            ],
+            "fps": 6,
+            "loop": false
+          },
+          "attack": {
+            "frames": [
+              7
+            ],
+            "fps": 6,
+            "loop": false
+          },
+          "effect": {
+            "frames": [
+              8
+            ],
+            "fps": 6,
+            "loop": false
+          }
+        }
+      },
+      "prompt": {
+        "style": "Create a transparent 3×3 nine-frame tactical-anime Chibi sprite atlas for Time Block Hero. The supplied Luolan golden atlas is the style and humanoid-proportion authority: approximately 2.8–3 heads tall, compact torso, substantial boots, confident dark ink, expressive anime eyes, clean controlled cel shading and readable layered costume detail. Preserve original character colours without sepia. Nonhumans retain species/vehicle anatomy and the same drawing language; huge machines need broad mass and strong engineered silhouettes, not infant anatomy. Card artwork defines identity only: ignore its portrait layout, environment, lighting and realistic proportions. Exactly one full character per equal cell, same 3/4 direction facing viewer-right and same scale throughout. Consistent body root and ground baseline, 15% empty transparent gutters around every pose. Keep complete hair, weapons, orbit rings and appendages inside each cell. Raw original colour RGBA; white paper edge and environment shadows are added by the renderer. Row-major order: idle×3, move×3, hit, attack, effect.",
+        "negative": "No sepia, yellow cast, realistic adult proportions, 3D toy render, Minecraft blocks, text, card frame, white baked border, floor, checkerboard, clipped weapon, inter-cell overlap, duplicated frame, oversized particle cloud or extra character.",
+        "base": "Homeland Defender: human male, short black hair, slate armor, amber lights, compact coil carbine. Identity comes from homeland-defender-01; proportions from the Luolan golden atlas.",
+        "notes": "Generated nine-frame native RGBA; agent visually checked identity, five actions, and transparent separation. User acceptance remains pending.",
+        "actions": {
+          "idle": "Frames 0–2: calm ready pose, then subtle breath/half blink, then a full blink and cloth settling. Preserve body-root position, body size and equipment. Mechanical units use tiny servo/sensor changes; crystals subtly adjust facets/orbits. No special idle or celebration.",
+          "move": "Frames 3–5: clear stride A, passing pose, opposite stride B. Arms and legs exchange support, clothing follows movement. Keep the same body size and visible body root; do not merely translate duplicate drawings. Four-legged creatures cycle front/rear supports, hovering units lean and shift appendages, buildings use subtle activated/transport motion without inventing legs.",
+          "hit": "Frame 6: readable short recoil and protective gesture, same equipment and anatomy. No detached limbs, blood, damage numbers, external projectile or large effect cloud.",
+          "attack": "Frame 7: character-specific decisive strike/aim/bite to viewer-right. Keep the whole weapon and silhouette within its cell; no beam stretching into adjacent cells. Pose should communicate the attack before effects are added in-engine.",
+          "effect": "Frame 8: recognisable ability activation/command/charge pose. Small integrated core/sensor accents are allowed; no large VFX cloud, floor aura, extra character or text. Preserve character identity and proportions."
+        }
+      },
+      "processing": {
+        "version": "chibi-alpha-bake-v1",
+        "alphaClearedPixels": 0,
+        "exclusionRectCount": 0,
+        "repairs": []
+      },
+      "calibrationSha256": "da85a2718318e6228d16f5c25965010b317be4f22fa5c89f6b7777bb01a34909"
+    },
+    {
       "uid": "a60555e6-d405-47de-bdff-c84031d53448",
       "cardId": "AI-003",
       "name": "帝国军工厂",
@@ -15286,7 +15514,7 @@
     },
     {
       "uid": "b60225b4-f701-49cd-875a-ef77bb0eba0a",
-      "cardId": "FNG-UN-002",
+      "cardId": "FNG-UN-008",
       "name": "飞翔型空亡体",
       "atlasPath": "atlases/b60225b4-f701-49cd-875a-ef77bb0eba0a.png",
       "sourceAtlasSha256": "aab441a7065f67bc9e6402acd2a5914d109f7fb4b5d03af02d1c9a89986c83b8",
@@ -15510,7 +15738,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "e930f50492d5b0e3ed707067f13b1c5253fef190cf8d0e8d12b42e22af0a9f1d"
+      "calibrationSha256": "fbb5125d661ece2555c928ed7c97b78a6f890c2ab5d9c8e79d4864b563064d32"
     },
     {
       "uid": "b6326476-ec83-478d-afcd-91b3cec23740",
@@ -19390,7 +19618,7 @@
     },
     {
       "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
-      "cardId": "FNG-009",
+      "cardId": "FNG-010",
       "name": "星际司令麦哲伦",
       "atlasPath": "atlases/dd21e939-7227-4e9e-87ef-e020d66c80ca.png",
       "sourceAtlasSha256": "6750b8917ce0f2ad620b4ff3dccb6d23841e0151d08ee6a333b67562602bebcb",
@@ -19614,7 +19842,7 @@
         "exclusionRectCount": 0,
         "repairs": []
       },
-      "calibrationSha256": "6ccc466460d8f85328584620791cf251f9c32e4b34b1f2dd9720e7ddca31a8e8"
+      "calibrationSha256": "b7706d8e5b5f6044dd9994e89d642612a3c534a70c4f82f577f8b3ca43a2f951"
     },
     {
       "uid": "df060f7e-59a2-4f3b-8a60-572fbed47dec",
@@ -22654,6 +22882,7 @@
     "9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7": "./assets/chibi-review/9bd4fac7-b5d0-4636-b8ff-b20fd26e9fc7/atlas.png",
     "9e62707e-3614-45ea-8480-4d17d452cd2d": "./assets/chibi-review/9e62707e-3614-45ea-8480-4d17d452cd2d/atlas.png",
     "a1edce46-f210-4215-ab59-f35a5173c50d": "./assets/chibi-review/a1edce46-f210-4215-ab59-f35a5173c50d/atlas.png",
+    "a212685b-0c59-46bb-85bb-bf7e43d2b3c2": "./assets/chibi-review/a212685b-0c59-46bb-85bb-bf7e43d2b3c2/atlas.png",
     "a60555e6-d405-47de-bdff-c84031d53448": "./assets/chibi-review/a60555e6-d405-47de-bdff-c84031d53448/atlas.png",
     "a7ce77ca-ee11-49d0-8581-5da3fa1a92f5": "./assets/chibi-review/a7ce77ca-ee11-49d0-8581-5da3fa1a92f5/atlas.png",
     "acfbc239-3f00-48a8-ba1a-b264535c9c8f": "./assets/chibi-review/acfbc239-3f00-48a8-ba1a-b264535c9c8f/atlas.png",

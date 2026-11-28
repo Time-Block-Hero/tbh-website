@@ -18,7 +18,7 @@ function fixture() {
   const a = original("A"), b = original("B"), token = original("A-01", { parentUid: a.uid, collectable: false, collectionKind: "Token" });
   const event = original("EVENT", { cardType: "Event", collectable: false, collectionKind: "NonCollectible", tags: [] });
   const upgrade = contract.createUpgrade(a, webcrypto), tokenUpgrade = contract.createUpgrade(token, webcrypto);
-  return { schemaVersion: 6, executionSchemaVersion: 21, shared: { statuses: [] }, cards: [a, upgrade, b, token, tokenUpgrade, event], artworkVariants: {}, selectedArtworkIds: {} };
+  return { schemaVersion: 6, executionSchemaVersion: 22, shared: { statuses: [] }, cards: [a, upgrade, b, token, tokenUpgrade, event], artworkVariants: {}, selectedArtworkIds: {} };
 }
 function implemented(card) {
   card.execution = contract.plannedExecution();

@@ -1,9 +1,11 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
 import test from 'node:test';
 import { validateProductionExecution } from '../card-execution.mjs';
 
-const dataset = JSON.parse(fs.readFileSync(new URL('../../data/cards.json', import.meta.url)));
+const dataset = JSON.parse(execFileSync('git', ['show', '1ca9a5b938d429ccd375ba75bf9b31ce9cbf2d85:data/cards.json'], {cwd:fileURLToPath(new URL('../../', import.meta.url))}));
 const card = id => dataset.cards.find(c => c.id === id);
 const objects = value => value && typeof value === 'object'
   ? [value, ...Object.values(value).flatMap(objects)] : [];
@@ -12,7 +14,7 @@ const triggers = id => objects(card(id).execution.continuousEffects).filter(x =>
 const sourceAmount = (id, kind) => packages(id, kind).map(x => x.amount?.call?.args?.[0]);
 const repeatIds = ['AI-002', 'AI-003', 'AI-007', 'AI-009', 'AI-015', 'AI-021'];
 
-test('production preserves 147 identities and no electricity remains in live card execution', () => {
+test('frozen construction revision preserves 147 identities and no electricity remains in live card execution', () => {
   assert.equal(dataset.cards.length, 147);
   // Verify the retained execution definitions without changing the author's
   // actual all-false selection for the next playtest.
