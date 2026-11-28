@@ -361,7 +361,15 @@
     return Math.max(minimumSize, preferredSize * (availableWidth - 12) / measuredWidth);
   }
 
+  const EVENT_RARITIES = {
+    Common: { rank: 1, label: "普通事件 · I" },
+    Rare: { rank: 2, label: "稀有事件 · II" },
+    Epic: { rank: 3, label: "史诗事件 · III" },
+    Legendary: { rank: 4, label: "传说事件 · IV" },
+  };
+
   function createCardRender(card, view = "board") {
+    const isEvent = card.cardType === "Event";
     const isSpell = card.cardType !== "Minion";
     const viewName = `${view}${isSpell ? "Spell" : "Unit"}`;
     const spec = layout[viewName];
@@ -379,7 +387,7 @@
     render.append(placeholder);
 
     for (const layerSpec of [...spec.layers].sort((a, b) => (a.z || 0) - (b.z || 0))) {
-      if (layerSpec.visible === false) continue;
+      if (layerSpec.visible === false || (isEvent && ["cost_badge", "cost_value"].includes(layerSpec.id))) continue;
       let node;
       if (layerSpec.type === "text") {
         node = document.createElement("div");
@@ -416,13 +424,19 @@
       if (layerSpec.r) node.style.transform = `rotate(${layerSpec.r}deg)`;
       render.append(node);
     }
-    if (view === "board") {
+    if (view === "board" && !isEvent) {
       const designerCost = document.createElement("div");
       designerCost.className = "formal-board-designer-cost";
       designerCost.textContent = String(card.costAmount ?? 0);
       designerCost.title = `费用 ${card.costAmount ?? 0}`;
       designerCost.setAttribute("aria-label", `费用 ${card.costAmount ?? 0}`);
       render.append(designerCost);
+    }
+    if (isEvent) {
+      const rarity = document.createElement("span");
+      rarity.className = "formal-event-rarity";
+      rarity.textContent = (EVENT_RARITIES[card.rarity] || EVENT_RARITIES.Common).label;
+      render.append(rarity);
     }
     if (card.upgradeOfUid) {
       const badge = document.createElement("span");
@@ -454,8 +468,11 @@
       .filter((card) => !query || `${card.nameKey} ${card.englishName} ${card.id}`.toLowerCase().includes(query))
       .sort((a, b) => {
         const idDelta = a.id.localeCompare(b.id, "en", { numeric: true });
-        if (sortMode === "cost-asc") return Number(a.costAmount || 0) - Number(b.costAmount || 0) || idDelta;
-        if (sortMode === "cost-desc") return Number(b.costAmount || 0) - Number(a.costAmount || 0) || idDelta;
+        const sortValue = card => browseCategory === "event"
+          ? (EVENT_RARITIES[card.rarity] || EVENT_RARITIES.Common).rank
+          : Number(card.costAmount || 0);
+        if (sortMode === "cost-asc") return sortValue(a) - sortValue(b) || idDelta;
+        if (sortMode === "cost-desc") return sortValue(b) - sortValue(a) || idDelta;
         return idDelta;
       });
   }
@@ -464,6 +481,10 @@
     const grid = $("#cardCenterGrid");
     if (!grid || !dataset || !layout) return;
     const cards = filteredCards();
+    for (const option of $("#cardViewSort").options || []) {
+      if (option.value === "cost-asc") option.textContent = browseCategory === "event" ? "等级：从低到高" : "费用：从低到高";
+      if (option.value === "cost-desc") option.textContent = browseCategory === "event" ? "等级：从高到低" : "费用：从高到低";
+    }
     const sortMode = $("#cardViewSort")?.value || "id";
     const canReorder = sortMode === "id";
     grid.replaceChildren();
@@ -894,7 +915,7 @@
       classId: form.elements.namedItem("classId").value,
       collectable: cardType === "Event" || original?.upgradeOfUid || original?.parentUid ? false : form.elements.namedItem("collectable").value === "true",
       playtestReady: original?.upgradeOfUid ? designContract.effectivePlaytestReady(dataset, original) : Boolean(form.elements.namedItem("playtestReady")?.checked),
-      costAmount: number("costAmount"),
+      costAmount: cardType === "Event" ? (original?.costAmount ?? 0) : number("costAmount"),
       arrows: cardType === "Event" ? [] : $$("#arrowsCompass button.active").map((button) => button.dataset.dir),
       rulesText: form.elements.namedItem("rulesText").value.trim(),
       artDescription: form.elements.namedItem("artDescription").value.trim(),
@@ -1174,6 +1195,7 @@
     const isSpell = form.elements.namedItem("cardType").value !== "Minion";
     const isEvent = form.elements.namedItem("cardType").value === "Event";
     form.classList.toggle("is-event", isEvent);
+    form.elements.namedItem("costAmount").disabled = isEvent;
     form.classList.toggle("is-spell", isSpell);
     $$(".card-unit-only input, .card-unit-only button", form).forEach((control) => {
       control.disabled = isSpell;

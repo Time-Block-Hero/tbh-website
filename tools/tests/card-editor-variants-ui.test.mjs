@@ -14,9 +14,9 @@ function card(id, values = {}) {
 }
 function node() {
   const classes = new Set();
-  return { value: "", checked: false, hidden: false, style: {}, dataset: {}, textContent: "", options: [],
+  return { value: "", checked: false, hidden: false, style: { setProperty() {} }, dataset: {}, textContent: "", options: [], children: [],
     classList: { toggle(key, on) { if (on === undefined) on = !classes.has(key); on ? classes.add(key) : classes.delete(key); }, contains: key => classes.has(key), add: key => classes.add(key), remove: key => classes.delete(key) },
-    setAttribute() {}, append() {}, replaceChildren() {}, focus() {}, querySelectorAll() { return []; } };
+    setAttribute() {}, append(child) { this.children.push(child); }, replaceChildren() { this.children = []; }, focus() {}, querySelectorAll() { return []; }, getContext() { return null; } };
 }
 function harness(cards) {
   const fields = new Map(), nodes = new Map();
@@ -27,13 +27,13 @@ function harness(cards) {
   const data = { schemaVersion: 6, executionSchemaVersion: 21, shared: { statuses: [] }, cards, artworkVariants: {}, selectedArtworkIds: {} };
   const context = { console, structuredClone, crypto: webcrypto, TextEncoder, TbhCardDesign: contract,
     localStorage: { setItem() {}, getItem() { return null; } },
-    document: { createElement() { return { getContext() { return null; } }; }, querySelector: element, querySelectorAll: () => [], body: { style: {} } } };
+    document: { createElement() { return node(); }, querySelector: element, querySelectorAll: () => [], body: { style: {} } } };
   context.window = context; context.confirm = () => true;
   let script = fs.readFileSync(path.join(root, "card-editor.js"), "utf8");
   script = script.replace("  window.initFormalCardEditor =", `
     renderArtworkVariantList = () => {}; renderHand = () => {}; renderDerivativeRail = () => {}; renderVersionTabs = () => {}; renderGallery = () => {};
     persist = async () => true;
-    globalThis.editor = { load(value) { dataset = value; }, showCard, selectVersion, closeEditor, saveCard, readForm, filteredCards, remapCardIds, artworkFor,
+    globalThis.editor = { load(value) { dataset = value; }, setLayout(value) { layout = value; }, createCardRender, showCard, selectVersion, closeEditor, saveCard, readForm, filteredCards, remapCardIds, artworkFor,
       deleteCurrentCard, addMainCard, addDerivative, createUpgradeDesign, moveMainCardToPosition, busy: () => savingCard,
       category(value) { browseCategory = value; }, getCurrent: () => currentId, getDataset: () => dataset, setPersist(fn) { persist = fn; },
       setArt(variants, selected) { pendingArtworkVariants = variants; pendingSelectedArtworkId = selected; },
@@ -262,3 +262,49 @@ for (const action of ["addMainCard", "addDerivative", "createUpgradeDesign", "re
     assert.equal(h.api.getDataset().cards.find(entry => entry.uid === b.uid).nameKey, "B");
   });
 }
+
+
+test("event editor disables cost and preserves stored compatibility value while minion cost remains editable", () => {
+  const event = card("FNG-EV-001", { cardType: "Event", collectable: false, collectionKind: "NonCollectible", rarity: "Rare", costAmount: 4, arrows: [] });
+  const minion = card("FNG-001", { costAmount: 3 });
+  const h = harness([event, minion]);
+  h.api.showCard(event.id);
+  assert.equal(h.form.classList.contains("is-event"), true);
+  assert.equal(h.fields.get("costAmount").disabled, true);
+  h.fields.get("costAmount").value = "999";
+  h.fields.get("rarity").value = "Legendary";
+  assert.equal(h.api.readForm().costAmount, 4);
+  assert.equal(h.api.readForm().rarity, "Legendary");
+  h.api.showCard(minion.id);
+  assert.equal(h.form.classList.contains("is-event"), false);
+  assert.equal(h.fields.get("costAmount").disabled, false);
+  h.fields.get("costAmount").value = "7";
+  assert.equal(h.api.readForm().costAmount, 7);
+});
+
+test("event board and hand renders show rarity tiers instead of cost layers", () => {
+  const event = card("FNG-EV-001", { cardType: "Event", rarity: "Epic", costAmount: 97 });
+  const minion = card("FNG-001", { costAmount: 3 });
+  const h = harness([event, minion]);
+  h.api.setLayout(JSON.parse(fs.readFileSync(path.join(root, "card_layout_ref/layout.json"))));
+  for (const view of ["board", "hand"]) {
+    const render = h.api.createCardRender(event, view);
+    assert.ok(!render.children.some(child => ["cost_badge", "cost_value"].includes(child.dataset.layer)));
+    assert.ok(!render.children.some(child => child.className === "formal-board-designer-cost"));
+    assert.equal(render.children.find(child => child.className === "formal-event-rarity").textContent, "史诗事件 · III");
+  }
+  const ordinary = h.api.createCardRender(minion, "board");
+  assert.equal(ordinary.children.find(child => child.className === "formal-board-designer-cost").textContent, "3");
+  assert.ok(!ordinary.children.some(child => child.className === "formal-event-rarity"));
+});
+
+test("event list sorting follows rarity even when legacy cost differs", () => {
+  const common = card("FNG-EV-002", { cardType: "Event", collectable: false, rarity: "Common", costAmount: 99 });
+  const legendary = card("FNG-EV-001", { cardType: "Event", collectable: false, rarity: "Legendary", costAmount: 0 });
+  const h = harness([common, legendary]);
+  h.api.category("event");
+  h.element("#cardViewSort").value = "cost-asc";
+  assert.deepEqual(Array.from(h.api.filteredCards(), c => c.uid), [common.uid, legendary.uid]);
+  h.element("#cardViewSort").value = "cost-desc";
+  assert.deepEqual(Array.from(h.api.filteredCards(), c => c.uid), [legendary.uid, common.uid]);
+});
