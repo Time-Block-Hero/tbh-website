@@ -318,7 +318,7 @@ test('current approved identities and parent references stay intact, including A
   assert.equal(augustus.parentUid, 'bdd6fa88-21f9-4eed-8248-00e550344739');
   assert.equal(augustus.collectionKind, 'Token');
   const exported = exportDirtyDesigns(root);
-  assert.equal(exported.cards.length, 232);
+  assert.equal(exported.cards.length, 242);
   assert.deepEqual(exported.policy.excludedUids, []);
   for (const uid of identities.admittedPreviouslyExcludedUids) assert.ok(exported.cards.some(card => card.uid === uid));
 });
