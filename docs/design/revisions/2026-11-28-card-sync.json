@@ -1,0 +1,170 @@
+{
+  "date": "2026-11-28",
+  "sourceSnapshotSha256": "6f0c47c460cfcb4564d2b8118e4e51c8ebe300216e2eb7f3361d556d5e7abba6",
+  "previousWebsiteCommit": "caf726c7955e2152d47e102a0d4f161cd08a51c7",
+  "scope": "仅同步已纳入试玩的九个形态；保持身份、试玩名单、美术和其他设计不变。",
+  "entries": [
+    {
+      "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
+      "displayId": "FNG-008",
+      "name": "星际司令麦哲伦",
+      "previousDesignHash": "e5b15d01f480992e454cdb367f7c0a09695c65b420d195b59be911da35bc7b1f",
+      "designHash": "647713e4c8c7b4660c45b8801642605d94b5131289baa3243e18c98bed3d2199",
+      "previousExecutionHash": "551a27e321556dd9decf704770492ea2324be4d0882deb98fa517167c2d4e28d",
+      "executionHash": "cc47662ece43432fd2d1d8ef7a2852fb14e3803ca6e5f72c8b1b883c842d5501",
+      "changes": [
+        {
+          "field": "rulesText",
+          "before": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
+          "after": "发动：每回合限一次，从牌堆/弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。"
+        }
+      ]
+    },
+    {
+      "uid": "c740ca57-412c-4a8a-b9bb-5a051a27f4de",
+      "displayId": "FNG-008-UP",
+      "name": "星际司令麦哲伦",
+      "previousDesignHash": "2c81cdd7cea6dc791557331fd4ec8c14a77e0611483d6079fd67cab0214e0f20",
+      "designHash": "5675cf4c5b5a00700ffbf6a922a2edd48599dbf008ee73c9b88cbd7be159016b",
+      "previousExecutionHash": "a92ed190fae6e0605f6d589814b9fb51ed9b648109fcb91cb37e966096c20718",
+      "executionHash": "5ffcf441ba3223139b5a10a6a7853d0d1203cd14b2e6f0d9069dc9f6923499cd",
+      "changes": [
+        {
+          "field": "rulesText",
+          "before": "发动：每回合限一次，从弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。",
+          "after": "发动：每回合限一次，从牌堆/弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。"
+        }
+      ]
+    },
+    {
+      "uid": "b29cafc7-cc54-4cf5-a769-5ec5d441aa1e",
+      "displayId": "FNG-021-UP",
+      "name": "中微子爆弹",
+      "previousDesignHash": "2f3f1738efc7a75bcb4ccdbd62bdb9406ecc153dc8855c2557adea466d749e2d",
+      "designHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
+      "previousExecutionHash": "f24feac9b748a9fd0db54751abfcc098b65f6251d471c8a60e71c93f43557d0f",
+      "executionHash": "8c20c9c49f8ff56ccb60d77e3f478f2d5d8d2a8485a52cdeef4e26e33a2e7dcf",
+      "changes": [
+        {
+          "field": "rulesText",
+          "before": "发动：对一个单位造成12点伤害。[耐久度: 3]",
+          "after": "发动：对一个单位造成14点伤害。[耐久度: 3]"
+        }
+      ]
+    },
+    {
+      "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
+      "displayId": "FNG-024",
+      "name": "谕晶",
+      "previousDesignHash": "0d23043a5ef1ed6837fb49731af87739bb006105ac7ba1a3a2b71303b92f19c2",
+      "designHash": "470f5e578b6e80717b4bbcb51c61c5c08cd2547696b3a8eb236250894616c552",
+      "previousExecutionHash": "cfc18382e173a863bdb4ee24d30f33e2c9258ae54f016ae1044b202606d572f8",
+      "executionHash": "cfc18382e173a863bdb4ee24d30f33e2c9258ae54f016ae1044b202606d572f8",
+      "changes": [
+        {
+          "field": "costAmount",
+          "before": 8,
+          "after": 9
+        }
+      ]
+    },
+    {
+      "uid": "eaa0b099-8c83-41bd-8f35-9e7d572bc9d8",
+      "displayId": "FNG-024-UP",
+      "name": "谕晶",
+      "previousDesignHash": "5cf6dd732aaa0306dd53dd0b108611d48d67b1d00fe0b1e21130fc16f7d25f69",
+      "designHash": "d179789d659756a9132adb81628a7df13105d373f305cd348c342c27e6dfaf22",
+      "previousExecutionHash": "35d0b0faede2a116d7a309b9c4b89f341c568dd42e91eb0b4ea87cd445f27533",
+      "executionHash": "35d0b0faede2a116d7a309b9c4b89f341c568dd42e91eb0b4ea87cd445f27533",
+      "changes": [
+        {
+          "field": "costAmount",
+          "before": 8,
+          "after": 9
+        }
+      ]
+    },
+    {
+      "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
+      "displayId": "FNG-039",
+      "name": "撕裂时潮的潜兽",
+      "previousDesignHash": "f5b0465fed6764ef01168bd39ad05a9eacc3bceb0b1cc6a5ec8a4849ec778f7b",
+      "designHash": "8383764dcae60d810d5804399b4fffd00faf251110e66d8116603635b84ed6d7",
+      "previousExecutionHash": "e6b3415eee41be66fc3ba579b28a2f23261ce9bb514f4c346a62009c9d032c3b",
+      "executionHash": "e6b3415eee41be66fc3ba579b28a2f23261ce9bb514f4c346a62009c9d032c3b",
+      "changes": [
+        {
+          "field": "arrows",
+          "before": [
+            "NE"
+          ],
+          "after": []
+        }
+      ]
+    },
+    {
+      "uid": "150b28b4-62e2-4e84-9008-ffbd5dce8318",
+      "displayId": "FNG-039-UP",
+      "name": "撕裂时潮的潜兽",
+      "previousDesignHash": "c7e90b1fe88719213e0229012a36ae013d99a102ff6769d258a149e50f960e1d",
+      "designHash": "a1f42f8201182957511bb19737ddb64035609c3b50b5f8bbd305ba17c732cd5d",
+      "previousExecutionHash": "f427917abc9cdc93ec88532ff74f236b90d443a525100c7d3dced56e552b499c",
+      "executionHash": "adc808078ad17a5cbc7fbd17be6f06938db90d022fa79b16ebe04419713ccc05",
+      "changes": [
+        {
+          "field": "arrows",
+          "before": [
+            "NE"
+          ],
+          "after": []
+        }
+      ]
+    },
+    {
+      "uid": "d3134867-6906-454c-b930-2dcfeda22aa4",
+      "displayId": "FNG-042",
+      "name": "银河远征",
+      "previousDesignHash": "912180724b69b83a782cb3dc1b91684cca7e1e86774342b9a141b39298d0f636",
+      "designHash": "c88b044244a6460f94faf2100e169ac8248f89445f70c5e10b7ddd9037286071",
+      "previousExecutionHash": "5e09a89a2f708e62a557fd65063a5b0bd61c74af2081fb11689e245cb48855ff",
+      "executionHash": "5e09a89a2f708e62a557fd65063a5b0bd61c74af2081fb11689e245cb48855ff",
+      "changes": [
+        {
+          "field": "costAmount",
+          "before": 8,
+          "after": 9
+        },
+        {
+          "field": "arrows",
+          "before": [
+            "N"
+          ],
+          "after": []
+        }
+      ]
+    },
+    {
+      "uid": "c21e1ae3-9056-4cfd-aff2-930801e59923",
+      "displayId": "FNG-042-UP",
+      "name": "银河远征",
+      "previousDesignHash": "079d3f14252e839bf494febf992881ed8b902d1f6374463bed8bfc2963570f19",
+      "designHash": "2c69ba807c7f748340e0548d62cda86c3cb86bd0e1e36f4b5702314249393ff1",
+      "previousExecutionHash": "88b2bc2877ec5315f9feb2adac25c3980e6dcdc976590c77905189d24c2f9711",
+      "executionHash": "88b2bc2877ec5315f9feb2adac25c3980e6dcdc976590c77905189d24c2f9711",
+      "changes": [
+        {
+          "field": "costAmount",
+          "before": 8,
+          "after": 9
+        },
+        {
+          "field": "arrows",
+          "before": [
+            "N"
+          ],
+          "after": []
+        }
+      ]
+    }
+  ]
+}

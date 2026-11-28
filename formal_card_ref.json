@@ -1843,7 +1843,7 @@
         "costResource": "Star",
         "costAmount": 10,
         "durability": 0,
-        "rulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
+        "rulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
         "arrows": [
           "N"
         ],
@@ -1864,7 +1864,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "e5b15d01f480992e454cdb367f7c0a09695c65b420d195b59be911da35bc7b1f",
+          "reviewedDesignHash": "647713e4c8c7b4660c45b8801642605d94b5131289baa3243e18c98bed3d2199",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -1907,7 +1907,7 @@
                     "saveAs": "units",
                     "valueType": "Card",
                     "scope": {
-                      "query": "DiscardPile",
+                      "query": "OwnedZones",
                       "filters": [
                         {
                           "field": "cardType",
@@ -1924,6 +1924,10 @@
                           "op": "LessThan",
                           "value": 5
                         }
+                      ],
+                      "zones": [
+                        "DrawPile",
+                        "DiscardPile"
                       ]
                     },
                     "policy": {
@@ -1980,7 +1984,6 @@
                                 "package": "TransferCard",
                                 "args": {
                                   "card": "$unit",
-                                  "requiredSourceZone": "DiscardPile",
                                   "requiredSourceOwner": "SourceController",
                                   "destinationOwner": "SourceController",
                                   "destinationZone": "Battlefield",
@@ -1996,7 +1999,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。"
+                "rawRulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。"
               }
             }
           ]
@@ -2015,7 +2018,7 @@
         "costResource": "Star",
         "costAmount": 10,
         "durability": 0,
-        "rulesText": "发动：每回合限一次，从弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。",
+        "rulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。",
         "arrows": [
           "N"
         ],
@@ -2035,7 +2038,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "2c81cdd7cea6dc791557331fd4ec8c14a77e0611483d6079fd67cab0214e0f20",
+          "reviewedDesignHash": "5675cf4c5b5a00700ffbf6a922a2edd48599dbf008ee73c9b88cbd7be159016b",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -2078,7 +2081,7 @@
                     "saveAs": "units",
                     "valueType": "Card",
                     "scope": {
-                      "query": "DiscardPile",
+                      "query": "OwnedZones",
                       "filters": [
                         {
                           "field": "cardType",
@@ -2095,6 +2098,10 @@
                           "op": "LessThan",
                           "value": 5
                         }
+                      ],
+                      "zones": [
+                        "DrawPile",
+                        "DiscardPile"
                       ]
                     },
                     "policy": {
@@ -2152,7 +2159,6 @@
                                 "package": "TransferCard",
                                 "args": {
                                   "card": "$unit",
-                                  "requiredSourceZone": "DiscardPile",
                                   "requiredSourceOwner": "SourceController",
                                   "destinationOwner": "SourceController",
                                   "destinationZone": "Battlefield",
@@ -2168,7 +2174,7 @@
                 }
               ],
               "annotations": {
-                "rawRulesText": "发动：每回合限一次，从弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。"
+                "rawRulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。"
               }
             }
           ]
@@ -5943,7 +5949,7 @@
         "costResource": "Star",
         "costAmount": 10,
         "durability": 1,
-        "rulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]",
+        "rulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]",
         "arrows": [
           "NE",
           "E"
@@ -5958,7 +5964,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "2f3f1738efc7a75bcb4ccdbd62bdb9406ecc153dc8855c2557adea466d749e2d",
+          "reviewedDesignHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -5975,8 +5981,8 @@
             "textValueBindings": [
               {
                 "id": "effect-value",
-                "anchor": "造成12点伤害",
-                "token": "12",
+                "anchor": "造成14点伤害",
+                "token": "14",
                 "sources": [
                   {
                     "kind": "EffectValue",
@@ -6037,7 +6043,7 @@
                 "exports": [
                   "target"
                 ],
-                "rawRulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]"
+                "rawRulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]"
               }
             },
             {
@@ -6054,7 +6060,7 @@
                         "call": {
                           "name": "EffectValue",
                           "args": [
-                            12
+                            14
                           ],
                           "metadata": {
                             "kind": "Damage"
@@ -6071,7 +6077,7 @@
                 "inputs": [
                   "target"
                 ],
-                "rawRulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]"
+                "rawRulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]"
               }
             }
           ]
@@ -6572,7 +6578,7 @@
         "rarity": "Epic",
         "collectable": true,
         "costResource": "Star",
-        "costAmount": 8,
+        "costAmount": 9,
         "attack": 1,
         "health": 4,
         "movement": 1,
@@ -6595,7 +6601,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "0d23043a5ef1ed6837fb49731af87739bb006105ac7ba1a3a2b71303b92f19c2",
+          "reviewedDesignHash": "470f5e578b6e80717b4bbcb51c61c5c08cd2547696b3a8eb236250894616c552",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -6738,7 +6744,7 @@
         "rarity": "Epic",
         "collectable": false,
         "costResource": "Star",
-        "costAmount": 8,
+        "costAmount": 9,
         "attack": 1,
         "health": 7,
         "movement": 2,
@@ -6760,7 +6766,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "5cf6dd732aaa0306dd53dd0b108611d48d67b1d00fe0b1e21130fc16f7d25f69",
+          "reviewedDesignHash": "d179789d659756a9132adb81628a7df13105d373f305cd348c342c27e6dfaf22",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -11293,9 +11299,7 @@
         "movement": 2,
         "durability": 0,
         "rulesText": "发动：选择一张己方法术，重置其发动次数。",
-        "arrows": [
-          "NE"
-        ],
+        "arrows": [],
         "tribes": [
           "奇兽"
         ],
@@ -11310,7 +11314,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "f5b0465fed6764ef01168bd39ad05a9eacc3bceb0b1cc6a5ec8a4849ec778f7b",
+          "reviewedDesignHash": "8383764dcae60d810d5804399b4fffd00faf251110e66d8116603635b84ed6d7",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -11420,9 +11424,7 @@
         "movement": 3,
         "durability": 0,
         "rulesText": "发动：每回合限两次，选择一张己方法术，重置其发动次数。",
-        "arrows": [
-          "NE"
-        ],
+        "arrows": [],
         "tribes": [
           "奇兽"
         ],
@@ -11436,7 +11438,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "c7e90b1fe88719213e0229012a36ae013d99a102ff6769d258a149e50f960e1d",
+          "reviewedDesignHash": "a1f42f8201182957511bb19737ddb64035609c3b50b5f8bbd305ba17c732cd5d",
           "properties": {
             "constructionTarget": null,
             "runtimeSupportNote": null,
@@ -11502,7 +11504,7 @@
                 "exports": [
                   "spell"
                 ],
-                "rawRulesText": "每回合限两次，发动：选择一张己方法术，重置其发动次数。"
+                "rawRulesText": "发动：每回合限两次，选择一张己方法术，重置其发动次数。"
               }
             },
             {
@@ -11523,7 +11525,7 @@
                 "inputs": [
                   "spell"
                 ],
-                "rawRulesText": "每回合限两次，发动：选择一张己方法术，重置其发动次数。"
+                "rawRulesText": "发动：每回合限两次，选择一张己方法术，重置其发动次数。"
               }
             }
           ]
@@ -11786,12 +11788,10 @@
         "upgradeOfUid": null,
         "playtestReady": true,
         "costResource": "Star",
-        "costAmount": 8,
+        "costAmount": 9,
         "durability": 0,
         "rulesText": "发动：从1级与2级事件的合并池中发现一个事件并触发。",
-        "arrows": [
-          "N"
-        ],
+        "arrows": [],
         "tags": [],
         "artPath": "",
         "artworkKey": "galactic-expedition",
@@ -11803,7 +11803,7 @@
         "collectionKind": "Collectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "912180724b69b83a782cb3dc1b91684cca7e1e86774342b9a141b39298d0f636",
+          "reviewedDesignHash": "c88b044244a6460f94faf2100e169ac8248f89445f70c5e10b7ddd9037286071",
           "properties": {
             "constructionTarget": null,
             "upgradeToCardIds": [],
@@ -11863,12 +11863,10 @@
         "upgradeOfUid": "d3134867-6906-454c-b930-2dcfeda22aa4",
         "playtestReady": true,
         "costResource": "Star",
-        "costAmount": 8,
+        "costAmount": 9,
         "durability": 0,
         "rulesText": "发动：从2级与3级事件的合并池中发现一个事件并触发。",
-        "arrows": [
-          "N"
-        ],
+        "arrows": [],
         "tags": [],
         "artworkKey": "",
         "artDescription": "",
@@ -11879,7 +11877,7 @@
         "collectionKind": "NonCollectible",
         "execution": {
           "runtimeSupport": "Implemented",
-          "reviewedDesignHash": "079d3f14252e839bf494febf992881ed8b902d1f6374463bed8bfc2963570f19",
+          "reviewedDesignHash": "2c69ba807c7f748340e0548d62cda86c3cb86bd0e1e36f4b5702314249393ff1",
           "properties": {
             "constructionTarget": null,
             "upgradeToCardIds": [],
@@ -35455,7 +35453,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "fa003374d981f72b15b3272f4c22b6f1e33be387d23697f7ef28740fb2addd1d",
+    "cardsSha256": "44955f8aefaac11e3d26ea416640f2fe742d0296831094cc2fff7804d7dbd73e",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue167-20261128-playtest139",
@@ -38497,7 +38495,7 @@
       "uid": "150b28b4-62e2-4e84-9008-ffbd5dce8318",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "c7e90b1fe88719213e0229012a36ae013d99a102ff6769d258a149e50f960e1d",
+        "reviewedDesignHash": "a1f42f8201182957511bb19737ddb64035609c3b50b5f8bbd305ba17c732cd5d",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -38563,7 +38561,7 @@
               "exports": [
                 "spell"
               ],
-              "rawRulesText": "每回合限两次，发动：选择一张己方法术，重置其发动次数。"
+              "rawRulesText": "发动：每回合限两次，选择一张己方法术，重置其发动次数。"
             }
           },
           {
@@ -38584,12 +38582,12 @@
               "inputs": [
                 "spell"
               ],
-              "rawRulesText": "每回合限两次，发动：选择一张己方法术，重置其发动次数。"
+              "rawRulesText": "发动：每回合限两次，选择一张己方法术，重置其发动次数。"
             }
           }
         ]
       },
-      "executionSha256": "f427917abc9cdc93ec88532ff74f236b90d443a525100c7d3dced56e552b499c",
+      "executionSha256": "adc808078ad17a5cbc7fbd17be6f06938db90d022fa79b16ebe04419713ccc05",
       "displayId": "FNG-039-UP",
       "name": "撕裂时潮的潜兽",
       "nameEn": "Chronotide Riftsurf Diver Upgraded",
@@ -38606,9 +38604,7 @@
       "attack": 4,
       "health": 6,
       "movement": 3,
-      "arrows": [
-        "NE"
-      ],
+      "arrows": [],
       "tribes": [
         "奇兽"
       ],
@@ -44466,7 +44462,7 @@
       "uid": "3eb7075a-6989-4e6e-a911-f0dfb83b1fc0",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "f5b0465fed6764ef01168bd39ad05a9eacc3bceb0b1cc6a5ec8a4849ec778f7b",
+        "reviewedDesignHash": "8383764dcae60d810d5804399b4fffd00faf251110e66d8116603635b84ed6d7",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -44575,9 +44571,7 @@
       "attack": 3,
       "health": 4,
       "movement": 2,
-      "arrows": [
-        "NE"
-      ],
+      "arrows": [],
       "tribes": [
         "奇兽"
       ],
@@ -57466,7 +57460,7 @@
       "uid": "b29cafc7-cc54-4cf5-a769-5ec5d441aa1e",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "2f3f1738efc7a75bcb4ccdbd62bdb9406ecc153dc8855c2557adea466d749e2d",
+        "reviewedDesignHash": "82602a9beeedb023e83b448a24efee3601f0e38652e9b783f53e5c0ed9bdb431",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -57483,8 +57477,8 @@
           "textValueBindings": [
             {
               "id": "effect-value",
-              "anchor": "造成12点伤害",
-              "token": "12",
+              "anchor": "造成14点伤害",
+              "token": "14",
               "sources": [
                 {
                   "kind": "EffectValue",
@@ -57545,7 +57539,7 @@
               "exports": [
                 "target"
               ],
-              "rawRulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]"
+              "rawRulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]"
             }
           },
           {
@@ -57562,7 +57556,7 @@
                       "call": {
                         "name": "EffectValue",
                         "args": [
-                          12
+                          14
                         ],
                         "metadata": {
                           "kind": "Damage"
@@ -57579,12 +57573,12 @@
               "inputs": [
                 "target"
               ],
-              "rawRulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]"
+              "rawRulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]"
             }
           }
         ]
       },
-      "executionSha256": "f24feac9b748a9fd0db54751abfcc098b65f6251d471c8a60e71c93f43557d0f",
+      "executionSha256": "8c20c9c49f8ff56ccb60d77e3f478f2d5d8d2a8485a52cdeef4e26e33a2e7dcf",
       "displayId": "FNG-021-UP",
       "name": "中微子爆弹",
       "nameEn": "Neutrino Bomb Upgraded",
@@ -57607,7 +57601,7 @@
       ],
       "tribes": [],
       "tags": [],
-      "rulesText": "发动：对一个单位造成12点伤害。[耐久度: 3]",
+      "rulesText": "发动：对一个单位造成14点伤害。[耐久度: 3]",
       "artwork": {
         "key": "neutrino-bomb-upgraded",
         "selected": [
@@ -60354,7 +60348,7 @@
       "uid": "c21e1ae3-9056-4cfd-aff2-930801e59923",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "079d3f14252e839bf494febf992881ed8b902d1f6374463bed8bfc2963570f19",
+        "reviewedDesignHash": "2c69ba807c7f748340e0548d62cda86c3cb86bd0e1e36f4b5702314249393ff1",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -60414,14 +60408,12 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": null,
       "health": null,
       "movement": null,
-      "arrows": [
-        "N"
-      ],
+      "arrows": [],
       "tribes": [],
       "tags": [],
       "rulesText": "发动：从2级与3级事件的合并池中发现一个事件并触发。",
@@ -61469,7 +61461,7 @@
       "uid": "c740ca57-412c-4a8a-b9bb-5a051a27f4de",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "2c81cdd7cea6dc791557331fd4ec8c14a77e0611483d6079fd67cab0214e0f20",
+        "reviewedDesignHash": "5675cf4c5b5a00700ffbf6a922a2edd48599dbf008ee73c9b88cbd7be159016b",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -61512,7 +61504,7 @@
                   "saveAs": "units",
                   "valueType": "Card",
                   "scope": {
-                    "query": "DiscardPile",
+                    "query": "OwnedZones",
                     "filters": [
                       {
                         "field": "cardType",
@@ -61529,6 +61521,10 @@
                         "op": "LessThan",
                         "value": 5
                       }
+                    ],
+                    "zones": [
+                      "DrawPile",
+                      "DiscardPile"
                     ]
                   },
                   "policy": {
@@ -61586,7 +61582,6 @@
                               "package": "TransferCard",
                               "args": {
                                 "card": "$unit",
-                                "requiredSourceZone": "DiscardPile",
                                 "requiredSourceOwner": "SourceController",
                                 "destinationOwner": "SourceController",
                                 "destinationZone": "Battlefield",
@@ -61602,12 +61597,12 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：每回合限一次，从弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。"
+              "rawRulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。"
             }
           }
         ]
       },
-      "executionSha256": "a92ed190fae6e0605f6d589814b9fb51ed9b648109fcb91cb37e966096c20718",
+      "executionSha256": "5ffcf441ba3223139b5a10a6a7853d0d1203cd14b2e6f0d9069dc9f6923499cd",
       "displayId": "FNG-008-UP",
       "name": "星际司令麦哲伦",
       "nameEn": "Interstellar Commander Magellan Upgraded",
@@ -61631,7 +61626,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "发动：每回合限一次，从弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。",
+      "rulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤两个费用低于5的军队随从，召唤至其↖️↗️方格子。",
       "artwork": {
         "key": "interstellar-commander-magellan-upgraded",
         "selected": [
@@ -62443,7 +62438,7 @@
       "uid": "d05dacfa-1ef2-4aec-a94d-6dd8d6d27d4d",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "0d23043a5ef1ed6837fb49731af87739bb006105ac7ba1a3a2b71303b92f19c2",
+        "reviewedDesignHash": "470f5e578b6e80717b4bbcb51c61c5c08cd2547696b3a8eb236250894616c552",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -62586,7 +62581,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": 1,
       "health": 4,
@@ -63258,7 +63253,7 @@
       "uid": "d3134867-6906-454c-b930-2dcfeda22aa4",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "912180724b69b83a782cb3dc1b91684cca7e1e86774342b9a141b39298d0f636",
+        "reviewedDesignHash": "c88b044244a6460f94faf2100e169ac8248f89445f70c5e10b7ddd9037286071",
         "properties": {
           "constructionTarget": null,
           "upgradeToCardIds": [],
@@ -63318,14 +63313,12 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": null,
       "health": null,
       "movement": null,
-      "arrows": [
-        "N"
-      ],
+      "arrows": [],
       "tribes": [],
       "tags": [],
       "rulesText": "发动：从1级与2级事件的合并池中发现一个事件并触发。",
@@ -65035,7 +65028,7 @@
       "uid": "dd21e939-7227-4e9e-87ef-e020d66c80ca",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "e5b15d01f480992e454cdb367f7c0a09695c65b420d195b59be911da35bc7b1f",
+        "reviewedDesignHash": "647713e4c8c7b4660c45b8801642605d94b5131289baa3243e18c98bed3d2199",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -65078,7 +65071,7 @@
                   "saveAs": "units",
                   "valueType": "Card",
                   "scope": {
-                    "query": "DiscardPile",
+                    "query": "OwnedZones",
                     "filters": [
                       {
                         "field": "cardType",
@@ -65095,6 +65088,10 @@
                         "op": "LessThan",
                         "value": 5
                       }
+                    ],
+                    "zones": [
+                      "DrawPile",
+                      "DiscardPile"
                     ]
                   },
                   "policy": {
@@ -65151,7 +65148,6 @@
                               "package": "TransferCard",
                               "args": {
                                 "card": "$unit",
-                                "requiredSourceZone": "DiscardPile",
                                 "requiredSourceOwner": "SourceController",
                                 "destinationOwner": "SourceController",
                                 "destinationZone": "Battlefield",
@@ -65167,12 +65163,12 @@
               }
             ],
             "annotations": {
-              "rawRulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。"
+              "rawRulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。"
             }
           }
         ]
       },
-      "executionSha256": "551a27e321556dd9decf704770492ea2324be4d0882deb98fa517167c2d4e28d",
+      "executionSha256": "cc47662ece43432fd2d1d8ef7a2852fb14e3803ca6e5f72c8b1b883c842d5501",
       "displayId": "FNG-008",
       "name": "星际司令麦哲伦",
       "nameEn": "Interstellar Commander Magellan",
@@ -65196,7 +65192,7 @@
         "人类"
       ],
       "tags": [],
-      "rulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
+      "rulesText": "发动：每回合限一次，从牌堆/弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
       "artwork": {
         "key": "interstellar-commander-magellan",
         "selected": [
@@ -67708,7 +67704,7 @@
       "uid": "eaa0b099-8c83-41bd-8f35-9e7d572bc9d8",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "5cf6dd732aaa0306dd53dd0b108611d48d67b1d00fe0b1e21130fc16f7d25f69",
+        "reviewedDesignHash": "d179789d659756a9132adb81628a7df13105d373f305cd348c342c27e6dfaf22",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -67855,7 +67851,7 @@
       "classId": "Neutral",
       "rarity": "Epic",
       "costResource": "Star",
-      "costAmount": 8,
+      "costAmount": 9,
       "durability": 0,
       "attack": 1,
       "health": 7,
