@@ -11778,7 +11778,7 @@
       {
         "id": "FNG-042",
         "nameKey": "银河远征",
-        "englishName": "",
+        "englishName": "Galactic Expedition",
         "cardType": "Spell",
         "classId": "Neutral",
         "rarity": "Epic",
@@ -11794,10 +11794,10 @@
         ],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "galactic-expedition",
+        "artDescription": "Standalone Epic spell illustration for Time-Block Hero, tall portrait near 5:8. An expedition convoy of industrial survey spacecraft passes a massive angular frontier docking gantry into an unfamiliar starfield, several possible routes suggested by distant beacons and luminous astronomical phenomena rather than interface graphics. Show the decisive departure as a readable process: engines ignite, navigation drones fan out, and the lead survey ship crosses from sheltered structure into open space. Low oblique viewpoint from the gantry, lead ship and branching beacon destinations held within the upper square crop, layered catwalks and supply machinery extending below. Navy and matte off-white hulls with restrained cyan and amber navigation lights; dramatic cool space backlight, painterly haze, cel-shaped shadows, crisp engineered silhouettes. Premium industrial science-fiction ANIME illustration with authored linework, NOT photography or glossy 3D. Artwork only, no text, logo, watermark, UI, frame, decorative border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "d3134867-6906-454c-b930-2dcfeda22aa4",
         "parentUid": null,
         "collectionKind": "Collectible",
@@ -17822,7 +17822,7 @@
       {
         "id": "FNG-EV-032",
         "nameKey": "幸运陨石 I",
-        "englishName": "",
+        "englishName": "Lucky Meteor I",
         "cardType": "Event",
         "classId": "Neutral",
         "rarity": "Common",
@@ -17836,10 +17836,10 @@
         "arrows": [],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "lucky-meteor-i",
+        "artDescription": "Standalone Common event illustration for Time-Block Hero, tall portrait near 5:8. A small freshly fallen meteor cracks open on the edge of an industrial frontier landing pad, revealing one compact recoverable energy-rich mineral core; a simple articulated salvage claw reaches toward this unexpected find. One clean narrative idea, the lucky discovery rather than an explosion. Close three-quarter viewpoint, meteor and approaching claw immediately readable within upper square crop; economical steel landing-pad background extends below. Matte charcoal rock, white ceramic claw, restrained cyan mineral light and a warm dawn rim. Crisp ANIME contour drawing and cel-shaped value blocks with painterly atmosphere, functional industrial sci-fi engineering, high production quality. No photorealism, lens bokeh or PBR product rendering. Artwork only, no readable text, logo, watermark, UI, frame, border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "73a6604d-68d6-4e08-b0a1-4357cf8e3e02",
         "parentUid": null,
         "collectionKind": "NonCollectible",
@@ -17916,7 +17916,7 @@
       {
         "id": "FNG-EV-033",
         "nameKey": "幸运陨石 II",
-        "englishName": "",
+        "englishName": "Lucky Meteor II",
         "cardType": "Event",
         "classId": "Neutral",
         "rarity": "Rare",
@@ -17930,10 +17930,10 @@
         "arrows": [],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "lucky-meteor-ii",
+        "artDescription": "Standalone Rare event illustration for Time-Block Hero, tall portrait near 5:8. A salvage drone in an orbital service bay draws a newly captured medium meteor into an open industrial recovery cradle; a crack exposes a valuable luminous mineral seam, a stroke of luck arriving with otherwise mundane cargo. Three-quarter side view with meteor, drone clamp and receiving cradle in the upper square crop, rails and folded machinery leading downward. Specific layered environment and material contrast: slate hull plating, matte ceramic drone shell, weathered nickel rock, emerald-cyan core with warm worklights. Confident ANIME linework, designed cel highlights, painterly space haze; premium industrial science-fiction illustration, not photographic or glossy 3D. Artwork only, no text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "dc1d8667-a035-4699-ab8e-a019d9fd8d79",
         "parentUid": null,
         "collectionKind": "NonCollectible",
@@ -18010,7 +18010,7 @@
       {
         "id": "FNG-EV-034",
         "nameKey": "幸运陨石 III",
-        "englishName": "",
+        "englishName": "Lucky Meteor III",
         "cardType": "Event",
         "classId": "Neutral",
         "rarity": "Epic",
@@ -18024,10 +18024,10 @@
         "arrows": [],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "lucky-meteor-iii",
+        "artDescription": "Standalone Epic event illustration for Time-Block Hero, tall portrait near 5:8. A large mineral-rich meteor is safely intercepted between the articulated arms of an orbital salvage station; fractures peel open in suspended fragments to reveal one exceptional blue-violet energy core as salvage beams stabilize it. Depict the moment ordinary recovery becomes an extraordinary discovery, not a weapon striking a city. Dramatic steep diagonal viewpoint, central core and opposing engineered capture arms readable in the upper square crop, layered shipyard ribs, tiny service drones and planet curvature add depth below. Strong cel-shaped light and shadow, authored ANIME contour edges, matte coated steel and ceramic, restrained violet-cyan emission against deep navy with amber practical lights. Premium industrial sci-fi anime painting, no photographic lens effects, no PBR look. Artwork only, no text, logo, watermark, UI, card frame, decorative border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "3ab4140d-6887-459b-8d54-18ea2e45b9e9",
         "parentUid": null,
         "collectionKind": "NonCollectible",
@@ -18104,7 +18104,7 @@
       {
         "id": "FNG-EV-035",
         "nameKey": "幸运陨石 IV",
-        "englishName": "",
+        "englishName": "Lucky Meteor IV",
         "cardType": "Event",
         "classId": "Neutral",
         "rarity": "Legendary",
@@ -18118,10 +18118,10 @@
         "arrows": [],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "lucky-meteor-iv",
+        "artDescription": "Standalone Legendary event illustration for Time-Block Hero, tall portrait near 5:8. A rare double-core meteor has just been safely captured by a colossal orbital recovery array; its dark mineral shell separates into two suspended halves, revealing TWO distinct precious radiant cores being guided into two separate cargo receptacles. This extraordinary lucky recovery is the singular decisive moment. Bold asymmetric low viewpoint from an outer station gantry, the two cores and catching magnetic arms entirely readable in upper square crop; immense curved industrial ribs, cables and small maintenance drones create depth toward a planet horizon below. White-gold core light against navy space and matte graphite hardware, deliberate cyan stabilizing fields, cinematic rim light and painterly haze. Clear authored ANIME linework, engineered silhouettes and cel-shaped shadow planes, exceptionally polished industrial science fiction, not photography or glossy 3D. No invented named character or background story. Artwork only, no text, logo, watermark, UI, frame, decorative border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "a8ee2808-a01b-4e0c-9b93-cd9f7c27ee59",
         "parentUid": null,
         "collectionKind": "NonCollectible",
@@ -18233,7 +18233,7 @@
       {
         "id": "FNG-EV-037",
         "nameKey": "辉煌辐射",
-        "englishName": "",
+        "englishName": "Glorious Radiation",
         "cardType": "Event",
         "classId": "Neutral",
         "rarity": "Legendary",
@@ -18247,10 +18247,10 @@
         "arrows": [],
         "tags": [],
         "artPath": "",
-        "artworkKey": "",
-        "artDescription": "",
-        "artDescriptionNeedsPolish": true,
-        "artRequest": 1,
+        "artworkKey": "glorious-radiation",
+        "artDescription": "Standalone Legendary event illustration for Time-Block Hero, tall portrait near 5:8. An anonymous ordinary BIOLOGICAL human expedition soldier undergoes permanent enhancement inside an open industrial irradiation chamber. The soldier is visibly living flesh and blood, a young adult with expressive anime face, short dark hair, practical navy technical underlayer and partial off-white protective plates; NOT a robot, not a named hero. At the exact moment the gold-white radiation focuses through concentric engineered emitters, the soldier rises steadily from a crouch with a confident open hand, fine luminous filaments tracing across exposed forearm skin while the chamber instruments lock into alignment. Convey physical vitality and lasting transformation rather than injury, horror or disintegration. Dramatic close low three-quarter view, face, living arm and focused luminous interaction held inside upper square crop; steel emitter assemblies, shielding petals and anchored cables extend into lower portrait. Crisp expressive ANIME facial drawing and contour lines, sculpted cel shadows, matte technical fabric, ceramic and brushed metal, rich but controlled gold-white rays against cool slate and navy atmospheric depth. Premium industrial sci-fi anime painting, no photorealism, no PBR look, no chibi. Artwork only, no text, logo, watermark, UI, frame, decorative border, arrows, cost or stat icons.",
+        "artDescriptionNeedsPolish": false,
+        "artRequest": 0,
         "uid": "dda7b0e4-5a5f-47b0-b6a0-18ca7f743b21",
         "parentUid": null,
         "collectionKind": "NonCollectible",
@@ -35193,6 +35193,42 @@
           "id": "decisive-moment-01",
           "src": "./assets/card-art/decisive-moment/decisive-moment-01.png"
         }
+      ],
+      "FNG-042": [
+        {
+          "id": "galactic-expedition-01",
+          "src": "./assets/card-art/galactic-expedition/galactic-expedition-01.png"
+        }
+      ],
+      "FNG-EV-032": [
+        {
+          "id": "lucky-meteor-i-01",
+          "src": "./assets/card-art/lucky-meteor-i/lucky-meteor-i-01.png"
+        }
+      ],
+      "FNG-EV-033": [
+        {
+          "id": "lucky-meteor-ii-01",
+          "src": "./assets/card-art/lucky-meteor-ii/lucky-meteor-ii-01.png"
+        }
+      ],
+      "FNG-EV-034": [
+        {
+          "id": "lucky-meteor-iii-01",
+          "src": "./assets/card-art/lucky-meteor-iii/lucky-meteor-iii-01.png"
+        }
+      ],
+      "FNG-EV-035": [
+        {
+          "id": "lucky-meteor-iv-01",
+          "src": "./assets/card-art/lucky-meteor-iv/lucky-meteor-iv-01.png"
+        }
+      ],
+      "FNG-EV-037": [
+        {
+          "id": "glorious-radiation-01",
+          "src": "./assets/card-art/glorious-radiation/glorious-radiation-01.png"
+        }
       ]
     },
     "selectedArtworkIds": {
@@ -35373,7 +35409,13 @@
       "FNG-EV-028": "master-strategist-ii-01",
       "FNG-EV-029": "master-strategist-iii-01",
       "FNG-EV-030": "master-strategist-iv-01",
-      "FNG-EV-031": "decisive-moment-01"
+      "FNG-EV-031": "decisive-moment-01",
+      "FNG-042": "galactic-expedition-01",
+      "FNG-EV-032": "lucky-meteor-i-01",
+      "FNG-EV-033": "lucky-meteor-ii-01",
+      "FNG-EV-034": "lucky-meteor-iii-01",
+      "FNG-EV-035": "lucky-meteor-iv-01",
+      "FNG-EV-037": "glorious-radiation-01"
     },
     "customRaces": [
       "机械",
@@ -35413,7 +35455,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "728bcff3cc0eb3752c562de9181c915295ad2f15bde156b5472bde4c55c548f2",
+    "cardsSha256": "fa003374d981f72b15b3272f4c22b6f1e33be387d23697f7ef28740fb2addd1d",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue167-20261128-playtest139",
@@ -43097,7 +43139,7 @@
       "executionSha256": "2bd4d1d91906f23b9f838badb0ebec9e4bff45de85a533e65a1116f7a70bcd5a",
       "displayId": "FNG-EV-034",
       "name": "幸运陨石 III",
-      "nameEn": "",
+      "nameEn": "Lucky Meteor III",
       "cardType": "Event",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -43116,8 +43158,13 @@
       "tags": [],
       "rulesText": "从你的商店卡池（含中立占位牌）中等概率随机获得1张原始费用为6～8的卡牌，加入弃牌堆。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "lucky-meteor-iii",
+        "selected": [
+          {
+            "variantId": "lucky-meteor-iii-01",
+            "sourcePath": "./assets/card-art/lucky-meteor-iii/lucky-meteor-iii-01.png"
+          }
+        ]
       }
     },
     {
@@ -50892,7 +50939,7 @@
       "executionSha256": "7891efaa9612feeb58cb58db195a4cb0f676f0a7a7e67c9d1ed29ab03d5eb042",
       "displayId": "FNG-EV-032",
       "name": "幸运陨石 I",
-      "nameEn": "",
+      "nameEn": "Lucky Meteor I",
       "cardType": "Event",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -50911,8 +50958,13 @@
       "tags": [],
       "rulesText": "从你的商店卡池（含中立占位牌）中等概率随机获得1张原始费用为0～2的卡牌，加入弃牌堆。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "lucky-meteor-i",
+        "selected": [
+          {
+            "variantId": "lucky-meteor-i-01",
+            "sourcePath": "./assets/card-art/lucky-meteor-i/lucky-meteor-i-01.png"
+          }
+        ]
       }
     },
     {
@@ -56277,7 +56329,7 @@
       "executionSha256": "0b1fffc3b727f858beffd1e37c1244ddfb00ad1da74778e9c37e265044eb8bb3",
       "displayId": "FNG-EV-035",
       "name": "幸运陨石 IV",
-      "nameEn": "",
+      "nameEn": "Lucky Meteor IV",
       "cardType": "Event",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -56296,8 +56348,13 @@
       "tags": [],
       "rulesText": "从你的商店卡池（含中立占位牌）中等概率随机获得2张原始费用为7～10的卡牌，加入弃牌堆。两张可以同名。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "lucky-meteor-iv",
+        "selected": [
+          {
+            "variantId": "lucky-meteor-iv-01",
+            "sourcePath": "./assets/card-art/lucky-meteor-iv/lucky-meteor-iv-01.png"
+          }
+        ]
       }
     },
     {
@@ -60370,7 +60427,12 @@
       "rulesText": "发动：从2级与3级事件的合并池中发现一个事件并触发。",
       "artwork": {
         "key": null,
-        "selected": []
+        "selected": [
+          {
+            "variantId": "galactic-expedition-01",
+            "sourcePath": "./assets/card-art/galactic-expedition/galactic-expedition-01.png"
+          }
+        ]
       }
     },
     {
@@ -63247,7 +63309,7 @@
       "executionSha256": "5e09a89a2f708e62a557fd65063a5b0bd61c74af2081fb11689e245cb48855ff",
       "displayId": "FNG-042",
       "name": "银河远征",
-      "nameEn": "",
+      "nameEn": "Galactic Expedition",
       "cardType": "Spell",
       "collectionKind": "Collectible",
       "parentUid": null,
@@ -63268,8 +63330,13 @@
       "tags": [],
       "rulesText": "发动：从1级与2级事件的合并池中发现一个事件并触发。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "galactic-expedition",
+        "selected": [
+          {
+            "variantId": "galactic-expedition-01",
+            "sourcePath": "./assets/card-art/galactic-expedition/galactic-expedition-01.png"
+          }
+        ]
       }
     },
     {
@@ -64817,7 +64884,7 @@
       "executionSha256": "d6ec8f585d87cfa6798b13d4889df8491278a1bf48b46706b2894890dc91c9e8",
       "displayId": "FNG-EV-033",
       "name": "幸运陨石 II",
-      "nameEn": "",
+      "nameEn": "Lucky Meteor II",
       "cardType": "Event",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -64836,8 +64903,13 @@
       "tags": [],
       "rulesText": "从你的商店卡池（含中立占位牌）中等概率随机获得1张原始费用为3～5的卡牌，加入弃牌堆。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "lucky-meteor-ii",
+        "selected": [
+          {
+            "variantId": "lucky-meteor-ii-01",
+            "sourcePath": "./assets/card-art/lucky-meteor-ii/lucky-meteor-ii-01.png"
+          }
+        ]
       }
     },
     {
@@ -65246,7 +65318,7 @@
       "executionSha256": "de9148dc274167cc3e29616c66f1e9db3a8b6c2b163b917b71676de9319341ad",
       "displayId": "FNG-EV-037",
       "name": "辉煌辐射",
-      "nameEn": "",
+      "nameEn": "Glorious Radiation",
       "cardType": "Event",
       "collectionKind": "NonCollectible",
       "parentUid": null,
@@ -65265,8 +65337,13 @@
       "tags": [],
       "rulesText": "选择己方套牌中一张原始费用低于9、具有升级形态的非英雄普通版卡牌，将其原地永久升级。",
       "artwork": {
-        "key": null,
-        "selected": []
+        "key": "glorious-radiation",
+        "selected": [
+          {
+            "variantId": "glorious-radiation-01",
+            "sourcePath": "./assets/card-art/glorious-radiation/glorious-radiation-01.png"
+          }
+        ]
       }
     },
     {
