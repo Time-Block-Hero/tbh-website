@@ -206,7 +206,7 @@ test('November miner rewards obtain star-stone cards in discard instead of immed
 });
 
 
-test('confirmed pool events, direct upgrade and fruit pickup restrictions export executable definitions',()=>{
+test('confirmed pool events, direct upgrade and fruit effect restrictions export executable definitions',()=>{
  for(const [uid,minCost,maxCost,count] of [
   ['73a6604d-68d6-4e08-b0a1-4357cf8e3e02',0,2,1],['dc1d8667-a035-4699-ab8e-a019d9fd8d79',3,5,1],
   ['3ab4140d-6887-459b-8d54-18ea2e45b9e9',6,8,1],['a8ee2808-a01b-4e0c-9b93-cd9f7c27ee59',7,10,2]]){
@@ -217,5 +217,20 @@ test('confirmed pool events, direct upgrade and fruit pickup restrictions export
  }
  assert.deepEqual(applies('dda7b0e4-5a5f-47b0-b6a0-18ca7f743b21','UpgradeCard'),[{target:'$card'}]);
  const resources=author().cardBundles.map(b=>b.card).filter(c=>c.pickupRequiresNonHero);
- assert.deepEqual(resources.map(c=>c.uid).sort(),['e5082c65-fe7d-41db-b934-5ba6a0990a6b','739172b2-66e4-46ef-af13-50283e67dfea'].sort());
+ assert.deepEqual(resources,[],'effect restrictions must not prohibit pickup');
+ for(const [uid,amount] of [['e5082c65-fe7d-41db-b934-5ba6a0990a6b',1],['739172b2-66e4-46ef-af13-50283e67dfea',2]]){
+  const card=byUid.get(uid),steps=card.execution.plans[0].steps;
+  assert.ok(!card.rulesText.includes('可拾取'));
+  assert.ok(card.rulesText.includes('若拾取者为非英雄随从'));
+  const eligible=steps[0].select;
+  assert.equal(eligible.policy.kind,'All');
+  assert.deepEqual(eligible.scope.filters,[{field:'cardType',op:'Equals',value:'Minion'},{field:'isHero',op:'Equals',value:false}]);
+  const guard=steps[1].forEach.body[0].if;
+  assert.deepEqual(guard.condition,{equals:[{var:'collector'},{var:'event.source'}]});
+  assert.deepEqual(guard.else,[]);
+  assert.deepEqual(guard.then.map(x=>x.apply.package),['ModifierBatch','Damage']);
+  assert.deepEqual(guard.then[0].apply.args.items.map(x=>[x.target,x.stat,x.value.call.args[0]]),[['event.source','Attack',amount],['event.source','Move',amount]]);
+  assert.equal(guard.then[1].apply.args.amount.call.args[0],1);
+ }
+
 });

@@ -13338,7 +13338,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "仅非英雄随从可拾取。拾取的随从获得＋1攻击&速度，并受到1点伤害。",
+      "rulesText": "拾取：若拾取者为非英雄随从，其获得＋1攻击&速度，并受到1点伤害。",
       "arrows": [],
       "tags": [],
       "artPath": "CardArt/card_052",
@@ -13351,7 +13351,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "6d1e3ee024f7da9a5f8743f35286bb983ccd4d763d13b96418b54ee9fb6421d9",
+        "reviewedDesignHash": "7c5af42905d42802a3cb62655cd561b8962d517919ad2480f0691a7a75c1eb25",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -13364,8 +13364,7 @@
             "e5082c65-fe7d-41db-b934-5ba6a0990a6b:pickup"
           ],
           "grantableContinuousEffectRefs": [],
-          "abilityRefs": [],
-          "pickupRequiresNonHero": true
+          "abilityRefs": []
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -13408,79 +13407,136 @@
             "planId": "e5082c65-fe7d-41db-b934-5ba6a0990a6b:pickup:body",
             "steps": [
               {
-                "elementId": "simultaneous-attribute-gain",
-                "apply": {
-                  "package": "ModifierBatch",
-                  "args": {
-                    "items": [
+                "elementId": "eligible-nonhero-collectors",
+                "select": {
+                  "saveAs": "eligibleCollectors",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "BattlefieldEntities",
+                    "filters": [
                       {
-                        "target": "event.source",
-                        "channel": "Stat",
-                        "stat": "Attack",
-                        "operation": "Add",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              1
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        },
-                        "lifetime": {
-                          "type": "Permanent"
-                        }
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
                       },
                       {
-                        "target": "event.source",
-                        "channel": "Stat",
-                        "stat": "Move",
-                        "operation": "Add",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              1
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        },
-                        "lifetime": {
-                          "type": "Permanent"
-                        }
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 2147483647,
+                    "canCancel": false
                   }
                 }
               },
               {
-                "elementId": "hurt-collector",
-                "apply": {
-                  "package": "Damage",
-                  "args": {
-                    "target": "event.source",
-                    "amount": {
-                      "call": {
-                        "name": "EffectValue",
-                        "args": [
-                          1
+                "elementId": "match-actual-collector",
+                "forEach": {
+                  "values": {
+                    "var": "eligibleCollectors"
+                  },
+                  "as": "collector",
+                  "body": [
+                    {
+                      "elementId": "only-nonhero-collector",
+                      "if": {
+                        "condition": {
+                          "equals": [
+                            {
+                              "var": "collector"
+                            },
+                            {
+                              "var": "event.source"
+                            }
+                          ]
+                        },
+                        "then": [
+                          {
+                            "elementId": "simultaneous-attribute-gain",
+                            "apply": {
+                              "package": "ModifierBatch",
+                              "args": {
+                                "items": [
+                                  {
+                                    "target": "event.source",
+                                    "channel": "Stat",
+                                    "stat": "Attack",
+                                    "operation": "Add",
+                                    "value": {
+                                      "call": {
+                                        "name": "EffectValue",
+                                        "args": [
+                                          1
+                                        ],
+                                        "metadata": {
+                                          "kind": "Attribute"
+                                        }
+                                      }
+                                    },
+                                    "lifetime": {
+                                      "type": "Permanent"
+                                    }
+                                  },
+                                  {
+                                    "target": "event.source",
+                                    "channel": "Stat",
+                                    "stat": "Move",
+                                    "operation": "Add",
+                                    "value": {
+                                      "call": {
+                                        "name": "EffectValue",
+                                        "args": [
+                                          1
+                                        ],
+                                        "metadata": {
+                                          "kind": "Attribute"
+                                        }
+                                      }
+                                    },
+                                    "lifetime": {
+                                      "type": "Permanent"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "elementId": "hurt-collector",
+                            "apply": {
+                              "package": "Damage",
+                              "args": {
+                                "target": "event.source",
+                                "amount": {
+                                  "call": {
+                                    "name": "EffectValue",
+                                    "args": [
+                                      1
+                                    ],
+                                    "metadata": {
+                                      "kind": "Damage"
+                                    }
+                                  }
+                                },
+                                "damageType": "Effect"
+                              }
+                            }
+                          }
                         ],
-                        "metadata": {
-                          "kind": "Damage"
-                        }
+                        "else": []
                       }
-                    },
-                    "damageType": "Effect"
-                  }
+                    }
+                  ]
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "仅非英雄随从可拾取。拾取的随从获得＋1攻击&速度，并受到1点伤害。"
+              "rawRulesText": "拾取：若拾取者为非英雄随从，其获得＋1攻击&速度，并受到1点伤害。"
             }
           }
         ]
@@ -13499,7 +13555,7 @@
       "costResource": "Star",
       "costAmount": 0,
       "durability": 0,
-      "rulesText": "仅非英雄随从可拾取。拾取的随从获得＋2攻击&速度，并受到1点伤害。",
+      "rulesText": "拾取：若拾取者为非英雄随从，其获得＋2攻击&速度，并受到1点伤害。",
       "arrows": [],
       "tags": [],
       "artworkKey": "",
@@ -13511,7 +13567,7 @@
       "collectionKind": "NonCollectible",
       "execution": {
         "runtimeSupport": "Implemented",
-        "reviewedDesignHash": "eb82a3f4bad474649c407960f6e4ce562ca6b982fe55c0f35a7c45e909e8e03c",
+        "reviewedDesignHash": "162debef2af315fb8d77dd2149838a57b6e2b14405670d0d8699871930944962",
         "properties": {
           "constructionTarget": null,
           "runtimeSupportNote": null,
@@ -13524,8 +13580,7 @@
             "739172b2-66e4-46ef-af13-50283e67dfea:pickup"
           ],
           "grantableContinuousEffectRefs": [],
-          "abilityRefs": [],
-          "pickupRequiresNonHero": true
+          "abilityRefs": []
         },
         "keywordTags": [],
         "arrowMode": "Permanent",
@@ -13568,79 +13623,136 @@
             "planId": "739172b2-66e4-46ef-af13-50283e67dfea:pickup:body",
             "steps": [
               {
-                "elementId": "simultaneous-attribute-gain",
-                "apply": {
-                  "package": "ModifierBatch",
-                  "args": {
-                    "items": [
+                "elementId": "eligible-nonhero-collectors",
+                "select": {
+                  "saveAs": "eligibleCollectors",
+                  "valueType": "Entity",
+                  "scope": {
+                    "query": "BattlefieldEntities",
+                    "filters": [
                       {
-                        "target": "event.source",
-                        "channel": "Stat",
-                        "stat": "Attack",
-                        "operation": "Add",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              2
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        },
-                        "lifetime": {
-                          "type": "Permanent"
-                        }
+                        "field": "cardType",
+                        "op": "Equals",
+                        "value": "Minion"
                       },
                       {
-                        "target": "event.source",
-                        "channel": "Stat",
-                        "stat": "Move",
-                        "operation": "Add",
-                        "value": {
-                          "call": {
-                            "name": "EffectValue",
-                            "args": [
-                              2
-                            ],
-                            "metadata": {
-                              "kind": "Attribute"
-                            }
-                          }
-                        },
-                        "lifetime": {
-                          "type": "Permanent"
-                        }
+                        "field": "isHero",
+                        "op": "Equals",
+                        "value": false
                       }
                     ]
+                  },
+                  "policy": {
+                    "kind": "All",
+                    "min": 0,
+                    "max": 2147483647,
+                    "canCancel": false
                   }
                 }
               },
               {
-                "elementId": "hurt-collector",
-                "apply": {
-                  "package": "Damage",
-                  "args": {
-                    "target": "event.source",
-                    "amount": {
-                      "call": {
-                        "name": "EffectValue",
-                        "args": [
-                          1
+                "elementId": "match-actual-collector",
+                "forEach": {
+                  "values": {
+                    "var": "eligibleCollectors"
+                  },
+                  "as": "collector",
+                  "body": [
+                    {
+                      "elementId": "only-nonhero-collector",
+                      "if": {
+                        "condition": {
+                          "equals": [
+                            {
+                              "var": "collector"
+                            },
+                            {
+                              "var": "event.source"
+                            }
+                          ]
+                        },
+                        "then": [
+                          {
+                            "elementId": "simultaneous-attribute-gain",
+                            "apply": {
+                              "package": "ModifierBatch",
+                              "args": {
+                                "items": [
+                                  {
+                                    "target": "event.source",
+                                    "channel": "Stat",
+                                    "stat": "Attack",
+                                    "operation": "Add",
+                                    "value": {
+                                      "call": {
+                                        "name": "EffectValue",
+                                        "args": [
+                                          2
+                                        ],
+                                        "metadata": {
+                                          "kind": "Attribute"
+                                        }
+                                      }
+                                    },
+                                    "lifetime": {
+                                      "type": "Permanent"
+                                    }
+                                  },
+                                  {
+                                    "target": "event.source",
+                                    "channel": "Stat",
+                                    "stat": "Move",
+                                    "operation": "Add",
+                                    "value": {
+                                      "call": {
+                                        "name": "EffectValue",
+                                        "args": [
+                                          2
+                                        ],
+                                        "metadata": {
+                                          "kind": "Attribute"
+                                        }
+                                      }
+                                    },
+                                    "lifetime": {
+                                      "type": "Permanent"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          },
+                          {
+                            "elementId": "hurt-collector",
+                            "apply": {
+                              "package": "Damage",
+                              "args": {
+                                "target": "event.source",
+                                "amount": {
+                                  "call": {
+                                    "name": "EffectValue",
+                                    "args": [
+                                      1
+                                    ],
+                                    "metadata": {
+                                      "kind": "Damage"
+                                    }
+                                  }
+                                },
+                                "damageType": "Effect"
+                              }
+                            }
+                          }
                         ],
-                        "metadata": {
-                          "kind": "Damage"
-                        }
+                        "else": []
                       }
-                    },
-                    "damageType": "Effect"
-                  }
+                    }
+                  ]
                 }
               }
             ],
             "annotations": {
-              "rawRulesText": "仅非英雄随从可拾取。拾取的随从获得＋2攻击&速度，并受到1点伤害。"
+              "rawRulesText": "拾取：若拾取者为非英雄随从，其获得＋2攻击&速度，并受到1点伤害。"
             }
           }
         ]
