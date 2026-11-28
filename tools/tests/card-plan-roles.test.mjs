@@ -33,12 +33,12 @@ test('missing owners, missing references and conflicting roles fail instead of a
   assert.throws(() => plansWithSemanticRoles(e), /Declared plan role conflicts/);
 });
 
-test('all 157 current plans export explicit roles including synthesis, event and triggered preparation', () => {
+test('all 166 current plans export explicit roles including synthesis, event and triggered preparation', () => {
   const source = JSON.parse(fs.readFileSync(new URL('../../data/cards.json', import.meta.url)));
   const before = JSON.stringify(source);
   const doc = toAuthoringDocument(source, { contentId: 'test', contentVersion: 'role-test' });
   const plans = doc.cardBundles.flatMap(bundle => bundle.plans);
-  assert.equal(plans.length, 157);
+  assert.equal(plans.length, 166);
   assert.ok(plans.every(plan => ['ActivatedAbilityBody', 'ActivationPreparation', 'CostPlan', 'TriggeredEffectBody'].includes(plan.annotations.semanticRole)));
   assert.equal(plans.find(p => p.planId === '27518a43-d84a-4853-a6aa-b6c310e5726f:synthesized:body').annotations.semanticRole, 'TriggeredEffectBody');
   assert.equal(plans.find(p => p.planId === '97538b9d-68f1-4a74-861c-3b6a517890ba:round-end:body').annotations.semanticRole, 'TriggeredEffectBody');

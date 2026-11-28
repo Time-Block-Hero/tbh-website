@@ -160,10 +160,10 @@ test('resource upgrades remain linked and effect-generated without player synthe
  assert.equal(scanner.cardId,byUid.get('2a9ae6c4-8a4a-4862-9cca-0f5113b27d18').uid);
  assert.ok(cards.find(c=>c.uid==='0166c132-1962-4fc7-9aa6-353ecdba8eab').canTriple,'ordinary minions retain synthesis');
 });
-test('eleven existing permanent single-card event buffs exclude heroes while hero upgrade remains explicit',()=>{
+test('permanent single-card event effects exclude heroes while hero upgrade remains explicit',()=>{
  const ids=['009','010','011','012','013','014','015','022','023','024','025'];
  const events=selected.cards.filter(c=>c.cardType==='Event'&&c.rulesText.includes('永久'));
- assert.deepEqual(events.map(c=>c.uid).sort(),ids.map(id=>eventUids[id]).sort());
+ assert.deepEqual(events.map(c=>c.uid).sort(),[...ids.map(id=>eventUids[id]),'dda7b0e4-5a5f-47b0-b6a0-18ca7f743b21'].sort());
  for(const card of events){
   assert.ok(card.rulesText.includes('非英雄'),card.nameKey);
   const scopes=nodes(card.execution).filter(n=>n.select?.scope?.query==='OwnedZones').map(n=>n.select.scope);
@@ -203,4 +203,19 @@ test('November miner rewards obtain star-stone cards in discard instead of immed
   assert.deepEqual(applies(uid,'CreateCard'),[{cardId:'c285d915-f68b-4827-9c39-c4911895e360',destinationZone:'DiscardPile',quantity}]);
   assert.equal(applies(uid,'GainResource').length,0);
  }
+});
+
+
+test('confirmed pool events, direct upgrade and fruit pickup restrictions export executable definitions',()=>{
+ for(const [uid,minCost,maxCost,count] of [
+  ['73a6604d-68d6-4e08-b0a1-4357cf8e3e02',0,2,1],['dc1d8667-a035-4699-ab8e-a019d9fd8d79',3,5,1],
+  ['3ab4140d-6887-459b-8d54-18ea2e45b9e9',6,8,1],['a8ee2808-a01b-4e0c-9b93-cd9f7c27ee59',7,10,2]]){
+   assert.deepEqual(applies(uid,'GainRandomCardFromPool'),[{minCost,maxCost,count}]);
+ }
+ for(const [uid,minTier,maxTier] of [['d3134867-6906-454c-b930-2dcfeda22aa4',1,2],['c21e1ae3-9056-4cfd-aff2-930801e59923',2,3]]){
+  assert.deepEqual(applies(uid,'PrepareEventDiscovery'),[{minTier,maxTier}]);assert.equal(applies(uid,'ResolveEvent').length,1);
+ }
+ assert.deepEqual(applies('dda7b0e4-5a5f-47b0-b6a0-18ca7f743b21','UpgradeCard'),[{target:'$card'}]);
+ const resources=author().cardBundles.map(b=>b.card).filter(c=>c.pickupRequiresNonHero);
+ assert.deepEqual(resources.map(c=>c.uid).sort(),['e5082c65-fe7d-41db-b934-5ba6a0990a6b','739172b2-66e4-46ef-af13-50283e67dfea'].sort());
 });

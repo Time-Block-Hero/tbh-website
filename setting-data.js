@@ -1037,7 +1037,7 @@ window.__SETTING_DATA__ = {
         "en": "A tall, powerfully built fleet commander with swept-back white hair and a stern face. Magellan’s white command greatcoat covers a navy uniform and ceramic shoulder armor, accented by gold navigation trim and an asymmetric mantle."
       },
       "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Interstellar Commander Magellan is a tall, powerfully built adult man with swept-back white hair and a stern weathered face, wearing an iconic white fleet-command greatcoat over layered navy technical uniform, matte ceramic shoulder armor, gloves, gold navigation trim, and a long asymmetric command mantle. At the decisive moment aboard his flagship's panoramic command prow, he points one gloved hand toward the enemy formation while two fallen Space Soldiers reconstitute from cyan archive particles at his upper-left and upper-right flanks, answering his order from the discard. Use a dramatic tilted low-angle composition: Magellan's face, pointing gesture, white silhouette, and both returning soldiers dominate the upper square crop; the lower portrait extension reveals his vast neutral merchant-fleet turning beneath him across a star-filled battlefield, with converging ship trails reinforcing his command line. Singular Legendary storytelling, intentional asymmetry, exceptional material finish, premium industrial sci-fi anime rendering, crisp original facial design, white and navy against deep space, disciplined cyan resurrection light and warm gold rim light. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
-      "rulesText": "发动：每回合限一次，从弃牌堆随机选取最多两个星际佣兵，召唤至其↖️↗️方格子。",
+      "rulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
       "cover": "./assets/card-art/interstellar-commander-magellan/interstellar-commander-magellan-01.png",
       "sourceArtworkKeys": [
         "interstellar-commander-magellan"
@@ -1045,13 +1045,13 @@ window.__SETTING_DATA__ = {
       "identityNameIncludes": "麦哲伦",
       "sources": [
         {
-          "cardId": "FNG-010",
+          "cardId": "FNG-008",
           "artworkKey": "interstellar-commander-magellan",
           "name": "星际司令麦哲伦",
           "englishName": "Interstellar Commander Magellan",
           "classId": "Neutral",
           "cardType": "Minion",
-          "rulesText": "发动：每回合限一次，从弃牌堆随机选取最多两个星际佣兵，召唤至其↖️↗️方格子。",
+          "rulesText": "发动：每回合限一次，从弃牌堆随机召唤一个费用低于5的军队随从，召唤至其⬆️方格子。",
           "artDescription": "Standalone vertical game artwork for Time-Block Hero, portrait 5:8 composition, Legendary minion. Interstellar Commander Magellan is a tall, powerfully built adult man with swept-back white hair and a stern weathered face, wearing an iconic white fleet-command greatcoat over layered navy technical uniform, matte ceramic shoulder armor, gloves, gold navigation trim, and a long asymmetric command mantle. At the decisive moment aboard his flagship's panoramic command prow, he points one gloved hand toward the enemy formation while two fallen Space Soldiers reconstitute from cyan archive particles at his upper-left and upper-right flanks, answering his order from the discard. Use a dramatic tilted low-angle composition: Magellan's face, pointing gesture, white silhouette, and both returning soldiers dominate the upper square crop; the lower portrait extension reveals his vast neutral merchant-fleet turning beneath him across a star-filled battlefield, with converging ship trails reinforcing his command line. Singular Legendary storytelling, intentional asymmetry, exceptional material finish, premium industrial sci-fi anime rendering, crisp original facial design, white and navy against deep space, disciplined cyan resurrection light and warm gold rim light. Artwork only; no readable text, logo, watermark, UI, card frame, decorative border, arrows, cost, or stat icons.",
           "selectedArtworkId": "interstellar-commander-magellan-01",
           "cover": "./assets/card-art/interstellar-commander-magellan/interstellar-commander-magellan-01.png"
@@ -1093,7 +1093,7 @@ window.__SETTING_DATA__ = {
       "identityNameIncludes": "刺客-J",
       "sources": [
         {
-          "cardId": "FNG-015",
+          "cardId": "FNG-013",
           "artworkKey": "delayed-coordinate-cannon",
           "name": "刺客-J",
           "englishName": "Delayed Coordinate Cannon",
@@ -1141,7 +1141,7 @@ window.__SETTING_DATA__ = {
       "identityNameIncludes": "贾格",
       "sources": [
         {
-          "cardId": "FNG-022",
+          "cardId": "FNG-020",
           "artworkKey": "jagg-mad-teleporter",
           "name": "疯狂的传送师-贾格",
           "englishName": "Jagg, Mad Teleporter",
@@ -1189,7 +1189,7 @@ window.__SETTING_DATA__ = {
       "identityNameIncludes": "蒂芙尼",
       "sources": [
         {
-          "cardId": "FNG-036",
+          "cardId": "FNG-034",
           "artworkKey": "know-it-all-tiffany",
           "name": "「百事通」蒂芙尼",
           "englishName": "Know-It-All Tiffany",
