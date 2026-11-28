@@ -11841,50 +11841,7 @@
                     "args": {
                       "minTier": 1,
                       "maxTier": 2
-                    },
-                    "saveAs": "candidateCount"
-                  }
-                },
-                {
-                  "elementId": "discover-if-available",
-                  "if": {
-                    "condition": {
-                      "less": [
-                        0,
-                        {
-                          "var": "candidateCount"
-                        }
-                      ]
-                    },
-                    "then": [
-                      {
-                        "elementId": "choose-event",
-                        "select": {
-                          "saveAs": "chosenEvent",
-                          "valueType": "Card",
-                          "scope": {
-                            "query": "EventChoices"
-                          },
-                          "policy": {
-                            "kind": "PlayerSelect",
-                            "min": 1,
-                            "max": 1,
-                            "canCancel": false
-                          },
-                          "promptRole": "Generic"
-                        }
-                      },
-                      {
-                        "elementId": "resolve-event",
-                        "apply": {
-                          "package": "ResolveEvent",
-                          "args": {
-                            "event": "$chosenEvent"
-                          }
-                        }
-                      }
-                    ],
-                    "else": []
+                    }
                   }
                 }
               ],
@@ -11960,50 +11917,7 @@
                     "args": {
                       "minTier": 2,
                       "maxTier": 3
-                    },
-                    "saveAs": "candidateCount"
-                  }
-                },
-                {
-                  "elementId": "discover-if-available",
-                  "if": {
-                    "condition": {
-                      "less": [
-                        0,
-                        {
-                          "var": "candidateCount"
-                        }
-                      ]
-                    },
-                    "then": [
-                      {
-                        "elementId": "choose-event",
-                        "select": {
-                          "saveAs": "chosenEvent",
-                          "valueType": "Card",
-                          "scope": {
-                            "query": "EventChoices"
-                          },
-                          "policy": {
-                            "kind": "PlayerSelect",
-                            "min": 1,
-                            "max": 1,
-                            "canCancel": false
-                          },
-                          "promptRole": "Generic"
-                        }
-                      },
-                      {
-                        "elementId": "resolve-event",
-                        "apply": {
-                          "package": "ResolveEvent",
-                          "args": {
-                            "event": "$chosenEvent"
-                          }
-                        }
-                      }
-                    ],
-                    "else": []
+                    }
                   }
                 }
               ],
@@ -35387,7 +35301,7 @@
   "source": {
     "repository": "https://github.com/Time-Block-Hero/tbh-website",
     "commit": null,
-    "cardsSha256": "3a3d696408509dd2d3f1cf47e23c0d986e76892e11d9af1c4bfb43932169fedf",
+    "cardsSha256": "0f3fe2a8227b7b9eb70f8e10823ee375fc35a165afab326d8f683cf3a6628003",
     "identityBridgeSha256": "c71406e41afc37f10d7dc0f02af716f7393680b5a2f8f62f59ad71e5286c4bb7",
     "sourceRevisionPath": "data/card-design-source-revision.json",
     "sourceRevisionId": "issue167-20261128-playtest139",
@@ -60253,50 +60167,7 @@
                   "args": {
                     "minTier": 2,
                     "maxTier": 3
-                  },
-                  "saveAs": "candidateCount"
-                }
-              },
-              {
-                "elementId": "discover-if-available",
-                "if": {
-                  "condition": {
-                    "less": [
-                      0,
-                      {
-                        "var": "candidateCount"
-                      }
-                    ]
-                  },
-                  "then": [
-                    {
-                      "elementId": "choose-event",
-                      "select": {
-                        "saveAs": "chosenEvent",
-                        "valueType": "Card",
-                        "scope": {
-                          "query": "EventChoices"
-                        },
-                        "policy": {
-                          "kind": "PlayerSelect",
-                          "min": 1,
-                          "max": 1,
-                          "canCancel": false
-                        },
-                        "promptRole": "Generic"
-                      }
-                    },
-                    {
-                      "elementId": "resolve-event",
-                      "apply": {
-                        "package": "ResolveEvent",
-                        "args": {
-                          "event": "$chosenEvent"
-                        }
-                      }
-                    }
-                  ],
-                  "else": []
+                  }
                 }
               }
             ],
@@ -60306,7 +60177,7 @@
           }
         ]
       },
-      "executionSha256": "28bfcc44dfdb3e78b0fc531a991b885713c596fcb2276c9bc4ce8b5577d0ba7e",
+      "executionSha256": "88b2bc2877ec5315f9feb2adac25c3980e6dcdc976590c77905189d24c2f9711",
       "displayId": "FNG-042-UP",
       "name": "银河远征",
       "nameEn": "",
@@ -63195,50 +63066,7 @@
                   "args": {
                     "minTier": 1,
                     "maxTier": 2
-                  },
-                  "saveAs": "candidateCount"
-                }
-              },
-              {
-                "elementId": "discover-if-available",
-                "if": {
-                  "condition": {
-                    "less": [
-                      0,
-                      {
-                        "var": "candidateCount"
-                      }
-                    ]
-                  },
-                  "then": [
-                    {
-                      "elementId": "choose-event",
-                      "select": {
-                        "saveAs": "chosenEvent",
-                        "valueType": "Card",
-                        "scope": {
-                          "query": "EventChoices"
-                        },
-                        "policy": {
-                          "kind": "PlayerSelect",
-                          "min": 1,
-                          "max": 1,
-                          "canCancel": false
-                        },
-                        "promptRole": "Generic"
-                      }
-                    },
-                    {
-                      "elementId": "resolve-event",
-                      "apply": {
-                        "package": "ResolveEvent",
-                        "args": {
-                          "event": "$chosenEvent"
-                        }
-                      }
-                    }
-                  ],
-                  "else": []
+                  }
                 }
               }
             ],
@@ -63248,7 +63076,7 @@
           }
         ]
       },
-      "executionSha256": "87ecd46a1e45ab8635503bc10bd2776c5779a89f1dcef26a774edf068f4423f6",
+      "executionSha256": "5e09a89a2f708e62a557fd65063a5b0bd61c74af2081fb11689e245cb48855ff",
       "displayId": "FNG-042",
       "name": "银河远征",
       "nameEn": "",

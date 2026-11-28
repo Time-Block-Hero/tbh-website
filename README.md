@@ -34,7 +34,7 @@ node tools/card-editor-server.mjs --port 4317
 - 版本、主卡与衍生卡之间切换时保留各自草稿；保存当前形态不会覆盖另一形态的修改。离开有未保存修改的详情时提供保存、放弃或取消。
 - 添加、删除主卡和衍生卡；通过本地服务删除时同步删除对应实体卡图包。
 - 按编号模式拖拽卡牌并插入目标位置；保存后自动重新编号。
-- 按费用升序或降序浏览；视图排序不会修改卡牌 ID。
+- 非事件按费用升序或降序浏览；事件按稀有度对应的等级排序，不显示费用字段；视图排序不会修改卡牌 ID。
 - 支持随从、法术、资源和事件四种类型；资源和事件使用非随从布局，随从种族支持多选，“建筑”用于有生命值的非生物随从。
 - 卡名颜色表示稀有度：普通白色、稀有蓝色、史诗紫色、传说橙色。
 - 多插画方案、正式插画选择、画面描述精修标记和 `artRequest`。
@@ -67,7 +67,7 @@ node tools/card-editor-server.mjs --port 4317
 node tools/sync-cards-from-data.mjs
 ```
 
-卡牌数据 schema 6 使用持久 UID，展示编号可以重排；`upgradeOfUid` 独立于衍生关系 `parentUid`，`playtestReady` 以原版为权威，升级版字段是与原版一致的派生值。`execution` 与 `shared.statuses` 仍是同一源内的 schema21 执行定义，普通保存完整保留，新增卡、衍生卡和升级版初始化为 Planned。事件没有升级关系。执行映射和通用编译接口见 [卡牌执行单一源](docs/design/card-execution-source.md)。
+卡牌数据 schema 6 使用持久 UID，展示编号可以重排；`upgradeOfUid` 独立于衍生关系 `parentUid`，`playtestReady` 以原版为权威，升级版字段是与原版一致的派生值。`execution` 与 `shared.statuses` 仍是同一源内的 schema22 执行定义，普通保存完整保留，新增卡、衍生卡和升级版初始化为 Planned。事件没有升级关系。执行映射和通用编译接口见 [卡牌执行单一源](docs/design/card-execution-source.md)。
 
 设计备份、离线数据及 dirty 开发预览保留全部卡。schema 6 的正式导出按原版 `playtestReady=true` 选择整组原版与已配置的升级版，事件独立选择，并校验执行状态、批准身份和依赖；没有任何卡被选中或存在未纳入的依赖时，会明确报错。勾选表示设计完成及纳入意图，不代表游戏执行已实现。网站的新导出合同不自动更新 Unity，游戏导入适配将在设计定稿后单独进行。历史已提交 schema 4/5 的导出语义保持不变。正式导出指定已提交 SHA，合同和验证命令见 [卡牌设计导出](docs/design/card-design-export.md)。
 

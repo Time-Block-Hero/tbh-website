@@ -213,7 +213,7 @@ test('confirmed pool events, direct upgrade and fruit pickup restrictions export
    assert.deepEqual(applies(uid,'GainRandomCardFromPool'),[{minCost,maxCost,count}]);
  }
  for(const [uid,minTier,maxTier] of [['d3134867-6906-454c-b930-2dcfeda22aa4',1,2],['c21e1ae3-9056-4cfd-aff2-930801e59923',2,3]]){
-  assert.deepEqual(applies(uid,'PrepareEventDiscovery'),[{minTier,maxTier}]);assert.equal(applies(uid,'ResolveEvent').length,1);
+  assert.deepEqual(applies(uid,'PrepareEventDiscovery'),[{minTier,maxTier}]);assert.equal(applies(uid,'ResolveEvent').length,0);assert.equal(byUid.get(uid).execution.plans[0].steps.length,1);
  }
  assert.deepEqual(applies('dda7b0e4-5a5f-47b0-b6a0-18ca7f743b21','UpgradeCard'),[{target:'$card'}]);
  const resources=author().cardBundles.map(b=>b.card).filter(c=>c.pickupRequiresNonHero);
